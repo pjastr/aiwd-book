@@ -1,0 +1,171 @@
+# Operacje na stringach
+
+W `NumPy` poza dobrze znanymi tablicami liczbowymi, istnieje również zestaw funkcji pozwalających na wektorowe operacje na ciągach znaków. 
+
+
+**Ważne:** Poniższe funkcje są zazwyczaj dostępne w module `numpy.char`. W dokumentacji znajdują się one w sekcji [String operations](https://numpy.org/doc/stable/reference/routines.strings.html), jednak w tym materiale skupimy się na tym, jak można je wykorzystywać, zakładając interfejs z modułu `numpy.strings`. Jest to analogiczne do korzystania z `numpy.char`. Jest no nowsze podejście.
+
+
+## Tworzenie tablic z napisami
+
+NumPy pozwala na przechowywanie tekstu w tablicach, np. tak:
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr = np.array(["python", "NumPy", "data", "Science"])
+print(arr)
+```
+
+---
+
+## Podstawowe funkcje do modyfikacji tekstu
+
+Poniżej przedstawiono popularne funkcje do modyfikacji tekstu na tablicach stringów:
+
+### `numpy.strings.upper` i `numpy.strings.lower`
+
+- `upper`: Zamiana wszystkich liter na wielkie.
+- `lower`: Zamiana wszystkich liter na małe.
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr = np.array(["python", "NumPy", "data", "Science"])
+
+print(np.strings.upper(arr))
+print(np.strings.lower(arr))
+
+```
+
+### `numpy.strings.capitalize`
+
+Funkcja `capitalize` zamienia pierwszą literę wyrazu na wielką, a pozostałe na małe.
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr = np.array(["python", "NumPy", "data", "Science"])
+print(np.strings.capitalize(arr))
+
+```
+
+### `numpy.strings.title`
+
+Funkcja `title` sprawia, że każda część składowa tekstu (np. oddzielona spacją) zostaje zamieniona tak, by zaczynała się od wielkiej litery.
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr2 = np.array(["python data science", "machine learning", "deep learning"])
+print(np.strings.title(arr2))
+```
+
+---
+
+## Łączenie i rozdzielanie tekstów
+
+### `numpy.strings.add`
+
+Funkcja `add` łączy elementy tablic tekstowych, działając podobnie jak operator `+` na stringach, ale wektorowo.
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr_a = np.array(["Hello", "Data"])
+arr_b = np.array(["World", "Science"])
+
+print(np.strings.add(arr_a, arr_b))
+```
+
+### `numpy.strings.join`
+
+Funkcja `join` pozwala na łączenie elementów tablicy przy użyciu wskazanego separatora.
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr3 = np.array(["python", "numpy", "string"])
+print(np.char.join("-", arr3))
+
+```
+
+> Uwaga: `join` wektoryzuje operację, traktując każdy element tablicy jako sekwencję znaków do połączenia separatorem.
+
+### `numpy.strings.split`
+
+Pozwala na rozdzielanie stringów według podanego separatora. Zwraca tablicę zawierającą listy podłańcuchów.
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr4 = np.array(["python-data-science", "machine-learning"])
+print(np.char.split(arr4, sep="-"))
+```
+
+---
+
+## Wyszukiwanie i zamiana podciągów
+
+### `numpy.strings.find` i `numpy.strings.rfind`
+
+- `find`: Zwraca indeks pierwszego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).
+- `rfind`: Zwraca indeks ostatniego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr5 = np.array(["python", "data", "numpy"])
+print(np.strings.find(arr5, "a"))
+```
+
+### `numpy.strings.replace`
+
+`replace` zamienia wszystkie wystąpienia podłańcucha na nowy ciąg znaków.
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr6 = np.array(["python", "pydata", "pypy"])
+print(np.strings.replace(arr6, "py", "PY"))
+
+```
+
+---
+
+## Usuwanie zbędnych znaków
+
+### `numpy.strings.strip`, `numpy.strings.lstrip` i `numpy.strings.rstrip`
+
+- `strip`: Usuwa wskazane znaki z początku i końca.
+- `lstrip`: Usuwa wskazane znaki z lewej strony (początku).
+- `rstrip`: Usuwa wskazane znaki z prawej strony (końca).
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr7 = np.array(["   python   ", "  numpy  "])
+print(np.strings.strip(arr7))
+
+```
+
+Możemy również podać niestandardowe znaki do usunięcia:
+
+```{python}
+#| echo: true
+import numpy as np
+
+arr8 = np.array(["###data###", "***science***"])
+print(np.strings.strip(arr8, "#*"))
+
+```

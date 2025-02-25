@@ -1,0 +1,117 @@
+# NumPy - start
+
+NumPy jest biblioteką Pythona służącą do obliczeń naukowych.
+
+Zastosowania:
+  
+  * algebra liniowa
+* zaawansowane obliczenia matematyczne (numeryczne) 
+* całkowania
+* rozwiązywanie równań
+* ...
+
+
+## Instalacja pakietu NumPy - opcja łatwiejsza "do przeklikania"
+
+* Tworzy projekt w PyCharm z venv - wersja 3.12.
+
+![](q1.png)
+
+* Za pomocą zakładki po lewej stronie na dole wyszukujemy pakiet i wybieramy instalację
+
+![](q2.png)
+
+## Instalacja pakietu NumPy - opcja terminala
+
+Komenda dla terminala:
+
+```bash
+python -m pip install numpy
+```
+
+```bash
+python -m pip install numpy==2.2.0
+```
+
+## Import biblioteki NumPy
+
+```python
+import numpy as np
+```
+
+Podstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana `ndarray`. Każdy element na tablicy traktowany jest jako typ `dtype`.
+
+```python
+numpy.array(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0, like=None)
+```
+
+* object - to co ma być wrzucone do tablicy
+* dtype - typ
+* copy - czy obiekty mają być skopiowane, domyślne `True`
+* order - sposób układania: C (rzędy),  F (kolumny), A, K
+* subok - realizowane przez podklasy (jeśli `True`), domyślnie `False`
+* ndmin - minimalny rozmiar (wymiar) tablicy
+* like - tworzenie na podstawie tablic referencyjnej
+
+```{python}
+#| echo: true
+import numpy as np
+
+a = np.array([1, 2, 3])    # <1>                           
+print("a:", a) 
+print("typ a:", type(a))  # <2>
+b = np.array([1, 2, 3.0]) # <3>
+print("b:", b)
+c = np.array([[1, 2], [3, 4]]) # <4>
+print("c:", c)
+d = np.array([1, 2, 3], ndmin=2) # <5>
+print("d:", d)
+e = np.array([1, 2, 3], dtype=complex) # <6>
+print("e:", e)
+f = np.array(np.asmatrix('1 2; 3 4')) # <7>
+print("f:", f)
+g = np.array(np.asmatrix('1 2; 3 4'), subok=True) # <8>
+print("g:", g)
+print(type(g))
+
+```
+
+1. Standardowe domyślne.
+2. Sprawdzenie typu.
+3. Jeden z elementów jest innego typu. Tu następuje zatem rozszerzenie do typu "największego".
+4. Tu otrzymamy tablicę 2x2.
+5. W tej linijce otrzymana będzie tablica 2x1.
+6. Ustalenie innego typu - większego.
+7. Skorzystanie z podtypu macierzowego.
+8. Zachowanie typu macierzowego.
+
+## Uruchamianie - tryb "Run" (wykonawczy)
+
+Run - zielona strzałka u góry.
+
+![](q3.png)
+
+## Uruchamianie - tryb "Run in Python Console" (interaktywno-wykonawczy)
+
+![](q4.png)
+
+**Ćwiczenie (`ex1.py`):**
+
+1. Stwórz proste tablice:
+
+* $\begin{bmatrix}
+1 & 2 & 7\\
+6 & -3 & -3
+\end{bmatrix}$
+
+* $\begin{bmatrix}
+6 & 8 & 9 & -3
+\end{bmatrix}$
+
+* $\begin{bmatrix}
+4 \\ 3 \\-3 \\-7
+\end{bmatrix}$
+
+* $\begin{bmatrix}
+bb & cc & ww & 44
+\end{bmatrix}$

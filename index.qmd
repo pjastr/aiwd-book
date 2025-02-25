@@ -1,0 +1,7 @@
+# Analiza i wizualizacja danych
+
+Aktualna wersja dotyczy zajęć realizowanych w roku akademickim 2024/25.
+---
+nocite: |
+  @*
+---

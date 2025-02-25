@@ -1,0 +1,176 @@
+# Numpy - inne
+
+## Stałe
+
+`NumPy` dostarcza kilka znanych stałych matematycznych, które mogą być przydatne w obliczeniach naukowych i inżynierskich. Wbudowane stałe takie jak liczba Pi czy podstawa logarytmu naturalnego `e` ułatwiają pisanie czytelnego i zwięzłego kodu.
+
+
+1. **`numpy.pi`**  
+   - Reprezentuje liczbę Pi (π) z dużą dokładnością.  
+   - Pi to stosunek obwodu okręgu do jego średnicy.  
+   - W przybliżeniu: `3.141592653589793`
+
+2. **`numpy.e`**  
+   - Reprezentuje podstawę logarytmu naturalnego, `e`.  
+   - `e` jest wykorzystywane w wielu dziedzinach, takich jak analiza matematyczna, probabilistyka, statystyka.  
+   - W przybliżeniu: `2.718281828459045`
+
+3. **`numpy.eulergamma`**  
+   - Reprezentuje stałą Eulera-Mascheroniego, zwykle oznaczaną jako γ (gamma).
+   - Pojawia się w analizie matematycznej, szczególnie w teorii liczb i badaniu szeregów harmonicznych.
+   - W przybliżeniu: `0.5772156649015329`
+
+```{python}
+#| echo: true
+import numpy as np
+
+# Promień koła
+r = 5.0
+
+# Obwód koła: 2 * π * r
+obwod = 2 * np.pi * r
+print("Obwód koła:", obwod)
+
+# Pole koła: π * r^2
+pole = np.pi * r**2
+print("Pole koła:", pole)
+```
+
+```{python}
+#| echo: true
+import numpy as np
+
+# Przykładowy punkt x
+x = 1.0
+
+# Wartość funkcji e^x
+exp_value = np.e**x
+print("e^x dla x=1:", exp_value)
+
+# Porównanie z funkcją np.exp
+exp_compare = np.exp(x)
+print("Porównanie z np.exp(1):", exp_compare)
+```
+
+## `numpy.inf`  
+
+- **Opis**: `np.inf` reprezentuje wartość nieskończoną (∞).  
+- Często pojawia się w obliczeniach, gdy wartość danego wyrażenia dąży do nieskończoności (np. dzielenie przez zero, pewne limity, itp.).  
+- Przykładowo, `1.0 / 0.0` zwróci ostrzeżenie i w konsekwencji może dać wartość `inf`.
+
+
+
+```{python}
+#| echo: true
+import numpy as np
+
+# Zastosowanie w tworzeniu masek logicznych
+arr = np.array([1, 2, np.inf, 4, 5])
+mask = np.isinf(arr)
+print("Maska elementów o wartości inf:", mask)
+```
+
+## `numpy.nan`  
+
+- **Opis**: `np.nan` oznacza "Not a Number" (NaN), czyli wartość nieokreśloną lub niereprezentowalną w systemie liczbowym.  
+- Pojawia się, gdy wynik operacji numerycznej jest nieokreślony, np. `0.0/0.0`, `inf - inf` lub przy błędach wczytywania danych.  
+- Operacje arytmetyczne z `nan` zazwyczaj również zwracają `nan`.
+
+
+```{python}
+#| echo: true
+import numpy as np
+
+# Zamiana wartości nan w tablicy
+data = np.array([1, 2, np.nan, 4, np.nan])
+print("Oryginalne dane:", data)
+
+# Wypełnienie wartości nan zerem
+data_no_nan = np.nan_to_num(data, nan=0.0)
+print("Dane bez nan:", data_no_nan)
+```
+
+## `numpy.newaxis`  
+- **Opis**: `np.newaxis` jest specjalną "stałą"/obiektem służącym do zmiany wymiarów tablic przez zwiększenie ich liczby wymiarów o 1.  
+
+
+
+```{python}
+#| echo: true
+import numpy as np
+
+# Mamy tablicę 1D
+vec = np.array([1, 2, 3, 4])
+print("Oryginalna tablica:", vec, "Kształt:", vec.shape)
+
+# Dodajemy nowy wymiar jako wymiar wierszy
+vec_as_col = vec[:, np.newaxis]
+print("Tablica jako kolumna:\n", vec_as_col, "Kształt:", vec_as_col.shape)
+
+# Dodawanie wymiaru na początku
+vec_as_row = vec[np.newaxis, :]
+print("Tablica jako wiersz:\n", vec_as_row, "Kształt:", vec_as_row.shape)
+
+# Kolejny przykład: dodanie wymiaru by z łatwością broadcastować operacje
+a = np.array([10, 20, 30])
+b = np.array([1, 2])
+# Bez nowego wymiaru próba dodania a do b się nie powiedzie, 
+# bo kształty nie są kompatybilne.
+# Z nowym wymiarem a ma kształt (3,1), a b (2,), co pozwala na broadcast
+sum_matrix = a[:, np.newaxis] + b
+print("Operacja z broadcast:\n", sum_matrix)
+```
+
+## Statystyka i agregacja
+
+| Funkcja              | Opis                                                           |
+|----------------------|----------------------------------------------------------------|
+| np.mean              | Średnia wszystkich wartości w tablicy.                         |
+| np.std               | Odchylenie standardowe.                                        |
+| np.var               | Wariancja.                                                     |
+| np.sum               | Suma wszystkich elementów.                                     |
+| np.prod              | Iloczyn wszystkich elementów.                                  |
+| np.cumsum            | Skumulowana suma wszystkich elementów.                         |
+| np.cumprod           | Skumulowany iloczyn wszystkich elementów.                      |
+| np.min,np.max        | Minimalna/maksymalna wartość w tablicy.                        |
+| np.argmin, np.argmax | Indeks minimalnej/maksymalnej wartości w tablicy.              |
+| np.all               | Sprawdza czy wszystki elementy są różne od zera.               |
+| np.any               | Sprawdza czy co najmniej jeden z elementów jest różny od zera. |
+  
+## Wyrażenia warunkowe
+  
+<https://numpy.org/doc/stable/reference/generated/numpy.where>
+<https://numpy.org/doc/stable/reference/generated/numpy.choose>
+<https://numpy.org/doc/stable/reference/generated/numpy.select>
+<https://numpy.org/doc/stable/reference/generated/numpy.nonzero>
+
+## Działania na zbiorach
+
+<https://numpy.org/doc/stable/reference/routines.set.html>
+
+## Operacje tablicowe
+
+
+<https://numpy.org/doc/stable/reference/generated/numpy.transpose>
+
+<https://numpy.org/doc/stable/reference/generated/numpy.flip>
+<https://numpy.org/doc/stable/reference/generated/numpy.fliplr>
+<https://numpy.org/doc/stable/reference/generated/numpy.flipud>
+
+<https://numpy.org/doc/stable/reference/generated/numpy.sort>
+
+## Alegbra liniowa
+
+<https://numpy.org/doc/stable/reference/routines.linalg.html>
+
+
+## Data i czas
+
+<https://numpy.org/doc/stable/reference/arrays.datetime.html>
+
+
+## Pseudolosowe
+
+<https://numpy.org/doc/stable/reference/random/index.html>
+  
+  

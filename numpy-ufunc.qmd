@@ -1,0 +1,163 @@
+# Funkcje uniwersalne (ufunc)
+
+Funkcje uniwersalne (tzw. *ufunc*) to jedne z najważniejszych narzędzi w NumPy. Są to funkcje działające element-po-elemencie na tablicach, często implementowane w C, co zapewnia wysoką wydajność obliczeń. Dzięki *ufuncs* można w prosty i czytelny sposób wykonywać operacje arytmetyczne, trygonometryczne, statystyczne czy logiczne na całych tablicach bez konieczności pisania pętli w Pythonie.
+
+## Podstawowe operacje arytmetyczne
+
+NumPy automatycznie przekształca operatory matematyczne w odpowiednie *ufunc*.  
+Na przykład:
+
+- `+` odpowiada `np.add`
+- `-` odpowiada `np.subtract`
+- `*` odpowiada `np.multiply`
+- `/` odpowiada `np.divide`
+- `**` odpowiada `np.power`
+
+Przykład:
+
+```{python}
+#| echo: true
+import numpy as np
+
+A = np.array([1, 2, 3, 4])
+B = np.array([10, 20, 30, 40])
+
+# Operacje element-po-elemencie
+sum_tab = np.add(A, B)       # to samo co A + B
+diff_tab = np.subtract(B, A) # to samo co B - A
+mul_tab = np.multiply(A, 2)  # to samo co A * 2
+pow_tab = np.power(A, 3)     # to samo co A ** 3
+
+print("Suma:", sum_tab)
+print("Różnica:", diff_tab)
+print("Mnożenie przez 2:", mul_tab)
+print("Potęgowanie:", pow_tab)
+```
+
+## Funkcje trygonometryczne i pochodne
+
+NumPy oferuje bogaty zestaw funkcji trygonometrycznych:
+
+- `np.sin`, `np.cos`, `np.tan` – funkcje podstawowe,
+- `np.arcsin`, `np.arccos`, `np.arctan` – odwrotne funkcje trygonometryczne,
+- `np.sinh`, `np.cosh`, `np.tanh` – funkcje hiperboliczne.
+
+Przykład:
+
+```{python}
+#| echo: true
+import numpy as np
+
+x = np.linspace(0, np.pi, 5) # tablica [0, π/4, π/2, 3π/4, π]
+sin_values = np.sin(x)
+cos_values = np.cos(x)
+
+print("Wartości sin(x):", sin_values)
+print("Wartości cos(x):", cos_values)
+```
+
+## Funkcje wykładnicze i logarytmiczne
+
+- `np.exp` – eksponenta,
+- `np.log` – logarytm naturalny,
+- `np.log10` – logarytm dziesiętny.
+
+Przykład:
+
+```{python}
+#| echo: true
+import numpy as np
+
+A = np.array([1, np.e, np.e**2])
+print("A:", A)
+print("log(A):", np.log(A))
+print("exp(A):", np.exp([0, 1, 2]))  # exp(0)=1, exp(1)=e, exp(2)=e^2
+```
+
+## Funkcje zaokrąglające i wartości bezwzględne
+
+- `np.round` – zaokrągla do najbliższej liczby,
+- `np.floor` – podłoga,
+- `np.ceil` – sufit,
+- `np.trunc` – obcięcie do części całkowitej,
+- `np.abs` – wartość bezwzględna.
+
+Przykład:
+
+```{python}
+#| echo: true
+import numpy as np
+
+B = np.array([1.7, -2.5, 3.5, -4.1])
+print("B:", B)
+print("floor(B):", np.floor(B))
+print("ceil(B):", np.ceil(B))
+print("abs(B):", np.abs(B))
+```
+
+## Funkcje statystyczne i agregujące
+
+Choć wiele funkcji statystycznych dostępnych jest jako metody tablic (np. `A.mean()`, `A.std()`), istnieją też ufuncs działające element-po-elemencie lub akceptujące parametry osi:
+
+- `np.minimum`, `np.maximum` – zwracają minimum/maksimum element-po-elemencie z dwóch tablic,
+- `np.fmin`, `np.fmax` – podobne do wyżej wymienionych, ale ignorują wartości NaN,
+- `np.sqrt` – pierwiastek kwadratowy,
+- `np.square` – podniesienie do kwadratu.
+
+Przykład:
+
+```{python}
+#| echo: true
+import numpy as np
+
+C1 = np.array([1, 4, 9, 16])
+C2 = np.array([2, 2, 5, 20])
+
+print("minimum elementów C1 i C2:", np.minimum(C1, C2))
+print("maximum elementów C1 i C2:", np.maximum(C1, C2))
+print("sqrt(C1):", np.sqrt(C1))
+print("square(C2):", np.square(C2))
+```
+
+**Ćwiczenia:** (`ex7.py`)
+
+1. Mając tablicę  
+   $$A = \begin{bmatrix}1 & 4 & 9 & 16\end{bmatrix},$$  
+   zastosuj funkcję uniwersalną, aby obliczyć pierwiastek kwadratowy każdego elementu.
+
+2. Rozważ jednowymiarową tablicę  
+   $$B = \begin{bmatrix}-1 & -2 & 3 & -4\end{bmatrix},$$  
+   zastosuj funkcję uniwersalną, aby otrzymać wartości bezwzględne wszystkich elementów.
+
+3. Dla tablicy  
+   $$C = \begin{bmatrix}0 & \pi/2 & \pi & 3\pi/2\end{bmatrix},$$  
+   oblicz wartość funkcji trygonometrycznej dla każdego elementu.
+
+4. Mając tablicę  
+   $$D = \begin{bmatrix}1 & e & e^2 \end{bmatrix},$$  
+   zastosuj funkcję uniwersalną, aby obliczyć logarytm naturalny każdego elementu.
+
+5. Dla tablicy dwuwymiarowej  
+   $$E = \begin{bmatrix}2 & 4 \\ 10 & 20 \end{bmatrix},$$  
+   podziel każdy element przez skalar, a następnie podnieś uzyskane wartości do kwadratu.
+
+6. Rozważ tablicę  
+   $$F = \begin{bmatrix}1 & 2 & 3\end{bmatrix},$$  
+   podnieś każdy element do trzeciej potęgi, a następnie zastosuj funkcję uniwersalną, aby obliczyć eksponentę z otrzymanych wartości.
+
+7. Mając tablicę  
+   $$G = \begin{bmatrix}-\pi & -\pi/2 & 0 & \pi/2 & \pi\end{bmatrix},$$  
+   zastosuj odpowiednią funkcję uniwersalną, aby uzyskać cosinus każdego elementu.
+
+8. Dla tablicy  
+   $$H = \begin{bmatrix}10 & 100 & 1000\end{bmatrix},$$  
+   zastosuj funkcję uniwersalną, aby obliczyć logarytm dziesiętny każdego elementu.
+
+9. Mając tablicę  
+   $$I = \begin{bmatrix}2 & 8 & 18 & 32\end{bmatrix},$$  
+   przekształć ją, stosując funkcję uniwersalną, tak aby każdy element był pierwiastkiem kwadratowym z wartości początkowej, a następnie pomnóż wyniki przez 2.
+
+10. Rozważ tablicę  
+    $$J = \begin{bmatrix}-1 & -4 & -9 & -16\end{bmatrix},$$  
+    oblicz pierwiastek kwadratowy wartości bezwzględnych elementów tej tablicy, wykorzystując po kolei dwie różne funkcje uniwersalne.
+

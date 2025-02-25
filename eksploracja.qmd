@@ -1,0 +1,15 @@
+# Etapy eksploracji danych
+
+- **Zbieranie danych**:
+    - Zebranie danych z różnych źródeł (bazy danych, pliki CSV, API, itd.).
+- **Zrozumienie danych**:
+    - Analiza struktury danych, typów danych i ich znaczenia.
+    - Eksploracja wstępnych zależności i trendów.
+- **Czyszczenie danych**:
+    - Usuwanie braków, błędów i anomalii w danych.
+    - Obsługa brakujących wartości i duplikatów.
+- **Transformacja danych**:
+    - Normalizacja, standaryzacja, kodowanie zmiennych kategorycznych.
+    - Tworzenie nowych zmiennych (cech).
+- **Redukcja danych**:
+    - Selekcja istotnych cech lub zmniejszenie wymiarowości danych (np. PCA).

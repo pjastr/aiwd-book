@@ -1,0 +1,44 @@
+project:
+  type: book
+
+book:
+  title: "Analiza i wizualizacja danych"
+  author: Piotr Jastrzębski
+  date: today
+  cover-image: aiwd.jpg
+  chapters:
+    - index.qmd
+    - trocheteorii.qmd
+    - part: "NumPy"
+      chapters: 
+      - numpy-start.qmd
+      - lista_tablica.qmd
+      - numpy-atrybuty.qmd
+      - numpy-typydanych.qmd
+      - numpy-tworzenietablic.qmd
+      - numpy-indeksowanie.qmd
+      - numpy-modyfikacje.qmd
+      - numpy-broadcasting.qmd
+      - numpy-ufunc.qmd
+      - numpy-strings.qmd
+      - numpy-inne.qmd
+    - eksploracja.qmd
+  downloads: pdf
+  repo-url: https://github.com/pjastr/aiwd-book
+  repo-actions: [issue]
+
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: solar
+    lang: pl
+  pdf:
+    lang: pl
+    header-includes: |
+      \titlehead{\includegraphics[width=6in]{aiwd.jpg}}
+
+
+
+

@@ -1,0 +1,56 @@
+# Atrybuty tablic `ndarray`
+
+| Atrybut |  Opis |
+  |---|---|
+  | `shape` | krotka z informacją o liczbie elementów dla każdego z wymiarów |
+  | `size` | liczba elementów w tablicy (łączna) |
+  | `ndim` | liczba wymiarów tablicy |
+  | `nbytes` | liczba bajtów jaką tablica zajmuje w pamięci |
+  | `dtype` | typ danych | 
+  
+<https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes>
+
+```{python}
+#| echo: true
+import numpy as np
+
+tab1 = np.array([2, -3, 4, -8, 1])
+print("typ:", type(tab1))
+print("shape:", tab1.shape)
+print("size:", tab1.size)
+print("ndim:", tab1.ndim)
+print("nbytes:", tab1.nbytes)
+print("dtype:", tab1.dtype)
+
+```
+
+```{python}
+#| echo: true
+import numpy as np
+
+tab2 = np.array([[2, -3], [4, -8]])
+print("typ:", type(tab2))
+print("shape:", tab2.shape)
+print("size:", tab2.size)
+print("ndim:", tab2.ndim)
+print("nbytes:", tab2.nbytes)
+print("dtype:", tab2.dtype)
+
+```
+
+NumPy nie wspiera postrzępionych tablic! Poniższy kod wygeneruje błąd:
+  
+```python
+import numpy as np
+
+tab3 = np.array([[2, -3], [4, -8, 5], [3]])
+```
+
+**Ćwiczenia:** (`ex2.py`)  
+Utwórz tablice numpy:
+$$
+A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}
+$$
+$$B = \begin{bmatrix} 7 & 8 \\ 9 & 10 \\ 11 & 12 \end{bmatrix}$$
+$$C = \begin{bmatrix} 1.1 & 2.2 & 3.3 \\ 4.4 & 5.5 & 6.6 \end{bmatrix}$$
+i sprawdź ich parametry.

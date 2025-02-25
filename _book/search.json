@@ -1,0 +1,558 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analiza i wizualizacja danych",
+    "section": "",
+    "text": "1 Analiza i wizualizacja danych\nAktualna wersja dotyczy zajęć realizowanych w roku akademickim 2024/25.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Analiza i wizualizacja danych</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html",
+    "href": "trocheteorii.html",
+    "title": "2  Trochę teorii…",
+    "section": "",
+    "text": "2.1 Test racjonalnego myślenia",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#test-racjonalnego-myślenia",
+    "href": "trocheteorii.html#test-racjonalnego-myślenia",
+    "title": "2  Trochę teorii…",
+    "section": "",
+    "text": "Jeśli 5 maszyn w ciągu 5 minut produkuje 5 urządzeń, ile czasu zajmie 100 maszynom zrobienie 100 urządzeń?\nNa stawie rozrasta się kępa lilii wodnych. Codziennie kępa staje się dwukrotnie większa. Jeśli zarośnięcie całego stawu zajmie liliom 48 dni, to ile dni potrzeba, żeby zarosły połowę stawu?\nKij bejsbolowy i piłka kosztują razem 1 dolar i 10 centów. Kij kosztuje o dolara więcej niż piłka. Ile kosztuje piłka?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#analiza-danych",
+    "href": "trocheteorii.html#analiza-danych",
+    "title": "2  Trochę teorii…",
+    "section": "2.2 Analiza danych",
+    "text": "2.2 Analiza danych\nAnaliza danych to proces badania, czyszczenia, przekształcania i modelowania danych w celu odkrywania użytecznych informacji, formułowania wniosków i wspierania podejmowania decyzji. Jest to wieloetapowy proces, który obejmuje:\n\nZbieranie danych z różnych źródeł\nCzyszczenie danych poprzez usuwanie błędów, braków i niespójności\nEksplorację danych w celu zrozumienia ich struktury i cech charakterystycznych\nPrzekształcanie danych do odpowiedniego formatu\nStosowanie metod statystycznych i algorytmów uczenia maszynowego\nInterpretację wyników w kontekście konkretnego problemu biznesowego lub naukowego\n\nAnaliza danych znajduje zastosowanie w niemal każdej dziedzinie, od biznesu i finansów po nauki społeczne, medycynę i badania naukowe. Celem analizy danych jest przekształcenie surowych danych w wiedzę, która może być wykorzystana do podejmowania lepszych decyzji.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#wizualizacja-danych",
+    "href": "trocheteorii.html#wizualizacja-danych",
+    "title": "2  Trochę teorii…",
+    "section": "2.3 Wizualizacja danych",
+    "text": "2.3 Wizualizacja danych\nWizualizacja danych to graficzna reprezentacja informacji i danych. Wykorzystuje elementy wizualne, takie jak wykresy, mapy i dashboardy, aby przedstawić relacje między danymi w sposób, który jest łatwy do zrozumienia i interpretacji. Dobra wizualizacja danych:\n\nPrzedstawia złożone informacje w przystępny i intuicyjny sposób\nUjawnia wzorce, trendy i odstępstwa, które mogą być trudne do zauważenia w surowych danych\nWspiera proces analizy danych poprzez umożliwienie szybkiego przeglądania dużych zbiorów danych\nUłatwia komunikację wyników analiz do różnych odbiorców, w tym osób nietechnicznych\nPomaga opowiadać historie zawarte w danych (data storytelling)\n\nDo najpopularniejszych typów wizualizacji danych należą wykresy słupkowe, liniowe, kołowe, mapy cieplne, drzewa hierarchiczne, chmury słów oraz interaktywne dashboardy. Wybór odpowiedniej formy wizualizacji zależy od typu danych, celu prezentacji oraz docelowej grupy odbiorców.\nWizualizacja danych jest kluczowym elementem procesu analizy danych, ponieważ pozwala na szybkie wyciąganie wniosków i podejmowanie decyzji na podstawie danych. Jest mostem między złożonymi danymi a ludzkim zrozumieniem.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#analiza-danych---podstawowe-pojęcia",
+    "href": "trocheteorii.html#analiza-danych---podstawowe-pojęcia",
+    "title": "2  Trochę teorii…",
+    "section": "2.4 Analiza danych - podstawowe pojęcia",
+    "text": "2.4 Analiza danych - podstawowe pojęcia\n\n2.4.1 Współczesne znaczenia słowa “statystyka”:\n\nzbiór danych liczbowych pokazujący kształtowanie procesów i zjawisk np. statystyka ludności.\nwszelkie czynności związane z gromadzeniem i opracowywaniem danych liczbowych np. statystyka pewnego problemu dokonywana przez GUS.\ncharakterystyki liczbowe np. statystyki próby np. średnia arytmetyczna, odchylenie standardowe itp.\ndyscyplina naukowa - nauka o metodach badania zjawisk masowych.\n\n\n\n2.4.2 “Masowość”\nZjawiska/procesy masowe - badaniu podlega duża liczba jednostek. Dzielą się na:\n\ngospodarcze (np. produkcja, konsumpcja, usługi reklama),\nspołeczne (np. wypadki drogowe, poglądy polityczne),\ndemograficzne (np. urodzenia, starzenie, migracje).\n\n\n\n2.4.3 Podział statystyki\nStatystyka - dyscyplina naukowa - podział:\n\nstatystyka opisowa - zajmuje się sprawami związanymi z gromadzeniem, prezentacją, analizą i interpretacją danych liczbowych. Obserwacja obejmuje całą badaną zbiorowość.\nstatystyka matematyczna - uogólnienie wyników badania części zbiorowości (próby) na całą zbiorowość.\n\n\n\n2.4.4 Zbiorowość/populacja\nZbiorowość statystyczna, populacja statystyczna: zbiór obiektów podlegających badaniu statystycznemu. Tworzą je jednostki podobne do siebie, logicznie powiązane, lecz nie identyczne. Mają pewne cechy wspólne oraz pewne właściwości pozwalające je różnicować.\n\nprzykłady:\n\nbadanie wzrostu Polaków - mieszkańcy Polski\npoziom nauczania w szkołach woj. warmińsko-mazurskiego - szkoły woj. warmińsko-mazurskiego.\n\npodział:\n\nzbiorowość/populacja generalna - obejmuje całość,\nzbiorowość/populacja próbna (próba) - obejmuje część populacji.\n\n\n\n\n2.4.5 Jednostka statyczna\nJednostka statystyczna: każdy z elementów zbiorowości statystycznej.\n\nprzykłady:\n\nstudenci UWM - student UWM\nmieszkańcy Polski - każda osoba mieszkająca w Polsce\nmaszyny produkowane w fabryce - każda maszyna\n\n\n\n\n2.4.6 Cechy statystyczne\nCechy statystyczne\n\nwłaściwości charakteryzujące jednostki statystyczne w danej zbiorowości statystycznej.\ndzielimy je na stałe i zmienne.\n\nCechy stałe\n\ntakie właściwości, które są wspólne wszystkim jednostkom danej zbiorowości statystycznej.\npodział:\n\nrzeczowe - kto lub co jest przedmiotem badania statystycznego,\nczasowe - kiedy zostało przeprowadzone badanie lub jakiego okresu czasu dotyczy badanie,\nprzestrzenne - jakiego terytorium (miejsce lub obszar) dotyczy badanie.\n\nprzykład: studenci WMiI UWM w Olsztynie w roku akad. 2017/2018:\n\ncecha rzeczowa: posiadanie legitymacji studenckiej,\ncecha czasowa - studenci studiujący w roku akad. 2017/2018\ncecha przestrzenna - miejsce: WMiI UWM w Olsztynie.\n\n\nCechy zmienne\n\nwłaściwości różnicujące jednostki statystyczne w danej zbiorowości.\nprzykład: studenci UWM - cechy zmienne: wiek, płeć, rodzaj ukończonej szkoły średniej, kolor oczu, wzrost.\n\nWażne:\n\nobserwacji podlegają tylko cechy zmienne,\ncecha stała w jednej zbiorowości może być cechą zmienną w innej zbiorowości.\n\nPrzykład: studenci UWM mają legitymację wydaną przez UWM. Studenci wszystkich uczelni w Polsce mają legitymacje wydane przez różne szkoły.\nPodział cech zmiennych:\n\ncechy mierzalne (ilościowe) - można je wyrazić liczbą wraz z określoną jednostką miary.\ncechy niemierzalne (jakościowe) - określane słownie, reprezentują pewne kategorie.\n\nPrzykład: zbiorowość studentów. Cechy mierzalne: wiek, waga, wzrost, liczba nieobecności. Cechy niemierzalne: płeć, kolor oczu, kierunek studiów.\nCzęsto ze względów praktycznych cechom niemierzalnym przypisywane są kody liczbowe. Nie należy ich jednak mylić z cechami mierzalnymi. Np. 1 - wykształcenie podstawowe, 2 - wykształcenie zasadnicze, itd…\nPodział cech mierzalnych:\n\nciągłe - mogące przybrać każdą wartość z określonego przedziału, np. wzrost, wiek, powierzchnia mieszkania.\nskokowe - mogące przyjmować konkretne (dyskretne) wartości liczbowe bez wartości pośrednich np. liczba osób w gospodarstwie domowych, liczba osób zatrudnionych w danej firmie.\n\nCechy skokowe zazwyczaj mają wartości całkowite choć nie zawsze jest to wymagane np. liczba etatów w firmie (z uwzględnieniem części etatów).\n\n\n2.4.7 Skale\nSkala pomiarowa\n\nto system, pozwalający w pewien sposób usystematyzować wyniki pomiarów statystycznych.\npodział:\n\nskala nominalna,\nskala porządkowa,\nskala przedziałowa (interwałowa),\nskala ilorazowa (stosunkowa).\n\n\nSkala nominalna\n\nskala, w której klasyfikujemy jednostkę statystyczną do określonej kategorii.\nwartość w tej skali nie ma żadnego uporządkowana.\nprzykład:\n\n\n\n\nReligia\nKod\n\n\n\n\nChrześcijaństwo\n1\n\n\nIslam\n2\n\n\nBuddyzm\n3\n\n\n\nSkala porządkowa\n\nwartości mają jasno określony porządek, ale nie są dane odległości między nimi,\npozwala na uszeregowanie elementów.\nprzykłady:\n\n\n\n\nWykształcenie\nKod\n\n\n\n\nPodstawowe\n1\n\n\nŚrednie\n2\n\n\nWyższe\n3\n\n\n\n\n\n\nDochód\nKod\n\n\n\n\nNiski\n1\n\n\nŚredni\n2\n\n\nWysoki\n3\n\n\n\nSkala przedziałowa (interwałowa)\n\nwartości cechy wyrażone są poprzez konkretne wartości liczbowe,\npozwala na porównywanie jednostek (coś jest większe lub mniejsze),\nnie możliwe jest badanie ilorazów (określenie ile razy dana wartość jest większa lub mniejsza od drugiej).\nprzykład:\n\n\n\n\nMiasto\nTemperatura w \\(^{\\circ}C\\)\nTemperatura w \\(^{\\circ}F\\)\n\n\n\n\nWarszawa\n15\n59\n\n\nOlsztyn\n10\n50\n\n\nGdańsk\n5\n41\n\n\nSzczecin\n20\n68\n\n\n\nSkala ilorazowa (stosunkowa)\n\nwartości wyrażone są przez wartości liczbowe,\nmożliwe określenie jest relacji mniejsza lub większa między wartościami,\nmożliwe jest określenie stosunku (ilorazu) między wartościami,\nwystępuje zero absolutne.\nprzykład:\n\n\n\n\nProdukt\nCena w zł\n\n\n\n\nChleb\n3\n\n\nMasło\n8\n\n\nGruszki\n5",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#rodzaje-badań-statystycznych",
+    "href": "trocheteorii.html#rodzaje-badań-statystycznych",
+    "title": "2  Trochę teorii…",
+    "section": "2.5 Rodzaje badań statystycznych",
+    "text": "2.5 Rodzaje badań statystycznych\n\nbadanie pełne - obejmują wszystkie jednostki zbiorowości statystycznej.\n\nspis statystyczny,\nrejestracja bieżąca,\nsprawozdawczość statystyczna.\n\nbadania częściowe - obserwowana jest część populacji. Przeprowadza się wtedy gdy badanie pełne jest niecelowe lub niemożliwe.\n\nmetoda monograficzna,\nmetoda reprezentacyjna.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#etapy-badania-statystycznego",
+    "href": "trocheteorii.html#etapy-badania-statystycznego",
+    "title": "2  Trochę teorii…",
+    "section": "2.6 Etapy badania statystycznego",
+    "text": "2.6 Etapy badania statystycznego\n\nprojektowanie i organizacja badania: ustalenie celu, podmiotu, przedmiotu, zakresu, źródła i czasu trwania badania;\nobserwacja statystyczna;\nopracowanie materiału statystycznego: kontrola materiału statystycznego, grupowanie uzyskanych danych, prezentacja wyników danych;\nanaliza statystyczna.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#analiza-danych-zastanych",
+    "href": "trocheteorii.html#analiza-danych-zastanych",
+    "title": "2  Trochę teorii…",
+    "section": "2.7 Analiza danych zastanych",
+    "text": "2.7 Analiza danych zastanych\nAnaliza danych zastanych – proces przetwarzania danych w celu uzyskania na ich podstawie użytecznych informacji i wniosków. W zależności od rodzaju danych i stawianych problemów, może to oznaczać użycie metod statystycznych, eksploracyjnych i innych.\nKorzystanie z danych zastanych jest przykładem badań niereaktywnych - metod badań zachowań społecznych, które nie wpływają na te zachowania. Dane takie to: dokumenty, archiwa, sprawozdania, kroniki, spisy ludności, księgi parafialne, dzienniki, pamiętniki, blogi internetowe, audio-pamiętniki, archiwa historii mówionej i inne. (Wikipedia)\nDane zastane możemy podzielić ze względu na (Makowska red. 2013):\n\nCharakter: Ilościowe, Jakościowe\nFormę: Dane opracowane, Dane surowe\nSposób powstania: Pierwotne, Wtórne\nDynamikę: Ciągła rejestracja zdarzeń, Rejestracja w interwałach czasowych, Rejestracja jednorazowa\nPoziom obiektywizmu: Obiektywne, Subiektywne\nŹródła pochodzenia: Dane publiczne, Dane prywatne\n\nAnaliza danych to proces polegający na sprawdzaniu, porządkowaniu, przekształcaniu i modelowaniu danych w celu zdobycia użytecznych informacji, wypracowania wniosków i wspierania procesu decyzyjnego. Analiza danych ma wiele aspektów i podejść, obejmujących różne techniki pod różnymi nazwami, w różnych obszarach biznesowych, naukowych i społecznych. Praktyczne podejście do definiowania danych polega na tym, że dane to liczby, znaki, obrazy lub inne metody zapisu, w formie, którą można ocenić w celu określenia lub podjęcia decyzji o konkretnym działaniu. Wiele osób uważa, że dane same w sobie nie mają znaczenia – dopiero dane przetworzone i zinterpretowane stają się informacją.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#proces-analizy-danych",
+    "href": "trocheteorii.html#proces-analizy-danych",
+    "title": "2  Trochę teorii…",
+    "section": "2.8 Proces analizy danych",
+    "text": "2.8 Proces analizy danych\nAnaliza odnosi się do rozbicia całości posiadanych informacji na jej odrębne komponenty w celu indywidualnego badania. Analiza danych to proces uzyskiwania nieprzetworzonych danych i przekształcania ich w informacje przydatne do podejmowania decyzji przez użytkowników. Dane są zbierane i analizowane, aby odpowiadać na pytania, testować hipotezy lub obalać teorie. Istnieje kilka faz, które można wyszczególnić w procesie analizy danych. Fazy są iteracyjne, ponieważ informacje zwrotne z faz kolejnych mogą spowodować dodatkową pracę w fazach wcześniejszych.\n\n2.8.1 Zdefiniowanie wymagań\nPrzed przystąpieniem do analizy danych, należy dokładnie określić wymagania jakościowe dotyczące danych. Dane wejściowe, które mają być przedmiotem analizy, są określone na podstawie wymagań osób kierujących analizą lub klientów (którzy będą używać finalnego produktu analizy). Ogólny typ jednostki, na podstawie której dane będą zbierane, jest określany jako jednostka eksperymentalna (np. osoba lub populacja ludzi. Dane mogą być liczbowe lub kategoryczne (tj. Etykiety tekstowe). Faza definiowania wymagań powinna dać odpowiedź na 2 zasadnicze pytania:\n\nco chcemy zmierzyć?\nw jaki sposób chcemy to zmierzyć?\n\n\n\n2.8.2 Gromadzenie danych\nDane są gromadzone z różnych źródeł. Wymogi, co do rodzaju i jakości danych mogą być przekazywane przez analityków do “opiekunów danych”, takich jak personel technologii informacyjnych w organizacji. Dane ponadto mogą być również gromadzone automatycznie z różnego rodzaju czujników znajdujących się w otoczeniu - takich jak kamery drogowe, satelity, urządzenia rejestrujące obraz, dźwięk oraz parametry fizyczne. Kolejną metodą jest również pozyskiwanie danych w drodze wywiadów, gromadzenie ze źródeł internetowych lub bezpośrednio z dokumentacji.\n\n\n2.8.3 Przetwarzanie danych\nZgromadzone dane muszą zostać przetworzone lub zorganizowane w sposób logiczny do analizy. Na przykład, mogą one zostać umieszczone w tabelach w celu dalszej analizy - w arkuszu kalkulacyjnym lub innym oprogramowaniu. Oczyszczanie danych Po fazie przetworzenia i uporządkowania, dane mogą być niekompletne, zawierać duplikaty lub zawierać błędy. Konieczność czyszczenia danych wynika z problemów związanych z wprowadzaniem i przechowywaniem danych. Czyszczenie danych to proces zapobiegania powstawaniu i korygowania wykrytych błędów. Typowe zadania obejmują dopasowywanie rekordów, identyfikowanie nieścisłości, ogólny przegląd jakość istniejących danych, usuwanie duplikatów i segmentację kolumn. Niezwykłe istotne jest też zwracanie uwagi na dane których wartości są powyżej lub poniżej ustalonych wcześniej progów (ekstrema).\n\n\n2.8.4 Właściwa analiza danych\nIstnieje kilka metod, które można wykorzystać do tego celu, na przykład data mining, business intelligence, wizualizacja danych lub badania eksploracyjne. Ta ostatnia metoda jest sposobem analizowania zbiorów informacji w celu określenia ich odrębnych cech. W ten sposób dane mogą zostać wykorzystane do przetestowania pierwotnej hipotezy. Statystyki opisowe to kolejna metoda analizy zebranych informacji. Dane są badane, aby znaleźć najważniejsze ich cechy. W statystykach opisowych analitycy używają kilku podstawowych narzędzi - można użyć średniej lub średniej z zestawu liczb. Pomaga to określić ogólny trend aczkolwiek nie zapewnia to dużej dokładności przy ocenie ogólnego obrazu zebranych danych. W tej fazie ma miejsce również modelowanie i tworzenie formuł matematycznych - stosowane są w celu identyfikacji zależności między zmiennymi, takich jak korelacja lub przyczynowość.\n\n\n2.8.5 Raportowanie i dystrybucja wyników\nTa faza polega na ustalaniu w jakiej formie przekazywać wyniki. Analityk może rozważyć róże techniki wizualizacji danych, aby w sposób wyraźnym i skuteczny przekazać wnioski z analizy odbiorcom. Wizualizacja danych wykorzystuje formy graficzne jak wykresy i tabele. Tabele są przydatne dla użytkownika, który może wyszukiwać konkretne rekordy, podczas gdy wykresy (np. wykresy słupkowe lub liniowe) dają spojrzenie ilościowych na zbiór analizowanych danych.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#skąd-brać-dane",
+    "href": "trocheteorii.html#skąd-brać-dane",
+    "title": "2  Trochę teorii…",
+    "section": "2.9 Skąd brać dane?",
+    "text": "2.9 Skąd brać dane?\nDarmowa repozytoria danych:\n\nBank danych lokalnych GUS - link\nOtwarte dane - link\nBank Światowy - link\n\nPrzydatne strony:\n\nhttps://www.kaggle.com/\nhttps://archive.ics.uci.edu/ml/index.php\nhttps://huggingface.co/datasets\nhttps://github.com/awesomedata/awesome-public-datasets",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#koncepcja-tidy-data",
+    "href": "trocheteorii.html#koncepcja-tidy-data",
+    "title": "2  Trochę teorii…",
+    "section": "2.10 Koncepcja “Tidy data”",
+    "text": "2.10 Koncepcja “Tidy data”\nKoncepcja czyszczenia danych (ang. tidy data):\n\nWICKHAM, Hadley . Tidy Data. Journal of Statistical Software, [S.l.], v. 59, Issue 10, p. 1 - 23, sep. 2014. ISSN 1548-7660. Available at: https://www.jstatsoft.org/v059/i10. Date accessed: 25 oct. 2018. doi:http://dx.doi.org/10.18637/jss.v059.i10.\n\n\n2.10.1 Zasady “czystych danych”\nIdealne dane są zaprezentowane w tabeli:\n\n\n\nImię\nWiek\nWzrost\nKolor oczu\n\n\n\n\nAdam\n26\n167\nBrązowe\n\n\nSylwia\n34\n164\nPiwne\n\n\nTomasz\n42\n183\nNiebieskie\n\n\n\nNa co powinniśmy zwrócić uwagę?\n\njedna obserwacja (jednostka statystyczna) = jeden wiersz w tabeli/macierzy/ramce danych\nwartości danej cechy znajdują się w kolumnach\njeden typ/rodzaj obserwacji w jednej tabeli/macierzy/ramce danych\n\n\n\n2.10.2 Przykłady nieuporządkowanych danych\n\n\n\nImię\nWiek\nWzrost\nBrązowe\nNiebieskie\nPiwne\n\n\n\n\nAdam\n26\n167\n1\n0\n0\n\n\nSylwia\n34\n164\n0\n0\n1\n\n\nTomasz\n42\n183\n0\n1\n0\n\n\n\nNagłowki kolumn muszą odpowiadać cechom, a nie wartościom zmiennych.\n\n\n2.10.3 Długie czy szerokie dane?\nhttps://seaborn.pydata.org/tutorial/data_structure.html#long-form-vs-wide-form-data",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#parę-rad-na-dobre-prezentacje",
+    "href": "trocheteorii.html#parę-rad-na-dobre-prezentacje",
+    "title": "2  Trochę teorii…",
+    "section": "2.11 Parę rad na dobre prezentacje",
+    "text": "2.11 Parę rad na dobre prezentacje\nEdward Tufte, prof z Yale, https://www.edwardtufte.com/\n\nPrezentuj dane “na bogato”.\nNie ukrywaj danych, pokazuj prawdę.\nNie używaj wykresów śmieciowych.\nPokazuj zmienność danych, a nie projektuj jej.\nWykres ma posiadać jak najmniejszy współczynnik kłamstwa (lie-factor).\nPowerpoint to zło!\n\n\n2.11.1 Współczynnik kłamstwa\nhttps://www.facebook.com/janinadaily/photos/a.1524649467770881/2836063543296127/?paipv=0&eav=AfbVIDx5un8ZOklKI9c-B1jP4nOoNa2QMmJmjoA-291JNNgM1L_NmoCGMS_mJOy4xjo&_rdr\n\nstosunek efektu widocznego na wykresie do efektu wykazywanego przez dane, na podstawie których ten wykres narysowaliśmy.\n\nhttps://infovis-wiki.net/wiki/Lie_Factor\n\n\n2.11.2 Współczynnik kłamstwa\n\n[Tufte, 1991] Edward Tufte, The Visual Display of Quantitative Information, Second Edition, Graphics Press, USA, 1991, p. 57 – 69.\n\\[\\operatorname{LieFactor} = \\frac{\\text{rozmiar efektu widocznego na wykresie}}{\\text{rozmiar efektu wynikającego z danych}}\\]\n\\[\\text{rozmiar efektu} = \\frac{|\\text{druga wartość}-\\text{pierwsza wartość}|}{\\text{pierwsza wartość}}\\]\n\n\\[\\operatorname{LieFactor} = \\frac{\\frac{5.3-0.6}{0.6}}{\\frac{27.5-18}{18}} \\approx 14.8\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#jak-tworzyć",
+    "href": "trocheteorii.html#jak-tworzyć",
+    "title": "2  Trochę teorii…",
+    "section": "2.12 Jak tworzyć?",
+    "text": "2.12 Jak tworzyć?\n\nhttps://bookdown.org/rudolf_von_ems/jak_sie_nie_dac/stats_graphs.html\nhttps://www.data-to-viz.com/\nhttps://100.datavizproject.com/",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#bibliografia",
+    "href": "trocheteorii.html#bibliografia",
+    "title": "2  Trochę teorii…",
+    "section": "2.13 Bibliografia",
+    "text": "2.13 Bibliografia\n\nhttps://pl.wikipedia.org/wiki/Wizualizacja\nhttps://mfiles.pl/pl/index.php/Analiza_danych, dostęp online 1.04.2019.\nWalesiak M., Gatnar E., Statystyczna analiza danych z wykorzystaniem programu R, PWN, Warszawa, 2009.\nWasilewska E., Statystyka opisowa od podstaw, Podręcznik z zadaniami, Wydawnictwo SGGW, Warszawa, 2009.\nhttps://en.wikipedia.org/wiki/Cognitive_reflection_test, dostęp online 20.03.2023.\nhttps://qlikblog.pl/edward-tufte-dobre-praktyki-prezentacji-danych/, dostęp online 20.03.2023.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html",
+    "href": "numpy-start.html",
+    "title": "3  NumPy - start",
+    "section": "",
+    "text": "3.1 Instalacja pakietu NumPy - opcja łatwiejsza “do przeklikania”\nNumPy jest biblioteką Pythona służącą do obliczeń naukowych.\nZastosowania:",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania",
+    "href": "numpy-start.html#instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania",
+    "title": "3  NumPy - start",
+    "section": "",
+    "text": "Tworzy projekt w PyCharm z venv - wersja 3.12.\n\n\n\nZa pomocą zakładki po lewej stronie na dole wyszukujemy pakiet i wybieramy instalację",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#instalacja-pakietu-numpy---opcja-terminala",
+    "href": "numpy-start.html#instalacja-pakietu-numpy---opcja-terminala",
+    "title": "3  NumPy - start",
+    "section": "3.2 Instalacja pakietu NumPy - opcja terminala",
+    "text": "3.2 Instalacja pakietu NumPy - opcja terminala\nKomenda dla terminala:\npython -m pip install numpy\npython -m pip install numpy==2.2.0",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#import-biblioteki-numpy",
+    "href": "numpy-start.html#import-biblioteki-numpy",
+    "title": "3  NumPy - start",
+    "section": "3.3 Import biblioteki NumPy",
+    "text": "3.3 Import biblioteki NumPy\nimport numpy as np\nPodstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana ndarray. Każdy element na tablicy traktowany jest jako typ dtype.\nnumpy.array(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0, like=None)\n\nobject - to co ma być wrzucone do tablicy\ndtype - typ\ncopy - czy obiekty mają być skopiowane, domyślne True\norder - sposób układania: C (rzędy), F (kolumny), A, K\nsubok - realizowane przez podklasy (jeśli True), domyślnie False\nndmin - minimalny rozmiar (wymiar) tablicy\nlike - tworzenie na podstawie tablic referencyjnej\n\n\nimport numpy as np\n\n1a = np.array([1, 2, 3])\nprint(\"a:\", a) \n2print(\"typ a:\", type(a))\n3b = np.array([1, 2, 3.0])\nprint(\"b:\", b)\n4c = np.array([[1, 2], [3, 4]])\nprint(\"c:\", c)\n5d = np.array([1, 2, 3], ndmin=2)\nprint(\"d:\", d)\n6e = np.array([1, 2, 3], dtype=complex)\nprint(\"e:\", e)\n7f = np.array(np.asmatrix('1 2; 3 4'))\nprint(\"f:\", f)\n8g = np.array(np.asmatrix('1 2; 3 4'), subok=True)\nprint(\"g:\", g)\nprint(type(g))\n\n\n1\n\nStandardowe domyślne.\n\n2\n\nSprawdzenie typu.\n\n3\n\nJeden z elementów jest innego typu. Tu następuje zatem rozszerzenie do typu “największego”.\n\n4\n\nTu otrzymamy tablicę 2x2.\n\n5\n\nW tej linijce otrzymana będzie tablica 2x1.\n\n6\n\nUstalenie innego typu - większego.\n\n7\n\nSkorzystanie z podtypu macierzowego.\n\n8\n\nZachowanie typu macierzowego.\n\n\n\n\na: [1 2 3]\ntyp a: &lt;class 'numpy.ndarray'&gt;\nb: [1. 2. 3.]\nc: [[1 2]\n [3 4]]\nd: [[1 2 3]]\ne: [1.+0.j 2.+0.j 3.+0.j]\nf: [[1 2]\n [3 4]]\ng: [[1 2]\n [3 4]]\n&lt;class 'numpy.matrix'&gt;",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#uruchamianie---tryb-run-wykonawczy",
+    "href": "numpy-start.html#uruchamianie---tryb-run-wykonawczy",
+    "title": "3  NumPy - start",
+    "section": "3.4 Uruchamianie - tryb “Run” (wykonawczy)",
+    "text": "3.4 Uruchamianie - tryb “Run” (wykonawczy)\nRun - zielona strzałka u góry.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy",
+    "href": "numpy-start.html#uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy",
+    "title": "3  NumPy - start",
+    "section": "3.5 Uruchamianie - tryb “Run in Python Console” (interaktywno-wykonawczy)",
+    "text": "3.5 Uruchamianie - tryb “Run in Python Console” (interaktywno-wykonawczy)\n\nĆwiczenie (ex1.py):\n\nStwórz proste tablice:\n\n\n\\(\\begin{bmatrix}\n1 & 2 & 7\\\\\n6 & -3 & -3\n\\end{bmatrix}\\)\n\\(\\begin{bmatrix}\n6 & 8 & 9 & -3\n\\end{bmatrix}\\)\n\\(\\begin{bmatrix}\n4 \\\\ 3 \\\\-3 \\\\-7\n\\end{bmatrix}\\)\n\\(\\begin{bmatrix}\nbb & cc & ww & 44\n\\end{bmatrix}\\)",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "lista_tablica.html",
+    "href": "lista_tablica.html",
+    "title": "4  Lista a tablica",
+    "section": "",
+    "text": "import numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n\n--- 0.0016613006591796875 seconds ---\n--- 0.03685736656188965 seconds ---",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lista a tablica</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-atrybuty.html",
+    "href": "numpy-atrybuty.html",
+    "title": "5  Atrybuty tablic ndarray",
+    "section": "",
+    "text": "Atrybut\nOpis\n\n\n\n\nshape\nkrotka z informacją o liczbie elementów dla każdego z wymiarów\n\n\nsize\nliczba elementów w tablicy (łączna)\n\n\nndim\nliczba wymiarów tablicy\n\n\nnbytes\nliczba bajtów jaką tablica zajmuje w pamięci\n\n\ndtype\ntyp danych\n\n\n\nhttps://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes\n\nimport numpy as np\n\ntab1 = np.array([2, -3, 4, -8, 1])\nprint(\"typ:\", type(tab1))\nprint(\"shape:\", tab1.shape)\nprint(\"size:\", tab1.size)\nprint(\"ndim:\", tab1.ndim)\nprint(\"nbytes:\", tab1.nbytes)\nprint(\"dtype:\", tab1.dtype)\n\ntyp: &lt;class 'numpy.ndarray'&gt;\nshape: (5,)\nsize: 5\nndim: 1\nnbytes: 40\ndtype: int64\n\n\n\nimport numpy as np\n\ntab2 = np.array([[2, -3], [4, -8]])\nprint(\"typ:\", type(tab2))\nprint(\"shape:\", tab2.shape)\nprint(\"size:\", tab2.size)\nprint(\"ndim:\", tab2.ndim)\nprint(\"nbytes:\", tab2.nbytes)\nprint(\"dtype:\", tab2.dtype)\n\ntyp: &lt;class 'numpy.ndarray'&gt;\nshape: (2, 2)\nsize: 4\nndim: 2\nnbytes: 32\ndtype: int64\n\n\nNumPy nie wspiera postrzępionych tablic! Poniższy kod wygeneruje błąd:\nimport numpy as np\n\ntab3 = np.array([[2, -3], [4, -8, 5], [3]])\nĆwiczenia: (ex2.py)\nUtwórz tablice numpy: \\[\nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}\n\\] \\[B = \\begin{bmatrix} 7 & 8 \\\\ 9 & 10 \\\\ 11 & 12 \\end{bmatrix}\\] \\[C = \\begin{bmatrix} 1.1 & 2.2 & 3.3 \\\\ 4.4 & 5.5 & 6.6 \\end{bmatrix}\\] i sprawdź ich parametry.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Atrybuty tablic `ndarray`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-typydanych.html",
+    "href": "numpy-typydanych.html",
+    "title": "6  Typy danych",
+    "section": "",
+    "text": "https://numpy.org/doc/stable/reference/arrays.scalars.html\nhttps://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes-constructing\n\n\n\n\n\n\n\nTypy całkowitoliczbowe\nint,int8,int16,int32,int64\n\n\nTypy całkowitoliczbowe (bez znaku)\nuint,uint8,uint16,uint32,uint64\n\n\nTyp logiczny\nbool\n\n\nTypy zmiennoprzecinkowe\nfloat, float16, float32, float64, float128\n\n\nTypy zmiennoprzecinkowe zespolone\ncomplex, complex64, complex128, complex256\n\n\nNapis\nstr\n\n\n\n\nimport numpy as np\n\ntab = np.array([[2, -3], [4, -8]])\nprint(tab)\ntab2 = np.array([[2, -3], [4, -8]], dtype=int)\nprint(tab2)\ntab3 = np.array([[2, -3], [4, -8]], dtype=float)\nprint(tab3)\ntab4 = np.array([[2, -3], [4, -8]], dtype=complex)\nprint(tab4)\n\n[[ 2 -3]\n [ 4 -8]]\n[[ 2 -3]\n [ 4 -8]]\n[[ 2. -3.]\n [ 4. -8.]]\n[[ 2.+0.j -3.+0.j]\n [ 4.+0.j -8.+0.j]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Typy danych</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-tworzenietablic.html",
+    "href": "numpy-tworzenietablic.html",
+    "title": "7  Tworzenie tablic",
+    "section": "",
+    "text": "np.array - argumenty rzutowany na tablicę (coś po czym można iterować) - warto sprawdzić rozmiar/kształt\n\nimport numpy as np\n\ntab = np.array([2, -3, 4])\nprint(tab)\nprint(\"size:\", tab.size)\ntab2 = np.array((4, -3, 3, 2))\nprint(tab2)\nprint(\"size:\", tab2.size)\ntab3 = np.array({3, 3, 2, 5, 2})\nprint(tab3)\nprint(\"size:\", tab3.size)\ntab4 = np.array({\"pl\": 344, \"en\": 22})\nprint(tab4)\nprint(\"size:\", tab4.size)\n\n[ 2 -3  4]\nsize: 3\n[ 4 -3  3  2]\nsize: 4\n{2, 3, 5}\nsize: 1\n{'pl': 344, 'en': 22}\nsize: 1\n\n\nnp.zeros - tworzy tablicę wypełnioną zerami\n\nimport numpy as np\n\ntab = np.zeros(4)\nprint(tab)\nprint(tab.shape)\ntab2 = np.zeros([2, 3])\nprint(tab2)\nprint(tab2.shape)\ntab3 = np.zeros([2, 3, 4])\nprint(tab3)\nprint(tab3.shape)\n\n[0. 0. 0. 0.]\n(4,)\n[[0. 0. 0.]\n [0. 0. 0.]]\n(2, 3)\n[[[0. 0. 0. 0.]\n  [0. 0. 0. 0.]\n  [0. 0. 0. 0.]]\n\n [[0. 0. 0. 0.]\n  [0. 0. 0. 0.]\n  [0. 0. 0. 0.]]]\n(2, 3, 4)\n\n\nnp.ones - tworzy tablicę wypełnioną jedynkami (to nie odpowiednik macierzy jednostkowej!)\n\nimport numpy as np\n\ntab = np.ones(4)\nprint(tab)\nprint(tab.shape)\ntab2 = np.ones([2, 3])\nprint(tab2)\nprint(tab2.shape)\ntab3 = np.ones([2, 3, 4])\nprint(tab3)\nprint(tab3.shape)\n\n[1. 1. 1. 1.]\n(4,)\n[[1. 1. 1.]\n [1. 1. 1.]]\n(2, 3)\n[[[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]\n\n [[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]]\n(2, 3, 4)\n\n\nnp.diag - tworzy tablicę odpowiadającą macierzy diagonalnej\n\nimport numpy as np\n\nprint(\"tab0\")\ntab0 = np.diag([3, 4, 5])\nprint(tab0)\nprint(\"tab1\")\ntab1 = np.array([[2, 3, 4], [3, -4, 5], [3, 4, -5]])\nprint(tab1)\ntab2 = np.diag(tab1)\nprint(\"tab2\")\nprint(tab2)\ntab3 = np.diag(tab1, k=1)\nprint(\"tab3\")\nprint(tab3)\nprint(\"tab4\")\ntab4 = np.diag(tab1, k=-2)\nprint(tab4)\nprint(\"tab5\")\ntab5 = np.diag(np.diag(tab1))\nprint(tab5)\n\ntab0\n[[3 0 0]\n [0 4 0]\n [0 0 5]]\ntab1\n[[ 2  3  4]\n [ 3 -4  5]\n [ 3  4 -5]]\ntab2\n[ 2 -4 -5]\ntab3\n[3 5]\ntab4\n[3]\ntab5\n[[ 2  0  0]\n [ 0 -4  0]\n [ 0  0 -5]]\n\n\nnp.arange - tablica wypełniona równomiernymi wartościami\nSkładnia: numpy.arange([start, ]stop, [step, ]dtype=None)\nZasada działania jest podobna jak w funkcji range, ale dopuszczamy liczby “z ułamkiem”.\n\nimport numpy as np\n\na = np.arange(3)\nprint(a)\nb = np.arange(3.0)\nprint(b)\nc = np.arange(3, 7)\nprint(c)\nd = np.arange(3, 11, 2)\nprint(d)\ne = np.arange(0, 1, 0.1)\nprint(e)\nf = np.arange(3, 11, 2, dtype=float)\nprint(f)\ng = np.arange(3, 10, 2)\nprint(g)\n\n[0 1 2]\n[0. 1. 2.]\n[3 4 5 6]\n[3 5 7 9]\n[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]\n[3. 5. 7. 9.]\n[3 5 7 9]\n\n\nnp.linspace - tablica wypełniona równomiernymi wartościami wg skali liniowej\n\nimport numpy as np\n\na = np.linspace(2.0, 3.0, num=5)\nprint(a)\nb = np.linspace(2.0, 3.0, num=5, endpoint=False)\nprint(b)\nc = np.linspace(10, 20, num=4)\nprint(c)\nd = np.linspace(10, 20, num=4, dtype=int)\nprint(d)\n\n[2.   2.25 2.5  2.75 3.  ]\n[2.  2.2 2.4 2.6 2.8]\n[10.         13.33333333 16.66666667 20.        ]\n[10 13 16 20]\n\n\n\nnp.logspace - tablica wypełniona wartościami wg skali logarytmicznej\nSkładnia: numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None, axis=0)\n\nimport numpy as np\n\na = np.logspace(2.0, 3.0, num=4)\nprint(a)\nb = np.logspace(2.0, 3.0, num=4, endpoint=False)\nprint(b)\nc = np.logspace(2.0, 3.0, num=4, base=2.0)\nprint(c)\n\n[ 100.          215.443469    464.15888336 1000.        ]\n[100.         177.827941   316.22776602 562.34132519]\n[4.         5.0396842  6.34960421 8.        ]\n\n\n\nnp.empty - pusta (niezaincjowana) tablica - konkretne wartości nie są “gwarantowane”\n\nimport numpy as np\n\na = np.empty(3)\nprint(a)\nb = np.empty(3, dtype=int)\nprint(b)\n\n[0. 1. 2.]\n[                  0 4607182418800017408 4611686018427387904]\n\n\nnp.identity - tablica przypominająca macierz jednostkową\nnp.eye - tablica z jedynkami na przekątnej (pozostałe zera)\n\nimport numpy as np\n\nprint(\"a\")\na = np.identity(4)\nprint(a)\nprint(\"b\")\nb = np.eye(4, k=1)\nprint(b)\nprint(\"c\")\nc = np.eye(4, k=2)\nprint(c)\nprint(\"d\")\nd = np.eye(4, k=-1)\nprint(d)\n\na\n[[1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]]\nb\n[[0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]\n [0. 0. 0. 0.]]\nc\n[[0. 0. 1. 0.]\n [0. 0. 0. 1.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\nd\n[[0. 0. 0. 0.]\n [1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]]\n\n\nĆwiczenia: (ex3.py)\n\nUtwórz jednowymiarową tablicę zawierającą liczby całkowite od 1 do 5 i przypisz ją do zmiennej A. Wynikowa tablica powinna mieć postać: \\[\\begin{bmatrix}1 & 2 & 3 & 4 & 5\\end{bmatrix} \\]\nUtwórz dwuwymiarową tablicę zawierającą elementy: \\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix} \\]\ni przypisz ją do zmiennej B.\nUtwórz tablicę zawierającą liczby od 0 do 9 (włącznie). Przypisz ją do zmiennej C.\nOczekiwana postać: \\[\\begin{bmatrix}0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\end{bmatrix} \\]\nUtwórz tablicę zawierającą liczby od 10 do 30 z krokiem 5. Przypisz do D.\nOczekiwana postać: \\[\\begin{bmatrix}10 & 15 & 20 & 25 & 30\\end{bmatrix} \\]\nUtwórz tablicę 5 wartości równomiernie rozłożonych pomiędzy 0 a 1. Przypisz do E.\nPrzykładowa postać: \\[\\begin{bmatrix}0. & 0.25 & 0.5 & 0.75 & 1.\\end{bmatrix} \\]\nUtwórz dwuwymiarową tablicę o wymiarach 2x3 wypełnioną zerami. Przypisz do F.\nOczekiwana postać: \\[\\begin{bmatrix}0 & 0 & 0 \\\\ 0 & 0 & 0\\end{bmatrix} \\]\nKorzystając z np.eye utwórz macierz jednostkową 4x4. Przypisz do J.\nOczekiwana postać: \\[\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix} \\]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tworzenie tablic</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-indeksowanie.html",
+    "href": "numpy-indeksowanie.html",
+    "title": "8  Indeksowanie, “krojenie”",
+    "section": "",
+    "text": "import numpy as np\n\na = np.array([2, 5, -2, 4, -7, 8, 9, 11, -23, -4, -7, 16, 1])\n1print(\"1:\", a[5])\n2print(\"2:\", a[-2])\n3print(\"3:\", a[3:6])\n4print(\"4:\", a[:])\n5print(\"5:\", a[0:-1])\n6print(\"6:\", a[:5])\n\n\n1\n\nDostęp do elementu o indeksie 5.\n\n2\n\nDostęp do elementu drugiego od tyłu.\n\n3\n\nDostęp do elementów o indeksach od 3 do 5 (włącznie) - zasada przedziałów lewostronnnie domkniętnych, prawostronnie otwartych.\n\n4\n\nDostęp do wszystkich elementów.\n\n5\n\nDostęp do wszystkich elementów z wyłączeniem ostatniego.\n\n6\n\nDostęp od początku do elementu o indeksie 4.\n\n\n\n\n1: 8\n2: 16\n3: [ 4 -7  8]\n4: [  2   5  -2   4  -7   8   9  11 -23  -4  -7  16   1]\n5: [  2   5  -2   4  -7   8   9  11 -23  -4  -7  16]\n6: [ 2  5 -2  4 -7]\n\n\n\nimport numpy as np\n\n1print(\"1:\", a[4:])\n2print(\"2:\", a[4:-1])\n3print(\"3:\", a[4:10:2])\n4print(\"4:\", a[::-1])\n5print(\"5:\", a[::2])\n6print(\"6:\", a[::-2])\n\n\n1\n\nDostęp do elementów od indeksu 4 do końca.\n\n2\n\nDostęp do elementów od indeksu 4 do końca bez ostatniego.\n\n3\n\nDostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do 10 (z czówrką, ale bez dziesiątki) z krokiem równym 2\n\n4\n\nDostęp do elementów od tyłu do początku.\n\n5\n\nDostęp do elementów o indeksach parzystych od początku.\n\n6\n\nDostęp do elementów o indeksach “nieparzystych ujemnych” od początku.\n\n\n\n\n1: [ -7   8   9  11 -23  -4  -7  16   1]\n2: [ -7   8   9  11 -23  -4  -7  16]\n3: [ -7   9 -23]\n4: [  1  16  -7  -4 -23  11   9   8  -7   4  -2   5   2]\n5: [  2  -2  -7   9 -23  -7   1]\n6: [  1  -7 -23   9  -7  -2   2]\n\n\n\nimport numpy as np\n\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nb = a[:2, 1:]\nprint(b)\nprint(np.shape(b))\nc = a[1]\nprint(c)\nprint(np.shape(c))\nd = a[1, :]\nprint(d)\nprint(np.shape(d))\n\n[[4 5]\n [4 8]]\n(2, 2)\n[-3  4  8]\n(3,)\n[-3  4  8]\n(3,)\n\n\n\nimport numpy as np\n\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\ne = a[1:2, :]\nprint(e)\nprint(np.shape(e))\nf = a[:, :2]\nprint(f)\nprint(np.shape(f))\ng = a[1, :2]\nprint(g)\nprint(np.shape(g))\nh = a[1:2, :2]\nprint(h)\nprint(np.shape(h))\n\n[[-3  4  8]]\n(1, 3)\n[[ 3  4]\n [-3  4]\n [ 3  2]]\n(3, 2)\n[-3  4]\n(2,)\n[[-3  4]]\n(1, 2)\n\n\n**Uwaga - takie “krojenie” to tzw “widok”.\n\nimport numpy as np\n\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nb = a[1:2, 1:]\nprint(b)\na[1][1] = 9\nprint(a)\nprint(b)\nb[0][0] = -11\nprint(a)\nprint(b)\n\n[[4 8]]\n[[ 3  4  5]\n [-3  9  8]\n [ 3  2  9]]\n[[9 8]]\n[[  3   4   5]\n [ -3 -11   8]\n [  3   2   9]]\n[[-11   8]]\n\n\nNaprawa:\n\nimport numpy as np\n\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nb = a[1:2, 1:].copy()\nprint(b)\na[1][1] = 9\nprint(a)\nprint(b)\nb[0][0] = -11\nprint(a)\nprint(b)\n\n[[4 8]]\n[[ 3  4  5]\n [-3  9  8]\n [ 3  2  9]]\n[[4 8]]\n[[ 3  4  5]\n [-3  9  8]\n [ 3  2  9]]\n[[-11   8]]\n\n\nIndeksowanie logiczne (fancy indexing, maski boolowskie)\n\nimport numpy as np\n\na = np.array([2, 5, -2, 4, -7, 8, 9, 11, -23, -4, -7, 8, 1])\nb = a[np.array([1, 3, 7])]\nprint(b)\nc = a[[1, 3, 7]]\nprint(c)\n\n[ 5  4 11]\n[ 5  4 11]\n\n\n\nimport numpy as np\n\na = np.array([2, 5, -2, 4, -7, 8, 9, 11, -23, -4, -7, 8, 1])\nb = a &gt; 0\nprint(b)\nc = a[a &gt; 0]\nprint(c)\nd = a[(a &gt; 5) & (a%2 !=0)] # znak & odpowiada za AND\nprint(d)\ne = a[(a &gt; 5) | (a%2 !=0)] # znak | odpowiada za OR\nprint(e)\nf = a[(a &gt; 5) ^ (a%2 !=0)] # znak ^ odpowiada za XOR\nprint(f)\ng = a[~(a &gt; 0)]\nprint(g)\n\n[ True  True False  True False  True  True  True False False False  True\n  True]\n[ 2  5  4  8  9 11  8  1]\n[ 9 11]\n[  5  -7   8   9  11 -23  -7   8   1]\n[  5  -7   8 -23  -7   8   1]\n[ -2  -7 -23  -4  -7]\n\n\n\nimport numpy as np\n\na = np.array([2, 5, -2, 4, -7, 8, 9, 11, -23, -4, -7, 8, 1])\nb = a[a &gt; 0]\nprint(b)\nb[0] = -5\nprint(a)\nprint(b)\na[1] = 20\nprint(a)\nprint(b)\n\n[ 2  5  4  8  9 11  8  1]\n[  2   5  -2   4  -7   8   9  11 -23  -4  -7   8   1]\n[-5  5  4  8  9 11  8  1]\n[  2  20  -2   4  -7   8   9  11 -23  -4  -7   8   1]\n[-5  5  4  8  9 11  8  1]\n\n\nĆwiczenia: (ex4.py)\n\nRozważ jednowymiarową tablicę\n\\[A = \\begin{bmatrix}10 & 20 & 30 & 40 & 50\\end{bmatrix}.\\]\nNapisz polecenie , które zwróci trzeci element tablicy. Następnie spróbuj pobrać przedział od drugiego do czwartego elementu włącznie.\nDla tej samej tablicy\n\\[A = \\begin{bmatrix}10 & 20 & 30 & 40 & 50\\end{bmatrix},\\]\nużyj “fancy indexing”, aby wybrać elementy o indeksach [0, 2, 4]. Spróbuj także wykorzystać negatywne indeksy, aby wybrać ostatni i przedostatni element w jednej operacji.\nRozważ dwuwymiarową tablicę\n\\[B = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9\\end{bmatrix}.\\]\nNapisz polecenie, które zwróci drugi wiersz (jako tablicę jednowymiarową). Następnie pobierz cały pierwszy wiersz oraz dwie pierwsze kolumny.\nDla tablicy\n\\[B = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9\\end{bmatrix},\\]\nużyj “fancy indexing”, aby wybrać elementy \\((B_{1,1}, B_{0,2}, B_{2,0})\\) za pomocą list indeksów w numpy. Otrzymaj wynik w postaci tablicy jednowymiarowej [5, 3, 7].\nRozważ tablicę\n\\[C = \\begin{bmatrix}10 & 20 & 30 & 40 \\\\ 50 & 60 & 70 & 80\\end{bmatrix}.\\]\nNapisz polecenie, które zwróci wszystkie elementy drugiego wiersza oprócz ostatniego. Następnie pobierz co drugi element z pierwszego wiersza.\nDla tablicy\n\\[C = \\begin{bmatrix}10 & 20 & 30 & 40 \\\\ 50 & 60 & 70 & 80\\end{bmatrix},\\]\nużyj “fancy indexing”, aby pobrać elementy pierwszego wiersza w kolejności [30, 10, 40] korzystając z tablicy indeksów np. [2, 0, 3]. Następnie zastosuj “fancy indexing” do drugiego wiersza, aby uzyskać [80, 50].\nRozważ jednowymiarową tablicę\n\\[D = \\begin{bmatrix}5 & 10 & 15 & 20 & 25 & 30\\end{bmatrix}.\\]\nZa pomocą indeksowania wytnij ostatnie trzy elementy. Następnie pobierz wszystkie elementy o parzystych indeksach.\nDla tablicy\n\\[D = \\begin{bmatrix}5 & 10 & 15 & 20 & 25 & 30\\end{bmatrix},\\]\nużyj “fancy indexing” za pomocą maski boolowskiej (utwórz maskę wybierającą elementy większe niż 15) i otrzymaj odpowiednio przefiltrowaną tablicę. Następnie zastosuj tę maskę do pobrania konkretnych elementów.\nRozważ tablicę dwuwymiarową\n\\[E = \\begin{bmatrix}2 & 4 & 6 \\\\ 8 & 10 & 12 \\\\ 14 & 16 & 18\\end{bmatrix}.\\]\nZa pomocą indeksowania wybierz środkowy wiersz i wszystkie kolumny oprócz ostatniej. Następnie wybierz ostatni wiersz i ostatnią kolumnę.\nDla tablicy\n\\[E = \\begin{bmatrix}2 & 4 & 6 \\\\ 8 & 10 & 12 \\\\ 14 & 16 & 18\\end{bmatrix},\\]\nużyj “fancy indexing”, aby w jednej operacji pobrać elementy \\((E_{0,2}, E_{2,1})\\) i ułożyć je w nowej tablicy. Spróbuj także stworzyć maskę boolowską wybierającą elementy większe niż 10 i pobrać wybrane wartości.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Indeksowanie, \"krojenie\"</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-modyfikacje.html",
+    "href": "numpy-modyfikacje.html",
+    "title": "9  Modyfikacja kształtu i rozmiaru",
+    "section": "",
+    "text": "import numpy as np\n\nprint(\"a\")\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nprint(a)\nprint(\"b\")\nb = np.reshape(a, (1, 9))\nprint(b)\nprint(\"c\")\nc = a.reshape(9)\nprint(c)\n\na\n[[ 3  4  5]\n [-3  4  8]\n [ 3  2  9]]\nb\n[[ 3  4  5 -3  4  8  3  2  9]]\nc\n[ 3  4  5 -3  4  8  3  2  9]\n\n\n\nimport numpy as np\n\nprint(\"a\")\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nprint(a)\nprint(\"d\")\nd = a.flatten()\nprint(d)\nprint(\"e\")\ne = a.ravel()\nprint(e)\nprint(\"f\")\nf = np.ravel(a)\nprint(f)\n\na\n[[ 3  4  5]\n [-3  4  8]\n [ 3  2  9]]\nd\n[ 3  4  5 -3  4  8  3  2  9]\ne\n[ 3  4  5 -3  4  8  3  2  9]\nf\n[ 3  4  5 -3  4  8  3  2  9]\n\n\n\nimport numpy as np\n\nprint(\"g\")\ng = [[1, 3, 4]]\nprint(g)\nprint(\"h\")\nh = np.squeeze(g)\nprint(h)\nprint(\"i\")\ni = a.T\nprint(i)\nprint(\"j\")\nj = np.transpose(a)\nprint(j)\n\ng\n[[1, 3, 4]]\nh\n[1 3 4]\ni\n[[ 3 -3  3]\n [ 4  4  2]\n [ 5  8  9]]\nj\n[[ 3 -3  3]\n [ 4  4  2]\n [ 5  8  9]]\n\n\n\nimport numpy as np\n\nprint(\"h\")\nh = [3, -4, 5, -2]\nprint(h)\nprint(\"k\")\nk = np.hstack((h, h, h))\nprint(k)\nprint(\"l\")\nl = np.vstack((h, h, h))\nprint(l)\nprint(\"m\")\nm = np.dstack((h, h, h))\nprint(m)\n\nh\n[3, -4, 5, -2]\nk\n[ 3 -4  5 -2  3 -4  5 -2  3 -4  5 -2]\nl\n[[ 3 -4  5 -2]\n [ 3 -4  5 -2]\n [ 3 -4  5 -2]]\nm\n[[[ 3  3  3]\n  [-4 -4 -4]\n  [ 5  5  5]\n  [-2 -2 -2]]]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6]])\nprint(\"r1\")\nr1 = np.concatenate((a, b))\nprint(r1)\nprint(\"r2\")\nr2 = np.concatenate((a, b), axis=0)\nprint(r2)\nprint(\"r3\")\nr3 = np.concatenate((a, b.T), axis=1)\nprint(r3)\nprint(\"r4\")\nr4 = np.concatenate((a, b), axis=None)\nprint(r4)\n\nr1\n[[1 2]\n [3 4]\n [5 6]]\nr2\n[[1 2]\n [3 4]\n [5 6]]\nr3\n[[1 2 5]\n [3 4 6]]\nr4\n[1 2 3 4 5 6]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2], [3, 4]])\nprint(\"r1\")\nr1 = np.resize(a, (2, 3))\nprint(r1)\nprint(\"r2\")\nr2 = np.resize(a, (1, 4))\nprint(r2)\nprint(\"r3\")\nr3 = np.resize(a, (2, 4))\nprint(r3)\n\nr1\n[[1 2 3]\n [4 1 2]]\nr2\n[[1 2 3 4]]\nr3\n[[1 2 3 4]\n [1 2 3 4]]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6]])\nprint(\"r1\")\nr1 = np.append(a, b)\nprint(r1)\nprint(\"r2\")\nr2 = np.append(a, b, axis=0)\nprint(r2)\n\nr1\n[1 2 3 4 5 6]\nr2\n[[1 2]\n [3 4]\n [5 6]]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2], [3, 7]])\nprint(\"r1\")\nr1 = np.insert(a, 1, 4)\nprint(r1)\nprint(\"r2\")\nr2 = np.insert(a, 2, 4)\nprint(r2)\nprint(\"r3\")\nr3 = np.insert(a, 1, 4, axis=0)\nprint(r3)\nprint(\"r4\")\nr4 = np.insert(a, 1, 4, axis=1)\nprint(r4)\n\nr1\n[1 4 2 3 7]\nr2\n[1 2 4 3 7]\nr3\n[[1 2]\n [4 4]\n [3 7]]\nr4\n[[1 4 2]\n [3 4 7]]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])\nprint(\"r1\")\nr1 = np.delete(a, 1, axis=1)\nprint(r1)\nprint(\"r2\")\nr2 = np.delete(a, 2, axis=0)\nprint(r2)\n\nr1\n[[ 1  3  4]\n [ 5  7  8]\n [ 9 11 12]]\nr2\n[[1 2 3 4]\n [5 6 7 8]]\n\n\nĆwiczenia: (ex5.py)\n\nRozważ tablicę jednowymiarową\n\\[A = \\begin{bmatrix}1 & 2 & 3 & 4 & 5 & 6\\end{bmatrix}.\\]\nPrzekształć ją tak, aby uzyskać tablicę dwuwymiarową o kształcie \\(2 \\times 3\\).\nMając tablicę dwuwymiarową\n\\[B = \\begin{bmatrix}1 & 2 \\\\ 3 & 4 \\\\ 5 & 6\\end{bmatrix},\\]\nuzyskaj jednowymiarowy “widok” jej elementów bez zmiany w danych źródłowych.\nRozważ tablicę\n\\[D = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6\\end{bmatrix}.\\]\nZmień jej orientację tak, aby wiersze stały się kolumnami, a kolumny wierszami.\nMając dwie tablice\n\\[E_1 = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}, \\quad E_2 = \\begin{bmatrix}4 & 5 & 6\\end{bmatrix},\\]\npołącz je w poziomie, tworząc jedną tablicę.\nDwie tablice\n\\[F_1 = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}, \\quad F_2 = \\begin{bmatrix}4 & 5 & 6\\end{bmatrix},\\]\npołącz w pionie, aby uzyskać tablicę o kształcie \\(2 \\times 3\\).\nDla tablicy\n\\[G = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6\\end{bmatrix},\\]\nzmień jej rozmiar tak, aby stała się tablicą jednowymiarową o 4 elementach. Pozostałe elementy usuń.\nMając tablicę\n\\[H = \\begin{bmatrix}10 & 20 & 30 \\\\ 40 & 50 & 60 \\\\ 70 & 80 & 90\\end{bmatrix},\\]\nusuń drugą kolumnę, otrzymując tablicę \\(3 \\times 2\\).\nRozważ tablicę\n\\[I = \\begin{bmatrix}1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\\\ 7 & 8\\end{bmatrix},\\]\nzmień jej kształt tak, aby uzyskać tablicę \\(2 \\times 4\\).\nMając tablicę\n\\[J = \\begin{bmatrix}1 & 2 & 3 & 4\\end{bmatrix},\\]\nprzekształć ją w tablicę dwuwymiarową \\(2 \\times 2\\), a następnie “spłaszcz” ją z powrotem do postaci jednowymiarowej.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Modyfikacja kształtu i rozmiaru</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-broadcasting.html",
+    "href": "numpy-broadcasting.html",
+    "title": "10  Broadcasting",
+    "section": "",
+    "text": "Rozważane warianty są przykładowe.\nWariant 1 - skalar-tablica - wykonanie operacji na każdym elemencie tablicy\n\nimport numpy as np\n\na = np.array([[1, 2], [5, 6], [9, 10]])\nb = a + 4\nprint(b)\nc = 2 ** a\nprint(c)\n\n[[ 5  6]\n [ 9 10]\n [13 14]]\n[[   2    4]\n [  32   64]\n [ 512 1024]]\n\n\n\nWariant 2 - dwie tablice - “gdy jedna z tablic może być rozszerzona” (oba wymiary są równe lub jeden z nich jest równy 1)\nhttps://numpy.org/doc/stable/user/basics.broadcasting.html\n\nimport numpy as np\n\na = np.array([[1, 2], [5, 6]])\nb = np.array([9, 2])\nr1 = a + b\nprint(r1)\nr2 = a / b\nprint(r2)\nc = np.array([[4], [-2]])\nr3 = a + c\nprint(r3)\nr4 = c / a\nprint(r4)\n\n[[10  4]\n [14  8]]\n[[0.11111111 1.        ]\n [0.55555556 3.        ]]\n[[5 6]\n [3 4]]\n[[ 4.          2.        ]\n [-0.4        -0.33333333]]\n\n\n\nWariant 3 - “kolumna” i “wiersz”\n\nimport numpy as np\n\na = np.array([[5, 2, -3]]).T\nb = np.array([3, -2, 1, 2, 4])\nprint(a+b)\nprint(b+a)\nprint(a*b)\n\n[[ 8  3  6  7  9]\n [ 5  0  3  4  6]\n [ 0 -5 -2 -1  1]]\n[[ 8  3  6  7  9]\n [ 5  0  3  4  6]\n [ 0 -5 -2 -1  1]]\n[[ 15 -10   5  10  20]\n [  6  -4   2   4   8]\n [ -9   6  -3  -6 -12]]\n\n\n\nĆwiczenia: (ex6.py)\n\nRozważ jednowymiarową tablicę\n\\[A = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}\\]\noraz skalar \\(k = 10\\).\nWykonaj dodawanie, odejmowanie, mnożenie i dzielenie każdego elementu tablicy \\(A\\) przez \\(k\\) z wykorzystaniem broadcastingu.\nDla dwóch tablic jednowymiarowych\n\\[B_1 = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}, \\quad B_2 = \\begin{bmatrix}4 & 5 & 6\\end{bmatrix},\\]\nwykonaj działanie \\(B_1 + B_2\\), \\(B_1 - B_2\\), \\(B_1 * B_2\\) oraz \\(B_1 / B_2\\) używając broadcastingu.\nMając dwie tablice dwuwymiarowe:\n\\[C_1 = \\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}, \\quad C_2 = \\begin{bmatrix}10 & 20 \\\\ 30 & 40\\end{bmatrix},\\]\ndodaj je i odejmij od siebie, sprawdzając czy broadcasting zajdzie automatycznie.\nRozważ tablicę dwuwymiarową\n\\[D = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6\\end{bmatrix}\\]\noraz wektor\n\\[v = \\begin{bmatrix}10 & 100 & 1000\\end{bmatrix}.\\]\nWykonaj mnożenie i dzielenie elementowe tablicy \\(D\\) przez \\(v\\) z wykorzystaniem broadcastingu.\nDla tablicy\n\\[E = \\begin{bmatrix}2 & 4 & 6 \\\\ 8 & 10 & 12\\end{bmatrix}\\]\npodnieś każdy element do kwadratu, a następnie podziel przez wektor\n\\[w = \\begin{bmatrix}2 & 2 & 2\\end{bmatrix}\\]\nkorzystając z broadcastingu.\nMając tablicę dwuwymiarową\n\\[F = \\begin{bmatrix}1 & 2 \\\\ 3 & 4 \\\\ 5 & 6\\end{bmatrix},\\]\noraz skalar \\(s = 2\\), wykonaj \\(F * s\\), a następnie \\(F^{s}\\) (podnieś każdy element do potęgi \\(s\\)) z zastosowaniem broadcastingu.\nRozważ tablicę\n\\[G = \\begin{bmatrix}10 & 20 & 30\\end{bmatrix}\\]\noraz kolumnową tablicę dwuwymiarową\n\\[h = \\begin{bmatrix}1 \\\\ 2 \\\\ 3\\end{bmatrix}.\\] Dodaj do \\(h\\) tablicę \\(G\\) i zaobserwuj wynik broadcastingu.\nMając dwie tablice dwuwymiarowe o różnych wymiarach:\n\\[H_1 = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}, \\quad H_2 = \\begin{bmatrix}10 \\\\ 20 \\\\ 30\\end{bmatrix},\\]\nspróbuj je dodać i pomnożyć przez siebie, korzystając z broadcastingu.\nRozważ tablicę dwuwymiarową\n\\[J = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6\\end{bmatrix}\\]\noraz skalar \\(m = 5\\).\nWykonaj kombinację działań: najpierw pomnóż \\(J\\) przez \\(m\\), następnie odejmij \\(m\\), a na końcu podziel wynik przez \\(m\\) – wszystko z wykorzystaniem broadcastingu.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Broadcasting</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html",
+    "href": "numpy-ufunc.html",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "",
+    "text": "11.1 Podstawowe operacje arytmetyczne\nFunkcje uniwersalne (tzw. ufunc) to jedne z najważniejszych narzędzi w NumPy. Są to funkcje działające element-po-elemencie na tablicach, często implementowane w C, co zapewnia wysoką wydajność obliczeń. Dzięki ufuncs można w prosty i czytelny sposób wykonywać operacje arytmetyczne, trygonometryczne, statystyczne czy logiczne na całych tablicach bez konieczności pisania pętli w Pythonie.\nNumPy automatycznie przekształca operatory matematyczne w odpowiednie ufunc.\nNa przykład:\nPrzykład:\nimport numpy as np\n\nA = np.array([1, 2, 3, 4])\nB = np.array([10, 20, 30, 40])\n\n# Operacje element-po-elemencie\nsum_tab = np.add(A, B)       # to samo co A + B\ndiff_tab = np.subtract(B, A) # to samo co B - A\nmul_tab = np.multiply(A, 2)  # to samo co A * 2\npow_tab = np.power(A, 3)     # to samo co A ** 3\n\nprint(\"Suma:\", sum_tab)\nprint(\"Różnica:\", diff_tab)\nprint(\"Mnożenie przez 2:\", mul_tab)\nprint(\"Potęgowanie:\", pow_tab)\n\nSuma: [11 22 33 44]\nRóżnica: [ 9 18 27 36]\nMnożenie przez 2: [2 4 6 8]\nPotęgowanie: [ 1  8 27 64]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#podstawowe-operacje-arytmetyczne",
+    "href": "numpy-ufunc.html#podstawowe-operacje-arytmetyczne",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "",
+    "text": "+ odpowiada np.add\n- odpowiada np.subtract\n* odpowiada np.multiply\n/ odpowiada np.divide\n** odpowiada np.power",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#funkcje-trygonometryczne-i-pochodne",
+    "href": "numpy-ufunc.html#funkcje-trygonometryczne-i-pochodne",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "11.2 Funkcje trygonometryczne i pochodne",
+    "text": "11.2 Funkcje trygonometryczne i pochodne\nNumPy oferuje bogaty zestaw funkcji trygonometrycznych:\n\nnp.sin, np.cos, np.tan – funkcje podstawowe,\nnp.arcsin, np.arccos, np.arctan – odwrotne funkcje trygonometryczne,\nnp.sinh, np.cosh, np.tanh – funkcje hiperboliczne.\n\nPrzykład:\n\nimport numpy as np\n\nx = np.linspace(0, np.pi, 5) # tablica [0, π/4, π/2, 3π/4, π]\nsin_values = np.sin(x)\ncos_values = np.cos(x)\n\nprint(\"Wartości sin(x):\", sin_values)\nprint(\"Wartości cos(x):\", cos_values)\n\nWartości sin(x): [0.00000000e+00 7.07106781e-01 1.00000000e+00 7.07106781e-01\n 1.22464680e-16]\nWartości cos(x): [ 1.00000000e+00  7.07106781e-01  6.12323400e-17 -7.07106781e-01\n -1.00000000e+00]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#funkcje-wykładnicze-i-logarytmiczne",
+    "href": "numpy-ufunc.html#funkcje-wykładnicze-i-logarytmiczne",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "11.3 Funkcje wykładnicze i logarytmiczne",
+    "text": "11.3 Funkcje wykładnicze i logarytmiczne\n\nnp.exp – eksponenta,\nnp.log – logarytm naturalny,\nnp.log10 – logarytm dziesiętny.\n\nPrzykład:\n\nimport numpy as np\n\nA = np.array([1, np.e, np.e**2])\nprint(\"A:\", A)\nprint(\"log(A):\", np.log(A))\nprint(\"exp(A):\", np.exp([0, 1, 2]))  # exp(0)=1, exp(1)=e, exp(2)=e^2\n\nA: [1.         2.71828183 7.3890561 ]\nlog(A): [0. 1. 2.]\nexp(A): [1.         2.71828183 7.3890561 ]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#funkcje-zaokrąglające-i-wartości-bezwzględne",
+    "href": "numpy-ufunc.html#funkcje-zaokrąglające-i-wartości-bezwzględne",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "11.4 Funkcje zaokrąglające i wartości bezwzględne",
+    "text": "11.4 Funkcje zaokrąglające i wartości bezwzględne\n\nnp.round – zaokrągla do najbliższej liczby,\nnp.floor – podłoga,\nnp.ceil – sufit,\nnp.trunc – obcięcie do części całkowitej,\nnp.abs – wartość bezwzględna.\n\nPrzykład:\n\nimport numpy as np\n\nB = np.array([1.7, -2.5, 3.5, -4.1])\nprint(\"B:\", B)\nprint(\"floor(B):\", np.floor(B))\nprint(\"ceil(B):\", np.ceil(B))\nprint(\"abs(B):\", np.abs(B))\n\nB: [ 1.7 -2.5  3.5 -4.1]\nfloor(B): [ 1. -3.  3. -5.]\nceil(B): [ 2. -2.  4. -4.]\nabs(B): [1.7 2.5 3.5 4.1]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#funkcje-statystyczne-i-agregujące",
+    "href": "numpy-ufunc.html#funkcje-statystyczne-i-agregujące",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "11.5 Funkcje statystyczne i agregujące",
+    "text": "11.5 Funkcje statystyczne i agregujące\nChoć wiele funkcji statystycznych dostępnych jest jako metody tablic (np. A.mean(), A.std()), istnieją też ufuncs działające element-po-elemencie lub akceptujące parametry osi:\n\nnp.minimum, np.maximum – zwracają minimum/maksimum element-po-elemencie z dwóch tablic,\nnp.fmin, np.fmax – podobne do wyżej wymienionych, ale ignorują wartości NaN,\nnp.sqrt – pierwiastek kwadratowy,\nnp.square – podniesienie do kwadratu.\n\nPrzykład:\n\nimport numpy as np\n\nC1 = np.array([1, 4, 9, 16])\nC2 = np.array([2, 2, 5, 20])\n\nprint(\"minimum elementów C1 i C2:\", np.minimum(C1, C2))\nprint(\"maximum elementów C1 i C2:\", np.maximum(C1, C2))\nprint(\"sqrt(C1):\", np.sqrt(C1))\nprint(\"square(C2):\", np.square(C2))\n\nminimum elementów C1 i C2: [ 1  2  5 16]\nmaximum elementów C1 i C2: [ 2  4  9 20]\nsqrt(C1): [1. 2. 3. 4.]\nsquare(C2): [  4   4  25 400]\n\n\nĆwiczenia: (ex7.py)\n\nMając tablicę\n\\[A = \\begin{bmatrix}1 & 4 & 9 & 16\\end{bmatrix},\\]\nzastosuj funkcję uniwersalną, aby obliczyć pierwiastek kwadratowy każdego elementu.\nRozważ jednowymiarową tablicę\n\\[B = \\begin{bmatrix}-1 & -2 & 3 & -4\\end{bmatrix},\\]\nzastosuj funkcję uniwersalną, aby otrzymać wartości bezwzględne wszystkich elementów.\nDla tablicy\n\\[C = \\begin{bmatrix}0 & \\pi/2 & \\pi & 3\\pi/2\\end{bmatrix},\\]\noblicz wartość funkcji trygonometrycznej dla każdego elementu.\nMając tablicę\n\\[D = \\begin{bmatrix}1 & e & e^2 \\end{bmatrix},\\]\nzastosuj funkcję uniwersalną, aby obliczyć logarytm naturalny każdego elementu.\nDla tablicy dwuwymiarowej\n\\[E = \\begin{bmatrix}2 & 4 \\\\ 10 & 20 \\end{bmatrix},\\]\npodziel każdy element przez skalar, a następnie podnieś uzyskane wartości do kwadratu.\nRozważ tablicę\n\\[F = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix},\\]\npodnieś każdy element do trzeciej potęgi, a następnie zastosuj funkcję uniwersalną, aby obliczyć eksponentę z otrzymanych wartości.\nMając tablicę\n\\[G = \\begin{bmatrix}-\\pi & -\\pi/2 & 0 & \\pi/2 & \\pi\\end{bmatrix},\\]\nzastosuj odpowiednią funkcję uniwersalną, aby uzyskać cosinus każdego elementu.\nDla tablicy\n\\[H = \\begin{bmatrix}10 & 100 & 1000\\end{bmatrix},\\]\nzastosuj funkcję uniwersalną, aby obliczyć logarytm dziesiętny każdego elementu.\nMając tablicę\n\\[I = \\begin{bmatrix}2 & 8 & 18 & 32\\end{bmatrix},\\]\nprzekształć ją, stosując funkcję uniwersalną, tak aby każdy element był pierwiastkiem kwadratowym z wartości początkowej, a następnie pomnóż wyniki przez 2.\nRozważ tablicę\n\\[J = \\begin{bmatrix}-1 & -4 & -9 & -16\\end{bmatrix},\\]\noblicz pierwiastek kwadratowy wartości bezwzględnych elementów tej tablicy, wykorzystując po kolei dwie różne funkcje uniwersalne.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html",
+    "href": "numpy-strings.html",
+    "title": "12  Operacje na stringach",
+    "section": "",
+    "text": "12.1 Tworzenie tablic z napisami\nW NumPy poza dobrze znanymi tablicami liczbowymi, istnieje również zestaw funkcji pozwalających na wektorowe operacje na ciągach znaków.\nWażne: Poniższe funkcje są zazwyczaj dostępne w module numpy.char. W dokumentacji znajdują się one w sekcji String operations, jednak w tym materiale skupimy się na tym, jak można je wykorzystywać, zakładając interfejs z modułu numpy.strings. Jest to analogiczne do korzystania z numpy.char. Jest no nowsze podejście.\nNumPy pozwala na przechowywanie tekstu w tablicach, np. tak:\nimport numpy as np\n\narr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\nprint(arr)\n\n['python' 'NumPy' 'data' 'Science']",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html#podstawowe-funkcje-do-modyfikacji-tekstu",
+    "href": "numpy-strings.html#podstawowe-funkcje-do-modyfikacji-tekstu",
+    "title": "12  Operacje na stringach",
+    "section": "12.2 Podstawowe funkcje do modyfikacji tekstu",
+    "text": "12.2 Podstawowe funkcje do modyfikacji tekstu\nPoniżej przedstawiono popularne funkcje do modyfikacji tekstu na tablicach stringów:\n\n12.2.1 numpy.strings.upper i numpy.strings.lower\n\nupper: Zamiana wszystkich liter na wielkie.\nlower: Zamiana wszystkich liter na małe.\n\n\nimport numpy as np\n\narr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\n\nprint(np.strings.upper(arr))\nprint(np.strings.lower(arr))\n\n['PYTHON' 'NUMPY' 'DATA' 'SCIENCE']\n['python' 'numpy' 'data' 'science']\n\n\n\n\n12.2.2 numpy.strings.capitalize\nFunkcja capitalize zamienia pierwszą literę wyrazu na wielką, a pozostałe na małe.\n\nimport numpy as np\n\narr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\nprint(np.strings.capitalize(arr))\n\n['Python' 'Numpy' 'Data' 'Science']\n\n\n\n\n12.2.3 numpy.strings.title\nFunkcja title sprawia, że każda część składowa tekstu (np. oddzielona spacją) zostaje zamieniona tak, by zaczynała się od wielkiej litery.\n\nimport numpy as np\n\narr2 = np.array([\"python data science\", \"machine learning\", \"deep learning\"])\nprint(np.strings.title(arr2))\n\n['Python Data Science' 'Machine Learning' 'Deep Learning']",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html#łączenie-i-rozdzielanie-tekstów",
+    "href": "numpy-strings.html#łączenie-i-rozdzielanie-tekstów",
+    "title": "12  Operacje na stringach",
+    "section": "12.3 Łączenie i rozdzielanie tekstów",
+    "text": "12.3 Łączenie i rozdzielanie tekstów\n\n12.3.1 numpy.strings.add\nFunkcja add łączy elementy tablic tekstowych, działając podobnie jak operator + na stringach, ale wektorowo.\n\nimport numpy as np\n\narr_a = np.array([\"Hello\", \"Data\"])\narr_b = np.array([\"World\", \"Science\"])\n\nprint(np.strings.add(arr_a, arr_b))\n\n['HelloWorld' 'DataScience']\n\n\n\n\n12.3.2 numpy.strings.join\nFunkcja join pozwala na łączenie elementów tablicy przy użyciu wskazanego separatora.\n\nimport numpy as np\n\narr3 = np.array([\"python\", \"numpy\", \"string\"])\nprint(np.char.join(\"-\", arr3))\n\n['p-y-t-h-o-n' 'n-u-m-p-y' 's-t-r-i-n-g']\n\n\n\nUwaga: join wektoryzuje operację, traktując każdy element tablicy jako sekwencję znaków do połączenia separatorem.\n\n\n\n12.3.3 numpy.strings.split\nPozwala na rozdzielanie stringów według podanego separatora. Zwraca tablicę zawierającą listy podłańcuchów.\n\nimport numpy as np\n\narr4 = np.array([\"python-data-science\", \"machine-learning\"])\nprint(np.char.split(arr4, sep=\"-\"))\n\n[list(['python', 'data', 'science']) list(['machine', 'learning'])]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html#wyszukiwanie-i-zamiana-podciągów",
+    "href": "numpy-strings.html#wyszukiwanie-i-zamiana-podciągów",
+    "title": "12  Operacje na stringach",
+    "section": "12.4 Wyszukiwanie i zamiana podciągów",
+    "text": "12.4 Wyszukiwanie i zamiana podciągów\n\n12.4.1 numpy.strings.find i numpy.strings.rfind\n\nfind: Zwraca indeks pierwszego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).\nrfind: Zwraca indeks ostatniego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).\n\n\nimport numpy as np\n\narr5 = np.array([\"python\", \"data\", \"numpy\"])\nprint(np.strings.find(arr5, \"a\"))\n\n[-1  1 -1]\n\n\n\n\n12.4.2 numpy.strings.replace\nreplace zamienia wszystkie wystąpienia podłańcucha na nowy ciąg znaków.\n\nimport numpy as np\n\narr6 = np.array([\"python\", \"pydata\", \"pypy\"])\nprint(np.strings.replace(arr6, \"py\", \"PY\"))\n\n['PYthon' 'PYdata' 'PYPY']",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html#usuwanie-zbędnych-znaków",
+    "href": "numpy-strings.html#usuwanie-zbędnych-znaków",
+    "title": "12  Operacje na stringach",
+    "section": "12.5 Usuwanie zbędnych znaków",
+    "text": "12.5 Usuwanie zbędnych znaków\n\n12.5.1 numpy.strings.strip, numpy.strings.lstrip i numpy.strings.rstrip\n\nstrip: Usuwa wskazane znaki z początku i końca.\nlstrip: Usuwa wskazane znaki z lewej strony (początku).\nrstrip: Usuwa wskazane znaki z prawej strony (końca).\n\n\nimport numpy as np\n\narr7 = np.array([\"   python   \", \"  numpy  \"])\nprint(np.strings.strip(arr7))\n\n['python' 'numpy']\n\n\nMożemy również podać niestandardowe znaki do usunięcia:\n\nimport numpy as np\n\narr8 = np.array([\"###data###\", \"***science***\"])\nprint(np.strings.strip(arr8, \"#*\"))\n\n['data' 'science']",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html",
+    "href": "numpy-inne.html",
+    "title": "13  Numpy - inne",
+    "section": "",
+    "text": "13.1 Stałe\nNumPy dostarcza kilka znanych stałych matematycznych, które mogą być przydatne w obliczeniach naukowych i inżynierskich. Wbudowane stałe takie jak liczba Pi czy podstawa logarytmu naturalnego e ułatwiają pisanie czytelnego i zwięzłego kodu.\nimport numpy as np\n\n# Promień koła\nr = 5.0\n\n# Obwód koła: 2 * π * r\nobwod = 2 * np.pi * r\nprint(\"Obwód koła:\", obwod)\n\n# Pole koła: π * r^2\npole = np.pi * r**2\nprint(\"Pole koła:\", pole)\n\nObwód koła: 31.41592653589793\nPole koła: 78.53981633974483\nimport numpy as np\n\n# Przykładowy punkt x\nx = 1.0\n\n# Wartość funkcji e^x\nexp_value = np.e**x\nprint(\"e^x dla x=1:\", exp_value)\n\n# Porównanie z funkcją np.exp\nexp_compare = np.exp(x)\nprint(\"Porównanie z np.exp(1):\", exp_compare)\n\ne^x dla x=1: 2.718281828459045\nPorównanie z np.exp(1): 2.718281828459045",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#stałe",
+    "href": "numpy-inne.html#stałe",
+    "title": "13  Numpy - inne",
+    "section": "",
+    "text": "numpy.pi\n\nReprezentuje liczbę Pi (π) z dużą dokładnością.\n\nPi to stosunek obwodu okręgu do jego średnicy.\n\nW przybliżeniu: 3.141592653589793\n\nnumpy.e\n\nReprezentuje podstawę logarytmu naturalnego, e.\n\ne jest wykorzystywane w wielu dziedzinach, takich jak analiza matematyczna, probabilistyka, statystyka.\n\nW przybliżeniu: 2.718281828459045\n\nnumpy.eulergamma\n\nReprezentuje stałą Eulera-Mascheroniego, zwykle oznaczaną jako γ (gamma).\nPojawia się w analizie matematycznej, szczególnie w teorii liczb i badaniu szeregów harmonicznych.\nW przybliżeniu: 0.5772156649015329",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#numpy.inf",
+    "href": "numpy-inne.html#numpy.inf",
+    "title": "13  Numpy - inne",
+    "section": "13.2 numpy.inf",
+    "text": "13.2 numpy.inf\n\nOpis: np.inf reprezentuje wartość nieskończoną (∞).\n\nCzęsto pojawia się w obliczeniach, gdy wartość danego wyrażenia dąży do nieskończoności (np. dzielenie przez zero, pewne limity, itp.).\n\nPrzykładowo, 1.0 / 0.0 zwróci ostrzeżenie i w konsekwencji może dać wartość inf.\n\n\nimport numpy as np\n\n# Zastosowanie w tworzeniu masek logicznych\narr = np.array([1, 2, np.inf, 4, 5])\nmask = np.isinf(arr)\nprint(\"Maska elementów o wartości inf:\", mask)\n\nMaska elementów o wartości inf: [False False  True False False]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#numpy.nan",
+    "href": "numpy-inne.html#numpy.nan",
+    "title": "13  Numpy - inne",
+    "section": "13.3 numpy.nan",
+    "text": "13.3 numpy.nan\n\nOpis: np.nan oznacza “Not a Number” (NaN), czyli wartość nieokreśloną lub niereprezentowalną w systemie liczbowym.\n\nPojawia się, gdy wynik operacji numerycznej jest nieokreślony, np. 0.0/0.0, inf - inf lub przy błędach wczytywania danych.\n\nOperacje arytmetyczne z nan zazwyczaj również zwracają nan.\n\n\nimport numpy as np\n\n# Zamiana wartości nan w tablicy\ndata = np.array([1, 2, np.nan, 4, np.nan])\nprint(\"Oryginalne dane:\", data)\n\n# Wypełnienie wartości nan zerem\ndata_no_nan = np.nan_to_num(data, nan=0.0)\nprint(\"Dane bez nan:\", data_no_nan)\n\nOryginalne dane: [ 1.  2. nan  4. nan]\nDane bez nan: [1. 2. 0. 4. 0.]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#numpy.newaxis",
+    "href": "numpy-inne.html#numpy.newaxis",
+    "title": "13  Numpy - inne",
+    "section": "13.4 numpy.newaxis",
+    "text": "13.4 numpy.newaxis\n\nOpis: np.newaxis jest specjalną “stałą”/obiektem służącym do zmiany wymiarów tablic przez zwiększenie ich liczby wymiarów o 1.\n\n\nimport numpy as np\n\n# Mamy tablicę 1D\nvec = np.array([1, 2, 3, 4])\nprint(\"Oryginalna tablica:\", vec, \"Kształt:\", vec.shape)\n\n# Dodajemy nowy wymiar jako wymiar wierszy\nvec_as_col = vec[:, np.newaxis]\nprint(\"Tablica jako kolumna:\\n\", vec_as_col, \"Kształt:\", vec_as_col.shape)\n\n# Dodawanie wymiaru na początku\nvec_as_row = vec[np.newaxis, :]\nprint(\"Tablica jako wiersz:\\n\", vec_as_row, \"Kształt:\", vec_as_row.shape)\n\n# Kolejny przykład: dodanie wymiaru by z łatwością broadcastować operacje\na = np.array([10, 20, 30])\nb = np.array([1, 2])\n# Bez nowego wymiaru próba dodania a do b się nie powiedzie, \n# bo kształty nie są kompatybilne.\n# Z nowym wymiarem a ma kształt (3,1), a b (2,), co pozwala na broadcast\nsum_matrix = a[:, np.newaxis] + b\nprint(\"Operacja z broadcast:\\n\", sum_matrix)\n\nOryginalna tablica: [1 2 3 4] Kształt: (4,)\nTablica jako kolumna:\n [[1]\n [2]\n [3]\n [4]] Kształt: (4, 1)\nTablica jako wiersz:\n [[1 2 3 4]] Kształt: (1, 4)\nOperacja z broadcast:\n [[11 12]\n [21 22]\n [31 32]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#statystyka-i-agregacja",
+    "href": "numpy-inne.html#statystyka-i-agregacja",
+    "title": "13  Numpy - inne",
+    "section": "13.5 Statystyka i agregacja",
+    "text": "13.5 Statystyka i agregacja\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nnp.mean\nŚrednia wszystkich wartości w tablicy.\n\n\nnp.std\nOdchylenie standardowe.\n\n\nnp.var\nWariancja.\n\n\nnp.sum\nSuma wszystkich elementów.\n\n\nnp.prod\nIloczyn wszystkich elementów.\n\n\nnp.cumsum\nSkumulowana suma wszystkich elementów.\n\n\nnp.cumprod\nSkumulowany iloczyn wszystkich elementów.\n\n\nnp.min,np.max\nMinimalna/maksymalna wartość w tablicy.\n\n\nnp.argmin, np.argmax\nIndeks minimalnej/maksymalnej wartości w tablicy.\n\n\nnp.all\nSprawdza czy wszystki elementy są różne od zera.\n\n\nnp.any\nSprawdza czy co najmniej jeden z elementów jest różny od zera.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#wyrażenia-warunkowe",
+    "href": "numpy-inne.html#wyrażenia-warunkowe",
+    "title": "13  Numpy - inne",
+    "section": "13.6 Wyrażenia warunkowe",
+    "text": "13.6 Wyrażenia warunkowe\nhttps://numpy.org/doc/stable/reference/generated/numpy.where https://numpy.org/doc/stable/reference/generated/numpy.choose https://numpy.org/doc/stable/reference/generated/numpy.select https://numpy.org/doc/stable/reference/generated/numpy.nonzero",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#działania-na-zbiorach",
+    "href": "numpy-inne.html#działania-na-zbiorach",
+    "title": "13  Numpy - inne",
+    "section": "13.7 Działania na zbiorach",
+    "text": "13.7 Działania na zbiorach\nhttps://numpy.org/doc/stable/reference/routines.set.html",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#operacje-tablicowe",
+    "href": "numpy-inne.html#operacje-tablicowe",
+    "title": "13  Numpy - inne",
+    "section": "13.8 Operacje tablicowe",
+    "text": "13.8 Operacje tablicowe\nhttps://numpy.org/doc/stable/reference/generated/numpy.transpose\nhttps://numpy.org/doc/stable/reference/generated/numpy.flip https://numpy.org/doc/stable/reference/generated/numpy.fliplr https://numpy.org/doc/stable/reference/generated/numpy.flipud\nhttps://numpy.org/doc/stable/reference/generated/numpy.sort",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#alegbra-liniowa",
+    "href": "numpy-inne.html#alegbra-liniowa",
+    "title": "13  Numpy - inne",
+    "section": "13.9 Alegbra liniowa",
+    "text": "13.9 Alegbra liniowa\nhttps://numpy.org/doc/stable/reference/routines.linalg.html",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#data-i-czas",
+    "href": "numpy-inne.html#data-i-czas",
+    "title": "13  Numpy - inne",
+    "section": "13.10 Data i czas",
+    "text": "13.10 Data i czas\nhttps://numpy.org/doc/stable/reference/arrays.datetime.html",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#pseudolosowe",
+    "href": "numpy-inne.html#pseudolosowe",
+    "title": "13  Numpy - inne",
+    "section": "13.11 Pseudolosowe",
+    "text": "13.11 Pseudolosowe\nhttps://numpy.org/doc/stable/reference/random/index.html",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "eksploracja.html",
+    "href": "eksploracja.html",
+    "title": "14  Etapy eksploracji danych",
+    "section": "",
+    "text": "Zbieranie danych:\n\nZebranie danych z różnych źródeł (bazy danych, pliki CSV, API, itd.).\n\nZrozumienie danych:\n\nAnaliza struktury danych, typów danych i ich znaczenia.\nEksploracja wstępnych zależności i trendów.\n\nCzyszczenie danych:\n\nUsuwanie braków, błędów i anomalii w danych.\nObsługa brakujących wartości i duplikatów.\n\nTransformacja danych:\n\nNormalizacja, standaryzacja, kodowanie zmiennych kategorycznych.\nTworzenie nowych zmiennych (cech).\n\nRedukcja danych:\n\nSelekcja istotnych cech lub zmniejszenie wymiarowości danych (np. PCA).",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Etapy eksploracji danych</span>"
+    ]
+  }
+]
