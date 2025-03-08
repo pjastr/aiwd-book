@@ -1,0 +1,233 @@
+# Alegbra liniowa w `NumPy`
+
+
+
+## Iloczyn skalarny (dot product)
+
+Dla dwóch wektorów, `dot` oblicza ich iloczyn skalarny.
+
+```{python}
+#| echo: true
+import numpy as np
+
+# Iloczyn skalarny dwóch wektorów
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+result = np.dot(a, b)  # 1*4 + 2*5 + 3*6
+print(result)  # Wynik: 32
+
+# Alternatywny zapis za pomocą operatora @
+result = a @ b
+print(result)  # Wynik: 32
+```
+
+## Mnożenie macierzowe
+
+Dla macierzy (tablic dwuwymiarowych), `dot` wykonuje standardowe mnożenie macierzowe.
+
+```{python}
+#| echo: true
+import numpy as np
+# Mnożenie macierzowe
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+C = np.dot(A, B)
+print(C)
+# Wynik:
+# [[19 22]
+#  [43 50]]
+
+# To samo za pomocą operatora @
+C = A @ B
+print(C)
+```
+
+## Mnożenie macierz-wektor
+
+Możemy również mnożyć macierz przez wektor:
+
+```{python}
+#| echo: true
+import numpy as np
+# Mnożenie macierz-wektor
+A = np.array([[1, 2], [3, 4]])
+v = np.array([5, 6])
+result = np.dot(A, v)
+print(result)  # Wynik: [17 39]
+```
+
+
+## Rozwiązywanie układów równań liniowych
+
+Funkcja `numpy.linalg.solve` rozwiązuje układy równań liniowych postaci Ax = b:
+
+```{python}
+#| echo: true
+import numpy as np
+# Rozwiązywanie układu równań liniowych
+A = np.array([[3, 1], [1, 2]])
+b = np.array([9, 8])
+x = np.linalg.solve(A, b)
+print(x)  # Wynik: [2. 3.]
+
+# Sprawdzenie rozwiązania
+np.dot(A, x)  # Powinno być równe b
+```
+
+## Wyznacznik macierzy
+
+Funkcja `numpy.linalg.det` oblicza wyznacznik macierzy:
+
+```{python}
+#| echo: true
+import numpy as np
+# Obliczanie wyznacznika
+A = np.array([[1, 2], [3, 4]])
+det_A = np.linalg.det(A)
+print(det_A)  # Wynik: -2.0
+```
+
+## Wartości i wektory własne
+
+Funkcja `numpy.linalg.eig` oblicza wartości i wektory własne macierzy:
+
+```{python}
+#| echo: true
+import numpy as np
+# Obliczanie wartości i wektorów własnych
+A = np.array([[4, -2], [1, 1]])
+eigenvalues, eigenvectors = np.linalg.eig(A)
+print("Wartości własne:", eigenvalues)
+print("Wektory własne:")
+print(eigenvectors)
+
+# Sprawdzenie: A * v = lambda * v
+for i in range(len(eigenvalues)):
+    lambda_i = eigenvalues[i]
+    v_i = eigenvectors[:, i]
+    print(f"λ_{i} = {lambda_i}")
+    print("A * v =", np.dot(A, v_i))
+    print("λ * v =", lambda_i * v_i)
+```
+
+## Rozkład wartości osobliwych (SVD)
+
+Rozkład SVD jest potężnym narzędziem w analizie danych:
+
+```{python}
+#| echo: true
+import numpy as np
+# Rozkład SVD
+A = np.array([[1, 2], [3, 4], [5, 6]])
+U, s, Vh = np.linalg.svd(A)
+print("Macierz U:")
+print(U)
+print("Wartości osobliwe:", s)
+print("Macierz V^H:")
+print(Vh)
+
+# Rekonstrukcja macierzy A
+S = np.zeros((A.shape[0], A.shape[1]))
+S[:len(s), :len(s)] = np.diag(s)
+A_reconstructed = U @ S @ Vh
+print("Rekonstruowana macierz A:")
+print(A_reconstructed)
+```
+
+## Norma macierzy/wektora
+
+NumPy oferuje różne rodzaje norm:
+
+```{python}
+#| echo: true
+import numpy as np
+# Różne normy
+v = np.array([3, 4])
+print("Norma L1:", np.linalg.norm(v, 1))  # Norma L1: 7.0
+print("Norma L2 (Euklidesowa):", np.linalg.norm(v))  # Norma L2: 5.0
+print("Norma maksimum:", np.linalg.norm(v, np.inf))  # Norma maksimum: 4.0
+
+A = np.array([[1, 2], [3, 4]])
+print("Norma macierzowa Frobeniusa:", np.linalg.norm(A, 'fro'))  # Norma Frobeniusa: 5.477...
+```
+
+## Macierz odwrotna
+
+Funkcja `numpy.linalg.inv` oblicza macierz odwrotną:
+
+```{python}
+#| echo: true
+import numpy as np
+# Macierz odwrotna
+A = np.array([[1, 2], [3, 4]])
+A_inv = np.linalg.inv(A)
+print("Macierz odwrotna:")
+print(A_inv)
+
+# Sprawdzenie: A * A^(-1) = I
+print("A * A^(-1):")
+print(np.dot(A, A_inv))  # Powinno być bliskie macierzy jednostkowej
+```
+
+
+## Funkcja `numpy.inner` - iloczyn wewnętrzny
+
+Funkcja `inner` oblicza iloczyn wewnętrzny dwóch tablic:
+
+```{python}
+#| echo: true
+import numpy as np
+# Iloczyn wewnętrzny
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+result = np.inner(a, b)
+print(result)  # 1*4 + 2*5 + 3*6 = 32
+
+# Dla tablic 2D
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+result = np.inner(A, B)
+print(result)
+# Jest to równoważne wykonaniu iloczynu skalarnego wzdłuż ostatniego wymiaru
+```
+
+## Funkcja `numpy.outer` - iloczyn zewnętrzny
+
+Funkcja `outer` oblicza iloczyn zewnętrzny dwóch wektorów:
+
+```{python}
+#| echo: true
+import numpy as np
+# Iloczyn zewnętrzny
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+result = np.outer(a, b)
+print(result)
+# Wynik:
+# [[ 4  5  6]
+#  [ 8 10 12]
+#  [12 15 18]]
+```
+
+## Funkcja `numpy.matmul` - mnożenie macierzowe
+
+Funkcja `matmul` jest podobna do `dot`, ale ma nieco inne zachowanie dla tablic o wymiarach większych niż 2:
+
+```{python}
+#| echo: true
+import numpy as np
+# Porównanie dot i matmul
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6], [7, 8]])
+
+dot_result = np.dot(a, b)
+matmul_result = np.matmul(a, b)
+
+print("Wynik dot:")
+print(dot_result)
+print("Wynik matmul:")
+print(matmul_result)
+# Dla 2D są identyczne
+
+# Ale dla tablic 3D i wyższych mogą się różnić
+```

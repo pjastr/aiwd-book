@@ -21,6 +21,8 @@ book:
       - numpy-broadcasting.qmd
       - numpy-ufunc.qmd
       - numpy-strings.qmd
+      - numpy-algebraliniowa.qmd
+      - numpy-warunki.qmd
       - numpy-inne.qmd
     - eksploracja.qmd
   downloads: pdf

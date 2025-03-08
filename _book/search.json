@@ -220,7 +220,7 @@
     "href": "lista_tablica.html",
     "title": "4  Lista a tablica",
     "section": "",
-    "text": "import numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n\n--- 0.0016613006591796875 seconds ---\n--- 0.03685736656188965 seconds ---",
+    "text": "import numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n\n--- 0.0016429424285888672 seconds ---\n--- 0.04450798034667969 seconds ---",
     "crumbs": [
       "NumPy",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lista a tablica</span>"
@@ -414,145 +414,442 @@
     ]
   },
   {
-    "objectID": "numpy-inne.html",
-    "href": "numpy-inne.html",
-    "title": "13  Numpy - inne",
+    "objectID": "numpy-algebraliniowa.html",
+    "href": "numpy-algebraliniowa.html",
+    "title": "13  Alegbra liniowa w NumPy",
     "section": "",
-    "text": "13.1 Stałe\nNumPy dostarcza kilka znanych stałych matematycznych, które mogą być przydatne w obliczeniach naukowych i inżynierskich. Wbudowane stałe takie jak liczba Pi czy podstawa logarytmu naturalnego e ułatwiają pisanie czytelnego i zwięzłego kodu.\nimport numpy as np\n\n# Promień koła\nr = 5.0\n\n# Obwód koła: 2 * π * r\nobwod = 2 * np.pi * r\nprint(\"Obwód koła:\", obwod)\n\n# Pole koła: π * r^2\npole = np.pi * r**2\nprint(\"Pole koła:\", pole)\n\nObwód koła: 31.41592653589793\nPole koła: 78.53981633974483\nimport numpy as np\n\n# Przykładowy punkt x\nx = 1.0\n\n# Wartość funkcji e^x\nexp_value = np.e**x\nprint(\"e^x dla x=1:\", exp_value)\n\n# Porównanie z funkcją np.exp\nexp_compare = np.exp(x)\nprint(\"Porównanie z np.exp(1):\", exp_compare)\n\ne^x dla x=1: 2.718281828459045\nPorównanie z np.exp(1): 2.718281828459045",
+    "text": "13.1 Iloczyn skalarny (dot product)\nDla dwóch wektorów, dot oblicza ich iloczyn skalarny.\nimport numpy as np\n\n# Iloczyn skalarny dwóch wektorów\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.dot(a, b)  # 1*4 + 2*5 + 3*6\nprint(result)  # Wynik: 32\n\n# Alternatywny zapis za pomocą operatora @\nresult = a @ b\nprint(result)  # Wynik: 32\n\n32\n32",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#mnożenie-macierzowe",
+    "href": "numpy-algebraliniowa.html#mnożenie-macierzowe",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.2 Mnożenie macierzowe",
+    "text": "13.2 Mnożenie macierzowe\nDla macierzy (tablic dwuwymiarowych), dot wykonuje standardowe mnożenie macierzowe.\n\nimport numpy as np\n# Mnożenie macierzowe\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nC = np.dot(A, B)\nprint(C)\n# Wynik:\n# [[19 22]\n#  [43 50]]\n\n# To samo za pomocą operatora @\nC = A @ B\nprint(C)\n\n[[19 22]\n [43 50]]\n[[19 22]\n [43 50]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#mnożenie-macierz-wektor",
+    "href": "numpy-algebraliniowa.html#mnożenie-macierz-wektor",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.3 Mnożenie macierz-wektor",
+    "text": "13.3 Mnożenie macierz-wektor\nMożemy również mnożyć macierz przez wektor:\n\nimport numpy as np\n# Mnożenie macierz-wektor\nA = np.array([[1, 2], [3, 4]])\nv = np.array([5, 6])\nresult = np.dot(A, v)\nprint(result)  # Wynik: [17 39]\n\n[17 39]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#rozwiązywanie-układów-równań-liniowych",
+    "href": "numpy-algebraliniowa.html#rozwiązywanie-układów-równań-liniowych",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.4 Rozwiązywanie układów równań liniowych",
+    "text": "13.4 Rozwiązywanie układów równań liniowych\nFunkcja numpy.linalg.solve rozwiązuje układy równań liniowych postaci Ax = b:\n\nimport numpy as np\n# Rozwiązywanie układu równań liniowych\nA = np.array([[3, 1], [1, 2]])\nb = np.array([9, 8])\nx = np.linalg.solve(A, b)\nprint(x)  # Wynik: [2. 3.]\n\n# Sprawdzenie rozwiązania\nnp.dot(A, x)  # Powinno być równe b\n\n[2. 3.]\n\n\narray([9., 8.])",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#wyznacznik-macierzy",
+    "href": "numpy-algebraliniowa.html#wyznacznik-macierzy",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.5 Wyznacznik macierzy",
+    "text": "13.5 Wyznacznik macierzy\nFunkcja numpy.linalg.det oblicza wyznacznik macierzy:\n\nimport numpy as np\n# Obliczanie wyznacznika\nA = np.array([[1, 2], [3, 4]])\ndet_A = np.linalg.det(A)\nprint(det_A)  # Wynik: -2.0\n\n-2.0000000000000004",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#wartości-i-wektory-własne",
+    "href": "numpy-algebraliniowa.html#wartości-i-wektory-własne",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.6 Wartości i wektory własne",
+    "text": "13.6 Wartości i wektory własne\nFunkcja numpy.linalg.eig oblicza wartości i wektory własne macierzy:\n\nimport numpy as np\n# Obliczanie wartości i wektorów własnych\nA = np.array([[4, -2], [1, 1]])\neigenvalues, eigenvectors = np.linalg.eig(A)\nprint(\"Wartości własne:\", eigenvalues)\nprint(\"Wektory własne:\")\nprint(eigenvectors)\n\n# Sprawdzenie: A * v = lambda * v\nfor i in range(len(eigenvalues)):\n    lambda_i = eigenvalues[i]\n    v_i = eigenvectors[:, i]\n    print(f\"λ_{i} = {lambda_i}\")\n    print(\"A * v =\", np.dot(A, v_i))\n    print(\"λ * v =\", lambda_i * v_i)\n\nWartości własne: [3. 2.]\nWektory własne:\n[[0.89442719 0.70710678]\n [0.4472136  0.70710678]]\nλ_0 = 3.0\nA * v = [2.68328157 1.34164079]\nλ * v = [2.68328157 1.34164079]\nλ_1 = 2.0\nA * v = [1.41421356 1.41421356]\nλ * v = [1.41421356 1.41421356]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#rozkład-wartości-osobliwych-svd",
+    "href": "numpy-algebraliniowa.html#rozkład-wartości-osobliwych-svd",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.7 Rozkład wartości osobliwych (SVD)",
+    "text": "13.7 Rozkład wartości osobliwych (SVD)\nRozkład SVD jest potężnym narzędziem w analizie danych:\n\nimport numpy as np\n# Rozkład SVD\nA = np.array([[1, 2], [3, 4], [5, 6]])\nU, s, Vh = np.linalg.svd(A)\nprint(\"Macierz U:\")\nprint(U)\nprint(\"Wartości osobliwe:\", s)\nprint(\"Macierz V^H:\")\nprint(Vh)\n\n# Rekonstrukcja macierzy A\nS = np.zeros((A.shape[0], A.shape[1]))\nS[:len(s), :len(s)] = np.diag(s)\nA_reconstructed = U @ S @ Vh\nprint(\"Rekonstruowana macierz A:\")\nprint(A_reconstructed)\n\nMacierz U:\n[[-0.2298477   0.88346102  0.40824829]\n [-0.52474482  0.24078249 -0.81649658]\n [-0.81964194 -0.40189603  0.40824829]]\nWartości osobliwe: [9.52551809 0.51430058]\nMacierz V^H:\n[[-0.61962948 -0.78489445]\n [-0.78489445  0.61962948]]\nRekonstruowana macierz A:\n[[1. 2.]\n [3. 4.]\n [5. 6.]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#norma-macierzywektora",
+    "href": "numpy-algebraliniowa.html#norma-macierzywektora",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.8 Norma macierzy/wektora",
+    "text": "13.8 Norma macierzy/wektora\nNumPy oferuje różne rodzaje norm:\n\nimport numpy as np\n# Różne normy\nv = np.array([3, 4])\nprint(\"Norma L1:\", np.linalg.norm(v, 1))  # Norma L1: 7.0\nprint(\"Norma L2 (Euklidesowa):\", np.linalg.norm(v))  # Norma L2: 5.0\nprint(\"Norma maksimum:\", np.linalg.norm(v, np.inf))  # Norma maksimum: 4.0\n\nA = np.array([[1, 2], [3, 4]])\nprint(\"Norma macierzowa Frobeniusa:\", np.linalg.norm(A, 'fro'))  # Norma Frobeniusa: 5.477...\n\nNorma L1: 7.0\nNorma L2 (Euklidesowa): 5.0\nNorma maksimum: 4.0\nNorma macierzowa Frobeniusa: 5.477225575051661",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#macierz-odwrotna",
+    "href": "numpy-algebraliniowa.html#macierz-odwrotna",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.9 Macierz odwrotna",
+    "text": "13.9 Macierz odwrotna\nFunkcja numpy.linalg.inv oblicza macierz odwrotną:\n\nimport numpy as np\n# Macierz odwrotna\nA = np.array([[1, 2], [3, 4]])\nA_inv = np.linalg.inv(A)\nprint(\"Macierz odwrotna:\")\nprint(A_inv)\n\n# Sprawdzenie: A * A^(-1) = I\nprint(\"A * A^(-1):\")\nprint(np.dot(A, A_inv))  # Powinno być bliskie macierzy jednostkowej\n\nMacierz odwrotna:\n[[-2.   1. ]\n [ 1.5 -0.5]]\nA * A^(-1):\n[[1.0000000e+00 0.0000000e+00]\n [8.8817842e-16 1.0000000e+00]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#funkcja-numpy.inner---iloczyn-wewnętrzny",
+    "href": "numpy-algebraliniowa.html#funkcja-numpy.inner---iloczyn-wewnętrzny",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.10 Funkcja numpy.inner - iloczyn wewnętrzny",
+    "text": "13.10 Funkcja numpy.inner - iloczyn wewnętrzny\nFunkcja inner oblicza iloczyn wewnętrzny dwóch tablic:\n\nimport numpy as np\n# Iloczyn wewnętrzny\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.inner(a, b)\nprint(result)  # 1*4 + 2*5 + 3*6 = 32\n\n# Dla tablic 2D\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nresult = np.inner(A, B)\nprint(result)\n# Jest to równoważne wykonaniu iloczynu skalarnego wzdłuż ostatniego wymiaru\n\n32\n[[17 23]\n [39 53]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#funkcja-numpy.outer---iloczyn-zewnętrzny",
+    "href": "numpy-algebraliniowa.html#funkcja-numpy.outer---iloczyn-zewnętrzny",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.11 Funkcja numpy.outer - iloczyn zewnętrzny",
+    "text": "13.11 Funkcja numpy.outer - iloczyn zewnętrzny\nFunkcja outer oblicza iloczyn zewnętrzny dwóch wektorów:\n\nimport numpy as np\n# Iloczyn zewnętrzny\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.outer(a, b)\nprint(result)\n# Wynik:\n# [[ 4  5  6]\n#  [ 8 10 12]\n#  [12 15 18]]\n\n[[ 4  5  6]\n [ 8 10 12]\n [12 15 18]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#funkcja-numpy.matmul---mnożenie-macierzowe",
+    "href": "numpy-algebraliniowa.html#funkcja-numpy.matmul---mnożenie-macierzowe",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.12 Funkcja numpy.matmul - mnożenie macierzowe",
+    "text": "13.12 Funkcja numpy.matmul - mnożenie macierzowe\nFunkcja matmul jest podobna do dot, ale ma nieco inne zachowanie dla tablic o wymiarach większych niż 2:\n\nimport numpy as np\n# Porównanie dot i matmul\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6], [7, 8]])\n\ndot_result = np.dot(a, b)\nmatmul_result = np.matmul(a, b)\n\nprint(\"Wynik dot:\")\nprint(dot_result)\nprint(\"Wynik matmul:\")\nprint(matmul_result)\n# Dla 2D są identyczne\n\n# Ale dla tablic 3D i wyższych mogą się różnić\n\nWynik dot:\n[[19 22]\n [43 50]]\nWynik matmul:\n[[19 22]\n [43 50]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html",
+    "href": "numpy-warunki.html",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "",
+    "text": "14.1 Funkcja nonzero()\nZwraca indeksy elementów niezerowych w tablicy. Wynik jest zwracany jako krotka tablic, po jednej dla każdego wymiaru tablicy.\nimport numpy as np\n\narr = np.array([[3, 0, 0], [0, 4, 0], [5, 6, 0]])\nindeksy = np.nonzero(arr)\nprint(indeksy)  # (array([0, 1, 2, 2]), array([0, 1, 0, 1]))\n\n# Wydobycie wartości niezerowych\nwartosci = arr[indeksy]\nprint(wartosci)  # [3 4 5 6]\n\n# Alternatywnie można użyć:\nindeksy_i_wartosci = np.argwhere(arr != 0)\nprint(indeksy_i_wartosci)  \n# [[0 0]\n#  [1 1]\n#  [2 0]\n#  [2 1]]\n\n(array([0, 1, 2, 2]), array([0, 1, 0, 1]))\n[3 4 5 6]\n[[0 0]\n [1 1]\n [2 0]\n [2 1]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-where",
+    "href": "numpy-warunki.html#funkcja-where",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.2 Funkcja where()",
+    "text": "14.2 Funkcja where()\nZwraca elementy wybrane z x lub y w zależności od warunku. Jest to warunkowy selektor elementów.\n\nimport numpy as np\n\n# Zastąp wartości ujemne przez 0\narr = np.array([1, -2, 3, -4, 5])\nwynik = np.where(arr &gt; 0, arr, 0)\nprint(wynik)  # [1 0 3 0 5]\n\n# Zastosowanie w tablicy 2D\narr_2d = np.array([[1, -2, 3], [-4, 5, -6]])\nwynik_2d = np.where(arr_2d &lt; 0, -1, arr_2d)\nprint(wynik_2d)\n# [[ 1 -1  3]\n#  [-1  5 -1]]\n\n[1 0 3 0 5]\n[[ 1 -1  3]\n [-1  5 -1]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcje-indices-i-ix_",
+    "href": "numpy-warunki.html#funkcje-indices-i-ix_",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.3 Funkcje indices() i ix_()",
+    "text": "14.3 Funkcje indices() i ix_()\n\n14.3.1 indices()\nTworzy tablicę reprezentującą indeksy siatki.\n\nimport numpy as np\n\n# Tworzenie siatki indeksów 3x4\ngrid = np.indices((3, 4))\nprint(grid.shape)  # (2, 3, 4)\nprint(grid[0])  # indeksy wierszy\n# [[0 0 0 0]\n#  [1 1 1 1]\n#  [2 2 2 2]]\nprint(grid[1])  # indeksy kolumn\n# [[0 1 2 3]\n#  [0 1 2 3]\n#  [0 1 2 3]]\n\n(2, 3, 4)\n[[0 0 0 0]\n [1 1 1 1]\n [2 2 2 2]]\n[[0 1 2 3]\n [0 1 2 3]\n [0 1 2 3]]\n\n\n\n\n14.3.2 ix_()\nKonstruuje otwartą siatkę z wielu sekwencji, co jest przydatne do indeksowania wielowymiarowego.\n\nimport numpy as np\nx = np.array([0, 1, 2])\ny = np.array([3, 4, 5, 6])\nindeksy = np.ix_(x, y)\n\n# Tworzy indeksy dla wszystkich kombinacji (0,3), (0,4), ..., (2,6)\nprint(indeksy[0].shape, indeksy[1].shape)  # (3, 1) (1, 4)\n\n# Użycie do wybierania podtablicy\narr = np.arange(16).reshape(4, 4)\nprint(arr)\n# [[ 0  1  2  3]\n#  [ 4  5  6  7]\n#  [ 8  9 10 11]\n#  [12 13 14 15]]\n\npodtablica = arr[np.ix_([0, 2, 3], [0, 2])]\nprint(podtablica)\n# [[ 0  2]\n#  [ 8 10]\n#  [12 14]]\n\n(3, 1) (1, 4)\n[[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]\n [12 13 14 15]]\n[[ 0  2]\n [ 8 10]\n [12 14]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#ogrid-i-operacje-na-siatkach",
+    "href": "numpy-warunki.html#ogrid-i-operacje-na-siatkach",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.4 ogrid i operacje na siatkach",
+    "text": "14.4 ogrid i operacje na siatkach\nogrid pozwala na tworzenie otwartych siatek, co jest pamięciowo wydajniejsze niż pełne siatki.\n\nimport numpy as np\n\n# Siatka punktów w zakresie od -2 do 2 z krokiem 0.1\nx, y = np.ogrid[-2:2:0.1, -2:2:0.1]\nmaska = x**2 + y**2 &lt;= 1  # Okrąg o promieniu 1\nprint(maska.shape)  # (40, 40)\n\n(40, 40)",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcje-ravel_multi_index-i-unravel_index",
+    "href": "numpy-warunki.html#funkcje-ravel_multi_index-i-unravel_index",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.5 Funkcje ravel_multi_index() i unravel_index()",
+    "text": "14.5 Funkcje ravel_multi_index() i unravel_index()\nTe funkcje konwertują między indeksami wielowymiarowymi a płaskimi.\n\nimport numpy as np\n\n# Konwersja indeksów wielowymiarowych na płaskie\nindeksy_wielo = np.array([[0, 0], [1, 1], [2, 1]])\nwymiary = (3, 3)\nindeksy_plaskie = np.ravel_multi_index(indeksy_wielo.T, wymiary)\nprint(indeksy_plaskie)  # [0 4 7]\n\n# Konwersja indeksów płaskich na wielowymiarowe\nindeksy_plaskie = np.array([0, 3, 8])\nksztalt = (3, 3)\nindeksy_wielo = np.unravel_index(indeksy_plaskie, ksztalt)\nprint(indeksy_wielo)  # (array([0, 1, 2]), array([0, 0, 2]))\n\n[0 4 7]\n(array([0, 1, 2]), array([0, 0, 2]))",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#indeksy-diagonalne",
+    "href": "numpy-warunki.html#indeksy-diagonalne",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.6 Indeksy diagonalne",
+    "text": "14.6 Indeksy diagonalne\nNumPy oferuje wiele funkcji do pracy z diagonalami macierzy.\n\nimport numpy as np\n# Uzyskanie indeksów głównej przekątnej\nn = 4\nindeksy_diag = np.diag_indices(n)\nprint(indeksy_diag)  # (array([0, 1, 2, 3]), array([0, 1, 2, 3]))\n\n# Zastosowanie do ustawienia głównej przekątnej\narr = np.zeros((4, 4))\narr[indeksy_diag] = 1  # Ustawienie jedynek na głównej przekątnej\nprint(arr)\n# [[1. 0. 0. 0.]\n#  [0. 1. 0. 0.]\n#  [0. 0. 1. 0.]\n#  [0. 0. 0. 1.]]\n\n# Uzyskanie indeksów z istniejącej tablicy\narr2 = np.ones((3, 3))\nindeksy_diag2 = np.diag_indices_from(arr2)\n\n(array([0, 1, 2, 3]), array([0, 1, 2, 3]))\n[[1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-take",
+    "href": "numpy-warunki.html#funkcja-take",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.7 3.1 Funkcja take()",
+    "text": "14.7 3.1 Funkcja take()\nPobiera elementy z tablicy wzdłuż określonej osi na podstawie indeksów.\n\nimport numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\nindeksy = np.array([0, 2, 4])\nwynik = np.take(arr, indeksy)\nprint(wynik)  # [10 30 50]\n\n# W tablicach wielowymiarowych możemy wybrać oś\narr_2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindeksy_wierszy = np.array([0, 2])\nwynik_2d = np.take(arr_2d, indeksy_wierszy, axis=0)\nprint(wynik_2d)\n# [[1 2 3]\n#  [7 8 9]]\n\n[10 30 50]\n[[1 2 3]\n [7 8 9]]\n\n\n##Funkcja take_along_axis()\nPobiera wartości z tablicy poprzez dopasowanie 1D indeksu i fragmentów danych. Jest bezpieczna dla duplikatów indeksów.\n\nimport numpy as np\n\narr = np.array([[10, 30, 20], [60, 40, 50]])\nindeksy_kolejnosc = np.argsort(arr, axis=1)\nwynik = np.take_along_axis(arr, indeksy_kolejnosc, axis=1)\nprint(wynik)\n# [[10 20 30]\n#  [40 50 60]]\n\n[[10 20 30]\n [40 50 60]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-choose",
+    "href": "numpy-warunki.html#funkcja-choose",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.8 Funkcja choose()",
+    "text": "14.8 Funkcja choose()\nKonstruuje tablicę wybierając elementy z listy tablic.\n\nimport numpy as np\n\nopcje = [np.array([0, 1, 2, 3]),\n         np.array([10, 11, 12, 13]),\n         np.array([20, 21, 22, 23])]\nindeksy = np.array([0, 2, 1, 0])  # Wybiera z której tablicy opcji wziąć element\nwynik = np.choose(indeksy, opcje)\nprint(wynik)  # [ 0 22 11  3]\n\n[ 0 21 12  3]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-compress",
+    "href": "numpy-warunki.html#funkcja-compress",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.9 Funkcja compress()",
+    "text": "14.9 Funkcja compress()\nZwraca wybrane elementy tablicy wzdłuż określonej osi.\n\nimport numpy as np\narr = np.array([[1, 2, 3], [4, 5, 6]])\nmaska = np.array([True, False, True])\nwynik = np.compress(maska, arr, axis=1)\nprint(wynik)\n# [[1 3]\n#  [4 6]]\n\n[[1 3]\n [4 6]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcje-diag-i-diagonal",
+    "href": "numpy-warunki.html#funkcje-diag-i-diagonal",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.10 Funkcje diag() i diagonal()",
+    "text": "14.10 Funkcje diag() i diagonal()\nFunkcje do pracy z przekątnymi.\n\nimport numpy as np\n\n# Tworzenie tablicy diagonalnej\ndiag_arr = np.diag([1, 2, 3, 4])\nprint(diag_arr)\n# [[1 0 0 0]\n#  [0 2 0 0]\n#  [0 0 3 0]\n#  [0 0 0 4]]\n\n# Pobieranie diagonali z tablicy\narr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndiag = np.diag(arr)\nprint(diag)  # [1 5 9]\n\n# Pobieranie przekątnej przesuniętej o 1\ndiag_offset = np.diagonal(arr, offset=1)\nprint(diag_offset)  # [2 6]\n\n[[1 0 0 0]\n [0 2 0 0]\n [0 0 3 0]\n [0 0 0 4]]\n[1 5 9]\n[2 6]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-select",
+    "href": "numpy-warunki.html#funkcja-select",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.11 Funkcja select()",
+    "text": "14.11 Funkcja select()\nZwraca tablicę zbudowaną z elementów z listy opcji, w zależności od warunków.\n\nimport numpy as np\n\nwarunki = [arr &lt; 3, arr &lt; 6, arr &lt; 9]\nopcje = [100, 200, 300]\nwynik = np.select(warunki, opcje, default=400)\nprint(wynik)\n# [[100 100 200]\n#  [200 200 300]\n#  [300 300 400]]\n\n[[100 100 200]\n [200 200 300]\n [300 300 400]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-place",
+    "href": "numpy-warunki.html#funkcja-place",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.12 Funkcja place()",
+    "text": "14.12 Funkcja place()\nZmienia elementy tablicy na podstawie maski i podanych wartości.\n\nimport numpy as np\n\narr = np.arange(5)\nmaska = np.array([True, False, True, False, True])\nnp.place(arr, maska, [-1, -2, -3])  # Cyklicznie używa wartości [-1, -2, -3]\nprint(arr)  # [-1  1 -2  3 -3]\n\n[-1  1 -2  3 -3]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-put",
+    "href": "numpy-warunki.html#funkcja-put",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.13 Funkcja put()",
+    "text": "14.13 Funkcja put()\nZastępuje określone elementy tablicy podanymi wartościami.\n\nimport numpy as np\n\narr = np.arange(5)\nindeksy = [0, 2, 4]\nnp.put(arr, indeksy, [10, 20, 30])\nprint(arr)  # [10  1 20  3 30]\n\n[10  1 20  3 30]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-put_along_axis",
+    "href": "numpy-warunki.html#funkcja-put_along_axis",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.14 Funkcja put_along_axis()",
+    "text": "14.14 Funkcja put_along_axis()\nUmieszcza wartości w tablicy docelowej, dopasowując 1D indeks i fragmenty danych wzdłuż określonej osi.\n\nimport numpy as np\n\narr = np.array([[10, 30, 20], [60, 40, 50]])\nindeksy = np.argmin(arr, axis=1)\nindeksy = np.expand_dims(indeksy, axis=1)  # Przekształć do kształtu (2, 1)\nnp.put_along_axis(arr, indeksy, 99, axis=1)\nprint(arr)\n# [[99 30 20]\n#  [60 40 99]]\n\n[[99 30 20]\n [60 99 50]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-putmask",
+    "href": "numpy-warunki.html#funkcja-putmask",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.15 Funkcja putmask()",
+    "text": "14.15 Funkcja putmask()\nZmienia elementy tablicy na podstawie warunku i podanych wartości.\n\nimport numpy as np\n\narr = np.arange(5)\nmaska = np.array([True, False, True, False, True])\nnp.putmask(arr, maska, [-1, -2, -3])  # Cyklicznie używa wartości\nprint(arr)  # [-1  1 -2  3 -3]\n\n[-1  1 -3  3 -2]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-fill_diagonal",
+    "href": "numpy-warunki.html#funkcja-fill_diagonal",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.16 Funkcja fill_diagonal()",
+    "text": "14.16 Funkcja fill_diagonal()\nWypełnia główną przekątną tablicy podaną wartością.\n\nimport numpy as np\n\narr = np.zeros((4, 4))\nnp.fill_diagonal(arr, 5)\nprint(arr)\n# [[5. 0. 0. 0.]\n#  [0. 5. 0. 0.]\n#  [0. 0. 5. 0.]\n#  [0. 0. 0. 5.]]\n\narr_rect = np.zeros((4, 4, 4))\nnp.fill_diagonal(arr_rect, 9)\nprint(arr_rect[0])  # Wypełnia przekątną w każdym \"plasterku\" 3D tablicy\n\n[[5. 0. 0. 0.]\n [0. 5. 0. 0.]\n [0. 0. 5. 0.]\n [0. 0. 0. 5.]]\n[[9. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html",
+    "href": "numpy-inne.html",
+    "title": "15  Numpy - inne",
+    "section": "",
+    "text": "15.1 Stałe\nNumPy dostarcza kilka znanych stałych matematycznych, które mogą być przydatne w obliczeniach naukowych i inżynierskich. Wbudowane stałe takie jak liczba Pi czy podstawa logarytmu naturalnego e ułatwiają pisanie czytelnego i zwięzłego kodu.\nimport numpy as np\n\n# Promień koła\nr = 5.0\n\n# Obwód koła: 2 * π * r\nobwod = 2 * np.pi * r\nprint(\"Obwód koła:\", obwod)\n\n# Pole koła: π * r^2\npole = np.pi * r**2\nprint(\"Pole koła:\", pole)\n\nObwód koła: 31.41592653589793\nPole koła: 78.53981633974483\nimport numpy as np\n\n# Przykładowy punkt x\nx = 1.0\n\n# Wartość funkcji e^x\nexp_value = np.e**x\nprint(\"e^x dla x=1:\", exp_value)\n\n# Porównanie z funkcją np.exp\nexp_compare = np.exp(x)\nprint(\"Porównanie z np.exp(1):\", exp_compare)\n\ne^x dla x=1: 2.718281828459045\nPorównanie z np.exp(1): 2.718281828459045",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#stałe",
     "href": "numpy-inne.html#stałe",
-    "title": "13  Numpy - inne",
+    "title": "15  Numpy - inne",
     "section": "",
     "text": "numpy.pi\n\nReprezentuje liczbę Pi (π) z dużą dokładnością.\n\nPi to stosunek obwodu okręgu do jego średnicy.\n\nW przybliżeniu: 3.141592653589793\n\nnumpy.e\n\nReprezentuje podstawę logarytmu naturalnego, e.\n\ne jest wykorzystywane w wielu dziedzinach, takich jak analiza matematyczna, probabilistyka, statystyka.\n\nW przybliżeniu: 2.718281828459045\n\nnumpy.eulergamma\n\nReprezentuje stałą Eulera-Mascheroniego, zwykle oznaczaną jako γ (gamma).\nPojawia się w analizie matematycznej, szczególnie w teorii liczb i badaniu szeregów harmonicznych.\nW przybliżeniu: 0.5772156649015329",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#numpy.inf",
     "href": "numpy-inne.html#numpy.inf",
-    "title": "13  Numpy - inne",
-    "section": "13.2 numpy.inf",
-    "text": "13.2 numpy.inf\n\nOpis: np.inf reprezentuje wartość nieskończoną (∞).\n\nCzęsto pojawia się w obliczeniach, gdy wartość danego wyrażenia dąży do nieskończoności (np. dzielenie przez zero, pewne limity, itp.).\n\nPrzykładowo, 1.0 / 0.0 zwróci ostrzeżenie i w konsekwencji może dać wartość inf.\n\n\nimport numpy as np\n\n# Zastosowanie w tworzeniu masek logicznych\narr = np.array([1, 2, np.inf, 4, 5])\nmask = np.isinf(arr)\nprint(\"Maska elementów o wartości inf:\", mask)\n\nMaska elementów o wartości inf: [False False  True False False]",
+    "title": "15  Numpy - inne",
+    "section": "15.2 numpy.inf",
+    "text": "15.2 numpy.inf\n\nOpis: np.inf reprezentuje wartość nieskończoną (∞).\n\nCzęsto pojawia się w obliczeniach, gdy wartość danego wyrażenia dąży do nieskończoności (np. dzielenie przez zero, pewne limity, itp.).\n\nPrzykładowo, 1.0 / 0.0 zwróci ostrzeżenie i w konsekwencji może dać wartość inf.\n\n\nimport numpy as np\n\n# Zastosowanie w tworzeniu masek logicznych\narr = np.array([1, 2, np.inf, 4, 5])\nmask = np.isinf(arr)\nprint(\"Maska elementów o wartości inf:\", mask)\n\nMaska elementów o wartości inf: [False False  True False False]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#numpy.nan",
     "href": "numpy-inne.html#numpy.nan",
-    "title": "13  Numpy - inne",
-    "section": "13.3 numpy.nan",
-    "text": "13.3 numpy.nan\n\nOpis: np.nan oznacza “Not a Number” (NaN), czyli wartość nieokreśloną lub niereprezentowalną w systemie liczbowym.\n\nPojawia się, gdy wynik operacji numerycznej jest nieokreślony, np. 0.0/0.0, inf - inf lub przy błędach wczytywania danych.\n\nOperacje arytmetyczne z nan zazwyczaj również zwracają nan.\n\n\nimport numpy as np\n\n# Zamiana wartości nan w tablicy\ndata = np.array([1, 2, np.nan, 4, np.nan])\nprint(\"Oryginalne dane:\", data)\n\n# Wypełnienie wartości nan zerem\ndata_no_nan = np.nan_to_num(data, nan=0.0)\nprint(\"Dane bez nan:\", data_no_nan)\n\nOryginalne dane: [ 1.  2. nan  4. nan]\nDane bez nan: [1. 2. 0. 4. 0.]",
+    "title": "15  Numpy - inne",
+    "section": "15.3 numpy.nan",
+    "text": "15.3 numpy.nan\n\nOpis: np.nan oznacza “Not a Number” (NaN), czyli wartość nieokreśloną lub niereprezentowalną w systemie liczbowym.\n\nPojawia się, gdy wynik operacji numerycznej jest nieokreślony, np. 0.0/0.0, inf - inf lub przy błędach wczytywania danych.\n\nOperacje arytmetyczne z nan zazwyczaj również zwracają nan.\n\n\nimport numpy as np\n\n# Zamiana wartości nan w tablicy\ndata = np.array([1, 2, np.nan, 4, np.nan])\nprint(\"Oryginalne dane:\", data)\n\n# Wypełnienie wartości nan zerem\ndata_no_nan = np.nan_to_num(data, nan=0.0)\nprint(\"Dane bez nan:\", data_no_nan)\n\nOryginalne dane: [ 1.  2. nan  4. nan]\nDane bez nan: [1. 2. 0. 4. 0.]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#numpy.newaxis",
     "href": "numpy-inne.html#numpy.newaxis",
-    "title": "13  Numpy - inne",
-    "section": "13.4 numpy.newaxis",
-    "text": "13.4 numpy.newaxis\n\nOpis: np.newaxis jest specjalną “stałą”/obiektem służącym do zmiany wymiarów tablic przez zwiększenie ich liczby wymiarów o 1.\n\n\nimport numpy as np\n\n# Mamy tablicę 1D\nvec = np.array([1, 2, 3, 4])\nprint(\"Oryginalna tablica:\", vec, \"Kształt:\", vec.shape)\n\n# Dodajemy nowy wymiar jako wymiar wierszy\nvec_as_col = vec[:, np.newaxis]\nprint(\"Tablica jako kolumna:\\n\", vec_as_col, \"Kształt:\", vec_as_col.shape)\n\n# Dodawanie wymiaru na początku\nvec_as_row = vec[np.newaxis, :]\nprint(\"Tablica jako wiersz:\\n\", vec_as_row, \"Kształt:\", vec_as_row.shape)\n\n# Kolejny przykład: dodanie wymiaru by z łatwością broadcastować operacje\na = np.array([10, 20, 30])\nb = np.array([1, 2])\n# Bez nowego wymiaru próba dodania a do b się nie powiedzie, \n# bo kształty nie są kompatybilne.\n# Z nowym wymiarem a ma kształt (3,1), a b (2,), co pozwala na broadcast\nsum_matrix = a[:, np.newaxis] + b\nprint(\"Operacja z broadcast:\\n\", sum_matrix)\n\nOryginalna tablica: [1 2 3 4] Kształt: (4,)\nTablica jako kolumna:\n [[1]\n [2]\n [3]\n [4]] Kształt: (4, 1)\nTablica jako wiersz:\n [[1 2 3 4]] Kształt: (1, 4)\nOperacja z broadcast:\n [[11 12]\n [21 22]\n [31 32]]",
+    "title": "15  Numpy - inne",
+    "section": "15.4 numpy.newaxis",
+    "text": "15.4 numpy.newaxis\n\nOpis: np.newaxis jest specjalną “stałą”/obiektem służącym do zmiany wymiarów tablic przez zwiększenie ich liczby wymiarów o 1.\n\n\nimport numpy as np\n\n# Mamy tablicę 1D\nvec = np.array([1, 2, 3, 4])\nprint(\"Oryginalna tablica:\", vec, \"Kształt:\", vec.shape)\n\n# Dodajemy nowy wymiar jako wymiar wierszy\nvec_as_col = vec[:, np.newaxis]\nprint(\"Tablica jako kolumna:\\n\", vec_as_col, \"Kształt:\", vec_as_col.shape)\n\n# Dodawanie wymiaru na początku\nvec_as_row = vec[np.newaxis, :]\nprint(\"Tablica jako wiersz:\\n\", vec_as_row, \"Kształt:\", vec_as_row.shape)\n\n# Kolejny przykład: dodanie wymiaru by z łatwością broadcastować operacje\na = np.array([10, 20, 30])\nb = np.array([1, 2])\n# Bez nowego wymiaru próba dodania a do b się nie powiedzie, \n# bo kształty nie są kompatybilne.\n# Z nowym wymiarem a ma kształt (3,1), a b (2,), co pozwala na broadcast\nsum_matrix = a[:, np.newaxis] + b\nprint(\"Operacja z broadcast:\\n\", sum_matrix)\n\nOryginalna tablica: [1 2 3 4] Kształt: (4,)\nTablica jako kolumna:\n [[1]\n [2]\n [3]\n [4]] Kształt: (4, 1)\nTablica jako wiersz:\n [[1 2 3 4]] Kształt: (1, 4)\nOperacja z broadcast:\n [[11 12]\n [21 22]\n [31 32]]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#statystyka-i-agregacja",
     "href": "numpy-inne.html#statystyka-i-agregacja",
-    "title": "13  Numpy - inne",
-    "section": "13.5 Statystyka i agregacja",
-    "text": "13.5 Statystyka i agregacja\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nnp.mean\nŚrednia wszystkich wartości w tablicy.\n\n\nnp.std\nOdchylenie standardowe.\n\n\nnp.var\nWariancja.\n\n\nnp.sum\nSuma wszystkich elementów.\n\n\nnp.prod\nIloczyn wszystkich elementów.\n\n\nnp.cumsum\nSkumulowana suma wszystkich elementów.\n\n\nnp.cumprod\nSkumulowany iloczyn wszystkich elementów.\n\n\nnp.min,np.max\nMinimalna/maksymalna wartość w tablicy.\n\n\nnp.argmin, np.argmax\nIndeks minimalnej/maksymalnej wartości w tablicy.\n\n\nnp.all\nSprawdza czy wszystki elementy są różne od zera.\n\n\nnp.any\nSprawdza czy co najmniej jeden z elementów jest różny od zera.",
+    "title": "15  Numpy - inne",
+    "section": "15.5 Statystyka i agregacja",
+    "text": "15.5 Statystyka i agregacja\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nnp.mean\nŚrednia wszystkich wartości w tablicy.\n\n\nnp.std\nOdchylenie standardowe.\n\n\nnp.var\nWariancja.\n\n\nnp.sum\nSuma wszystkich elementów.\n\n\nnp.prod\nIloczyn wszystkich elementów.\n\n\nnp.cumsum\nSkumulowana suma wszystkich elementów.\n\n\nnp.cumprod\nSkumulowany iloczyn wszystkich elementów.\n\n\nnp.min,np.max\nMinimalna/maksymalna wartość w tablicy.\n\n\nnp.argmin, np.argmax\nIndeks minimalnej/maksymalnej wartości w tablicy.\n\n\nnp.all\nSprawdza czy wszystki elementy są różne od zera.\n\n\nnp.any\nSprawdza czy co najmniej jeden z elementów jest różny od zera.",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#wyrażenia-warunkowe",
     "href": "numpy-inne.html#wyrażenia-warunkowe",
-    "title": "13  Numpy - inne",
-    "section": "13.6 Wyrażenia warunkowe",
-    "text": "13.6 Wyrażenia warunkowe\nhttps://numpy.org/doc/stable/reference/generated/numpy.where https://numpy.org/doc/stable/reference/generated/numpy.choose https://numpy.org/doc/stable/reference/generated/numpy.select https://numpy.org/doc/stable/reference/generated/numpy.nonzero",
+    "title": "15  Numpy - inne",
+    "section": "15.6 Wyrażenia warunkowe",
+    "text": "15.6 Wyrażenia warunkowe\nhttps://numpy.org/doc/stable/reference/generated/numpy.where https://numpy.org/doc/stable/reference/generated/numpy.choose https://numpy.org/doc/stable/reference/generated/numpy.select https://numpy.org/doc/stable/reference/generated/numpy.nonzero",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#działania-na-zbiorach",
     "href": "numpy-inne.html#działania-na-zbiorach",
-    "title": "13  Numpy - inne",
-    "section": "13.7 Działania na zbiorach",
-    "text": "13.7 Działania na zbiorach\nhttps://numpy.org/doc/stable/reference/routines.set.html",
+    "title": "15  Numpy - inne",
+    "section": "15.7 Działania na zbiorach",
+    "text": "15.7 Działania na zbiorach\nhttps://numpy.org/doc/stable/reference/routines.set.html",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#operacje-tablicowe",
     "href": "numpy-inne.html#operacje-tablicowe",
-    "title": "13  Numpy - inne",
-    "section": "13.8 Operacje tablicowe",
-    "text": "13.8 Operacje tablicowe\nhttps://numpy.org/doc/stable/reference/generated/numpy.transpose\nhttps://numpy.org/doc/stable/reference/generated/numpy.flip https://numpy.org/doc/stable/reference/generated/numpy.fliplr https://numpy.org/doc/stable/reference/generated/numpy.flipud\nhttps://numpy.org/doc/stable/reference/generated/numpy.sort",
+    "title": "15  Numpy - inne",
+    "section": "15.8 Operacje tablicowe",
+    "text": "15.8 Operacje tablicowe\nhttps://numpy.org/doc/stable/reference/generated/numpy.transpose\nhttps://numpy.org/doc/stable/reference/generated/numpy.flip https://numpy.org/doc/stable/reference/generated/numpy.fliplr https://numpy.org/doc/stable/reference/generated/numpy.flipud\nhttps://numpy.org/doc/stable/reference/generated/numpy.sort",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
-    ]
-  },
-  {
-    "objectID": "numpy-inne.html#alegbra-liniowa",
-    "href": "numpy-inne.html#alegbra-liniowa",
-    "title": "13  Numpy - inne",
-    "section": "13.9 Alegbra liniowa",
-    "text": "13.9 Alegbra liniowa\nhttps://numpy.org/doc/stable/reference/routines.linalg.html",
-    "crumbs": [
-      "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#data-i-czas",
     "href": "numpy-inne.html#data-i-czas",
-    "title": "13  Numpy - inne",
-    "section": "13.10 Data i czas",
-    "text": "13.10 Data i czas\nhttps://numpy.org/doc/stable/reference/arrays.datetime.html",
+    "title": "15  Numpy - inne",
+    "section": "15.9 Data i czas",
+    "text": "15.9 Data i czas\nhttps://numpy.org/doc/stable/reference/arrays.datetime.html",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "numpy-inne.html#pseudolosowe",
     "href": "numpy-inne.html#pseudolosowe",
-    "title": "13  Numpy - inne",
-    "section": "13.11 Pseudolosowe",
-    "text": "13.11 Pseudolosowe\nhttps://numpy.org/doc/stable/reference/random/index.html",
+    "title": "15  Numpy - inne",
+    "section": "15.10 Pseudolosowe",
+    "text": "15.10 Pseudolosowe\nhttps://numpy.org/doc/stable/reference/random/index.html",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Numpy - inne</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
     ]
   },
   {
     "objectID": "eksploracja.html",
     "href": "eksploracja.html",
-    "title": "14  Etapy eksploracji danych",
+    "title": "16  Etapy eksploracji danych",
     "section": "",
     "text": "Zbieranie danych:\n\nZebranie danych z różnych źródeł (bazy danych, pliki CSV, API, itd.).\n\nZrozumienie danych:\n\nAnaliza struktury danych, typów danych i ich znaczenia.\nEksploracja wstępnych zależności i trendów.\n\nCzyszczenie danych:\n\nUsuwanie braków, błędów i anomalii w danych.\nObsługa brakujących wartości i duplikatów.\n\nTransformacja danych:\n\nNormalizacja, standaryzacja, kodowanie zmiennych kategorycznych.\nTworzenie nowych zmiennych (cech).\n\nRedukcja danych:\n\nSelekcja istotnych cech lub zmniejszenie wymiarowości danych (np. PCA).",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Etapy eksploracji danych</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Etapy eksploracji danych</span>"
     ]
   }
 ]

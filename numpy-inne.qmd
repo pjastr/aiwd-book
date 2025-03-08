@@ -159,9 +159,6 @@ print("Operacja z broadcast:\n", sum_matrix)
 
 <https://numpy.org/doc/stable/reference/generated/numpy.sort>
 
-## Alegbra liniowa
-
-<https://numpy.org/doc/stable/reference/routines.linalg.html>
 
 
 ## Data i czas

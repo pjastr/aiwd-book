@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.41">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Numpy - inne – Analiza i wizualizacja danych</title>
+<title>15&nbsp; Numpy - inne – Analiza i wizualizacja danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,14 +65,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./eksploracja.html" rel="next">
-<link href="./numpy-strings.html" rel="prev">
+<link href="./numpy-warunki.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-inne.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Numpy - inne</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-inne.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -230,8 +230,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa w <code>NumPy</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-warunki.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./numpy-inne.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -239,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eksploracja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
   </div>
 </li>
     </ul>
@@ -252,26 +264,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#stałe" id="toc-stałe" class="nav-link active" data-scroll-target="#stałe"><span class="header-section-number">13.1</span> Stałe</a></li>
-  <li><a href="#numpy.inf" id="toc-numpy.inf" class="nav-link" data-scroll-target="#numpy.inf"><span class="header-section-number">13.2</span> <code>numpy.inf</code></a></li>
-  <li><a href="#numpy.nan" id="toc-numpy.nan" class="nav-link" data-scroll-target="#numpy.nan"><span class="header-section-number">13.3</span> <code>numpy.nan</code></a></li>
-  <li><a href="#numpy.newaxis" id="toc-numpy.newaxis" class="nav-link" data-scroll-target="#numpy.newaxis"><span class="header-section-number">13.4</span> <code>numpy.newaxis</code></a></li>
-  <li><a href="#statystyka-i-agregacja" id="toc-statystyka-i-agregacja" class="nav-link" data-scroll-target="#statystyka-i-agregacja"><span class="header-section-number">13.5</span> Statystyka i agregacja</a></li>
-  <li><a href="#wyrażenia-warunkowe" id="toc-wyrażenia-warunkowe" class="nav-link" data-scroll-target="#wyrażenia-warunkowe"><span class="header-section-number">13.6</span> Wyrażenia warunkowe</a></li>
-  <li><a href="#działania-na-zbiorach" id="toc-działania-na-zbiorach" class="nav-link" data-scroll-target="#działania-na-zbiorach"><span class="header-section-number">13.7</span> Działania na zbiorach</a></li>
-  <li><a href="#operacje-tablicowe" id="toc-operacje-tablicowe" class="nav-link" data-scroll-target="#operacje-tablicowe"><span class="header-section-number">13.8</span> Operacje tablicowe</a></li>
-  <li><a href="#alegbra-liniowa" id="toc-alegbra-liniowa" class="nav-link" data-scroll-target="#alegbra-liniowa"><span class="header-section-number">13.9</span> Alegbra liniowa</a></li>
-  <li><a href="#data-i-czas" id="toc-data-i-czas" class="nav-link" data-scroll-target="#data-i-czas"><span class="header-section-number">13.10</span> Data i czas</a></li>
-  <li><a href="#pseudolosowe" id="toc-pseudolosowe" class="nav-link" data-scroll-target="#pseudolosowe"><span class="header-section-number">13.11</span> Pseudolosowe</a></li>
+  <li><a href="#stałe" id="toc-stałe" class="nav-link active" data-scroll-target="#stałe"><span class="header-section-number">15.1</span> Stałe</a></li>
+  <li><a href="#numpy.inf" id="toc-numpy.inf" class="nav-link" data-scroll-target="#numpy.inf"><span class="header-section-number">15.2</span> <code>numpy.inf</code></a></li>
+  <li><a href="#numpy.nan" id="toc-numpy.nan" class="nav-link" data-scroll-target="#numpy.nan"><span class="header-section-number">15.3</span> <code>numpy.nan</code></a></li>
+  <li><a href="#numpy.newaxis" id="toc-numpy.newaxis" class="nav-link" data-scroll-target="#numpy.newaxis"><span class="header-section-number">15.4</span> <code>numpy.newaxis</code></a></li>
+  <li><a href="#statystyka-i-agregacja" id="toc-statystyka-i-agregacja" class="nav-link" data-scroll-target="#statystyka-i-agregacja"><span class="header-section-number">15.5</span> Statystyka i agregacja</a></li>
+  <li><a href="#wyrażenia-warunkowe" id="toc-wyrażenia-warunkowe" class="nav-link" data-scroll-target="#wyrażenia-warunkowe"><span class="header-section-number">15.6</span> Wyrażenia warunkowe</a></li>
+  <li><a href="#działania-na-zbiorach" id="toc-działania-na-zbiorach" class="nav-link" data-scroll-target="#działania-na-zbiorach"><span class="header-section-number">15.7</span> Działania na zbiorach</a></li>
+  <li><a href="#operacje-tablicowe" id="toc-operacje-tablicowe" class="nav-link" data-scroll-target="#operacje-tablicowe"><span class="header-section-number">15.8</span> Operacje tablicowe</a></li>
+  <li><a href="#data-i-czas" id="toc-data-i-czas" class="nav-link" data-scroll-target="#data-i-czas"><span class="header-section-number">15.9</span> Data i czas</a></li>
+  <li><a href="#pseudolosowe" id="toc-pseudolosowe" class="nav-link" data-scroll-target="#pseudolosowe"><span class="header-section-number">15.10</span> Pseudolosowe</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-inne.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Numpy - inne</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-inne.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Numpy - inne</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></h1>
 </div>
 
 
@@ -288,8 +299,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="stałe" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="stałe"><span class="header-section-number">13.1</span> Stałe</h2>
+<section id="stałe" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="stałe"><span class="header-section-number">15.1</span> Stałe</h2>
 <p><code>NumPy</code> dostarcza kilka znanych stałych matematycznych, które mogą być przydatne w obliczeniach naukowych i inżynierskich. Wbudowane stałe takie jak liczba Pi czy podstawa logarytmu naturalnego <code>e</code> ułatwiają pisanie czytelnego i zwięzłego kodu.</p>
 <ol type="1">
 <li><strong><code>numpy.pi</code></strong>
@@ -315,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>W przybliżeniu: <code>0.5772156649015329</code></li>
 </ul></li>
 </ol>
-<div id="7a068a1a" class="cell" data-execution_count="1">
+<div id="be9e4062" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Promień koła</span></span>
@@ -333,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Pole koła: 78.53981633974483</code></pre>
 </div>
 </div>
-<div id="f564a6a4" class="cell" data-execution_count="2">
+<div id="2878184a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowy punkt x</span></span>
@@ -352,8 +363,8 @@ Porównanie z np.exp(1): 2.718281828459045</code></pre>
 </div>
 </div>
 </section>
-<section id="numpy.inf" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="numpy.inf"><span class="header-section-number">13.2</span> <code>numpy.inf</code></h2>
+<section id="numpy.inf" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="numpy.inf"><span class="header-section-number">15.2</span> <code>numpy.inf</code></h2>
 <ul>
 <li><strong>Opis</strong>: <code>np.inf</code> reprezentuje wartość nieskończoną (∞).<br>
 </li>
@@ -361,7 +372,7 @@ Porównanie z np.exp(1): 2.718281828459045</code></pre>
 </li>
 <li>Przykładowo, <code>1.0 / 0.0</code> zwróci ostrzeżenie i w konsekwencji może dać wartość <code>inf</code>.</li>
 </ul>
-<div id="ef44ba4c" class="cell" data-execution_count="3">
+<div id="3ee0b6f9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Zastosowanie w tworzeniu masek logicznych</span></span>
@@ -373,8 +384,8 @@ Porównanie z np.exp(1): 2.718281828459045</code></pre>
 </div>
 </div>
 </section>
-<section id="numpy.nan" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="numpy.nan"><span class="header-section-number">13.3</span> <code>numpy.nan</code></h2>
+<section id="numpy.nan" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="numpy.nan"><span class="header-section-number">15.3</span> <code>numpy.nan</code></h2>
 <ul>
 <li><strong>Opis</strong>: <code>np.nan</code> oznacza “Not a Number” (NaN), czyli wartość nieokreśloną lub niereprezentowalną w systemie liczbowym.<br>
 </li>
@@ -382,7 +393,7 @@ Porównanie z np.exp(1): 2.718281828459045</code></pre>
 </li>
 <li>Operacje arytmetyczne z <code>nan</code> zazwyczaj również zwracają <code>nan</code>.</li>
 </ul>
-<div id="173a0be0" class="cell" data-execution_count="4">
+<div id="d8946875" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Zamiana wartości nan w tablicy</span></span>
@@ -398,12 +409,12 @@ Dane bez nan: [1. 2. 0. 4. 0.]</code></pre>
 </div>
 </div>
 </section>
-<section id="numpy.newaxis" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="numpy.newaxis"><span class="header-section-number">13.4</span> <code>numpy.newaxis</code></h2>
+<section id="numpy.newaxis" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="numpy.newaxis"><span class="header-section-number">15.4</span> <code>numpy.newaxis</code></h2>
 <ul>
 <li><strong>Opis</strong>: <code>np.newaxis</code> jest specjalną “stałą”/obiektem służącym do zmiany wymiarów tablic przez zwiększenie ich liczby wymiarów o 1.</li>
 </ul>
-<div id="2d4988c1" class="cell" data-execution_count="5">
+<div id="541716af" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Mamy tablicę 1D</span></span>
@@ -442,8 +453,8 @@ Operacja z broadcast:
 </div>
 </div>
 </section>
-<section id="statystyka-i-agregacja" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="statystyka-i-agregacja"><span class="header-section-number">13.5</span> Statystyka i agregacja</h2>
+<section id="statystyka-i-agregacja" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="statystyka-i-agregacja"><span class="header-section-number">15.5</span> Statystyka i agregacja</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -503,30 +514,26 @@ Operacja z broadcast:
 </tbody>
 </table>
 </section>
-<section id="wyrażenia-warunkowe" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="wyrażenia-warunkowe"><span class="header-section-number">13.6</span> Wyrażenia warunkowe</h2>
+<section id="wyrażenia-warunkowe" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="wyrażenia-warunkowe"><span class="header-section-number">15.6</span> Wyrażenia warunkowe</h2>
 <p><a href="https://numpy.org/doc/stable/reference/generated/numpy.where" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.where</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.choose" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.choose</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.select" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.select</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.nonzero" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.nonzero</a></p>
 </section>
-<section id="działania-na-zbiorach" class="level2" data-number="13.7">
-<h2 data-number="13.7" class="anchored" data-anchor-id="działania-na-zbiorach"><span class="header-section-number">13.7</span> Działania na zbiorach</h2>
+<section id="działania-na-zbiorach" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="działania-na-zbiorach"><span class="header-section-number">15.7</span> Działania na zbiorach</h2>
 <p><a href="https://numpy.org/doc/stable/reference/routines.set.html" class="uri">https://numpy.org/doc/stable/reference/routines.set.html</a></p>
 </section>
-<section id="operacje-tablicowe" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="operacje-tablicowe"><span class="header-section-number">13.8</span> Operacje tablicowe</h2>
+<section id="operacje-tablicowe" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="operacje-tablicowe"><span class="header-section-number">15.8</span> Operacje tablicowe</h2>
 <p><a href="https://numpy.org/doc/stable/reference/generated/numpy.transpose" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.transpose</a></p>
 <p><a href="https://numpy.org/doc/stable/reference/generated/numpy.flip" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.flip</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.fliplr" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.fliplr</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.flipud" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.flipud</a></p>
 <p><a href="https://numpy.org/doc/stable/reference/generated/numpy.sort" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.sort</a></p>
 </section>
-<section id="alegbra-liniowa" class="level2" data-number="13.9">
-<h2 data-number="13.9" class="anchored" data-anchor-id="alegbra-liniowa"><span class="header-section-number">13.9</span> Alegbra liniowa</h2>
-<p><a href="https://numpy.org/doc/stable/reference/routines.linalg.html" class="uri">https://numpy.org/doc/stable/reference/routines.linalg.html</a></p>
-</section>
-<section id="data-i-czas" class="level2" data-number="13.10">
-<h2 data-number="13.10" class="anchored" data-anchor-id="data-i-czas"><span class="header-section-number">13.10</span> Data i czas</h2>
+<section id="data-i-czas" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="data-i-czas"><span class="header-section-number">15.9</span> Data i czas</h2>
 <p><a href="https://numpy.org/doc/stable/reference/arrays.datetime.html" class="uri">https://numpy.org/doc/stable/reference/arrays.datetime.html</a></p>
 </section>
-<section id="pseudolosowe" class="level2" data-number="13.11">
-<h2 data-number="13.11" class="anchored" data-anchor-id="pseudolosowe"><span class="header-section-number">13.11</span> Pseudolosowe</h2>
+<section id="pseudolosowe" class="level2" data-number="15.10">
+<h2 data-number="15.10" class="anchored" data-anchor-id="pseudolosowe"><span class="header-section-number">15.10</span> Pseudolosowe</h2>
 <p><a href="https://numpy.org/doc/stable/reference/random/index.html" class="uri">https://numpy.org/doc/stable/reference/random/index.html</a></p>
 
 
@@ -1096,13 +1103,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./numpy-strings.html" class="pagination-link" aria-label="Operacje na stringach">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span>
+      <a href="./numpy-warunki.html" class="pagination-link" aria-label="Filtrowanie zaawansowane">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./eksploracja.html" class="pagination-link" aria-label="Etapy eksploracji danych">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
