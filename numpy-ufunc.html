@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.41">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Alegbra liniowa w NumPy – Analiza i wizualizacja danych</title>
+<title>11&nbsp; Funkcje uniwersalne (ufunc) – Analiza i wizualizacja danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,15 +64,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./numpy-warunki.html" rel="next">
-<link href="./numpy-strings.html" rel="prev">
+<link href="./numpy-strings.html" rel="next">
+<link href="./numpy-broadcasting.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -117,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-algebraliniowa.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa w <code>NumPy</code></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-ufunc.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -218,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-ufunc.html" class="sidebar-item-text sidebar-link">
+  <a href="./numpy-ufunc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc)</span></span></a>
   </div>
 </li>
@@ -230,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link active">
+  <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa w <code>NumPy</code></span></span></a>
   </div>
 </li>
@@ -264,27 +293,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#iloczyn-skalarny-dot-product" id="toc-iloczyn-skalarny-dot-product" class="nav-link active" data-scroll-target="#iloczyn-skalarny-dot-product"><span class="header-section-number">13.1</span> Iloczyn skalarny (dot product)</a></li>
-  <li><a href="#mnożenie-macierzowe" id="toc-mnożenie-macierzowe" class="nav-link" data-scroll-target="#mnożenie-macierzowe"><span class="header-section-number">13.2</span> Mnożenie macierzowe</a></li>
-  <li><a href="#mnożenie-macierz-wektor" id="toc-mnożenie-macierz-wektor" class="nav-link" data-scroll-target="#mnożenie-macierz-wektor"><span class="header-section-number">13.3</span> Mnożenie macierz-wektor</a></li>
-  <li><a href="#rozwiązywanie-układów-równań-liniowych" id="toc-rozwiązywanie-układów-równań-liniowych" class="nav-link" data-scroll-target="#rozwiązywanie-układów-równań-liniowych"><span class="header-section-number">13.4</span> Rozwiązywanie układów równań liniowych</a></li>
-  <li><a href="#wyznacznik-macierzy" id="toc-wyznacznik-macierzy" class="nav-link" data-scroll-target="#wyznacznik-macierzy"><span class="header-section-number">13.5</span> Wyznacznik macierzy</a></li>
-  <li><a href="#wartości-i-wektory-własne" id="toc-wartości-i-wektory-własne" class="nav-link" data-scroll-target="#wartości-i-wektory-własne"><span class="header-section-number">13.6</span> Wartości i wektory własne</a></li>
-  <li><a href="#rozkład-wartości-osobliwych-svd" id="toc-rozkład-wartości-osobliwych-svd" class="nav-link" data-scroll-target="#rozkład-wartości-osobliwych-svd"><span class="header-section-number">13.7</span> Rozkład wartości osobliwych (SVD)</a></li>
-  <li><a href="#norma-macierzywektora" id="toc-norma-macierzywektora" class="nav-link" data-scroll-target="#norma-macierzywektora"><span class="header-section-number">13.8</span> Norma macierzy/wektora</a></li>
-  <li><a href="#macierz-odwrotna" id="toc-macierz-odwrotna" class="nav-link" data-scroll-target="#macierz-odwrotna"><span class="header-section-number">13.9</span> Macierz odwrotna</a></li>
-  <li><a href="#funkcja-numpy.inner---iloczyn-wewnętrzny" id="toc-funkcja-numpy.inner---iloczyn-wewnętrzny" class="nav-link" data-scroll-target="#funkcja-numpy.inner---iloczyn-wewnętrzny"><span class="header-section-number">13.10</span> Funkcja <code>numpy.inner</code> - iloczyn wewnętrzny</a></li>
-  <li><a href="#funkcja-numpy.outer---iloczyn-zewnętrzny" id="toc-funkcja-numpy.outer---iloczyn-zewnętrzny" class="nav-link" data-scroll-target="#funkcja-numpy.outer---iloczyn-zewnętrzny"><span class="header-section-number">13.11</span> Funkcja <code>numpy.outer</code> - iloczyn zewnętrzny</a></li>
-  <li><a href="#funkcja-numpy.matmul---mnożenie-macierzowe" id="toc-funkcja-numpy.matmul---mnożenie-macierzowe" class="nav-link" data-scroll-target="#funkcja-numpy.matmul---mnożenie-macierzowe"><span class="header-section-number">13.12</span> Funkcja <code>numpy.matmul</code> - mnożenie macierzowe</a></li>
+  <li><a href="#podstawowe-operacje-arytmetyczne" id="toc-podstawowe-operacje-arytmetyczne" class="nav-link active" data-scroll-target="#podstawowe-operacje-arytmetyczne"><span class="header-section-number">11.1</span> Podstawowe operacje arytmetyczne</a></li>
+  <li><a href="#funkcje-trygonometryczne-i-pochodne" id="toc-funkcje-trygonometryczne-i-pochodne" class="nav-link" data-scroll-target="#funkcje-trygonometryczne-i-pochodne"><span class="header-section-number">11.2</span> Funkcje trygonometryczne i pochodne</a></li>
+  <li><a href="#funkcje-wykładnicze-i-logarytmiczne" id="toc-funkcje-wykładnicze-i-logarytmiczne" class="nav-link" data-scroll-target="#funkcje-wykładnicze-i-logarytmiczne"><span class="header-section-number">11.3</span> Funkcje wykładnicze i logarytmiczne</a></li>
+  <li><a href="#funkcje-zaokrąglające-i-wartości-bezwzględne" id="toc-funkcje-zaokrąglające-i-wartości-bezwzględne" class="nav-link" data-scroll-target="#funkcje-zaokrąglające-i-wartości-bezwzględne"><span class="header-section-number">11.4</span> Funkcje zaokrąglające i wartości bezwzględne</a></li>
+  <li><a href="#funkcje-statystyczne-i-agregujące" id="toc-funkcje-statystyczne-i-agregujące" class="nav-link" data-scroll-target="#funkcje-statystyczne-i-agregujące"><span class="header-section-number">11.5</span> Funkcje statystyczne i agregujące</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-algebraliniowa.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa w <code>NumPy</code></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-ufunc.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa w <code>NumPy</code></span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc)</span></h1>
 </div>
 
 
@@ -301,289 +323,177 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="iloczyn-skalarny-dot-product" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="iloczyn-skalarny-dot-product"><span class="header-section-number">13.1</span> Iloczyn skalarny (dot product)</h2>
-<p>Dla dwóch wektorów, <code>dot</code> oblicza ich iloczyn skalarny.</p>
-<div id="eb9b86a7" class="cell" data-execution_count="1">
+<p>Funkcje uniwersalne (tzw. <em>ufunc</em>) to jedne z najważniejszych narzędzi w NumPy. Są to funkcje działające element-po-elemencie na tablicach, często implementowane w C, co zapewnia wysoką wydajność obliczeń. Dzięki <em>ufuncs</em> można w prosty i czytelny sposób wykonywać operacje arytmetyczne, trygonometryczne, statystyczne czy logiczne na całych tablicach bez konieczności pisania pętli w Pythonie.</p>
+<section id="podstawowe-operacje-arytmetyczne" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="podstawowe-operacje-arytmetyczne"><span class="header-section-number">11.1</span> Podstawowe operacje arytmetyczne</h2>
+<p>NumPy automatycznie przekształca operatory matematyczne w odpowiednie <em>ufunc</em>.<br>
+Na przykład:</p>
+<ul>
+<li><code>+</code> odpowiada <code>np.add</code></li>
+<li><code>-</code> odpowiada <code>np.subtract</code></li>
+<li><code>*</code> odpowiada <code>np.multiply</code></li>
+<li><code>/</code> odpowiada <code>np.divide</code></li>
+<li><code>**</code> odpowiada <code>np.power</code></li>
+</ul>
+<p>Przykład:</p>
+<div id="9e176117" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn skalarny dwóch wektorów</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> np.dot(a, b)  <span class="co"># 1*4 + 2*5 + 3*6</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># Wynik: 32</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternatywny zapis za pomocą operatora @</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> a <span class="op">@</span> b</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># Wynik: 32</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>])</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Operacje element-po-elemencie</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sum_tab <span class="op">=</span> np.add(A, B)       <span class="co"># to samo co A + B</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>diff_tab <span class="op">=</span> np.subtract(B, A) <span class="co"># to samo co B - A</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>mul_tab <span class="op">=</span> np.multiply(A, <span class="dv">2</span>)  <span class="co"># to samo co A * 2</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pow_tab <span class="op">=</span> np.power(A, <span class="dv">3</span>)     <span class="co"># to samo co A ** 3</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Suma:"</span>, sum_tab)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Różnica:"</span>, diff_tab)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mnożenie przez 2:"</span>, mul_tab)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Potęgowanie:"</span>, pow_tab)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>32
-32</code></pre>
+<pre><code>Suma: [11 22 33 44]
+Różnica: [ 9 18 27 36]
+Mnożenie przez 2: [2 4 6 8]
+Potęgowanie: [ 1  8 27 64]</code></pre>
 </div>
 </div>
 </section>
-<section id="mnożenie-macierzowe" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="mnożenie-macierzowe"><span class="header-section-number">13.2</span> Mnożenie macierzowe</h2>
-<p>Dla macierzy (tablic dwuwymiarowych), <code>dot</code> wykonuje standardowe mnożenie macierzowe.</p>
-<div id="f0076387" class="cell" data-execution_count="2">
+<section id="funkcje-trygonometryczne-i-pochodne" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="funkcje-trygonometryczne-i-pochodne"><span class="header-section-number">11.2</span> Funkcje trygonometryczne i pochodne</h2>
+<p>NumPy oferuje bogaty zestaw funkcji trygonometrycznych:</p>
+<ul>
+<li><code>np.sin</code>, <code>np.cos</code>, <code>np.tan</code> – funkcje podstawowe,</li>
+<li><code>np.arcsin</code>, <code>np.arccos</code>, <code>np.arctan</code> – odwrotne funkcje trygonometryczne,</li>
+<li><code>np.sinh</code>, <code>np.cosh</code>, <code>np.tanh</code> – funkcje hiperboliczne.</li>
+</ul>
+<p>Przykład:</p>
+<div id="26fe5965" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Mnożenie macierzowe</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> np.dot(A, B)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(C)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Wynik:</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># [[19 22]</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  [43 50]]</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># To samo za pomocą operatora @</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> A <span class="op">@</span> B</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(C)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, np.pi, <span class="dv">5</span>) <span class="co"># tablica [0, π/4, π/2, 3π/4, π]</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sin_values <span class="op">=</span> np.sin(x)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>cos_values <span class="op">=</span> np.cos(x)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Wartości sin(x):"</span>, sin_values)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Wartości cos(x):"</span>, cos_values)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[19 22]
- [43 50]]
-[[19 22]
- [43 50]]</code></pre>
+<pre><code>Wartości sin(x): [0.00000000e+00 7.07106781e-01 1.00000000e+00 7.07106781e-01
+ 1.22464680e-16]
+Wartości cos(x): [ 1.00000000e+00  7.07106781e-01  6.12323400e-17 -7.07106781e-01
+ -1.00000000e+00]</code></pre>
 </div>
 </div>
 </section>
-<section id="mnożenie-macierz-wektor" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="mnożenie-macierz-wektor"><span class="header-section-number">13.3</span> Mnożenie macierz-wektor</h2>
-<p>Możemy również mnożyć macierz przez wektor:</p>
-<div id="0bb5b7ab" class="cell" data-execution_count="3">
+<section id="funkcje-wykładnicze-i-logarytmiczne" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="funkcje-wykładnicze-i-logarytmiczne"><span class="header-section-number">11.3</span> Funkcje wykładnicze i logarytmiczne</h2>
+<ul>
+<li><code>np.exp</code> – eksponenta,</li>
+<li><code>np.log</code> – logarytm naturalny,</li>
+<li><code>np.log10</code> – logarytm dziesiętny.</li>
+</ul>
+<p>Przykład:</p>
+<div id="2a1e2e8a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Mnożenie macierz-wektor</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> np.dot(A, v)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># Wynik: [17 39]</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([<span class="dv">1</span>, np.e, np.e<span class="op">**</span><span class="dv">2</span>])</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A:"</span>, A)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"log(A):"</span>, np.log(A))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"exp(A):"</span>, np.exp([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]))  <span class="co"># exp(0)=1, exp(1)=e, exp(2)=e^2</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[17 39]</code></pre>
+<pre><code>A: [1.         2.71828183 7.3890561 ]
+log(A): [0. 1. 2.]
+exp(A): [1.         2.71828183 7.3890561 ]</code></pre>
 </div>
 </div>
 </section>
-<section id="rozwiązywanie-układów-równań-liniowych" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="rozwiązywanie-układów-równań-liniowych"><span class="header-section-number">13.4</span> Rozwiązywanie układów równań liniowych</h2>
-<p>Funkcja <code>numpy.linalg.solve</code> rozwiązuje układy równań liniowych postaci Ax = b:</p>
-<div id="0394537b" class="cell" data-execution_count="4">
+<section id="funkcje-zaokrąglające-i-wartości-bezwzględne" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="funkcje-zaokrąglające-i-wartości-bezwzględne"><span class="header-section-number">11.4</span> Funkcje zaokrąglające i wartości bezwzględne</h2>
+<ul>
+<li><code>np.round</code> – zaokrągla do najbliższej liczby,</li>
+<li><code>np.floor</code> – podłoga,</li>
+<li><code>np.ceil</code> – sufit,</li>
+<li><code>np.trunc</code> – obcięcie do części całkowitej,</li>
+<li><code>np.abs</code> – wartość bezwzględna.</li>
+</ul>
+<p>Przykład:</p>
+<div id="6a25e3e5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozwiązywanie układu równań liniowych</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">2</span>]])</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">9</span>, <span class="dv">8</span>])</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linalg.solve(A, b)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  <span class="co"># Wynik: [2. 3.]</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Sprawdzenie rozwiązania</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>np.dot(A, x)  <span class="co"># Powinno być równe b</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([<span class="fl">1.7</span>, <span class="op">-</span><span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="op">-</span><span class="fl">4.1</span>])</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"B:"</span>, B)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"floor(B):"</span>, np.floor(B))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ceil(B):"</span>, np.ceil(B))</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"abs(B):"</span>, np.<span class="bu">abs</span>(B))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[2. 3.]</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>array([9., 8.])</code></pre>
+<pre><code>B: [ 1.7 -2.5  3.5 -4.1]
+floor(B): [ 1. -3.  3. -5.]
+ceil(B): [ 2. -2.  4. -4.]
+abs(B): [1.7 2.5 3.5 4.1]</code></pre>
 </div>
 </div>
 </section>
-<section id="wyznacznik-macierzy" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="wyznacznik-macierzy"><span class="header-section-number">13.5</span> Wyznacznik macierzy</h2>
-<p>Funkcja <code>numpy.linalg.det</code> oblicza wyznacznik macierzy:</p>
-<div id="482b10ce" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie wyznacznika</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>det_A <span class="op">=</span> np.linalg.det(A)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(det_A)  <span class="co"># Wynik: -2.0</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="funkcje-statystyczne-i-agregujące" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="funkcje-statystyczne-i-agregujące"><span class="header-section-number">11.5</span> Funkcje statystyczne i agregujące</h2>
+<p>Choć wiele funkcji statystycznych dostępnych jest jako metody tablic (np. <code>A.mean()</code>, <code>A.std()</code>), istnieją też ufuncs działające element-po-elemencie lub akceptujące parametry osi:</p>
+<ul>
+<li><code>np.minimum</code>, <code>np.maximum</code> – zwracają minimum/maksimum element-po-elemencie z dwóch tablic,</li>
+<li><code>np.fmin</code>, <code>np.fmax</code> – podobne do wyżej wymienionych, ale ignorują wartości NaN,</li>
+<li><code>np.sqrt</code> – pierwiastek kwadratowy,</li>
+<li><code>np.square</code> – podniesienie do kwadratu.</li>
+</ul>
+<p>Przykład:</p>
+<div id="0ea1eecd" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>C1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>])</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>C2 <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">20</span>])</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"minimum elementów C1 i C2:"</span>, np.minimum(C1, C2))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"maximum elementów C1 i C2:"</span>, np.maximum(C1, C2))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sqrt(C1):"</span>, np.sqrt(C1))</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"square(C2):"</span>, np.square(C2))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>-2.0000000000000004</code></pre>
+<pre><code>minimum elementów C1 i C2: [ 1  2  5 16]
+maximum elementów C1 i C2: [ 2  4  9 20]
+sqrt(C1): [1. 2. 3. 4.]
+square(C2): [  4   4  25 400]</code></pre>
 </div>
 </div>
-</section>
-<section id="wartości-i-wektory-własne" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="wartości-i-wektory-własne"><span class="header-section-number">13.6</span> Wartości i wektory własne</h2>
-<p>Funkcja <code>numpy.linalg.eig</code> oblicza wartości i wektory własne macierzy:</p>
-<div id="8fa635e5" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie wartości i wektorów własnych</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>eigenvalues, eigenvectors <span class="op">=</span> np.linalg.eig(A)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Wartości własne:"</span>, eigenvalues)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Wektory własne:"</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eigenvectors)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sprawdzenie: A * v = lambda * v</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(eigenvalues)):</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    lambda_i <span class="op">=</span> eigenvalues[i]</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    v_i <span class="op">=</span> eigenvectors[:, i]</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"λ_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>lambda_i<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"A * v ="</span>, np.dot(A, v_i))</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"λ * v ="</span>, lambda_i <span class="op">*</span> v_i)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Wartości własne: [3. 2.]
-Wektory własne:
-[[0.89442719 0.70710678]
- [0.4472136  0.70710678]]
-λ_0 = 3.0
-A * v = [2.68328157 1.34164079]
-λ * v = [2.68328157 1.34164079]
-λ_1 = 2.0
-A * v = [1.41421356 1.41421356]
-λ * v = [1.41421356 1.41421356]</code></pre>
-</div>
-</div>
-</section>
-<section id="rozkład-wartości-osobliwych-svd" class="level2" data-number="13.7">
-<h2 data-number="13.7" class="anchored" data-anchor-id="rozkład-wartości-osobliwych-svd"><span class="header-section-number">13.7</span> Rozkład wartości osobliwych (SVD)</h2>
-<p>Rozkład SVD jest potężnym narzędziem w analizie danych:</p>
-<div id="8fba2bba" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozkład SVD</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>]])</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>U, s, Vh <span class="op">=</span> np.linalg.svd(A)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Macierz U:"</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(U)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Wartości osobliwe:"</span>, s)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Macierz V^H:"</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Vh)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Rekonstrukcja macierzy A</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> np.zeros((A.shape[<span class="dv">0</span>], A.shape[<span class="dv">1</span>]))</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>S[:<span class="bu">len</span>(s), :<span class="bu">len</span>(s)] <span class="op">=</span> np.diag(s)</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>A_reconstructed <span class="op">=</span> U <span class="op">@</span> S <span class="op">@</span> Vh</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Rekonstruowana macierz A:"</span>)</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A_reconstructed)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Macierz U:
-[[-0.2298477   0.88346102  0.40824829]
- [-0.52474482  0.24078249 -0.81649658]
- [-0.81964194 -0.40189603  0.40824829]]
-Wartości osobliwe: [9.52551809 0.51430058]
-Macierz V^H:
-[[-0.61962948 -0.78489445]
- [-0.78489445  0.61962948]]
-Rekonstruowana macierz A:
-[[1. 2.]
- [3. 4.]
- [5. 6.]]</code></pre>
-</div>
-</div>
-</section>
-<section id="norma-macierzywektora" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="norma-macierzywektora"><span class="header-section-number">13.8</span> Norma macierzy/wektora</h2>
-<p>NumPy oferuje różne rodzaje norm:</p>
-<div id="b88c786d" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Różne normy</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">4</span>])</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Norma L1:"</span>, np.linalg.norm(v, <span class="dv">1</span>))  <span class="co"># Norma L1: 7.0</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Norma L2 (Euklidesowa):"</span>, np.linalg.norm(v))  <span class="co"># Norma L2: 5.0</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Norma maksimum:"</span>, np.linalg.norm(v, np.inf))  <span class="co"># Norma maksimum: 4.0</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Norma macierzowa Frobeniusa:"</span>, np.linalg.norm(A, <span class="st">'fro'</span>))  <span class="co"># Norma Frobeniusa: 5.477...</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Norma L1: 7.0
-Norma L2 (Euklidesowa): 5.0
-Norma maksimum: 4.0
-Norma macierzowa Frobeniusa: 5.477225575051661</code></pre>
-</div>
-</div>
-</section>
-<section id="macierz-odwrotna" class="level2" data-number="13.9">
-<h2 data-number="13.9" class="anchored" data-anchor-id="macierz-odwrotna"><span class="header-section-number">13.9</span> Macierz odwrotna</h2>
-<p>Funkcja <code>numpy.linalg.inv</code> oblicza macierz odwrotną:</p>
-<div id="4b3ce500" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Macierz odwrotna</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>A_inv <span class="op">=</span> np.linalg.inv(A)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Macierz odwrotna:"</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A_inv)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Sprawdzenie: A * A^(-1) = I</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A * A^(-1):"</span>)</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.dot(A, A_inv))  <span class="co"># Powinno być bliskie macierzy jednostkowej</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Macierz odwrotna:
-[[-2.   1. ]
- [ 1.5 -0.5]]
-A * A^(-1):
-[[1.0000000e+00 0.0000000e+00]
- [8.8817842e-16 1.0000000e+00]]</code></pre>
-</div>
-</div>
-</section>
-<section id="funkcja-numpy.inner---iloczyn-wewnętrzny" class="level2" data-number="13.10">
-<h2 data-number="13.10" class="anchored" data-anchor-id="funkcja-numpy.inner---iloczyn-wewnętrzny"><span class="header-section-number">13.10</span> Funkcja <code>numpy.inner</code> - iloczyn wewnętrzny</h2>
-<p>Funkcja <code>inner</code> oblicza iloczyn wewnętrzny dwóch tablic:</p>
-<div id="d1077a3d" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn wewnętrzny</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> np.inner(a, b)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 1*4 + 2*5 + 3*6 = 32</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Dla tablic 2D</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> np.inner(A, B)</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Jest to równoważne wykonaniu iloczynu skalarnego wzdłuż ostatniego wymiaru</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>32
-[[17 23]
- [39 53]]</code></pre>
-</div>
-</div>
-</section>
-<section id="funkcja-numpy.outer---iloczyn-zewnętrzny" class="level2" data-number="13.11">
-<h2 data-number="13.11" class="anchored" data-anchor-id="funkcja-numpy.outer---iloczyn-zewnętrzny"><span class="header-section-number">13.11</span> Funkcja <code>numpy.outer</code> - iloczyn zewnętrzny</h2>
-<p>Funkcja <code>outer</code> oblicza iloczyn zewnętrzny dwóch wektorów:</p>
-<div id="9c1feccf" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn zewnętrzny</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> np.outer(a, b)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Wynik:</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># [[ 4  5  6]</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  [ 8 10 12]</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">#  [12 15 18]]</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[ 4  5  6]
- [ 8 10 12]
- [12 15 18]]</code></pre>
-</div>
-</div>
-</section>
-<section id="funkcja-numpy.matmul---mnożenie-macierzowe" class="level2" data-number="13.12">
-<h2 data-number="13.12" class="anchored" data-anchor-id="funkcja-numpy.matmul---mnożenie-macierzowe"><span class="header-section-number">13.12</span> Funkcja <code>numpy.matmul</code> - mnożenie macierzowe</h2>
-<p>Funkcja <code>matmul</code> jest podobna do <code>dot</code>, ale ma nieco inne zachowanie dla tablic o wymiarach większych niż 2:</p>
-<div id="a9f28db6" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Porównanie dot i matmul</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>dot_result <span class="op">=</span> np.dot(a, b)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>matmul_result <span class="op">=</span> np.matmul(a, b)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Wynik dot:"</span>)</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dot_result)</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Wynik matmul:"</span>)</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matmul_result)</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Dla 2D są identyczne</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Ale dla tablic 3D i wyższych mogą się różnić</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Wynik dot:
-[[19 22]
- [43 50]]
-Wynik matmul:
-[[19 22]
- [43 50]]</code></pre>
-</div>
-</div>
+<p><strong>Ćwiczenia:</strong> (<code>ex7.py</code>)</p>
+<ol type="1">
+<li><p>Mając tablicę<br>
+<span class="math display">\[A = \begin{bmatrix}1 &amp; 4 &amp; 9 &amp; 16\end{bmatrix},\]</span><br>
+zastosuj funkcję uniwersalną, aby obliczyć pierwiastek kwadratowy każdego elementu.</p></li>
+<li><p>Rozważ jednowymiarową tablicę<br>
+<span class="math display">\[B = \begin{bmatrix}-1 &amp; -2 &amp; 3 &amp; -4\end{bmatrix},\]</span><br>
+zastosuj funkcję uniwersalną, aby otrzymać wartości bezwzględne wszystkich elementów.</p></li>
+<li><p>Dla tablicy<br>
+<span class="math display">\[C = \begin{bmatrix}0 &amp; \pi/2 &amp; \pi &amp; 3\pi/2\end{bmatrix},\]</span><br>
+oblicz wartość funkcji trygonometrycznej dla każdego elementu.</p></li>
+<li><p>Mając tablicę<br>
+<span class="math display">\[D = \begin{bmatrix}1 &amp; e &amp; e^2 \end{bmatrix},\]</span><br>
+zastosuj funkcję uniwersalną, aby obliczyć logarytm naturalny każdego elementu.</p></li>
+<li><p>Dla tablicy dwuwymiarowej<br>
+<span class="math display">\[E = \begin{bmatrix}2 &amp; 4 \\ 10 &amp; 20 \end{bmatrix},\]</span><br>
+podziel każdy element przez skalar, a następnie podnieś uzyskane wartości do kwadratu.</p></li>
+<li><p>Rozważ tablicę<br>
+<span class="math display">\[F = \begin{bmatrix}1 &amp; 2 &amp; 3\end{bmatrix},\]</span><br>
+podnieś każdy element do trzeciej potęgi, a następnie zastosuj funkcję uniwersalną, aby obliczyć eksponentę z otrzymanych wartości.</p></li>
+<li><p>Mając tablicę<br>
+<span class="math display">\[G = \begin{bmatrix}-\pi &amp; -\pi/2 &amp; 0 &amp; \pi/2 &amp; \pi\end{bmatrix},\]</span><br>
+zastosuj odpowiednią funkcję uniwersalną, aby uzyskać cosinus każdego elementu.</p></li>
+<li><p>Dla tablicy<br>
+<span class="math display">\[H = \begin{bmatrix}10 &amp; 100 &amp; 1000\end{bmatrix},\]</span><br>
+zastosuj funkcję uniwersalną, aby obliczyć logarytm dziesiętny każdego elementu.</p></li>
+<li><p>Mając tablicę<br>
+<span class="math display">\[I = \begin{bmatrix}2 &amp; 8 &amp; 18 &amp; 32\end{bmatrix},\]</span><br>
+przekształć ją, stosując funkcję uniwersalną, tak aby każdy element był pierwiastkiem kwadratowym z wartości początkowej, a następnie pomnóż wyniki przez 2.</p></li>
+<li><p>Rozważ tablicę<br>
+<span class="math display">\[J = \begin{bmatrix}-1 &amp; -4 &amp; -9 &amp; -16\end{bmatrix},\]</span><br>
+oblicz pierwiastek kwadratowy wartości bezwzględnych elementów tej tablicy, wykorzystując po kolei dwie różne funkcje uniwersalne.</p></li>
+</ol>
 
 
 </section>
@@ -1152,13 +1062,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./numpy-strings.html" class="pagination-link" aria-label="Operacje na stringach">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span>
+      <a href="./numpy-broadcasting.html" class="pagination-link" aria-label="Broadcasting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./numpy-warunki.html" class="pagination-link" aria-label="Filtrowanie zaawansowane">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./numpy-strings.html" class="pagination-link" aria-label="Operacje na stringach">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.41">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Typy danych – Analiza i wizualizacja danych</title>
+<title>5&nbsp; Atrybuty tablic ndarray – Analiza i wizualizacja danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,15 +64,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./numpy-tworzenietablic.html" rel="next">
-<link href="./numpy-atrybuty.html" rel="prev">
+<link href="./numpy-typydanych.html" rel="next">
+<link href="./lista_tablica.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -117,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-typydanych.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-atrybuty.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -182,13 +211,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link">
+  <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-typydanych.html" class="sidebar-item-text sidebar-link active">
+  <a href="./numpy-typydanych.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
   </div>
 </li>
@@ -265,9 +294,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-typydanych.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-atrybuty.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></h1>
 </div>
 
 
@@ -284,62 +313,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html" class="uri">https://numpy.org/doc/stable/reference/arrays.scalars.html</a></p>
-<p><a href="https://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes-constructing" class="uri">https://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes-constructing</a></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
+<thead>
+<tr class="header">
+<th>Atrybut</th>
+<th>Opis</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>Typy całkowitoliczbowe</td>
-<td><code>int</code>,<code>int8</code>,<code>int16</code>,<code>int32</code>,<code>int64</code></td>
+<td><code>shape</code></td>
+<td>krotka z informacją o liczbie elementów dla każdego z wymiarów</td>
 </tr>
 <tr class="even">
-<td>Typy całkowitoliczbowe (bez znaku)</td>
-<td><code>uint</code>,<code>uint8</code>,<code>uint16</code>,<code>uint32</code>,<code>uint64</code></td>
+<td><code>size</code></td>
+<td>liczba elementów w tablicy (łączna)</td>
 </tr>
 <tr class="odd">
-<td>Typ logiczny</td>
-<td><code>bool</code></td>
+<td><code>ndim</code></td>
+<td>liczba wymiarów tablicy</td>
 </tr>
 <tr class="even">
-<td>Typy zmiennoprzecinkowe</td>
-<td><code>float</code>, <code>float16</code>, <code>float32</code>, <code>float64</code>, <code>float128</code></td>
+<td><code>nbytes</code></td>
+<td>liczba bajtów jaką tablica zajmuje w pamięci</td>
 </tr>
 <tr class="odd">
-<td>Typy zmiennoprzecinkowe zespolone</td>
-<td><code>complex</code>, <code>complex64</code>, <code>complex128</code>, <code>complex256</code></td>
-</tr>
-<tr class="even">
-<td>Napis</td>
-<td><code>str</code></td>
+<td><code>dtype</code></td>
+<td>typ danych</td>
 </tr>
 </tbody>
 </table>
-<div id="39094d0e" class="cell" data-execution_count="1">
+<p><a href="https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes" class="uri">https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes</a></p>
+<div id="8f0cca44" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>]])</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tab)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tab2 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>]], dtype<span class="op">=</span><span class="bu">int</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tab2)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>tab3 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>]], dtype<span class="op">=</span><span class="bu">float</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tab3)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>tab4 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>]], dtype<span class="op">=</span><span class="bu">complex</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tab4)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tab1 <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">1</span>])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"typ:"</span>, <span class="bu">type</span>(tab1))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"shape:"</span>, tab1.shape)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"size:"</span>, tab1.size)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ndim:"</span>, tab1.ndim)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nbytes:"</span>, tab1.nbytes)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dtype:"</span>, tab1.dtype)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[ 2 -3]
- [ 4 -8]]
-[[ 2 -3]
- [ 4 -8]]
-[[ 2. -3.]
- [ 4. -8.]]
-[[ 2.+0.j -3.+0.j]
- [ 4.+0.j -8.+0.j]]</code></pre>
+<pre><code>typ: &lt;class 'numpy.ndarray'&gt;
+shape: (5,)
+size: 5
+ndim: 1
+nbytes: 40
+dtype: int64</code></pre>
 </div>
 </div>
+<div id="e0a4754e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tab2 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>]])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"typ:"</span>, <span class="bu">type</span>(tab2))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"shape:"</span>, tab2.shape)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"size:"</span>, tab2.size)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ndim:"</span>, tab2.ndim)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nbytes:"</span>, tab2.nbytes)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dtype:"</span>, tab2.dtype)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>typ: &lt;class 'numpy.ndarray'&gt;
+shape: (2, 2)
+size: 4
+ndim: 2
+nbytes: 32
+dtype: int64</code></pre>
+</div>
+</div>
+<p>NumPy nie wspiera postrzępionych tablic! Poniższy kod wygeneruje błąd:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tab3 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">5</span>], [<span class="dv">3</span>]])</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ćwiczenia:</strong> (<code>ex2.py</code>)<br>
+Utwórz tablice numpy: <span class="math display">\[
+A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{bmatrix}
+\]</span> <span class="math display">\[B = \begin{bmatrix} 7 &amp; 8 \\ 9 &amp; 10 \\ 11 &amp; 12 \end{bmatrix}\]</span> <span class="math display">\[C = \begin{bmatrix} 1.1 &amp; 2.2 &amp; 3.3 \\ 4.4 &amp; 5.5 &amp; 6.6 \end{bmatrix}\]</span> i sprawdź ich parametry.</p>
 
 
 
@@ -907,13 +961,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./numpy-atrybuty.html" class="pagination-link" aria-label="Atrybuty tablic `ndarray`">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span>
+      <a href="./lista_tablica.html" class="pagination-link" aria-label="Lista a tablica">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./numpy-tworzenietablic.html" class="pagination-link" aria-label="Tworzenie tablic">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./numpy-typydanych.html" class="pagination-link" aria-label="Typy danych">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

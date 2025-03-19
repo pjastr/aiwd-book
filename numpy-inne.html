@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.41">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Operacje na stringach – Analiza i wizualizacja danych</title>
+<title>15&nbsp; Numpy - inne – Analiza i wizualizacja danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,15 +64,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./numpy-algebraliniowa.html" rel="next">
-<link href="./numpy-ufunc.html" rel="prev">
+<link href="./eksploracja.html" rel="next">
+<link href="./numpy-warunki.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-strings.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-inne.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-strings.html" class="sidebar-item-text sidebar-link active">
+  <a href="./numpy-strings.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
   </div>
 </li>
@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-inne.html" class="sidebar-item-text sidebar-link">
+  <a href="./numpy-inne.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
   </div>
 </li>
@@ -264,37 +264,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#tworzenie-tablic-z-napisami" id="toc-tworzenie-tablic-z-napisami" class="nav-link active" data-scroll-target="#tworzenie-tablic-z-napisami"><span class="header-section-number">12.1</span> Tworzenie tablic z napisami</a></li>
-  <li><a href="#podstawowe-funkcje-do-modyfikacji-tekstu" id="toc-podstawowe-funkcje-do-modyfikacji-tekstu" class="nav-link" data-scroll-target="#podstawowe-funkcje-do-modyfikacji-tekstu"><span class="header-section-number">12.2</span> Podstawowe funkcje do modyfikacji tekstu</a>
-  <ul class="collapse">
-  <li><a href="#numpy.strings.upper-i-numpy.strings.lower" id="toc-numpy.strings.upper-i-numpy.strings.lower" class="nav-link" data-scroll-target="#numpy.strings.upper-i-numpy.strings.lower"><span class="header-section-number">12.2.1</span> <code>numpy.strings.upper</code> i <code>numpy.strings.lower</code></a></li>
-  <li><a href="#numpy.strings.capitalize" id="toc-numpy.strings.capitalize" class="nav-link" data-scroll-target="#numpy.strings.capitalize"><span class="header-section-number">12.2.2</span> <code>numpy.strings.capitalize</code></a></li>
-  <li><a href="#numpy.strings.title" id="toc-numpy.strings.title" class="nav-link" data-scroll-target="#numpy.strings.title"><span class="header-section-number">12.2.3</span> <code>numpy.strings.title</code></a></li>
-  </ul></li>
-  <li><a href="#łączenie-i-rozdzielanie-tekstów" id="toc-łączenie-i-rozdzielanie-tekstów" class="nav-link" data-scroll-target="#łączenie-i-rozdzielanie-tekstów"><span class="header-section-number">12.3</span> Łączenie i rozdzielanie tekstów</a>
-  <ul class="collapse">
-  <li><a href="#numpy.strings.add" id="toc-numpy.strings.add" class="nav-link" data-scroll-target="#numpy.strings.add"><span class="header-section-number">12.3.1</span> <code>numpy.strings.add</code></a></li>
-  <li><a href="#numpy.strings.join" id="toc-numpy.strings.join" class="nav-link" data-scroll-target="#numpy.strings.join"><span class="header-section-number">12.3.2</span> <code>numpy.strings.join</code></a></li>
-  <li><a href="#numpy.strings.split" id="toc-numpy.strings.split" class="nav-link" data-scroll-target="#numpy.strings.split"><span class="header-section-number">12.3.3</span> <code>numpy.strings.split</code></a></li>
-  </ul></li>
-  <li><a href="#wyszukiwanie-i-zamiana-podciągów" id="toc-wyszukiwanie-i-zamiana-podciągów" class="nav-link" data-scroll-target="#wyszukiwanie-i-zamiana-podciągów"><span class="header-section-number">12.4</span> Wyszukiwanie i zamiana podciągów</a>
-  <ul class="collapse">
-  <li><a href="#numpy.strings.find-i-numpy.strings.rfind" id="toc-numpy.strings.find-i-numpy.strings.rfind" class="nav-link" data-scroll-target="#numpy.strings.find-i-numpy.strings.rfind"><span class="header-section-number">12.4.1</span> <code>numpy.strings.find</code> i <code>numpy.strings.rfind</code></a></li>
-  <li><a href="#numpy.strings.replace" id="toc-numpy.strings.replace" class="nav-link" data-scroll-target="#numpy.strings.replace"><span class="header-section-number">12.4.2</span> <code>numpy.strings.replace</code></a></li>
-  </ul></li>
-  <li><a href="#usuwanie-zbędnych-znaków" id="toc-usuwanie-zbędnych-znaków" class="nav-link" data-scroll-target="#usuwanie-zbędnych-znaków"><span class="header-section-number">12.5</span> Usuwanie zbędnych znaków</a>
-  <ul class="collapse">
-  <li><a href="#numpy.strings.strip-numpy.strings.lstrip-i-numpy.strings.rstrip" id="toc-numpy.strings.strip-numpy.strings.lstrip-i-numpy.strings.rstrip" class="nav-link" data-scroll-target="#numpy.strings.strip-numpy.strings.lstrip-i-numpy.strings.rstrip"><span class="header-section-number">12.5.1</span> <code>numpy.strings.strip</code>, <code>numpy.strings.lstrip</code> i <code>numpy.strings.rstrip</code></a></li>
-  </ul></li>
+  <li><a href="#stałe" id="toc-stałe" class="nav-link active" data-scroll-target="#stałe"><span class="header-section-number">15.1</span> Stałe</a></li>
+  <li><a href="#numpy.inf" id="toc-numpy.inf" class="nav-link" data-scroll-target="#numpy.inf"><span class="header-section-number">15.2</span> <code>numpy.inf</code></a></li>
+  <li><a href="#numpy.nan" id="toc-numpy.nan" class="nav-link" data-scroll-target="#numpy.nan"><span class="header-section-number">15.3</span> <code>numpy.nan</code></a></li>
+  <li><a href="#numpy.newaxis" id="toc-numpy.newaxis" class="nav-link" data-scroll-target="#numpy.newaxis"><span class="header-section-number">15.4</span> <code>numpy.newaxis</code></a></li>
+  <li><a href="#statystyka-i-agregacja" id="toc-statystyka-i-agregacja" class="nav-link" data-scroll-target="#statystyka-i-agregacja"><span class="header-section-number">15.5</span> Statystyka i agregacja</a></li>
+  <li><a href="#wyrażenia-warunkowe" id="toc-wyrażenia-warunkowe" class="nav-link" data-scroll-target="#wyrażenia-warunkowe"><span class="header-section-number">15.6</span> Wyrażenia warunkowe</a></li>
+  <li><a href="#działania-na-zbiorach" id="toc-działania-na-zbiorach" class="nav-link" data-scroll-target="#działania-na-zbiorach"><span class="header-section-number">15.7</span> Działania na zbiorach</a></li>
+  <li><a href="#operacje-tablicowe" id="toc-operacje-tablicowe" class="nav-link" data-scroll-target="#operacje-tablicowe"><span class="header-section-number">15.8</span> Operacje tablicowe</a></li>
+  <li><a href="#data-i-czas" id="toc-data-i-czas" class="nav-link" data-scroll-target="#data-i-czas"><span class="header-section-number">15.9</span> Data i czas</a></li>
+  <li><a href="#pseudolosowe" id="toc-pseudolosowe" class="nav-link" data-scroll-target="#pseudolosowe"><span class="header-section-number">15.10</span> Pseudolosowe</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-strings.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-inne.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></h1>
 </div>
 
 
@@ -311,184 +299,244 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>W <code>NumPy</code> poza dobrze znanymi tablicami liczbowymi, istnieje również zestaw funkcji pozwalających na wektorowe operacje na ciągach znaków.</p>
-<p><strong>Ważne:</strong> Poniższe funkcje są zazwyczaj dostępne w module <code>numpy.char</code>. W dokumentacji znajdują się one w sekcji <a href="https://numpy.org/doc/stable/reference/routines.strings.html">String operations</a>, jednak w tym materiale skupimy się na tym, jak można je wykorzystywać, zakładając interfejs z modułu <code>numpy.strings</code>. Jest to analogiczne do korzystania z <code>numpy.char</code>. Jest no nowsze podejście.</p>
-<section id="tworzenie-tablic-z-napisami" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="tworzenie-tablic-z-napisami"><span class="header-section-number">12.1</span> Tworzenie tablic z napisami</h2>
-<p>NumPy pozwala na przechowywanie tekstu w tablicach, np. tak:</p>
-<div id="d307e588" class="cell" data-execution_count="1">
+<section id="stałe" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="stałe"><span class="header-section-number">15.1</span> Stałe</h2>
+<p><code>NumPy</code> dostarcza kilka znanych stałych matematycznych, które mogą być przydatne w obliczeniach naukowych i inżynierskich. Wbudowane stałe takie jak liczba Pi czy podstawa logarytmu naturalnego <code>e</code> ułatwiają pisanie czytelnego i zwięzłego kodu.</p>
+<ol type="1">
+<li><strong><code>numpy.pi</code></strong>
+<ul>
+<li>Reprezentuje liczbę Pi (π) z dużą dokładnością.<br>
+</li>
+<li>Pi to stosunek obwodu okręgu do jego średnicy.<br>
+</li>
+<li>W przybliżeniu: <code>3.141592653589793</code></li>
+</ul></li>
+<li><strong><code>numpy.e</code></strong>
+<ul>
+<li>Reprezentuje podstawę logarytmu naturalnego, <code>e</code>.<br>
+</li>
+<li><code>e</code> jest wykorzystywane w wielu dziedzinach, takich jak analiza matematyczna, probabilistyka, statystyka.<br>
+</li>
+<li>W przybliżeniu: <code>2.718281828459045</code></li>
+</ul></li>
+<li><strong><code>numpy.eulergamma</code></strong>
+<ul>
+<li>Reprezentuje stałą Eulera-Mascheroniego, zwykle oznaczaną jako γ (gamma).</li>
+<li>Pojawia się w analizie matematycznej, szczególnie w teorii liczb i badaniu szeregów harmonicznych.</li>
+<li>W przybliżeniu: <code>0.5772156649015329</code></li>
+</ul></li>
+</ol>
+<div id="391e8b7f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"NumPy"</span>, <span class="st">"data"</span>, <span class="st">"Science"</span>])</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Promień koła</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="fl">5.0</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Obwód koła: 2 * π * r</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>obwod <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Obwód koła:"</span>, obwod)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Pole koła: π * r^2</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pole <span class="op">=</span> np.pi <span class="op">*</span> r<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pole koła:"</span>, pole)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['python' 'NumPy' 'data' 'Science']</code></pre>
+<pre><code>Obwód koła: 31.41592653589793
+Pole koła: 78.53981633974483</code></pre>
 </div>
 </div>
-<hr>
-</section>
-<section id="podstawowe-funkcje-do-modyfikacji-tekstu" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="podstawowe-funkcje-do-modyfikacji-tekstu"><span class="header-section-number">12.2</span> Podstawowe funkcje do modyfikacji tekstu</h2>
-<p>Poniżej przedstawiono popularne funkcje do modyfikacji tekstu na tablicach stringów:</p>
-<section id="numpy.strings.upper-i-numpy.strings.lower" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="numpy.strings.upper-i-numpy.strings.lower"><span class="header-section-number">12.2.1</span> <code>numpy.strings.upper</code> i <code>numpy.strings.lower</code></h3>
-<ul>
-<li><code>upper</code>: Zamiana wszystkich liter na wielkie.</li>
-<li><code>lower</code>: Zamiana wszystkich liter na małe.</li>
-</ul>
-<div id="1b87d342" class="cell" data-execution_count="2">
+<div id="ef8ce5f1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"NumPy"</span>, <span class="st">"data"</span>, <span class="st">"Science"</span>])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.upper(arr))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.lower(arr))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowy punkt x</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Wartość funkcji e^x</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>exp_value <span class="op">=</span> np.e<span class="op">**</span>x</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"e^x dla x=1:"</span>, exp_value)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Porównanie z funkcją np.exp</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>exp_compare <span class="op">=</span> np.exp(x)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Porównanie z np.exp(1):"</span>, exp_compare)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['PYTHON' 'NUMPY' 'DATA' 'SCIENCE']
-['python' 'numpy' 'data' 'science']</code></pre>
+<pre><code>e^x dla x=1: 2.718281828459045
+Porównanie z np.exp(1): 2.718281828459045</code></pre>
 </div>
 </div>
 </section>
-<section id="numpy.strings.capitalize" class="level3" data-number="12.2.2">
-<h3 data-number="12.2.2" class="anchored" data-anchor-id="numpy.strings.capitalize"><span class="header-section-number">12.2.2</span> <code>numpy.strings.capitalize</code></h3>
-<p>Funkcja <code>capitalize</code> zamienia pierwszą literę wyrazu na wielką, a pozostałe na małe.</p>
-<div id="a261e05a" class="cell" data-execution_count="3">
+<section id="numpy.inf" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="numpy.inf"><span class="header-section-number">15.2</span> <code>numpy.inf</code></h2>
+<ul>
+<li><strong>Opis</strong>: <code>np.inf</code> reprezentuje wartość nieskończoną (∞).<br>
+</li>
+<li>Często pojawia się w obliczeniach, gdy wartość danego wyrażenia dąży do nieskończoności (np. dzielenie przez zero, pewne limity, itp.).<br>
+</li>
+<li>Przykładowo, <code>1.0 / 0.0</code> zwróci ostrzeżenie i w konsekwencji może dać wartość <code>inf</code>.</li>
+</ul>
+<div id="8d77e2f1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"NumPy"</span>, <span class="st">"data"</span>, <span class="st">"Science"</span>])</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.capitalize(arr))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Zastosowanie w tworzeniu masek logicznych</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, np.inf, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> np.isinf(arr)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Maska elementów o wartości inf:"</span>, mask)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['Python' 'Numpy' 'Data' 'Science']</code></pre>
+<pre><code>Maska elementów o wartości inf: [False False  True False False]</code></pre>
 </div>
 </div>
 </section>
-<section id="numpy.strings.title" class="level3" data-number="12.2.3">
-<h3 data-number="12.2.3" class="anchored" data-anchor-id="numpy.strings.title"><span class="header-section-number">12.2.3</span> <code>numpy.strings.title</code></h3>
-<p>Funkcja <code>title</code> sprawia, że każda część składowa tekstu (np. oddzielona spacją) zostaje zamieniona tak, by zaczynała się od wielkiej litery.</p>
-<div id="79d76aaf" class="cell" data-execution_count="4">
+<section id="numpy.nan" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="numpy.nan"><span class="header-section-number">15.3</span> <code>numpy.nan</code></h2>
+<ul>
+<li><strong>Opis</strong>: <code>np.nan</code> oznacza “Not a Number” (NaN), czyli wartość nieokreśloną lub niereprezentowalną w systemie liczbowym.<br>
+</li>
+<li>Pojawia się, gdy wynik operacji numerycznej jest nieokreślony, np. <code>0.0/0.0</code>, <code>inf - inf</code> lub przy błędach wczytywania danych.<br>
+</li>
+<li>Operacje arytmetyczne z <code>nan</code> zazwyczaj również zwracają <code>nan</code>.</li>
+</ul>
+<div id="eb7526e5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([<span class="st">"python data science"</span>, <span class="st">"machine learning"</span>, <span class="st">"deep learning"</span>])</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.title(arr2))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Zamiana wartości nan w tablicy</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, np.nan, <span class="dv">4</span>, np.nan])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oryginalne dane:"</span>, data)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Wypełnienie wartości nan zerem</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>data_no_nan <span class="op">=</span> np.nan_to_num(data, nan<span class="op">=</span><span class="fl">0.0</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dane bez nan:"</span>, data_no_nan)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['Python Data Science' 'Machine Learning' 'Deep Learning']</code></pre>
+<pre><code>Oryginalne dane: [ 1.  2. nan  4. nan]
+Dane bez nan: [1. 2. 0. 4. 0.]</code></pre>
 </div>
 </div>
-<hr>
 </section>
-</section>
-<section id="łączenie-i-rozdzielanie-tekstów" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="łączenie-i-rozdzielanie-tekstów"><span class="header-section-number">12.3</span> Łączenie i rozdzielanie tekstów</h2>
-<section id="numpy.strings.add" class="level3" data-number="12.3.1">
-<h3 data-number="12.3.1" class="anchored" data-anchor-id="numpy.strings.add"><span class="header-section-number">12.3.1</span> <code>numpy.strings.add</code></h3>
-<p>Funkcja <code>add</code> łączy elementy tablic tekstowych, działając podobnie jak operator <code>+</code> na stringach, ale wektorowo.</p>
-<div id="d5e7a904" class="cell" data-execution_count="5">
+<section id="numpy.newaxis" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="numpy.newaxis"><span class="header-section-number">15.4</span> <code>numpy.newaxis</code></h2>
+<ul>
+<li><strong>Opis</strong>: <code>np.newaxis</code> jest specjalną “stałą”/obiektem służącym do zmiany wymiarów tablic przez zwiększenie ich liczby wymiarów o 1.</li>
+</ul>
+<div id="1cae6922" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>arr_a <span class="op">=</span> np.array([<span class="st">"Hello"</span>, <span class="st">"Data"</span>])</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>arr_b <span class="op">=</span> np.array([<span class="st">"World"</span>, <span class="st">"Science"</span>])</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.add(arr_a, arr_b))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Mamy tablicę 1D</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oryginalna tablica:"</span>, vec, <span class="st">"Kształt:"</span>, vec.shape)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Dodajemy nowy wymiar jako wymiar wierszy</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>vec_as_col <span class="op">=</span> vec[:, np.newaxis]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tablica jako kolumna:</span><span class="ch">\n</span><span class="st">"</span>, vec_as_col, <span class="st">"Kształt:"</span>, vec_as_col.shape)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Dodawanie wymiaru na początku</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>vec_as_row <span class="op">=</span> vec[np.newaxis, :]</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tablica jako wiersz:</span><span class="ch">\n</span><span class="st">"</span>, vec_as_row, <span class="st">"Kształt:"</span>, vec_as_row.shape)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Kolejny przykład: dodanie wymiaru by z łatwością broadcastować operacje</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>])</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Bez nowego wymiaru próba dodania a do b się nie powiedzie, </span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># bo kształty nie są kompatybilne.</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Z nowym wymiarem a ma kształt (3,1), a b (2,), co pozwala na broadcast</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>sum_matrix <span class="op">=</span> a[:, np.newaxis] <span class="op">+</span> b</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Operacja z broadcast:</span><span class="ch">\n</span><span class="st">"</span>, sum_matrix)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['HelloWorld' 'DataScience']</code></pre>
+<pre><code>Oryginalna tablica: [1 2 3 4] Kształt: (4,)
+Tablica jako kolumna:
+ [[1]
+ [2]
+ [3]
+ [4]] Kształt: (4, 1)
+Tablica jako wiersz:
+ [[1 2 3 4]] Kształt: (1, 4)
+Operacja z broadcast:
+ [[11 12]
+ [21 22]
+ [31 32]]</code></pre>
 </div>
 </div>
 </section>
-<section id="numpy.strings.join" class="level3" data-number="12.3.2">
-<h3 data-number="12.3.2" class="anchored" data-anchor-id="numpy.strings.join"><span class="header-section-number">12.3.2</span> <code>numpy.strings.join</code></h3>
-<p>Funkcja <code>join</code> pozwala na łączenie elementów tablicy przy użyciu wskazanego separatora.</p>
-<div id="fa490064" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>arr3 <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"numpy"</span>, <span class="st">"string"</span>])</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.char.join(<span class="st">"-"</span>, arr3))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['p-y-t-h-o-n' 'n-u-m-p-y' 's-t-r-i-n-g']</code></pre>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>Uwaga: <code>join</code> wektoryzuje operację, traktując każdy element tablicy jako sekwencję znaków do połączenia separatorem.</p>
-</blockquote>
+<section id="statystyka-i-agregacja" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="statystyka-i-agregacja"><span class="header-section-number">15.5</span> Statystyka i agregacja</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 74%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>np.mean</td>
+<td>Średnia wszystkich wartości w tablicy.</td>
+</tr>
+<tr class="even">
+<td>np.std</td>
+<td>Odchylenie standardowe.</td>
+</tr>
+<tr class="odd">
+<td>np.var</td>
+<td>Wariancja.</td>
+</tr>
+<tr class="even">
+<td>np.sum</td>
+<td>Suma wszystkich elementów.</td>
+</tr>
+<tr class="odd">
+<td>np.prod</td>
+<td>Iloczyn wszystkich elementów.</td>
+</tr>
+<tr class="even">
+<td>np.cumsum</td>
+<td>Skumulowana suma wszystkich elementów.</td>
+</tr>
+<tr class="odd">
+<td>np.cumprod</td>
+<td>Skumulowany iloczyn wszystkich elementów.</td>
+</tr>
+<tr class="even">
+<td>np.min,np.max</td>
+<td>Minimalna/maksymalna wartość w tablicy.</td>
+</tr>
+<tr class="odd">
+<td>np.argmin, np.argmax</td>
+<td>Indeks minimalnej/maksymalnej wartości w tablicy.</td>
+</tr>
+<tr class="even">
+<td>np.all</td>
+<td>Sprawdza czy wszystki elementy są różne od zera.</td>
+</tr>
+<tr class="odd">
+<td>np.any</td>
+<td>Sprawdza czy co najmniej jeden z elementów jest różny od zera.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="numpy.strings.split" class="level3" data-number="12.3.3">
-<h3 data-number="12.3.3" class="anchored" data-anchor-id="numpy.strings.split"><span class="header-section-number">12.3.3</span> <code>numpy.strings.split</code></h3>
-<p>Pozwala na rozdzielanie stringów według podanego separatora. Zwraca tablicę zawierającą listy podłańcuchów.</p>
-<div id="d8c8cf03" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>arr4 <span class="op">=</span> np.array([<span class="st">"python-data-science"</span>, <span class="st">"machine-learning"</span>])</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.char.split(arr4, sep<span class="op">=</span><span class="st">"-"</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[list(['python', 'data', 'science']) list(['machine', 'learning'])]</code></pre>
-</div>
-</div>
-<hr>
+<section id="wyrażenia-warunkowe" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="wyrażenia-warunkowe"><span class="header-section-number">15.6</span> Wyrażenia warunkowe</h2>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.where" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.where</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.choose" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.choose</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.select" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.select</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.nonzero" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.nonzero</a></p>
 </section>
+<section id="działania-na-zbiorach" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="działania-na-zbiorach"><span class="header-section-number">15.7</span> Działania na zbiorach</h2>
+<p><a href="https://numpy.org/doc/stable/reference/routines.set.html" class="uri">https://numpy.org/doc/stable/reference/routines.set.html</a></p>
 </section>
-<section id="wyszukiwanie-i-zamiana-podciągów" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="wyszukiwanie-i-zamiana-podciągów"><span class="header-section-number">12.4</span> Wyszukiwanie i zamiana podciągów</h2>
-<section id="numpy.strings.find-i-numpy.strings.rfind" class="level3" data-number="12.4.1">
-<h3 data-number="12.4.1" class="anchored" data-anchor-id="numpy.strings.find-i-numpy.strings.rfind"><span class="header-section-number">12.4.1</span> <code>numpy.strings.find</code> i <code>numpy.strings.rfind</code></h3>
-<ul>
-<li><code>find</code>: Zwraca indeks pierwszego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).</li>
-<li><code>rfind</code>: Zwraca indeks ostatniego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).</li>
-</ul>
-<div id="f06e91f4" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>arr5 <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"data"</span>, <span class="st">"numpy"</span>])</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.find(arr5, <span class="st">"a"</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[-1  1 -1]</code></pre>
-</div>
-</div>
+<section id="operacje-tablicowe" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="operacje-tablicowe"><span class="header-section-number">15.8</span> Operacje tablicowe</h2>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.transpose" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.transpose</a></p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.flip" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.flip</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.fliplr" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.fliplr</a> <a href="https://numpy.org/doc/stable/reference/generated/numpy.flipud" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.flipud</a></p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.sort" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.sort</a></p>
 </section>
-<section id="numpy.strings.replace" class="level3" data-number="12.4.2">
-<h3 data-number="12.4.2" class="anchored" data-anchor-id="numpy.strings.replace"><span class="header-section-number">12.4.2</span> <code>numpy.strings.replace</code></h3>
-<p><code>replace</code> zamienia wszystkie wystąpienia podłańcucha na nowy ciąg znaków.</p>
-<div id="99880cbf" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>arr6 <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"pydata"</span>, <span class="st">"pypy"</span>])</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.replace(arr6, <span class="st">"py"</span>, <span class="st">"PY"</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['PYthon' 'PYdata' 'PYPY']</code></pre>
-</div>
-</div>
-<hr>
+<section id="data-i-czas" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="data-i-czas"><span class="header-section-number">15.9</span> Data i czas</h2>
+<p><a href="https://numpy.org/doc/stable/reference/arrays.datetime.html" class="uri">https://numpy.org/doc/stable/reference/arrays.datetime.html</a></p>
 </section>
-</section>
-<section id="usuwanie-zbędnych-znaków" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="usuwanie-zbędnych-znaków"><span class="header-section-number">12.5</span> Usuwanie zbędnych znaków</h2>
-<section id="numpy.strings.strip-numpy.strings.lstrip-i-numpy.strings.rstrip" class="level3" data-number="12.5.1">
-<h3 data-number="12.5.1" class="anchored" data-anchor-id="numpy.strings.strip-numpy.strings.lstrip-i-numpy.strings.rstrip"><span class="header-section-number">12.5.1</span> <code>numpy.strings.strip</code>, <code>numpy.strings.lstrip</code> i <code>numpy.strings.rstrip</code></h3>
-<ul>
-<li><code>strip</code>: Usuwa wskazane znaki z początku i końca.</li>
-<li><code>lstrip</code>: Usuwa wskazane znaki z lewej strony (początku).</li>
-<li><code>rstrip</code>: Usuwa wskazane znaki z prawej strony (końca).</li>
-</ul>
-<div id="bf58b8ed" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>arr7 <span class="op">=</span> np.array([<span class="st">"   python   "</span>, <span class="st">"  numpy  "</span>])</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.strip(arr7))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['python' 'numpy']</code></pre>
-</div>
-</div>
-<p>Możemy również podać niestandardowe znaki do usunięcia:</p>
-<div id="52e78102" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>arr8 <span class="op">=</span> np.array([<span class="st">"###data###"</span>, <span class="st">"***science***"</span>])</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.strings.strip(arr8, <span class="st">"#*"</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['data' 'science']</code></pre>
-</div>
-</div>
+<section id="pseudolosowe" class="level2" data-number="15.10">
+<h2 data-number="15.10" class="anchored" data-anchor-id="pseudolosowe"><span class="header-section-number">15.10</span> Pseudolosowe</h2>
+<p><a href="https://numpy.org/doc/stable/reference/random/index.html" class="uri">https://numpy.org/doc/stable/reference/random/index.html</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1055,13 +1103,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./numpy-ufunc.html" class="pagination-link" aria-label="Funkcje uniwersalne (ufunc)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc)</span></span>
+      <a href="./numpy-warunki.html" class="pagination-link" aria-label="Filtrowanie zaawansowane">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./numpy-algebraliniowa.html" class="pagination-link" aria-label="Alegbra liniowa w `NumPy`">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa w <code>NumPy</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./eksploracja.html" class="pagination-link" aria-label="Etapy eksploracji danych">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

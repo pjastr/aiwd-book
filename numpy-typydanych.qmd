@@ -1,8 +1,12 @@
 # Typy danych
 
+::: {.content-visible when-format="html"}
+
 <https://numpy.org/doc/stable/reference/arrays.scalars.html>
   
 <https://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes-constructing>
+
+:::
 
 |||
 |---|---|

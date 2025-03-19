@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.41">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Lista a tablica – Analiza i wizualizacja danych</title>
+<title>10&nbsp; Broadcasting – Analiza i wizualizacja danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,15 +64,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./numpy-atrybuty.html" rel="next">
-<link href="./numpy-start.html" rel="prev">
+<link href="./numpy-ufunc.html" rel="next">
+<link href="./numpy-modyfikacje.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -117,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./lista_tablica.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-broadcasting.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -176,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lista_tablica.html" class="sidebar-item-text sidebar-link active">
+  <a href="./lista_tablica.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
   </div>
 </li>
@@ -212,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-broadcasting.html" class="sidebar-item-text sidebar-link">
+  <a href="./numpy-broadcasting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
   </div>
 </li>
@@ -265,9 +294,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./lista_tablica.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-broadcasting.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></h1>
 </div>
 
 
@@ -284,24 +313,113 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="e51630b1" class="cell" data-execution_count="1">
+<p>Rozważane warianty są przykładowe.</p>
+<p>Wariant 1 - skalar-tablica - wykonanie operacji na każdym elemencie tablicy</p>
+<div id="e09afa75" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>my_arr <span class="op">=</span> np.arange(<span class="dv">1000000</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1000000</span>))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>my_arr2 <span class="op">=</span> my_arr <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- </span><span class="sc">%s</span><span class="st"> seconds ---"</span> <span class="op">%</span> (time.time() <span class="op">-</span> start_time))</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>my_list2 <span class="op">=</span> [x <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> my_list]</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- </span><span class="sc">%s</span><span class="st"> seconds ---"</span> <span class="op">%</span> (time.time() <span class="op">-</span> start_time))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">9</span>, <span class="dv">10</span>]])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a <span class="op">+</span> <span class="dv">4</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">2</span> <span class="op">**</span> a</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>--- 0.0016429424285888672 seconds ---
---- 0.04450798034667969 seconds ---</code></pre>
+<pre><code>[[ 5  6]
+ [ 9 10]
+ [13 14]]
+[[   2    4]
+ [  32   64]
+ [ 512 1024]]</code></pre>
 </div>
 </div>
+<p><img src="o3.png" class="img-fluid"></p>
+<p>Wariant 2 - dwie tablice - “gdy jedna z tablic może być rozszerzona” (oba wymiary są równe lub jeden z nich jest równy 1)</p>
+<p><a href="https://numpy.org/doc/stable/user/basics.broadcasting.html" class="uri">https://numpy.org/doc/stable/user/basics.broadcasting.html</a></p>
+<div id="6a5ea494" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">5</span>, <span class="dv">6</span>]])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">9</span>, <span class="dv">2</span>])</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>r1 <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r1)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> a <span class="op">/</span> b</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r2)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.array([[<span class="dv">4</span>], [<span class="op">-</span><span class="dv">2</span>]])</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>r3 <span class="op">=</span> a <span class="op">+</span> c</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r3)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>r4 <span class="op">=</span> c <span class="op">/</span> a</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r4)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[10  4]
+ [14  8]]
+[[0.11111111 1.        ]
+ [0.55555556 3.        ]]
+[[5 6]
+ [3 4]]
+[[ 4.          2.        ]
+ [-0.4        -0.33333333]]</code></pre>
+</div>
+</div>
+<p><img src="a4.png" class="img-fluid"></p>
+<p>Wariant 3 - “kolumna” i “wiersz”</p>
+<div id="8b56bf89" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>]]).T</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>])</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a<span class="op">+</span>b)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b<span class="op">+</span>a)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a<span class="op">*</span>b)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 8  3  6  7  9]
+ [ 5  0  3  4  6]
+ [ 0 -5 -2 -1  1]]
+[[ 8  3  6  7  9]
+ [ 5  0  3  4  6]
+ [ 0 -5 -2 -1  1]]
+[[ 15 -10   5  10  20]
+ [  6  -4   2   4   8]
+ [ -9   6  -3  -6 -12]]</code></pre>
+</div>
+</div>
+<p><img src="o5.png" class="img-fluid"></p>
+<p><strong>Ćwiczenia:</strong> (<code>ex6.py</code>)</p>
+<ol type="1">
+<li><p>Rozważ jednowymiarową tablicę<br>
+<span class="math display">\[A = \begin{bmatrix}1 &amp; 2 &amp; 3\end{bmatrix}\]</span><br>
+oraz skalar <span class="math inline">\(k = 10\)</span>.<br>
+Wykonaj dodawanie, odejmowanie, mnożenie i dzielenie każdego elementu tablicy <span class="math inline">\(A\)</span> przez <span class="math inline">\(k\)</span> z wykorzystaniem broadcastingu.</p></li>
+<li><p>Dla dwóch tablic jednowymiarowych<br>
+<span class="math display">\[B_1 = \begin{bmatrix}1 &amp; 2 &amp; 3\end{bmatrix}, \quad B_2 = \begin{bmatrix}4 &amp; 5 &amp; 6\end{bmatrix},\]</span><br>
+wykonaj działanie <span class="math inline">\(B_1 + B_2\)</span>, <span class="math inline">\(B_1 - B_2\)</span>, <span class="math inline">\(B_1 * B_2\)</span> oraz <span class="math inline">\(B_1 / B_2\)</span> używając broadcastingu.</p></li>
+<li><p>Mając dwie tablice dwuwymiarowe:<br>
+<span class="math display">\[C_1 = \begin{bmatrix}1 &amp; 2 \\ 3 &amp; 4\end{bmatrix}, \quad C_2 = \begin{bmatrix}10 &amp; 20 \\ 30 &amp; 40\end{bmatrix},\]</span><br>
+dodaj je i odejmij od siebie, sprawdzając czy broadcasting zajdzie automatycznie.</p></li>
+<li><p>Rozważ tablicę dwuwymiarową<br>
+<span class="math display">\[D = \begin{bmatrix}1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6\end{bmatrix}\]</span><br>
+oraz wektor<br>
+<span class="math display">\[v = \begin{bmatrix}10 &amp; 100 &amp; 1000\end{bmatrix}.\]</span><br>
+Wykonaj mnożenie i dzielenie elementowe tablicy <span class="math inline">\(D\)</span> przez <span class="math inline">\(v\)</span> z wykorzystaniem broadcastingu.</p></li>
+<li><p>Dla tablicy<br>
+<span class="math display">\[E = \begin{bmatrix}2 &amp; 4 &amp; 6 \\ 8 &amp; 10 &amp; 12\end{bmatrix}\]</span><br>
+podnieś każdy element do kwadratu, a następnie podziel przez wektor<br>
+<span class="math display">\[w = \begin{bmatrix}2 &amp; 2 &amp; 2\end{bmatrix}\]</span><br>
+korzystając z broadcastingu.</p></li>
+<li><p>Mając tablicę dwuwymiarową<br>
+<span class="math display">\[F = \begin{bmatrix}1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6\end{bmatrix},\]</span><br>
+oraz skalar <span class="math inline">\(s = 2\)</span>, wykonaj <span class="math inline">\(F * s\)</span>, a następnie <span class="math inline">\(F^{s}\)</span> (podnieś każdy element do potęgi <span class="math inline">\(s\)</span>) z zastosowaniem broadcastingu.</p></li>
+<li><p>Rozważ tablicę<br>
+<span class="math display">\[G = \begin{bmatrix}10 &amp; 20 &amp; 30\end{bmatrix}\]</span><br>
+oraz kolumnową tablicę dwuwymiarową<br>
+<span class="math display">\[h = \begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix}.\]</span> Dodaj do <span class="math inline">\(h\)</span> tablicę <span class="math inline">\(G\)</span> i zaobserwuj wynik broadcastingu.</p></li>
+<li><p>Mając dwie tablice dwuwymiarowe o różnych wymiarach:<br>
+<span class="math display">\[H_1 = \begin{bmatrix}1 &amp; 2 &amp; 3\end{bmatrix}, \quad H_2 = \begin{bmatrix}10 \\ 20 \\ 30\end{bmatrix},\]</span><br>
+spróbuj je dodać i pomnożyć przez siebie, korzystając z broadcastingu.</p></li>
+<li><p>Rozważ tablicę dwuwymiarową<br>
+<span class="math display">\[J = \begin{bmatrix}1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6\end{bmatrix}\]</span><br>
+oraz skalar <span class="math inline">\(m = 5\)</span>.<br>
+Wykonaj kombinację działań: najpierw pomnóż <span class="math inline">\(J\)</span> przez <span class="math inline">\(m\)</span>, następnie odejmij <span class="math inline">\(m\)</span>, a na końcu podziel wynik przez <span class="math inline">\(m\)</span> – wszystko z wykorzystaniem broadcastingu.</p></li>
+</ol>
 
 
 
@@ -869,13 +987,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./numpy-start.html" class="pagination-link" aria-label="NumPy - start">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></span>
+      <a href="./numpy-modyfikacje.html" class="pagination-link" aria-label="Modyfikacja kształtu i rozmiaru">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./numpy-atrybuty.html" class="pagination-link" aria-label="Atrybuty tablic `ndarray`">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./numpy-ufunc.html" class="pagination-link" aria-label="Funkcje uniwersalne (ufunc)">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

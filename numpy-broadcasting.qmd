@@ -21,7 +21,11 @@ print(c)
 
 Wariant 2 - dwie tablice - "gdy jedna z tablic może być rozszerzona" (oba wymiary są równe lub jeden z nich jest równy 1)
 
+::: {.content-visible when-format="html"}
+
 <https://numpy.org/doc/stable/user/basics.broadcasting.html>
+
+:::
   
 ```{python}
 #| echo: true

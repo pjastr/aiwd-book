@@ -8,7 +8,11 @@
   | `nbytes` | liczba bajtów jaką tablica zajmuje w pamięci |
   | `dtype` | typ danych | 
   
+::: {.content-visible when-format="html"}
+  
 <https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes>
+
+:::
 
 ```{python}
 #| echo: true

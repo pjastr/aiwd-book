@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.41">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Atrybuty tablic ndarray – Analiza i wizualizacja danych</title>
+<title>3&nbsp; NumPy - start – Analiza i wizualizacja danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,15 +64,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./numpy-typydanych.html" rel="next">
-<link href="./lista_tablica.html" rel="prev">
+<link href="./lista_tablica.html" rel="next">
+<link href="./trocheteorii.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -146,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-atrybuty.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-start.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -199,7 +199,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-start.html" class="sidebar-item-text sidebar-link">
+  <a href="./numpy-start.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
   </div>
 </li>
@@ -211,7 +211,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link active">
+  <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
   </div>
 </li>
@@ -288,15 +288,25 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Spis treści</h2>
+   
+  <ul>
+  <li><a href="#instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania" id="toc-instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania" class="nav-link active" data-scroll-target="#instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania"><span class="header-section-number">3.1</span> Instalacja pakietu NumPy - opcja łatwiejsza “do przeklikania”</a></li>
+  <li><a href="#instalacja-pakietu-numpy---opcja-terminala" id="toc-instalacja-pakietu-numpy---opcja-terminala" class="nav-link" data-scroll-target="#instalacja-pakietu-numpy---opcja-terminala"><span class="header-section-number">3.2</span> Instalacja pakietu NumPy - opcja terminala</a></li>
+  <li><a href="#import-biblioteki-numpy" id="toc-import-biblioteki-numpy" class="nav-link" data-scroll-target="#import-biblioteki-numpy"><span class="header-section-number">3.3</span> Import biblioteki NumPy</a></li>
+  <li><a href="#uruchamianie---tryb-run-wykonawczy" id="toc-uruchamianie---tryb-run-wykonawczy" class="nav-link" data-scroll-target="#uruchamianie---tryb-run-wykonawczy"><span class="header-section-number">3.4</span> Uruchamianie - tryb “Run” (wykonawczy)</a></li>
+  <li><a href="#uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy" id="toc-uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy" class="nav-link" data-scroll-target="#uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy"><span class="header-section-number">3.5</span> Uruchamianie - tryb “Run in Python Console” (interaktywno-wykonawczy)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-atrybuty.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-start.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></h1>
 </div>
 
 
@@ -313,89 +323,147 @@ window.Quarto = {
 </header>
 
 
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Atrybut</th>
-<th>Opis</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>shape</code></td>
-<td>krotka z informacją o liczbie elementów dla każdego z wymiarów</td>
-</tr>
-<tr class="even">
-<td><code>size</code></td>
-<td>liczba elementów w tablicy (łączna)</td>
-</tr>
-<tr class="odd">
-<td><code>ndim</code></td>
-<td>liczba wymiarów tablicy</td>
-</tr>
-<tr class="even">
-<td><code>nbytes</code></td>
-<td>liczba bajtów jaką tablica zajmuje w pamięci</td>
-</tr>
-<tr class="odd">
-<td><code>dtype</code></td>
-<td>typ danych</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes" class="uri">https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes</a></p>
-<div id="52b20904" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tab1 <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">1</span>])</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"typ:"</span>, <span class="bu">type</span>(tab1))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"shape:"</span>, tab1.shape)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"size:"</span>, tab1.size)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ndim:"</span>, tab1.ndim)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nbytes:"</span>, tab1.nbytes)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dtype:"</span>, tab1.dtype)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>NumPy jest biblioteką Pythona służącą do obliczeń naukowych.</p>
+<p>Zastosowania:</p>
+<ul>
+<li>algebra liniowa</li>
+<li>zaawansowane obliczenia matematyczne (numeryczne)</li>
+<li>całkowania</li>
+<li>rozwiązywanie równań</li>
+<li>…</li>
+</ul>
+<section id="instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania"><span class="header-section-number">3.1</span> Instalacja pakietu NumPy - opcja łatwiejsza “do przeklikania”</h2>
+<ul>
+<li>Tworzy projekt w PyCharm z venv - wersja 3.12.</li>
+</ul>
+<p><img src="q1.png" class="img-fluid"></p>
+<ul>
+<li>Za pomocą zakładki po lewej stronie na dole wyszukujemy pakiet i wybieramy instalację</li>
+</ul>
+<p><img src="q2.png" class="img-fluid"></p>
+</section>
+<section id="instalacja-pakietu-numpy---opcja-terminala" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="instalacja-pakietu-numpy---opcja-terminala"><span class="header-section-number">3.2</span> Instalacja pakietu NumPy - opcja terminala</h2>
+<p>Komenda dla terminala:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install numpy</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install numpy==2.2.0</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="import-biblioteki-numpy" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="import-biblioteki-numpy"><span class="header-section-number">3.3</span> Import biblioteki NumPy</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana <code>ndarray</code>. Każdy element na tablicy traktowany jest jako typ <code>dtype</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>numpy.array(<span class="bu">object</span>, dtype<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>, copy<span class="op">=</span><span class="va">True</span>, order<span class="op">=</span><span class="st">'K'</span>, subok<span class="op">=</span><span class="va">False</span>, ndmin<span class="op">=</span><span class="dv">0</span>, like<span class="op">=</span><span class="va">None</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>object - to co ma być wrzucone do tablicy</li>
+<li>dtype - typ</li>
+<li>copy - czy obiekty mają być skopiowane, domyślne <code>True</code></li>
+<li>order - sposób układania: C (rzędy), F (kolumny), A, K</li>
+<li>subok - realizowane przez podklasy (jeśli <code>True</code>), domyślnie <code>False</code></li>
+<li>ndmin - minimalny rozmiar (wymiar) tablicy</li>
+<li>like - tworzenie na podstawie tablic referencyjnej</li>
+</ul>
+<div id="da4c29f6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a:"</span>, a) </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-5-5" class="code-annotation-target"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"typ a:"</span>, <span class="bu">type</span>(a))</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-5-6" class="code-annotation-target"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">3.0</span>])</span>
+<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"b:"</span>, b)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-5-8" class="code-annotation-target"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"c:"</span>, c)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-5-10" class="code-annotation-target"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], ndmin<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="annotated-cell-5-11"><a href="#annotated-cell-5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"d:"</span>, d)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-5-12" class="code-annotation-target"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], dtype<span class="op">=</span><span class="bu">complex</span>)</span>
+<span id="annotated-cell-5-13"><a href="#annotated-cell-5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"e:"</span>, e)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-5-14" class="code-annotation-target"><a href="#annotated-cell-5-14" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> np.array(np.asmatrix(<span class="st">'1 2; 3 4'</span>))</span>
+<span id="annotated-cell-5-15"><a href="#annotated-cell-5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"f:"</span>, f)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-5-16" class="code-annotation-target"><a href="#annotated-cell-5-16" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> np.array(np.asmatrix(<span class="st">'1 2; 3 4'</span>), subok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="annotated-cell-5-17"><a href="#annotated-cell-5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"g:"</span>, g)</span>
+<span id="annotated-cell-5-18"><a href="#annotated-cell-5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(g))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="1">Standardowe domyślne.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="5" data-code-annotation="2">Sprawdzenie typu.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="6" data-code-annotation="3">Jeden z elementów jest innego typu. Tu następuje zatem rozszerzenie do typu “największego”.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="8" data-code-annotation="4">Tu otrzymamy tablicę 2x2.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="10" data-code-annotation="5">W tej linijce otrzymana będzie tablica 2x1.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="12" data-code-annotation="6">Ustalenie innego typu - większego.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="14" data-code-annotation="7">Skorzystanie z podtypu macierzowego.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="16" data-code-annotation="8">Zachowanie typu macierzowego.</span>
+</dd>
+</dl>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>typ: &lt;class 'numpy.ndarray'&gt;
-shape: (5,)
-size: 5
-ndim: 1
-nbytes: 40
-dtype: int64</code></pre>
+<pre><code>a: [1 2 3]
+typ a: &lt;class 'numpy.ndarray'&gt;
+b: [1. 2. 3.]
+c: [[1 2]
+ [3 4]]
+d: [[1 2 3]]
+e: [1.+0.j 2.+0.j 3.+0.j]
+f: [[1 2]
+ [3 4]]
+g: [[1 2]
+ [3 4]]
+&lt;class 'numpy.matrix'&gt;</code></pre>
 </div>
 </div>
-<div id="b141ad34" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tab2 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>]])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"typ:"</span>, <span class="bu">type</span>(tab2))</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"shape:"</span>, tab2.shape)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"size:"</span>, tab2.size)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ndim:"</span>, tab2.ndim)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"nbytes:"</span>, tab2.nbytes)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dtype:"</span>, tab2.dtype)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>typ: &lt;class 'numpy.ndarray'&gt;
-shape: (2, 2)
-size: 4
-ndim: 2
-nbytes: 32
-dtype: int64</code></pre>
-</div>
-</div>
-<p>NumPy nie wspiera postrzępionych tablic! Poniższy kod wygeneruje błąd:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tab3 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">5</span>], [<span class="dv">3</span>]])</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Ćwiczenia:</strong> (<code>ex2.py</code>)<br>
-Utwórz tablice numpy: <span class="math display">\[
-A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{bmatrix}
-\]</span> <span class="math display">\[B = \begin{bmatrix} 7 &amp; 8 \\ 9 &amp; 10 \\ 11 &amp; 12 \end{bmatrix}\]</span> <span class="math display">\[C = \begin{bmatrix} 1.1 &amp; 2.2 &amp; 3.3 \\ 4.4 &amp; 5.5 &amp; 6.6 \end{bmatrix}\]</span> i sprawdź ich parametry.</p>
+</section>
+<section id="uruchamianie---tryb-run-wykonawczy" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="uruchamianie---tryb-run-wykonawczy"><span class="header-section-number">3.4</span> Uruchamianie - tryb “Run” (wykonawczy)</h2>
+<p>Run - zielona strzałka u góry.</p>
+<p><img src="q3.png" class="img-fluid"></p>
+</section>
+<section id="uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy"><span class="header-section-number">3.5</span> Uruchamianie - tryb “Run in Python Console” (interaktywno-wykonawczy)</h2>
+<p><img src="q4.png" class="img-fluid"></p>
+<p><strong>Ćwiczenie (<code>ex1.py</code>):</strong></p>
+<ol type="1">
+<li>Stwórz proste tablice:</li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(\begin{bmatrix}
+1 &amp; 2 &amp; 7\\
+6 &amp; -3 &amp; -3
+\end{bmatrix}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{bmatrix}
+6 &amp; 8 &amp; 9 &amp; -3
+\end{bmatrix}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{bmatrix}
+4 \\ 3 \\-3 \\-7
+\end{bmatrix}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{bmatrix}
+bb &amp; cc &amp; ww &amp; 44
+\end{bmatrix}\)</span></p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -961,13 +1029,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lista_tablica.html" class="pagination-link" aria-label="Lista a tablica">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span>
+      <a href="./trocheteorii.html" class="pagination-link" aria-label="Trochę teorii...">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Trochę teorii…</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./numpy-typydanych.html" class="pagination-link" aria-label="Typy danych">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lista_tablica.html" class="pagination-link" aria-label="Lista a tablica">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -976,4 +1044,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></div></div></footer></body></html>

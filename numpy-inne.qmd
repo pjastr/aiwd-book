@@ -136,6 +136,8 @@ print("Operacja z broadcast:\n", sum_matrix)
 | np.argmin, np.argmax | Indeks minimalnej/maksymalnej wartości w tablicy.              |
 | np.all               | Sprawdza czy wszystki elementy są różne od zera.               |
 | np.any               | Sprawdza czy co najmniej jeden z elementów jest różny od zera. |
+
+::: {.content-visible when-format="html"}
   
 ## Wyrażenia warunkowe
   
@@ -171,3 +173,4 @@ print("Operacja z broadcast:\n", sum_matrix)
 <https://numpy.org/doc/stable/reference/random/index.html>
   
   
+:::
