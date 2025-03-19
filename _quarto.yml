@@ -7,8 +7,10 @@ book:
   date: today
   cover-image: aiwd.jpg
   chapters:
-    - index.qmd
-    - trocheteorii.qmd
+    - part: Wprowadzenie
+      chapters: 
+      - index.qmd
+      - trocheteorii.qmd
     - part: "NumPy"
       chapters: 
       - numpy-start.qmd
@@ -24,7 +26,9 @@ book:
       - numpy-algebraliniowa.qmd
       - numpy-warunki.qmd
       - numpy-inne.qmd
-    - eksploracja.qmd
+    - part: "Eksploracja danych"
+      chapters:
+      - eksploracja.qmd
     - part: "Pandas"
       chapters:
       - pandas-start.qmd
@@ -34,7 +38,9 @@ book:
       - pandas-szeregiczasowe.qmd
       - pandas-danetekstowe.qmd
       - pandas-inne.qmd
-    - analizastruktury.qmd
+    - part: "Analia struktury danych"
+      chapters:
+      - analizastruktury.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/aiwd-book
   repo-actions: [issue]

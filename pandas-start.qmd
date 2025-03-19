@@ -3,24 +3,6 @@
 
 Pandas jest biblioteką Pythona służącą do analizy i manipulowania danymi
 
-## Instalacja
-
-Instalacja wersji `pandas` w wersji 2.2.3.
-
-Dodatkowo pod dalsze komendy zalecane jest zainstalowanie: `pyarrow` w wersji 18.1.0 oraz `openpyxl` w wersji 3.1.5.
-
-## Instalacja kilku bibliotek jednocześnie za pomocą pliku z wymaganiami
-
-W ustawieniach projektu dodajemy plik o nazwie `requirements.txt`
-
-Przykładowa zawartość:
-
-```txt
-pandas==2.2.3
-numpy==2.2.0
-pyarrow==18.1.0
-openpyxl==3.1.5
-```
 
 ## Import:
 
