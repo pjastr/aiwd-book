@@ -1,0 +1,169 @@
+# Pandas - start
+
+
+Pandas jest biblioteką Pythona służącą do analizy i manipulowania danymi
+
+## Instalacja
+
+Instalacja wersji `pandas` w wersji 2.2.3.
+
+Dodatkowo pod dalsze komendy zalecane jest zainstalowanie: `pyarrow` w wersji 18.1.0 oraz `openpyxl` w wersji 3.1.5.
+
+## Instalacja kilku bibliotek jednocześnie za pomocą pliku z wymaganiami
+
+W ustawieniach projektu dodajemy plik o nazwie `requirements.txt`
+
+Przykładowa zawartość:
+
+```txt
+pandas==2.2.3
+numpy==2.2.0
+pyarrow==18.1.0
+openpyxl==3.1.5
+```
+
+## Import:
+
+```python
+import pandas as pd
+```
+
+
+## Podstawowe byty
+
+Seria - Series
+
+![](51.png)
+
+---
+
+Ramka danych - DataFrame 
+
+![](52.png)
+
+
+
+```{python}
+#| echo: true
+import pandas as pd
+import numpy as np
+
+s = pd.Series([3, -5, 7, 4])
+print(s)
+print("values")
+print(s.values)
+print(type(s.values))
+print(s.index)
+print(type(s.index))
+
+```
+
+
+
+```{python}
+#| echo: true
+import pandas as pd
+import numpy as np
+
+s = pd.Series([3, -5, 7, 4], index=['a', 'b', 'c', 'd'])
+print(s)
+print(s['b'])
+s['b'] = 8
+print(s)
+print(s[s > 5])
+print(s * 2)
+print(np.sin(s))
+
+```
+
+
+```{python} 
+#| echo: true
+import pandas as pd
+
+d = {'key1': 350, 'key2': 700, 'key3': 70}
+s = pd.Series(d)
+print(s)
+
+```
+
+
+```{python} 
+#| echo: true
+import pandas as pd
+
+d = {'key1': 350, 'key2': 700, 'key3': 70}
+k = ['key0', 'key2', 'key3', 'key1']
+s = pd.Series(d, index=k)
+print(s)
+s.name = "Wartosc"
+s.index.name = "Klucz"
+print(s)
+
+```
+
+
+
+```{python} 
+#| echo: true
+import pandas as pd
+
+data = {'Country': ['Belgium', 'India', 'Brazil'],
+        'Capital': ['Brussels', 'New Delhi', 'Brasília'],
+        'Population': [11190846, 1303171035, 207847528]}
+frame = pd.DataFrame(data)
+print(frame)
+df = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])
+print(df)
+
+```
+
+
+
+```{python} 
+#| echo: true
+import pandas as pd
+
+data = {'Country': ['Belgium', 'India', 'Brazil'],
+        'Capital': ['Brussels', 'New Delhi', 'Brasília'],
+        'Population': [11190846, 1303171035, 207847528]}
+df = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])
+print("Shape:", df.shape)
+print("--")
+print("Index:", df.index)
+print("--")
+print("columns:", df.columns)
+print("--")
+df.info()
+print("--")
+print(df.count())
+
+```
+
+**Ćwiczenia:** (`ex8.py`)
+
+1. Napisz kod, który utworzy serię z następującej listy liczb: `[10, 20, 30, 40, 50]`. Wyświetl serię w formacie tabelarycznym:
+
+| Index | Value |
+|-------|-------|
+| 0     | 10    |
+| 1     | 20    |
+| 2     | 30    |
+| 3     | 40    |
+| 4     | 50    |
+
+2. Utwórz serię, gdzie kluczami będą miesiące (`'Jan', 'Feb', 'Mar'`), a wartościami odpowiednie temperatury: `[0, 3, 5]`. Wyświetl w formacie tabelarycznym:
+
+| Month | Temperature |
+|-------|-------------|
+| Jan   | 0           |
+| Feb   | 3           |
+| Mar   | 5           |
+
+3. Stwórz pustą ramkę danych z kolumnami `Product`, `Price`, `Quantity`, a następnie wypełnij ją danymi:
+
+| Product | Price | Quantity |
+|---------|-------|----------|
+| Apple   | 1.2   | 10       |
+| Banana  | 0.5   | 20       |
+| Orange  | 0.8   | 15       |

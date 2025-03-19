@@ -1,0 +1,1196 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analiza i wizualizacja danych",
+    "section": "",
+    "text": "1 Analiza i wizualizacja danych\nAktualna wersja dotyczy zajęć realizowanych w roku akademickim 2024/25.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Analiza i wizualizacja danych</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html",
+    "href": "trocheteorii.html",
+    "title": "2  Trochę teorii…",
+    "section": "",
+    "text": "2.1 Test racjonalnego myślenia",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#test-racjonalnego-myślenia",
+    "href": "trocheteorii.html#test-racjonalnego-myślenia",
+    "title": "2  Trochę teorii…",
+    "section": "",
+    "text": "Jeśli 5 maszyn w ciągu 5 minut produkuje 5 urządzeń, ile czasu zajmie 100 maszynom zrobienie 100 urządzeń?\nNa stawie rozrasta się kępa lilii wodnych. Codziennie kępa staje się dwukrotnie większa. Jeśli zarośnięcie całego stawu zajmie liliom 48 dni, to ile dni potrzeba, żeby zarosły połowę stawu?\nKij bejsbolowy i piłka kosztują razem 1 dolar i 10 centów. Kij kosztuje o dolara więcej niż piłka. Ile kosztuje piłka?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#analiza-danych",
+    "href": "trocheteorii.html#analiza-danych",
+    "title": "2  Trochę teorii…",
+    "section": "2.2 Analiza danych",
+    "text": "2.2 Analiza danych\nAnaliza danych to proces badania, czyszczenia, przekształcania i modelowania danych w celu odkrywania użytecznych informacji, formułowania wniosków i wspierania podejmowania decyzji. Jest to wieloetapowy proces, który obejmuje:\n\nZbieranie danych z różnych źródeł\nCzyszczenie danych poprzez usuwanie błędów, braków i niespójności\nEksplorację danych w celu zrozumienia ich struktury i cech charakterystycznych\nPrzekształcanie danych do odpowiedniego formatu\nStosowanie metod statystycznych i algorytmów uczenia maszynowego\nInterpretację wyników w kontekście konkretnego problemu biznesowego lub naukowego\n\nAnaliza danych znajduje zastosowanie w niemal każdej dziedzinie, od biznesu i finansów po nauki społeczne, medycynę i badania naukowe. Celem analizy danych jest przekształcenie surowych danych w wiedzę, która może być wykorzystana do podejmowania lepszych decyzji.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#wizualizacja-danych",
+    "href": "trocheteorii.html#wizualizacja-danych",
+    "title": "2  Trochę teorii…",
+    "section": "2.3 Wizualizacja danych",
+    "text": "2.3 Wizualizacja danych\nWizualizacja danych to graficzna reprezentacja informacji i danych. Wykorzystuje elementy wizualne, takie jak wykresy, mapy i dashboardy, aby przedstawić relacje między danymi w sposób, który jest łatwy do zrozumienia i interpretacji. Dobra wizualizacja danych:\n\nPrzedstawia złożone informacje w przystępny i intuicyjny sposób\nUjawnia wzorce, trendy i odstępstwa, które mogą być trudne do zauważenia w surowych danych\nWspiera proces analizy danych poprzez umożliwienie szybkiego przeglądania dużych zbiorów danych\nUłatwia komunikację wyników analiz do różnych odbiorców, w tym osób nietechnicznych\nPomaga opowiadać historie zawarte w danych (data storytelling)\n\nDo najpopularniejszych typów wizualizacji danych należą wykresy słupkowe, liniowe, kołowe, mapy cieplne, drzewa hierarchiczne, chmury słów oraz interaktywne dashboardy. Wybór odpowiedniej formy wizualizacji zależy od typu danych, celu prezentacji oraz docelowej grupy odbiorców.\nWizualizacja danych jest kluczowym elementem procesu analizy danych, ponieważ pozwala na szybkie wyciąganie wniosków i podejmowanie decyzji na podstawie danych. Jest mostem między złożonymi danymi a ludzkim zrozumieniem.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#analiza-danych---podstawowe-pojęcia",
+    "href": "trocheteorii.html#analiza-danych---podstawowe-pojęcia",
+    "title": "2  Trochę teorii…",
+    "section": "2.4 Analiza danych - podstawowe pojęcia",
+    "text": "2.4 Analiza danych - podstawowe pojęcia\n\n2.4.1 Współczesne znaczenia słowa “statystyka”:\n\nzbiór danych liczbowych pokazujący kształtowanie procesów i zjawisk np. statystyka ludności.\nwszelkie czynności związane z gromadzeniem i opracowywaniem danych liczbowych np. statystyka pewnego problemu dokonywana przez GUS.\ncharakterystyki liczbowe np. statystyki próby np. średnia arytmetyczna, odchylenie standardowe itp.\ndyscyplina naukowa - nauka o metodach badania zjawisk masowych.\n\n\n\n2.4.2 “Masowość”\nZjawiska/procesy masowe - badaniu podlega duża liczba jednostek. Dzielą się na:\n\ngospodarcze (np. produkcja, konsumpcja, usługi reklama),\nspołeczne (np. wypadki drogowe, poglądy polityczne),\ndemograficzne (np. urodzenia, starzenie, migracje).\n\n\n\n2.4.3 Podział statystyki\nStatystyka - dyscyplina naukowa - podział:\n\nstatystyka opisowa - zajmuje się sprawami związanymi z gromadzeniem, prezentacją, analizą i interpretacją danych liczbowych. Obserwacja obejmuje całą badaną zbiorowość.\nstatystyka matematyczna - uogólnienie wyników badania części zbiorowości (próby) na całą zbiorowość.\n\n\n\n2.4.4 Zbiorowość/populacja\nZbiorowość statystyczna, populacja statystyczna: zbiór obiektów podlegających badaniu statystycznemu. Tworzą je jednostki podobne do siebie, logicznie powiązane, lecz nie identyczne. Mają pewne cechy wspólne oraz pewne właściwości pozwalające je różnicować.\n\nprzykłady:\n\nbadanie wzrostu Polaków - mieszkańcy Polski\npoziom nauczania w szkołach woj. warmińsko-mazurskiego - szkoły woj. warmińsko-mazurskiego.\n\npodział:\n\nzbiorowość/populacja generalna - obejmuje całość,\nzbiorowość/populacja próbna (próba) - obejmuje część populacji.\n\n\n\n\n2.4.5 Jednostka statyczna\nJednostka statystyczna: każdy z elementów zbiorowości statystycznej.\n\nprzykłady:\n\nstudenci UWM - student UWM\nmieszkańcy Polski - każda osoba mieszkająca w Polsce\nmaszyny produkowane w fabryce - każda maszyna\n\n\n\n\n2.4.6 Cechy statystyczne\nCechy statystyczne\n\nwłaściwości charakteryzujące jednostki statystyczne w danej zbiorowości statystycznej.\ndzielimy je na stałe i zmienne.\n\nCechy stałe\n\ntakie właściwości, które są wspólne wszystkim jednostkom danej zbiorowości statystycznej.\npodział:\n\nrzeczowe - kto lub co jest przedmiotem badania statystycznego,\nczasowe - kiedy zostało przeprowadzone badanie lub jakiego okresu czasu dotyczy badanie,\nprzestrzenne - jakiego terytorium (miejsce lub obszar) dotyczy badanie.\n\nprzykład: studenci WMiI UWM w Olsztynie w roku akad. 2017/2018:\n\ncecha rzeczowa: posiadanie legitymacji studenckiej,\ncecha czasowa - studenci studiujący w roku akad. 2017/2018\ncecha przestrzenna - miejsce: WMiI UWM w Olsztynie.\n\n\nCechy zmienne\n\nwłaściwości różnicujące jednostki statystyczne w danej zbiorowości.\nprzykład: studenci UWM - cechy zmienne: wiek, płeć, rodzaj ukończonej szkoły średniej, kolor oczu, wzrost.\n\nWażne:\n\nobserwacji podlegają tylko cechy zmienne,\ncecha stała w jednej zbiorowości może być cechą zmienną w innej zbiorowości.\n\nPrzykład: studenci UWM mają legitymację wydaną przez UWM. Studenci wszystkich uczelni w Polsce mają legitymacje wydane przez różne szkoły.\nPodział cech zmiennych:\n\ncechy mierzalne (ilościowe) - można je wyrazić liczbą wraz z określoną jednostką miary.\ncechy niemierzalne (jakościowe) - określane słownie, reprezentują pewne kategorie.\n\nPrzykład: zbiorowość studentów. Cechy mierzalne: wiek, waga, wzrost, liczba nieobecności. Cechy niemierzalne: płeć, kolor oczu, kierunek studiów.\nCzęsto ze względów praktycznych cechom niemierzalnym przypisywane są kody liczbowe. Nie należy ich jednak mylić z cechami mierzalnymi. Np. 1 - wykształcenie podstawowe, 2 - wykształcenie zasadnicze, itd…\nPodział cech mierzalnych:\n\nciągłe - mogące przybrać każdą wartość z określonego przedziału, np. wzrost, wiek, powierzchnia mieszkania.\nskokowe - mogące przyjmować konkretne (dyskretne) wartości liczbowe bez wartości pośrednich np. liczba osób w gospodarstwie domowych, liczba osób zatrudnionych w danej firmie.\n\nCechy skokowe zazwyczaj mają wartości całkowite choć nie zawsze jest to wymagane np. liczba etatów w firmie (z uwzględnieniem części etatów).\n\n\n2.4.7 Skale\nSkala pomiarowa\n\nto system, pozwalający w pewien sposób usystematyzować wyniki pomiarów statystycznych.\npodział:\n\nskala nominalna,\nskala porządkowa,\nskala przedziałowa (interwałowa),\nskala ilorazowa (stosunkowa).\n\n\nSkala nominalna\n\nskala, w której klasyfikujemy jednostkę statystyczną do określonej kategorii.\nwartość w tej skali nie ma żadnego uporządkowana.\nprzykład:\n\n\n\n\nReligia\nKod\n\n\n\n\nChrześcijaństwo\n1\n\n\nIslam\n2\n\n\nBuddyzm\n3\n\n\n\nSkala porządkowa\n\nwartości mają jasno określony porządek, ale nie są dane odległości między nimi,\npozwala na uszeregowanie elementów.\nprzykłady:\n\n\n\n\nWykształcenie\nKod\n\n\n\n\nPodstawowe\n1\n\n\nŚrednie\n2\n\n\nWyższe\n3\n\n\n\n\n\n\nDochód\nKod\n\n\n\n\nNiski\n1\n\n\nŚredni\n2\n\n\nWysoki\n3\n\n\n\nSkala przedziałowa (interwałowa)\n\nwartości cechy wyrażone są poprzez konkretne wartości liczbowe,\npozwala na porównywanie jednostek (coś jest większe lub mniejsze),\nnie możliwe jest badanie ilorazów (określenie ile razy dana wartość jest większa lub mniejsza od drugiej).\nprzykład:\n\n\n\n\nMiasto\nTemperatura w \\(^{\\circ}C\\)\nTemperatura w \\(^{\\circ}F\\)\n\n\n\n\nWarszawa\n15\n59\n\n\nOlsztyn\n10\n50\n\n\nGdańsk\n5\n41\n\n\nSzczecin\n20\n68\n\n\n\nSkala ilorazowa (stosunkowa)\n\nwartości wyrażone są przez wartości liczbowe,\nmożliwe określenie jest relacji mniejsza lub większa między wartościami,\nmożliwe jest określenie stosunku (ilorazu) między wartościami,\nwystępuje zero absolutne.\nprzykład:\n\n\n\n\nProdukt\nCena w zł\n\n\n\n\nChleb\n3\n\n\nMasło\n8\n\n\nGruszki\n5",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#rodzaje-badań-statystycznych",
+    "href": "trocheteorii.html#rodzaje-badań-statystycznych",
+    "title": "2  Trochę teorii…",
+    "section": "2.5 Rodzaje badań statystycznych",
+    "text": "2.5 Rodzaje badań statystycznych\n\nbadanie pełne - obejmują wszystkie jednostki zbiorowości statystycznej.\n\nspis statystyczny,\nrejestracja bieżąca,\nsprawozdawczość statystyczna.\n\nbadania częściowe - obserwowana jest część populacji. Przeprowadza się wtedy gdy badanie pełne jest niecelowe lub niemożliwe.\n\nmetoda monograficzna,\nmetoda reprezentacyjna.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#etapy-badania-statystycznego",
+    "href": "trocheteorii.html#etapy-badania-statystycznego",
+    "title": "2  Trochę teorii…",
+    "section": "2.6 Etapy badania statystycznego",
+    "text": "2.6 Etapy badania statystycznego\n\nprojektowanie i organizacja badania: ustalenie celu, podmiotu, przedmiotu, zakresu, źródła i czasu trwania badania;\nobserwacja statystyczna;\nopracowanie materiału statystycznego: kontrola materiału statystycznego, grupowanie uzyskanych danych, prezentacja wyników danych;\nanaliza statystyczna.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#analiza-danych-zastanych",
+    "href": "trocheteorii.html#analiza-danych-zastanych",
+    "title": "2  Trochę teorii…",
+    "section": "2.7 Analiza danych zastanych",
+    "text": "2.7 Analiza danych zastanych\nAnaliza danych zastanych – proces przetwarzania danych w celu uzyskania na ich podstawie użytecznych informacji i wniosków. W zależności od rodzaju danych i stawianych problemów, może to oznaczać użycie metod statystycznych, eksploracyjnych i innych.\nKorzystanie z danych zastanych jest przykładem badań niereaktywnych - metod badań zachowań społecznych, które nie wpływają na te zachowania. Dane takie to: dokumenty, archiwa, sprawozdania, kroniki, spisy ludności, księgi parafialne, dzienniki, pamiętniki, blogi internetowe, audio-pamiętniki, archiwa historii mówionej i inne. (Wikipedia)\nDane zastane możemy podzielić ze względu na (Makowska red. 2013):\n\nCharakter: Ilościowe, Jakościowe\nFormę: Dane opracowane, Dane surowe\nSposób powstania: Pierwotne, Wtórne\nDynamikę: Ciągła rejestracja zdarzeń, Rejestracja w interwałach czasowych, Rejestracja jednorazowa\nPoziom obiektywizmu: Obiektywne, Subiektywne\nŹródła pochodzenia: Dane publiczne, Dane prywatne\n\nAnaliza danych to proces polegający na sprawdzaniu, porządkowaniu, przekształcaniu i modelowaniu danych w celu zdobycia użytecznych informacji, wypracowania wniosków i wspierania procesu decyzyjnego. Analiza danych ma wiele aspektów i podejść, obejmujących różne techniki pod różnymi nazwami, w różnych obszarach biznesowych, naukowych i społecznych. Praktyczne podejście do definiowania danych polega na tym, że dane to liczby, znaki, obrazy lub inne metody zapisu, w formie, którą można ocenić w celu określenia lub podjęcia decyzji o konkretnym działaniu. Wiele osób uważa, że dane same w sobie nie mają znaczenia – dopiero dane przetworzone i zinterpretowane stają się informacją.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#proces-analizy-danych",
+    "href": "trocheteorii.html#proces-analizy-danych",
+    "title": "2  Trochę teorii…",
+    "section": "2.8 Proces analizy danych",
+    "text": "2.8 Proces analizy danych\nAnaliza odnosi się do rozbicia całości posiadanych informacji na jej odrębne komponenty w celu indywidualnego badania. Analiza danych to proces uzyskiwania nieprzetworzonych danych i przekształcania ich w informacje przydatne do podejmowania decyzji przez użytkowników. Dane są zbierane i analizowane, aby odpowiadać na pytania, testować hipotezy lub obalać teorie. Istnieje kilka faz, które można wyszczególnić w procesie analizy danych. Fazy są iteracyjne, ponieważ informacje zwrotne z faz kolejnych mogą spowodować dodatkową pracę w fazach wcześniejszych.\n\n2.8.1 Zdefiniowanie wymagań\nPrzed przystąpieniem do analizy danych, należy dokładnie określić wymagania jakościowe dotyczące danych. Dane wejściowe, które mają być przedmiotem analizy, są określone na podstawie wymagań osób kierujących analizą lub klientów (którzy będą używać finalnego produktu analizy). Ogólny typ jednostki, na podstawie której dane będą zbierane, jest określany jako jednostka eksperymentalna (np. osoba lub populacja ludzi. Dane mogą być liczbowe lub kategoryczne (tj. Etykiety tekstowe). Faza definiowania wymagań powinna dać odpowiedź na 2 zasadnicze pytania:\n\nco chcemy zmierzyć?\nw jaki sposób chcemy to zmierzyć?\n\n\n\n2.8.2 Gromadzenie danych\nDane są gromadzone z różnych źródeł. Wymogi, co do rodzaju i jakości danych mogą być przekazywane przez analityków do “opiekunów danych”, takich jak personel technologii informacyjnych w organizacji. Dane ponadto mogą być również gromadzone automatycznie z różnego rodzaju czujników znajdujących się w otoczeniu - takich jak kamery drogowe, satelity, urządzenia rejestrujące obraz, dźwięk oraz parametry fizyczne. Kolejną metodą jest również pozyskiwanie danych w drodze wywiadów, gromadzenie ze źródeł internetowych lub bezpośrednio z dokumentacji.\n\n\n2.8.3 Przetwarzanie danych\nZgromadzone dane muszą zostać przetworzone lub zorganizowane w sposób logiczny do analizy. Na przykład, mogą one zostać umieszczone w tabelach w celu dalszej analizy - w arkuszu kalkulacyjnym lub innym oprogramowaniu. Oczyszczanie danych Po fazie przetworzenia i uporządkowania, dane mogą być niekompletne, zawierać duplikaty lub zawierać błędy. Konieczność czyszczenia danych wynika z problemów związanych z wprowadzaniem i przechowywaniem danych. Czyszczenie danych to proces zapobiegania powstawaniu i korygowania wykrytych błędów. Typowe zadania obejmują dopasowywanie rekordów, identyfikowanie nieścisłości, ogólny przegląd jakość istniejących danych, usuwanie duplikatów i segmentację kolumn. Niezwykłe istotne jest też zwracanie uwagi na dane których wartości są powyżej lub poniżej ustalonych wcześniej progów (ekstrema).\n\n\n2.8.4 Właściwa analiza danych\nIstnieje kilka metod, które można wykorzystać do tego celu, na przykład data mining, business intelligence, wizualizacja danych lub badania eksploracyjne. Ta ostatnia metoda jest sposobem analizowania zbiorów informacji w celu określenia ich odrębnych cech. W ten sposób dane mogą zostać wykorzystane do przetestowania pierwotnej hipotezy. Statystyki opisowe to kolejna metoda analizy zebranych informacji. Dane są badane, aby znaleźć najważniejsze ich cechy. W statystykach opisowych analitycy używają kilku podstawowych narzędzi - można użyć średniej lub średniej z zestawu liczb. Pomaga to określić ogólny trend aczkolwiek nie zapewnia to dużej dokładności przy ocenie ogólnego obrazu zebranych danych. W tej fazie ma miejsce również modelowanie i tworzenie formuł matematycznych - stosowane są w celu identyfikacji zależności między zmiennymi, takich jak korelacja lub przyczynowość.\n\n\n2.8.5 Raportowanie i dystrybucja wyników\nTa faza polega na ustalaniu w jakiej formie przekazywać wyniki. Analityk może rozważyć róże techniki wizualizacji danych, aby w sposób wyraźnym i skuteczny przekazać wnioski z analizy odbiorcom. Wizualizacja danych wykorzystuje formy graficzne jak wykresy i tabele. Tabele są przydatne dla użytkownika, który może wyszukiwać konkretne rekordy, podczas gdy wykresy (np. wykresy słupkowe lub liniowe) dają spojrzenie ilościowych na zbiór analizowanych danych.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#skąd-brać-dane",
+    "href": "trocheteorii.html#skąd-brać-dane",
+    "title": "2  Trochę teorii…",
+    "section": "2.9 Skąd brać dane?",
+    "text": "2.9 Skąd brać dane?\nDarmowa repozytoria danych:\n\nBank danych lokalnych GUS - link\nOtwarte dane - link\nBank Światowy - link\n\nPrzydatne strony:\n\nhttps://www.kaggle.com/\nhttps://archive.ics.uci.edu/ml/index.php\nhttps://huggingface.co/datasets\nhttps://github.com/awesomedata/awesome-public-datasets",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#koncepcja-tidy-data",
+    "href": "trocheteorii.html#koncepcja-tidy-data",
+    "title": "2  Trochę teorii…",
+    "section": "2.10 Koncepcja “Tidy data”",
+    "text": "2.10 Koncepcja “Tidy data”\nKoncepcja czyszczenia danych (ang. tidy data):\n\nWICKHAM, Hadley . Tidy Data. Journal of Statistical Software, [S.l.], v. 59, Issue 10, p. 1 - 23, sep. 2014. ISSN 1548-7660. Available at: https://www.jstatsoft.org/v059/i10. Date accessed: 25 oct. 2018. doi:http://dx.doi.org/10.18637/jss.v059.i10.\n\n\n2.10.1 Zasady “czystych danych”\nIdealne dane są zaprezentowane w tabeli:\n\n\n\nImię\nWiek\nWzrost\nKolor oczu\n\n\n\n\nAdam\n26\n167\nBrązowe\n\n\nSylwia\n34\n164\nPiwne\n\n\nTomasz\n42\n183\nNiebieskie\n\n\n\nNa co powinniśmy zwrócić uwagę?\n\njedna obserwacja (jednostka statystyczna) = jeden wiersz w tabeli/macierzy/ramce danych\nwartości danej cechy znajdują się w kolumnach\njeden typ/rodzaj obserwacji w jednej tabeli/macierzy/ramce danych\n\n\n\n2.10.2 Przykłady nieuporządkowanych danych\n\n\n\nImię\nWiek\nWzrost\nBrązowe\nNiebieskie\nPiwne\n\n\n\n\nAdam\n26\n167\n1\n0\n0\n\n\nSylwia\n34\n164\n0\n0\n1\n\n\nTomasz\n42\n183\n0\n1\n0\n\n\n\nNagłowki kolumn muszą odpowiadać cechom, a nie wartościom zmiennych.\n\n\n2.10.3 Długie czy szerokie dane?\nhttps://seaborn.pydata.org/tutorial/data_structure.html#long-form-vs-wide-form-data",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#parę-rad-na-dobre-prezentacje",
+    "href": "trocheteorii.html#parę-rad-na-dobre-prezentacje",
+    "title": "2  Trochę teorii…",
+    "section": "2.11 Parę rad na dobre prezentacje",
+    "text": "2.11 Parę rad na dobre prezentacje\nEdward Tufte, prof z Yale, https://www.edwardtufte.com/\n\nPrezentuj dane “na bogato”.\nNie ukrywaj danych, pokazuj prawdę.\nNie używaj wykresów śmieciowych.\nPokazuj zmienność danych, a nie projektuj jej.\nWykres ma posiadać jak najmniejszy współczynnik kłamstwa (lie-factor).\nPowerpoint to zło!\n\n\n2.11.1 Współczynnik kłamstwa\nhttps://www.facebook.com/janinadaily/photos/a.1524649467770881/2836063543296127/?paipv=0&eav=AfbVIDx5un8ZOklKI9c-B1jP4nOoNa2QMmJmjoA-291JNNgM1L_NmoCGMS_mJOy4xjo&_rdr\n\nstosunek efektu widocznego na wykresie do efektu wykazywanego przez dane, na podstawie których ten wykres narysowaliśmy.\n\nhttps://infovis-wiki.net/wiki/Lie_Factor\n\n\n2.11.2 Współczynnik kłamstwa\n\n[Tufte, 1991] Edward Tufte, The Visual Display of Quantitative Information, Second Edition, Graphics Press, USA, 1991, p. 57 – 69.\n\\[\\operatorname{LieFactor} = \\frac{\\text{rozmiar efektu widocznego na wykresie}}{\\text{rozmiar efektu wynikającego z danych}}\\]\n\\[\\text{rozmiar efektu} = \\frac{|\\text{druga wartość}-\\text{pierwsza wartość}|}{\\text{pierwsza wartość}}\\]\n\n\\[\\operatorname{LieFactor} = \\frac{\\frac{5.3-0.6}{0.6}}{\\frac{27.5-18}{18}} \\approx 14.8\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#jak-tworzyć",
+    "href": "trocheteorii.html#jak-tworzyć",
+    "title": "2  Trochę teorii…",
+    "section": "2.12 Jak tworzyć?",
+    "text": "2.12 Jak tworzyć?\n\nhttps://bookdown.org/rudolf_von_ems/jak_sie_nie_dac/stats_graphs.html\nhttps://www.data-to-viz.com/\nhttps://100.datavizproject.com/",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "trocheteorii.html#bibliografia",
+    "href": "trocheteorii.html#bibliografia",
+    "title": "2  Trochę teorii…",
+    "section": "2.13 Bibliografia",
+    "text": "2.13 Bibliografia\n\nhttps://pl.wikipedia.org/wiki/Wizualizacja\nhttps://mfiles.pl/pl/index.php/Analiza_danych, dostęp online 1.04.2019.\nWalesiak M., Gatnar E., Statystyczna analiza danych z wykorzystaniem programu R, PWN, Warszawa, 2009.\nWasilewska E., Statystyka opisowa od podstaw, Podręcznik z zadaniami, Wydawnictwo SGGW, Warszawa, 2009.\nhttps://en.wikipedia.org/wiki/Cognitive_reflection_test, dostęp online 20.03.2023.\nhttps://qlikblog.pl/edward-tufte-dobre-praktyki-prezentacji-danych/, dostęp online 20.03.2023.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Trochę teorii...</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html",
+    "href": "numpy-start.html",
+    "title": "3  NumPy - start",
+    "section": "",
+    "text": "3.1 Instalacja pakietu NumPy - opcja łatwiejsza “do przeklikania”\nNumPy jest biblioteką Pythona służącą do obliczeń naukowych.\nZastosowania:",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania",
+    "href": "numpy-start.html#instalacja-pakietu-numpy---opcja-łatwiejsza-do-przeklikania",
+    "title": "3  NumPy - start",
+    "section": "",
+    "text": "Tworzy projekt w PyCharm z venv - wersja 3.12.\n\n\n\nZa pomocą zakładki po lewej stronie na dole wyszukujemy pakiet i wybieramy instalację",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#instalacja-pakietu-numpy---opcja-terminala",
+    "href": "numpy-start.html#instalacja-pakietu-numpy---opcja-terminala",
+    "title": "3  NumPy - start",
+    "section": "3.2 Instalacja pakietu NumPy - opcja terminala",
+    "text": "3.2 Instalacja pakietu NumPy - opcja terminala\nKomenda dla terminala:\npython -m pip install numpy\npython -m pip install numpy==2.2.0",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#import-biblioteki-numpy",
+    "href": "numpy-start.html#import-biblioteki-numpy",
+    "title": "3  NumPy - start",
+    "section": "3.3 Import biblioteki NumPy",
+    "text": "3.3 Import biblioteki NumPy\nimport numpy as np\nPodstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana ndarray. Każdy element na tablicy traktowany jest jako typ dtype.\nnumpy.array(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0, like=None)\n\nobject - to co ma być wrzucone do tablicy\ndtype - typ\ncopy - czy obiekty mają być skopiowane, domyślne True\norder - sposób układania: C (rzędy), F (kolumny), A, K\nsubok - realizowane przez podklasy (jeśli True), domyślnie False\nndmin - minimalny rozmiar (wymiar) tablicy\nlike - tworzenie na podstawie tablic referencyjnej\n\n\nimport numpy as np\n\n1a = np.array([1, 2, 3])\nprint(\"a:\", a) \n2print(\"typ a:\", type(a))\n3b = np.array([1, 2, 3.0])\nprint(\"b:\", b)\n4c = np.array([[1, 2], [3, 4]])\nprint(\"c:\", c)\n5d = np.array([1, 2, 3], ndmin=2)\nprint(\"d:\", d)\n6e = np.array([1, 2, 3], dtype=complex)\nprint(\"e:\", e)\n7f = np.array(np.asmatrix('1 2; 3 4'))\nprint(\"f:\", f)\n8g = np.array(np.asmatrix('1 2; 3 4'), subok=True)\nprint(\"g:\", g)\nprint(type(g))\n\n\n1\n\nStandardowe domyślne.\n\n2\n\nSprawdzenie typu.\n\n3\n\nJeden z elementów jest innego typu. Tu następuje zatem rozszerzenie do typu “największego”.\n\n4\n\nTu otrzymamy tablicę 2x2.\n\n5\n\nW tej linijce otrzymana będzie tablica 2x1.\n\n6\n\nUstalenie innego typu - większego.\n\n7\n\nSkorzystanie z podtypu macierzowego.\n\n8\n\nZachowanie typu macierzowego.\n\n\n\n\na: [1 2 3]\ntyp a: &lt;class 'numpy.ndarray'&gt;\nb: [1. 2. 3.]\nc: [[1 2]\n [3 4]]\nd: [[1 2 3]]\ne: [1.+0.j 2.+0.j 3.+0.j]\nf: [[1 2]\n [3 4]]\ng: [[1 2]\n [3 4]]\n&lt;class 'numpy.matrix'&gt;",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#uruchamianie---tryb-run-wykonawczy",
+    "href": "numpy-start.html#uruchamianie---tryb-run-wykonawczy",
+    "title": "3  NumPy - start",
+    "section": "3.4 Uruchamianie - tryb “Run” (wykonawczy)",
+    "text": "3.4 Uruchamianie - tryb “Run” (wykonawczy)\nRun - zielona strzałka u góry.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-start.html#uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy",
+    "href": "numpy-start.html#uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy",
+    "title": "3  NumPy - start",
+    "section": "3.5 Uruchamianie - tryb “Run in Python Console” (interaktywno-wykonawczy)",
+    "text": "3.5 Uruchamianie - tryb “Run in Python Console” (interaktywno-wykonawczy)\n\nĆwiczenie (ex1.py):\n\nStwórz proste tablice:\n\n\n\\(\\begin{bmatrix}\n1 & 2 & 7\\\\\n6 & -3 & -3\n\\end{bmatrix}\\)\n\\(\\begin{bmatrix}\n6 & 8 & 9 & -3\n\\end{bmatrix}\\)\n\\(\\begin{bmatrix}\n4 \\\\ 3 \\\\-3 \\\\-7\n\\end{bmatrix}\\)\n\\(\\begin{bmatrix}\nbb & cc & ww & 44\n\\end{bmatrix}\\)",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>NumPy - start</span>"
+    ]
+  },
+  {
+    "objectID": "lista_tablica.html",
+    "href": "lista_tablica.html",
+    "title": "4  Lista a tablica",
+    "section": "",
+    "text": "import numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n\n--- 0.0022509098052978516 seconds ---\n--- 0.038394927978515625 seconds ---",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lista a tablica</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-atrybuty.html",
+    "href": "numpy-atrybuty.html",
+    "title": "5  Atrybuty tablic ndarray",
+    "section": "",
+    "text": "Atrybut\nOpis\n\n\n\n\nshape\nkrotka z informacją o liczbie elementów dla każdego z wymiarów\n\n\nsize\nliczba elementów w tablicy (łączna)\n\n\nndim\nliczba wymiarów tablicy\n\n\nnbytes\nliczba bajtów jaką tablica zajmuje w pamięci\n\n\ndtype\ntyp danych\n\n\n\nhttps://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes\n\nimport numpy as np\n\ntab1 = np.array([2, -3, 4, -8, 1])\nprint(\"typ:\", type(tab1))\nprint(\"shape:\", tab1.shape)\nprint(\"size:\", tab1.size)\nprint(\"ndim:\", tab1.ndim)\nprint(\"nbytes:\", tab1.nbytes)\nprint(\"dtype:\", tab1.dtype)\n\ntyp: &lt;class 'numpy.ndarray'&gt;\nshape: (5,)\nsize: 5\nndim: 1\nnbytes: 40\ndtype: int64\n\n\n\nimport numpy as np\n\ntab2 = np.array([[2, -3], [4, -8]])\nprint(\"typ:\", type(tab2))\nprint(\"shape:\", tab2.shape)\nprint(\"size:\", tab2.size)\nprint(\"ndim:\", tab2.ndim)\nprint(\"nbytes:\", tab2.nbytes)\nprint(\"dtype:\", tab2.dtype)\n\ntyp: &lt;class 'numpy.ndarray'&gt;\nshape: (2, 2)\nsize: 4\nndim: 2\nnbytes: 32\ndtype: int64\n\n\nNumPy nie wspiera postrzępionych tablic! Poniższy kod wygeneruje błąd:\nimport numpy as np\n\ntab3 = np.array([[2, -3], [4, -8, 5], [3]])\nĆwiczenia: (ex2.py)\nUtwórz tablice numpy: \\[\nA = \\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}\n\\] \\[B = \\begin{bmatrix} 7 & 8 \\\\ 9 & 10 \\\\ 11 & 12 \\end{bmatrix}\\] \\[C = \\begin{bmatrix} 1.1 & 2.2 & 3.3 \\\\ 4.4 & 5.5 & 6.6 \\end{bmatrix}\\] i sprawdź ich parametry.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Atrybuty tablic `ndarray`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-typydanych.html",
+    "href": "numpy-typydanych.html",
+    "title": "6  Typy danych",
+    "section": "",
+    "text": "https://numpy.org/doc/stable/reference/arrays.scalars.html\nhttps://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes-constructing\n\n\n\n\n\n\n\nTypy całkowitoliczbowe\nint,int8,int16,int32,int64\n\n\nTypy całkowitoliczbowe (bez znaku)\nuint,uint8,uint16,uint32,uint64\n\n\nTyp logiczny\nbool\n\n\nTypy zmiennoprzecinkowe\nfloat, float16, float32, float64, float128\n\n\nTypy zmiennoprzecinkowe zespolone\ncomplex, complex64, complex128, complex256\n\n\nNapis\nstr\n\n\n\n\nimport numpy as np\n\ntab = np.array([[2, -3], [4, -8]])\nprint(tab)\ntab2 = np.array([[2, -3], [4, -8]], dtype=int)\nprint(tab2)\ntab3 = np.array([[2, -3], [4, -8]], dtype=float)\nprint(tab3)\ntab4 = np.array([[2, -3], [4, -8]], dtype=complex)\nprint(tab4)\n\n[[ 2 -3]\n [ 4 -8]]\n[[ 2 -3]\n [ 4 -8]]\n[[ 2. -3.]\n [ 4. -8.]]\n[[ 2.+0.j -3.+0.j]\n [ 4.+0.j -8.+0.j]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Typy danych</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-tworzenietablic.html",
+    "href": "numpy-tworzenietablic.html",
+    "title": "7  Tworzenie tablic",
+    "section": "",
+    "text": "np.array - argumenty rzutowany na tablicę (coś po czym można iterować) - warto sprawdzić rozmiar/kształt\n\nimport numpy as np\n\ntab = np.array([2, -3, 4])\nprint(tab)\nprint(\"size:\", tab.size)\ntab2 = np.array((4, -3, 3, 2))\nprint(tab2)\nprint(\"size:\", tab2.size)\ntab3 = np.array({3, 3, 2, 5, 2})\nprint(tab3)\nprint(\"size:\", tab3.size)\ntab4 = np.array({\"pl\": 344, \"en\": 22})\nprint(tab4)\nprint(\"size:\", tab4.size)\n\n[ 2 -3  4]\nsize: 3\n[ 4 -3  3  2]\nsize: 4\n{2, 3, 5}\nsize: 1\n{'pl': 344, 'en': 22}\nsize: 1\n\n\nnp.zeros - tworzy tablicę wypełnioną zerami\n\nimport numpy as np\n\ntab = np.zeros(4)\nprint(tab)\nprint(tab.shape)\ntab2 = np.zeros([2, 3])\nprint(tab2)\nprint(tab2.shape)\ntab3 = np.zeros([2, 3, 4])\nprint(tab3)\nprint(tab3.shape)\n\n[0. 0. 0. 0.]\n(4,)\n[[0. 0. 0.]\n [0. 0. 0.]]\n(2, 3)\n[[[0. 0. 0. 0.]\n  [0. 0. 0. 0.]\n  [0. 0. 0. 0.]]\n\n [[0. 0. 0. 0.]\n  [0. 0. 0. 0.]\n  [0. 0. 0. 0.]]]\n(2, 3, 4)\n\n\nnp.ones - tworzy tablicę wypełnioną jedynkami (to nie odpowiednik macierzy jednostkowej!)\n\nimport numpy as np\n\ntab = np.ones(4)\nprint(tab)\nprint(tab.shape)\ntab2 = np.ones([2, 3])\nprint(tab2)\nprint(tab2.shape)\ntab3 = np.ones([2, 3, 4])\nprint(tab3)\nprint(tab3.shape)\n\n[1. 1. 1. 1.]\n(4,)\n[[1. 1. 1.]\n [1. 1. 1.]]\n(2, 3)\n[[[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]\n\n [[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]]\n(2, 3, 4)\n\n\nnp.diag - tworzy tablicę odpowiadającą macierzy diagonalnej\n\nimport numpy as np\n\nprint(\"tab0\")\ntab0 = np.diag([3, 4, 5])\nprint(tab0)\nprint(\"tab1\")\ntab1 = np.array([[2, 3, 4], [3, -4, 5], [3, 4, -5]])\nprint(tab1)\ntab2 = np.diag(tab1)\nprint(\"tab2\")\nprint(tab2)\ntab3 = np.diag(tab1, k=1)\nprint(\"tab3\")\nprint(tab3)\nprint(\"tab4\")\ntab4 = np.diag(tab1, k=-2)\nprint(tab4)\nprint(\"tab5\")\ntab5 = np.diag(np.diag(tab1))\nprint(tab5)\n\ntab0\n[[3 0 0]\n [0 4 0]\n [0 0 5]]\ntab1\n[[ 2  3  4]\n [ 3 -4  5]\n [ 3  4 -5]]\ntab2\n[ 2 -4 -5]\ntab3\n[3 5]\ntab4\n[3]\ntab5\n[[ 2  0  0]\n [ 0 -4  0]\n [ 0  0 -5]]\n\n\nnp.arange - tablica wypełniona równomiernymi wartościami\nSkładnia: numpy.arange([start, ]stop, [step, ]dtype=None)\nZasada działania jest podobna jak w funkcji range, ale dopuszczamy liczby “z ułamkiem”.\n\nimport numpy as np\n\na = np.arange(3)\nprint(a)\nb = np.arange(3.0)\nprint(b)\nc = np.arange(3, 7)\nprint(c)\nd = np.arange(3, 11, 2)\nprint(d)\ne = np.arange(0, 1, 0.1)\nprint(e)\nf = np.arange(3, 11, 2, dtype=float)\nprint(f)\ng = np.arange(3, 10, 2)\nprint(g)\n\n[0 1 2]\n[0. 1. 2.]\n[3 4 5 6]\n[3 5 7 9]\n[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]\n[3. 5. 7. 9.]\n[3 5 7 9]\n\n\nnp.linspace - tablica wypełniona równomiernymi wartościami wg skali liniowej\n\nimport numpy as np\n\na = np.linspace(2.0, 3.0, num=5)\nprint(a)\nb = np.linspace(2.0, 3.0, num=5, endpoint=False)\nprint(b)\nc = np.linspace(10, 20, num=4)\nprint(c)\nd = np.linspace(10, 20, num=4, dtype=int)\nprint(d)\n\n[2.   2.25 2.5  2.75 3.  ]\n[2.  2.2 2.4 2.6 2.8]\n[10.         13.33333333 16.66666667 20.        ]\n[10 13 16 20]\n\n\n\nnp.logspace - tablica wypełniona wartościami wg skali logarytmicznej\nSkładnia: numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None, axis=0)\n\nimport numpy as np\n\na = np.logspace(2.0, 3.0, num=4)\nprint(a)\nb = np.logspace(2.0, 3.0, num=4, endpoint=False)\nprint(b)\nc = np.logspace(2.0, 3.0, num=4, base=2.0)\nprint(c)\n\n[ 100.          215.443469    464.15888336 1000.        ]\n[100.         177.827941   316.22776602 562.34132519]\n[4.         5.0396842  6.34960421 8.        ]\n\n\n\nnp.empty - pusta (niezaincjowana) tablica - konkretne wartości nie są “gwarantowane”\n\nimport numpy as np\n\na = np.empty(3)\nprint(a)\nb = np.empty(3, dtype=int)\nprint(b)\n\n[0. 1. 2.]\n[                  0 4607182418800017408 4611686018427387904]\n\n\nnp.identity - tablica przypominająca macierz jednostkową\nnp.eye - tablica z jedynkami na przekątnej (pozostałe zera)\n\nimport numpy as np\n\nprint(\"a\")\na = np.identity(4)\nprint(a)\nprint(\"b\")\nb = np.eye(4, k=1)\nprint(b)\nprint(\"c\")\nc = np.eye(4, k=2)\nprint(c)\nprint(\"d\")\nd = np.eye(4, k=-1)\nprint(d)\n\na\n[[1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]]\nb\n[[0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]\n [0. 0. 0. 0.]]\nc\n[[0. 0. 1. 0.]\n [0. 0. 0. 1.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]\nd\n[[0. 0. 0. 0.]\n [1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]]\n\n\nĆwiczenia: (ex3.py)\n\nUtwórz jednowymiarową tablicę zawierającą liczby całkowite od 1 do 5 i przypisz ją do zmiennej A. Wynikowa tablica powinna mieć postać: \\[\\begin{bmatrix}1 & 2 & 3 & 4 & 5\\end{bmatrix} \\]\nUtwórz dwuwymiarową tablicę zawierającą elementy: \\[\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix} \\]\ni przypisz ją do zmiennej B.\nUtwórz tablicę zawierającą liczby od 0 do 9 (włącznie). Przypisz ją do zmiennej C.\nOczekiwana postać: \\[\\begin{bmatrix}0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\end{bmatrix} \\]\nUtwórz tablicę zawierającą liczby od 10 do 30 z krokiem 5. Przypisz do D.\nOczekiwana postać: \\[\\begin{bmatrix}10 & 15 & 20 & 25 & 30\\end{bmatrix} \\]\nUtwórz tablicę 5 wartości równomiernie rozłożonych pomiędzy 0 a 1. Przypisz do E.\nPrzykładowa postać: \\[\\begin{bmatrix}0. & 0.25 & 0.5 & 0.75 & 1.\\end{bmatrix} \\]\nUtwórz dwuwymiarową tablicę o wymiarach 2x3 wypełnioną zerami. Przypisz do F.\nOczekiwana postać: \\[\\begin{bmatrix}0 & 0 & 0 \\\\ 0 & 0 & 0\\end{bmatrix} \\]\nKorzystając z np.eye utwórz macierz jednostkową 4x4. Przypisz do J.\nOczekiwana postać: \\[\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix} \\]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Tworzenie tablic</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-indeksowanie.html",
+    "href": "numpy-indeksowanie.html",
+    "title": "8  Indeksowanie, “krojenie”",
+    "section": "",
+    "text": "import numpy as np\n\na = np.array([2, 5, -2, 4, -7, 8, 9, 11, -23, -4, -7, 16, 1])\n1print(\"1:\", a[5])\n2print(\"2:\", a[-2])\n3print(\"3:\", a[3:6])\n4print(\"4:\", a[:])\n5print(\"5:\", a[0:-1])\n6print(\"6:\", a[:5])\n\n\n1\n\nDostęp do elementu o indeksie 5.\n\n2\n\nDostęp do elementu drugiego od tyłu.\n\n3\n\nDostęp do elementów o indeksach od 3 do 5 (włącznie) - zasada przedziałów lewostronnnie domkniętnych, prawostronnie otwartych.\n\n4\n\nDostęp do wszystkich elementów.\n\n5\n\nDostęp do wszystkich elementów z wyłączeniem ostatniego.\n\n6\n\nDostęp od początku do elementu o indeksie 4.\n\n\n\n\n1: 8\n2: 16\n3: [ 4 -7  8]\n4: [  2   5  -2   4  -7   8   9  11 -23  -4  -7  16   1]\n5: [  2   5  -2   4  -7   8   9  11 -23  -4  -7  16]\n6: [ 2  5 -2  4 -7]\n\n\n\nimport numpy as np\n\n1print(\"1:\", a[4:])\n2print(\"2:\", a[4:-1])\n3print(\"3:\", a[4:10:2])\n4print(\"4:\", a[::-1])\n5print(\"5:\", a[::2])\n6print(\"6:\", a[::-2])\n\n\n1\n\nDostęp do elementów od indeksu 4 do końca.\n\n2\n\nDostęp do elementów od indeksu 4 do końca bez ostatniego.\n\n3\n\nDostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do 10 (z czówrką, ale bez dziesiątki) z krokiem równym 2\n\n4\n\nDostęp do elementów od tyłu do początku.\n\n5\n\nDostęp do elementów o indeksach parzystych od początku.\n\n6\n\nDostęp do elementów o indeksach “nieparzystych ujemnych” od początku.\n\n\n\n\n1: [ -7   8   9  11 -23  -4  -7  16   1]\n2: [ -7   8   9  11 -23  -4  -7  16]\n3: [ -7   9 -23]\n4: [  1  16  -7  -4 -23  11   9   8  -7   4  -2   5   2]\n5: [  2  -2  -7   9 -23  -7   1]\n6: [  1  -7 -23   9  -7  -2   2]\n\n\n\nimport numpy as np\n\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nb = a[:2, 1:]\nprint(b)\nprint(np.shape(b))\nc = a[1]\nprint(c)\nprint(np.shape(c))\nd = a[1, :]\nprint(d)\nprint(np.shape(d))\n\n[[4 5]\n [4 8]]\n(2, 2)\n[-3  4  8]\n(3,)\n[-3  4  8]\n(3,)\n\n\n\nimport numpy as np\n\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\ne = a[1:2, :]\nprint(e)\nprint(np.shape(e))\nf = a[:, :2]\nprint(f)\nprint(np.shape(f))\ng = a[1, :2]\nprint(g)\nprint(np.shape(g))\nh = a[1:2, :2]\nprint(h)\nprint(np.shape(h))\n\n[[-3  4  8]]\n(1, 3)\n[[ 3  4]\n [-3  4]\n [ 3  2]]\n(3, 2)\n[-3  4]\n(2,)\n[[-3  4]]\n(1, 2)\n\n\n**Uwaga - takie “krojenie” to tzw “widok”.\n\nimport numpy as np\n\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nb = a[1:2, 1:]\nprint(b)\na[1][1] = 9\nprint(a)\nprint(b)\nb[0][0] = -11\nprint(a)\nprint(b)\n\n[[4 8]]\n[[ 3  4  5]\n [-3  9  8]\n [ 3  2  9]]\n[[9 8]]\n[[  3   4   5]\n [ -3 -11   8]\n [  3   2   9]]\n[[-11   8]]\n\n\nNaprawa:\n\nimport numpy as np\n\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nb = a[1:2, 1:].copy()\nprint(b)\na[1][1] = 9\nprint(a)\nprint(b)\nb[0][0] = -11\nprint(a)\nprint(b)\n\n[[4 8]]\n[[ 3  4  5]\n [-3  9  8]\n [ 3  2  9]]\n[[4 8]]\n[[ 3  4  5]\n [-3  9  8]\n [ 3  2  9]]\n[[-11   8]]\n\n\nIndeksowanie logiczne (fancy indexing, maski boolowskie)\n\nimport numpy as np\n\na = np.array([2, 5, -2, 4, -7, 8, 9, 11, -23, -4, -7, 8, 1])\nb = a[np.array([1, 3, 7])]\nprint(b)\nc = a[[1, 3, 7]]\nprint(c)\n\n[ 5  4 11]\n[ 5  4 11]\n\n\n\nimport numpy as np\n\na = np.array([2, 5, -2, 4, -7, 8, 9, 11, -23, -4, -7, 8, 1])\nb = a &gt; 0\nprint(b)\nc = a[a &gt; 0]\nprint(c)\nd = a[(a &gt; 5) & (a%2 !=0)] # znak & odpowiada za AND\nprint(d)\ne = a[(a &gt; 5) | (a%2 !=0)] # znak | odpowiada za OR\nprint(e)\nf = a[(a &gt; 5) ^ (a%2 !=0)] # znak ^ odpowiada za XOR\nprint(f)\ng = a[~(a &gt; 0)]\nprint(g)\n\n[ True  True False  True False  True  True  True False False False  True\n  True]\n[ 2  5  4  8  9 11  8  1]\n[ 9 11]\n[  5  -7   8   9  11 -23  -7   8   1]\n[  5  -7   8 -23  -7   8   1]\n[ -2  -7 -23  -4  -7]\n\n\n\nimport numpy as np\n\na = np.array([2, 5, -2, 4, -7, 8, 9, 11, -23, -4, -7, 8, 1])\nb = a[a &gt; 0]\nprint(b)\nb[0] = -5\nprint(a)\nprint(b)\na[1] = 20\nprint(a)\nprint(b)\n\n[ 2  5  4  8  9 11  8  1]\n[  2   5  -2   4  -7   8   9  11 -23  -4  -7   8   1]\n[-5  5  4  8  9 11  8  1]\n[  2  20  -2   4  -7   8   9  11 -23  -4  -7   8   1]\n[-5  5  4  8  9 11  8  1]\n\n\nĆwiczenia: (ex4.py)\n\nRozważ jednowymiarową tablicę\n\\[A = \\begin{bmatrix}10 & 20 & 30 & 40 & 50\\end{bmatrix}.\\]\nNapisz polecenie , które zwróci trzeci element tablicy. Następnie spróbuj pobrać przedział od drugiego do czwartego elementu włącznie.\nDla tej samej tablicy\n\\[A = \\begin{bmatrix}10 & 20 & 30 & 40 & 50\\end{bmatrix},\\]\nużyj “fancy indexing”, aby wybrać elementy o indeksach [0, 2, 4]. Spróbuj także wykorzystać negatywne indeksy, aby wybrać ostatni i przedostatni element w jednej operacji.\nRozważ dwuwymiarową tablicę\n\\[B = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9\\end{bmatrix}.\\]\nNapisz polecenie, które zwróci drugi wiersz (jako tablicę jednowymiarową). Następnie pobierz cały pierwszy wiersz oraz dwie pierwsze kolumny.\nDla tablicy\n\\[B = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9\\end{bmatrix},\\]\nużyj “fancy indexing”, aby wybrać elementy \\((B_{1,1}, B_{0,2}, B_{2,0})\\) za pomocą list indeksów w numpy. Otrzymaj wynik w postaci tablicy jednowymiarowej [5, 3, 7].\nRozważ tablicę\n\\[C = \\begin{bmatrix}10 & 20 & 30 & 40 \\\\ 50 & 60 & 70 & 80\\end{bmatrix}.\\]\nNapisz polecenie, które zwróci wszystkie elementy drugiego wiersza oprócz ostatniego. Następnie pobierz co drugi element z pierwszego wiersza.\nDla tablicy\n\\[C = \\begin{bmatrix}10 & 20 & 30 & 40 \\\\ 50 & 60 & 70 & 80\\end{bmatrix},\\]\nużyj “fancy indexing”, aby pobrać elementy pierwszego wiersza w kolejności [30, 10, 40] korzystając z tablicy indeksów np. [2, 0, 3]. Następnie zastosuj “fancy indexing” do drugiego wiersza, aby uzyskać [80, 50].\nRozważ jednowymiarową tablicę\n\\[D = \\begin{bmatrix}5 & 10 & 15 & 20 & 25 & 30\\end{bmatrix}.\\]\nZa pomocą indeksowania wytnij ostatnie trzy elementy. Następnie pobierz wszystkie elementy o parzystych indeksach.\nDla tablicy\n\\[D = \\begin{bmatrix}5 & 10 & 15 & 20 & 25 & 30\\end{bmatrix},\\]\nużyj “fancy indexing” za pomocą maski boolowskiej (utwórz maskę wybierającą elementy większe niż 15) i otrzymaj odpowiednio przefiltrowaną tablicę. Następnie zastosuj tę maskę do pobrania konkretnych elementów.\nRozważ tablicę dwuwymiarową\n\\[E = \\begin{bmatrix}2 & 4 & 6 \\\\ 8 & 10 & 12 \\\\ 14 & 16 & 18\\end{bmatrix}.\\]\nZa pomocą indeksowania wybierz środkowy wiersz i wszystkie kolumny oprócz ostatniej. Następnie wybierz ostatni wiersz i ostatnią kolumnę.\nDla tablicy\n\\[E = \\begin{bmatrix}2 & 4 & 6 \\\\ 8 & 10 & 12 \\\\ 14 & 16 & 18\\end{bmatrix},\\]\nużyj “fancy indexing”, aby w jednej operacji pobrać elementy \\((E_{0,2}, E_{2,1})\\) i ułożyć je w nowej tablicy. Spróbuj także stworzyć maskę boolowską wybierającą elementy większe niż 10 i pobrać wybrane wartości.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Indeksowanie, \"krojenie\"</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-modyfikacje.html",
+    "href": "numpy-modyfikacje.html",
+    "title": "9  Modyfikacja kształtu i rozmiaru",
+    "section": "",
+    "text": "import numpy as np\n\nprint(\"a\")\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nprint(a)\nprint(\"b\")\nb = np.reshape(a, (1, 9))\nprint(b)\nprint(\"c\")\nc = a.reshape(9)\nprint(c)\n\na\n[[ 3  4  5]\n [-3  4  8]\n [ 3  2  9]]\nb\n[[ 3  4  5 -3  4  8  3  2  9]]\nc\n[ 3  4  5 -3  4  8  3  2  9]\n\n\n\nimport numpy as np\n\nprint(\"a\")\na = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])\nprint(a)\nprint(\"d\")\nd = a.flatten()\nprint(d)\nprint(\"e\")\ne = a.ravel()\nprint(e)\nprint(\"f\")\nf = np.ravel(a)\nprint(f)\n\na\n[[ 3  4  5]\n [-3  4  8]\n [ 3  2  9]]\nd\n[ 3  4  5 -3  4  8  3  2  9]\ne\n[ 3  4  5 -3  4  8  3  2  9]\nf\n[ 3  4  5 -3  4  8  3  2  9]\n\n\n\nimport numpy as np\n\nprint(\"g\")\ng = [[1, 3, 4]]\nprint(g)\nprint(\"h\")\nh = np.squeeze(g)\nprint(h)\nprint(\"i\")\ni = a.T\nprint(i)\nprint(\"j\")\nj = np.transpose(a)\nprint(j)\n\ng\n[[1, 3, 4]]\nh\n[1 3 4]\ni\n[[ 3 -3  3]\n [ 4  4  2]\n [ 5  8  9]]\nj\n[[ 3 -3  3]\n [ 4  4  2]\n [ 5  8  9]]\n\n\n\nimport numpy as np\n\nprint(\"h\")\nh = [3, -4, 5, -2]\nprint(h)\nprint(\"k\")\nk = np.hstack((h, h, h))\nprint(k)\nprint(\"l\")\nl = np.vstack((h, h, h))\nprint(l)\nprint(\"m\")\nm = np.dstack((h, h, h))\nprint(m)\n\nh\n[3, -4, 5, -2]\nk\n[ 3 -4  5 -2  3 -4  5 -2  3 -4  5 -2]\nl\n[[ 3 -4  5 -2]\n [ 3 -4  5 -2]\n [ 3 -4  5 -2]]\nm\n[[[ 3  3  3]\n  [-4 -4 -4]\n  [ 5  5  5]\n  [-2 -2 -2]]]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6]])\nprint(\"r1\")\nr1 = np.concatenate((a, b))\nprint(r1)\nprint(\"r2\")\nr2 = np.concatenate((a, b), axis=0)\nprint(r2)\nprint(\"r3\")\nr3 = np.concatenate((a, b.T), axis=1)\nprint(r3)\nprint(\"r4\")\nr4 = np.concatenate((a, b), axis=None)\nprint(r4)\n\nr1\n[[1 2]\n [3 4]\n [5 6]]\nr2\n[[1 2]\n [3 4]\n [5 6]]\nr3\n[[1 2 5]\n [3 4 6]]\nr4\n[1 2 3 4 5 6]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2], [3, 4]])\nprint(\"r1\")\nr1 = np.resize(a, (2, 3))\nprint(r1)\nprint(\"r2\")\nr2 = np.resize(a, (1, 4))\nprint(r2)\nprint(\"r3\")\nr3 = np.resize(a, (2, 4))\nprint(r3)\n\nr1\n[[1 2 3]\n [4 1 2]]\nr2\n[[1 2 3 4]]\nr3\n[[1 2 3 4]\n [1 2 3 4]]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6]])\nprint(\"r1\")\nr1 = np.append(a, b)\nprint(r1)\nprint(\"r2\")\nr2 = np.append(a, b, axis=0)\nprint(r2)\n\nr1\n[1 2 3 4 5 6]\nr2\n[[1 2]\n [3 4]\n [5 6]]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2], [3, 7]])\nprint(\"r1\")\nr1 = np.insert(a, 1, 4)\nprint(r1)\nprint(\"r2\")\nr2 = np.insert(a, 2, 4)\nprint(r2)\nprint(\"r3\")\nr3 = np.insert(a, 1, 4, axis=0)\nprint(r3)\nprint(\"r4\")\nr4 = np.insert(a, 1, 4, axis=1)\nprint(r4)\n\nr1\n[1 4 2 3 7]\nr2\n[1 2 4 3 7]\nr3\n[[1 2]\n [4 4]\n [3 7]]\nr4\n[[1 4 2]\n [3 4 7]]\n\n\n\nimport numpy as np\n\na = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])\nprint(\"r1\")\nr1 = np.delete(a, 1, axis=1)\nprint(r1)\nprint(\"r2\")\nr2 = np.delete(a, 2, axis=0)\nprint(r2)\n\nr1\n[[ 1  3  4]\n [ 5  7  8]\n [ 9 11 12]]\nr2\n[[1 2 3 4]\n [5 6 7 8]]\n\n\nĆwiczenia: (ex5.py)\n\nRozważ tablicę jednowymiarową\n\\[A = \\begin{bmatrix}1 & 2 & 3 & 4 & 5 & 6\\end{bmatrix}.\\]\nPrzekształć ją tak, aby uzyskać tablicę dwuwymiarową o kształcie \\(2 \\times 3\\).\nMając tablicę dwuwymiarową\n\\[B = \\begin{bmatrix}1 & 2 \\\\ 3 & 4 \\\\ 5 & 6\\end{bmatrix},\\]\nuzyskaj jednowymiarowy “widok” jej elementów bez zmiany w danych źródłowych.\nRozważ tablicę\n\\[D = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6\\end{bmatrix}.\\]\nZmień jej orientację tak, aby wiersze stały się kolumnami, a kolumny wierszami.\nMając dwie tablice\n\\[E_1 = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}, \\quad E_2 = \\begin{bmatrix}4 & 5 & 6\\end{bmatrix},\\]\npołącz je w poziomie, tworząc jedną tablicę.\nDwie tablice\n\\[F_1 = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}, \\quad F_2 = \\begin{bmatrix}4 & 5 & 6\\end{bmatrix},\\]\npołącz w pionie, aby uzyskać tablicę o kształcie \\(2 \\times 3\\).\nDla tablicy\n\\[G = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6\\end{bmatrix},\\]\nzmień jej rozmiar tak, aby stała się tablicą jednowymiarową o 4 elementach. Pozostałe elementy usuń.\nMając tablicę\n\\[H = \\begin{bmatrix}10 & 20 & 30 \\\\ 40 & 50 & 60 \\\\ 70 & 80 & 90\\end{bmatrix},\\]\nusuń drugą kolumnę, otrzymując tablicę \\(3 \\times 2\\).\nRozważ tablicę\n\\[I = \\begin{bmatrix}1 & 2 \\\\ 3 & 4 \\\\ 5 & 6 \\\\ 7 & 8\\end{bmatrix},\\]\nzmień jej kształt tak, aby uzyskać tablicę \\(2 \\times 4\\).\nMając tablicę\n\\[J = \\begin{bmatrix}1 & 2 & 3 & 4\\end{bmatrix},\\]\nprzekształć ją w tablicę dwuwymiarową \\(2 \\times 2\\), a następnie “spłaszcz” ją z powrotem do postaci jednowymiarowej.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Modyfikacja kształtu i rozmiaru</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-broadcasting.html",
+    "href": "numpy-broadcasting.html",
+    "title": "10  Broadcasting",
+    "section": "",
+    "text": "Rozważane warianty są przykładowe.\nWariant 1 - skalar-tablica - wykonanie operacji na każdym elemencie tablicy\n\nimport numpy as np\n\na = np.array([[1, 2], [5, 6], [9, 10]])\nb = a + 4\nprint(b)\nc = 2 ** a\nprint(c)\n\n[[ 5  6]\n [ 9 10]\n [13 14]]\n[[   2    4]\n [  32   64]\n [ 512 1024]]\n\n\n\nWariant 2 - dwie tablice - “gdy jedna z tablic może być rozszerzona” (oba wymiary są równe lub jeden z nich jest równy 1)\nhttps://numpy.org/doc/stable/user/basics.broadcasting.html\n\nimport numpy as np\n\na = np.array([[1, 2], [5, 6]])\nb = np.array([9, 2])\nr1 = a + b\nprint(r1)\nr2 = a / b\nprint(r2)\nc = np.array([[4], [-2]])\nr3 = a + c\nprint(r3)\nr4 = c / a\nprint(r4)\n\n[[10  4]\n [14  8]]\n[[0.11111111 1.        ]\n [0.55555556 3.        ]]\n[[5 6]\n [3 4]]\n[[ 4.          2.        ]\n [-0.4        -0.33333333]]\n\n\n\nWariant 3 - “kolumna” i “wiersz”\n\nimport numpy as np\n\na = np.array([[5, 2, -3]]).T\nb = np.array([3, -2, 1, 2, 4])\nprint(a+b)\nprint(b+a)\nprint(a*b)\n\n[[ 8  3  6  7  9]\n [ 5  0  3  4  6]\n [ 0 -5 -2 -1  1]]\n[[ 8  3  6  7  9]\n [ 5  0  3  4  6]\n [ 0 -5 -2 -1  1]]\n[[ 15 -10   5  10  20]\n [  6  -4   2   4   8]\n [ -9   6  -3  -6 -12]]\n\n\n\nĆwiczenia: (ex6.py)\n\nRozważ jednowymiarową tablicę\n\\[A = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}\\]\noraz skalar \\(k = 10\\).\nWykonaj dodawanie, odejmowanie, mnożenie i dzielenie każdego elementu tablicy \\(A\\) przez \\(k\\) z wykorzystaniem broadcastingu.\nDla dwóch tablic jednowymiarowych\n\\[B_1 = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}, \\quad B_2 = \\begin{bmatrix}4 & 5 & 6\\end{bmatrix},\\]\nwykonaj działanie \\(B_1 + B_2\\), \\(B_1 - B_2\\), \\(B_1 * B_2\\) oraz \\(B_1 / B_2\\) używając broadcastingu.\nMając dwie tablice dwuwymiarowe:\n\\[C_1 = \\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}, \\quad C_2 = \\begin{bmatrix}10 & 20 \\\\ 30 & 40\\end{bmatrix},\\]\ndodaj je i odejmij od siebie, sprawdzając czy broadcasting zajdzie automatycznie.\nRozważ tablicę dwuwymiarową\n\\[D = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6\\end{bmatrix}\\]\noraz wektor\n\\[v = \\begin{bmatrix}10 & 100 & 1000\\end{bmatrix}.\\]\nWykonaj mnożenie i dzielenie elementowe tablicy \\(D\\) przez \\(v\\) z wykorzystaniem broadcastingu.\nDla tablicy\n\\[E = \\begin{bmatrix}2 & 4 & 6 \\\\ 8 & 10 & 12\\end{bmatrix}\\]\npodnieś każdy element do kwadratu, a następnie podziel przez wektor\n\\[w = \\begin{bmatrix}2 & 2 & 2\\end{bmatrix}\\]\nkorzystając z broadcastingu.\nMając tablicę dwuwymiarową\n\\[F = \\begin{bmatrix}1 & 2 \\\\ 3 & 4 \\\\ 5 & 6\\end{bmatrix},\\]\noraz skalar \\(s = 2\\), wykonaj \\(F * s\\), a następnie \\(F^{s}\\) (podnieś każdy element do potęgi \\(s\\)) z zastosowaniem broadcastingu.\nRozważ tablicę\n\\[G = \\begin{bmatrix}10 & 20 & 30\\end{bmatrix}\\]\noraz kolumnową tablicę dwuwymiarową\n\\[h = \\begin{bmatrix}1 \\\\ 2 \\\\ 3\\end{bmatrix}.\\] Dodaj do \\(h\\) tablicę \\(G\\) i zaobserwuj wynik broadcastingu.\nMając dwie tablice dwuwymiarowe o różnych wymiarach:\n\\[H_1 = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix}, \\quad H_2 = \\begin{bmatrix}10 \\\\ 20 \\\\ 30\\end{bmatrix},\\]\nspróbuj je dodać i pomnożyć przez siebie, korzystając z broadcastingu.\nRozważ tablicę dwuwymiarową\n\\[J = \\begin{bmatrix}1 & 2 & 3 \\\\ 4 & 5 & 6\\end{bmatrix}\\]\noraz skalar \\(m = 5\\).\nWykonaj kombinację działań: najpierw pomnóż \\(J\\) przez \\(m\\), następnie odejmij \\(m\\), a na końcu podziel wynik przez \\(m\\) – wszystko z wykorzystaniem broadcastingu.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Broadcasting</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html",
+    "href": "numpy-ufunc.html",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "",
+    "text": "11.1 Podstawowe operacje arytmetyczne\nFunkcje uniwersalne (tzw. ufunc) to jedne z najważniejszych narzędzi w NumPy. Są to funkcje działające element-po-elemencie na tablicach, często implementowane w C, co zapewnia wysoką wydajność obliczeń. Dzięki ufuncs można w prosty i czytelny sposób wykonywać operacje arytmetyczne, trygonometryczne, statystyczne czy logiczne na całych tablicach bez konieczności pisania pętli w Pythonie.\nNumPy automatycznie przekształca operatory matematyczne w odpowiednie ufunc.\nNa przykład:\nPrzykład:\nimport numpy as np\n\nA = np.array([1, 2, 3, 4])\nB = np.array([10, 20, 30, 40])\n\n# Operacje element-po-elemencie\nsum_tab = np.add(A, B)       # to samo co A + B\ndiff_tab = np.subtract(B, A) # to samo co B - A\nmul_tab = np.multiply(A, 2)  # to samo co A * 2\npow_tab = np.power(A, 3)     # to samo co A ** 3\n\nprint(\"Suma:\", sum_tab)\nprint(\"Różnica:\", diff_tab)\nprint(\"Mnożenie przez 2:\", mul_tab)\nprint(\"Potęgowanie:\", pow_tab)\n\nSuma: [11 22 33 44]\nRóżnica: [ 9 18 27 36]\nMnożenie przez 2: [2 4 6 8]\nPotęgowanie: [ 1  8 27 64]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#podstawowe-operacje-arytmetyczne",
+    "href": "numpy-ufunc.html#podstawowe-operacje-arytmetyczne",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "",
+    "text": "+ odpowiada np.add\n- odpowiada np.subtract\n* odpowiada np.multiply\n/ odpowiada np.divide\n** odpowiada np.power",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#funkcje-trygonometryczne-i-pochodne",
+    "href": "numpy-ufunc.html#funkcje-trygonometryczne-i-pochodne",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "11.2 Funkcje trygonometryczne i pochodne",
+    "text": "11.2 Funkcje trygonometryczne i pochodne\nNumPy oferuje bogaty zestaw funkcji trygonometrycznych:\n\nnp.sin, np.cos, np.tan – funkcje podstawowe,\nnp.arcsin, np.arccos, np.arctan – odwrotne funkcje trygonometryczne,\nnp.sinh, np.cosh, np.tanh – funkcje hiperboliczne.\n\nPrzykład:\n\nimport numpy as np\n\nx = np.linspace(0, np.pi, 5) # tablica [0, π/4, π/2, 3π/4, π]\nsin_values = np.sin(x)\ncos_values = np.cos(x)\n\nprint(\"Wartości sin(x):\", sin_values)\nprint(\"Wartości cos(x):\", cos_values)\n\nWartości sin(x): [0.00000000e+00 7.07106781e-01 1.00000000e+00 7.07106781e-01\n 1.22464680e-16]\nWartości cos(x): [ 1.00000000e+00  7.07106781e-01  6.12323400e-17 -7.07106781e-01\n -1.00000000e+00]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#funkcje-wykładnicze-i-logarytmiczne",
+    "href": "numpy-ufunc.html#funkcje-wykładnicze-i-logarytmiczne",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "11.3 Funkcje wykładnicze i logarytmiczne",
+    "text": "11.3 Funkcje wykładnicze i logarytmiczne\n\nnp.exp – eksponenta,\nnp.log – logarytm naturalny,\nnp.log10 – logarytm dziesiętny.\n\nPrzykład:\n\nimport numpy as np\n\nA = np.array([1, np.e, np.e**2])\nprint(\"A:\", A)\nprint(\"log(A):\", np.log(A))\nprint(\"exp(A):\", np.exp([0, 1, 2]))  # exp(0)=1, exp(1)=e, exp(2)=e^2\n\nA: [1.         2.71828183 7.3890561 ]\nlog(A): [0. 1. 2.]\nexp(A): [1.         2.71828183 7.3890561 ]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#funkcje-zaokrąglające-i-wartości-bezwzględne",
+    "href": "numpy-ufunc.html#funkcje-zaokrąglające-i-wartości-bezwzględne",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "11.4 Funkcje zaokrąglające i wartości bezwzględne",
+    "text": "11.4 Funkcje zaokrąglające i wartości bezwzględne\n\nnp.round – zaokrągla do najbliższej liczby,\nnp.floor – podłoga,\nnp.ceil – sufit,\nnp.trunc – obcięcie do części całkowitej,\nnp.abs – wartość bezwzględna.\n\nPrzykład:\n\nimport numpy as np\n\nB = np.array([1.7, -2.5, 3.5, -4.1])\nprint(\"B:\", B)\nprint(\"floor(B):\", np.floor(B))\nprint(\"ceil(B):\", np.ceil(B))\nprint(\"abs(B):\", np.abs(B))\n\nB: [ 1.7 -2.5  3.5 -4.1]\nfloor(B): [ 1. -3.  3. -5.]\nceil(B): [ 2. -2.  4. -4.]\nabs(B): [1.7 2.5 3.5 4.1]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-ufunc.html#funkcje-statystyczne-i-agregujące",
+    "href": "numpy-ufunc.html#funkcje-statystyczne-i-agregujące",
+    "title": "11  Funkcje uniwersalne (ufunc)",
+    "section": "11.5 Funkcje statystyczne i agregujące",
+    "text": "11.5 Funkcje statystyczne i agregujące\nChoć wiele funkcji statystycznych dostępnych jest jako metody tablic (np. A.mean(), A.std()), istnieją też ufuncs działające element-po-elemencie lub akceptujące parametry osi:\n\nnp.minimum, np.maximum – zwracają minimum/maksimum element-po-elemencie z dwóch tablic,\nnp.fmin, np.fmax – podobne do wyżej wymienionych, ale ignorują wartości NaN,\nnp.sqrt – pierwiastek kwadratowy,\nnp.square – podniesienie do kwadratu.\n\nPrzykład:\n\nimport numpy as np\n\nC1 = np.array([1, 4, 9, 16])\nC2 = np.array([2, 2, 5, 20])\n\nprint(\"minimum elementów C1 i C2:\", np.minimum(C1, C2))\nprint(\"maximum elementów C1 i C2:\", np.maximum(C1, C2))\nprint(\"sqrt(C1):\", np.sqrt(C1))\nprint(\"square(C2):\", np.square(C2))\n\nminimum elementów C1 i C2: [ 1  2  5 16]\nmaximum elementów C1 i C2: [ 2  4  9 20]\nsqrt(C1): [1. 2. 3. 4.]\nsquare(C2): [  4   4  25 400]\n\n\nĆwiczenia: (ex7.py)\n\nMając tablicę\n\\[A = \\begin{bmatrix}1 & 4 & 9 & 16\\end{bmatrix},\\]\nzastosuj funkcję uniwersalną, aby obliczyć pierwiastek kwadratowy każdego elementu.\nRozważ jednowymiarową tablicę\n\\[B = \\begin{bmatrix}-1 & -2 & 3 & -4\\end{bmatrix},\\]\nzastosuj funkcję uniwersalną, aby otrzymać wartości bezwzględne wszystkich elementów.\nDla tablicy\n\\[C = \\begin{bmatrix}0 & \\pi/2 & \\pi & 3\\pi/2\\end{bmatrix},\\]\noblicz wartość funkcji trygonometrycznej dla każdego elementu.\nMając tablicę\n\\[D = \\begin{bmatrix}1 & e & e^2 \\end{bmatrix},\\]\nzastosuj funkcję uniwersalną, aby obliczyć logarytm naturalny każdego elementu.\nDla tablicy dwuwymiarowej\n\\[E = \\begin{bmatrix}2 & 4 \\\\ 10 & 20 \\end{bmatrix},\\]\npodziel każdy element przez skalar, a następnie podnieś uzyskane wartości do kwadratu.\nRozważ tablicę\n\\[F = \\begin{bmatrix}1 & 2 & 3\\end{bmatrix},\\]\npodnieś każdy element do trzeciej potęgi, a następnie zastosuj funkcję uniwersalną, aby obliczyć eksponentę z otrzymanych wartości.\nMając tablicę\n\\[G = \\begin{bmatrix}-\\pi & -\\pi/2 & 0 & \\pi/2 & \\pi\\end{bmatrix},\\]\nzastosuj odpowiednią funkcję uniwersalną, aby uzyskać cosinus każdego elementu.\nDla tablicy\n\\[H = \\begin{bmatrix}10 & 100 & 1000\\end{bmatrix},\\]\nzastosuj funkcję uniwersalną, aby obliczyć logarytm dziesiętny każdego elementu.\nMając tablicę\n\\[I = \\begin{bmatrix}2 & 8 & 18 & 32\\end{bmatrix},\\]\nprzekształć ją, stosując funkcję uniwersalną, tak aby każdy element był pierwiastkiem kwadratowym z wartości początkowej, a następnie pomnóż wyniki przez 2.\nRozważ tablicę\n\\[J = \\begin{bmatrix}-1 & -4 & -9 & -16\\end{bmatrix},\\]\noblicz pierwiastek kwadratowy wartości bezwzględnych elementów tej tablicy, wykorzystując po kolei dwie różne funkcje uniwersalne.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Funkcje uniwersalne (ufunc)</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html",
+    "href": "numpy-strings.html",
+    "title": "12  Operacje na stringach",
+    "section": "",
+    "text": "12.1 Tworzenie tablic z napisami\nW NumPy poza dobrze znanymi tablicami liczbowymi, istnieje również zestaw funkcji pozwalających na wektorowe operacje na ciągach znaków.\nWażne: Poniższe funkcje są zazwyczaj dostępne w module numpy.char. W dokumentacji znajdują się one w sekcji String operations, jednak w tym materiale skupimy się na tym, jak można je wykorzystywać, zakładając interfejs z modułu numpy.strings. Jest to analogiczne do korzystania z numpy.char. Jest no nowsze podejście.\nNumPy pozwala na przechowywanie tekstu w tablicach, np. tak:\nimport numpy as np\n\narr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\nprint(arr)\n\n['python' 'NumPy' 'data' 'Science']",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html#podstawowe-funkcje-do-modyfikacji-tekstu",
+    "href": "numpy-strings.html#podstawowe-funkcje-do-modyfikacji-tekstu",
+    "title": "12  Operacje na stringach",
+    "section": "12.2 Podstawowe funkcje do modyfikacji tekstu",
+    "text": "12.2 Podstawowe funkcje do modyfikacji tekstu\nPoniżej przedstawiono popularne funkcje do modyfikacji tekstu na tablicach stringów:\n\n12.2.1 numpy.strings.upper i numpy.strings.lower\n\nupper: Zamiana wszystkich liter na wielkie.\nlower: Zamiana wszystkich liter na małe.\n\n\nimport numpy as np\n\narr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\n\nprint(np.strings.upper(arr))\nprint(np.strings.lower(arr))\n\n['PYTHON' 'NUMPY' 'DATA' 'SCIENCE']\n['python' 'numpy' 'data' 'science']\n\n\n\n\n12.2.2 numpy.strings.capitalize\nFunkcja capitalize zamienia pierwszą literę wyrazu na wielką, a pozostałe na małe.\n\nimport numpy as np\n\narr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\nprint(np.strings.capitalize(arr))\n\n['Python' 'Numpy' 'Data' 'Science']\n\n\n\n\n12.2.3 numpy.strings.title\nFunkcja title sprawia, że każda część składowa tekstu (np. oddzielona spacją) zostaje zamieniona tak, by zaczynała się od wielkiej litery.\n\nimport numpy as np\n\narr2 = np.array([\"python data science\", \"machine learning\", \"deep learning\"])\nprint(np.strings.title(arr2))\n\n['Python Data Science' 'Machine Learning' 'Deep Learning']",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html#łączenie-i-rozdzielanie-tekstów",
+    "href": "numpy-strings.html#łączenie-i-rozdzielanie-tekstów",
+    "title": "12  Operacje na stringach",
+    "section": "12.3 Łączenie i rozdzielanie tekstów",
+    "text": "12.3 Łączenie i rozdzielanie tekstów\n\n12.3.1 numpy.strings.add\nFunkcja add łączy elementy tablic tekstowych, działając podobnie jak operator + na stringach, ale wektorowo.\n\nimport numpy as np\n\narr_a = np.array([\"Hello\", \"Data\"])\narr_b = np.array([\"World\", \"Science\"])\n\nprint(np.strings.add(arr_a, arr_b))\n\n['HelloWorld' 'DataScience']\n\n\n\n\n12.3.2 numpy.strings.join\nFunkcja join pozwala na łączenie elementów tablicy przy użyciu wskazanego separatora.\n\nimport numpy as np\n\narr3 = np.array([\"python\", \"numpy\", \"string\"])\nprint(np.char.join(\"-\", arr3))\n\n['p-y-t-h-o-n' 'n-u-m-p-y' 's-t-r-i-n-g']\n\n\n\nUwaga: join wektoryzuje operację, traktując każdy element tablicy jako sekwencję znaków do połączenia separatorem.\n\n\n\n12.3.3 numpy.strings.split\nPozwala na rozdzielanie stringów według podanego separatora. Zwraca tablicę zawierającą listy podłańcuchów.\n\nimport numpy as np\n\narr4 = np.array([\"python-data-science\", \"machine-learning\"])\nprint(np.char.split(arr4, sep=\"-\"))\n\n[list(['python', 'data', 'science']) list(['machine', 'learning'])]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html#wyszukiwanie-i-zamiana-podciągów",
+    "href": "numpy-strings.html#wyszukiwanie-i-zamiana-podciągów",
+    "title": "12  Operacje na stringach",
+    "section": "12.4 Wyszukiwanie i zamiana podciągów",
+    "text": "12.4 Wyszukiwanie i zamiana podciągów\n\n12.4.1 numpy.strings.find i numpy.strings.rfind\n\nfind: Zwraca indeks pierwszego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).\nrfind: Zwraca indeks ostatniego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).\n\n\nimport numpy as np\n\narr5 = np.array([\"python\", \"data\", \"numpy\"])\nprint(np.strings.find(arr5, \"a\"))\n\n[-1  1 -1]\n\n\n\n\n12.4.2 numpy.strings.replace\nreplace zamienia wszystkie wystąpienia podłańcucha na nowy ciąg znaków.\n\nimport numpy as np\n\narr6 = np.array([\"python\", \"pydata\", \"pypy\"])\nprint(np.strings.replace(arr6, \"py\", \"PY\"))\n\n['PYthon' 'PYdata' 'PYPY']",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-strings.html#usuwanie-zbędnych-znaków",
+    "href": "numpy-strings.html#usuwanie-zbędnych-znaków",
+    "title": "12  Operacje na stringach",
+    "section": "12.5 Usuwanie zbędnych znaków",
+    "text": "12.5 Usuwanie zbędnych znaków\n\n12.5.1 numpy.strings.strip, numpy.strings.lstrip i numpy.strings.rstrip\n\nstrip: Usuwa wskazane znaki z początku i końca.\nlstrip: Usuwa wskazane znaki z lewej strony (początku).\nrstrip: Usuwa wskazane znaki z prawej strony (końca).\n\n\nimport numpy as np\n\narr7 = np.array([\"   python   \", \"  numpy  \"])\nprint(np.strings.strip(arr7))\n\n['python' 'numpy']\n\n\nMożemy również podać niestandardowe znaki do usunięcia:\n\nimport numpy as np\n\narr8 = np.array([\"###data###\", \"***science***\"])\nprint(np.strings.strip(arr8, \"#*\"))\n\n['data' 'science']",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operacje na stringach</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html",
+    "href": "numpy-algebraliniowa.html",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "",
+    "text": "13.1 Iloczyn skalarny (dot product)\nDla dwóch wektorów, dot oblicza ich iloczyn skalarny.\nimport numpy as np\n\n# Iloczyn skalarny dwóch wektorów\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.dot(a, b)  # 1*4 + 2*5 + 3*6\nprint(result)  # Wynik: 32\n\n# Alternatywny zapis za pomocą operatora @\nresult = a @ b\nprint(result)  # Wynik: 32\n\n32\n32",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#mnożenie-macierzowe",
+    "href": "numpy-algebraliniowa.html#mnożenie-macierzowe",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.2 Mnożenie macierzowe",
+    "text": "13.2 Mnożenie macierzowe\nDla macierzy (tablic dwuwymiarowych), dot wykonuje standardowe mnożenie macierzowe.\n\nimport numpy as np\n# Mnożenie macierzowe\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nC = np.dot(A, B)\nprint(C)\n# Wynik:\n# [[19 22]\n#  [43 50]]\n\n# To samo za pomocą operatora @\nC = A @ B\nprint(C)\n\n[[19 22]\n [43 50]]\n[[19 22]\n [43 50]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#mnożenie-macierz-wektor",
+    "href": "numpy-algebraliniowa.html#mnożenie-macierz-wektor",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.3 Mnożenie macierz-wektor",
+    "text": "13.3 Mnożenie macierz-wektor\nMożemy również mnożyć macierz przez wektor:\n\nimport numpy as np\n# Mnożenie macierz-wektor\nA = np.array([[1, 2], [3, 4]])\nv = np.array([5, 6])\nresult = np.dot(A, v)\nprint(result)  # Wynik: [17 39]\n\n[17 39]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#rozwiązywanie-układów-równań-liniowych",
+    "href": "numpy-algebraliniowa.html#rozwiązywanie-układów-równań-liniowych",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.4 Rozwiązywanie układów równań liniowych",
+    "text": "13.4 Rozwiązywanie układów równań liniowych\nFunkcja numpy.linalg.solve rozwiązuje układy równań liniowych postaci Ax = b:\n\nimport numpy as np\n# Rozwiązywanie układu równań liniowych\nA = np.array([[3, 1], [1, 2]])\nb = np.array([9, 8])\nx = np.linalg.solve(A, b)\nprint(x)  # Wynik: [2. 3.]\n\n# Sprawdzenie rozwiązania\nnp.dot(A, x)  # Powinno być równe b\n\n[2. 3.]\n\n\narray([9., 8.])",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#wyznacznik-macierzy",
+    "href": "numpy-algebraliniowa.html#wyznacznik-macierzy",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.5 Wyznacznik macierzy",
+    "text": "13.5 Wyznacznik macierzy\nFunkcja numpy.linalg.det oblicza wyznacznik macierzy:\n\nimport numpy as np\n# Obliczanie wyznacznika\nA = np.array([[1, 2], [3, 4]])\ndet_A = np.linalg.det(A)\nprint(det_A)  # Wynik: -2.0\n\n-2.0000000000000004",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#wartości-i-wektory-własne",
+    "href": "numpy-algebraliniowa.html#wartości-i-wektory-własne",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.6 Wartości i wektory własne",
+    "text": "13.6 Wartości i wektory własne\nFunkcja numpy.linalg.eig oblicza wartości i wektory własne macierzy:\n\nimport numpy as np\n# Obliczanie wartości i wektorów własnych\nA = np.array([[4, -2], [1, 1]])\neigenvalues, eigenvectors = np.linalg.eig(A)\nprint(\"Wartości własne:\", eigenvalues)\nprint(\"Wektory własne:\")\nprint(eigenvectors)\n\n# Sprawdzenie: A * v = lambda * v\nfor i in range(len(eigenvalues)):\n    lambda_i = eigenvalues[i]\n    v_i = eigenvectors[:, i]\n    print(f\"λ_{i} = {lambda_i}\")\n    print(\"A * v =\", np.dot(A, v_i))\n    print(\"λ * v =\", lambda_i * v_i)\n\nWartości własne: [3. 2.]\nWektory własne:\n[[0.89442719 0.70710678]\n [0.4472136  0.70710678]]\nλ_0 = 3.0\nA * v = [2.68328157 1.34164079]\nλ * v = [2.68328157 1.34164079]\nλ_1 = 2.0\nA * v = [1.41421356 1.41421356]\nλ * v = [1.41421356 1.41421356]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#rozkład-wartości-osobliwych-svd",
+    "href": "numpy-algebraliniowa.html#rozkład-wartości-osobliwych-svd",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.7 Rozkład wartości osobliwych (SVD)",
+    "text": "13.7 Rozkład wartości osobliwych (SVD)\nRozkład SVD jest potężnym narzędziem w analizie danych:\n\nimport numpy as np\n# Rozkład SVD\nA = np.array([[1, 2], [3, 4], [5, 6]])\nU, s, Vh = np.linalg.svd(A)\nprint(\"Macierz U:\")\nprint(U)\nprint(\"Wartości osobliwe:\", s)\nprint(\"Macierz V^H:\")\nprint(Vh)\n\n# Rekonstrukcja macierzy A\nS = np.zeros((A.shape[0], A.shape[1]))\nS[:len(s), :len(s)] = np.diag(s)\nA_reconstructed = U @ S @ Vh\nprint(\"Rekonstruowana macierz A:\")\nprint(A_reconstructed)\n\nMacierz U:\n[[-0.2298477   0.88346102  0.40824829]\n [-0.52474482  0.24078249 -0.81649658]\n [-0.81964194 -0.40189603  0.40824829]]\nWartości osobliwe: [9.52551809 0.51430058]\nMacierz V^H:\n[[-0.61962948 -0.78489445]\n [-0.78489445  0.61962948]]\nRekonstruowana macierz A:\n[[1. 2.]\n [3. 4.]\n [5. 6.]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#norma-macierzywektora",
+    "href": "numpy-algebraliniowa.html#norma-macierzywektora",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.8 Norma macierzy/wektora",
+    "text": "13.8 Norma macierzy/wektora\nNumPy oferuje różne rodzaje norm:\n\nimport numpy as np\n# Różne normy\nv = np.array([3, 4])\nprint(\"Norma L1:\", np.linalg.norm(v, 1))  # Norma L1: 7.0\nprint(\"Norma L2 (Euklidesowa):\", np.linalg.norm(v))  # Norma L2: 5.0\nprint(\"Norma maksimum:\", np.linalg.norm(v, np.inf))  # Norma maksimum: 4.0\n\nA = np.array([[1, 2], [3, 4]])\nprint(\"Norma macierzowa Frobeniusa:\", np.linalg.norm(A, 'fro'))  # Norma Frobeniusa: 5.477...\n\nNorma L1: 7.0\nNorma L2 (Euklidesowa): 5.0\nNorma maksimum: 4.0\nNorma macierzowa Frobeniusa: 5.477225575051661",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#macierz-odwrotna",
+    "href": "numpy-algebraliniowa.html#macierz-odwrotna",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.9 Macierz odwrotna",
+    "text": "13.9 Macierz odwrotna\nFunkcja numpy.linalg.inv oblicza macierz odwrotną:\n\nimport numpy as np\n# Macierz odwrotna\nA = np.array([[1, 2], [3, 4]])\nA_inv = np.linalg.inv(A)\nprint(\"Macierz odwrotna:\")\nprint(A_inv)\n\n# Sprawdzenie: A * A^(-1) = I\nprint(\"A * A^(-1):\")\nprint(np.dot(A, A_inv))  # Powinno być bliskie macierzy jednostkowej\n\nMacierz odwrotna:\n[[-2.   1. ]\n [ 1.5 -0.5]]\nA * A^(-1):\n[[1.0000000e+00 0.0000000e+00]\n [8.8817842e-16 1.0000000e+00]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#funkcja-numpy.inner---iloczyn-wewnętrzny",
+    "href": "numpy-algebraliniowa.html#funkcja-numpy.inner---iloczyn-wewnętrzny",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.10 Funkcja numpy.inner - iloczyn wewnętrzny",
+    "text": "13.10 Funkcja numpy.inner - iloczyn wewnętrzny\nFunkcja inner oblicza iloczyn wewnętrzny dwóch tablic:\n\nimport numpy as np\n# Iloczyn wewnętrzny\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.inner(a, b)\nprint(result)  # 1*4 + 2*5 + 3*6 = 32\n\n# Dla tablic 2D\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nresult = np.inner(A, B)\nprint(result)\n# Jest to równoważne wykonaniu iloczynu skalarnego wzdłuż ostatniego wymiaru\n\n32\n[[17 23]\n [39 53]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#funkcja-numpy.outer---iloczyn-zewnętrzny",
+    "href": "numpy-algebraliniowa.html#funkcja-numpy.outer---iloczyn-zewnętrzny",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.11 Funkcja numpy.outer - iloczyn zewnętrzny",
+    "text": "13.11 Funkcja numpy.outer - iloczyn zewnętrzny\nFunkcja outer oblicza iloczyn zewnętrzny dwóch wektorów:\n\nimport numpy as np\n# Iloczyn zewnętrzny\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.outer(a, b)\nprint(result)\n# Wynik:\n# [[ 4  5  6]\n#  [ 8 10 12]\n#  [12 15 18]]\n\n[[ 4  5  6]\n [ 8 10 12]\n [12 15 18]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-algebraliniowa.html#funkcja-numpy.matmul---mnożenie-macierzowe",
+    "href": "numpy-algebraliniowa.html#funkcja-numpy.matmul---mnożenie-macierzowe",
+    "title": "13  Alegbra liniowa w NumPy",
+    "section": "13.12 Funkcja numpy.matmul - mnożenie macierzowe",
+    "text": "13.12 Funkcja numpy.matmul - mnożenie macierzowe\nFunkcja matmul jest podobna do dot, ale ma nieco inne zachowanie dla tablic o wymiarach większych niż 2:\n\nimport numpy as np\n# Porównanie dot i matmul\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6], [7, 8]])\n\ndot_result = np.dot(a, b)\nmatmul_result = np.matmul(a, b)\n\nprint(\"Wynik dot:\")\nprint(dot_result)\nprint(\"Wynik matmul:\")\nprint(matmul_result)\n# Dla 2D są identyczne\n\n# Ale dla tablic 3D i wyższych mogą się różnić\n\nWynik dot:\n[[19 22]\n [43 50]]\nWynik matmul:\n[[19 22]\n [43 50]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html",
+    "href": "numpy-warunki.html",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "",
+    "text": "14.1 Funkcja nonzero()\nZwraca indeksy elementów niezerowych w tablicy. Wynik jest zwracany jako krotka tablic, po jednej dla każdego wymiaru tablicy.\nimport numpy as np\n\narr = np.array([[3, 0, 0], [0, 4, 0], [5, 6, 0]])\nindeksy = np.nonzero(arr)\nprint(indeksy)  # (array([0, 1, 2, 2]), array([0, 1, 0, 1]))\n\n# Wydobycie wartości niezerowych\nwartosci = arr[indeksy]\nprint(wartosci)  # [3 4 5 6]\n\n# Alternatywnie można użyć:\nindeksy_i_wartosci = np.argwhere(arr != 0)\nprint(indeksy_i_wartosci)  \n# [[0 0]\n#  [1 1]\n#  [2 0]\n#  [2 1]]\n\n(array([0, 1, 2, 2]), array([0, 1, 0, 1]))\n[3 4 5 6]\n[[0 0]\n [1 1]\n [2 0]\n [2 1]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-where",
+    "href": "numpy-warunki.html#funkcja-where",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.2 Funkcja where()",
+    "text": "14.2 Funkcja where()\nZwraca elementy wybrane z x lub y w zależności od warunku. Jest to warunkowy selektor elementów.\n\nimport numpy as np\n\n# Zastąp wartości ujemne przez 0\narr = np.array([1, -2, 3, -4, 5])\nwynik = np.where(arr &gt; 0, arr, 0)\nprint(wynik)  # [1 0 3 0 5]\n\n# Zastosowanie w tablicy 2D\narr_2d = np.array([[1, -2, 3], [-4, 5, -6]])\nwynik_2d = np.where(arr_2d &lt; 0, -1, arr_2d)\nprint(wynik_2d)\n# [[ 1 -1  3]\n#  [-1  5 -1]]\n\n[1 0 3 0 5]\n[[ 1 -1  3]\n [-1  5 -1]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcje-indices-i-ix_",
+    "href": "numpy-warunki.html#funkcje-indices-i-ix_",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.3 Funkcje indices() i ix_()",
+    "text": "14.3 Funkcje indices() i ix_()\n\n14.3.1 indices()\nTworzy tablicę reprezentującą indeksy siatki.\n\nimport numpy as np\n\n# Tworzenie siatki indeksów 3x4\ngrid = np.indices((3, 4))\nprint(grid.shape)  # (2, 3, 4)\nprint(grid[0])  # indeksy wierszy\n# [[0 0 0 0]\n#  [1 1 1 1]\n#  [2 2 2 2]]\nprint(grid[1])  # indeksy kolumn\n# [[0 1 2 3]\n#  [0 1 2 3]\n#  [0 1 2 3]]\n\n(2, 3, 4)\n[[0 0 0 0]\n [1 1 1 1]\n [2 2 2 2]]\n[[0 1 2 3]\n [0 1 2 3]\n [0 1 2 3]]\n\n\n\n\n14.3.2 ix_()\nKonstruuje otwartą siatkę z wielu sekwencji, co jest przydatne do indeksowania wielowymiarowego.\n\nimport numpy as np\nx = np.array([0, 1, 2])\ny = np.array([3, 4, 5, 6])\nindeksy = np.ix_(x, y)\n\n# Tworzy indeksy dla wszystkich kombinacji (0,3), (0,4), ..., (2,6)\nprint(indeksy[0].shape, indeksy[1].shape)  # (3, 1) (1, 4)\n\n# Użycie do wybierania podtablicy\narr = np.arange(16).reshape(4, 4)\nprint(arr)\n# [[ 0  1  2  3]\n#  [ 4  5  6  7]\n#  [ 8  9 10 11]\n#  [12 13 14 15]]\n\npodtablica = arr[np.ix_([0, 2, 3], [0, 2])]\nprint(podtablica)\n# [[ 0  2]\n#  [ 8 10]\n#  [12 14]]\n\n(3, 1) (1, 4)\n[[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]\n [12 13 14 15]]\n[[ 0  2]\n [ 8 10]\n [12 14]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#ogrid-i-operacje-na-siatkach",
+    "href": "numpy-warunki.html#ogrid-i-operacje-na-siatkach",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.4 ogrid i operacje na siatkach",
+    "text": "14.4 ogrid i operacje na siatkach\nogrid pozwala na tworzenie otwartych siatek, co jest pamięciowo wydajniejsze niż pełne siatki.\n\nimport numpy as np\n\n# Siatka punktów w zakresie od -2 do 2 z krokiem 0.1\nx, y = np.ogrid[-2:2:0.1, -2:2:0.1]\nmaska = x**2 + y**2 &lt;= 1  # Okrąg o promieniu 1\nprint(maska.shape)  # (40, 40)\n\n(40, 40)",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcje-ravel_multi_index-i-unravel_index",
+    "href": "numpy-warunki.html#funkcje-ravel_multi_index-i-unravel_index",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.5 Funkcje ravel_multi_index() i unravel_index()",
+    "text": "14.5 Funkcje ravel_multi_index() i unravel_index()\nTe funkcje konwertują między indeksami wielowymiarowymi a płaskimi.\n\nimport numpy as np\n\n# Konwersja indeksów wielowymiarowych na płaskie\nindeksy_wielo = np.array([[0, 0], [1, 1], [2, 1]])\nwymiary = (3, 3)\nindeksy_plaskie = np.ravel_multi_index(indeksy_wielo.T, wymiary)\nprint(indeksy_plaskie)  # [0 4 7]\n\n# Konwersja indeksów płaskich na wielowymiarowe\nindeksy_plaskie = np.array([0, 3, 8])\nksztalt = (3, 3)\nindeksy_wielo = np.unravel_index(indeksy_plaskie, ksztalt)\nprint(indeksy_wielo)  # (array([0, 1, 2]), array([0, 0, 2]))\n\n[0 4 7]\n(array([0, 1, 2]), array([0, 0, 2]))",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#indeksy-diagonalne",
+    "href": "numpy-warunki.html#indeksy-diagonalne",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.6 Indeksy diagonalne",
+    "text": "14.6 Indeksy diagonalne\nNumPy oferuje wiele funkcji do pracy z diagonalami macierzy.\n\nimport numpy as np\n# Uzyskanie indeksów głównej przekątnej\nn = 4\nindeksy_diag = np.diag_indices(n)\nprint(indeksy_diag)  # (array([0, 1, 2, 3]), array([0, 1, 2, 3]))\n\n# Zastosowanie do ustawienia głównej przekątnej\narr = np.zeros((4, 4))\narr[indeksy_diag] = 1  # Ustawienie jedynek na głównej przekątnej\nprint(arr)\n# [[1. 0. 0. 0.]\n#  [0. 1. 0. 0.]\n#  [0. 0. 1. 0.]\n#  [0. 0. 0. 1.]]\n\n# Uzyskanie indeksów z istniejącej tablicy\narr2 = np.ones((3, 3))\nindeksy_diag2 = np.diag_indices_from(arr2)\n\n(array([0, 1, 2, 3]), array([0, 1, 2, 3]))\n[[1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-take",
+    "href": "numpy-warunki.html#funkcja-take",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.7 3.1 Funkcja take()",
+    "text": "14.7 3.1 Funkcja take()\nPobiera elementy z tablicy wzdłuż określonej osi na podstawie indeksów.\n\nimport numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\nindeksy = np.array([0, 2, 4])\nwynik = np.take(arr, indeksy)\nprint(wynik)  # [10 30 50]\n\n# W tablicach wielowymiarowych możemy wybrać oś\narr_2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindeksy_wierszy = np.array([0, 2])\nwynik_2d = np.take(arr_2d, indeksy_wierszy, axis=0)\nprint(wynik_2d)\n# [[1 2 3]\n#  [7 8 9]]\n\n[10 30 50]\n[[1 2 3]\n [7 8 9]]\n\n\n##Funkcja take_along_axis()\nPobiera wartości z tablicy poprzez dopasowanie 1D indeksu i fragmentów danych. Jest bezpieczna dla duplikatów indeksów.\n\nimport numpy as np\n\narr = np.array([[10, 30, 20], [60, 40, 50]])\nindeksy_kolejnosc = np.argsort(arr, axis=1)\nwynik = np.take_along_axis(arr, indeksy_kolejnosc, axis=1)\nprint(wynik)\n# [[10 20 30]\n#  [40 50 60]]\n\n[[10 20 30]\n [40 50 60]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-choose",
+    "href": "numpy-warunki.html#funkcja-choose",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.8 Funkcja choose()",
+    "text": "14.8 Funkcja choose()\nKonstruuje tablicę wybierając elementy z listy tablic.\n\nimport numpy as np\n\nopcje = [np.array([0, 1, 2, 3]),\n         np.array([10, 11, 12, 13]),\n         np.array([20, 21, 22, 23])]\nindeksy = np.array([0, 2, 1, 0])  # Wybiera z której tablicy opcji wziąć element\nwynik = np.choose(indeksy, opcje)\nprint(wynik)  # [ 0 22 11  3]\n\n[ 0 21 12  3]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-compress",
+    "href": "numpy-warunki.html#funkcja-compress",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.9 Funkcja compress()",
+    "text": "14.9 Funkcja compress()\nZwraca wybrane elementy tablicy wzdłuż określonej osi.\n\nimport numpy as np\narr = np.array([[1, 2, 3], [4, 5, 6]])\nmaska = np.array([True, False, True])\nwynik = np.compress(maska, arr, axis=1)\nprint(wynik)\n# [[1 3]\n#  [4 6]]\n\n[[1 3]\n [4 6]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcje-diag-i-diagonal",
+    "href": "numpy-warunki.html#funkcje-diag-i-diagonal",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.10 Funkcje diag() i diagonal()",
+    "text": "14.10 Funkcje diag() i diagonal()\nFunkcje do pracy z przekątnymi.\n\nimport numpy as np\n\n# Tworzenie tablicy diagonalnej\ndiag_arr = np.diag([1, 2, 3, 4])\nprint(diag_arr)\n# [[1 0 0 0]\n#  [0 2 0 0]\n#  [0 0 3 0]\n#  [0 0 0 4]]\n\n# Pobieranie diagonali z tablicy\narr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndiag = np.diag(arr)\nprint(diag)  # [1 5 9]\n\n# Pobieranie przekątnej przesuniętej o 1\ndiag_offset = np.diagonal(arr, offset=1)\nprint(diag_offset)  # [2 6]\n\n[[1 0 0 0]\n [0 2 0 0]\n [0 0 3 0]\n [0 0 0 4]]\n[1 5 9]\n[2 6]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-select",
+    "href": "numpy-warunki.html#funkcja-select",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.11 Funkcja select()",
+    "text": "14.11 Funkcja select()\nZwraca tablicę zbudowaną z elementów z listy opcji, w zależności od warunków.\n\nimport numpy as np\n\nwarunki = [arr &lt; 3, arr &lt; 6, arr &lt; 9]\nopcje = [100, 200, 300]\nwynik = np.select(warunki, opcje, default=400)\nprint(wynik)\n# [[100 100 200]\n#  [200 200 300]\n#  [300 300 400]]\n\n[[100 100 200]\n [200 200 300]\n [300 300 400]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-place",
+    "href": "numpy-warunki.html#funkcja-place",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.12 Funkcja place()",
+    "text": "14.12 Funkcja place()\nZmienia elementy tablicy na podstawie maski i podanych wartości.\n\nimport numpy as np\n\narr = np.arange(5)\nmaska = np.array([True, False, True, False, True])\nnp.place(arr, maska, [-1, -2, -3])  # Cyklicznie używa wartości [-1, -2, -3]\nprint(arr)  # [-1  1 -2  3 -3]\n\n[-1  1 -2  3 -3]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-put",
+    "href": "numpy-warunki.html#funkcja-put",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.13 Funkcja put()",
+    "text": "14.13 Funkcja put()\nZastępuje określone elementy tablicy podanymi wartościami.\n\nimport numpy as np\n\narr = np.arange(5)\nindeksy = [0, 2, 4]\nnp.put(arr, indeksy, [10, 20, 30])\nprint(arr)  # [10  1 20  3 30]\n\n[10  1 20  3 30]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-put_along_axis",
+    "href": "numpy-warunki.html#funkcja-put_along_axis",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.14 Funkcja put_along_axis()",
+    "text": "14.14 Funkcja put_along_axis()\nUmieszcza wartości w tablicy docelowej, dopasowując 1D indeks i fragmenty danych wzdłuż określonej osi.\n\nimport numpy as np\n\narr = np.array([[10, 30, 20], [60, 40, 50]])\nindeksy = np.argmin(arr, axis=1)\nindeksy = np.expand_dims(indeksy, axis=1)  # Przekształć do kształtu (2, 1)\nnp.put_along_axis(arr, indeksy, 99, axis=1)\nprint(arr)\n# [[99 30 20]\n#  [60 40 99]]\n\n[[99 30 20]\n [60 99 50]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-putmask",
+    "href": "numpy-warunki.html#funkcja-putmask",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.15 Funkcja putmask()",
+    "text": "14.15 Funkcja putmask()\nZmienia elementy tablicy na podstawie warunku i podanych wartości.\n\nimport numpy as np\n\narr = np.arange(5)\nmaska = np.array([True, False, True, False, True])\nnp.putmask(arr, maska, [-1, -2, -3])  # Cyklicznie używa wartości\nprint(arr)  # [-1  1 -2  3 -3]\n\n[-1  1 -3  3 -2]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-warunki.html#funkcja-fill_diagonal",
+    "href": "numpy-warunki.html#funkcja-fill_diagonal",
+    "title": "14  Filtrowanie zaawansowane",
+    "section": "14.16 Funkcja fill_diagonal()",
+    "text": "14.16 Funkcja fill_diagonal()\nWypełnia główną przekątną tablicy podaną wartością.\n\nimport numpy as np\n\narr = np.zeros((4, 4))\nnp.fill_diagonal(arr, 5)\nprint(arr)\n# [[5. 0. 0. 0.]\n#  [0. 5. 0. 0.]\n#  [0. 0. 5. 0.]\n#  [0. 0. 0. 5.]]\n\narr_rect = np.zeros((4, 4, 4))\nnp.fill_diagonal(arr_rect, 9)\nprint(arr_rect[0])  # Wypełnia przekątną w każdym \"plasterku\" 3D tablicy\n\n[[5. 0. 0. 0.]\n [0. 5. 0. 0.]\n [0. 0. 5. 0.]\n [0. 0. 0. 5.]]\n[[9. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]\n [0. 0. 0. 0.]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html",
+    "href": "numpy-inne.html",
+    "title": "15  Numpy - inne",
+    "section": "",
+    "text": "15.1 Stałe\nNumPy dostarcza kilka znanych stałych matematycznych, które mogą być przydatne w obliczeniach naukowych i inżynierskich. Wbudowane stałe takie jak liczba Pi czy podstawa logarytmu naturalnego e ułatwiają pisanie czytelnego i zwięzłego kodu.\nimport numpy as np\n\n# Promień koła\nr = 5.0\n\n# Obwód koła: 2 * π * r\nobwod = 2 * np.pi * r\nprint(\"Obwód koła:\", obwod)\n\n# Pole koła: π * r^2\npole = np.pi * r**2\nprint(\"Pole koła:\", pole)\n\nObwód koła: 31.41592653589793\nPole koła: 78.53981633974483\nimport numpy as np\n\n# Przykładowy punkt x\nx = 1.0\n\n# Wartość funkcji e^x\nexp_value = np.e**x\nprint(\"e^x dla x=1:\", exp_value)\n\n# Porównanie z funkcją np.exp\nexp_compare = np.exp(x)\nprint(\"Porównanie z np.exp(1):\", exp_compare)\n\ne^x dla x=1: 2.718281828459045\nPorównanie z np.exp(1): 2.718281828459045",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#stałe",
+    "href": "numpy-inne.html#stałe",
+    "title": "15  Numpy - inne",
+    "section": "",
+    "text": "numpy.pi\n\nReprezentuje liczbę Pi (π) z dużą dokładnością.\n\nPi to stosunek obwodu okręgu do jego średnicy.\n\nW przybliżeniu: 3.141592653589793\n\nnumpy.e\n\nReprezentuje podstawę logarytmu naturalnego, e.\n\ne jest wykorzystywane w wielu dziedzinach, takich jak analiza matematyczna, probabilistyka, statystyka.\n\nW przybliżeniu: 2.718281828459045\n\nnumpy.eulergamma\n\nReprezentuje stałą Eulera-Mascheroniego, zwykle oznaczaną jako γ (gamma).\nPojawia się w analizie matematycznej, szczególnie w teorii liczb i badaniu szeregów harmonicznych.\nW przybliżeniu: 0.5772156649015329",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#numpy.inf",
+    "href": "numpy-inne.html#numpy.inf",
+    "title": "15  Numpy - inne",
+    "section": "15.2 numpy.inf",
+    "text": "15.2 numpy.inf\n\nOpis: np.inf reprezentuje wartość nieskończoną (∞).\n\nCzęsto pojawia się w obliczeniach, gdy wartość danego wyrażenia dąży do nieskończoności (np. dzielenie przez zero, pewne limity, itp.).\n\nPrzykładowo, 1.0 / 0.0 zwróci ostrzeżenie i w konsekwencji może dać wartość inf.\n\n\nimport numpy as np\n\n# Zastosowanie w tworzeniu masek logicznych\narr = np.array([1, 2, np.inf, 4, 5])\nmask = np.isinf(arr)\nprint(\"Maska elementów o wartości inf:\", mask)\n\nMaska elementów o wartości inf: [False False  True False False]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#numpy.nan",
+    "href": "numpy-inne.html#numpy.nan",
+    "title": "15  Numpy - inne",
+    "section": "15.3 numpy.nan",
+    "text": "15.3 numpy.nan\n\nOpis: np.nan oznacza “Not a Number” (NaN), czyli wartość nieokreśloną lub niereprezentowalną w systemie liczbowym.\n\nPojawia się, gdy wynik operacji numerycznej jest nieokreślony, np. 0.0/0.0, inf - inf lub przy błędach wczytywania danych.\n\nOperacje arytmetyczne z nan zazwyczaj również zwracają nan.\n\n\nimport numpy as np\n\n# Zamiana wartości nan w tablicy\ndata = np.array([1, 2, np.nan, 4, np.nan])\nprint(\"Oryginalne dane:\", data)\n\n# Wypełnienie wartości nan zerem\ndata_no_nan = np.nan_to_num(data, nan=0.0)\nprint(\"Dane bez nan:\", data_no_nan)\n\nOryginalne dane: [ 1.  2. nan  4. nan]\nDane bez nan: [1. 2. 0. 4. 0.]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#numpy.newaxis",
+    "href": "numpy-inne.html#numpy.newaxis",
+    "title": "15  Numpy - inne",
+    "section": "15.4 numpy.newaxis",
+    "text": "15.4 numpy.newaxis\n\nOpis: np.newaxis jest specjalną “stałą”/obiektem służącym do zmiany wymiarów tablic przez zwiększenie ich liczby wymiarów o 1.\n\n\nimport numpy as np\n\n# Mamy tablicę 1D\nvec = np.array([1, 2, 3, 4])\nprint(\"Oryginalna tablica:\", vec, \"Kształt:\", vec.shape)\n\n# Dodajemy nowy wymiar jako wymiar wierszy\nvec_as_col = vec[:, np.newaxis]\nprint(\"Tablica jako kolumna:\\n\", vec_as_col, \"Kształt:\", vec_as_col.shape)\n\n# Dodawanie wymiaru na początku\nvec_as_row = vec[np.newaxis, :]\nprint(\"Tablica jako wiersz:\\n\", vec_as_row, \"Kształt:\", vec_as_row.shape)\n\n# Kolejny przykład: dodanie wymiaru by z łatwością broadcastować operacje\na = np.array([10, 20, 30])\nb = np.array([1, 2])\n# Bez nowego wymiaru próba dodania a do b się nie powiedzie, \n# bo kształty nie są kompatybilne.\n# Z nowym wymiarem a ma kształt (3,1), a b (2,), co pozwala na broadcast\nsum_matrix = a[:, np.newaxis] + b\nprint(\"Operacja z broadcast:\\n\", sum_matrix)\n\nOryginalna tablica: [1 2 3 4] Kształt: (4,)\nTablica jako kolumna:\n [[1]\n [2]\n [3]\n [4]] Kształt: (4, 1)\nTablica jako wiersz:\n [[1 2 3 4]] Kształt: (1, 4)\nOperacja z broadcast:\n [[11 12]\n [21 22]\n [31 32]]",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#statystyka-i-agregacja",
+    "href": "numpy-inne.html#statystyka-i-agregacja",
+    "title": "15  Numpy - inne",
+    "section": "15.5 Statystyka i agregacja",
+    "text": "15.5 Statystyka i agregacja\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nnp.mean\nŚrednia wszystkich wartości w tablicy.\n\n\nnp.std\nOdchylenie standardowe.\n\n\nnp.var\nWariancja.\n\n\nnp.sum\nSuma wszystkich elementów.\n\n\nnp.prod\nIloczyn wszystkich elementów.\n\n\nnp.cumsum\nSkumulowana suma wszystkich elementów.\n\n\nnp.cumprod\nSkumulowany iloczyn wszystkich elementów.\n\n\nnp.min,np.max\nMinimalna/maksymalna wartość w tablicy.\n\n\nnp.argmin, np.argmax\nIndeks minimalnej/maksymalnej wartości w tablicy.\n\n\nnp.all\nSprawdza czy wszystki elementy są różne od zera.\n\n\nnp.any\nSprawdza czy co najmniej jeden z elementów jest różny od zera.",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#wyrażenia-warunkowe",
+    "href": "numpy-inne.html#wyrażenia-warunkowe",
+    "title": "15  Numpy - inne",
+    "section": "15.6 Wyrażenia warunkowe",
+    "text": "15.6 Wyrażenia warunkowe\nhttps://numpy.org/doc/stable/reference/generated/numpy.where https://numpy.org/doc/stable/reference/generated/numpy.choose https://numpy.org/doc/stable/reference/generated/numpy.select https://numpy.org/doc/stable/reference/generated/numpy.nonzero",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#działania-na-zbiorach",
+    "href": "numpy-inne.html#działania-na-zbiorach",
+    "title": "15  Numpy - inne",
+    "section": "15.7 Działania na zbiorach",
+    "text": "15.7 Działania na zbiorach\nhttps://numpy.org/doc/stable/reference/routines.set.html",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#operacje-tablicowe",
+    "href": "numpy-inne.html#operacje-tablicowe",
+    "title": "15  Numpy - inne",
+    "section": "15.8 Operacje tablicowe",
+    "text": "15.8 Operacje tablicowe\nhttps://numpy.org/doc/stable/reference/generated/numpy.transpose\nhttps://numpy.org/doc/stable/reference/generated/numpy.flip https://numpy.org/doc/stable/reference/generated/numpy.fliplr https://numpy.org/doc/stable/reference/generated/numpy.flipud\nhttps://numpy.org/doc/stable/reference/generated/numpy.sort",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#data-i-czas",
+    "href": "numpy-inne.html#data-i-czas",
+    "title": "15  Numpy - inne",
+    "section": "15.9 Data i czas",
+    "text": "15.9 Data i czas\nhttps://numpy.org/doc/stable/reference/arrays.datetime.html",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "numpy-inne.html#pseudolosowe",
+    "href": "numpy-inne.html#pseudolosowe",
+    "title": "15  Numpy - inne",
+    "section": "15.10 Pseudolosowe",
+    "text": "15.10 Pseudolosowe\nhttps://numpy.org/doc/stable/reference/random/index.html",
+    "crumbs": [
+      "NumPy",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Numpy - inne</span>"
+    ]
+  },
+  {
+    "objectID": "eksploracja.html",
+    "href": "eksploracja.html",
+    "title": "16  Etapy eksploracji danych",
+    "section": "",
+    "text": "Zbieranie danych:\n\nZebranie danych z różnych źródeł (bazy danych, pliki CSV, API, itd.).\n\nZrozumienie danych:\n\nAnaliza struktury danych, typów danych i ich znaczenia.\nEksploracja wstępnych zależności i trendów.\n\nCzyszczenie danych:\n\nUsuwanie braków, błędów i anomalii w danych.\nObsługa brakujących wartości i duplikatów.\n\nTransformacja danych:\n\nNormalizacja, standaryzacja, kodowanie zmiennych kategorycznych.\nTworzenie nowych zmiennych (cech).\n\nRedukcja danych:\n\nSelekcja istotnych cech lub zmniejszenie wymiarowości danych (np. PCA).",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Etapy eksploracji danych</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-start.html",
+    "href": "pandas-start.html",
+    "title": "17  Pandas - start",
+    "section": "",
+    "text": "17.1 Instalacja\nPandas jest biblioteką Pythona służącą do analizy i manipulowania danymi\nInstalacja wersji pandas w wersji 2.2.3.\nDodatkowo pod dalsze komendy zalecane jest zainstalowanie: pyarrow w wersji 18.1.0 oraz openpyxl w wersji 3.1.5.",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Pandas - start</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-start.html#instalacja-kilku-bibliotek-jednocześnie-za-pomocą-pliku-z-wymaganiami",
+    "href": "pandas-start.html#instalacja-kilku-bibliotek-jednocześnie-za-pomocą-pliku-z-wymaganiami",
+    "title": "17  Pandas - start",
+    "section": "17.2 Instalacja kilku bibliotek jednocześnie za pomocą pliku z wymaganiami",
+    "text": "17.2 Instalacja kilku bibliotek jednocześnie za pomocą pliku z wymaganiami\nW ustawieniach projektu dodajemy plik o nazwie requirements.txt\nPrzykładowa zawartość:\npandas==2.2.3\nnumpy==2.2.0\npyarrow==18.1.0\nopenpyxl==3.1.5",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Pandas - start</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-start.html#import",
+    "href": "pandas-start.html#import",
+    "title": "17  Pandas - start",
+    "section": "17.3 Import:",
+    "text": "17.3 Import:\nimport pandas as pd",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Pandas - start</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-start.html#podstawowe-byty",
+    "href": "pandas-start.html#podstawowe-byty",
+    "title": "17  Pandas - start",
+    "section": "17.4 Podstawowe byty",
+    "text": "17.4 Podstawowe byty\nSeria - Series\n\n\nRamka danych - DataFrame\n\n\nimport pandas as pd\nimport numpy as np\n\ns = pd.Series([3, -5, 7, 4])\nprint(s)\nprint(\"values\")\nprint(s.values)\nprint(type(s.values))\nprint(s.index)\nprint(type(s.index))\n\n0    3\n1   -5\n2    7\n3    4\ndtype: int64\nvalues\n[ 3 -5  7  4]\n&lt;class 'numpy.ndarray'&gt;\nRangeIndex(start=0, stop=4, step=1)\n&lt;class 'pandas.core.indexes.range.RangeIndex'&gt;\n\n\n\nimport pandas as pd\nimport numpy as np\n\ns = pd.Series([3, -5, 7, 4], index=['a', 'b', 'c', 'd'])\nprint(s)\nprint(s['b'])\ns['b'] = 8\nprint(s)\nprint(s[s &gt; 5])\nprint(s * 2)\nprint(np.sin(s))\n\na    3\nb   -5\nc    7\nd    4\ndtype: int64\n-5\na    3\nb    8\nc    7\nd    4\ndtype: int64\nb    8\nc    7\ndtype: int64\na     6\nb    16\nc    14\nd     8\ndtype: int64\na    0.141120\nb    0.989358\nc    0.656987\nd   -0.756802\ndtype: float64\n\n\n\nimport pandas as pd\n\nd = {'key1': 350, 'key2': 700, 'key3': 70}\ns = pd.Series(d)\nprint(s)\n\nkey1    350\nkey2    700\nkey3     70\ndtype: int64\n\n\n\nimport pandas as pd\n\nd = {'key1': 350, 'key2': 700, 'key3': 70}\nk = ['key0', 'key2', 'key3', 'key1']\ns = pd.Series(d, index=k)\nprint(s)\ns.name = \"Wartosc\"\ns.index.name = \"Klucz\"\nprint(s)\n\nkey0      NaN\nkey2    700.0\nkey3     70.0\nkey1    350.0\ndtype: float64\nKlucz\nkey0      NaN\nkey2    700.0\nkey3     70.0\nkey1    350.0\nName: Wartosc, dtype: float64\n\n\n\nimport pandas as pd\n\ndata = {'Country': ['Belgium', 'India', 'Brazil'],\n        'Capital': ['Brussels', 'New Delhi', 'Brasília'],\n        'Population': [11190846, 1303171035, 207847528]}\nframe = pd.DataFrame(data)\nprint(frame)\ndf = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])\nprint(df)\n\n   Country    Capital  Population\n0  Belgium   Brussels    11190846\n1    India  New Delhi  1303171035\n2   Brazil   Brasília   207847528\n   Country  Population    Capital\n0  Belgium    11190846   Brussels\n1    India  1303171035  New Delhi\n2   Brazil   207847528   Brasília\n\n\n\nimport pandas as pd\n\ndata = {'Country': ['Belgium', 'India', 'Brazil'],\n        'Capital': ['Brussels', 'New Delhi', 'Brasília'],\n        'Population': [11190846, 1303171035, 207847528]}\ndf = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])\nprint(\"Shape:\", df.shape)\nprint(\"--\")\nprint(\"Index:\", df.index)\nprint(\"--\")\nprint(\"columns:\", df.columns)\nprint(\"--\")\ndf.info()\nprint(\"--\")\nprint(df.count())\n\nShape: (3, 3)\n--\nIndex: RangeIndex(start=0, stop=3, step=1)\n--\ncolumns: Index(['Country', 'Population', 'Capital'], dtype='object')\n--\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 3 entries, 0 to 2\nData columns (total 3 columns):\n #   Column      Non-Null Count  Dtype \n---  ------      --------------  ----- \n 0   Country     3 non-null      object\n 1   Population  3 non-null      int64 \n 2   Capital     3 non-null      object\ndtypes: int64(1), object(2)\nmemory usage: 204.0+ bytes\n--\nCountry       3\nPopulation    3\nCapital       3\ndtype: int64\n\n\nĆwiczenia: (ex8.py)\n\nNapisz kod, który utworzy serię z następującej listy liczb: [10, 20, 30, 40, 50]. Wyświetl serię w formacie tabelarycznym:\n\n\n\n\nIndex\nValue\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n30\n\n\n3\n40\n\n\n4\n50\n\n\n\n\nUtwórz serię, gdzie kluczami będą miesiące ('Jan', 'Feb', 'Mar'), a wartościami odpowiednie temperatury: [0, 3, 5]. Wyświetl w formacie tabelarycznym:\n\n\n\n\nMonth\nTemperature\n\n\n\n\nJan\n0\n\n\nFeb\n3\n\n\nMar\n5\n\n\n\n\nStwórz pustą ramkę danych z kolumnami Product, Price, Quantity, a następnie wypełnij ją danymi:\n\n\n\n\nProduct\nPrice\nQuantity\n\n\n\n\nApple\n1.2\n10\n\n\nBanana\n0.5\n20\n\n\nOrange\n0.8\n15",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Pandas - start</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-indeksowanie.html",
+    "href": "pandas-indeksowanie.html",
+    "title": "18  Pandas - indeksowanie",
+    "section": "",
+    "text": "import pandas as pd\n\ndata = {'Country': ['Belgium', 'India', 'Brazil'],\n        'Capital': ['Brussels', 'New Delhi', 'Brasília'],\n        'Population': [11190846, 1303171035, 207847528]}\ndf = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])\nprint(df.iloc[[0], [0]])\nprint(\"--\")\nprint(df.loc[[0], ['Country']])\nprint(\"--\")\nprint(df.loc[2])\nprint(\"--\")\nprint(df.loc[:, 'Capital'])\nprint(\"--\")\nprint(df.loc[1, 'Capital'])\n\n   Country\n0  Belgium\n--\n   Country\n0  Belgium\n--\nCountry          Brazil\nPopulation    207847528\nCapital        Brasília\nName: 2, dtype: object\n--\n0     Brussels\n1    New Delhi\n2     Brasília\nName: Capital, dtype: object\n--\nNew Delhi\n\n\n\nloc:\n\n\nTo metoda indeksowania oparta na etykietach, co oznacza, że używa nazw etykiet kolumn i indeksów wierszy do wyboru danych.\nDziała na podstawie etykiet indeksu oraz etykiet kolumny, co pozwala na wygodniejsze filtrowanie danych.\nObsługuje zarówno jednostkowe etykiety, jak i zakresy etykiet.\nDziała również z etykietami nieliczbowymi.\nPrzykład użycia: df.loc[1:3, ['A', 'B']] - zwraca wiersze od indeksu 1 do 3 (włącznie) oraz kolumny ‘A’ i ‘B’.\n\n\niloc:\n\n\nTo metoda indeksowania oparta na pozycji, co oznacza, że używa liczbowych indeksów kolumn i wierszy do wyboru danych.\nDziała na podstawie liczbowych indeksów zarówno dla wierszy, jak i kolumn.\nObsługuje jednostkowe indeksy oraz zakresy indeksów.\nW przypadku używania zakresów indeksów, zakres jest półotwarty, co oznacza, że prawy kraniec nie jest uwzględniany.\nPrzykład użycia: df.iloc[1:3, 0:2] - zwraca wiersze od indeksu 1 do 3 (bez 3) oraz kolumny od indeksu 0 do 2 (bez 2).\n\n\nimport pandas as pd\n\ndata = {'Country': ['Belgium', 'India', 'Brazil'],\n        'Capital': ['Brussels', 'New Delhi', 'Brasília'],\n        'Population': [11190846, 1303171035, 207847528]}\ndf = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])\nprint(df['Population'])       \nprint(\"--\")\nprint(df[df['Population'] &gt; 1200000000])\nprint(\"--\")\n\n0      11190846\n1    1303171035\n2     207847528\nName: Population, dtype: int64\n--\n  Country  Population    Capital\n1   India  1303171035  New Delhi\n--\n\n\nĆwiczenia: (ex9.py)\nPoćwicz indeksowanie na poniższej ramce (nie muszą być wszystkie wiersze):\n\nKolumny kategoryczne:\n\nRegion – region sprzedaży\nProduct – rodzaj produktu\nSales_Channel – kanał sprzedaży (online, sklep stacjonarny, hurt)\n\nKolumny liczbowe:\n\nUnits_Sold – liczba sprzedanych jednostek\nRevenue – przychód w tysiącach GBP\nProfit – zysk w tysiącach GBP\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegion\nProduct\nSales_Channel\nUnits_Sold\nRevenue\nProfit\n\n\n\n\nNorth\nElectronics\nOnline\n120\n60.5\n15.2\n\n\nSouth\nFurniture\nRetail\n80\n45.0\n12.0\n\n\nEast\nClothing\nOnline\n200\n35.0\n8.5\n\n\nWest\nElectronics\nWholesale\n150\n70.0\n20.5\n\n\nNorth\nFurniture\nRetail\n90\n50.5\n13.2\n\n\nSouth\nClothing\nOnline\n300\n55.0\n10.0\n\n\nEast\nElectronics\nRetail\n110\n62.0\n16.0\n\n\nWest\nFurniture\nOnline\n70\n30.0\n7.5\n\n\nNorth\nClothing\nWholesale\n250\n40.0\n9.0\n\n\nSouth\nElectronics\nRetail\n130\n75.0\n22.0",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Pandas - indeksowanie</span>"
+    ]
+  },
+  {
+    "objectID": "python-ladowanie.html",
+    "href": "python-ladowanie.html",
+    "title": "19  Ładowanie danych",
+    "section": "",
+    "text": "19.1 Obsługa plików csv\nFunkcja pandas.read_csv\nDokumentacja: link\nWybrane argumenty:\nZapis pandas.DataFrame.to_csv\nDokumentacja: link",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ładowanie danych</span>"
+    ]
+  },
+  {
+    "objectID": "python-ladowanie.html#obsługa-plików-csv",
+    "href": "python-ladowanie.html#obsługa-plików-csv",
+    "title": "19  Ładowanie danych",
+    "section": "",
+    "text": "filepath - ścieżka dostępu\nsep=_NoDefault.no_default, delimiter=None - separator\nheader='infer' - nagłówek - domyślnie nazwy kolumn, ew. header=None oznacza brak nagłówka\nindex_col=None - ustalenie kolumny na indeksy (nazwy wierszy)\nthousands=None - separator tysięczny\ndecimal='.' - separator dziesiętny",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ładowanie danych</span>"
+    ]
+  },
+  {
+    "objectID": "python-ladowanie.html#obsługa-plików-z-excela",
+    "href": "python-ladowanie.html#obsługa-plików-z-excela",
+    "title": "19  Ładowanie danych",
+    "section": "19.2 Obsługa plików z Excela",
+    "text": "19.2 Obsługa plików z Excela\nFunkcja pandas.read_excel\nhttps://pandas.pydata.org/docs/reference/api/pandas.read_excel.html\n** Ważne: trzeba zainstalować bibliotekę openpyxl do importu .xlsx oraz xlrd do importu .xls (nie trzeba ich importować w kodzie jawnie w większości wypadków)\nWybrane argumenty:\n\nio - ścieżka dostępu\nsheet_name=0 - nazwa arkusza\nheader='infer' - nagłówek - domyślnie nazwy kolumn, ew. header=None oznacza brak nagłówka\nindex_col=None - ustalenie kolumny na indeksy (nazwy wierszy)\nthousands=None - separator tysięczny\ndecimal='.' - separator dziesiętny\n\nĆwiczenie: (ex10.py)\nPoćwicz ładowanie danych z plików\n\nhttps://github.com/pjastr/SamleTestFilesVD",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ładowanie danych</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-sortowanie.html",
+    "href": "pandas-sortowanie.html",
+    "title": "20  Pandas - sortowanie",
+    "section": "",
+    "text": "import pandas as pd\n\n# Przykładowa ramka danych\ndf = pd.DataFrame({\n    'Name': ['Alice', 'Tom', 'Charlie'],\n    'Age': [25, 42, 35],\n    'Salary': [50000, 60000, 70000]\n})\n\n# Sortowanie po kolumnie 'Age'\ns1= df.sort_values(by='Age')\nprint(s1)\n# Sortowanie w odworotnej kolejności\ns2 = df.sort_values(by='Salary', ascending=False)\nprint(s2)\n# Sortowanie według 'Age' rosnąco, a następnie 'Salary' malejąco\ns3 = df.sort_values(by=['Age', 'Salary'], ascending=[True, False])\nprint(s3)\n\n      Name  Age  Salary\n0    Alice   25   50000\n2  Charlie   35   70000\n1      Tom   42   60000\n      Name  Age  Salary\n2  Charlie   35   70000\n1      Tom   42   60000\n0    Alice   25   50000\n      Name  Age  Salary\n0    Alice   25   50000\n2  Charlie   35   70000\n1      Tom   42   60000\n\n\n\nimport pandas as pd\n\n# Przykładowa ramka danych\ndf = pd.DataFrame({\n    'Name': ['Alice', 'Tom', 'Charlie'],\n    'Age': [25, 41, 35],\n    'Salary': [50000, 60000, 70000]\n})\n\n# Sortowanie inplace (zamiana istniejącej zmiennej)\ndf.sort_values(by='Age', inplace=True)\nprint(df)\n\n      Name  Age  Salary\n0    Alice   25   50000\n2  Charlie   35   70000\n1      Tom   41   60000\n\n\n\nimport pandas as pd\n\ndf2 = pd.DataFrame({\n    'Name': ['Alice', 'Bob', 'Charlie', 'Dave'],\n    'Age': [25, 30, None, 35],\n    'Salary': [50000, None, 70000, 60000]\n})\n\n# Sortowanie z NaN na końcu\ns2 = df2.sort_values(by='Age', na_position='last')\nprint(s2)\n# Sortowanie z NaN na początku\ns3 = df2.sort_values(by='Age', na_position='first')\nprint(s3)\n\n      Name   Age   Salary\n0    Alice  25.0  50000.0\n1      Bob  30.0      NaN\n3     Dave  35.0  60000.0\n2  Charlie   NaN  70000.0\n      Name   Age   Salary\n2  Charlie   NaN  70000.0\n0    Alice  25.0  50000.0\n1      Bob  30.0      NaN\n3     Dave  35.0  60000.0\n\n\n\nimport pandas as pd\n\ndf3 = pd.DataFrame({\n    'Name': ['Alice', 'Bob', 'Charlie', 'Dave'],\n    'Age': [25, 30, None, 35],\n    'Salary': [50000, None, 70000, 60000]\n})\n\ns3 = df3.sort_values(by='Name', key=lambda x: x.str.len())\nprint(s3)\n\n      Name   Age   Salary\n1      Bob  30.0      NaN\n3     Dave  35.0  60000.0\n0    Alice  25.0  50000.0\n2  Charlie   NaN  70000.0\n\n\nĆwiczenie: (exsort.py)\nZaładuj poniższe pliki i posortuj wg wybranych samodzielnie kryteriów:\n\nhttps://github.com/pjastr/SamleTestFilesVD/blob/master/ex/date_sale.csv\nhttps://github.com/pjastr/SamleTestFilesVD/blob/master/wynagrodzenia21.csv",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Pandas - sortowanie</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-szeregiczasowe.html",
+    "href": "pandas-szeregiczasowe.html",
+    "title": "21  Pandas - szeregi czasowe",
+    "section": "",
+    "text": "Zamiana stringu na format datetime (dato-czasowy)\n\nimport pandas as pd\n\n1data = {'date': ['2023-01-01', '2023-01-02', '2023-01-03'], 'value': [10, 15, 20]}\n2df = pd.DataFrame(data)\n3df['date'] = pd.to_datetime(df['date'])\nprint(data)\n\n\n1\n\nPrzykładowy słownik jak baza do ramki danych.\n\n2\n\nPrzekształcenie na ramkę danych.\n\n3\n\nZamiana kolumny na format datetime.\n\n\n\n\n{'date': ['2023-01-01', '2023-01-02', '2023-01-03'], 'value': [10, 15, 20]}\n\n\nArgument errors w funkcji pd.to_datetime kontroluje, jak funkcja ma się zachować, gdy napotka nieprawidłowe dane podczas próby konwersji wartości na obiekty datetime. Możliwe wartości dla errors to:\n\n'raise' (domyślnie): Rzuca wyjątek, jeśli napotka nieprawidłowy format danych.\n'coerce': Zastępuje nieprawidłowe wartości NaT (Not a Time).\n'ignore': Zwraca dane wejściowe bez zmian, gdy napotka błąd (opcja wycofana w kolejnych wersjach).\n\nKod do wklejenia do środowiska:\ndata = {'date': ['2023-01-01', 'invalid', '2023-01-03'], 'value': [10, 15, 20]}\ndf = pd.DataFrame(data)\ndf['date'] = pd.to_datetime(df['date'], errors='ignore')\nArgument format w funkcji pandas.to_datetime pozwala określić dokładny format daty i czasu, który ma zostać użyty do parsowania wartości wejściowych. Jest to przydatne, gdy dane wejściowe mają stały, specyficzny format, co może przyspieszyć przetwarzanie i zmniejszyć ryzyko błędnej interpretacji dat.\n\nimport pandas as pd\n\n# Przykładowe dane wejściowe z różnymi formatami\ndata1 = ['01-01-2025', '15-03-2025', '30-12-2025']  # Format: DD-MM-YYYY\ndata2 = ['2025/01/01', '2025/03/15', '2025/12/30']  # Format: YYYY/MM/DD\n\n# Konwersja z określonym formatem (DD-MM-YYYY)\ndf1 = pd.DataFrame(data1)\ndf1[0] = pd.to_datetime(df1[0], format='%d-%m-%Y')\nprint(\"Konwersja z formatem '%d-%m-%Y':\")\nprint(df1)\n\n# Konwersja z określonym formatem (YYYY/MM/DD)\ndf2 = pd.DataFrame(data2)\ndf2[0] = pd.to_datetime(df2[0], format='%Y/%m/%d')\nprint(\"\\nKonwersja z formatem '%Y/%m/%d':\")\nprint(df2)\n\nKonwersja z formatem '%d-%m-%Y':\n           0\n0 2025-01-01\n1 2025-03-15\n2 2025-12-30\n\nKonwersja z formatem '%Y/%m/%d':\n           0\n0 2025-01-01\n1 2025-03-15\n2 2025-12-30\n\n\n\n\n\n\n\n\n\n\nKod formatu\nOpis\nPrzykład\n\n\n\n\n%Y\nRok w formacie 4-cyfrowym\n2025\n\n\n%y\nRok w formacie 2-cyfrowym\n25\n\n\n%m\nMiesiąc (cyfry, 2-cyfrowe)\n01 (styczeń), 12 (grudzień)\n\n\n%d\nDzień miesiąca (2-cyfrowe)\n01, 15, 31\n\n\n%B\nPełna nazwa miesiąca\nJanuary, December\n\n\n%b\nSkrót nazwy miesiąca\nJan, Dec\n\n\n%A\nPełna nazwa dnia tygodnia\nMonday, Sunday\n\n\n%a\nSkrót nazwy dnia tygodnia\nMon, Sun\n\n\n%H\nGodzina w formacie 24-godzinnym\n00, 12, 23\n\n\n%I\nGodzina w formacie 12-godzinnym\n01, 11\n\n\n%p\nAM/PM\nAM, PM\n\n\n%M\nMinuty\n00, 30, 59\n\n\n%S\nSekundy\n00, 30, 59\n\n\n\nPolskie nazwy miesięcy w mianowniku lub skrócie:\n\nimport pandas as pd\nimport locale\n\nlocale.setlocale(locale.LC_ALL, 'PL')\n# locale.setlocale(locale.LC_TIME, 'pl_PL.UTF-8')  # Na systemach Linux/Mac\n# locale.setlocale(locale.LC_TIME, 'Polish_Poland.1250')  # Na Windows\n\ndata = ['10 styczeń 2025', '15 grudzień 2025', '5 marzec 2025']\ndf = pd.DataFrame(data)\ndf[0] = pd.to_datetime(df[0], format='%d %B %Y')\nprint(df)\ndata2 = ['10 sty 2025', '15 gru 2025', '5 mar 2025']\ndf2 = pd.DataFrame(data2)\ndf2[0] = pd.to_datetime(df2[0], format='%d %b %Y')\nprint(df2)\n\n           0\n0 2025-01-10\n1 2025-12-15\n2 2025-03-05\n           0\n0 2025-01-10\n1 2025-12-15\n2 2025-03-05\n\n\nĆwiczenie: (extime.py)\nZaładuj poniższe pliki i przekształć kolumnę z datą:\n\nhttps://github.com/pjastr/SamleTestFilesVD/blob/master/ex/date_sale.csv\nhttps://github.com/pjastr/SamleTestFilesVD/blob/master/ex/date_temp.csv\n\nWskazówka:\nimport pandas as pd\n\ndata = pd.read_csv(\"date_sale.csv\",  parse_dates=[\"Sale_Date\"], date_format=\"%d-%m-%Y\")",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Pandas - szeregi czasowe</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-danetekstowe.html",
+    "href": "pandas-danetekstowe.html",
+    "title": "22  Pandas - dane tekstowe",
+    "section": "",
+    "text": "22.1 Normalizacja\nNormalizacja danych tekstowych polega na przekształceniu tekstu w jednolity i porównywalny format. W Pandas można to osiągnąć poprzez zastosowanie różnych operacji na kolumnach zawierających dane tekstowe.\nStare podejście (na piechotę, pełna kontrola):\nimport pandas as pd\n\n# Przykładowa ramka danych\ndf = pd.DataFrame({\n    'Text': ['  Hello World  ', 'Pandas  Library43', '   Data   Science  ']\n})\n\n# Usunięcie białych znaków\ndf['Text'] = df['Text'].str.strip()\nprint(df)\n# Konwersja do małych liter\ndf['Text'] = df['Text'].str.lower()\nprint(df)\n# Konwersja do wielkich liter\ndf['Text'] = df['Text'].str.upper()\nprint(df)\n# Usunięcie znaków specjalnych\ndf['Text'] = df['Text'].str.replace(r'[^\\w\\s]', '', regex=True)\nprint(df)\n# Usunięcie liczb\ndf['Text'] = df['Text'].str.replace(r'\\d+', '', regex=True)\nprint(df)\n# Usunięcie duplikatów\ndf = df.drop_duplicates(subset='Text')\nprint(df)\n\n                Text\n0        Hello World\n1  Pandas  Library43\n2     Data   Science\n                Text\n0        hello world\n1  pandas  library43\n2     data   science\n                Text\n0        HELLO WORLD\n1  PANDAS  LIBRARY43\n2     DATA   SCIENCE\n                Text\n0        HELLO WORLD\n1  PANDAS  LIBRARY43\n2     DATA   SCIENCE\n              Text\n0      HELLO WORLD\n1  PANDAS  LIBRARY\n2   DATA   SCIENCE\n              Text\n0      HELLO WORLD\n1  PANDAS  LIBRARY\n2   DATA   SCIENCE\nNowsza wersja (wygodna, ale w detalach trudna)\nimport pandas as pd\n\n# Utworzenie przykładowej serii z różnymi formami zapisu tego samego tekstu\ns = pd.Series(['café', 'cafe\\u0301', 'café'])\n\n# Normalizacja do jednolitej formy\nnormalized = s.str.normalize('NFC')\n\n# Sprawdzenie czy wszystkie wartości są teraz identyczne\nprint(normalized.nunique())  # Powinno zwrócić 1\n\n1\nInne opcje: ‘NFC’, ‘NFKC’, ‘NFD’, ‘NFKD’",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Pandas - dane tekstowe</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-danetekstowe.html#operacje-wektorowe-na-tekstach",
+    "href": "pandas-danetekstowe.html#operacje-wektorowe-na-tekstach",
+    "title": "22  Pandas - dane tekstowe",
+    "section": "22.2 Operacje wektorowe na tekstach",
+    "text": "22.2 Operacje wektorowe na tekstach\nOto tabela w języku Markdown wyjaśniająca funkcje z pandas.Series.str i ich zastosowanie:\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nlen()\nZwraca długość każdego ciągu znaków w serii.\n\n\nlower()\nKonwertuje wszystkie znaki na małe litery.\n\n\ntranslate()\nZastępuje znaki według podanej mapy translacji.\n\n\nislower()\nSprawdza, czy wszystkie znaki w ciągu są małymi literami.\n\n\nljust()\nJustuje tekst w lewo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nupper()\nKonwertuje wszystkie znaki na wielkie litery.\n\n\nstartswith()\nSprawdza, czy ciąg znaków zaczyna się od podanego prefiksu.\n\n\nisupper()\nSprawdza, czy wszystkie znaki w ciągu są wielkimi literami.\n\n\nrjust()\nJustuje tekst w prawo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nfind()\nZwraca indeks pierwszego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nendswith()\nSprawdza, czy ciąg znaków kończy się podanym sufiksem.\n\n\nisnumeric()\nSprawdza, czy ciąg zawiera tylko znaki numeryczne.\n\n\ncenter()\nCentruje tekst, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nrfind()\nZwraca indeks ostatniego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nisalnum()\nSprawdza, czy ciąg zawiera tylko litery i cyfry.\n\n\nisdecimal()\nSprawdza, czy ciąg zawiera tylko znaki dziesiętne.\n\n\nzfill()\nWypełnia ciąg zerami z lewej strony, aby osiągnąć określoną długość.\n\n\nindex()\nZwraca indeks pierwszego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisalpha()\nSprawdza, czy ciąg zawiera tylko litery.\n\n\nsplit()\nDzieli ciąg na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z obu stron ciągu.\n\n\nrindex()\nZwraca indeks ostatniego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisdigit()\nSprawdza, czy ciąg zawiera tylko cyfry.\n\n\nrsplit()\nDzieli ciąg od prawej strony na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nrstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z prawej strony ciągu.\n\n\ncapitalize()\nZmienia pierwszą literę na wielką, a resztę na małe.\n\n\nisspace()\nSprawdza, czy ciąg zawiera tylko białe znaki.\n\n\npartition()\nDzieli ciąg na trzy części: przed separator, separator i po separatorze.\n\n\nlstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z lewej strony ciągu.\n\n\nswapcase()\nZmienia wielkość liter na przeciwną (małe na wielkie i odwrotnie).\n\n\nistitle()\nSprawdza, czy ciąg jest sformatowany jako tytuł (pierwsze litery wyrazów są wielkie).\n\n\nrpartition()\nDzieli ciąg na trzy części od prawej strony: przed separator, separator i po separatorze.\n\n\n\nZwykle operacje wektorowe są szybsze:\n\nimport pandas as pd\nimport time\n\n# Tworzenie przykładowej ramki danych z 2000000 wierszami\ndata = {'Text': ['Pandas is awesome'] * 2000000}\ndf = pd.DataFrame(data)\n\n# Funkcja, która konwertuje tekst na małe litery (przykładowa operacja)\ndef to_lower(text):\n    return text.lower()\n\n# 1. Operacja wektorowa\nstart_vectorized = time.time()\ndf['Vectorized'] = df['Text'].str.lower()\nend_vectorized = time.time()\n\n# 2. Operacja z list comprehension\nstart_comprehension = time.time()\ndf['Comprehension'] = [to_lower(text) for text in df['Text']]\nend_comprehension = time.time()\n\n# Czasy wykonania\nvectorized_time = end_vectorized - start_vectorized\ncomprehension_time = end_comprehension - start_comprehension\n\n# Wynik\nprint(vectorized_time, comprehension_time)\n\n0.14737725257873535 0.31062865257263184",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Pandas - dane tekstowe</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html",
+    "href": "pandas-inne.html",
+    "title": "23  Pandas - inne",
+    "section": "",
+    "text": "23.1 Uzupełnianie braków\nimport pandas as pd\n\ns = pd.Series([3, -5, 7, 4], index=['a', 'b', 'c', 'd'])\ns2 = pd.Series([7, -2, 3], index=['a', 'c', 'd'])\nprint(s + s2)\nprint(\"--\")\nprint(s.add(s2, fill_value=0))\nprint(\"--\")\nprint(s.mul(s2, fill_value=2))\n\na    10.0\nb     NaN\nc     5.0\nd     7.0\ndtype: float64\n--\na    10.0\nb    -5.0\nc     5.0\nd     7.0\ndtype: float64\n--\na    21.0\nb   -10.0\nc   -14.0\nd    12.0\ndtype: float64",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html#obsługa-brakujących-danych",
+    "href": "pandas-inne.html#obsługa-brakujących-danych",
+    "title": "23  Pandas - inne",
+    "section": "23.2 Obsługa brakujących danych",
+    "text": "23.2 Obsługa brakujących danych\n\nimport numpy as np\nimport pandas as pd\n\nstring_data = pd.Series(['aardvark', 'artichoke', np.nan, 'avocado'])\nprint(string_data)\nprint(string_data.isnull())\nprint(string_data.dropna())\n\n0     aardvark\n1    artichoke\n2          NaN\n3      avocado\ndtype: object\n0    False\n1    False\n2     True\n3    False\ndtype: bool\n0     aardvark\n1    artichoke\n3      avocado\ndtype: object\n\n\n\n\nfrom numpy import nan as NA\nimport pandas as pd\n\ndata = pd.DataFrame([[1., 6.5, 3.], [1., NA, NA], \n                     [NA, NA, NA], [NA, 6.5, 3.]])\ncleaned = data.dropna()\nprint(cleaned)\nprint(data.dropna(how='all'))\ndata[4] = NA\nprint(data.dropna(how='all', axis=1))\nprint(data)\nprint(data.fillna(0))\nprint(data.fillna({1: 0.5, 2: 0}))\n\n     0    1    2\n0  1.0  6.5  3.0\n     0    1    2\n0  1.0  6.5  3.0\n1  1.0  NaN  NaN\n3  NaN  6.5  3.0\n     0    1    2\n0  1.0  6.5  3.0\n1  1.0  NaN  NaN\n2  NaN  NaN  NaN\n3  NaN  6.5  3.0\n     0    1    2   4\n0  1.0  6.5  3.0 NaN\n1  1.0  NaN  NaN NaN\n2  NaN  NaN  NaN NaN\n3  NaN  6.5  3.0 NaN\n     0    1    2    4\n0  1.0  6.5  3.0  0.0\n1  1.0  0.0  0.0  0.0\n2  0.0  0.0  0.0  0.0\n3  0.0  6.5  3.0  0.0\n     0    1    2   4\n0  1.0  6.5  3.0 NaN\n1  1.0  0.5  0.0 NaN\n2  NaN  0.5  0.0 NaN\n3  NaN  6.5  3.0 NaN",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html#usuwanie-duplikatów",
+    "href": "pandas-inne.html#usuwanie-duplikatów",
+    "title": "23  Pandas - inne",
+    "section": "23.3 Usuwanie duplikatów",
+    "text": "23.3 Usuwanie duplikatów\n\nimport pandas as pd\n\ndata = pd.DataFrame({'k1': ['one', 'two'] * 3 + ['two'],\n                     'k2': [1, 1, 2, 3, 3, 4, 4]})\nprint(data)\nprint(data.duplicated())\nprint(data.drop_duplicates())\n\n    k1  k2\n0  one   1\n1  two   1\n2  one   2\n3  two   3\n4  one   3\n5  two   4\n6  two   4\n0    False\n1    False\n2    False\n3    False\n4    False\n5    False\n6     True\ndtype: bool\n    k1  k2\n0  one   1\n1  two   1\n2  one   2\n3  two   3\n4  one   3\n5  two   4",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html#zastępowanie-wartościami",
+    "href": "pandas-inne.html#zastępowanie-wartościami",
+    "title": "23  Pandas - inne",
+    "section": "23.4 Zastępowanie wartościami",
+    "text": "23.4 Zastępowanie wartościami\n\nimport pandas as pd\nimport numpy as np\n\ndata = pd.Series([1., -999., 2., -999., -1000., 3.])\nprint(data)\nprint(data.replace(-999, np.nan))\nprint(data.replace([-999, -1000], np.nan))\nprint(data.replace([-999, -1000], [np.nan, 0]))\nprint(data.replace({-999: np.nan, -1000: 0}))\n\n0       1.0\n1    -999.0\n2       2.0\n3    -999.0\n4   -1000.0\n5       3.0\ndtype: float64\n0       1.0\n1       NaN\n2       2.0\n3       NaN\n4   -1000.0\n5       3.0\ndtype: float64\n0    1.0\n1    NaN\n2    2.0\n3    NaN\n4    NaN\n5    3.0\ndtype: float64\n0    1.0\n1    NaN\n2    2.0\n3    NaN\n4    0.0\n5    3.0\ndtype: float64\n0    1.0\n1    NaN\n2    2.0\n3    NaN\n4    0.0\n5    3.0\ndtype: float64",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html#dyskretyzacja-i-podział-na-koszyki",
+    "href": "pandas-inne.html#dyskretyzacja-i-podział-na-koszyki",
+    "title": "23  Pandas - inne",
+    "section": "23.5 Dyskretyzacja i podział na koszyki",
+    "text": "23.5 Dyskretyzacja i podział na koszyki\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats = pd.cut(ages, bins)\nprint(cats)\nprint(cats.codes)\nprint(cats.categories)\nprint(pd.Series(cats).value_counts())\n\n[(18, 25], (18, 25], (18, 25], (25, 35], (18, 25], ..., (25, 35], (60, 100], (35, 60], (35, 60], (25, 35]]\nLength: 12\nCategories (4, interval[int64, right]): [(18, 25] &lt; (25, 35] &lt; (35, 60] &lt; (60, 100]]\n[0 0 0 1 0 0 2 1 3 2 2 1]\nIntervalIndex([(18, 25], (25, 35], (35, 60], (60, 100]], dtype='interval[int64, right]')\n(18, 25]     5\n(25, 35]     3\n(35, 60]     3\n(60, 100]    1\nName: count, dtype: int64\n\n\n\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats2 = pd.cut(ages, [18, 26, 36, 61, 100], right=False)\nprint(cats2)\ngroup_names = ['Youth', 'YoungAdult',\n               'MiddleAged', 'Senior']\nprint(pd.cut(ages, bins, labels=group_names))\n\n[[18, 26), [18, 26), [18, 26), [26, 36), [18, 26), ..., [26, 36), [61, 100), [36, 61), [36, 61), [26, 36)]\nLength: 12\nCategories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt; [61, 100)]\n['Youth', 'Youth', 'Youth', 'YoungAdult', 'Youth', ..., 'YoungAdult', 'Senior', 'MiddleAged', 'MiddleAged', 'YoungAdult']\nLength: 12\nCategories (4, object): ['Youth' &lt; 'YoungAdult' &lt; 'MiddleAged' &lt; 'Senior']\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.rand(20)\nprint(pd.cut(data, 4, precision=2))\n\n[(0.7, 0.92], (0.25, 0.47], (0.7, 0.92], (0.02, 0.25], (0.47, 0.7], ..., (0.25, 0.47], (0.02, 0.25], (0.02, 0.25], (0.47, 0.7], (0.7, 0.92]]\nLength: 20\nCategories (4, interval[float64, right]): [(0.02, 0.25] &lt; (0.25, 0.47] &lt; (0.47, 0.7] &lt; (0.7, 0.92]]\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.randn(1000)\ncats = pd.qcut(data, 4)\nprint(cats)\nprint(pd.Series(cats).value_counts())\n\n[(-0.671, 0.0139], (0.0139, 0.709], (0.709, 2.777], (0.709, 2.777], (-0.671, 0.0139], ..., (-2.972, -0.671], (0.0139, 0.709], (0.709, 2.777], (-2.972, -0.671], (0.0139, 0.709]]\nLength: 1000\nCategories (4, interval[float64, right]): [(-2.972, -0.671] &lt; (-0.671, 0.0139] &lt; (0.0139, 0.709] &lt; (0.709, 2.777]]\n(-2.972, -0.671]    250\n(-0.671, 0.0139]    250\n(0.0139, 0.709]     250\n(0.709, 2.777]      250\nName: count, dtype: int64",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html#wykrywanie-i-filtrowanie-elementów-odstających",
+    "href": "pandas-inne.html#wykrywanie-i-filtrowanie-elementów-odstających",
+    "title": "23  Pandas - inne",
+    "section": "23.6 Wykrywanie i filtrowanie elementów odstających",
+    "text": "23.6 Wykrywanie i filtrowanie elementów odstających\n\nimport pandas as pd\nimport numpy as np\n\ndata = pd.DataFrame(np.random.randn(1000, 4))\nprint(data.describe())\nprint(\"---\")\ncol = data[2]\nprint(col[np.abs(col) &gt; 3])\nprint(\"---\")\nprint(data[(np.abs(data) &gt; 3).any(axis=1)])\n\n                 0            1            2            3\ncount  1000.000000  1000.000000  1000.000000  1000.000000\nmean     -0.058533    -0.035411    -0.018040     0.032681\nstd       1.000203     0.970022     0.999960     1.016951\nmin      -3.100396    -3.232059    -3.178792    -3.210024\n25%      -0.753863    -0.674487    -0.687862    -0.630432\n50%      -0.070797     0.014250    -0.000708     0.021639\n75%       0.598650     0.640459     0.667899     0.706505\nmax       2.900652     3.389152     3.321041     3.172270\n---\n314    3.321041\n499    3.102750\n549   -3.011454\n561   -3.178792\n947    3.017037\nName: 2, dtype: float64\n---\n            0         1         2         3\n24   0.319038  3.389152  0.161103  1.475799\n91  -0.526843 -3.232059  0.427703 -1.565172\n270 -2.323431 -0.278960 -0.571114 -3.210024\n296 -0.682086  3.079116 -0.265043  1.574622\n314  0.212231  0.531199  3.321041 -2.165994\n368 -3.002563  0.636792  1.268146 -0.199792\n379 -0.349740 -3.030441 -1.602790  1.417116\n408  0.580394  0.307935 -0.668263 -3.096005\n499  1.379234 -0.188447  3.102750 -0.290432\n549  0.752671  0.336195 -3.011454  1.302310\n561  0.340191 -0.180336 -3.178792  1.378152\n701 -3.100396 -1.110172  0.337325 -1.483207\n947 -0.040988 -0.755319  3.017037 -0.090944\n958 -0.690453  0.526357 -0.200254  3.172270",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html#zmiana-typu-w-kolumnie",
+    "href": "pandas-inne.html#zmiana-typu-w-kolumnie",
+    "title": "23  Pandas - inne",
+    "section": "23.7 Zmiana typu w kolumnie",
+    "text": "23.7 Zmiana typu w kolumnie\n\nimport pandas as pd\n\n\ndata = {\n    'A': ['1', '2', '3', '4', '5', '6'],\n    'B': ['7.5', '8.5', '9.5', '10.5', '11.5', '12.5'],\n    'C': ['x', 'y', 'z', 'x', 'y', 'z']\n}\ndf = pd.DataFrame(data)\n\n# Wyświetlenie oryginalnej ramki danych\nprint(\"Oryginalna ramka danych:\")\nprint(df)\n\n# Zmiana typu danych kolumny 'A' na int\ndf['A'] = pd.Series(df['A'], dtype=int)\n\n# Zmiana typu danych kolumny 'B' na float\ndf['B'] = pd.Series(df['A'], dtype=float)\n\n# Wyświetlenie ramki danych po zmianie typów\nprint(\"\\nRamka danych po zmianie typów:\")\nprint(df)\n\nOryginalna ramka danych:\n   A     B  C\n0  1   7.5  x\n1  2   8.5  y\n2  3   9.5  z\n3  4  10.5  x\n4  5  11.5  y\n5  6  12.5  z\n\nRamka danych po zmianie typów:\n   A    B  C\n0  1  1.0  x\n1  2  2.0  y\n2  3  3.0  z\n3  4  4.0  x\n4  5  5.0  y\n5  6  6.0  z\n\n\n\nimport pandas as pd\n\n\ndata = {\n    'A': ['1', '2', '3', '4', '5', '6'],\n    'B': ['7.5', '8.5', '9.5', '10.5', '11.5', '12.5'],\n    'C': ['x', 'y', 'z', 'x', 'y', 'z']\n}\ndf = pd.DataFrame(data)\n\n# Wyświetlenie oryginalnej ramki danych\nprint(\"Oryginalna ramka danych:\")\nprint(df)\n\n# Zmiana typu danych kolumny 'A' na int\ndf['A'] = df['A'].astype(int)\n\n# Zmiana typu danych kolumny 'B' na float\ndf['B'] = df['B'].astype(float)\n\n# Wyświetlenie ramki danych po zmianie typów\nprint(\"\\nRamka danych po zmianie typów:\")\nprint(df)\n\nOryginalna ramka danych:\n   A     B  C\n0  1   7.5  x\n1  2   8.5  y\n2  3   9.5  z\n3  4  10.5  x\n4  5  11.5  y\n5  6  12.5  z\n\nRamka danych po zmianie typów:\n   A     B  C\n0  1   7.5  x\n1  2   8.5  y\n2  3   9.5  z\n3  4  10.5  x\n4  5  11.5  y\n5  6  12.5  z",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html#zmiana-znaku-kategoriach",
+    "href": "pandas-inne.html#zmiana-znaku-kategoriach",
+    "title": "23  Pandas - inne",
+    "section": "23.8 Zmiana znaku kategoriach",
+    "text": "23.8 Zmiana znaku kategoriach\n\nimport pandas as pd\n\n# Tworzenie ramki danych\ndata = {\n    'A': ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqr'],\n    'B': ['1.23', '4.56', '7.89', '0.12', '3.45', '6.78'],\n    'C': ['xyz', 'uvw', 'rst', 'opq', 'lmn', 'ijk']\n}\ndf = pd.DataFrame(data)\n\n# Wyświetlenie oryginalnej ramki danych\nprint(\"Oryginalna ramka danych:\")\nprint(df)\n\n# Zmiana małych liter na duże w kolumnie 'A'\ndf['A'] = df['A'].str.upper()\n\n# Zastąpienie kropki przecinkiem w kolumnie 'B'\ndf['B'] = df['B'].str.replace('.', ',')\n\n# Wyświetlenie ramki danych po modyfikacji\nprint(\"\\nRamka danych po modyfikacji:\")\nprint(df)\n\nOryginalna ramka danych:\n     A     B    C\n0  abc  1.23  xyz\n1  def  4.56  uvw\n2  ghi  7.89  rst\n3  jkl  0.12  opq\n4  mno  3.45  lmn\n5  pqr  6.78  ijk\n\nRamka danych po modyfikacji:\n     A     B    C\n0  ABC  1,23  xyz\n1  DEF  4,56  uvw\n2  GHI  7,89  rst\n3  JKL  0,12  opq\n4  MNO  3,45  lmn\n5  PQR  6,78  ijk",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-inne.html#operacje-manipulacyjne",
+    "href": "pandas-inne.html#operacje-manipulacyjne",
+    "title": "23  Pandas - inne",
+    "section": "23.9 Operacje manipulacyjne",
+    "text": "23.9 Operacje manipulacyjne\nŚciągawka https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf\n\nmerge\n\nhttps://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html\nFunkcja merge służy do łączenia dwóch ramek danych wzdłuż wspólnej kolumny, podobnie jak operacje JOIN w SQL.\nDataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)\nGdzie:\n\nright: ramka danych, którą chcesz dołączyć do oryginalnej ramki danych.\nhow: określa typ łączenia. Dostępne są cztery typy: ‘inner’, ‘outer’, ‘left’ i ‘right’. ‘inner’ to domyślna wartość, która zwraca tylko te wiersze, które mają pasujące klucze w obu ramkach danych.\non: nazwa lub lista nazw, które mają być używane do łączenia. Musi to być nazwa występująca zarówno w oryginalnej, jak i prawej ramce danych.\nleft_on i right_on: nazwy kolumn w lewej i prawej ramce danych, które mają być używane do łączenia. Można to użyć, jeśli nazwy kolumn nie są takie same.\nleft_index i right_index: czy indeksy z lewej i prawej ramki danych mają być używane do łączenia.\nsort: czy wynikowa ramka danych ma być posortowany według łączonych kluczy.\nsuffixes: sufiksy, które mają być dodane do nazw kolumn, które nachodzą na siebie. Domyślnie to (’_x’, ’_y’).\ncopy: czy zawsze kopiować dane, nawet jeśli nie są potrzebne.\nindicator: dodaj kolumnę do wynikowej ramki danych, która pokazuje źródło każdego wiersza.\nvalidate: sprawdź, czy określone zasady łączenia są spełnione.\n\n\nimport pandas as pd\n\ndf1 = pd.DataFrame({\n    'A': ['A0', 'A1', 'A2', 'A3'],\n    'B': ['B0', 'B1', 'B2', 'B3'],\n    'key': ['K0', 'K1', 'K0', 'K1']\n})\n\ndf2 = pd.DataFrame({\n    'C': ['C0', 'C1'],\n    'D': ['D0', 'D1']},\n    index=['K0', 'K1']\n)\n\nprint(df1)\nprint(df2)\nmerged_df = df1.merge(df2, left_on='key', right_index=True)\nprint(merged_df)\n\n    A   B key\n0  A0  B0  K0\n1  A1  B1  K1\n2  A2  B2  K0\n3  A3  B3  K1\n     C   D\nK0  C0  D0\nK1  C1  D1\n    A   B key   C   D\n0  A0  B0  K0  C0  D0\n1  A1  B1  K1  C1  D1\n2  A2  B2  K0  C0  D0\n3  A3  B3  K1  C1  D1\n\n\n\n\nimport pandas as pd\n\ndf1 = pd.DataFrame({\n    'key': ['K0', 'K1', 'K2', 'K3'],\n    'A': ['A0', 'A1', 'A2', 'A3'],\n    'B': ['B0', 'B1', 'B2', 'B3']\n})\n\ndf2 = pd.DataFrame({\n    'key': ['K0', 'K1', 'K4', 'K5'],\n    'C': ['C0', 'C1', 'C2', 'C3'],\n    'D': ['D0', 'D1', 'D2', 'D3']\n})\n\nprint(df1)\n\nprint(df2)\n\ninner_merged_df = df1.merge(df2, how='inner', on='key', suffixes=('_left', '_right'), indicator=True)\nouter_merged_df = df1.merge(df2, how='outer', on='key', suffixes=('_left', '_right'), indicator=True)\nleft_merged_df = df1.merge(df2, how='left', on='key', suffixes=('_left', '_right'), indicator=True)\nright_merged_df = df1.merge(df2, how='right', on='key', suffixes=('_left', '_right'), indicator=True)\n\nprint(\"Inner join\")\nprint(inner_merged_df)\n\nprint(\"Outer join\")\nprint(outer_merged_df)\n\nprint(\"Left join\")\nprint(left_merged_df)\n\nprint(\"Right join\")\nprint(right_merged_df)\n\n  key   A   B\n0  K0  A0  B0\n1  K1  A1  B1\n2  K2  A2  B2\n3  K3  A3  B3\n  key   C   D\n0  K0  C0  D0\n1  K1  C1  D1\n2  K4  C2  D2\n3  K5  C3  D3\nInner join\n  key   A   B   C   D _merge\n0  K0  A0  B0  C0  D0   both\n1  K1  A1  B1  C1  D1   both\nOuter join\n  key    A    B    C    D      _merge\n0  K0   A0   B0   C0   D0        both\n1  K1   A1   B1   C1   D1        both\n2  K2   A2   B2  NaN  NaN   left_only\n3  K3   A3   B3  NaN  NaN   left_only\n4  K4  NaN  NaN   C2   D2  right_only\n5  K5  NaN  NaN   C3   D3  right_only\nLeft join\n  key   A   B    C    D     _merge\n0  K0  A0  B0   C0   D0       both\n1  K1  A1  B1   C1   D1       both\n2  K2  A2  B2  NaN  NaN  left_only\n3  K3  A3  B3  NaN  NaN  left_only\nRight join\n  key    A    B   C   D      _merge\n0  K0   A0   B0  C0  D0        both\n1  K1   A1   B1  C1  D1        both\n2  K4  NaN  NaN  C2  D2  right_only\n3  K5  NaN  NaN  C3  D3  right_only\n\n\n\n\n\n\n\njoin\n\nhttps://pandas.pydata.org/docs/reference/api/pandas.DataFrame.join.html\nMetoda join jest używana do łączenia dwóch ramek danych wzdłuż osi.\nPodstawowe użycie tej metody wygląda następująco:\nDataFrame.join(other, on=None, how='left', lsuffix='', rsuffix='', sort=False)\nGdzie:\n\nother: ramka danych, którą chcesz dołączyć do oryginalnej ramki danych.\non: nazwa lub lista nazw kolumn w oryginalnej ramxce danych, do których chcesz dołączyć.\nhow: określa typ łączenia. Dostępne są cztery typy: ‘inner’, ‘outer’, ‘left’ i ‘right’. ‘left’ to domyślna wartość, która zwraca wszystkie wiersze z oryginalnej ramki danych i pasujące wiersze z drugiej ramki danych. Wartości są uzupełniane wartością NaN, jeśli nie ma dopasowania.\nlsuffix i rsuffix: sufiksy do dodania do kolumn, które się powtarzają. Domyślnie jest to puste.\nsort: czy sortować dane według klucza.\n\n\nimport pandas as pd\n\ndf1 = pd.DataFrame({\n    'A': ['A0', 'A1', 'A2'],\n    'B': ['B0', 'B1', 'B2']},\n    index=['K0', 'K1', 'K2']\n)\n\ndf2 = pd.DataFrame({\n    'C': ['C0', 'C2', 'C3'],\n    'D': ['D0', 'D2', 'D3']},\n    index=['K0', 'K2', 'K3']\n)\n\nprint(df1)\n\nprint(df2)\n\njoined_df = df1.join(df2)\nprint(joined_df)\n\n     A   B\nK0  A0  B0\nK1  A1  B1\nK2  A2  B2\n     C   D\nK0  C0  D0\nK2  C2  D2\nK3  C3  D3\n     A   B    C    D\nK0  A0  B0   C0   D0\nK1  A1  B1  NaN  NaN\nK2  A2  B2   C2   D2\n\n\n\n\nconcat\n\nhttps://pandas.pydata.org/docs/reference/api/pandas.concat.html\nMetoda concat jest używana do łączenia dwóch lub więcej ramek danych wzdłuż określonej osi.\nPodstawowe użycie tej metody wygląda następująco:\npandas.concat(objs, axis=0, join='outer', ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, sort=False, copy=True)\nGdzie:\n\nobjs: sekwencja ramek danych, które chcesz połączyć.\naxis: oś, wzdłuż której chcesz łączyć ramki danych. Domyślnie to 0 (łączenie wierszy, pionowo), ale można także ustawić na 1 (łączenie kolumn, poziomo).\njoin: określa typ łączenia. Dostępne są dwa typy: ‘outer’ i ‘inner’. ‘outer’ to domyślna wartość, która zwraca wszystkie kolumny z każdej ramki danych. ‘inner’ zwraca tylko te kolumny, które są wspólne dla wszystkich ramek danych.\nignore_index: jeśli ustawione na True, nie używa indeksów z ramek danych do tworzenia indeksu w wynikowej ramce danych. Zamiast tego tworzy nowy indeks od 0 do n-1.\nkeys: wartości do skojarzenia z obiektami.\nlevels: określone indeksy dla nowej ramki danych.\nnames: nazwy dla poziomów indeksów (jeśli są wielopoziomowe).\nverify_integrity: sprawdza, czy nowy, skonkatenowana ramka danych nie ma powtarzających się indeksów.\nsort: czy sortować niekonkatenacyjną oś (np. indeksy, jeśli axis=0), niezależnie od danych.\ncopy: czy zawsze kopiować dane, nawet jeśli nie są potrzebne.\n\n\nimport pandas as pd\n\ndf1 = pd.DataFrame({\n    'A': ['A0', 'A1', 'A2'],\n    'B': ['B0', 'B1', 'B2']\n})\n\ndf2 = pd.DataFrame({\n    'A': ['A3', 'A4', 'A5'],\n    'B': ['B3', 'B4', 'B5']\n})\n\nprint(df1)\n\nprint(df2)\n\nconcatenated_df = pd.concat([df1, df2], ignore_index=True)\nprint(concatenated_df)\n\n    A   B\n0  A0  B0\n1  A1  B1\n2  A2  B2\n    A   B\n0  A3  B3\n1  A4  B4\n2  A5  B5\n    A   B\n0  A0  B0\n1  A1  B1\n2  A2  B2\n3  A3  B3\n4  A4  B4\n5  A5  B5\n\n\n\n\nimport pandas as pd\n\ndf1 = pd.DataFrame({\n    'A': ['A0', 'A1', 'A2'],\n    'B': ['B0', 'B1', 'B2']\n})\n\ndf2 = pd.DataFrame({\n    'C': ['C0', 'C1', 'C2'],\n    'D': ['D0', 'D1', 'D2']\n})\n\nprint(df1)\n\nprint(df2)\n\nconcatenated_df_axis1 = pd.concat([df1, df2], axis=1)\nconcatenated_df_keys = pd.concat([df1, df2], keys=['df1', 'df2'])\n\nprint(concatenated_df_axis1)\nprint(concatenated_df_keys)\n\n    A   B\n0  A0  B0\n1  A1  B1\n2  A2  B2\n    C   D\n0  C0  D0\n1  C1  D1\n2  C2  D2\n    A   B   C   D\n0  A0  B0  C0  D0\n1  A1  B1  C1  D1\n2  A2  B2  C2  D2\n         A    B    C    D\ndf1 0   A0   B0  NaN  NaN\n    1   A1   B1  NaN  NaN\n    2   A2   B2  NaN  NaN\ndf2 0  NaN  NaN   C0   D0\n    1  NaN  NaN   C1   D1\n    2  NaN  NaN   C2   D2\n\n\n\n\n\npivot\n\nhttps://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pivot.html\n\nMetoda pivot jest używana do przekształcenia danych z formatu “długiego” do “szerokiego”.\nPodstawowe użycie tej metody wygląda następująco:\nDataFrame.pivot(index=None, columns=None, values=None)\nGdzie:\n\nindex: nazwa kolumny lub lista nazw kolumn, które mają stać się indeksem w nowej ramce danych.\ncolumns: nazwa kolumny, z której unikalne wartości mają stać się kolumnami w nowej ramce danych.\nvalues: nazwa kolumny lub lista nazw kolumn, które mają stać się wartościami dla nowych kolumn w nowej ramce danych.\n\n\nimport pandas as pd\n\ndf = pd.DataFrame({\n    'foo': ['one', 'one', 'one', 'two', 'two', 'two'],\n    'bar': ['A', 'B', 'C', 'A', 'B', 'C'],\n    'baz': [1, 2, 3, 4, 5, 6],\n    'zoo': ['x', 'y', 'z', 'q', 'w', 't'],\n})\n\nprint(df)\n\npivot_df = df.pivot(index='foo', columns='bar', values='baz')\nprint(pivot_df)\n\n   foo bar  baz zoo\n0  one   A    1   x\n1  one   B    2   y\n2  one   C    3   z\n3  two   A    4   q\n4  two   B    5   w\n5  two   C    6   t\nbar  A  B  C\nfoo         \none  1  2  3\ntwo  4  5  6\n\n\n\n\nwide_to_long\n\nhttps://pandas.pydata.org/docs/reference/api/pandas.wide_to_long.html\nMetoda wide_to_long jest używana do przekształcenia danych z szerokiego formatu (gdzie każda kolumna zawiera wiele zmiennych) do długiego formatu (gdzie każda kolumna zawiera jedną zmienną z wieloma pomiarami). Jest to przydatne, gdy mamy dane, które są rozłożone w wielu kolumnach z powtarzającymi się lub sekwencyjnymi nazwami, i chcemy przekształcić te dane w sposób, który ułatwia analizę i wizualizację.\nWyjaśnienie parametrów wide_to_long\n\nstubnames: Lista początkowych części nazw kolumn, które mają zostać przekształcone.\ni: Nazwa kolumny lub lista kolumn, które identyfikują poszczególne wiersze. W naszym przykładzie jest to id, które unikalnie identyfikuje osobę.\nj: Nazwa nowej kolumny, w której będą przechowywane różne poziomy zmiennych (w naszym przypadku rok).\nsep: Opcjonalny separator (domyślnie \"\").\n\n\nimport pandas as pd\n\n# Przykładowe dane\ndata = {\n    'id': ['A', 'B', 'C'],\n    'height_2020': [180, 175, 165],\n    'weight_2020': [70, 76, 65],\n    'height_2021': [181, 176, 166],\n    'weight_2021': [71, 77, 66]\n}\n\ndf = pd.DataFrame(data)\n\n# Przekształcenie do formatu długiego\ndf_long = pd.wide_to_long(df, stubnames=['height', 'weight'], i='id', j='year', sep='_')\ndf_long = df_long.reset_index()\n\nprint(df_long)\n\n  id  year  height  weight\n0  A  2020     180      70\n1  B  2020     175      76\n2  C  2020     165      65\n3  A  2021     181      71\n4  B  2021     176      77\n5  C  2021     166      66\n\n\n\n\nmelt\n\n\nhttps://pandas.pydata.org/docs/reference/api/pandas.DataFrame.melt.html\nFunkcja melt służy do przekształcania danych z formatu szerokiego na długi.\nPodstawowe użycie tej metody wygląda następująco:\npandas.melt(frame, id_vars=None, value_vars=None, var_name=None, value_name='value', col_level=None)\nGdzie:\n\nframe: ramka danych, którą chcesz przetworzyć.\nid_vars: kolumna(y), które chcesz zachować jako identyfikatory. Te kolumny nie będą zmieniane.\nvalue_vars: kolumna(y), które chcesz przekształcić na pary klucz-wartość. Jeżeli nie jest podane, wszystkie kolumny nie będące id_vars zostaną użyte.\nvar_name: nazwa nowej kolumny, która będzie zawierała nazwy kolumn przekształconych na pary klucz-wartość. Domyślnie to ‘variable’.\nvalue_name: nazwa nowej kolumny, która będzie zawierała wartości kolumn przekształconych na pary klucz-wartość. Domyślnie to ‘value’.\ncol_level: jeżeli kolumny są wielopoziomowe, to jest poziom, który będzie użyty do przekształcania kolumn na pary klucz-wartość.\n\n\nimport pandas as pd\n\ndf = pd.DataFrame({\n    'A': ['foo', 'bar', 'baz'],\n    'B': ['one', 'one', 'two'],\n    'C': [2.0, 1.0, 3.0],\n    'D': [3.0, 2.0, 1.0]\n})\nprint(df)\nmelted_df = df.melt(id_vars=['A', 'B'], value_vars=['C', 'D'], var_name='My_Var', value_name='My_Val')\nprint(melted_df)\n\n     A    B    C    D\n0  foo  one  2.0  3.0\n1  bar  one  1.0  2.0\n2  baz  two  3.0  1.0\n     A    B My_Var  My_Val\n0  foo  one      C     2.0\n1  bar  one      C     1.0\n2  baz  two      C     3.0\n3  foo  one      D     3.0\n4  bar  one      D     2.0\n5  baz  two      D     1.0",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html",
+    "href": "analizastruktury.html",
+    "title": "24  Analiza struktury",
+    "section": "",
+    "text": "24.1 Miary położenia\nMiary statystyczne\nKlasyfikacja miar statystycznych:",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#miary-położenia",
+    "href": "analizastruktury.html#miary-położenia",
+    "title": "24  Analiza struktury",
+    "section": "",
+    "text": "średnie klasyczne:\n\nśrednia arytmetyczna,\n\nśrednie pozycyjne i kwantyle:\n\ndominanta/moda,\nmediana (kwartyl drugi),\nkwantyle (kwartyle, decyle, percentyle).\n\n\n\n24.1.1 Średnia arytmetyczna\n\\[\\overline{x} = \\frac{1}{n} \\sum_{i=1}^n x_i\\]\nInterpretacja średniej arytmetycznej polega na rozumieniu jej jako reprezentacji “środkowego” lub “typowego” poziomu cechy badanej zbiorowości. Średnia daje ogólne wyobrażenie o danych, ale może być myląca w przypadku obecności skrajnych wartości (outlierów), które mogą znacząco wpływać na jej wartość. Przydatna jest w wielu dziedzinach, od ekonomii po nauki społeczne, jako sposób na podsumowanie danych i porównanie różnych grup lub zestawów danych. Warto pamiętać, że średnia nie zawsze jest najlepszym wyborem dla skośnych rozkładów i może nie odzwierciedlać adekwatnie rozkładu danych, zwłaszcza w obecności skrajnych wartości.\n\nimport pandas as pd\n\n# Przykładowe dane jako seria Pandas\ndane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])\n\n# Obliczanie średniej\nsrednia = dane.mean()\n\nprint(f\"Średnia: {srednia}\")\n\nŚrednia: 55.0\n\n\n\n\n24.1.2 Dominanta\n\nsymbol: \\(Do\\)\ninaczej wartość modalna, moda.\ndla cechy skokowej jest to wartość cechy występująca najczęściej.\ndla cechy ciągłej to wartość cechy, wokół której oscyluje najwięcej pomiarów (argument, dla którego gęstość prawdopodobieństwa przyjmuje wartość największą)\n\n\nimport pandas as pd\n\n# Przykładowe dane dla zmiennej skokowej\ndane_skokowe = pd.Series([1, 2, 2, 3, 3, 3, 4, 4, 4, 4])\n\n# Obliczanie mody\nmoda_skokowa = dane_skokowe.mode()\n\nprint(f\"Moda dla zmiennej skokowej: {moda_skokowa.tolist()}\")\n\nModa dla zmiennej skokowej: [4]\n\n\nUwagi:\n\nnie zawsze można ją określić dokładnie.\nwyznaczenie dominanty ma sens kiedy rozkład jest jednomodalny (jednostki mają jeden punkt skupienia), liczenie jej dla rozkładów wielomodalnych jest błędem.\nnie jest wrażliwa na skrajne wartości jak średnia arytmetyczna.\nw przypadku rozkładu symetrycznego dominanta równa się średniej\n\n\n\n24.1.3 Mediana\n\nsymbol: \\(Me\\)\nmożna ją wyznaczyć dla cech wyrażonych w dowolnej skali poza skalą nominalną.\nwartość cechy jaką ma jednostka w środku uporządkowanego ciągu obserwacji.\ndla nieparzystej liczby obserwacji: wartość dla pozycji \\(\\frac{n+1}{2}\\)\ndla parzystej liczby obserwacji:\n\nwyznaczamy wartości dla pozycji \\(\\frac{n}{2}\\) oraz \\(\\frac{n}{2}+1\\)\nliczymy średnią wartości\n\n\nUwaga: częstym błędem jest mylenie wartości cechy z jej pozycją.\nKod\n\nimport pandas as pd\n\n# Przykładowe dane w DataFrame\ndf = pd.DataFrame({\n    'Kolumna1': [10, 20, 30, 40, 50],\n    'Kolumna2': [15, 25, 35, 45, 55]\n})\n\n# Obliczanie mediany dla każdej kolumny\nmediany = df.median()\n\nprint(\"Mediana dla każdej kolumny:\")\nprint(mediany)\n\nMediana dla każdej kolumny:\nKolumna1    30.0\nKolumna2    35.0\ndtype: float64\n\n\nInterpretacja mediany:\n\nprzynajmniej połowa jednostek jest mniejsza lub równa medianie.\nmediana jest nieczuła na wartości ekstremalne.\n\n\n\n24.1.4 Kwantyle\n\nwartości cechy, które dzielą zbiorowość na określone części pod względem liczby jednostek.\nnajczęściej używane:\n\nkwartyle - dzielą zbiorowość na 4 równe części (kwartyl drugi to mediana)\ndecyle - dzielą zbiorowość na 10 równych części\npercentyle (centyle) - dzielą zbiorowość na 100 równych części.\n\n\nKwartyle\n\nsymbole: \\(Q_1, Q_2, Q_3\\)\n\n\nimport pandas as pd\n\n# Przykładowe dane jako seria Pandas\ndane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])\n\n# Obliczanie kwartylów\nkwartyl_1 = dane.quantile(0.25)  # Pierwszy kwartyl (Q1)\nmediana = dane.quantile(0.50)    # Mediana (Q2)\nkwartyl_3 = dane.quantile(0.75)  # Trzeci kwartyl (Q3)\n\nprint(f\"Pierwszy kwartyl (Q1): {kwartyl_1}\")\nprint(f\"Mediana (Q2): {mediana}\")\nprint(f\"Trzeci kwartyl (Q3): {kwartyl_3}\")\n\nPierwszy kwartyl (Q1): 32.5\nMediana (Q2): 55.0\nTrzeci kwartyl (Q3): 77.5",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#miary-zmienności",
+    "href": "analizastruktury.html#miary-zmienności",
+    "title": "24  Analiza struktury",
+    "section": "24.2 Miary zmienności",
+    "text": "24.2 Miary zmienności\n\npodział:\n\nmiary klasyczne - na podstawie wszystkich obserwacji,\n\nwariancja,\nodchylenie standardowe,\n\nmiary pozycyjne - na podstawie wartości cechy zajmujących określone pozycje,\n\nrozstęp\nrozstęp międzykwartylowy,",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#rozstęp",
+    "href": "analizastruktury.html#rozstęp",
+    "title": "24  Analiza struktury",
+    "section": "24.3 Rozstęp",
+    "text": "24.3 Rozstęp\n\nsymbol \\(R=\\max-\\min\\)\ninaczej empiryczny obszar zmienności, amplituda wahań.\nróżnica między wartością maksymalną a wartością minimalną.\n\n\nimport pandas as pd\n\n# Przykładowe dane jako seria Pandas\ndane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])\n\n# Obliczanie maksimum i minimum\nmaksimum = dane.max()\nminimum = dane.min()\n\n# Obliczanie różnicy między maksimum a minimum\nroznica = maksimum - minimum\n\nprint(f\"Maksimum: {maksimum}\")\nprint(f\"Minimum: {minimum}\")\nprint(f\"Różnica między maksimum a minimum: {roznica}\")\n\nMaksimum: 100\nMinimum: 10\nRóżnica między maksimum a minimum: 90",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#rozstęp-międzykwartylowy",
+    "href": "analizastruktury.html#rozstęp-międzykwartylowy",
+    "title": "24  Analiza struktury",
+    "section": "24.4 Rozstęp międzykwartylowy",
+    "text": "24.4 Rozstęp międzykwartylowy\n\nsymbol \\(R_Q=Q_3-Q_1\\)\nróżnica pomiędzy kwartyle trzecim a kwartylem pierwszym.\nmierzy zakres 50% środkowych jednostek.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#odchylenie-ćwiartkowe",
+    "href": "analizastruktury.html#odchylenie-ćwiartkowe",
+    "title": "24  Analiza struktury",
+    "section": "24.5 Odchylenie ćwiartkowe",
+    "text": "24.5 Odchylenie ćwiartkowe\n\nwzór: \\(Q=\\frac{Q_3-Q_1}{2}\\)\npołowa rozstępu międzykwartylowego.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#wariancja",
+    "href": "analizastruktury.html#wariancja",
+    "title": "24  Analiza struktury",
+    "section": "24.6 Wariancja",
+    "text": "24.6 Wariancja\nWariancja informuje o tym, jak duże jest zróżnicowanie wyników w danym zbiorze wartości cechy. Inaczej mówiąc, czy wyniki są bardziej skoncentrowane wokół średniej, czy są małe różnice pomiędzy średnią a poszczególnymi wynikami czy może rozproszenie wyników jest duże, duża jest różnica poszczególnych wyników od średniej.\n\nwzór: \\(s^2=\\frac{\\sum\\limits_{i=1}^n (x_i-\\overline{x})^2}{n}\\) (populacja) lub \\(s^2=\\frac{\\sum\\limits_{i=1}^n (x_i-\\overline{x})^2}{n-1}\\) (próba)",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#odchylenie-standardowe",
+    "href": "analizastruktury.html#odchylenie-standardowe",
+    "title": "24  Analiza struktury",
+    "section": "24.7 Odchylenie standardowe",
+    "text": "24.7 Odchylenie standardowe\nOdchylenie standardowe mierzy zróżnicowanie o mianie zgodnym z mianem badanej cechy, daje przeciętne różnice poszczególnych wartości cechy od średniej arytmetycznej.\n\nwzór: \\(s=\\sqrt{s^2}\\)\n\n\nimport pandas as pd\n\n# Przykładowe dane jako seria Pandas\ndane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])\n\n# Obliczanie wariancji\nwariancja = dane.var()  # Uwaga: Pandas domyślnie dzieli przez (n-1), co odpowiada wariancji z próby\n\n# Obliczanie odchylenia standardowego\nodchylenie_standardowe = dane.std()  # Domyślnie liczone z próby (n-1)\n\nprint(f\"Wariancja: {wariancja}\")\nprint(f\"Odchylenie standardowe: {odchylenie_standardowe}\")\n\nWariancja: 916.6666666666666\nOdchylenie standardowe: 30.276503540974915\n\n\nW praktyce często zakłada się, że dane mają rozkład normalny. Założenie to nigdy nie jest całkowicie spełnione. Rozkład normalny ma bowiem niezerową gęstość prawdopodobieństwa dla każdej wartości ze zbioru liczb rzeczywistych, a w realnym świecie wartości zmiennych losowych są zawsze ograniczone, na przykład nie istnieją ludzie o ujemnym wzroście. Bardzo często jednak założenie to jest spełnione z wystarczająco dobrym przybliżeniem. Im lepiej jest ono uzasadnione, tym bliższe prawdy mogą być poniższe stwierdzenia:\n\n68% wartości cechy leży w odległości \\(\\leqslant s\\) od wartości oczekiwanej\n95,5% wartości cechy leży w odległości \\(\\leqslant 2s\\) od wartości oczekiwanej\n99,7% wartości cechy leży w odległości \\(\\leqslant 3s\\) od wartości oczekiwanej.\n\nhttps://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#miary-asymetrii",
+    "href": "analizastruktury.html#miary-asymetrii",
+    "title": "24  Analiza struktury",
+    "section": "24.8 Miary asymetrii",
+    "text": "24.8 Miary asymetrii\nJak rozpoznać typ rozkładu?\n\nrozkład symetryczny \\[\\overline{x} =Me=Do\\]\nrozkład o asymetrii prawostronnej \\[\\overline{x} &gt;Me&gt;Do\\]\nrozkład o asymetrii lewostronnej \\[\\overline{x}&lt;Me&lt;Do\\]\nklasyczny współczynnik asymetrii\nwzór: \\[A_s=\\frac{m_3}{(s^2)^{\\frac{3}{2}}}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#miary-koncentracji",
+    "href": "analizastruktury.html#miary-koncentracji",
+    "title": "24  Analiza struktury",
+    "section": "24.9 Miary koncentracji",
+    "text": "24.9 Miary koncentracji\nWspółczynnik kurtozy\n\ninaczej współczynnik koncentracji, współczynnik spłaszczenia.\nwzór: \\[K=\\frac{m_4}{s^4} \\qquad \\qquad m_4=\\frac{\\sum\\limits_{i=1}^n (x_i-\\overline{x})^4}{n}\\]\n\nInterpretacja kurtozy\n\n\\(K=3\\) - rozkłada ma taką koncentrację jak rozkład normalny\n\\(K&gt;3\\) - koncentracja silniejsza\n\\(K&lt;3\\) - koncentracja słabsza\n\nCzasem bada się współczynnik ekcesu \\(K’=K-3\\).\nWysoka kurtoza oznacza większą liczbę wartości ekstremalnych (skrajnych), natomiast niska kurtoza wskazuje na rozkład bardziej płaski niż normalny.\n\nimport pandas as pd\n\n# Przykładowe dane w serii\ndane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])\n\n# Obliczanie skośności\nskosnosc = dane.skew()\n\n# Obliczanie kurtozy\nkurtoza = dane.kurt()\n\nprint(f\"Skośność: {skosnosc}\")\nprint(f\"Kurtoza: {kurtoza}\")\n\nSkośność: 0.0\nKurtoza: -1.2000000000000002",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  },
+  {
+    "objectID": "analizastruktury.html#przyśpieszanie-działania",
+    "href": "analizastruktury.html#przyśpieszanie-działania",
+    "title": "24  Analiza struktury",
+    "section": "24.10 Przyśpieszanie działania:",
+    "text": "24.10 Przyśpieszanie działania:\nimport pandas as pd\nimport numpy as np\n\n# Tworzymy ramkę danych\ndata = {\n    \"Produkt\": [\"A\", \"B\", \"A\", \"C\", \"B\", \"A\", \"C\", \"B\", \"A\", \"C\"],\n    \"Sprzedaż\": [200, 150, 250, 300, 200, 220, 310, 180, 240, 290],\n    \"Koszt\": [120, 100, 140, 180, 110, 130, 190, 105, 125, 170],\n    \"Marża\": [80, 50, 110, 120, 90, 90, 120, 75, 115, 120],\n}\n\ndf = pd.DataFrame(data)\nprint(df)\nRamka danych:\n\n\n\nProdukt\nSprzedaż\nKoszt\nMarża\n\n\n\n\nA\n200\n120\n80\n\n\nB\n150\n100\n50\n\n\nA\n250\n140\n110\n\n\nC\n300\n180\n120\n\n\nB\n200\n110\n90\n\n\nA\n220\n130\n90\n\n\nC\n310\n190\n120\n\n\nB\n180\n105\n75\n\n\nA\n240\n125\n115\n\n\nC\n290\n170\n120\n\n\n\nŚrednia dla wybranych dwóch kolumn\n# Obliczamy średnią dla kolumn \"Sprzedaż\" i \"Koszt\"\nmean_values = df[[\"Sprzedaż\", \"Koszt\"]].mean()\nprint(mean_values)\nFunkcja describe()\n# Generujemy opisowe statystyki dla danych liczbowych\ndescription = df.describe()\nprint(description)\nDziałanie funkcji agg\nFunkcja agg pozwala na zastosowanie różnych miar dla wielu kolumn.\n# Zastosowanie funkcji agregujących\nagg_results = df[[\"Sprzedaż\", \"Koszt\"]].agg([\"mean\", \"sum\", \"max\"])\nprint(agg_results)\nDziałanie groupby\nGrupowanie danych według kolumny kategorycznej (np. “Produkt”).\n# Grupowanie i obliczanie średniej\ngrouped = df.groupby(\"Produkt\")[[\"Sprzedaż\", \"Koszt\"]].mean()\nprint(grouped)\nOpcja numeric_only=True\nOpcja numeric_only=True pozwala analizować tylko kolumny liczbowe, pomijając kategoryczne.\n# Obliczanie sumy tylko dla kolumn liczbowych\nnumeric_sum = df.sum(numeric_only=True)\nprint(numeric_sum)\nĆwiczenia: (ex11.py - ex20.py)\nSprawdź, dla których plików wygodnie jest liczenie odpowiednich charakerystyk.\nhttps://github.com/pjastr/SamleTestFilesVD",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Analiza struktury</span>"
+    ]
+  }
+]

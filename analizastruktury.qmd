@@ -1,0 +1,382 @@
+# Analiza struktury
+
+Miary statystyczne
+
+* to charakterystyki liczbowe pozwalające opisać właściwości rozkładu badanej cechy.
+* inne nazwy:
+    + parametry - dane analizowane z całej populacji,
+    + statystyki próby - dane analizowane z próby.
+
+**Klasyfikacja miar statystycznych:**
+
+* miary położenia (miary poziomu, miary przeciętne) - pozwalają określić gdzie w zbiorze wartości znajdują się dane pochodzące z obserwacji,
+* miary zróżnicowania (miary rozproszenia, zmienności, rozrzutu, dyspersji) - pozwalają określić zróżnicowanie jednostek,
+* miary asymetrii (miary skośności) - pozwalają określić asymetrię (czy większość jednostek ma wartości większe lub mniejsze względem przeciętnego poziomu),
+* miary koncentracji - pozwalają określić skupienie wartości względem średniej.
+
+## Miary położenia
+
+* średnie klasyczne:
+    + średnia arytmetyczna,
+* średnie pozycyjne i kwantyle:
+    + dominanta/moda,
+    + mediana (kwartyl drugi),
+    + kwantyle (kwartyle, decyle, percentyle).
+
+### Średnia arytmetyczna
+
+
+$$\overline{x} = \frac{1}{n} \sum_{i=1}^n x_i$$
+
+
+Interpretacja średniej arytmetycznej polega na rozumieniu jej jako reprezentacji "środkowego" lub "typowego" poziomu cechy badanej zbiorowości.
+Średnia daje ogólne wyobrażenie o danych, ale może być myląca w przypadku obecności skrajnych wartości (outlierów), które mogą znacząco wpływać na jej wartość. Przydatna jest w wielu dziedzinach, od ekonomii po nauki społeczne, jako sposób na podsumowanie danych i porównanie różnych grup lub zestawów danych. Warto pamiętać, że średnia nie zawsze jest najlepszym wyborem dla skośnych rozkładów i może nie odzwierciedlać adekwatnie rozkładu danych, zwłaszcza w obecności skrajnych wartości.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Przykładowe dane jako seria Pandas
+dane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+
+# Obliczanie średniej
+srednia = dane.mean()
+
+print(f"Średnia: {srednia}")
+
+```
+
+
+### Dominanta
+
+* symbol: $Do$
+* inaczej wartość modalna, moda.
+* dla cechy skokowej jest to wartość cechy występująca najczęściej.
+* dla cechy ciągłej to wartość cechy, wokół której oscyluje najwięcej pomiarów (argument, dla którego gęstość prawdopodobieństwa przyjmuje wartość największą)
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Przykładowe dane dla zmiennej skokowej
+dane_skokowe = pd.Series([1, 2, 2, 3, 3, 3, 4, 4, 4, 4])
+
+# Obliczanie mody
+moda_skokowa = dane_skokowe.mode()
+
+print(f"Moda dla zmiennej skokowej: {moda_skokowa.tolist()}")
+
+```
+
+
+**Uwagi:**
+
+* nie zawsze można ją określić dokładnie.
+* wyznaczenie dominanty ma sens kiedy rozkład jest jednomodalny (jednostki mają jeden punkt skupienia), liczenie jej dla rozkładów wielomodalnych jest błędem.
+* nie jest wrażliwa na skrajne wartości jak średnia arytmetyczna.
+* w przypadku rozkładu symetrycznego dominanta równa się średniej
+
+### Mediana
+
+* symbol: $Me$
+* można ją wyznaczyć dla cech wyrażonych w dowolnej skali poza skalą nominalną.
+* wartość cechy jaką ma jednostka w środku uporządkowanego ciągu obserwacji.
+* dla nieparzystej liczby obserwacji: wartość dla pozycji $\frac{n+1}{2}$
+* dla parzystej liczby obserwacji:
+    + wyznaczamy wartości dla pozycji $\frac{n}{2}$ oraz $\frac{n}{2}+1$
+    + liczymy średnią wartości
+    
+Uwaga: częstym błędem jest mylenie wartości cechy z jej pozycją.
+
+**Kod**
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Przykładowe dane w DataFrame
+df = pd.DataFrame({
+    'Kolumna1': [10, 20, 30, 40, 50],
+    'Kolumna2': [15, 25, 35, 45, 55]
+})
+
+# Obliczanie mediany dla każdej kolumny
+mediany = df.median()
+
+print("Mediana dla każdej kolumny:")
+print(mediany)
+
+```
+
+**Interpretacja mediany:**
+
+* przynajmniej połowa jednostek jest mniejsza lub równa medianie.
+* mediana jest nieczuła na wartości ekstremalne.
+
+### Kwantyle
+
+* wartości cechy, które dzielą zbiorowość na określone części pod względem liczby jednostek.
+* najczęściej używane:
+    + kwartyle - dzielą zbiorowość na 4 równe części (kwartyl drugi to mediana)
+    + decyle - dzielą zbiorowość na 10 równych części
+    + percentyle (centyle) - dzielą zbiorowość na 100 równych części.
+
+**Kwartyle**
+
+* symbole: $Q_1, Q_2, Q_3$
+
+```{python}
+#| echo: true
+
+import pandas as pd
+
+# Przykładowe dane jako seria Pandas
+dane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+
+# Obliczanie kwartylów
+kwartyl_1 = dane.quantile(0.25)  # Pierwszy kwartyl (Q1)
+mediana = dane.quantile(0.50)    # Mediana (Q2)
+kwartyl_3 = dane.quantile(0.75)  # Trzeci kwartyl (Q3)
+
+print(f"Pierwszy kwartyl (Q1): {kwartyl_1}")
+print(f"Mediana (Q2): {mediana}")
+print(f"Trzeci kwartyl (Q3): {kwartyl_3}")
+
+```
+## Miary zmienności
+
+* podział:
+    + miary klasyczne - na podstawie wszystkich obserwacji,
+        * wariancja,
+        * odchylenie standardowe,
+    + miary pozycyjne - na podstawie wartości cechy zajmujących określone pozycje,
+        * rozstęp
+        * rozstęp międzykwartylowy,
+
+
+## Rozstęp
+
+* symbol $R=\max-\min$
+* inaczej empiryczny obszar zmienności, amplituda wahań.
+* różnica między wartością maksymalną a wartością minimalną.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Przykładowe dane jako seria Pandas
+dane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+
+# Obliczanie maksimum i minimum
+maksimum = dane.max()
+minimum = dane.min()
+
+# Obliczanie różnicy między maksimum a minimum
+roznica = maksimum - minimum
+
+print(f"Maksimum: {maksimum}")
+print(f"Minimum: {minimum}")
+print(f"Różnica między maksimum a minimum: {roznica}")
+
+```
+
+## Rozstęp międzykwartylowy
+
+* symbol $R_Q=Q_3-Q_1$
+* różnica pomiędzy kwartyle trzecim a kwartylem pierwszym.
+* mierzy zakres 50% środkowych jednostek.
+
+
+
+## Odchylenie ćwiartkowe
+
+* wzór: $Q=\frac{Q_3-Q_1}{2}$
+* połowa rozstępu międzykwartylowego.
+
+
+
+
+
+
+## Wariancja
+
+Wariancja informuje o tym, jak duże jest zróżnicowanie wyników w danym zbiorze wartości cechy. Inaczej mówiąc, czy wyniki są bardziej skoncentrowane wokół średniej, czy są małe różnice pomiędzy średnią a poszczególnymi wynikami czy może rozproszenie wyników jest duże, duża jest różnica poszczególnych wyników od średniej.
+
+* wzór: $s^2=\frac{\sum\limits_{i=1}^n (x_i-\overline{x})^2}{n}$ (populacja) lub $s^2=\frac{\sum\limits_{i=1}^n (x_i-\overline{x})^2}{n-1}$ (próba)
+
+
+
+## Odchylenie standardowe
+
+Odchylenie standardowe mierzy zróżnicowanie o mianie zgodnym z mianem badanej cechy, daje przeciętne różnice poszczególnych wartości cechy od średniej arytmetycznej.
+
+* wzór: $s=\sqrt{s^2}$
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Przykładowe dane jako seria Pandas
+dane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+
+# Obliczanie wariancji
+wariancja = dane.var()  # Uwaga: Pandas domyślnie dzieli przez (n-1), co odpowiada wariancji z próby
+
+# Obliczanie odchylenia standardowego
+odchylenie_standardowe = dane.std()  # Domyślnie liczone z próby (n-1)
+
+print(f"Wariancja: {wariancja}")
+print(f"Odchylenie standardowe: {odchylenie_standardowe}")
+
+
+```
+
+
+W praktyce często zakłada się, że dane mają rozkład normalny. Założenie to nigdy nie jest całkowicie spełnione. Rozkład normalny ma bowiem niezerową gęstość prawdopodobieństwa dla każdej wartości ze zbioru liczb rzeczywistych, a w realnym świecie wartości zmiennych losowych są zawsze ograniczone, na przykład nie istnieją ludzie o ujemnym wzroście. Bardzo często jednak założenie to jest spełnione z wystarczająco dobrym przybliżeniem. Im lepiej jest ono uzasadnione, tym bliższe prawdy mogą być poniższe stwierdzenia:
+
+* 68% wartości cechy leży w odległości $\leqslant s$ od wartości oczekiwanej
+* 95,5% wartości cechy leży w odległości $\leqslant 2s$ od wartości oczekiwanej
+* 99,7% wartości cechy leży w odległości $\leqslant 3s$ od wartości oczekiwanej.
+
+<https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule>
+
+
+## Miary asymetrii
+
+**Jak rozpoznać typ rozkładu?**
+
+* rozkład symetryczny
+$$\overline{x} =Me=Do$$
+
+* rozkład o asymetrii prawostronnej
+$$\overline{x} >Me>Do$$
+
+* rozkład o asymetrii lewostronnej
+$$\overline{x}<Me<Do$$
+
+
+* klasyczny współczynnik asymetrii
+* wzór: $$A_s=\frac{m_3}{(s^2)^{\frac{3}{2}}}$$
+
+## Miary koncentracji
+
+
+Współczynnik kurtozy
+
+* inaczej współczynnik koncentracji, współczynnik spłaszczenia.
+* wzór: 
+$$K=\frac{m_4}{s^4} \qquad \qquad m_4=\frac{\sum\limits_{i=1}^n (x_i-\overline{x})^4}{n}$$
+
+
+**Interpretacja kurtozy**
+
+* $K=3$ - rozkłada ma taką koncentrację jak rozkład normalny
+* $K>3$ - koncentracja silniejsza
+* $K<3$ - koncentracja słabsza
+
+Czasem bada się współczynnik ekcesu $K’=K-3$.
+
+Wysoka kurtoza oznacza większą liczbę wartości ekstremalnych (skrajnych), natomiast niska kurtoza wskazuje na rozkład bardziej płaski niż normalny.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Przykładowe dane w serii
+dane = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+
+# Obliczanie skośności
+skosnosc = dane.skew()
+
+# Obliczanie kurtozy
+kurtoza = dane.kurt()
+
+print(f"Skośność: {skosnosc}")
+print(f"Kurtoza: {kurtoza}")
+```
+
+## Przyśpieszanie działania:
+
+
+
+```python
+import pandas as pd
+import numpy as np
+
+# Tworzymy ramkę danych
+data = {
+    "Produkt": ["A", "B", "A", "C", "B", "A", "C", "B", "A", "C"],
+    "Sprzedaż": [200, 150, 250, 300, 200, 220, 310, 180, 240, 290],
+    "Koszt": [120, 100, 140, 180, 110, 130, 190, 105, 125, 170],
+    "Marża": [80, 50, 110, 120, 90, 90, 120, 75, 115, 120],
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+
+**Ramka danych:**
+
+| Produkt | Sprzedaż | Koszt | Marża |
+|---------|----------|-------|-------|
+| A       | 200      | 120   | 80    |
+| B       | 150      | 100   | 50    |
+| A       | 250      | 140   | 110   |
+| C       | 300      | 180   | 120   |
+| B       | 200      | 110   | 90    |
+| A       | 220      | 130   | 90    |
+| C       | 310      | 190   | 120   |
+| B       | 180      | 105   | 75    |
+| A       | 240      | 125   | 115   |
+| C       | 290      | 170   | 120   |
+
+Średnia dla wybranych dwóch kolumn
+
+```python
+# Obliczamy średnią dla kolumn "Sprzedaż" i "Koszt"
+mean_values = df[["Sprzedaż", "Koszt"]].mean()
+print(mean_values)
+```
+Funkcja `describe()`
+
+```python
+# Generujemy opisowe statystyki dla danych liczbowych
+description = df.describe()
+print(description)
+```
+
+Działanie funkcji `agg`
+
+Funkcja `agg` pozwala na zastosowanie różnych miar dla wielu kolumn.
+
+```python
+# Zastosowanie funkcji agregujących
+agg_results = df[["Sprzedaż", "Koszt"]].agg(["mean", "sum", "max"])
+print(agg_results)
+```
+
+Działanie `groupby`
+
+Grupowanie danych według kolumny kategorycznej (np. "Produkt").
+
+```python
+# Grupowanie i obliczanie średniej
+grouped = df.groupby("Produkt")[["Sprzedaż", "Koszt"]].mean()
+print(grouped)
+```
+
+Opcja `numeric_only=True`
+
+Opcja `numeric_only=True` pozwala analizować tylko kolumny liczbowe, pomijając kategoryczne.
+
+```python
+# Obliczanie sumy tylko dla kolumn liczbowych
+numeric_sum = df.sum(numeric_only=True)
+print(numeric_sum)
+```
+
+**Ćwiczenia:** (`ex11.py` - `ex20.py`)
+
+Sprawdź, dla których plików wygodnie jest liczenie odpowiednich charakerystyk.
+
+<https://github.com/pjastr/SamleTestFilesVD>

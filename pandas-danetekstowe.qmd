@@ -1,0 +1,128 @@
+# Pandas - dane tekstowe
+
+## Normalizacja
+
+Normalizacja danych tekstowych polega na przekształceniu tekstu w jednolity i porównywalny format. W Pandas można to osiągnąć poprzez zastosowanie różnych operacji na kolumnach zawierających dane tekstowe. 
+
+Stare podejście (na piechotę, pełna kontrola):
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Przykładowa ramka danych
+df = pd.DataFrame({
+    'Text': ['  Hello World  ', 'Pandas  Library43', '   Data   Science  ']
+})
+
+# Usunięcie białych znaków
+df['Text'] = df['Text'].str.strip()
+print(df)
+# Konwersja do małych liter
+df['Text'] = df['Text'].str.lower()
+print(df)
+# Konwersja do wielkich liter
+df['Text'] = df['Text'].str.upper()
+print(df)
+# Usunięcie znaków specjalnych
+df['Text'] = df['Text'].str.replace(r'[^\w\s]', '', regex=True)
+print(df)
+# Usunięcie liczb
+df['Text'] = df['Text'].str.replace(r'\d+', '', regex=True)
+print(df)
+# Usunięcie duplikatów
+df = df.drop_duplicates(subset='Text')
+print(df)
+
+```
+
+Nowsza wersja (wygodna, ale w detalach trudna)
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Utworzenie przykładowej serii z różnymi formami zapisu tego samego tekstu
+s = pd.Series(['café', 'cafe\u0301', 'café'])
+
+# Normalizacja do jednolitej formy
+normalized = s.str.normalize('NFC')
+
+# Sprawdzenie czy wszystkie wartości są teraz identyczne
+print(normalized.nunique())  # Powinno zwrócić 1
+```
+
+Inne opcje: `‘NFC’, ‘NFKC’, ‘NFD’, ‘NFKD’`
+
+## Operacje wektorowe na tekstach
+
+Oto tabela w języku Markdown wyjaśniająca funkcje z **`pandas.Series.str`** i ich zastosowanie:
+
+| Funkcja             | Opis                                                                                     |
+|---------------------|------------------------------------------------------------------------------------------|
+| **`len()`**         | Zwraca długość każdego ciągu znaków w serii.                                             |
+| **`lower()`**       | Konwertuje wszystkie znaki na małe litery.                                               |
+| **`translate()`**   | Zastępuje znaki według podanej mapy translacji.                                          |
+| **`islower()`**     | Sprawdza, czy wszystkie znaki w ciągu są małymi literami.                                |
+| **`ljust()`**       | Justuje tekst w lewo, wypełniając go określonym znakiem do zadanej szerokości.           |
+| **`upper()`**       | Konwertuje wszystkie znaki na wielkie litery.                                            |
+| **`startswith()`**  | Sprawdza, czy ciąg znaków zaczyna się od podanego prefiksu.                              |
+| **`isupper()`**     | Sprawdza, czy wszystkie znaki w ciągu są wielkimi literami.                              |
+| **`rjust()`**       | Justuje tekst w prawo, wypełniając go określonym znakiem do zadanej szerokości.          |
+| **`find()`**        | Zwraca indeks pierwszego wystąpienia podciągu; zwraca `-1`, jeśli podciąg nie istnieje.  |
+| **`endswith()`**    | Sprawdza, czy ciąg znaków kończy się podanym sufiksem.                                   |
+| **`isnumeric()`**   | Sprawdza, czy ciąg zawiera tylko znaki numeryczne.                                       |
+| **`center()`**      | Centruje tekst, wypełniając go określonym znakiem do zadanej szerokości.                 |
+| **`rfind()`**       | Zwraca indeks ostatniego wystąpienia podciągu; zwraca `-1`, jeśli podciąg nie istnieje.  |
+| **`isalnum()`**     | Sprawdza, czy ciąg zawiera tylko litery i cyfry.                                         |
+| **`isdecimal()`**   | Sprawdza, czy ciąg zawiera tylko znaki dziesiętne.                                       |
+| **`zfill()`**       | Wypełnia ciąg zerami z lewej strony, aby osiągnąć określoną długość.                     |
+| **`index()`**       | Zwraca indeks pierwszego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje. |
+| **`isalpha()`**     | Sprawdza, czy ciąg zawiera tylko litery.                                                 |
+| **`split()`**       | Dzieli ciąg na listę podciągów na podstawie separatora (domyślnie spacja).               |
+| **`strip()`**       | Usuwa białe znaki (lub inne wskazane znaki) z obu stron ciągu.                           |
+| **`rindex()`**      | Zwraca indeks ostatniego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje. |
+| **`isdigit()`**     | Sprawdza, czy ciąg zawiera tylko cyfry.                                                  |
+| **`rsplit()`**      | Dzieli ciąg od prawej strony na listę podciągów na podstawie separatora (domyślnie spacja). |
+| **`rstrip()`**      | Usuwa białe znaki (lub inne wskazane znaki) z prawej strony ciągu.                       |
+| **`capitalize()`**  | Zmienia pierwszą literę na wielką, a resztę na małe.                                     |
+| **`isspace()`**     | Sprawdza, czy ciąg zawiera tylko białe znaki.                                            |
+| **`partition()`**   | Dzieli ciąg na trzy części: przed separator, separator i po separatorze.                 |
+| **`lstrip()`**      | Usuwa białe znaki (lub inne wskazane znaki) z lewej strony ciągu.                        |
+| **`swapcase()`**    | Zmienia wielkość liter na przeciwną (małe na wielkie i odwrotnie).                       |
+| **`istitle()`**     | Sprawdza, czy ciąg jest sformatowany jako tytuł (pierwsze litery wyrazów są wielkie).     |
+| **`rpartition()`**  | Dzieli ciąg na trzy części od prawej strony: przed separator, separator i po separatorze.|
+
+
+Zwykle operacje wektorowe są szybsze:
+
+```{python}
+#| echo: true
+import pandas as pd
+import time
+
+# Tworzenie przykładowej ramki danych z 2000000 wierszami
+data = {'Text': ['Pandas is awesome'] * 2000000}
+df = pd.DataFrame(data)
+
+# Funkcja, która konwertuje tekst na małe litery (przykładowa operacja)
+def to_lower(text):
+    return text.lower()
+
+# 1. Operacja wektorowa
+start_vectorized = time.time()
+df['Vectorized'] = df['Text'].str.lower()
+end_vectorized = time.time()
+
+# 2. Operacja z list comprehension
+start_comprehension = time.time()
+df['Comprehension'] = [to_lower(text) for text in df['Text']]
+end_comprehension = time.time()
+
+# Czasy wykonania
+vectorized_time = end_vectorized - start_vectorized
+comprehension_time = end_comprehension - start_comprehension
+
+# Wynik
+print(vectorized_time, comprehension_time)
+```

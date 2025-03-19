@@ -1,0 +1,108 @@
+# Pandas - szeregi czasowe
+
+Zamiana stringu na format `datetime` (dato-czasowy)
+
+```{python}
+#| echo: true
+import pandas as pd
+
+data = {'date': ['2023-01-01', '2023-01-02', '2023-01-03'], 'value': [10, 15, 20]}  # <1>
+df = pd.DataFrame(data)                                                             # <2>
+df['date'] = pd.to_datetime(df['date'])                                             # <3>
+print(data)
+```
+
+1. Przykładowy słownik jak baza do ramki danych.
+2. Przekształcenie na ramkę danych.
+3. Zamiana kolumny na format `datetime`.
+
+Argument `errors` w funkcji `pd.to_datetime` kontroluje, jak funkcja ma się zachować, gdy napotka nieprawidłowe dane podczas próby konwersji wartości na obiekty `datetime`. Możliwe wartości dla `errors` to:
+
+1. **`'raise'`** (domyślnie): Rzuca wyjątek, jeśli napotka nieprawidłowy format danych.
+2. **`'coerce'`**: Zastępuje nieprawidłowe wartości `NaT` (Not a Time).
+3. **`'ignore'`**: Zwraca dane wejściowe bez zmian, gdy napotka błąd (opcja wycofana w kolejnych wersjach).
+
+Kod do wklejenia do środowiska:
+
+```python
+data = {'date': ['2023-01-01', 'invalid', '2023-01-03'], 'value': [10, 15, 20]}
+df = pd.DataFrame(data)
+df['date'] = pd.to_datetime(df['date'], errors='ignore')
+```
+
+Argument `format` w funkcji `pandas.to_datetime` pozwala określić dokładny format daty i czasu, który ma zostać użyty do parsowania wartości wejściowych. Jest to przydatne, gdy dane wejściowe mają stały, specyficzny format, co może przyspieszyć przetwarzanie i zmniejszyć ryzyko błędnej interpretacji dat.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+# Przykładowe dane wejściowe z różnymi formatami
+data1 = ['01-01-2025', '15-03-2025', '30-12-2025']  # Format: DD-MM-YYYY
+data2 = ['2025/01/01', '2025/03/15', '2025/12/30']  # Format: YYYY/MM/DD
+
+# Konwersja z określonym formatem (DD-MM-YYYY)
+df1 = pd.DataFrame(data1)
+df1[0] = pd.to_datetime(df1[0], format='%d-%m-%Y')
+print("Konwersja z formatem '%d-%m-%Y':")
+print(df1)
+
+# Konwersja z określonym formatem (YYYY/MM/DD)
+df2 = pd.DataFrame(data2)
+df2[0] = pd.to_datetime(df2[0], format='%Y/%m/%d')
+print("\nKonwersja z formatem '%Y/%m/%d':")
+print(df2)
+
+```
+
+| Kod formatu | Opis                            | Przykład             |
+|-------------|----------------------------------|----------------------|
+| `%Y`        | Rok w formacie 4-cyfrowym       | 2025                |
+| `%y`        | Rok w formacie 2-cyfrowym       | 25                  |
+| `%m`        | Miesiąc (cyfry, 2-cyfrowe)      | 01 (styczeń), 12 (grudzień) |
+| `%d`        | Dzień miesiąca (2-cyfrowe)      | 01, 15, 31          |
+| `%B`        | Pełna nazwa miesiąca            | January, December   |
+| `%b`        | Skrót nazwy miesiąca            | Jan, Dec            |
+| `%A`        | Pełna nazwa dnia tygodnia       | Monday, Sunday      |
+| `%a`        | Skrót nazwy dnia tygodnia       | Mon, Sun            |
+| `%H`        | Godzina w formacie 24-godzinnym | 00, 12, 23          |
+| `%I`        | Godzina w formacie 12-godzinnym | 01, 11              |
+| `%p`        | AM/PM                           | AM, PM              |
+| `%M`        | Minuty                          | 00, 30, 59          |
+| `%S`        | Sekundy                         | 00, 30, 59          |
+
+Polskie nazwy miesięcy w mianowniku lub skrócie:
+
+```{python}
+#| echo: true
+import pandas as pd
+import locale
+
+locale.setlocale(locale.LC_ALL, 'PL')
+# locale.setlocale(locale.LC_TIME, 'pl_PL.UTF-8')  # Na systemach Linux/Mac
+# locale.setlocale(locale.LC_TIME, 'Polish_Poland.1250')  # Na Windows
+
+data = ['10 styczeń 2025', '15 grudzień 2025', '5 marzec 2025']
+df = pd.DataFrame(data)
+df[0] = pd.to_datetime(df[0], format='%d %B %Y')
+print(df)
+data2 = ['10 sty 2025', '15 gru 2025', '5 mar 2025']
+df2 = pd.DataFrame(data2)
+df2[0] = pd.to_datetime(df2[0], format='%d %b %Y')
+print(df2)
+```
+
+**Ćwiczenie:** (`extime.py`)
+
+Załaduj poniższe pliki i przekształć kolumnę z datą:
+
+* <https://github.com/pjastr/SamleTestFilesVD/blob/master/ex/date_sale.csv>
+
+* <https://github.com/pjastr/SamleTestFilesVD/blob/master/ex/date_temp.csv>
+
+Wskazówka:
+
+```python
+import pandas as pd
+
+data = pd.read_csv("date_sale.csv",  parse_dates=["Sale_Date"], date_format="%d-%m-%Y")
+```

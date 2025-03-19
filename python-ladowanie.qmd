@@ -1,0 +1,44 @@
+# Ładowanie danych
+
+## Obsługa  plików csv
+
+
+Funkcja `pandas.read_csv`
+
+Dokumentacja: [link](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)
+
+Wybrane argumenty:
+
+* `filepath` - ścieżka dostępu
+* `sep=_NoDefault.no_default, delimiter=None` - separator
+* `header='infer'` - nagłówek - domyślnie nazwy kolumn, ew. `header=None` oznacza brak nagłówka
+* `index_col=None` - ustalenie kolumny na indeksy (nazwy wierszy)
+* `thousands=None` - separator tysięczny
+* `decimal='.'` - separator dziesiętny
+
+Zapis `pandas.DataFrame.to_csv`
+
+Dokumentacja: [link](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html)
+
+## Obsługa  plików z Excela
+
+Funkcja `pandas.read_excel`
+
+<https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html>
+
+** Ważne: trzeba zainstalować bibliotekę `openpyxl` do importu .xlsx oraz `xlrd` do importu .xls (nie trzeba ich importować w kodzie jawnie w większości wypadków)
+
+Wybrane argumenty:
+
+* `io` - ścieżka dostępu
+* `sheet_name=0` - nazwa arkusza
+* `header='infer'` - nagłówek - domyślnie nazwy kolumn, ew. `header=None` oznacza brak nagłówka
+* `index_col=None` - ustalenie kolumny na indeksy (nazwy wierszy)
+* `thousands=None` - separator tysięczny
+* `decimal='.'` - separator dziesiętny
+
+**Ćwiczenie:** (`ex10.py`)
+
+Poćwicz ładowanie danych z plików
+
+* <https://github.com/pjastr/SamleTestFilesVD>
