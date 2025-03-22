@@ -28,13 +28,12 @@ Ramka danych - DataFrame
 ```{python}
 #| echo: true
 import pandas as pd
-import numpy as np
 
 s = pd.Series([3, -5, 7, 4])
 print(s)
 print("values")
-print(s.values)
-print(type(s.values))
+print(s.to_numpy())
+print(type(s.to_numpy()))
 print(s.index)
 print(type(s.index))
 
@@ -95,8 +94,8 @@ data = {'Country': ['Belgium', 'India', 'Brazil'],
         'Population': [11190846, 1303171035, 207847528]}
 frame = pd.DataFrame(data)
 print(frame)
-df = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])
-print(df)
+data2 = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])
+print(data2)
 
 ```
 
@@ -109,16 +108,16 @@ import pandas as pd
 data = {'Country': ['Belgium', 'India', 'Brazil'],
         'Capital': ['Brussels', 'New Delhi', 'Brasília'],
         'Population': [11190846, 1303171035, 207847528]}
-df = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])
-print("Shape:", df.shape)
+df_data = pd.DataFrame(data, columns=['Country', 'Population', 'Capital'])
+print("Shape:", df_data.shape)
 print("--")
-print("Index:", df.index)
+print("Index:", df_data.index)
 print("--")
-print("columns:", df.columns)
+print("columns:", df_data.columns)
 print("--")
-df.info()
+df_data.info()
 print("--")
-print(df.count())
+print(df_data.count())
 
 ```
 

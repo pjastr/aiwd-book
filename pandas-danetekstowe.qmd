@@ -11,28 +11,28 @@ Stare podejście (na piechotę, pełna kontrola):
 import pandas as pd
 
 # Przykładowa ramka danych
-df = pd.DataFrame({
+data = pd.DataFrame({
     'Text': ['  Hello World  ', 'Pandas  Library43', '   Data   Science  ']
 })
 
 # Usunięcie białych znaków
-df['Text'] = df['Text'].str.strip()
-print(df)
+data['Text'] = data['Text'].str.strip()
+print(data)
 # Konwersja do małych liter
-df['Text'] = df['Text'].str.lower()
-print(df)
+data['Text'] = data['Text'].str.lower()
+print(data)
 # Konwersja do wielkich liter
-df['Text'] = df['Text'].str.upper()
-print(df)
+data['Text'] = data['Text'].str.upper()
+print(data)
 # Usunięcie znaków specjalnych
-df['Text'] = df['Text'].str.replace(r'[^\w\s]', '', regex=True)
-print(df)
+data['Text'] = data['Text'].str.replace(r'[^\w\s]', '', regex=True)
+print(data)
 # Usunięcie liczb
-df['Text'] = df['Text'].str.replace(r'\d+', '', regex=True)
-print(df)
+data['Text'] = data['Text'].str.replace(r'\d+', '', regex=True)
+print(data)
 # Usunięcie duplikatów
-df = df.drop_duplicates(subset='Text')
-print(df)
+data = data.drop_duplicates(subset='Text')
+print(data)
 
 ```
 
@@ -98,25 +98,27 @@ Zwykle operacje wektorowe są szybsze:
 
 ```{python}
 #| echo: true
-import pandas as pd
 import time
+import pandas as pd
 
 # Tworzenie przykładowej ramki danych z 2000000 wierszami
 data = {'Text': ['Pandas is awesome'] * 2000000}
-df = pd.DataFrame(data)
+data2 = pd.DataFrame(data)
+
 
 # Funkcja, która konwertuje tekst na małe litery (przykładowa operacja)
 def to_lower(text):
     return text.lower()
 
+
 # 1. Operacja wektorowa
 start_vectorized = time.time()
-df['Vectorized'] = df['Text'].str.lower()
+data2['Vectorized'] = data2['Text'].str.lower()
 end_vectorized = time.time()
 
 # 2. Operacja z list comprehension
 start_comprehension = time.time()
-df['Comprehension'] = [to_lower(text) for text in df['Text']]
+data2['Comprehension'] = [to_lower(text) for text in data2['Text']]
 end_comprehension = time.time()
 
 # Czasy wykonania

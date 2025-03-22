@@ -392,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="uzupełnianie-braków" class="level2" data-number="23.1">
 <h2 data-number="23.1" class="anchored" data-anchor-id="uzupełnianie-braków"><span class="header-section-number">23.1</span> Uzupełnianie braków</h2>
-<div id="c8fafad1" class="cell" data-execution_count="1">
+<div id="b9156221" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">3</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">4</span>], index<span class="op">=</span>[<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>])</span>
@@ -425,13 +425,13 @@ dtype: float64</code></pre>
 </section>
 <section id="obsługa-brakujących-danych" class="level2" data-number="23.2">
 <h2 data-number="23.2" class="anchored" data-anchor-id="obsługa-brakujących-danych"><span class="header-section-number">23.2</span> Obsługa brakujących danych</h2>
-<div id="6c37e752" class="cell" data-execution_count="2">
+<div id="1c4c58b5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>string_data <span class="op">=</span> pd.Series([<span class="st">'aardvark'</span>, <span class="st">'artichoke'</span>, np.nan, <span class="st">'avocado'</span>])</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_data)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_data.isnull())</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_data.isna())</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_data.dropna())</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0     aardvark
@@ -451,11 +451,11 @@ dtype: object</code></pre>
 </div>
 </div>
 <hr>
-<div id="43044795" class="cell" data-execution_count="3">
+<div id="d82eda9f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> nan <span class="im">as</span> NA</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame([[<span class="fl">1.</span>, <span class="fl">6.5</span>, <span class="fl">3.</span>], [<span class="fl">1.</span>, NA, NA], </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame([[<span class="fl">1.</span>, <span class="fl">6.5</span>, <span class="fl">3.</span>], [<span class="fl">1.</span>, NA, NA],</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                     [NA, NA, NA], [NA, <span class="fl">6.5</span>, <span class="fl">3.</span>]])</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>cleaned <span class="op">=</span> data.dropna()</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleaned)</span>
@@ -497,7 +497,7 @@ dtype: object</code></pre>
 </section>
 <section id="usuwanie-duplikatów" class="level2" data-number="23.3">
 <h2 data-number="23.3" class="anchored" data-anchor-id="usuwanie-duplikatów"><span class="header-section-number">23.3</span> Usuwanie duplikatów</h2>
-<div id="29079ff7" class="cell" data-execution_count="4">
+<div id="8fd00a7a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'k1'</span>: [<span class="st">'one'</span>, <span class="st">'two'</span>] <span class="op">*</span> <span class="dv">3</span> <span class="op">+</span> [<span class="st">'two'</span>],</span>
@@ -534,7 +534,7 @@ dtype: bool
 </section>
 <section id="zastępowanie-wartościami" class="level2" data-number="23.4">
 <h2 data-number="23.4" class="anchored" data-anchor-id="zastępowanie-wartościami"><span class="header-section-number">23.4</span> Zastępowanie wartościami</h2>
-<div id="8c30d110" class="cell" data-execution_count="5">
+<div id="c9cfbff4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -585,7 +585,7 @@ dtype: float64</code></pre>
 </section>
 <section id="dyskretyzacja-i-podział-na-koszyki" class="level2" data-number="23.5">
 <h2 data-number="23.5" class="anchored" data-anchor-id="dyskretyzacja-i-podział-na-koszyki"><span class="header-section-number">23.5</span> Dyskretyzacja i podział na koszyki</h2>
-<div id="b7090e66" class="cell" data-execution_count="6">
+<div id="084bb991" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">27</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">37</span>, <span class="dv">31</span>, <span class="dv">61</span>, <span class="dv">45</span>, <span class="dv">41</span>, <span class="dv">32</span>]</span>
@@ -609,7 +609,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <hr>
-<div id="f4bf634c" class="cell" data-execution_count="7">
+<div id="6a23c37f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">27</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">37</span>, <span class="dv">31</span>, <span class="dv">61</span>, <span class="dv">45</span>, <span class="dv">41</span>, <span class="dv">32</span>]</span>
@@ -629,20 +629,20 @@ Categories (4, object): ['Youth' &lt; 'YoungAdult' &lt; 'MiddleAged' &lt; 'Senio
 </div>
 </div>
 <hr>
-<div id="cd13278c" class="cell" data-execution_count="8">
+<div id="d1c3d449" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.rand(<span class="dv">20</span>)</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.cut(data, <span class="dv">4</span>, precision<span class="op">=</span><span class="dv">2</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[(0.048, 0.28], (0.28, 0.52], (0.52, 0.75], (0.28, 0.52], (0.048, 0.28], ..., (0.75, 0.98], (0.52, 0.75], (0.75, 0.98], (0.28, 0.52], (0.28, 0.52]]
+<pre><code>[(0.27, 0.51], (0.75, 0.99], (0.51, 0.75], (0.27, 0.51], (0.75, 0.99], ..., (0.025, 0.27], (0.75, 0.99], (0.75, 0.99], (0.025, 0.27], (0.51, 0.75]]
 Length: 20
-Categories (4, interval[float64, right]): [(0.048, 0.28] &lt; (0.28, 0.52] &lt; (0.52, 0.75] &lt; (0.75, 0.98]]</code></pre>
+Categories (4, interval[float64, right]): [(0.025, 0.27] &lt; (0.27, 0.51] &lt; (0.51, 0.75] &lt; (0.75, 0.99]]</code></pre>
 </div>
 </div>
 <hr>
-<div id="7dbbc857" class="cell" data-execution_count="9">
+<div id="382d099a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -651,20 +651,20 @@ Categories (4, interval[float64, right]): [(0.048, 0.28] &lt; (0.28, 0.52] &lt; 
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cats)</span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Series(cats).value_counts())</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[(-0.59, 0.0127], (0.665, 4.215], (-2.6919999999999997, -0.59], (-2.6919999999999997, -0.59], (-2.6919999999999997, -0.59], ..., (-0.59, 0.0127], (-2.6919999999999997, -0.59], (0.665, 4.215], (0.665, 4.215], (0.665, 4.215]]
+<pre><code>[(-0.0111, 0.732], (-0.0111, 0.732], (-0.699, -0.0111], (0.732, 2.733], (0.732, 2.733], ..., (-3.2399999999999998, -0.699], (-3.2399999999999998, -0.699], (0.732, 2.733], (-0.699, -0.0111], (-3.2399999999999998, -0.699]]
 Length: 1000
-Categories (4, interval[float64, right]): [(-2.6919999999999997, -0.59] &lt; (-0.59, 0.0127] &lt; (0.0127, 0.665] &lt; (0.665, 4.215]]
-(-2.6919999999999997, -0.59]    250
-(-0.59, 0.0127]                 250
-(0.0127, 0.665]                 250
-(0.665, 4.215]                  250
+Categories (4, interval[float64, right]): [(-3.2399999999999998, -0.699] &lt; (-0.699, -0.0111] &lt; (-0.0111, 0.732] &lt; (0.732, 2.733]]
+(-3.2399999999999998, -0.699]    250
+(-0.699, -0.0111]                250
+(-0.0111, 0.732]                 250
+(0.732, 2.733]                   250
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
 <section id="wykrywanie-i-filtrowanie-elementów-odstających" class="level2" data-number="23.6">
 <h2 data-number="23.6" class="anchored" data-anchor-id="wykrywanie-i-filtrowanie-elementów-odstających"><span class="header-section-number">23.6</span> Wykrywanie i filtrowanie elementów odstających</h2>
-<div id="5c33f25f" class="cell" data-execution_count="10">
+<div id="9cfc41dc" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -678,40 +678,36 @@ Name: count, dtype: int64</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 0            1            2            3
 count  1000.000000  1000.000000  1000.000000  1000.000000
-mean     -0.040652    -0.064220     0.018726     0.022347
-std       0.993129     1.014095     0.989003     1.016106
-min      -3.448614    -3.692115    -3.503052    -3.287309
-25%      -0.735892    -0.718836    -0.646554    -0.711118
-50%      -0.047704    -0.017604    -0.008320     0.050206
-75%       0.628438     0.607320     0.696483     0.710448
-max       3.023361     3.333421     3.435250     3.287296
+mean     -0.028117     0.043099     0.036943    -0.013607
+std       0.970110     0.991605     1.033094     0.993218
+min      -3.048537    -3.237835    -3.537915    -3.738329
+25%      -0.711053    -0.663253    -0.619149    -0.690221
+50%       0.003268     0.034939     0.013033    -0.014115
+75%       0.629862     0.689556     0.694075     0.633703
+max       2.800068     3.932884     3.450663     3.219215
 ---
-5      3.015862
-23    -3.503052
-145    3.435250
-512    3.361181
+233   -3.537915
+484   -3.365181
+772   -3.209814
+818    3.450663
 Name: 2, dtype: float64
 ---
             0         1         2         3
-5    0.078252 -1.771131  3.015862  0.168616
-23  -0.551045  0.208127 -3.503052 -0.090993
-145 -0.589212  0.590135  3.435250  1.449771
-187 -3.338053  0.806151 -0.209376 -0.661293
-282 -3.448614  0.454411 -0.116176  0.095260
-421  1.260355  0.361496 -0.821844 -3.287309
-467  3.023361  0.694194 -0.266511 -0.190628
-512 -0.642145 -0.965049  3.361181 -0.571562
-552 -0.155703  3.278155  1.783327  1.386196
-729 -0.324930 -3.692115  1.934873  0.364577
-802  0.814475 -3.579901  0.906063  1.444410
-932 -0.271707  3.333421  0.301394  0.825091
-974  1.262271  0.741786  0.565757  3.287296</code></pre>
+233 -1.195542  0.932747 -3.537915  1.318193
+263 -0.283974 -0.904135  1.611536  3.219215
+390  0.492181  3.932884  0.545913  1.098571
+484 -0.557829 -0.667786 -3.365181  0.161318
+637 -0.569983 -3.237835  0.006650  1.416682
+749 -2.049960 -0.690067 -1.883547 -3.738329
+772 -0.590983  1.069331 -3.209814  0.625792
+818 -1.804275  0.314283  3.450663 -1.273188
+836 -3.048537  0.115909 -0.414006 -0.949439</code></pre>
 </div>
 </div>
 </section>
 <section id="zmiana-typu-w-kolumnie" class="level2" data-number="23.7">
 <h2 data-number="23.7" class="anchored" data-anchor-id="zmiana-typu-w-kolumnie"><span class="header-section-number">23.7</span> Zmiana typu w kolumnie</h2>
-<div id="978c2b12" class="cell" data-execution_count="11">
+<div id="ab24f3b5" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -720,21 +716,21 @@ Name: 2, dtype: float64
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="st">'7.5'</span>, <span class="st">'8.5'</span>, <span class="st">'9.5'</span>, <span class="st">'10.5'</span>, <span class="st">'11.5'</span>, <span class="st">'12.5'</span>],</span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: [<span class="st">'x'</span>, <span class="st">'y'</span>, <span class="st">'z'</span>, <span class="st">'x'</span>, <span class="st">'y'</span>, <span class="st">'z'</span>]</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlenie oryginalnej ramki danych</span></span>
 <span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oryginalna ramka danych:"</span>)</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data2)</span>
 <span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Zmiana typu danych kolumny 'A' na int</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'A'</span>] <span class="op">=</span> pd.Series(df[<span class="st">'A'</span>], dtype<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>data2[<span class="st">'A'</span>] <span class="op">=</span> pd.Series(data2[<span class="st">'A'</span>], dtype<span class="op">=</span><span class="bu">int</span>)</span>
 <span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Zmiana typu danych kolumny 'B' na float</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'B'</span>] <span class="op">=</span> pd.Series(df[<span class="st">'A'</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>data2[<span class="st">'B'</span>] <span class="op">=</span> pd.Series(data2[<span class="st">'A'</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlenie ramki danych po zmianie typów</span></span>
 <span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Ramka danych po zmianie typów:"</span>)</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oryginalna ramka danych:
    A     B  C
@@ -755,7 +751,7 @@ Ramka danych po zmianie typów:
 5  6  6.0  z</code></pre>
 </div>
 </div>
-<div id="abdc89c4" class="cell" data-execution_count="12">
+<div id="bf2e6141" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -764,21 +760,21 @@ Ramka danych po zmianie typów:
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="st">'7.5'</span>, <span class="st">'8.5'</span>, <span class="st">'9.5'</span>, <span class="st">'10.5'</span>, <span class="st">'11.5'</span>, <span class="st">'12.5'</span>],</span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: [<span class="st">'x'</span>, <span class="st">'y'</span>, <span class="st">'z'</span>, <span class="st">'x'</span>, <span class="st">'y'</span>, <span class="st">'z'</span>]</span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlenie oryginalnej ramki danych</span></span>
 <span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oryginalna ramka danych:"</span>)</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data2)</span>
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Zmiana typu danych kolumny 'A' na int</span></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'A'</span>] <span class="op">=</span> df[<span class="st">'A'</span>].astype(<span class="bu">int</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>data2[<span class="st">'A'</span>] <span class="op">=</span> data2[<span class="st">'A'</span>].astype(<span class="bu">int</span>)</span>
 <span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Zmiana typu danych kolumny 'B' na float</span></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'B'</span>] <span class="op">=</span> df[<span class="st">'B'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>data2[<span class="st">'B'</span>] <span class="op">=</span> data2[<span class="st">'B'</span>].astype(<span class="bu">float</span>)</span>
 <span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlenie ramki danych po zmianie typów</span></span>
 <span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Ramka danych po zmianie typów:"</span>)</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oryginalna ramka danych:
    A     B  C
@@ -802,7 +798,7 @@ Ramka danych po zmianie typów:
 </section>
 <section id="zmiana-znaku-kategoriach" class="level2" data-number="23.8">
 <h2 data-number="23.8" class="anchored" data-anchor-id="zmiana-znaku-kategoriach"><span class="header-section-number">23.8</span> Zmiana znaku kategoriach</h2>
-<div id="2f95c6b8" class="cell" data-execution_count="13">
+<div id="50eebdcf" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie ramki danych</span></span>
@@ -811,21 +807,21 @@ Ramka danych po zmianie typów:
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="st">'1.23'</span>, <span class="st">'4.56'</span>, <span class="st">'7.89'</span>, <span class="st">'0.12'</span>, <span class="st">'3.45'</span>, <span class="st">'6.78'</span>],</span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: [<span class="st">'xyz'</span>, <span class="st">'uvw'</span>, <span class="st">'rst'</span>, <span class="st">'opq'</span>, <span class="st">'lmn'</span>, <span class="st">'ijk'</span>]</span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlenie oryginalnej ramki danych</span></span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oryginalna ramka danych:"</span>)</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data2)</span>
 <span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Zmiana małych liter na duże w kolumnie 'A'</span></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'A'</span>] <span class="op">=</span> df[<span class="st">'A'</span>].<span class="bu">str</span>.upper()</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>data2[<span class="st">'A'</span>] <span class="op">=</span> data2[<span class="st">'A'</span>].<span class="bu">str</span>.upper()</span>
 <span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Zastąpienie kropki przecinkiem w kolumnie 'B'</span></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'B'</span>] <span class="op">=</span> df[<span class="st">'B'</span>].<span class="bu">str</span>.replace(<span class="st">'.'</span>, <span class="st">','</span>)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>data2[<span class="st">'B'</span>] <span class="op">=</span> data2[<span class="st">'B'</span>].<span class="bu">str</span>.replace(<span class="st">'.'</span>, <span class="st">','</span>)</span>
 <span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlenie ramki danych po modyfikacji</span></span>
 <span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Ramka danych po modyfikacji:"</span>)</span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oryginalna ramka danych:
      A     B    C
@@ -855,7 +851,9 @@ Ramka danych po modyfikacji:
 </ul>
 <p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html" class="uri">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html</a></p>
 <p>Funkcja <code>merge</code> służy do łączenia dwóch ramek danych wzdłuż wspólnej kolumny, podobnie jak operacje JOIN w SQL.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>DataFrame.merge(right, how<span class="op">=</span><span class="st">'inner'</span>, on<span class="op">=</span><span class="va">None</span>, left_on<span class="op">=</span><span class="va">None</span>, right_on<span class="op">=</span><span class="va">None</span>, left_index<span class="op">=</span><span class="va">False</span>, right_index<span class="op">=</span><span class="va">False</span>, sort<span class="op">=</span><span class="va">False</span>, suffixes<span class="op">=</span>(<span class="st">'_x'</span>, <span class="st">'_y'</span>), copy<span class="op">=</span><span class="va">True</span>, indicator<span class="op">=</span><span class="va">False</span>, validate<span class="op">=</span><span class="va">None</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>DataFrame.merge(right, how<span class="op">=</span><span class="st">'inner'</span>, on<span class="op">=</span><span class="va">None</span>, left_on<span class="op">=</span><span class="va">None</span>, right_on<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                left_index<span class="op">=</span><span class="va">False</span>, right_index<span class="op">=</span><span class="va">False</span>, sort<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                suffixes<span class="op">=</span>(<span class="st">'_x'</span>, <span class="st">'_y'</span>), copy<span class="op">=</span><span class="va">True</span>, indicator<span class="op">=</span><span class="va">False</span>, validate<span class="op">=</span><span class="va">None</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Gdzie:</p>
 <ul>
 <li><code>right</code>: ramka danych, którą chcesz dołączyć do oryginalnej ramki danych.</li>
@@ -869,7 +867,7 @@ Ramka danych po modyfikacji:
 <li><code>indicator</code>: dodaj kolumnę do wynikowej ramki danych, która pokazuje źródło każdego wiersza.</li>
 <li><code>validate</code>: sprawdź, czy określone zasady łączenia są spełnione.</li>
 </ul>
-<div id="3d90d156" class="cell" data-execution_count="14">
+<div id="5f5032fe" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -905,7 +903,7 @@ K1  C1  D1
 </div>
 </div>
 <p><img src="merge.png" class="img-fluid"></p>
-<div id="61ae935c" class="cell" data-execution_count="15">
+<div id="43d7d2e0" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -924,22 +922,26 @@ K1  C1  D1
 <span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df2)</span>
 <span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>inner_merged_df <span class="op">=</span> df1.merge(df2, how<span class="op">=</span><span class="st">'inner'</span>, on<span class="op">=</span><span class="st">'key'</span>, suffixes<span class="op">=</span>(<span class="st">'_left'</span>, <span class="st">'_right'</span>), indicator<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>outer_merged_df <span class="op">=</span> df1.merge(df2, how<span class="op">=</span><span class="st">'outer'</span>, on<span class="op">=</span><span class="st">'key'</span>, suffixes<span class="op">=</span>(<span class="st">'_left'</span>, <span class="st">'_right'</span>), indicator<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>left_merged_df <span class="op">=</span> df1.merge(df2, how<span class="op">=</span><span class="st">'left'</span>, on<span class="op">=</span><span class="st">'key'</span>, suffixes<span class="op">=</span>(<span class="st">'_left'</span>, <span class="st">'_right'</span>), indicator<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>right_merged_df <span class="op">=</span> df1.merge(df2, how<span class="op">=</span><span class="st">'right'</span>, on<span class="op">=</span><span class="st">'key'</span>, suffixes<span class="op">=</span>(<span class="st">'_left'</span>, <span class="st">'_right'</span>), indicator<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Inner join"</span>)</span>
-<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(inner_merged_df)</span>
-<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Outer join"</span>)</span>
-<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(outer_merged_df)</span>
-<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Left join"</span>)</span>
-<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(left_merged_df)</span>
-<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Right join"</span>)</span>
-<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(right_merged_df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>inner_merged_df <span class="op">=</span> df1.merge(df2, how<span class="op">=</span><span class="st">'inner'</span>, on<span class="op">=</span><span class="st">'key'</span>, suffixes<span class="op">=</span>(<span class="st">'_left'</span>, <span class="st">'_right'</span>),</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>                            indicator<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>outer_merged_df <span class="op">=</span> df1.merge(df2, how<span class="op">=</span><span class="st">'outer'</span>, on<span class="op">=</span><span class="st">'key'</span>, suffixes<span class="op">=</span>(<span class="st">'_left'</span>, <span class="st">'_right'</span>),</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>                            indicator<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>left_merged_df <span class="op">=</span> df1.merge(df2, how<span class="op">=</span><span class="st">'left'</span>, on<span class="op">=</span><span class="st">'key'</span>, suffixes<span class="op">=</span>(<span class="st">'_left'</span>, <span class="st">'_right'</span>),</span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>                           indicator<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>right_merged_df <span class="op">=</span> df1.merge(df2, how<span class="op">=</span><span class="st">'right'</span>, on<span class="op">=</span><span class="st">'key'</span>, suffixes<span class="op">=</span>(<span class="st">'_left'</span>, <span class="st">'_right'</span>),</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>                            indicator<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Inner join"</span>)</span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(inner_merged_df)</span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Outer join"</span>)</span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(outer_merged_df)</span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Left join"</span>)</span>
+<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(left_merged_df)</span>
+<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Right join"</span>)</span>
+<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(right_merged_df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  key   A   B
 0  K0  A0  B0
@@ -996,7 +998,7 @@ Right join
 <li><code>lsuffix</code> i <code>rsuffix</code>: sufiksy do dodania do kolumn, które się powtarzają. Domyślnie jest to puste.</li>
 <li><code>sort</code>: czy sortować dane według klucza.</li>
 </ul>
-<div id="f610adc0" class="cell" data-execution_count="16">
+<div id="f38fbd3a" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -1039,7 +1041,9 @@ K2  A2  B2   C2   D2</code></pre>
 <p><a href="https://pandas.pydata.org/docs/reference/api/pandas.concat.html" class="uri">https://pandas.pydata.org/docs/reference/api/pandas.concat.html</a></p>
 <p>Metoda <code>concat</code> jest używana do łączenia dwóch lub więcej ramek danych wzdłuż określonej osi.</p>
 <p>Podstawowe użycie tej metody wygląda następująco:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>pandas.concat(objs, axis<span class="op">=</span><span class="dv">0</span>, join<span class="op">=</span><span class="st">'outer'</span>, ignore_index<span class="op">=</span><span class="va">False</span>, keys<span class="op">=</span><span class="va">None</span>, levels<span class="op">=</span><span class="va">None</span>, names<span class="op">=</span><span class="va">None</span>, verify_integrity<span class="op">=</span><span class="va">False</span>, sort<span class="op">=</span><span class="va">False</span>, copy<span class="op">=</span><span class="va">True</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>pandas.concat(objs, axis<span class="op">=</span><span class="dv">0</span>, join<span class="op">=</span><span class="st">'outer'</span>, ignore_index<span class="op">=</span><span class="va">False</span>, keys<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>              levels<span class="op">=</span><span class="va">None</span>, names<span class="op">=</span><span class="va">None</span>, verify_integrity<span class="op">=</span><span class="va">False</span>, sort<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>              copy<span class="op">=</span><span class="va">True</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Gdzie:</p>
 <ul>
 <li><code>objs</code>: sekwencja ramek danych, które chcesz połączyć.</li>
@@ -1053,7 +1057,7 @@ K2  A2  B2   C2   D2</code></pre>
 <li><code>sort</code>: czy sortować niekonkatenacyjną oś (np. indeksy, jeśli axis=0), niezależnie od danych.</li>
 <li><code>copy</code>: czy zawsze kopiować dane, nawet jeśli nie są potrzebne.</li>
 </ul>
-<div id="84330696" class="cell" data-execution_count="17">
+<div id="f763b35a" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -1091,7 +1095,7 @@ K2  A2  B2   C2   D2</code></pre>
 </div>
 </div>
 <p><img src="concat1.png" class="img-fluid"></p>
-<div id="949b77d9" class="cell" data-execution_count="18">
+<div id="efed80d1" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -1151,7 +1155,7 @@ df2 0  NaN  NaN   C0   D0
 <li><code>columns</code>: nazwa kolumny, z której unikalne wartości mają stać się kolumnami w nowej ramce danych.</li>
 <li><code>values</code>: nazwa kolumny lub lista nazw kolumn, które mają stać się wartościami dla nowych kolumn w nowej ramce danych.</li>
 </ul>
-<div id="815859f8" class="cell" data-execution_count="19">
+<div id="cc55826f" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
@@ -1192,7 +1196,7 @@ two  4  5  6</code></pre>
 <li><strong>j</strong>: Nazwa nowej kolumny, w której będą przechowywane różne poziomy zmiennych (w naszym przypadku rok).</li>
 <li><strong>sep</strong>: Opcjonalny separator (domyślnie <code>""</code>).</li>
 </ul>
-<div id="4dc21277" class="cell" data-execution_count="20">
+<div id="ec3a67c0" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane</span></span>
@@ -1204,10 +1208,10 @@ two  4  5  6</code></pre>
 <span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'weight_2021'</span>: [<span class="dv">71</span>, <span class="dv">77</span>, <span class="dv">66</span>]</span>
 <span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Przekształcenie do formatu długiego</span></span>
-<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> pd.wide_to_long(df, stubnames<span class="op">=</span>[<span class="st">'height'</span>, <span class="st">'weight'</span>], i<span class="op">=</span><span class="st">'id'</span>, j<span class="op">=</span><span class="st">'year'</span>, sep<span class="op">=</span><span class="st">'_'</span>)</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> pd.wide_to_long(data2, stubnames<span class="op">=</span>[<span class="st">'height'</span>, <span class="st">'weight'</span>], i<span class="op">=</span><span class="st">'id'</span>, j<span class="op">=</span><span class="st">'year'</span>, sep<span class="op">=</span><span class="st">'_'</span>)</span>
 <span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_long.reset_index()</span>
 <span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_long)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1239,18 +1243,19 @@ two  4  5  6</code></pre>
 <li><code>value_name</code>: nazwa nowej kolumny, która będzie zawierała wartości kolumn przekształconych na pary klucz-wartość. Domyślnie to ‘value’.</li>
 <li><code>col_level</code>: jeżeli kolumny są wielopoziomowe, to jest poziom, który będzie użyty do przekształcania kolumn na pary klucz-wartość.</li>
 </ul>
-<div id="bf8fe71e" class="cell" data-execution_count="21">
+<div id="e43a1662" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="st">'foo'</span>, <span class="st">'bar'</span>, <span class="st">'baz'</span>],</span>
 <span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="st">'one'</span>, <span class="st">'one'</span>, <span class="st">'two'</span>],</span>
 <span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: [<span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">3.0</span>],</span>
 <span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'D'</span>: [<span class="fl">3.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>]</span>
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>melted_df <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>], value_vars<span class="op">=</span>[<span class="st">'C'</span>, <span class="st">'D'</span>], var_name<span class="op">=</span><span class="st">'My_Var'</span>, value_name<span class="op">=</span><span class="st">'My_Val'</span>)</span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(melted_df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>melted_df <span class="op">=</span> data.melt(id_vars<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>], value_vars<span class="op">=</span>[<span class="st">'C'</span>, <span class="st">'D'</span>], var_name<span class="op">=</span><span class="st">'My_Var'</span>,</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>                      value_name<span class="op">=</span><span class="st">'My_Val'</span>)</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(melted_df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     A    B    C    D
 0  foo  one  2.0  3.0

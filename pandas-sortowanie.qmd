@@ -7,21 +7,22 @@
 import pandas as pd
 
 # Przykładowa ramka danych
-df = pd.DataFrame({
+data = pd.DataFrame({
     'Name': ['Alice', 'Tom', 'Charlie'],
     'Age': [25, 42, 35],
     'Salary': [50000, 60000, 70000]
 })
 
 # Sortowanie po kolumnie 'Age'
-s1= df.sort_values(by='Age')
+s1 = data.sort_values(by='Age')
 print(s1)
 # Sortowanie w odworotnej kolejności
-s2 = df.sort_values(by='Salary', ascending=False)
+s2 = data.sort_values(by='Salary', ascending=False)
 print(s2)
 # Sortowanie według 'Age' rosnąco, a następnie 'Salary' malejąco
-s3 = df.sort_values(by=['Age', 'Salary'], ascending=[True, False])
+s3 = data.sort_values(by=['Age', 'Salary'], ascending=[True, False])
 print(s3)
+
 ```
 
 ```{python}
@@ -29,15 +30,15 @@ print(s3)
 import pandas as pd
 
 # Przykładowa ramka danych
-df = pd.DataFrame({
+data = pd.DataFrame({
     'Name': ['Alice', 'Tom', 'Charlie'],
     'Age': [25, 41, 35],
     'Salary': [50000, 60000, 70000]
 })
 
-# Sortowanie inplace (zamiana istniejącej zmiennej)
-df.sort_values(by='Age', inplace=True)
-print(df)
+# Sortowanie inplace (zamiana istniejącej zmiennej) - obecnie niezalecane
+data.sort_values(by='Age', inplace=True)
+print(data)
 ```
 
 ```{python}

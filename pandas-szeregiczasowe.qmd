@@ -6,15 +6,11 @@ Zamiana stringu na format `datetime` (dato-czasowy)
 #| echo: true
 import pandas as pd
 
-data = {'date': ['2023-01-01', '2023-01-02', '2023-01-03'], 'value': [10, 15, 20]}  # <1>
-df = pd.DataFrame(data)                                                             # <2>
-df['date'] = pd.to_datetime(df['date'])                                             # <3>
+data = {'date': ['2023-01-01', '2023-01-02', '2023-01-03'], 'value': [10, 15, 20]}
+data_frame = pd.DataFrame(data)
+data_frame['date'] = pd.to_datetime(data_frame['date'])
 print(data)
 ```
-
-1. Przykładowy słownik jak baza do ramki danych.
-2. Przekształcenie na ramkę danych.
-3. Zamiana kolumny na format `datetime`.
 
 Argument `errors` w funkcji `pd.to_datetime` kontroluje, jak funkcja ma się zachować, gdy napotka nieprawidłowe dane podczas próby konwersji wartości na obiekty `datetime`. Możliwe wartości dla `errors` to:
 
@@ -25,9 +21,11 @@ Argument `errors` w funkcji `pd.to_datetime` kontroluje, jak funkcja ma się zac
 Kod do wklejenia do środowiska:
 
 ```python
+import pandas as pd
+
 data = {'date': ['2023-01-01', 'invalid', '2023-01-03'], 'value': [10, 15, 20]}
-df = pd.DataFrame(data)
-df['date'] = pd.to_datetime(df['date'], errors='ignore')
+data_frame = pd.DataFrame(data)
+data_frame['date'] = pd.to_datetime(data_frame['date'], errors='ignore')
 ```
 
 Argument `format` w funkcji `pandas.to_datetime` pozwala określić dokładny format daty i czasu, który ma zostać użyty do parsowania wartości wejściowych. Jest to przydatne, gdy dane wejściowe mają stały, specyficzny format, co może przyspieszyć przetwarzanie i zmniejszyć ryzyko błędnej interpretacji dat.
@@ -74,17 +72,17 @@ Polskie nazwy miesięcy w mianowniku lub skrócie:
 
 ```{python}
 #| echo: true
-import pandas as pd
 import locale
+import pandas as pd
 
 locale.setlocale(locale.LC_ALL, 'PL')
 # locale.setlocale(locale.LC_TIME, 'pl_PL.UTF-8')  # Na systemach Linux/Mac
 # locale.setlocale(locale.LC_TIME, 'Polish_Poland.1250')  # Na Windows
 
 data = ['10 styczeń 2025', '15 grudzień 2025', '5 marzec 2025']
-df = pd.DataFrame(data)
-df[0] = pd.to_datetime(df[0], format='%d %B %Y')
-print(df)
+data_frame = pd.DataFrame(data)
+data_frame[0] = pd.to_datetime(data_frame[0], format='%d %B %Y')
+print(data_frame)
 data2 = ['10 sty 2025', '15 gru 2025', '5 mar 2025']
 df2 = pd.DataFrame(data2)
 df2[0] = pd.to_datetime(df2[0], format='%d %b %Y')
@@ -104,5 +102,5 @@ Wskazówka:
 ```python
 import pandas as pd
 
-data = pd.read_csv("date_sale.csv",  parse_dates=["Sale_Date"], date_format="%d-%m-%Y")
+data = pd.read_csv("date_sale.csv", parse_dates=["Sale_Date"], date_format="%d-%m-%Y")
 ```

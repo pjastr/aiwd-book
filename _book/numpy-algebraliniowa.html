@@ -396,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="iloczyn-skalarny-dot-product" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="iloczyn-skalarny-dot-product"><span class="header-section-number">13.1</span> Iloczyn skalarny (dot product)</h2>
 <p>Dla dwóch wektorów, <code>dot</code> oblicza ich iloczyn skalarny.</p>
-<div id="bfc4886f" class="cell" data-execution_count="1">
+<div id="4a06824b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn skalarny dwóch wektorów</span></span>
@@ -417,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="mnożenie-macierzowe" class="level2" data-number="13.2">
 <h2 data-number="13.2" class="anchored" data-anchor-id="mnożenie-macierzowe"><span class="header-section-number">13.2</span> Mnożenie macierzowe</h2>
 <p>Dla macierzy (tablic dwuwymiarowych), <code>dot</code> wykonuje standardowe mnożenie macierzowe.</p>
-<div id="38e1b0eb" class="cell" data-execution_count="2">
+<div id="5b6b997f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Mnożenie macierzowe</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -442,7 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="mnożenie-macierz-wektor" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="mnożenie-macierz-wektor"><span class="header-section-number">13.3</span> Mnożenie macierz-wektor</h2>
 <p>Możemy również mnożyć macierz przez wektor:</p>
-<div id="06c5ba39" class="cell" data-execution_count="3">
+<div id="d44238d7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Mnożenie macierz-wektor</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -457,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="rozwiązywanie-układów-równań-liniowych" class="level2" data-number="13.4">
 <h2 data-number="13.4" class="anchored" data-anchor-id="rozwiązywanie-układów-równań-liniowych"><span class="header-section-number">13.4</span> Rozwiązywanie układów równań liniowych</h2>
 <p>Funkcja <code>numpy.linalg.solve</code> rozwiązuje układy równań liniowych postaci Ax = b:</p>
-<div id="ce1baa8e" class="cell" data-execution_count="4">
+<div id="c4d7544d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozwiązywanie układu równań liniowych</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">2</span>]])</span>
@@ -478,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="wyznacznik-macierzy" class="level2" data-number="13.5">
 <h2 data-number="13.5" class="anchored" data-anchor-id="wyznacznik-macierzy"><span class="header-section-number">13.5</span> Wyznacznik macierzy</h2>
 <p>Funkcja <code>numpy.linalg.det</code> oblicza wyznacznik macierzy:</p>
-<div id="2de88ab6" class="cell" data-execution_count="5">
+<div id="2979e422" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie wyznacznika</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -492,7 +492,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="wartości-i-wektory-własne" class="level2" data-number="13.6">
 <h2 data-number="13.6" class="anchored" data-anchor-id="wartości-i-wektory-własne"><span class="header-section-number">13.6</span> Wartości i wektory własne</h2>
 <p>Funkcja <code>numpy.linalg.eig</code> oblicza wartości i wektory własne macierzy:</p>
-<div id="54645a03" class="cell" data-execution_count="6">
+<div id="0cfacc09" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie wartości i wektorów własnych</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
@@ -525,7 +525,7 @@ A * v = [1.41421356 1.41421356]
 <section id="rozkład-wartości-osobliwych-svd" class="level2" data-number="13.7">
 <h2 data-number="13.7" class="anchored" data-anchor-id="rozkład-wartości-osobliwych-svd"><span class="header-section-number">13.7</span> Rozkład wartości osobliwych (SVD)</h2>
 <p>Rozkład SVD jest potężnym narzędziem w analizie danych:</p>
-<div id="9d733062" class="cell" data-execution_count="7">
+<div id="45339ed8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozkład SVD</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>]])</span>
@@ -561,7 +561,7 @@ Rekonstruowana macierz A:
 <section id="norma-macierzywektora" class="level2" data-number="13.8">
 <h2 data-number="13.8" class="anchored" data-anchor-id="norma-macierzywektora"><span class="header-section-number">13.8</span> Norma macierzy/wektora</h2>
 <p>NumPy oferuje różne rodzaje norm:</p>
-<div id="1074b4d7" class="cell" data-execution_count="8">
+<div id="c11f47f6" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Różne normy</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -582,7 +582,7 @@ Norma macierzowa Frobeniusa: 5.477225575051661</code></pre>
 <section id="macierz-odwrotna" class="level2" data-number="13.9">
 <h2 data-number="13.9" class="anchored" data-anchor-id="macierz-odwrotna"><span class="header-section-number">13.9</span> Macierz odwrotna</h2>
 <p>Funkcja <code>numpy.linalg.inv</code> oblicza macierz odwrotną:</p>
-<div id="d020344c" class="cell" data-execution_count="9">
+<div id="0ed46abb" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Macierz odwrotna</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -606,7 +606,7 @@ A * A^(-1):
 <section id="funkcja-numpy.inner---iloczyn-wewnętrzny" class="level2" data-number="13.10">
 <h2 data-number="13.10" class="anchored" data-anchor-id="funkcja-numpy.inner---iloczyn-wewnętrzny"><span class="header-section-number">13.10</span> Funkcja <code>numpy.inner</code> - iloczyn wewnętrzny</h2>
 <p>Funkcja <code>inner</code> oblicza iloczyn wewnętrzny dwóch tablic:</p>
-<div id="51f939a5" class="cell" data-execution_count="10">
+<div id="0cdaa1ce" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn wewnętrzny</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
@@ -630,7 +630,7 @@ A * A^(-1):
 <section id="funkcja-numpy.outer---iloczyn-zewnętrzny" class="level2" data-number="13.11">
 <h2 data-number="13.11" class="anchored" data-anchor-id="funkcja-numpy.outer---iloczyn-zewnętrzny"><span class="header-section-number">13.11</span> Funkcja <code>numpy.outer</code> - iloczyn zewnętrzny</h2>
 <p>Funkcja <code>outer</code> oblicza iloczyn zewnętrzny dwóch wektorów:</p>
-<div id="1fd9b483" class="cell" data-execution_count="11">
+<div id="231e23f8" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn zewnętrzny</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
@@ -651,7 +651,7 @@ A * A^(-1):
 <section id="funkcja-numpy.matmul---mnożenie-macierzowe" class="level2" data-number="13.12">
 <h2 data-number="13.12" class="anchored" data-anchor-id="funkcja-numpy.matmul---mnożenie-macierzowe"><span class="header-section-number">13.12</span> Funkcja <code>numpy.matmul</code> - mnożenie macierzowe</h2>
 <p>Funkcja <code>matmul</code> jest podobna do <code>dot</code>, ale ma nieco inne zachowanie dla tablic o wymiarach większych niż 2:</p>
-<div id="a54b2ec0" class="cell" data-execution_count="12">
+<div id="f4d8cfdb" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Porównanie dot i matmul</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>

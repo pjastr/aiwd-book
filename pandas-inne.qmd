@@ -1,9 +1,6 @@
 # Pandas - inne
 
 
-
-
-
 ## Uzupełnianie braków
 
 ```{python} 
@@ -29,7 +26,7 @@ import pandas as pd
 
 string_data = pd.Series(['aardvark', 'artichoke', np.nan, 'avocado'])
 print(string_data)
-print(string_data.isnull())
+print(string_data.isna())
 print(string_data.dropna())
 
 ```
@@ -41,7 +38,7 @@ print(string_data.dropna())
 from numpy import nan as NA
 import pandas as pd
 
-data = pd.DataFrame([[1., 6.5, 3.], [1., NA, NA], 
+data = pd.DataFrame([[1., 6.5, 3.], [1., NA, NA],
                      [NA, NA, NA], [NA, 6.5, 3.]])
 cleaned = data.dropna()
 print(cleaned)
@@ -164,21 +161,21 @@ data = {
     'B': ['7.5', '8.5', '9.5', '10.5', '11.5', '12.5'],
     'C': ['x', 'y', 'z', 'x', 'y', 'z']
 }
-df = pd.DataFrame(data)
+data2 = pd.DataFrame(data)
 
 # Wyświetlenie oryginalnej ramki danych
 print("Oryginalna ramka danych:")
-print(df)
+print(data2)
 
 # Zmiana typu danych kolumny 'A' na int
-df['A'] = pd.Series(df['A'], dtype=int)
+data2['A'] = pd.Series(data2['A'], dtype=int)
 
 # Zmiana typu danych kolumny 'B' na float
-df['B'] = pd.Series(df['A'], dtype=float)
+data2['B'] = pd.Series(data2['A'], dtype=float)
 
 # Wyświetlenie ramki danych po zmianie typów
 print("\nRamka danych po zmianie typów:")
-print(df)
+print(data2)
 
 ```
 
@@ -193,21 +190,21 @@ data = {
     'B': ['7.5', '8.5', '9.5', '10.5', '11.5', '12.5'],
     'C': ['x', 'y', 'z', 'x', 'y', 'z']
 }
-df = pd.DataFrame(data)
+data2 = pd.DataFrame(data)
 
 # Wyświetlenie oryginalnej ramki danych
 print("Oryginalna ramka danych:")
-print(df)
+print(data2)
 
 # Zmiana typu danych kolumny 'A' na int
-df['A'] = df['A'].astype(int)
+data2['A'] = data2['A'].astype(int)
 
 # Zmiana typu danych kolumny 'B' na float
-df['B'] = df['B'].astype(float)
+data2['B'] = data2['B'].astype(float)
 
 # Wyświetlenie ramki danych po zmianie typów
 print("\nRamka danych po zmianie typów:")
-print(df)
+print(data2)
 
 ```
 
@@ -223,21 +220,22 @@ data = {
     'B': ['1.23', '4.56', '7.89', '0.12', '3.45', '6.78'],
     'C': ['xyz', 'uvw', 'rst', 'opq', 'lmn', 'ijk']
 }
-df = pd.DataFrame(data)
+data2 = pd.DataFrame(data)
 
 # Wyświetlenie oryginalnej ramki danych
 print("Oryginalna ramka danych:")
-print(df)
+print(data2)
 
 # Zmiana małych liter na duże w kolumnie 'A'
-df['A'] = df['A'].str.upper()
+data2['A'] = data2['A'].str.upper()
 
 # Zastąpienie kropki przecinkiem w kolumnie 'B'
-df['B'] = df['B'].str.replace('.', ',')
+data2['B'] = data2['B'].str.replace('.', ',')
 
 # Wyświetlenie ramki danych po modyfikacji
 print("\nRamka danych po modyfikacji:")
-print(df)
+print(data2)
+
 ```
 
 
@@ -252,7 +250,9 @@ print(df)
 Funkcja `merge` służy do łączenia dwóch ramek danych wzdłuż wspólnej kolumny, podobnie jak operacje JOIN w SQL. 
 
 ```python
-DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
+DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None,
+                left_index=False, right_index=False, sort=False,
+                suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
 ```
 
 Gdzie:
@@ -313,10 +313,14 @@ print(df1)
 
 print(df2)
 
-inner_merged_df = df1.merge(df2, how='inner', on='key', suffixes=('_left', '_right'), indicator=True)
-outer_merged_df = df1.merge(df2, how='outer', on='key', suffixes=('_left', '_right'), indicator=True)
-left_merged_df = df1.merge(df2, how='left', on='key', suffixes=('_left', '_right'), indicator=True)
-right_merged_df = df1.merge(df2, how='right', on='key', suffixes=('_left', '_right'), indicator=True)
+inner_merged_df = df1.merge(df2, how='inner', on='key', suffixes=('_left', '_right'),
+                            indicator=True)
+outer_merged_df = df1.merge(df2, how='outer', on='key', suffixes=('_left', '_right'),
+                            indicator=True)
+left_merged_df = df1.merge(df2, how='left', on='key', suffixes=('_left', '_right'),
+                           indicator=True)
+right_merged_df = df1.merge(df2, how='right', on='key', suffixes=('_left', '_right'),
+                            indicator=True)
 
 print("Inner join")
 print(inner_merged_df)
@@ -395,7 +399,9 @@ Metoda `concat` jest używana do łączenia dwóch lub więcej ramek danych wzd�
 Podstawowe użycie tej metody wygląda następująco:
 
 ```python
-pandas.concat(objs, axis=0, join='outer', ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, sort=False, copy=True)
+pandas.concat(objs, axis=0, join='outer', ignore_index=False, keys=None,
+              levels=None, names=None, verify_integrity=False, sort=False,
+              copy=True)
 ```
 
 Gdzie:
@@ -533,10 +539,10 @@ data = {
     'weight_2021': [71, 77, 66]
 }
 
-df = pd.DataFrame(data)
+data2 = pd.DataFrame(data)
 
 # Przekształcenie do formatu długiego
-df_long = pd.wide_to_long(df, stubnames=['height', 'weight'], i='id', j='year', sep='_')
+df_long = pd.wide_to_long(data2, stubnames=['height', 'weight'], i='id', j='year', sep='_')
 df_long = df_long.reset_index()
 
 print(df_long)
@@ -575,15 +581,17 @@ Gdzie:
 #| echo: true
 import pandas as pd
 
-df = pd.DataFrame({
+data = pd.DataFrame({
     'A': ['foo', 'bar', 'baz'],
     'B': ['one', 'one', 'two'],
     'C': [2.0, 1.0, 3.0],
     'D': [3.0, 2.0, 1.0]
 })
-print(df)
-melted_df = df.melt(id_vars=['A', 'B'], value_vars=['C', 'D'], var_name='My_Var', value_name='My_Val')
+print(data)
+melted_df = data.melt(id_vars=['A', 'B'], value_vars=['C', 'D'], var_name='My_Var',
+                      value_name='My_Val')
 print(melted_df)
+
 ```
 
 ![](melt.png)
