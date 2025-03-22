@@ -93,9 +93,9 @@ print(df2)
 
 Załaduj poniższe pliki i przekształć kolumnę z datą:
 
-* <https://github.com/pjastr/SamleTestFilesVD/blob/master/ex/date_sale.csv>
+* date_sale.csv
 
-* <https://github.com/pjastr/SamleTestFilesVD/blob/master/ex/date_temp.csv>
+* date_temp.csv
 
 Wskazówka:
 

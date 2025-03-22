@@ -77,7 +77,7 @@ print(s3)
 
 Załaduj poniższe pliki i posortuj wg wybranych samodzielnie kryteriów:
 
-* <https://github.com/pjastr/SamleTestFilesVD/blob/master/ex/date_sale.csv>
+* date_sale.csv
 
-* <https://github.com/pjastr/SamleTestFilesVD/blob/master/wynagrodzenia21.csv>
+* wynagrodzenia21.csv
 

@@ -379,4 +379,4 @@ print(numeric_sum)
 
 Sprawdź, dla których plików wygodnie jest liczenie odpowiednich charakerystyk.
 
-<https://github.com/pjastr/SamleTestFilesVD>
+<https://github.com/pjastr/AIWD-files>

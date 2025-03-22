@@ -41,4 +41,4 @@ Wybrane argumenty:
 
 Poćwicz ładowanie danych z plików
 
-* <https://github.com/pjastr/SamleTestFilesVD>
+<https://github.com/pjastr/AIWD-files>
