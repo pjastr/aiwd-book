@@ -33,7 +33,7 @@ book:
       chapters:
       - pandas-start.qmd
       - pandas-indeksowanie.qmd
-      - python-ladowanie.qmd
+      - pandas-ladowanie.qmd
       - pandas-sortowanie.qmd
       - pandas-szeregiczasowe.qmd
       - pandas-danetekstowe.qmd

@@ -235,7 +235,7 @@
     "href": "lista_tablica.html",
     "title": "4  Lista a tablica",
     "section": "",
-    "text": "import numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n\n--- 0.0014452934265136719 seconds ---\n--- 0.030156373977661133 seconds ---",
+    "text": "import numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n\n--- 0.0021734237670898438 seconds ---\n--- 0.05863142013549805 seconds ---",
     "crumbs": [
       "NumPy",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lista a tablica</span>"
@@ -431,133 +431,133 @@
   {
     "objectID": "numpy-algebraliniowa.html",
     "href": "numpy-algebraliniowa.html",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "",
     "text": "13.1 Iloczyn skalarny (dot product)\nDla dwóch wektorów, dot oblicza ich iloczyn skalarny.\nimport numpy as np\n\n# Iloczyn skalarny dwóch wektorów\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.dot(a, b)  # 1*4 + 2*5 + 3*6\nprint(result)  # Wynik: 32\n\n# Alternatywny zapis za pomocą operatora @\nresult = a @ b\nprint(result)  # Wynik: 32\n\n32\n32",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#mnożenie-macierzowe",
     "href": "numpy-algebraliniowa.html#mnożenie-macierzowe",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.2 Mnożenie macierzowe",
     "text": "13.2 Mnożenie macierzowe\nDla macierzy (tablic dwuwymiarowych), dot wykonuje standardowe mnożenie macierzowe.\n\nimport numpy as np\n# Mnożenie macierzowe\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nC = np.dot(A, B)\nprint(C)\n# Wynik:\n# [[19 22]\n#  [43 50]]\n\n# To samo za pomocą operatora @\nC = A @ B\nprint(C)\n\n[[19 22]\n [43 50]]\n[[19 22]\n [43 50]]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#mnożenie-macierz-wektor",
     "href": "numpy-algebraliniowa.html#mnożenie-macierz-wektor",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.3 Mnożenie macierz-wektor",
     "text": "13.3 Mnożenie macierz-wektor\nMożemy również mnożyć macierz przez wektor:\n\nimport numpy as np\n# Mnożenie macierz-wektor\nA = np.array([[1, 2], [3, 4]])\nv = np.array([5, 6])\nresult = np.dot(A, v)\nprint(result)  # Wynik: [17 39]\n\n[17 39]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#rozwiązywanie-układów-równań-liniowych",
     "href": "numpy-algebraliniowa.html#rozwiązywanie-układów-równań-liniowych",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.4 Rozwiązywanie układów równań liniowych",
     "text": "13.4 Rozwiązywanie układów równań liniowych\nFunkcja numpy.linalg.solve rozwiązuje układy równań liniowych postaci Ax = b:\n\nimport numpy as np\n# Rozwiązywanie układu równań liniowych\nA = np.array([[3, 1], [1, 2]])\nb = np.array([9, 8])\nx = np.linalg.solve(A, b)\nprint(x)  # Wynik: [2. 3.]\n\n# Sprawdzenie rozwiązania\nnp.dot(A, x)  # Powinno być równe b\n\n[2. 3.]\n\n\narray([9., 8.])",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#wyznacznik-macierzy",
     "href": "numpy-algebraliniowa.html#wyznacznik-macierzy",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.5 Wyznacznik macierzy",
     "text": "13.5 Wyznacznik macierzy\nFunkcja numpy.linalg.det oblicza wyznacznik macierzy:\n\nimport numpy as np\n# Obliczanie wyznacznika\nA = np.array([[1, 2], [3, 4]])\ndet_A = np.linalg.det(A)\nprint(det_A)  # Wynik: -2.0\n\n-2.0000000000000004",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#wartości-i-wektory-własne",
     "href": "numpy-algebraliniowa.html#wartości-i-wektory-własne",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.6 Wartości i wektory własne",
     "text": "13.6 Wartości i wektory własne\nFunkcja numpy.linalg.eig oblicza wartości i wektory własne macierzy:\n\nimport numpy as np\n# Obliczanie wartości i wektorów własnych\nA = np.array([[4, -2], [1, 1]])\neigenvalues, eigenvectors = np.linalg.eig(A)\nprint(\"Wartości własne:\", eigenvalues)\nprint(\"Wektory własne:\")\nprint(eigenvectors)\n\n# Sprawdzenie: A * v = lambda * v\nfor i in range(len(eigenvalues)):\n    lambda_i = eigenvalues[i]\n    v_i = eigenvectors[:, i]\n    print(f\"λ_{i} = {lambda_i}\")\n    print(\"A * v =\", np.dot(A, v_i))\n    print(\"λ * v =\", lambda_i * v_i)\n\nWartości własne: [3. 2.]\nWektory własne:\n[[0.89442719 0.70710678]\n [0.4472136  0.70710678]]\nλ_0 = 3.0\nA * v = [2.68328157 1.34164079]\nλ * v = [2.68328157 1.34164079]\nλ_1 = 2.0\nA * v = [1.41421356 1.41421356]\nλ * v = [1.41421356 1.41421356]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#rozkład-wartości-osobliwych-svd",
     "href": "numpy-algebraliniowa.html#rozkład-wartości-osobliwych-svd",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.7 Rozkład wartości osobliwych (SVD)",
     "text": "13.7 Rozkład wartości osobliwych (SVD)\nRozkład SVD jest potężnym narzędziem w analizie danych:\n\nimport numpy as np\n# Rozkład SVD\nA = np.array([[1, 2], [3, 4], [5, 6]])\nU, s, Vh = np.linalg.svd(A)\nprint(\"Macierz U:\")\nprint(U)\nprint(\"Wartości osobliwe:\", s)\nprint(\"Macierz V^H:\")\nprint(Vh)\n\n# Rekonstrukcja macierzy A\nS = np.zeros((A.shape[0], A.shape[1]))\nS[:len(s), :len(s)] = np.diag(s)\nA_reconstructed = U @ S @ Vh\nprint(\"Rekonstruowana macierz A:\")\nprint(A_reconstructed)\n\nMacierz U:\n[[-0.2298477   0.88346102  0.40824829]\n [-0.52474482  0.24078249 -0.81649658]\n [-0.81964194 -0.40189603  0.40824829]]\nWartości osobliwe: [9.52551809 0.51430058]\nMacierz V^H:\n[[-0.61962948 -0.78489445]\n [-0.78489445  0.61962948]]\nRekonstruowana macierz A:\n[[1. 2.]\n [3. 4.]\n [5. 6.]]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#norma-macierzywektora",
     "href": "numpy-algebraliniowa.html#norma-macierzywektora",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.8 Norma macierzy/wektora",
     "text": "13.8 Norma macierzy/wektora\nNumPy oferuje różne rodzaje norm:\n\nimport numpy as np\n# Różne normy\nv = np.array([3, 4])\nprint(\"Norma L1:\", np.linalg.norm(v, 1))  # Norma L1: 7.0\nprint(\"Norma L2 (Euklidesowa):\", np.linalg.norm(v))  # Norma L2: 5.0\nprint(\"Norma maksimum:\", np.linalg.norm(v, np.inf))  # Norma maksimum: 4.0\n\nA = np.array([[1, 2], [3, 4]])\nprint(\"Norma macierzowa Frobeniusa:\", np.linalg.norm(A, 'fro'))  # Norma Frobeniusa: 5.477...\n\nNorma L1: 7.0\nNorma L2 (Euklidesowa): 5.0\nNorma maksimum: 4.0\nNorma macierzowa Frobeniusa: 5.477225575051661",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#macierz-odwrotna",
     "href": "numpy-algebraliniowa.html#macierz-odwrotna",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.9 Macierz odwrotna",
     "text": "13.9 Macierz odwrotna\nFunkcja numpy.linalg.inv oblicza macierz odwrotną:\n\nimport numpy as np\n# Macierz odwrotna\nA = np.array([[1, 2], [3, 4]])\nA_inv = np.linalg.inv(A)\nprint(\"Macierz odwrotna:\")\nprint(A_inv)\n\n# Sprawdzenie: A * A^(-1) = I\nprint(\"A * A^(-1):\")\nprint(np.dot(A, A_inv))  # Powinno być bliskie macierzy jednostkowej\n\nMacierz odwrotna:\n[[-2.   1. ]\n [ 1.5 -0.5]]\nA * A^(-1):\n[[1.0000000e+00 0.0000000e+00]\n [8.8817842e-16 1.0000000e+00]]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#funkcja-numpy.inner---iloczyn-wewnętrzny",
     "href": "numpy-algebraliniowa.html#funkcja-numpy.inner---iloczyn-wewnętrzny",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.10 Funkcja numpy.inner - iloczyn wewnętrzny",
     "text": "13.10 Funkcja numpy.inner - iloczyn wewnętrzny\nFunkcja inner oblicza iloczyn wewnętrzny dwóch tablic:\n\nimport numpy as np\n# Iloczyn wewnętrzny\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.inner(a, b)\nprint(result)  # 1*4 + 2*5 + 3*6 = 32\n\n# Dla tablic 2D\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nresult = np.inner(A, B)\nprint(result)\n# Jest to równoważne wykonaniu iloczynu skalarnego wzdłuż ostatniego wymiaru\n\n32\n[[17 23]\n [39 53]]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#funkcja-numpy.outer---iloczyn-zewnętrzny",
     "href": "numpy-algebraliniowa.html#funkcja-numpy.outer---iloczyn-zewnętrzny",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.11 Funkcja numpy.outer - iloczyn zewnętrzny",
     "text": "13.11 Funkcja numpy.outer - iloczyn zewnętrzny\nFunkcja outer oblicza iloczyn zewnętrzny dwóch wektorów:\n\nimport numpy as np\n# Iloczyn zewnętrzny\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = np.outer(a, b)\nprint(result)\n# Wynik:\n# [[ 4  5  6]\n#  [ 8 10 12]\n#  [12 15 18]]\n\n[[ 4  5  6]\n [ 8 10 12]\n [12 15 18]]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
     "objectID": "numpy-algebraliniowa.html#funkcja-numpy.matmul---mnożenie-macierzowe",
     "href": "numpy-algebraliniowa.html#funkcja-numpy.matmul---mnożenie-macierzowe",
-    "title": "13  Alegbra liniowa w NumPy",
+    "title": "13  Alegbra liniowa",
     "section": "13.12 Funkcja numpy.matmul - mnożenie macierzowe",
     "text": "13.12 Funkcja numpy.matmul - mnożenie macierzowe\nFunkcja matmul jest podobna do dot, ale ma nieco inne zachowanie dla tablic o wymiarach większych niż 2:\n\nimport numpy as np\n# Porównanie dot i matmul\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6], [7, 8]])\n\ndot_result = np.dot(a, b)\nmatmul_result = np.matmul(a, b)\n\nprint(\"Wynik dot:\")\nprint(dot_result)\nprint(\"Wynik matmul:\")\nprint(matmul_result)\n# Dla 2D są identyczne\n\n# Ale dla tablic 3D i wyższych mogą się różnić\n\nWynik dot:\n[[19 22]\n [43 50]]\nWynik matmul:\n[[19 22]\n [43 50]]",
     "crumbs": [
       "NumPy",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa w `NumPy`</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Alegbra liniowa</span>"
     ]
   },
   {
@@ -576,7 +576,7 @@
     "href": "numpy-warunki.html#funkcja-where",
     "title": "14  Filtrowanie zaawansowane",
     "section": "14.2 Funkcja where()",
-    "text": "14.2 Funkcja where()\nZwraca elementy wybrane z x lub y w zależności od warunku. Jest to warunkowy selektor elementów.\n\nimport numpy as np\n\n# Zastąp wartości ujemne przez 0\narr = np.array([1, -2, 3, -4, 5])\nwynik = np.where(arr &gt; 0, arr, 0)\nprint(wynik)  # [1 0 3 0 5]\n\n# Zastosowanie w tablicy 2D\narr_2d = np.array([[1, -2, 3], [-4, 5, -6]])\nwynik_2d = np.where(arr_2d &lt; 0, -1, arr_2d)\nprint(wynik_2d)\n# [[ 1 -1  3]\n#  [-1  5 -1]]\n\n[1 0 3 0 5]\n[[ 1 -1  3]\n [-1  5 -1]]",
+    "text": "14.2 Funkcja where()\nZwraca elementy wybrane z x lub y w zależności od warunku. Jest to warunkowy selektor elementów.\n\nimport numpy as np\n\n# Zastąp wartości niedodatnie przez 0\narr = np.array([1, -2, 3, -4, 5])\nwynik = np.where(arr &gt; 0, arr, 0)\nprint(wynik)  # [1 0 3 0 5]\n\n# Zastosowanie w tablicy 2D\narr_2d = np.array([[1, -2, 3], [-4, 5, -6]])\nwynik_2d = np.where(arr_2d &lt; 0, -1, arr_2d)\nprint(wynik_2d)\n# [[ 1 -1  3]\n#  [-1  5 -1]]\n\n[1 0 3 0 5]\n[[ 1 -1  3]\n [-1  5 -1]]",
     "crumbs": [
       "NumPy",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
@@ -587,7 +587,7 @@
     "href": "numpy-warunki.html#funkcje-indices-i-ix_",
     "title": "14  Filtrowanie zaawansowane",
     "section": "14.3 Funkcje indices() i ix_()",
-    "text": "14.3 Funkcje indices() i ix_()\n\n14.3.1 indices()\nTworzy tablicę reprezentującą indeksy siatki.\n\nimport numpy as np\n\n# Tworzenie siatki indeksów 3x4\ngrid = np.indices((3, 4))\nprint(grid.shape)  # (2, 3, 4)\nprint(grid[0])  # indeksy wierszy\n# [[0 0 0 0]\n#  [1 1 1 1]\n#  [2 2 2 2]]\nprint(grid[1])  # indeksy kolumn\n# [[0 1 2 3]\n#  [0 1 2 3]\n#  [0 1 2 3]]\n\n(2, 3, 4)\n[[0 0 0 0]\n [1 1 1 1]\n [2 2 2 2]]\n[[0 1 2 3]\n [0 1 2 3]\n [0 1 2 3]]\n\n\n\n\n14.3.2 ix_()\nKonstruuje otwartą siatkę z wielu sekwencji, co jest przydatne do indeksowania wielowymiarowego.\n\nimport numpy as np\nx = np.array([0, 1, 2])\ny = np.array([3, 4, 5, 6])\nindeksy = np.ix_(x, y)\n\n# Tworzy indeksy dla wszystkich kombinacji (0,3), (0,4), ..., (2,6)\nprint(indeksy[0].shape, indeksy[1].shape)  # (3, 1) (1, 4)\n\n# Użycie do wybierania podtablicy\narr = np.arange(16).reshape(4, 4)\nprint(arr)\n# [[ 0  1  2  3]\n#  [ 4  5  6  7]\n#  [ 8  9 10 11]\n#  [12 13 14 15]]\n\npodtablica = arr[np.ix_([0, 2, 3], [0, 2])]\nprint(podtablica)\n# [[ 0  2]\n#  [ 8 10]\n#  [12 14]]\n\n(3, 1) (1, 4)\n[[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]\n [12 13 14 15]]\n[[ 0  2]\n [ 8 10]\n [12 14]]",
+    "text": "14.3 Funkcje indices() i ix_()\n\n14.3.1 indices()\nTworzy tablicę reprezentującą indeksy siatki.\n\nimport numpy as np\n\n# Tworzenie siatki indeksów 3x4\ngrid = np.indices((3, 4))\nprint(grid.shape)  # (2, 3, 4)\nprint(grid[0])  # indeksy wierszy\n# [[0 0 0 0]\n#  [1 1 1 1]\n#  [2 2 2 2]]\nprint(grid[1])  # indeksy kolumn\n# [[0 1 2 3]\n#  [0 1 2 3]\n#  [0 1 2 3]]\n\n(2, 3, 4)\n[[0 0 0 0]\n [1 1 1 1]\n [2 2 2 2]]\n[[0 1 2 3]\n [0 1 2 3]\n [0 1 2 3]]\n\n\n\n\n\n14.3.2 ix_()\nKonstruuje otwartą siatkę z wielu sekwencji, co jest przydatne do indeksowania wielowymiarowego.\n\nimport numpy as np\nx = np.array([0, 1, 2])\ny = np.array([3, 4, 5, 6])\nindeksy = np.ix_(x, y)\n\n# Tworzy indeksy dla wszystkich kombinacji (0,3), (0,4), ..., (2,6)\nprint(indeksy[0].shape, indeksy[1].shape)  # (3, 1) (1, 4)\n\n# Użycie do wybierania podtablicy\narr = np.arange(16).reshape(4, 4)\nprint(arr)\n# [[ 0  1  2  3]\n#  [ 4  5  6  7]\n#  [ 8  9 10 11]\n#  [12 13 14 15]]\n\npodtablica = arr[np.ix_([0, 2, 3], [0, 2])]\nprint(podtablica)\n# [[ 0  2]\n#  [ 8 10]\n#  [12 14]]\n\n(3, 1) (1, 4)\n[[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]\n [12 13 14 15]]\n[[ 0  2]\n [ 8 10]\n [12 14]]",
     "crumbs": [
       "NumPy",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
@@ -620,7 +620,7 @@
     "href": "numpy-warunki.html#indeksy-diagonalne",
     "title": "14  Filtrowanie zaawansowane",
     "section": "14.6 Indeksy diagonalne",
-    "text": "14.6 Indeksy diagonalne\nNumPy oferuje wiele funkcji do pracy z diagonalami macierzy.\n\nimport numpy as np\n# Uzyskanie indeksów głównej przekątnej\nn = 4\nindeksy_diag = np.diag_indices(n)\nprint(indeksy_diag)  # (array([0, 1, 2, 3]), array([0, 1, 2, 3]))\n\n# Zastosowanie do ustawienia głównej przekątnej\narr = np.zeros((4, 4))\narr[indeksy_diag] = 1  # Ustawienie jedynek na głównej przekątnej\nprint(arr)\n# [[1. 0. 0. 0.]\n#  [0. 1. 0. 0.]\n#  [0. 0. 1. 0.]\n#  [0. 0. 0. 1.]]\n\n# Uzyskanie indeksów z istniejącej tablicy\narr2 = np.ones((3, 3))\nindeksy_diag2 = np.diag_indices_from(arr2)\n\n(array([0, 1, 2, 3]), array([0, 1, 2, 3]))\n[[1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]]",
+    "text": "14.6 Indeksy diagonalne\nNumPy oferuje wiele funkcji do pracy z diagonalami macierzy.\n\nimport numpy as np\n# Uzyskanie indeksów głównej przekątnej\nn = 4\nindeksy_diag = np.diag_indices(n)\nprint(indeksy_diag)  # (array([0, 1, 2, 3]), array([0, 1, 2, 3]))\n\n# Zastosowanie do ustawienia głównej przekątnej\narr = np.zeros((4, 4))\narr[indeksy_diag] = 1  # Ustawienie jedynek na głównej przekątnej\nprint(arr)\n# [[1. 0. 0. 0.]\n#  [0. 1. 0. 0.]\n#  [0. 0. 1. 0.]\n#  [0. 0. 0. 1.]]\n\n# Uzyskanie indeksów z istniejącej tablicy\narr2 = np.ones((3, 3))\nindeksy_diag2 = np.diag_indices_from(arr2)\nprint(indeksy_diag2)\n\n(array([0, 1, 2, 3]), array([0, 1, 2, 3]))\n[[1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]]\n(array([0, 1, 2]), array([0, 1, 2]))",
     "crumbs": [
       "NumPy",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Filtrowanie zaawansowane</span>"
@@ -913,8 +913,8 @@
     ]
   },
   {
-    "objectID": "python-ladowanie.html",
-    "href": "python-ladowanie.html",
+    "objectID": "pandas-ladowanie.html",
+    "href": "pandas-ladowanie.html",
     "title": "19  Ładowanie danych",
     "section": "",
     "text": "19.1 Obsługa plików csv\nFunkcja pandas.read_csv\nDokumentacja: link\nWybrane argumenty:\nZapis pandas.DataFrame.to_csv\nDokumentacja: link",
@@ -924,8 +924,8 @@
     ]
   },
   {
-    "objectID": "python-ladowanie.html#obsługa-plików-csv",
-    "href": "python-ladowanie.html#obsługa-plików-csv",
+    "objectID": "pandas-ladowanie.html#obsługa-plików-csv",
+    "href": "pandas-ladowanie.html#obsługa-plików-csv",
     "title": "19  Ładowanie danych",
     "section": "",
     "text": "filepath - ścieżka dostępu\nsep=_NoDefault.no_default, delimiter=None - separator\nheader='infer' - nagłówek - domyślnie nazwy kolumn, ew. header=None oznacza brak nagłówka\nindex_col=None - ustalenie kolumny na indeksy (nazwy wierszy)\nthousands=None - separator tysięczny\ndecimal='.' - separator dziesiętny",
@@ -935,11 +935,22 @@
     ]
   },
   {
-    "objectID": "python-ladowanie.html#obsługa-plików-z-excela",
-    "href": "python-ladowanie.html#obsługa-plików-z-excela",
+    "objectID": "pandas-ladowanie.html#obsługa-plików-z-excela",
+    "href": "pandas-ladowanie.html#obsługa-plików-z-excela",
     "title": "19  Ładowanie danych",
     "section": "19.2 Obsługa plików z Excela",
     "text": "19.2 Obsługa plików z Excela\nFunkcja pandas.read_excel\nhttps://pandas.pydata.org/docs/reference/api/pandas.read_excel.html\n** Ważne: trzeba zainstalować bibliotekę openpyxl do importu .xlsx oraz xlrd do importu .xls (nie trzeba ich importować w kodzie jawnie w większości wypadków)\nWybrane argumenty:\n\nio - ścieżka dostępu\nsheet_name=0 - nazwa arkusza\nheader='infer' - nagłówek - domyślnie nazwy kolumn, ew. header=None oznacza brak nagłówka\nindex_col=None - ustalenie kolumny na indeksy (nazwy wierszy)\nthousands=None - separator tysięczny\ndecimal='.' - separator dziesiętny\n\nĆwiczenie: (ex10.py)\nPoćwicz ładowanie danych z plików\nhttps://github.com/pjastr/AIWD-files",
+    "crumbs": [
+      "Pandas",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ładowanie danych</span>"
+    ]
+  },
+  {
+    "objectID": "pandas-ladowanie.html#obsługa-sqllite3",
+    "href": "pandas-ladowanie.html#obsługa-sqllite3",
+    "title": "19  Ładowanie danych",
+    "section": "19.3 Obsługa sqllite3",
+    "text": "19.3 Obsługa sqllite3\nimport pandas as pd\nfrom sqlite3 import connect\n\nconn = connect('sales_data2.db')\ndata = pd.read_sql(\"SELECT * FROM sales_data\", con=conn)",
     "crumbs": [
       "Pandas",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Ładowanie danych</span>"
@@ -983,7 +994,7 @@
     "href": "pandas-danetekstowe.html#operacje-wektorowe-na-tekstach",
     "title": "22  Pandas - dane tekstowe",
     "section": "22.2 Operacje wektorowe na tekstach",
-    "text": "22.2 Operacje wektorowe na tekstach\nOto tabela w języku Markdown wyjaśniająca funkcje z pandas.Series.str i ich zastosowanie:\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nlen()\nZwraca długość każdego ciągu znaków w serii.\n\n\nlower()\nKonwertuje wszystkie znaki na małe litery.\n\n\ntranslate()\nZastępuje znaki według podanej mapy translacji.\n\n\nislower()\nSprawdza, czy wszystkie znaki w ciągu są małymi literami.\n\n\nljust()\nJustuje tekst w lewo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nupper()\nKonwertuje wszystkie znaki na wielkie litery.\n\n\nstartswith()\nSprawdza, czy ciąg znaków zaczyna się od podanego prefiksu.\n\n\nisupper()\nSprawdza, czy wszystkie znaki w ciągu są wielkimi literami.\n\n\nrjust()\nJustuje tekst w prawo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nfind()\nZwraca indeks pierwszego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nendswith()\nSprawdza, czy ciąg znaków kończy się podanym sufiksem.\n\n\nisnumeric()\nSprawdza, czy ciąg zawiera tylko znaki numeryczne.\n\n\ncenter()\nCentruje tekst, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nrfind()\nZwraca indeks ostatniego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nisalnum()\nSprawdza, czy ciąg zawiera tylko litery i cyfry.\n\n\nisdecimal()\nSprawdza, czy ciąg zawiera tylko znaki dziesiętne.\n\n\nzfill()\nWypełnia ciąg zerami z lewej strony, aby osiągnąć określoną długość.\n\n\nindex()\nZwraca indeks pierwszego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisalpha()\nSprawdza, czy ciąg zawiera tylko litery.\n\n\nsplit()\nDzieli ciąg na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z obu stron ciągu.\n\n\nrindex()\nZwraca indeks ostatniego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisdigit()\nSprawdza, czy ciąg zawiera tylko cyfry.\n\n\nrsplit()\nDzieli ciąg od prawej strony na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nrstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z prawej strony ciągu.\n\n\ncapitalize()\nZmienia pierwszą literę na wielką, a resztę na małe.\n\n\nisspace()\nSprawdza, czy ciąg zawiera tylko białe znaki.\n\n\npartition()\nDzieli ciąg na trzy części: przed separator, separator i po separatorze.\n\n\nlstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z lewej strony ciągu.\n\n\nswapcase()\nZmienia wielkość liter na przeciwną (małe na wielkie i odwrotnie).\n\n\nistitle()\nSprawdza, czy ciąg jest sformatowany jako tytuł (pierwsze litery wyrazów są wielkie).\n\n\nrpartition()\nDzieli ciąg na trzy części od prawej strony: przed separator, separator i po separatorze.\n\n\n\nZwykle operacje wektorowe są szybsze:\n\nimport time\nimport pandas as pd\n\n# Tworzenie przykładowej ramki danych z 2000000 wierszami\ndata = {'Text': ['Pandas is awesome'] * 2000000}\ndata2 = pd.DataFrame(data)\n\n\n# Funkcja, która konwertuje tekst na małe litery (przykładowa operacja)\ndef to_lower(text):\n    return text.lower()\n\n\n# 1. Operacja wektorowa\nstart_vectorized = time.time()\ndata2['Vectorized'] = data2['Text'].str.lower()\nend_vectorized = time.time()\n\n# 2. Operacja z list comprehension\nstart_comprehension = time.time()\ndata2['Comprehension'] = [to_lower(text) for text in data2['Text']]\nend_comprehension = time.time()\n\n# Czasy wykonania\nvectorized_time = end_vectorized - start_vectorized\ncomprehension_time = end_comprehension - start_comprehension\n\n# Wynik\nprint(vectorized_time, comprehension_time)\n\n0.1482694149017334 0.27410030364990234",
+    "text": "22.2 Operacje wektorowe na tekstach\nOto tabela w języku Markdown wyjaśniająca funkcje z pandas.Series.str i ich zastosowanie:\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nlen()\nZwraca długość każdego ciągu znaków w serii.\n\n\nlower()\nKonwertuje wszystkie znaki na małe litery.\n\n\ntranslate()\nZastępuje znaki według podanej mapy translacji.\n\n\nislower()\nSprawdza, czy wszystkie znaki w ciągu są małymi literami.\n\n\nljust()\nJustuje tekst w lewo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nupper()\nKonwertuje wszystkie znaki na wielkie litery.\n\n\nstartswith()\nSprawdza, czy ciąg znaków zaczyna się od podanego prefiksu.\n\n\nisupper()\nSprawdza, czy wszystkie znaki w ciągu są wielkimi literami.\n\n\nrjust()\nJustuje tekst w prawo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nfind()\nZwraca indeks pierwszego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nendswith()\nSprawdza, czy ciąg znaków kończy się podanym sufiksem.\n\n\nisnumeric()\nSprawdza, czy ciąg zawiera tylko znaki numeryczne.\n\n\ncenter()\nCentruje tekst, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nrfind()\nZwraca indeks ostatniego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nisalnum()\nSprawdza, czy ciąg zawiera tylko litery i cyfry.\n\n\nisdecimal()\nSprawdza, czy ciąg zawiera tylko znaki dziesiętne.\n\n\nzfill()\nWypełnia ciąg zerami z lewej strony, aby osiągnąć określoną długość.\n\n\nindex()\nZwraca indeks pierwszego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisalpha()\nSprawdza, czy ciąg zawiera tylko litery.\n\n\nsplit()\nDzieli ciąg na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z obu stron ciągu.\n\n\nrindex()\nZwraca indeks ostatniego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisdigit()\nSprawdza, czy ciąg zawiera tylko cyfry.\n\n\nrsplit()\nDzieli ciąg od prawej strony na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nrstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z prawej strony ciągu.\n\n\ncapitalize()\nZmienia pierwszą literę na wielką, a resztę na małe.\n\n\nisspace()\nSprawdza, czy ciąg zawiera tylko białe znaki.\n\n\npartition()\nDzieli ciąg na trzy części: przed separator, separator i po separatorze.\n\n\nlstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z lewej strony ciągu.\n\n\nswapcase()\nZmienia wielkość liter na przeciwną (małe na wielkie i odwrotnie).\n\n\nistitle()\nSprawdza, czy ciąg jest sformatowany jako tytuł (pierwsze litery wyrazów są wielkie).\n\n\nrpartition()\nDzieli ciąg na trzy części od prawej strony: przed separator, separator i po separatorze.\n\n\n\nZwykle operacje wektorowe są szybsze:\n\nimport time\nimport pandas as pd\n\n# Tworzenie przykładowej ramki danych z 2000000 wierszami\ndata = {'Text': ['Pandas is awesome'] * 2000000}\ndata2 = pd.DataFrame(data)\n\n\n# Funkcja, która konwertuje tekst na małe litery (przykładowa operacja)\ndef to_lower(text):\n    return text.lower()\n\n\n# 1. Operacja wektorowa\nstart_vectorized = time.time()\ndata2['Vectorized'] = data2['Text'].str.lower()\nend_vectorized = time.time()\n\n# 2. Operacja z list comprehension\nstart_comprehension = time.time()\ndata2['Comprehension'] = [to_lower(text) for text in data2['Text']]\nend_comprehension = time.time()\n\n# Czasy wykonania\nvectorized_time = end_vectorized - start_vectorized\ncomprehension_time = end_comprehension - start_comprehension\n\n# Wynik\nprint(vectorized_time, comprehension_time)\n\n0.26408982276916504 0.6848139762878418",
     "crumbs": [
       "Pandas",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Pandas - dane tekstowe</span>"
@@ -1038,7 +1049,7 @@
     "href": "pandas-inne.html#dyskretyzacja-i-podział-na-koszyki",
     "title": "23  Pandas - inne",
     "section": "23.5 Dyskretyzacja i podział na koszyki",
-    "text": "23.5 Dyskretyzacja i podział na koszyki\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats = pd.cut(ages, bins)\nprint(cats)\nprint(cats.codes)\nprint(cats.categories)\nprint(pd.Series(cats).value_counts())\n\n[(18, 25], (18, 25], (18, 25], (25, 35], (18, 25], ..., (25, 35], (60, 100], (35, 60], (35, 60], (25, 35]]\nLength: 12\nCategories (4, interval[int64, right]): [(18, 25] &lt; (25, 35] &lt; (35, 60] &lt; (60, 100]]\n[0 0 0 1 0 0 2 1 3 2 2 1]\nIntervalIndex([(18, 25], (25, 35], (35, 60], (60, 100]], dtype='interval[int64, right]')\n(18, 25]     5\n(25, 35]     3\n(35, 60]     3\n(60, 100]    1\nName: count, dtype: int64\n\n\n\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats2 = pd.cut(ages, [18, 26, 36, 61, 100], right=False)\nprint(cats2)\ngroup_names = ['Youth', 'YoungAdult',\n               'MiddleAged', 'Senior']\nprint(pd.cut(ages, bins, labels=group_names))\n\n[[18, 26), [18, 26), [18, 26), [26, 36), [18, 26), ..., [26, 36), [61, 100), [36, 61), [36, 61), [26, 36)]\nLength: 12\nCategories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt; [61, 100)]\n['Youth', 'Youth', 'Youth', 'YoungAdult', 'Youth', ..., 'YoungAdult', 'Senior', 'MiddleAged', 'MiddleAged', 'YoungAdult']\nLength: 12\nCategories (4, object): ['Youth' &lt; 'YoungAdult' &lt; 'MiddleAged' &lt; 'Senior']\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.rand(20)\nprint(pd.cut(data, 4, precision=2))\n\n[(0.78, 0.99], (0.14, 0.36], (0.36, 0.57], (0.78, 0.99], (0.14, 0.36], ..., (0.78, 0.99], (0.78, 0.99], (0.57, 0.78], (0.57, 0.78], (0.14, 0.36]]\nLength: 20\nCategories (4, interval[float64, right]): [(0.14, 0.36] &lt; (0.36, 0.57] &lt; (0.57, 0.78] &lt; (0.78, 0.99]]\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.randn(1000)\ncats = pd.qcut(data, 4)\nprint(cats)\nprint(pd.Series(cats).value_counts())\n\n[(-2.9899999999999998, -0.652], (0.00287, 0.723], (-2.9899999999999998, -0.652], (0.723, 3.186], (0.723, 3.186], ..., (0.00287, 0.723], (0.723, 3.186], (0.723, 3.186], (-0.652, 0.00287], (-2.9899999999999998, -0.652]]\nLength: 1000\nCategories (4, interval[float64, right]): [(-2.9899999999999998, -0.652] &lt; (-0.652, 0.00287] &lt; (0.00287, 0.723] &lt; (0.723, 3.186]]\n(-2.9899999999999998, -0.652]    250\n(-0.652, 0.00287]                250\n(0.00287, 0.723]                 250\n(0.723, 3.186]                   250\nName: count, dtype: int64",
+    "text": "23.5 Dyskretyzacja i podział na koszyki\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats = pd.cut(ages, bins)\nprint(cats)\nprint(cats.codes)\nprint(cats.categories)\nprint(pd.Series(cats).value_counts())\n\n[(18, 25], (18, 25], (18, 25], (25, 35], (18, 25], ..., (25, 35], (60, 100], (35, 60], (35, 60], (25, 35]]\nLength: 12\nCategories (4, interval[int64, right]): [(18, 25] &lt; (25, 35] &lt; (35, 60] &lt; (60, 100]]\n[0 0 0 1 0 0 2 1 3 2 2 1]\nIntervalIndex([(18, 25], (25, 35], (35, 60], (60, 100]], dtype='interval[int64, right]')\n(18, 25]     5\n(25, 35]     3\n(35, 60]     3\n(60, 100]    1\nName: count, dtype: int64\n\n\n\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats2 = pd.cut(ages, [18, 26, 36, 61, 100], right=False)\nprint(cats2)\ngroup_names = ['Youth', 'YoungAdult',\n               'MiddleAged', 'Senior']\nprint(pd.cut(ages, bins, labels=group_names))\n\n[[18, 26), [18, 26), [18, 26), [26, 36), [18, 26), ..., [26, 36), [61, 100), [36, 61), [36, 61), [26, 36)]\nLength: 12\nCategories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt; [61, 100)]\n['Youth', 'Youth', 'Youth', 'YoungAdult', 'Youth', ..., 'YoungAdult', 'Senior', 'MiddleAged', 'MiddleAged', 'YoungAdult']\nLength: 12\nCategories (4, object): ['Youth' &lt; 'YoungAdult' &lt; 'MiddleAged' &lt; 'Senior']\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.rand(20)\nprint(pd.cut(data, 4, precision=2))\n\n[(0.5, 0.75], (0.75, 1.0], (0.75, 1.0], (0.75, 1.0], (0.5, 0.75], ..., (0.75, 1.0], (0.75, 1.0], (4.7e-05, 0.25], (4.7e-05, 0.25], (0.5, 0.75]]\nLength: 20\nCategories (4, interval[float64, right]): [(4.7e-05, 0.25] &lt; (0.25, 0.5] &lt; (0.5, 0.75] &lt; (0.75, 1.0]]\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.randn(1000)\ncats = pd.qcut(data, 4)\nprint(cats)\nprint(pd.Series(cats).value_counts())\n\n[(-3.061, -0.695], (-0.029, 0.64], (0.64, 3.751], (0.64, 3.751], (-0.695, -0.029], ..., (-0.695, -0.029], (-0.029, 0.64], (-0.029, 0.64], (-3.061, -0.695], (-0.029, 0.64]]\nLength: 1000\nCategories (4, interval[float64, right]): [(-3.061, -0.695] &lt; (-0.695, -0.029] &lt; (-0.029, 0.64] &lt; (0.64, 3.751]]\n(-3.061, -0.695]    250\n(-0.695, -0.029]    250\n(-0.029, 0.64]      250\n(0.64, 3.751]       250\nName: count, dtype: int64",
     "crumbs": [
       "Pandas",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
@@ -1049,7 +1060,7 @@
     "href": "pandas-inne.html#wykrywanie-i-filtrowanie-elementów-odstających",
     "title": "23  Pandas - inne",
     "section": "23.6 Wykrywanie i filtrowanie elementów odstających",
-    "text": "23.6 Wykrywanie i filtrowanie elementów odstających\n\nimport pandas as pd\nimport numpy as np\n\ndata = pd.DataFrame(np.random.randn(1000, 4))\nprint(data.describe())\nprint(\"---\")\ncol = data[2]\nprint(col[np.abs(col) &gt; 3])\nprint(\"---\")\nprint(data[(np.abs(data) &gt; 3).any(axis=1)])\n\n                 0            1            2            3\ncount  1000.000000  1000.000000  1000.000000  1000.000000\nmean      0.066772     0.028604     0.003227     0.013514\nstd       1.001739     1.016546     1.022067     0.974883\nmin      -2.676544    -3.195059    -3.078661    -2.985274\n25%      -0.602746    -0.635714    -0.713946    -0.661829\n50%       0.095689     0.009566     0.014161    -0.027630\n75%       0.700294     0.691042     0.720263     0.695934\nmax       3.490354     3.132455     3.006857     2.713618\n---\n475   -3.078661\n608    3.006857\nName: 2, dtype: float64\n---\n            0         1         2         3\n66  -1.378342  3.132455 -0.612097 -0.719298\n214  3.172608 -0.696903  0.908343 -1.491526\n232  3.185368 -0.666697 -0.508984  1.716751\n265 -0.557890 -3.195059 -1.063465 -0.241067\n306  3.291785  0.948471  1.090694  1.712251\n425  3.490354  0.368439 -0.553606  0.986282\n475 -0.130916 -0.664433 -3.078661  0.476931\n608  0.593726 -0.319872  3.006857 -0.365425\n741  3.323215  0.070657 -0.824639  0.300856",
+    "text": "23.6 Wykrywanie i filtrowanie elementów odstających\n\nimport pandas as pd\nimport numpy as np\n\ndata = pd.DataFrame(np.random.randn(1000, 4))\nprint(data.describe())\nprint(\"---\")\ncol = data[2]\nprint(col[np.abs(col) &gt; 3])\nprint(\"---\")\nprint(data[(np.abs(data) &gt; 3).any(axis=1)])\n\n                 0            1            2            3\ncount  1000.000000  1000.000000  1000.000000  1000.000000\nmean     -0.011299    -0.006319    -0.019531    -0.038944\nstd       0.998366     1.001350     0.973547     0.969247\nmin      -3.386766    -2.655350    -2.861796    -3.316528\n25%      -0.639634    -0.683240    -0.679500    -0.700625\n50%      -0.035093    -0.026227    -0.030959    -0.039613\n75%       0.684947     0.706879     0.663895     0.582042\nmax       2.696016     3.407011     3.344401     2.795126\n---\n213    3.344401\n417    3.022305\n695    3.091004\nName: 2, dtype: float64\n---\n            0         1         2         3\n33   0.550939  3.407011 -0.364889 -0.113905\n213 -0.952612  0.340459  3.344401 -0.947904\n245  0.354449 -0.400326  1.082566 -3.167076\n271 -1.811975  0.913555  0.434684 -3.022811\n316 -3.031765 -0.208906 -1.456023  1.645777\n396 -3.386766 -1.027632  0.723958 -0.241358\n417  1.040000 -0.634801  3.022305  0.376552\n459  1.005451  3.004429 -0.580971 -0.219939\n695  0.440477  1.688790  3.091004  0.303706\n792 -2.138596 -0.088001 -0.531555 -3.316528\n872 -3.326456 -1.377429 -0.097795  0.105266\n983 -0.606015  0.764970  0.516573 -3.162286",
     "crumbs": [
       "Pandas",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"

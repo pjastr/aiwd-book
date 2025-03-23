@@ -271,7 +271,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa w <code>NumPy</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -328,7 +328,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./python-ladowanie.html" class="sidebar-item-text sidebar-link">
+  <a href="./pandas-ladowanie.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
   </div>
 </li>
@@ -407,7 +407,7 @@ window.Quarto = {
 
 <p>Rozważane warianty są przykładowe.</p>
 <p>Wariant 1 - skalar-tablica - wykonanie operacji na każdym elemencie tablicy</p>
-<div id="b007d30b" class="cell" data-execution_count="1">
+<div id="3f9bf693" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">9</span>, <span class="dv">10</span>]])</span>
@@ -427,7 +427,7 @@ window.Quarto = {
 <p><img src="o3.png" class="img-fluid"></p>
 <p>Wariant 2 - dwie tablice - “gdy jedna z tablic może być rozszerzona” (oba wymiary są równe lub jeden z nich jest równy 1)</p>
 <p><a href="https://numpy.org/doc/stable/user/basics.broadcasting.html" class="uri">https://numpy.org/doc/stable/user/basics.broadcasting.html</a></p>
-<div id="4a836f61" class="cell" data-execution_count="2">
+<div id="1a62ef1e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">5</span>, <span class="dv">6</span>]])</span>
@@ -454,7 +454,7 @@ window.Quarto = {
 </div>
 <p><img src="a4.png" class="img-fluid"></p>
 <p>Wariant 3 - “kolumna” i “wiersz”</p>
-<div id="0d47eea1" class="cell" data-execution_count="3">
+<div id="cf86980e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>]]).T</span>

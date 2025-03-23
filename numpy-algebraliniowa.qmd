@@ -1,4 +1,4 @@
-# Alegbra liniowa w `NumPy`
+# Alegbra liniowa
 
 
 

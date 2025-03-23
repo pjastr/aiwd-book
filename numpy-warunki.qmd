@@ -26,6 +26,8 @@ print(indeksy_i_wartosci)
 #  [2 1]]
 ```
 
+![](f1.png)
+
 ## Funkcja `where()`
 
 Zwraca elementy wybrane z `x` lub `y` w zależności od warunku. Jest to warunkowy selektor elementów.
@@ -34,7 +36,7 @@ Zwraca elementy wybrane z `x` lub `y` w zależności od warunku. Jest to warunko
 #| echo: true
 import numpy as np
 
-# Zastąp wartości ujemne przez 0
+# Zastąp wartości niedodatnie przez 0
 arr = np.array([1, -2, 3, -4, 5])
 wynik = np.where(arr > 0, arr, 0)
 print(wynik)  # [1 0 3 0 5]
@@ -46,6 +48,8 @@ print(wynik_2d)
 # [[ 1 -1  3]
 #  [-1  5 -1]]
 ```
+
+![](f2.png)
 
 ##  Funkcje `indices()` i `ix_()`
 
@@ -69,6 +73,8 @@ print(grid[1])  # indeksy kolumn
 #  [0 1 2 3]
 #  [0 1 2 3]]
 ```
+
+![](f3.png)
 
 ### `ix_()`
 
@@ -158,6 +164,7 @@ print(arr)
 # Uzyskanie indeksów z istniejącej tablicy
 arr2 = np.ones((3, 3))
 indeksy_diag2 = np.diag_indices_from(arr2)
+print(indeksy_diag2)
 ```
 
 

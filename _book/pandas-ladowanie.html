@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -83,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pandas-start.html">Pandas</a></li><li class="breadcrumb-item"><a href="./python-ladowanie.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pandas-start.html">Pandas</a></li><li class="breadcrumb-item"><a href="./pandas-ladowanie.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -208,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa w <code>NumPy</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -265,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./python-ladowanie.html" class="sidebar-item-text sidebar-link active">
+  <a href="./pandas-ladowanie.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
   </div>
 </li>
@@ -324,13 +358,14 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#obsługa-plików-csv" id="toc-obsługa-plików-csv" class="nav-link active" data-scroll-target="#obsługa-plików-csv"><span class="header-section-number">19.1</span> Obsługa plików csv</a></li>
   <li><a href="#obsługa-plików-z-excela" id="toc-obsługa-plików-z-excela" class="nav-link" data-scroll-target="#obsługa-plików-z-excela"><span class="header-section-number">19.2</span> Obsługa plików z Excela</a></li>
+  <li><a href="#obsługa-sqllite3" id="toc-obsługa-sqllite3" class="nav-link" data-scroll-target="#obsługa-sqllite3"><span class="header-section-number">19.3</span> Obsługa <code>sqllite3</code></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pandas-start.html">Pandas</a></li><li class="breadcrumb-item"><a href="./python-ladowanie.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pandas-start.html">Pandas</a></li><li class="breadcrumb-item"><a href="./pandas-ladowanie.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></h1>
 </div>
@@ -382,6 +417,14 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Ćwiczenie:</strong> (<code>ex10.py</code>)</p>
 <p>Poćwicz ładowanie danych z plików</p>
 <p><a href="https://github.com/pjastr/AIWD-files" class="uri">https://github.com/pjastr/AIWD-files</a></p>
+</section>
+<section id="obsługa-sqllite3" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="obsługa-sqllite3"><span class="header-section-number">19.3</span> Obsługa <code>sqllite3</code></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlite3 <span class="im">import</span> <span class="ex">connect</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> <span class="ex">connect</span>(<span class="st">'sales_data2.db'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_sql(<span class="st">"SELECT * FROM sales_data"</span>, con<span class="op">=</span>conn)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
