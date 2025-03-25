@@ -219,7 +219,7 @@ opcje = [np.array([0, 1, 2, 3]),
          np.array([20, 21, 22, 23])]
 indeksy = np.array([0, 2, 1, 0])  # Wybiera z której tablicy opcji wziąć element
 wynik = np.choose(indeksy, opcje)
-print(wynik)  # [ 0 22 11  3]
+print(wynik)  # [ 0 21 12  3]
 ```
 
 ## Funkcja `compress()`
@@ -271,6 +271,7 @@ Zwraca tablicę zbudowaną z elementów z listy opcji, w zależności od warunk�
 #| echo: true
 import numpy as np
 
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 warunki = [arr < 3, arr < 6, arr < 9]
 opcje = [100, 200, 300]
 wynik = np.select(warunki, opcje, default=400)
