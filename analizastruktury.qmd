@@ -154,7 +154,7 @@ print(f"Trzeci kwartyl (Q3): {kwartyl_3}")
         * rozstęp międzykwartylowy,
 
 
-## Rozstęp
+### Rozstęp
 
 * symbol $R=\max-\min$
 * inaczej empiryczny obszar zmienności, amplituda wahań.
@@ -180,7 +180,7 @@ print(f"Różnica między maksimum a minimum: {roznica}")
 
 ```
 
-## Rozstęp międzykwartylowy
+### Rozstęp międzykwartylowy
 
 * symbol $R_Q=Q_3-Q_1$
 * różnica pomiędzy kwartyle trzecim a kwartylem pierwszym.
@@ -188,7 +188,7 @@ print(f"Różnica między maksimum a minimum: {roznica}")
 
 
 
-## Odchylenie ćwiartkowe
+### Odchylenie ćwiartkowe
 
 * wzór: $Q=\frac{Q_3-Q_1}{2}$
 * połowa rozstępu międzykwartylowego.
@@ -198,7 +198,7 @@ print(f"Różnica między maksimum a minimum: {roznica}")
 
 
 
-## Wariancja
+### Wariancja
 
 Wariancja informuje o tym, jak duże jest zróżnicowanie wyników w danym zbiorze wartości cechy. Inaczej mówiąc, czy wyniki są bardziej skoncentrowane wokół średniej, czy są małe różnice pomiędzy średnią a poszczególnymi wynikami czy może rozproszenie wyników jest duże, duża jest różnica poszczególnych wyników od średniej.
 
@@ -206,7 +206,7 @@ Wariancja informuje o tym, jak duże jest zróżnicowanie wyników w danym zbior
 
 
 
-## Odchylenie standardowe
+### Odchylenie standardowe
 
 Odchylenie standardowe mierzy zróżnicowanie o mianie zgodnym z mianem badanej cechy, daje przeciętne różnice poszczególnych wartości cechy od średniej arytmetycznej.
 

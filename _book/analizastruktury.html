@@ -391,15 +391,17 @@ window.Quarto = {
   <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">24.1.3</span> Mediana</a></li>
   <li><a href="#kwantyle" id="toc-kwantyle" class="nav-link" data-scroll-target="#kwantyle"><span class="header-section-number">24.1.4</span> Kwantyle</a></li>
   </ul></li>
-  <li><a href="#miary-zmienności" id="toc-miary-zmienności" class="nav-link" data-scroll-target="#miary-zmienności"><span class="header-section-number">24.2</span> Miary zmienności</a></li>
-  <li><a href="#rozstęp" id="toc-rozstęp" class="nav-link" data-scroll-target="#rozstęp"><span class="header-section-number">24.3</span> Rozstęp</a></li>
-  <li><a href="#rozstęp-międzykwartylowy" id="toc-rozstęp-międzykwartylowy" class="nav-link" data-scroll-target="#rozstęp-międzykwartylowy"><span class="header-section-number">24.4</span> Rozstęp międzykwartylowy</a></li>
-  <li><a href="#odchylenie-ćwiartkowe" id="toc-odchylenie-ćwiartkowe" class="nav-link" data-scroll-target="#odchylenie-ćwiartkowe"><span class="header-section-number">24.5</span> Odchylenie ćwiartkowe</a></li>
-  <li><a href="#wariancja" id="toc-wariancja" class="nav-link" data-scroll-target="#wariancja"><span class="header-section-number">24.6</span> Wariancja</a></li>
-  <li><a href="#odchylenie-standardowe" id="toc-odchylenie-standardowe" class="nav-link" data-scroll-target="#odchylenie-standardowe"><span class="header-section-number">24.7</span> Odchylenie standardowe</a></li>
-  <li><a href="#miary-asymetrii" id="toc-miary-asymetrii" class="nav-link" data-scroll-target="#miary-asymetrii"><span class="header-section-number">24.8</span> Miary asymetrii</a></li>
-  <li><a href="#miary-koncentracji" id="toc-miary-koncentracji" class="nav-link" data-scroll-target="#miary-koncentracji"><span class="header-section-number">24.9</span> Miary koncentracji</a></li>
-  <li><a href="#przyśpieszanie-działania" id="toc-przyśpieszanie-działania" class="nav-link" data-scroll-target="#przyśpieszanie-działania"><span class="header-section-number">24.10</span> Przyśpieszanie działania:</a></li>
+  <li><a href="#miary-zmienności" id="toc-miary-zmienności" class="nav-link" data-scroll-target="#miary-zmienności"><span class="header-section-number">24.2</span> Miary zmienności</a>
+  <ul class="collapse">
+  <li><a href="#rozstęp" id="toc-rozstęp" class="nav-link" data-scroll-target="#rozstęp"><span class="header-section-number">24.2.1</span> Rozstęp</a></li>
+  <li><a href="#rozstęp-międzykwartylowy" id="toc-rozstęp-międzykwartylowy" class="nav-link" data-scroll-target="#rozstęp-międzykwartylowy"><span class="header-section-number">24.2.2</span> Rozstęp międzykwartylowy</a></li>
+  <li><a href="#odchylenie-ćwiartkowe" id="toc-odchylenie-ćwiartkowe" class="nav-link" data-scroll-target="#odchylenie-ćwiartkowe"><span class="header-section-number">24.2.3</span> Odchylenie ćwiartkowe</a></li>
+  <li><a href="#wariancja" id="toc-wariancja" class="nav-link" data-scroll-target="#wariancja"><span class="header-section-number">24.2.4</span> Wariancja</a></li>
+  <li><a href="#odchylenie-standardowe" id="toc-odchylenie-standardowe" class="nav-link" data-scroll-target="#odchylenie-standardowe"><span class="header-section-number">24.2.5</span> Odchylenie standardowe</a></li>
+  </ul></li>
+  <li><a href="#miary-asymetrii" id="toc-miary-asymetrii" class="nav-link" data-scroll-target="#miary-asymetrii"><span class="header-section-number">24.3</span> Miary asymetrii</a></li>
+  <li><a href="#miary-koncentracji" id="toc-miary-koncentracji" class="nav-link" data-scroll-target="#miary-koncentracji"><span class="header-section-number">24.4</span> Miary koncentracji</a></li>
+  <li><a href="#przyśpieszanie-działania" id="toc-przyśpieszanie-działania" class="nav-link" data-scroll-target="#przyśpieszanie-działania"><span class="header-section-number">24.5</span> Przyśpieszanie działania:</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
@@ -459,7 +461,7 @@ window.Quarto = {
 <h3 data-number="24.1.1" class="anchored" data-anchor-id="średnia-arytmetyczna"><span class="header-section-number">24.1.1</span> Średnia arytmetyczna</h3>
 <p><span class="math display">\[\overline{x} = \frac{1}{n} \sum_{i=1}^n x_i\]</span></p>
 <p>Interpretacja średniej arytmetycznej polega na rozumieniu jej jako reprezentacji “środkowego” lub “typowego” poziomu cechy badanej zbiorowości. Średnia daje ogólne wyobrażenie o danych, ale może być myląca w przypadku obecności skrajnych wartości (outlierów), które mogą znacząco wpływać na jej wartość. Przydatna jest w wielu dziedzinach, od ekonomii po nauki społeczne, jako sposób na podsumowanie danych i porównanie różnych grup lub zestawów danych. Warto pamiętać, że średnia nie zawsze jest najlepszym wyborem dla skośnych rozkładów i może nie odzwierciedlać adekwatnie rozkładu danych, zwłaszcza w obecności skrajnych wartości.</p>
-<div id="1e1a186b" class="cell" data-execution_count="1">
+<div id="bd503fbd" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane jako seria Pandas</span></span>
@@ -482,7 +484,7 @@ window.Quarto = {
 <li>dla cechy skokowej jest to wartość cechy występująca najczęściej.</li>
 <li>dla cechy ciągłej to wartość cechy, wokół której oscyluje najwięcej pomiarów (argument, dla którego gęstość prawdopodobieństwa przyjmuje wartość największą)</li>
 </ul>
-<div id="ab3ad772" class="cell" data-execution_count="2">
+<div id="20bf232a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane dla zmiennej skokowej</span></span>
@@ -519,7 +521,7 @@ window.Quarto = {
 </ul>
 <p>Uwaga: częstym błędem jest mylenie wartości cechy z jej pozycją.</p>
 <p><strong>Kod</strong></p>
-<div id="3f4356c5" class="cell" data-execution_count="3">
+<div id="dac2db94" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane w DataFrame</span></span>
@@ -561,7 +563,7 @@ dtype: float64</code></pre>
 <ul>
 <li>symbole: <span class="math inline">\(Q_1, Q_2, Q_3\)</span></li>
 </ul>
-<div id="365412b7" class="cell" data-execution_count="4">
+<div id="b43c2092" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane jako seria Pandas</span></span>
@@ -600,15 +602,14 @@ Trzeci kwartyl (Q3): 77.5</code></pre>
 </ul></li>
 </ul></li>
 </ul>
-</section>
-<section id="rozstęp" class="level2" data-number="24.3">
-<h2 data-number="24.3" class="anchored" data-anchor-id="rozstęp"><span class="header-section-number">24.3</span> Rozstęp</h2>
+<section id="rozstęp" class="level3" data-number="24.2.1">
+<h3 data-number="24.2.1" class="anchored" data-anchor-id="rozstęp"><span class="header-section-number">24.2.1</span> Rozstęp</h3>
 <ul>
 <li>symbol <span class="math inline">\(R=\max-\min\)</span></li>
 <li>inaczej empiryczny obszar zmienności, amplituda wahań.</li>
 <li>różnica między wartością maksymalną a wartością minimalną.</li>
 </ul>
-<div id="75e1dbfd" class="cell" data-execution_count="5">
+<div id="ddac62fe" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane jako seria Pandas</span></span>
@@ -631,35 +632,35 @@ Różnica między maksimum a minimum: 90</code></pre>
 </div>
 </div>
 </section>
-<section id="rozstęp-międzykwartylowy" class="level2" data-number="24.4">
-<h2 data-number="24.4" class="anchored" data-anchor-id="rozstęp-międzykwartylowy"><span class="header-section-number">24.4</span> Rozstęp międzykwartylowy</h2>
+<section id="rozstęp-międzykwartylowy" class="level3" data-number="24.2.2">
+<h3 data-number="24.2.2" class="anchored" data-anchor-id="rozstęp-międzykwartylowy"><span class="header-section-number">24.2.2</span> Rozstęp międzykwartylowy</h3>
 <ul>
 <li>symbol <span class="math inline">\(R_Q=Q_3-Q_1\)</span></li>
 <li>różnica pomiędzy kwartyle trzecim a kwartylem pierwszym.</li>
 <li>mierzy zakres 50% środkowych jednostek.</li>
 </ul>
 </section>
-<section id="odchylenie-ćwiartkowe" class="level2" data-number="24.5">
-<h2 data-number="24.5" class="anchored" data-anchor-id="odchylenie-ćwiartkowe"><span class="header-section-number">24.5</span> Odchylenie ćwiartkowe</h2>
+<section id="odchylenie-ćwiartkowe" class="level3" data-number="24.2.3">
+<h3 data-number="24.2.3" class="anchored" data-anchor-id="odchylenie-ćwiartkowe"><span class="header-section-number">24.2.3</span> Odchylenie ćwiartkowe</h3>
 <ul>
 <li>wzór: <span class="math inline">\(Q=\frac{Q_3-Q_1}{2}\)</span></li>
 <li>połowa rozstępu międzykwartylowego.</li>
 </ul>
 </section>
-<section id="wariancja" class="level2" data-number="24.6">
-<h2 data-number="24.6" class="anchored" data-anchor-id="wariancja"><span class="header-section-number">24.6</span> Wariancja</h2>
+<section id="wariancja" class="level3" data-number="24.2.4">
+<h3 data-number="24.2.4" class="anchored" data-anchor-id="wariancja"><span class="header-section-number">24.2.4</span> Wariancja</h3>
 <p>Wariancja informuje o tym, jak duże jest zróżnicowanie wyników w danym zbiorze wartości cechy. Inaczej mówiąc, czy wyniki są bardziej skoncentrowane wokół średniej, czy są małe różnice pomiędzy średnią a poszczególnymi wynikami czy może rozproszenie wyników jest duże, duża jest różnica poszczególnych wyników od średniej.</p>
 <ul>
 <li>wzór: <span class="math inline">\(s^2=\frac{\sum\limits_{i=1}^n (x_i-\overline{x})^2}{n}\)</span> (populacja) lub <span class="math inline">\(s^2=\frac{\sum\limits_{i=1}^n (x_i-\overline{x})^2}{n-1}\)</span> (próba)</li>
 </ul>
 </section>
-<section id="odchylenie-standardowe" class="level2" data-number="24.7">
-<h2 data-number="24.7" class="anchored" data-anchor-id="odchylenie-standardowe"><span class="header-section-number">24.7</span> Odchylenie standardowe</h2>
+<section id="odchylenie-standardowe" class="level3" data-number="24.2.5">
+<h3 data-number="24.2.5" class="anchored" data-anchor-id="odchylenie-standardowe"><span class="header-section-number">24.2.5</span> Odchylenie standardowe</h3>
 <p>Odchylenie standardowe mierzy zróżnicowanie o mianie zgodnym z mianem badanej cechy, daje przeciętne różnice poszczególnych wartości cechy od średniej arytmetycznej.</p>
 <ul>
 <li>wzór: <span class="math inline">\(s=\sqrt{s^2}\)</span></li>
 </ul>
-<div id="6c613ecc" class="cell" data-execution_count="6">
+<div id="8a422af4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane jako seria Pandas</span></span>
@@ -686,8 +687,9 @@ Odchylenie standardowe: 30.276503540974915</code></pre>
 </ul>
 <p><a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule" class="uri">https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule</a></p>
 </section>
-<section id="miary-asymetrii" class="level2" data-number="24.8">
-<h2 data-number="24.8" class="anchored" data-anchor-id="miary-asymetrii"><span class="header-section-number">24.8</span> Miary asymetrii</h2>
+</section>
+<section id="miary-asymetrii" class="level2" data-number="24.3">
+<h2 data-number="24.3" class="anchored" data-anchor-id="miary-asymetrii"><span class="header-section-number">24.3</span> Miary asymetrii</h2>
 <p><strong>Jak rozpoznać typ rozkładu?</strong></p>
 <ul>
 <li><p>rozkład symetryczny <span class="math display">\[\overline{x} =Me=Do\]</span></p></li>
@@ -697,8 +699,8 @@ Odchylenie standardowe: 30.276503540974915</code></pre>
 <li><p>wzór: <span class="math display">\[A_s=\frac{m_3}{(s^2)^{\frac{3}{2}}}\]</span></p></li>
 </ul>
 </section>
-<section id="miary-koncentracji" class="level2" data-number="24.9">
-<h2 data-number="24.9" class="anchored" data-anchor-id="miary-koncentracji"><span class="header-section-number">24.9</span> Miary koncentracji</h2>
+<section id="miary-koncentracji" class="level2" data-number="24.4">
+<h2 data-number="24.4" class="anchored" data-anchor-id="miary-koncentracji"><span class="header-section-number">24.4</span> Miary koncentracji</h2>
 <p>Współczynnik kurtozy</p>
 <ul>
 <li>inaczej współczynnik koncentracji, współczynnik spłaszczenia.</li>
@@ -712,7 +714,7 @@ Odchylenie standardowe: 30.276503540974915</code></pre>
 </ul>
 <p>Czasem bada się współczynnik ekcesu <span class="math inline">\(K’=K-3\)</span>.</p>
 <p>Wysoka kurtoza oznacza większą liczbę wartości ekstremalnych (skrajnych), natomiast niska kurtoza wskazuje na rozkład bardziej płaski niż normalny.</p>
-<div id="0976bca3" class="cell" data-execution_count="7">
+<div id="7675d968" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane w serii</span></span>
@@ -732,8 +734,8 @@ Kurtoza: -1.2000000000000002</code></pre>
 </div>
 </div>
 </section>
-<section id="przyśpieszanie-działania" class="level2" data-number="24.10">
-<h2 data-number="24.10" class="anchored" data-anchor-id="przyśpieszanie-działania"><span class="header-section-number">24.10</span> Przyśpieszanie działania:</h2>
+<section id="przyśpieszanie-działania" class="level2" data-number="24.5">
+<h2 data-number="24.5" class="anchored" data-anchor-id="przyśpieszanie-działania"><span class="header-section-number">24.5</span> Przyśpieszanie działania:</h2>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
