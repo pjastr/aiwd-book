@@ -1,0 +1,174 @@
+# Matplotlib - regresja
+
+W poniższej części omówiony jest przykład działania regresji wielomianowej. Inne rodzaje regresji można zmienić wybierając inną komendę do jej generowania.
+
+**Regresja** - metoda statystyczna pozwalająca na badanie związku pomiędzy wielkościami danych.
+Celem regresji wielowymiarowej jest ilościowe ujęcie związków pomiędzy
+wieloma zmiennymi niezależnymi (objaśniającymi, czynnikami, predyktorami) a zmienną zależną (kryterialną, objaśnianą, odpowiedzią).
+
+Przykłady regresji wielowymiarowej:
+
+* Wytrzymałość betonu zależy od składników użytych przy jego produkcji. Pytanie: W jakiej proporcji stosować te składniki, by wytrzymałość była największa?
+
+* Cena mieszkania zależy od.... Pytanie: jak udział poszczególnych elementów wpływa na to, aby cena rynkowa była najwyższa?
+
+* Udzielenie kredytu zależy od .... Pytanie: jak udział poszczególnych elementów wpływa na decyzję o przyznaniu lub nie kredytu? *czy to na pewno regresja?*
+
+W ujęcie "naukowym", badania statystyczne mają w ogólności wyjaśniać zależności pomiędzy różnymi cechami badanej populacji. 
+
+Cele badań w analizie regresji:
+
+* Scharakteryzowanie relacji (między innymi jej zasięgu, kierunku i siły).
+* Określenie modelu
+matematycznego, który w najbardziej wiarygodny sposób oddaje zachowanie się odpowiedzi (innymi słowy, znalezienie odpowiedniej funkcji, która może być później wykorzystana do predykcji).
+* Określenie, które ze zmiennych objaśniających są ważne w analizie współzależności i uszeregowanie
+tych zmiennych ze względu na siłę wpływu na zmienną objaśnianą.
+* Porównywanie różnych modeli dla jednej zmiennej objaśnianej, tzn. porównanie modeli, które
+składają się z różnych zestawów zmiennych objaśniających.
+* Określenie interakcji zmiennych objaśniających oraz (przy dwukierunkowej zależności) określenie
+zależności zmiennych objaśniających od zmiennej objaśnianej.
+* Oszacowanie punktowe wartości współczynników regresji (kierunek i siła współzależności oraz
+istotność statystyczna parametrów wprowadzonych do modelu).
+
+Uzyskiwane wyniki należy zweryfikować pod kątem następujących kryteriów:
+
+* Określenie logicznego związku pomiędzy zmiennymi, tzn. sprawdzenie czy uzyskane wyniki nie
+kolidują z naturą zjawiska.
+* Sprawdzenie czy przyczyna poprzedza w czasie skutek.
+* Analiza siły związku pomiędzy zmiennymi np. wysoka korelacja między zmiennymi, które w rzeczywistości nie oddziałują na
+siebie.
+* Sprawdzenie czy otrzymany model sprawdza się w rzeczywistości.
+* Spójności wyników.
+* Określenie zgodności wyników z wiedzą teoretyczną oraz doświadczalną.
+* Rozpatrzenie możliwości otrzymania badanego skutku, jako
+przejawu działania różnych przyczyn oraz możliwości wystąpienia kilku skutków jednej przyczyny.
+
+
+Najczęściej stosowane funkcje w analizie regresji:
+
+* funkcja liniowa $f(x)=ax+b$,
+* funkcja wielomianowa, np. kwadratowa $f(x)=ax^2+bx+c$,
+* funkcja logarytmiczna $f(x) = \ln x$,
+* funkcja eksponencjalna $f(x)=e^{-x}$,
+* funkcja logistyczna $f(x) = \frac{1}{1+e^{-x}}$.
+
+***Wybór metody współzależności wielu zmiennych:***
+
+| Metoda analizy       | Zmienna objaśniana           | Zmienne objaśniające |
+|-------------|-------------|-----|
+| Regresja wieloraka    | ciągła | ciągłe (dopuszcza się także dyskretne) |
+| Analiza wariancji     | ciągła      |   jakościowe |
+| Analiza kowariancji | ciągła      | jakościowe (symboliczne) i ciągłe |
+| Regresja Poissona | dyskretna     | różne typy |
+| Regresja logistyczna | dwuwartościowa    | różne typy |
+
+
+Zastosowania:
+
+* Ekonometria: Regresja wielowymiarowa może być używana do analizowania wpływu różnych czynników na wzrost gospodarczy, takich jak inwestycje, konsumpcja, inflacja czy poziom zatrudnienia.
+
+* Medycyna: W badaniach medycznych regresja wielowymiarowa może pomóc w identyfikacji czynników wpływających na rozwój chorób, takich jak wiek, dieta, styl życia czy obciążenie genetyczne.
+
+* Marketing: Regresja wielowymiarowa może być stosowana do analizy wpływu różnych cech produktów na sprzedaż, np. cen, reklam, rodzaju opakowania, czy też konkurencji.
+
+* Finanse: Regresja wielowymiarowa może być używana do analizowania wpływu różnych czynników na zwrot z inwestycji, takich jak ryzyko, stopy procentowe, wzrost gospodarczy czy polityka fiskalna.
+
+* Inżynieria: W inżynierii regresja wielowymiarowa może pomóc w analizie wpływu różnych parametrów na wydajność maszyn, takich jak temperatura, ciśnienie czy prędkość.
+
+* Nauki społeczne: W naukach społecznych regresja wielowymiarowa może być stosowana do analizy wpływu różnych czynników na wyniki edukacyjne uczniów, takich jak poziom wykształcenia rodziców, dochody czy środowisko kulturowe.
+
+Rozważamy wpływ zbioru $k$ zmiennych $X_1, \ldots, X_k$ na zmienną $Y$. Należy wprowadzić do modelu jak największą liczbę zmiennych niezależnych oraz powinny się w nim znaleźć zmienne silnie skorelowane ze zmienną zależną i jednocześnie jak najsłabiej skorelowane między sobą.
+
+
+Liniowy model regresji wielowymiarowej:
+
+$$Y=\beta_0 +\beta_1\cdot X_1+\beta_2\cdot X_2+\ldots+\beta_k\cdot X_k+\varepsilon.$$
+ $\beta_i$ - współczynniki regresji (parametry modelu) opisujące wpływ $i$-tej zmiennej. $\varepsilon$ - składnik losowy.
+ 
+```{python}
+#| echo: true
+import numpy as np
+
+# Przykładowe dane
+x = np.array([0, 1, 2, 3, 4, 5])
+y = np.array([2.1, 2.9, 4.2, 6.1, 8.1, 9.9])
+
+# Dopasowanie linii prostoliniowej (stopień 1) z pełnymi wynikami
+coefs, stats = np.polynomial.polynomial.polyfit(x, y, deg=1, full=True)
+
+# Wyświetlenie wyników
+print("Współczynniki dopasowania:", coefs)
+print("\nInformacje diagnostyczne:")
+print("Reszty:", stats[0])  # Suma kwadratów reszt
+print("Ranga macierzy układu:", stats[1])
+print("Wartości osobliwe macierzy układu:", stats[2])
+print("Przewidywany błąd dopasowania:", stats[3])
+```
+ 
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Przykładowe dane
+np.random.seed(42)  # Ustawienie ziarna losowego dla powtarzalności wyników
+x = np.linspace(0, 10, 20)  # 20 równomiernie rozłożonych punktów między 0 a 10
+y = 3 * x + 7 + np.random.normal(0, 3, len(x))  # Dane y z losowym szumem
+
+# Dopasowanie linii prostoliniowej (regresja liniowa)
+coefs = np.polynomial.polynomial.polyfit(x, y, deg=1)  # Współczynniki regresji (y = a + b*x)
+
+# Wyznaczenie linii regresji
+x_fit = np.linspace(min(x), max(x), 100)  # Dodatkowe punkty dla gładkiej linii regresji
+y_fit = coefs[0] + coefs[1] * x_fit
+
+# Tworzenie wykresu
+plt.figure(figsize=(8, 6))
+plt.scatter(x, y, color='blue', label='Punkty danych', alpha=0.7)  # Wykres punktowy
+plt.plot(x_fit, y_fit, color='red', label=f'Prosta regresji')  # Prosta regresji
+
+# Dostosowanie wyglądu wykresu
+plt.title('Regresja liniowa przy użyciu numpy.polyfit')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+
+# Wyświetlenie wykresu
+plt.show()
+
+```
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Przykładowe dane
+x = np.array([-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10])  # Punkty x
+y = np.array([100, 88, 36, 16, 7, -3, 4, 16, 36, 52, 100])   # Punkty y z losowym szumem (większe rozproszenie)
+
+# Dopasowanie krzywej stopnia drugiego
+coefs = np.polynomial.polynomial.polyfit(x, y, deg=2)  # Współczynniki regresji (y = a + b*x + c*x^2)
+
+# Wyznaczenie krzywej regresji
+x_fit = np.linspace(min(x), max(x), 100)  # Dodatkowe punkty dla gładkiej krzywej regresji
+y_fit = coefs[0] + coefs[1] * x_fit + coefs[2] * x_fit**2
+
+# Tworzenie wykresu
+plt.figure(figsize=(8, 6))
+plt.scatter(x, y, color='blue', label='Punkty danych', alpha=0.7)  # Wykres punktowy
+plt.plot(x_fit, y_fit, color='red', label=f'Krzywa regresji')  # Krzywa regresji
+
+# Dostosowanie wyglądu wykresu
+plt.title('Regresja kwadratowa przy użyciu numpy.polyfit')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+
+# Wyświetlenie wykresu
+plt.show()
+```

@@ -1,0 +1,80 @@
+# Matplotlib - dodatki cz.1
+
+
+
+## Parametry legendy
+
+![](m2.png)
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2, 100)
+plt.plot(x, x, label='linear')
+plt.plot(x, x ** 2, label='quadratic')
+plt.plot(x, x ** 3, label='cubic')
+plt.xlabel('x label')
+plt.ylabel('y label')
+plt.title("Simple Plot")
+plt.legend(loc = 5)
+plt.show(block=True)
+```
+
+## Style, kolory linii
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(14)  # <1>
+y = np.cos(5 * x)  # <2>
+plt.plot(x, y + 2, 'blue', linestyle="-", label="niebieski")  # <3>
+plt.plot(x, y + 1, 'red', linestyle=":", label="czerwony")  # <4>
+plt.plot(x, y, 'green', linestyle="--", label="zielony")  # <5>
+plt.legend(title='Legenda:')
+plt.show(block=True)
+
+```
+
+1. `x = np.arange(14)`: tworzy tablicę `x` z wartościami od 0 do 13 (łącznie z 13), korzystając z funkcji `arange` z biblioteki `numpy`.
+2. `y = np.cos(5 * x)`: oblicza wartości funkcji cosinus dla każdej wartości `x`, przemnożonej przez 5. Wynikowe wartości są zapisane w tablicy `y`.
+3. `plt.plot(x, y + 2, 'blue', linestyle="-", label="niebieski")`: rysuje niebieski wykres z wartościami z tablicy `x`, a wartości `y` przesunięte o 2 w górę. Linia jest ciągła (`linestyle="-"`).
+4. `plt.plot(x, y + 1, 'red', linestyle=":", label="czerwony")`: rysuje czerwony wykres z wartościami z tablicy `x`, a wartości `y` przesunięte o 1 w górę. Linia jest punktowana (`linestyle=":"`).
+5. `plt.plot(x, y, 'green', linestyle="--", label="zielony")`: rysuje zielony wykres z wartościami z tablicy `x` i wartościami `y`. Linia jest przerywana (`linestyle="--"`).
+
+
+![](m3.png)
+
+![](m4.png)
+
+![](m5.png)
+
+## Wykresy jako obiekty
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(0, 10, 0.2)  # <1>
+y = np.sin(x)  # <2>
+fig, ax = plt.subplots()  # <3>
+ax.plot(x, y)  # <4>
+plt.show(block=True)  # <5>
+
+```
+
+1. `x = np.arange(0, 10, 0.2)`: tworzy tablicę `x` z wartościami od 0 do 10 (bez 10) z krokiem 0.2, korzystając z funkcji `arange` z biblioteki `numpy`.
+2. `y = np.sin(x)`: oblicza wartości funkcji sinus dla każdej wartości `x`. Wynikowe wartości są zapisane w tablicy `y`.
+3. `fig, ax = plt.subplots()`: tworzy nową figurę (`fig`) i osie (`ax`) za pomocą funkcji `subplots` z biblioteki `matplotlib.pyplot`. Figura to obiekt zawierający wszystkie elementy wykresu, takie jak osie, linie wykresu, tekst itp. Osie to obiekt, który definiuje układ współrzędnych, na którym rysowany jest wykres.
+4. `ax.plot(x, y)`: rysuje wykres wartości `y` w funkcji `x` na osiach `ax` utworzonych wcześniej.
+5. `plt.show(block=True)`: wyświetla wykres.
+
+**Ćwiczenie:** (`exdod1.py`)
+
+Załaduj dane z pliku niżej i stwórz wykres liniowy na podstawie wybranych samodzielnie danych:
+
+<https://github.com/pjastr/SamleTestFilesVD/blob/master/wynagrodzenia21.csv>

@@ -1,0 +1,278 @@
+# Matplotlib - dodatki cz.2.
+
+
+
+
+## Linie poziome i pionowe
+
+Funkcje `axhline` i `axvline` służą do dodawania poziomych (horyzontalnych) i pionowych (wertykalnych) linii do wykresu, odpowiednio.
+
+`axhline` rysuje horyzontalną linię przechodzącą przez określoną wartość na osi Y, niezależnie od wartości na osi X. Składnia funkcji to `axhline(y, xmin, xmax, **kwargs)`, gdzie:
+
+* `y` - wartość na osi Y, przez którą przechodzi linia (domyślnie 0)
+* `xmin`, `xmax` - wartości z zakresu 0-1 określające początek i koniec linii na osi X (domyślnie 0 i 1)
+* `**kwargs` - dodatkowe argumenty, takie jak `color`, `linewidth` czy `linestyle`, służące do kontrolowania wyglądu linii
+
+`axvline` rysuje pionową linię przechodzącą przez określoną wartość na osi X, niezależnie od wartości na osi Y. Składnia funkcji to `axvline(x, ymin, ymax, **kwargs)`, gdzie:
+
+* `x` - wartość na osi X, przez którą przechodzi linia (domyślnie 0)
+* `ymin`, `ymax` - wartości z zakresu 0-1 określające początek i koniec linii na osi Y (domyślnie 0 i 1)
+* `**kwargs` - dodatkowe argumenty, takie jak `color`, `linewidth` czy `linestyle`, służące do kontrolowania wyglądu linii
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+plt.plot([0, 5], [0, 5], color='blue')
+plt.axhline(2, color='red', linewidth=2)  # Horyzontalna linia przechodząca przez Y=2
+plt.axvline(3, color='green', linestyle='--')  # Pionowa linia przechodząca przez X=3, styl linii przerywany
+plt.show(block=True)
+
+```
+
+W powyższym przykładzie, `axhline` rysuje czerwoną linię horyzontalną przechodzącą przez wartość 2 na osi Y, natomiast `axvline` rysuje zieloną przerywaną linię pionową przechodzącą przez wartość 3 na osi X.
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(-5, 5, 0.1)
+x1 = x[x < 0]
+y1 = 1 / x1
+plt.plot(x1, y1)
+x2 = x[x > 0]
+y2 = 1 / x2
+plt.plot(x2, y2)
+plt.ylim(-10, 10)
+plt.axhline(y=0, linestyle="--")
+plt.axvline(x=0, linestyle=":")
+plt.show(block=True)
+
+```
+
+## Adnotacje (tekst) na wykresie
+
+Funkcja `annotate` służy do dodawania adnotacji (tekstu i strzałek) na wykresie w celu wyróżnienia lub zaznaczenia określonych punktów czy obszarów.
+
+Składnia funkcji to `annotate(text, xy, xytext, arrowprops, **kwargs)`, gdzie:
+
+- `text` - ciąg znaków reprezentujący tekst adnotacji.
+- `xy` - krotka (x, y) określająca współrzędne punktu, do którego odnosimy się w adnotacji.
+- `xytext` - krotka (x, y) określająca współrzędne, w których tekst adnotacji powinien się zacząć. Jeśli nie podano, tekst zostanie wyświetlony bezpośrednio przy współrzędnych `xy`.
+- `arrowprops` - słownik zawierający opcje rysowania strzałki, takie jak `arrowstyle`, `color` czy `linewidth`. Jeśli nie podano, strzałka nie zostanie narysowana.
+- `**kwargs` - dodatkowe argumenty dotyczące formatowania tekstu, takie jak `fontsize`, `color` czy `fontweight`.
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [2, 4, 9, 16], marker='o', linestyle='-', color='blue')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+plt.annotate('Ważny punkt (2, 4)',
+             xy=(2, 4),                           # Współrzędne punktu do zaznaczenia
+             xytext=(2.5, 6),                     # Współrzędne początku tekstu
+             arrowprops=dict(facecolor='red'),    # Właściwości strzałki (kolor)
+             fontsize=12,                         # Rozmiar czcionki
+             color='blue',                        # Kolor tekstu
+             fontweight='bold')                   # Grubość czcionki
+
+plt.show(block=True)
+
+```
+
+Jeśli chcesz dodać adnotację tylko z tekstem, składnia funkcji to `annotate(text, xy, **kwargs)`, gdzie:
+
+- `text` - ciąg znaków reprezentujący tekst adnotacji.
+- `xy` - krotka (x, y) określająca współrzędne, w których tekst adnotacji powinien się zacząć.
+- `**kwargs` - dodatkowe argumenty dotyczące formatowania tekstu, takie jak `fontsize`, `color`, `fontweight` czy `horizontalalignment`.
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [2, 4, 9, 16], marker='o', linestyle='-', color='blue')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+plt.annotate('Ważny punkt (2, 4)',
+             xy=(2, 4),                           # Współrzędne początku tekstu
+             fontsize=12,                         # Rozmiar czcionki
+             color='blue',                        # Kolor tekstu
+             fontweight='bold',                   # Grubość czcionki
+             horizontalalignment='right')         # Wyrównanie tekstu do prawej strony
+
+plt.show(block=True)
+
+```
+
+## Etykiety osi
+
+Funkcje `xlabel` i `ylabel` łużą do dodawania etykiet osi X i Y na wykresie, odpowiednio. Etykiety osi pomagają w lepszym zrozumieniu prezentowanych danych, wskazując, jakie wartości są reprezentowane na poszczególnych osiach.
+
+Składnia funkcji to `xlabel(label, **kwargs)` lub `ylabel(label, **kwargs)`, gdzie:
+
+- `label` - ciąg znaków reprezentujący tekst etykiety osi.
+- `**kwargs` - dodatkowe argumenty dotyczące formatowania etykiety, takie jak `fontsize`, `color`, `fontweight` czy `horizontalalignment`.
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [2, 4, 6, 8]
+
+plt.plot(x, y, marker='o', linestyle='-', color='blue')
+
+plt.xlabel('Oś X', fontsize=12, color='red', fontweight='bold')
+plt.ylabel('Oś Y', fontsize=12, color='green', fontweight='bold')
+
+plt.show(block=True)
+
+```
+
+Funkcja `annotate` pozwala na użycie składni LaTeX w tekście adnotacji, co jest szczególnie przydatne, gdy chcemy dodać na wykresie równania matematyczne lub symbole. Aby użyć składni LaTeX, należy umieścić tekst w znacznikach dolara (`$`).
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2 * np.pi, 100)
+y = np.sin(x)
+
+plt.plot(x, y)
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+
+# Adnotacja z tekstem w składni LaTeX
+plt.annotate(r'$\sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$',
+             xy=(2 * np.pi / 3, np.sqrt(3) / 2),  # Współrzędne punktu do zaznaczenia
+             xytext=(3, 1.0),                     # Współrzędne początku tekstu
+             fontsize=12,                         # Rozmiar czcionki
+             arrowprops=dict(facecolor='red'),    # Właściwości strzałki (kolor)
+             bbox=dict(facecolor='white'))        # Ramka wokół tekstu (kolor tła)
+
+plt.show(block=True)
+
+```
+
+
+
+## Etykiety podziałki osi
+
+Funkcje `xticks` i `yticks` służą do manipulowania etykietami osi X i Y oraz wartościami na osi, odpowiednio. Pozwalają na kontrolowanie wyświetlania etykiet, odstępów między nimi oraz formatowania.
+
+`xticks` manipuluje etykietami i wartościami na osi X, a `yticks` na osi Y. Składnia funkcji to `xticks(ticks, labels, **kwargs)` lub `yticks(ticks, labels, **kwargs)`, gdzie:
+
+- `ticks` - lista wartości, dla których mają być umieszczone etykiety na osi. Jeśli nie podano, pozostają aktualne wartości.
+- `labels` - lista ciągów znaków, które mają być użyte jako etykiety dla wartości z listy `ticks`. Jeśli nie podano, zostaną użyte domyślne etykiety.
+- `**kwargs` - dodatkowe argumenty dotyczące formatowania etykiet, takie jak `fontsize`, `color`, `fontweight` czy `rotation`.
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(0, 10, 0.1)
+y = np.sin(x)
+
+plt.plot(x, y)
+
+xtick_vals = [0, np.pi, 2 * np.pi, 3 * np.pi]
+xtick_labels = ['0', r'$\pi$', r'$2\pi$', r'$3\pi$']
+
+ytick_vals = [-1, -0.5, 0, 0.5, 1]
+ytick_labels = ['-1', '-1/2', '0', '1/2', '1']
+
+plt.xticks(xtick_vals, xtick_labels, fontsize=12, color='red')
+plt.yticks(ytick_vals, ytick_labels, fontsize=12, rotation=45)
+
+plt.show(block=True)
+
+```
+
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(-3, 3, 0.1)
+y = x ** 2 + 2 * x
+plt.plot(x, y)
+plt.annotate(xy=(-1, 5), text="cos tam")
+plt.xticks([-2, 1, 2], color="red")
+plt.ylabel("abc", color="green")
+plt.show(block=True)
+
+```
+
+## Siatka
+
+Funkcja `grid` pozwala na dodanie siatki na wykresie, co ułatwia ocenę wartości na osiach i ich porównywanie. Można kontrolować kolor, grubość i styl linii siatki, a także określać, które osie mają mieć siatkę.
+
+Składnia funkcji to `plt.grid(b=None, which='major', axis='both', **kwargs)`, gdzie:
+
+- `b` - wartość logiczna (True/False), która określa, czy siatka ma być wyświetlana. Domyślnie ustawione na `None`, co oznacza, że Matplotlib automatycznie określa, czy siatka powinna być wyświetlana na podstawie konfiguracji.
+- `which` - określa, które linie siatki mają być wyświetlane: 'major' (tylko linie siatki dla głównych podziałek), 'minor' (linie siatki dla podziałek pomocniczych), lub 'both' (domyślnie - linie siatki dla obu rodzajów podziałek).
+- `axis` - określa, które osie mają mieć siatkę: 'both' (obie osie), 'x' (tylko oś X), lub 'y' (tylko oś Y).
+- `**kwargs` - dodatkowe argumenty dotyczące formatowania siatki.
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2 * np.pi, 100)
+y = np.sin(x)
+
+# Tworzenie wykresu
+plt.plot(x, y, color='blue', linewidth=2)
+
+# Dodanie siatki
+plt.grid(True, which='both', color='gray', linewidth=0.5, linestyle='--')
+
+# Dodanie tytułu i etykiet osi
+plt.title('Wykres funkcji sin(x)')
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+
+# Wyświetlenie wykresu
+plt.show(block=True)
+
+```
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, np.pi * 2, 100)
+plt.subplot(3, 1, 1)
+plt.plot(x, np.sin(x), 'r')
+plt.grid(True)
+plt.xlim(0, np.pi * 2)
+plt.subplot(3, 1, 2)
+plt.plot(x, np.cos(x), 'g')
+plt.grid(True)
+plt.xlim(0, np.pi * 2)
+plt.subplot(3, 1, 3)
+plt.plot(x, np.sin(x), 'r', x, np.cos(x), 'g')
+plt.grid(True)
+plt.xlim(0, np.pi * 2)
+plt.tight_layout()
+plt.savefig("fig3.png", dpi=72)
+plt.show(block=True)
+
+```

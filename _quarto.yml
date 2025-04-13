@@ -41,6 +41,19 @@ book:
     - part: "Analia struktury danych"
       chapters:
       - analizastruktury.qmd
+    - part: "Matplotlib"
+      chapters:
+      - matplotlib-start.qmd
+      - matplotlib-wykresliniowy.qmd
+      - matplotlib-dodatki1.qmd
+      - matplotlib-podwykresy.qmd
+      - matplotlib-wykrespunktowy.qmd
+      - matplotlib-regresja.qmd
+      - matplotlib-kolory.qmd
+      - matplotlib-zapis.qmd
+      - matplotlib-opcjewykresu.qmd
+      - matplotlib-dodatki2.qmd
+      - matplotlib-innewykresy.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/aiwd-book
   repo-actions: [issue]

@@ -1,0 +1,35 @@
+# Matplotlib - zapis
+
+1. PNG (Portable Network Graphics) - plik rasterowy, popularny format do zapisywania obrazów w Internecie. 
+2. JPEG (Joint Photographic Experts Group) - plik rasterowy, popularny format do zapisywania obrazów fotograficznych. 
+3. SVG (Scalable Vector Graphics) - plik wektorowy, dobrze skalujący się i zachowujący jakość na różnych rozdzielczościach. 
+4. PDF (Portable Document Format) - format dokumentów wektorowych, popularny w druku i przeglądaniu dokumentów. 
+5. EPS (Encapsulated PostScript) - plik wektorowy, często używany w publikacjach naukowych i materiałach drukowanych. 
+6. TIFF (Tagged Image File Format) - plik rasterowy, popularny w profesjonalnym druku i grafice. 
+7. WebP to nowoczesny format obrazów opracowany przez Google, który oferuje lepszą kompresję oraz niższe straty jakości w porównaniu do popularnych formatów JPEG i PNG, co przyczynia się do szybszego ładowania stron internetowych i oszczędności transferu danych.
+
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 10)
+y = x ^ 2
+# Labeling the Axes and Title
+plt.title("Graph Drawing")
+plt.xlabel("Time")
+plt.ylabel("Distance")
+
+# Formatting the line colors
+plt.plot(x, y, 'r')
+
+# Formatting the line type
+plt.plot(x, y, '>')
+
+# save in pdf formats
+plt.savefig('timevsdist.pdf', format='pdf')
+
+```
+
+![](m6.png)

@@ -1,0 +1,106 @@
+# Matplotlib - opcje wykresu
+
+## Argumenty `figure` w Matplotlib
+
+W Matplotlib kluczową rolę w zarządzaniu właściwościami wykresu pełni obiekt **figure**, który reprezentuje "płótno", na którym rysowane są wszystkie elementy graficzne. Funkcje `plt.figure()` oraz `plt.subplots()` pozwalają dostosować różne aspekty figury. 
+
+```python
+plt.figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameon=None, tight_layout=None)
+```
+
+Argumenty:
+
+| Argument       | Opis                                                                                          | Domyślna wartość     |
+|-----------------|-----------------------------------------------------------------------------------------------|-----------------------|
+| **`num`**       | Numer identyfikacyjny lub nazwa figury (może być liczbą lub ciągiem znaków).                  | `None` (automatyczne) |
+| **`figsize`**   | Rozmiar figury w calach, podany jako krotka `(szerokość, wysokość)`.                          | `(6.4, 4.8)`          |
+| **`dpi`**       | Rozdzielczość figury w punktach na cal (dots per inch).                                       | `100`                 |
+| **`facecolor`** | Kolor tła figury (całe płótno).                                                              | `white`               |
+| **`edgecolor`** | Kolor ramki figury.                                                                          | `white`               |
+| **`frameon`**   | Czy figura powinna mieć ramkę (`True` lub `False`).                                           | `True`                |
+| **`tight_layout`** | Automatyczne dopasowanie elementów na figurze w celu uniknięcia nakładania się (`True` lub `False`). | `False`               |
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+# Tworzenie figury o wymiarach 10x5 cali
+plt.figure(figsize=(10, 5))
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.title("Wykres z niestandardowymi wymiarami")
+plt.show(block=True)
+```
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+plt.figure(dpi=200)  # Wyższa rozdzielczość
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.title("Wykres z wyższą rozdzielczością")
+plt.show(block=True)
+```
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+plt.figure(facecolor='lightblue', edgecolor='gray')  # Kolor tła i ramki
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.title("Wykres z niestandardowym tłem")
+plt.show(block=True)
+```
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+plt.figure(tight_layout=True)  # Automatyczne dopasowanie
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.title("Wykres z automatycznym układem")
+plt.show(block=True)
+```
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+plt.figure(num="Moja Figura")  # Nazwa figury
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.title("Figura z nazwą")
+plt.show(block=True)
+plt.show()
+```
+
+## Style
+
+atplotlib oferuje wbudowane style, które pozwalają na szybkie i łatwe dostosowanie wyglądu wykresów. Za pomocą funkcji `plt.style.use` można załadować gotowy styl, dzięki czemu wykresy zyskają spójny i estetyczny wygląd bez potrzeby ręcznego ustawiania wszystkich parametrów.
+
+```python
+plt.style.use(style)
+```
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+# Użycie stylu 'ggplot'
+plt.style.use('ggplot')
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.title("Wykres w stylu ggplot")
+plt.show(block=True)
+
+```
+
+Lista styli:
+
+```python
+print(plt.style.available)
+```
+
+Rozpiska: <https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html>
+

@@ -1,0 +1,79 @@
+# Matplotlib - kolory
+
+* <https://matplotlib.org/stable/gallery/color/named_colors.html>
+* <https://pl.wikipedia.org/wiki/Lista_kolor%C3%B3w>
+
+![](k1.png)
+
+![](k2.png)
+
+![](k3.png)
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.random.rand(50)
+y = np.random.rand(50)
+z = np.random.rand(50)
+plt.scatter(x, y, c=z, cmap='viridis')  # <1>
+plt.colorbar()  # <2>
+plt.xlabel('Oś X')
+plt.ylabel('Oś Y')
+plt.title('Mapa kolorów dla wykresu punktowego')
+plt.show(block=True)
+
+```
+
+
+1. `plt.scatter(x, y, c=z, cmap='viridis')`: ta linia tworzy wykres punktowy (`scatter plot`) z danymi `x`, `y` i `z`. `x` i `y` to dane, które będą wyświetlane na osi X i Y, a `z` to dane, które będą używane do stworzenia mapy kolorów. Argument `cmap='viridis'` określa mapę kolorów, która będzie użyta do przypisania kolorów do wartości numerycznych.
+2. `plt.colorbar()`: ta linia dodaje pasek kolorów do wykresu punktowego. Pasek kolorów wskazuje, które kolory odpowiadają wartościom numerycznym na mapie kolorów.
+
+Mapy kolorów
+
+Lista wbudowanych map kolorów: <https://matplotlib.org/stable/tutorials/colors/colormaps.html>
+
+![](km1.png)
+
+![](km2.png)
+
+![](km3.png)
+
+![](km4.png)
+
+![](km5.png)
+
+![](km6.png)
+
+![](km7.png)
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import Normalize
+
+# Przykładowe dane
+x = np.random.rand(50)
+y = np.random.rand(50)
+z = np.random.rand(50) * 100
+
+# Utworzenie mapy kolorów
+norm = Normalize(vmin=0, vmax=100)
+cmap = plt.cm.viridis
+
+# Tworzenie wykresu punktowego z mapą kolorów
+plt.scatter(x, y, c=z, cmap=cmap, norm=norm)
+plt.colorbar()
+
+# Dodanie etykiet osi
+plt.xlabel('Oś X')
+plt.ylabel('Oś Y')
+plt.title('Mapa kolorów dla wykresu punktowego')
+
+# Wyświetlenie wykresu
+plt.show(block=True)
+
+
+```
