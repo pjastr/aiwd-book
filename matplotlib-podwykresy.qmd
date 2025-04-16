@@ -44,7 +44,7 @@ plt.title('-sin(x)')
 plt.tight_layout()
 
 # Wyświetlenie wykresów
-plt.show(block=True)
+plt.show()
 
 ```
 
@@ -65,6 +65,92 @@ plt.plot(x, x * x)
 plt.subplot(2, 2, 4)
 plt.plot(x, x ** 3)
 plt.tight_layout()
-plt.show(block=True)
+plt.show()
 
+```
+
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 3, 0.1)
+
+fig, axes = plt.subplots(2, 2)
+
+axes[0, 0].plot(x, x)
+axes[0, 1].plot(x, x * 2)
+axes[1, 0].plot(x, x * x)
+axes[1, 1].plot(x, x ** 3)
+
+fig.tight_layout()
+plt.show()
+```
+
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Przygotowanie danych do wizualizacji
+x = np.linspace(0, 10, 100)  # Tworzymy 100 punktów w zakresie od 0 do 10
+y1 = np.sin(x)               # Funkcja sinus
+y2 = np.cos(x)               # Funkcja cosinus
+y3 = np.exp(-0.2*x) * np.sin(x)  # Funkcja tłumionego sinusa
+y4 = x**2 / 20               # Funkcja kwadratowa
+
+# Tworzenie figury i podwykresów (2 rzędy, 2 kolumny)
+# W podejściu proceduralnym używamy pyplot bezpośrednio
+plt.figure(figsize=(12, 8))  # Ustawiamy rozmiar całej figury (szerokość, wysokość w calach)
+
+# Pierwszy podwykres (lewy górny)
+plt.subplot(2, 2, 1)  # 2 rzędy, 2 kolumny, pozycja 1
+plt.plot(x, y1, 'r-', linewidth=2)  # Czerwona linia
+plt.title('Funkcja sinus')
+plt.xlabel('X')
+plt.ylabel('sin(x)')
+plt.grid(True)  # Dodajemy siatkę
+plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)  # Linia pozioma na y=0
+
+# Drugi podwykres (prawy górny)
+plt.subplot(2, 2, 2)  # 2 rzędy, 2 kolumny, pozycja 2
+plt.plot(x, y2, 'b-', linewidth=2)  # Niebieska linia
+plt.title('Funkcja cosinus')
+plt.xlabel('X')
+plt.ylabel('cos(x)')
+plt.grid(True)
+plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
+
+# Trzeci podwykres (lewy dolny)
+plt.subplot(2, 2, 3)  # 2 rzędy, 2 kolumny, pozycja 3
+plt.plot(x, y3, 'g-', linewidth=2)  # Zielona linia
+plt.title('Tłumiony sinus')
+plt.xlabel('X')
+plt.ylabel('exp(-0.2x) * sin(x)')
+plt.grid(True)
+plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
+
+# Czwarty podwykres (prawy dolny)
+plt.subplot(2, 2, 4)  # 2 rzędy, 2 kolumny, pozycja 4
+plt.plot(x, y4, 'orange', linewidth=2, linestyle='--', marker='o', markevery=10, markersize=5)
+plt.title('Funkcja kwadratowa')
+plt.xlabel('X')
+plt.ylabel('x²/20')
+plt.grid(True)
+
+# Dodanie adnotacji na ostatnim wykresie
+plt.annotate('Punkt (5, 1.25)', xy=(5, 1.25), xytext=(6, 1.8),
+             arrowprops=dict(facecolor='black', shrink=0.05, width=1.5))
+
+# Dostosowanie układu wykresów - zapobiega nakładaniu się
+plt.tight_layout()
+
+# Dodanie ogólnego tytułu dla całej figury
+plt.suptitle('Przykład wykresów z podwykresami - podejście proceduralne', fontsize=16)
+plt.subplots_adjust(top=0.9)  # Dodanie miejsca na główny tytuł
+
+# Wyświetlenie wykresu
+plt.show()
 ```

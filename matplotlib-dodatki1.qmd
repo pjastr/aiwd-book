@@ -19,7 +19,36 @@ plt.xlabel('x label')
 plt.ylabel('y label')
 plt.title("Simple Plot")
 plt.legend(loc = 5)
-plt.show(block=True)
+plt.show()
+```
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Tworzymy obiekt Figure i osie (Axes)
+fig = plt.figure()
+ax = fig.add_subplot(111)  # 111 oznacza: 1 wiersz, 1 kolumna, pierwszy wykres
+
+# Generujemy dane
+x = np.linspace(0, 2, 100)
+
+# Rysujemy wykresy na osi
+ax.plot(x, x, label='linear')
+ax.plot(x, x**2, label='quadratic')
+ax.plot(x, x**3, label='cubic')
+
+# Dodajemy etykiety i tytuł
+ax.set_xlabel('x label')
+ax.set_ylabel('y label')
+ax.set_title("Simple Plot")
+
+# Dodajemy legendę
+ax.legend(loc=5)  # loc=5 oznacza położenie "right"
+
+# Wyświetlamy wykres
+plt.show()
 ```
 
 ## Style, kolory linii
@@ -35,7 +64,7 @@ plt.plot(x, y + 2, 'blue', linestyle="-", label="niebieski")  # <3>
 plt.plot(x, y + 1, 'red', linestyle=":", label="czerwony")  # <4>
 plt.plot(x, y, 'green', linestyle="--", label="zielony")  # <5>
 plt.legend(title='Legenda:')
-plt.show(block=True)
+plt.show()
 
 ```
 
@@ -52,29 +81,65 @@ plt.show(block=True)
 
 ![](m5.png)
 
-## Wykresy jako obiekty
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+x = np.arange(14)
+y = np.cos(5 * x)
+
+ax.plot(x, y + 2, 'blue', linestyle="-", label="niebieski")
+ax.plot(x, y + 1, 'red', linestyle=":", label="czerwony")
+ax.plot(x, y, 'green', linestyle="--", label="zielony")
+
+ax.legend(title='Legenda:')
+
+plt.show()
+```
 
 ```{python}
 #| echo: true
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.arange(0, 10, 0.2)  # <1>
-y = np.sin(x)  # <2>
-fig, ax = plt.subplots()  # <3>
-ax.plot(x, y)  # <4>
-plt.show(block=True)  # <5>
+miesiace = ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze']
+sprzedaz = [12500, 14000, 16700, 15400, 18200, 19500]
 
+plt.plot(miesiace, sprzedaz, 'bo-', linewidth=2, markersize=8)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.title('Sprzedaż w pierwszym półroczu 2025')
+plt.xlabel('Miesiąc')
+plt.ylabel('Sprzedaż (PLN)')
+plt.ylim([10000, 21000])
+plt.fill_between(miesiace, sprzedaz, 10000, alpha=0.2, color='skyblue')
+plt.axhline(y=15000, color='red', linestyle='--')
+plt.text(0, 15300, 'Cel miesięczny', color='red')
+plt.tight_layout()
+plt.show()
 ```
 
-1. `x = np.arange(0, 10, 0.2)`: tworzy tablicę `x` z wartościami od 0 do 10 (bez 10) z krokiem 0.2, korzystając z funkcji `arange` z biblioteki `numpy`.
-2. `y = np.sin(x)`: oblicza wartości funkcji sinus dla każdej wartości `x`. Wynikowe wartości są zapisane w tablicy `y`.
-3. `fig, ax = plt.subplots()`: tworzy nową figurę (`fig`) i osie (`ax`) za pomocą funkcji `subplots` z biblioteki `matplotlib.pyplot`. Figura to obiekt zawierający wszystkie elementy wykresu, takie jak osie, linie wykresu, tekst itp. Osie to obiekt, który definiuje układ współrzędnych, na którym rysowany jest wykres.
-4. `ax.plot(x, y)`: rysuje wykres wartości `y` w funkcji `x` na osiach `ax` utworzonych wcześniej.
-5. `plt.show(block=True)`: wyświetla wykres.
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+import numpy as np
 
-**Ćwiczenie:** (`exdod1.py`)
+miesiace = ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze']
+sprzedaz = [12500, 14000, 16700, 15400, 18200, 19500]
 
-Załaduj dane z pliku niżej i stwórz wykres liniowy na podstawie wybranych samodzielnie danych:
-
-<https://github.com/pjastr/SamleTestFilesVD/blob/master/wynagrodzenia21.csv>
+fig, ax = plt.subplots()
+ax.plot(miesiace, sprzedaz, 'bo-', linewidth=2, markersize=8)
+ax.grid(True, linestyle='--', alpha=0.7)
+ax.set_title('Sprzedaż w pierwszym półroczu 2025')
+ax.set_xlabel('Miesiąc')
+ax.set_ylabel('Sprzedaż (PLN)')
+ax.set_ylim([10000, 21000])
+ax.fill_between(miesiace, sprzedaz, 10000, alpha=0.2, color='skyblue')
+ax.axhline(y=15000, color='red', linestyle='--')
+ax.text(0, 15300, 'Cel miesięczny', color='red')
+plt.tight_layout()
+plt.show()
+```
