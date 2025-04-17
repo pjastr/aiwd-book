@@ -128,7 +128,7 @@ y_3 = index ** 3
 
 plt.plot(daty, y_1, label='Liniowa')
 plt.plot(daty, y_2, label='Kwadratowa')
-plt.plot(daty, y_2, label='Sześcienna')
+plt.plot(daty, y_3, label='Sześcienna')
 
 plt.xlabel('Miesiąc (2024)')
 plt.ylabel('Wartość')
@@ -158,7 +158,7 @@ fig, ax = plt.subplots()
 # Rysowanie linii na osiach
 ax.plot(daty, y_1, label='Liniowa')
 ax.plot(daty, y_2, label='Kwadratowa')
-ax.plot(daty, y_3, label='Sześcienna')  # Zauważ, że poprawiłem tutaj błąd - było y_2 zamiast y_3
+ax.plot(daty, y_3, label='Sześcienna')
 
 # Dodawanie etykiet i tytułu
 ax.set_xlabel('Miesiąc (2024)')
