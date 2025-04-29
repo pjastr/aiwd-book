@@ -16,20 +16,28 @@ Wykresy punktowe są szczególnie przydatne, gdy mamy do czynienia z danymi o r�
 #| echo: true
 import matplotlib.pyplot as plt
 
-fig = plt.figure()  # <1>
-ax = fig.add_subplot(111)  # <2>
-ax.plot([1, 2, 3, 4], [10, 20, 25, 30], color='lightblue', linewidth=3)  # <3>
-ax.scatter([0.3, 3.8, 1.2, 2.5], [11, 25, 9, 26], color='darkgreen', marker='^')  # <4>
-ax.set_xlim(0.5, 4.5)  # <5>
+plt.plot([1, 2, 3, 4], [10, 20, 25, 30], color='lightblue', linewidth=3)  # <1>
+plt.scatter([0.3, 3.8, 1.2, 2.5], [11, 25, 9, 26], color='darkgreen', marker='^')  # <2>
+plt.xlim(0.5, 4.5)  # <3>
 plt.show(block=True)
 
 ```
 
-1. `fig = plt.figure()`: tworzy nową figurę (`fig`). Figura to obiekt zawierający wszystkie elementy wykresu, takie jak osie, linie wykresu, tekst itp.
-2. `ax = fig.add_subplot(111)`: dodaje nowy zestaw osi (`ax`) do figury `fig` za pomocą metody `add_subplot`. Argument `111` oznacza, że chcemy stworzyć siatkę 1x1 i umieścić nasz wykres na pierwszym (i jedynym) polu tej siatki.
-3. `ax.plot([1, 2, 3, 4], [10, 20, 25, 30], color='lightblue', linewidth=3)`: rysuje niebieski wykres liniowy o szerokości linii równej 3 na osiach `ax`, używając listy wartości `[1, 2, 3, 4]` dla osi X i `[10, 20, 25, 30]` dla osi Y.
-4. `ax.scatter([0.3, 3.8, 1.2, 2.5], [11, 25, 9, 26], color='darkgreen', marker='^')`: dodaje punkty w kształcie trójkątów ('^') na osiach `ax` w miejscach określonych przez listy wartości `[0.3, 3.8, 1.2, 2.5]` dla osi X i `[11, 25, 9, 26]` dla osi Y. Punkty są w kolorze ciemnozielonym.
-5. `ax.set_xlim(0.5, 4.5)`: ustawia zakres wartości osi X na osiach `ax` od 0.5 do 4.5.
+1. `plt.plot([1, 2, 3, 4], [10, 20, 25, 30], color='lightblue', linewidth=3)` - Tworzy wykres liniowy z podanymi współrzędnymi punktów (1, 10), (2, 20), (3, 25) i (4, 30). Kolor linii to jasnoniebieski (lightblue), a jej grubość wynosi 3.
+2. `plt.scatter([0.3, 3.8, 1.2, 2.5], [11, 25, 9, 26], color='darkgreen', marker='^')` - Tworzy wykres punktowy z podanymi współrzędnymi punktów (0.3, 11), (3.8, 25), (1.2, 9) i (2.5, 26). - Kolor punktów to ciemnozielony (darkgreen), a ich kształt to trójkąty wypełnione w górę (^).
+3. `plt.xlim(0.5, 4.5)`    - Ustala zakres wartości na osi X, zaczynając od 0.5 do 4.5.
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+ax.plot([1, 2, 3, 4], [10, 20, 25, 30], color='lightblue', linewidth=3)
+ax.scatter([0.3, 3.8, 1.2, 2.5], [11, 25, 9, 26], color='darkgreen', marker='^')
+ax.set_xlim(0.5, 4.5)
+plt.show()
+```
 
 ```{python}
 #| echo: true
@@ -51,6 +59,21 @@ plt.show(block=True)
 
 ```{python}
 #| echo: true
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+house_prices = [230000, 350000, 480000, 280000, 420000, 610000, 390000, 580000]
+square_meters = [90, 140, 210, 100, 170, 260, 150, 240]
+ax.scatter(square_meters, house_prices, color='blue', marker='o')
+ax.set_xlabel('Metraż [m2]')
+ax.set_ylabel('Cena domu [PLN]')
+ax.set_title('Związek między metrażem a ceną domu')
+plt.show()
+
+```
+
+```{python}
+#| echo: true
 from matplotlib import pyplot as plt
 
 x = [1, -3, 4, 5, 6]
@@ -67,20 +90,93 @@ plt.show(block=True)
 
 ```{python}
 #| echo: true
-import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
-# Fixing random state for reproducibility
-np.random.seed(19680801)
 
-N = 50
-x = np.random.rand(N)
-y = np.random.rand(N)
-colors = np.random.rand(N)
-area = (30 * np.random.rand(N)) ** 2  # 0 to 15 point radii
+data = {  #<1>
+    'product_id': [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],
+    'price': [19.99, 29.99, 14.99, 49.99, 9.99, 39.99, 24.99, 34.99, 44.99, 15.99],
+    'units_sold': [150, 85, 200, 50, 300, 75, 120, 95, 60, 180],
+    'rating': [4.5, 4.2, 4.8, 3.9, 4.6, 4.1, 4.3, 4.0, 3.8, 4.7],
+    'discount': [0.1, 0.05, 0.15, 0.0, 0.2, 0.1, 0.05, 0.08, 0.0, 0.12]
+}
 
-plt.scatter(x, y, s=area, c=colors, alpha=0.5)
-plt.show(block=True)
+df = pd.DataFrame(data)  #<2>
+x_values = df['price']  #<3>
+y_values = df['units_sold']  #<4>
+colors = df['rating']  #<5>
+sizes = df['discount'] * 1000 + 50  #<6>
+
+plt.scatter(x_values, y_values, s=sizes, c=colors, alpha=0.7, cmap='viridis')  #<7>
+
+plt.colorbar(label='Ocena produktu')  #<8>
+
+plt.xlabel('Cena produktu (PLN)')  #<9>
+plt.ylabel('Liczba sprzedanych sztuk')  #<10>
+plt.title('Analiza sprzedaży')  #<11>
+
+plt.grid(True, alpha=0.3)  #<12>
+
+plt.show()  #<13>
+```
+
+1. `data = {...}`: tworzy słownik zawierający dane o produktach, gdzie każdy klucz odpowiada nazwie kolumny, a wartości to listy zawierające dane dla 10 produktów (id produktu, cena, liczba sprzedanych sztuk, ocena i rabat).
+
+2. `df = pd.DataFrame(data)`: konwertuje słownik `data` na DataFrame biblioteki pandas, co tworzy uporządkowaną tabelę danych z nazwanymi kolumnami.
+
+3. `x_values = df['price']`: wyodrębnia kolumnę z cenami produktów i przypisuje ją do zmiennej `x_values`, która będzie użyta jako współrzędne X na wykresie.
+
+4. `y_values = df['units_sold']`: wyodrębnia kolumnę z liczbą sprzedanych sztuk i przypisuje ją do zmiennej `y_values`, która będzie użyta jako współrzędne Y na wykresie.
+
+5. `colors = df['rating']`: wyodrębnia kolumnę z ocenami produktów i przypisuje ją do zmiennej `colors`, która posłuży do nadania kolorów punktom na wykresie.
+
+6. `sizes = df['discount'] * 1000 + 50`: tworzy zmienną `sizes` określającą rozmiar punktów przez przemnożenie wartości rabatu przez 1000 i dodanie 50, co zapewnia widoczność wszystkich punktów (minimalna wielkość 50 jednostek).
+
+7. `plt.scatter(x_values, y_values, s=sizes, c=colors, alpha=0.7, cmap='viridis')`: tworzy wykres punktowy (scatter plot) używając cen jako współrzędnych X, sprzedaży jako Y, wielkości punktów określonych przez rabaty, kolorów opartych na ocenach, z przezroczystością 0.7 i paletą kolorów 'viridis'.
+
+8. `plt.colorbar(label='Ocena produktu')`: dodaje pasek kolorów (colorbar) do wykresu, który pokazuje skalę ocen produktów i ich odpowiadające kolory.
+
+9. `plt.xlabel('Cena produktu (PLN)')`: ustawia etykietę osi X, opisującą że pokazuje cenę produktu w złotych.
+
+10. `plt.ylabel('Liczba sprzedanych sztuk')`: ustawia etykietę osi Y, opisującą że pokazuje liczbę sprzedanych sztuk produktu.
+
+11. `plt.title('Analiza sprzedaży')`: nadaje wykresowi tytuł "Analiza sprzedaży".
+
+12. `plt.grid(True, alpha=0.3)`: włącza siatkę na wykresie z przezroczystością 0.3, co poprawia czytelność danych.
+
+13. `plt.show()`: wyświetla przygotowany wykres.
+
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'product_id': [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],
+    'price': [19.99, 29.99, 14.99, 49.99, 9.99, 39.99, 24.99, 34.99, 44.99, 15.99],
+    'units_sold': [150, 85, 200, 50, 300, 75, 120, 95, 60, 180],
+    'rating': [4.5, 4.2, 4.8, 3.9, 4.6, 4.1, 4.3, 4.0, 3.8, 4.7],
+    'discount': [0.1, 0.05, 0.15, 0.0, 0.2, 0.1, 0.05, 0.08, 0.0, 0.12]
+}
+
+df = pd.DataFrame(data)
+x_values = df['price']
+y_values = df['units_sold']
+colors = df['rating']
+sizes = df['discount'] * 1000 + 50
+
+fig, ax = plt.subplots()
+scatter = ax.scatter(x_values, y_values, s=sizes, c=colors, alpha=0.7, cmap='viridis')
+cbar = fig.colorbar(scatter, ax=ax)
+cbar.set_label('Ocena produktu')
+
+ax.set_xlabel('Cena produktu (PLN)')
+ax.set_ylabel('Liczba sprzedanych sztuk')
+ax.set_title('Analiza sprzedaży')
+ax.grid(True, alpha=0.3)
+
+plt.show()
 
 ```
 
@@ -92,24 +188,4 @@ plt.show(block=True)
 
 ![](m23.png)
 
-```{python}
-#| echo: true
-import matplotlib.pyplot as plt
 
-plt.plot([1, 2, 3, 4], [10, 20, 25, 30], color='lightblue', linewidth=3)  # <1>
-plt.scatter([0.3, 3.8, 1.2, 2.5], [11, 25, 9, 26], color='darkgreen', marker='^')  # <2>
-plt.xlim(0.5, 4.5)  # <3>
-plt.show(block=True)
-
-```
-
-1. `plt.plot([1, 2, 3, 4], [10, 20, 25, 30], color='lightblue', linewidth=3)` - Tworzy wykres liniowy z podanymi współrzędnymi punktów (1, 10), (2, 20), (3, 25) i (4, 30). Kolor linii to jasnoniebieski (lightblue), a jej grubość wynosi 3.
-2. `plt.scatter([0.3, 3.8, 1.2, 2.5], [11, 25, 9, 26], color='darkgreen', marker='^')` - Tworzy wykres punktowy z podanymi współrzędnymi punktów (0.3, 11), (3.8, 25), (1.2, 9) i (2.5, 26). - Kolor punktów to ciemnozielony (darkgreen), a ich kształt to trójkąty wypełnione w górę (^).
-3. `plt.xlim(0.5, 4.5)`    - Ustala zakres wartości na osi X, zaczynając od 0.5 do 4.5.
-
-
-**Ćwiczenie:** (`expunkt.py`)
-
-Załaduj dane z pliku niżej i stwórz wykres punktowy na podstawie wybranych samodzielnie danych:
-
-<https://github.com/pjastr/SamleTestFilesVD/blob/master/ex/cena_paliwa11.xlsx>
