@@ -1,0 +1,72 @@
+# Problem #1
+
+Pliki są dostępne tutaj <https://github.com/pjastr/aiwd-book/tree/main/dataset>
+
+Cel: wykres liniowy
+
+Cel dodatkowy: różnice miedzy danymi szerokimi a długimi
+
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+# Wczytanie danych
+dane = pd.read_csv('dataset/sprzedaz.csv')
+
+
+# Dostosowanie kolorów dla lepszej czytelności
+colors = ['steelblue', 'crimson', 'forestgreen']
+markers = ['o', 's', '^']
+
+# Utworzenie wykresu dla każdego regionu
+for i, region in enumerate(dane['Region']):
+    wartosci = dane.loc[dane['Region'] == region, ['Styczeń', 'Luty', 'Marzec', 'Kwiecień']].values.flatten()
+    miesiace = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień']
+
+    plt.plot(miesiace, wartosci, marker=markers[i], linestyle='-', linewidth=2.5,
+             color=colors[i], label=region, markersize=8)
+
+# Dostosowanie wykresu
+plt.title('Sprzedaż w poszczególnych regionach w pierwszym kwartale', fontsize=16, pad=20)
+plt.xlabel('Miesiąc', fontsize=12)
+plt.ylabel('Wartość sprzedaży', fontsize=12)
+plt.grid(True, linestyle='--', alpha=0.7)
+
+# Poprawienie legendy
+plt.legend(title='Region', fontsize=10, title_fontsize=12)
+
+
+# Dostosowanie zakresu osi Y dla lepszej prezentacji
+plt.ylim(min(dane[['Styczeń', 'Luty', 'Marzec', 'Kwiecień']].values.flatten()) - 20,
+         max(dane[['Styczeń', 'Luty', 'Marzec', 'Kwiecień']].values.flatten()) + 30)
+
+# Poprawienie układu
+plt.tight_layout()
+
+# Wyświetlenie wykresu
+plt.show()
+```
+
+```{python}
+#| echo: true
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_csv('dataset/sprzedaz.csv')
+df_long = df.melt(
+    id_vars='Region',
+    var_name='Miesiąc',
+    value_name='Sprzedaż'
+)
+print(df_long)
+sns.lineplot(
+    data=df_long,
+    x='Miesiąc',
+    y='Sprzedaż',
+    hue='Region'
+)
+plt.show()
+```

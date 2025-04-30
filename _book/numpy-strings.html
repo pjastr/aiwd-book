@@ -585,6 +585,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Zadania problemowe</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -648,7 +665,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tworzenie-tablic-z-napisami" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="tworzenie-tablic-z-napisami"><span class="header-section-number">12.1</span> Tworzenie tablic z napisami</h2>
 <p>NumPy pozwala na przechowywanie tekstu w tablicach, np. tak:</p>
-<div id="53b4b2a5" class="cell" data-execution_count="1">
+<div id="4e865377" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"NumPy"</span>, <span class="st">"data"</span>, <span class="st">"Science"</span>])</span>
@@ -668,7 +685,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>upper</code>: Zamiana wszystkich liter na wielkie.</li>
 <li><code>lower</code>: Zamiana wszystkich liter na małe.</li>
 </ul>
-<div id="917f9e84" class="cell" data-execution_count="2">
+<div id="35d3779b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"NumPy"</span>, <span class="st">"data"</span>, <span class="st">"Science"</span>])</span>
@@ -684,7 +701,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="numpy.strings.capitalize" class="level3" data-number="12.2.2">
 <h3 data-number="12.2.2" class="anchored" data-anchor-id="numpy.strings.capitalize"><span class="header-section-number">12.2.2</span> <code>numpy.strings.capitalize</code></h3>
 <p>Funkcja <code>capitalize</code> zamienia pierwszą literę wyrazu na wielką, a pozostałe na małe.</p>
-<div id="515f6c9d" class="cell" data-execution_count="3">
+<div id="e6c6b3c1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"NumPy"</span>, <span class="st">"data"</span>, <span class="st">"Science"</span>])</span>
@@ -697,7 +714,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="numpy.strings.title" class="level3" data-number="12.2.3">
 <h3 data-number="12.2.3" class="anchored" data-anchor-id="numpy.strings.title"><span class="header-section-number">12.2.3</span> <code>numpy.strings.title</code></h3>
 <p>Funkcja <code>title</code> sprawia, że każda część składowa tekstu (np. oddzielona spacją) zostaje zamieniona tak, by zaczynała się od wielkiej litery.</p>
-<div id="aa929ae8" class="cell" data-execution_count="4">
+<div id="17e4de47" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([<span class="st">"python data science"</span>, <span class="st">"machine learning"</span>, <span class="st">"deep learning"</span>])</span>
@@ -714,7 +731,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="numpy.strings.add" class="level3" data-number="12.3.1">
 <h3 data-number="12.3.1" class="anchored" data-anchor-id="numpy.strings.add"><span class="header-section-number">12.3.1</span> <code>numpy.strings.add</code></h3>
 <p>Funkcja <code>add</code> łączy elementy tablic tekstowych, działając podobnie jak operator <code>+</code> na stringach, ale wektorowo.</p>
-<div id="5bfb3f93" class="cell" data-execution_count="5">
+<div id="51c299db" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>arr_a <span class="op">=</span> np.array([<span class="st">"Hello"</span>, <span class="st">"Data"</span>])</span>
@@ -729,7 +746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="numpy.strings.join" class="level3" data-number="12.3.2">
 <h3 data-number="12.3.2" class="anchored" data-anchor-id="numpy.strings.join"><span class="header-section-number">12.3.2</span> <code>numpy.strings.join</code></h3>
 <p>Funkcja <code>join</code> pozwala na łączenie elementów tablicy przy użyciu wskazanego separatora.</p>
-<div id="e0a212b9" class="cell" data-execution_count="6">
+<div id="386f314b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>arr3 <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"numpy"</span>, <span class="st">"string"</span>])</span>
@@ -745,7 +762,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="numpy.strings.split" class="level3" data-number="12.3.3">
 <h3 data-number="12.3.3" class="anchored" data-anchor-id="numpy.strings.split"><span class="header-section-number">12.3.3</span> <code>numpy.strings.split</code></h3>
 <p>Pozwala na rozdzielanie stringów według podanego separatora. Zwraca tablicę zawierającą listy podłańcuchów.</p>
-<div id="128f14c7" class="cell" data-execution_count="7">
+<div id="dffdb201" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>arr4 <span class="op">=</span> np.array([<span class="st">"python-data-science"</span>, <span class="st">"machine-learning"</span>])</span>
@@ -765,7 +782,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>find</code>: Zwraca indeks pierwszego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).</li>
 <li><code>rfind</code>: Zwraca indeks ostatniego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).</li>
 </ul>
-<div id="e1fc28f2" class="cell" data-execution_count="8">
+<div id="81d81cd9" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>arr5 <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"data"</span>, <span class="st">"numpy"</span>])</span>
@@ -778,7 +795,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="numpy.strings.replace" class="level3" data-number="12.4.2">
 <h3 data-number="12.4.2" class="anchored" data-anchor-id="numpy.strings.replace"><span class="header-section-number">12.4.2</span> <code>numpy.strings.replace</code></h3>
 <p><code>replace</code> zamienia wszystkie wystąpienia podłańcucha na nowy ciąg znaków.</p>
-<div id="4ea8d1ed" class="cell" data-execution_count="9">
+<div id="40730e8f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>arr6 <span class="op">=</span> np.array([<span class="st">"python"</span>, <span class="st">"pydata"</span>, <span class="st">"pypy"</span>])</span>
@@ -799,7 +816,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>lstrip</code>: Usuwa wskazane znaki z lewej strony (początku).</li>
 <li><code>rstrip</code>: Usuwa wskazane znaki z prawej strony (końca).</li>
 </ul>
-<div id="96be1a13" class="cell" data-execution_count="10">
+<div id="243b70fd" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>arr7 <span class="op">=</span> np.array([<span class="st">"   python   "</span>, <span class="st">"  numpy  "</span>])</span>
@@ -809,7 +826,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Możemy również podać niestandardowe znaki do usunięcia:</p>
-<div id="dc7460f9" class="cell" data-execution_count="11">
+<div id="f1de8de7" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>arr8 <span class="op">=</span> np.array([<span class="st">"###data###"</span>, <span class="st">"***science***"</span>])</span>

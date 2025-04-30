@@ -614,6 +614,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Zadania problemowe</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -735,7 +752,7 @@ window.Quarto = {
 <p>Rozważamy wpływ zbioru <span class="math inline">\(k\)</span> zmiennych <span class="math inline">\(X_1, \ldots, X_k\)</span> na zmienną <span class="math inline">\(Y\)</span>. Należy wprowadzić do modelu jak największą liczbę zmiennych niezależnych oraz powinny się w nim znaleźć zmienne silnie skorelowane ze zmienną zależną i jednocześnie jak najsłabiej skorelowane między sobą.</p>
 <p>Liniowy model regresji wielowymiarowej:</p>
 <p><span class="math display">\[Y=\beta_0 +\beta_1\cdot X_1+\beta_2\cdot X_2+\ldots+\beta_k\cdot X_k+\varepsilon.\]</span> <span class="math inline">\(\beta_i\)</span> - współczynniki regresji (parametry modelu) opisujące wpływ <span class="math inline">\(i\)</span>-tej zmiennej. <span class="math inline">\(\varepsilon\)</span> - składnik losowy.</p>
-<div id="8f7a3993" class="cell" data-execution_count="1">
+<div id="55de532a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane</span></span>
@@ -762,7 +779,7 @@ Wartości osobliwe macierzy układu: [1.35119311 0.41746518]
 Przewidywany błąd dopasowania: 1.3322676295501878e-15</code></pre>
 </div>
 </div>
-<div id="1eb6a27d" class="cell" data-execution_count="2">
+<div id="c097e0ae" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -801,7 +818,7 @@ Przewidywany błąd dopasowania: 1.3322676295501878e-15</code></pre>
 </div>
 </div>
 </div>
-<div id="90b6eb87" class="cell" data-execution_count="3">
+<div id="1dea9020" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>

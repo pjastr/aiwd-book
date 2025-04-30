@@ -54,6 +54,9 @@ book:
       - matplotlib-opcjewykresu.qmd
       - matplotlib-dodatki2.qmd
       - matplotlib-innewykresy.qmd
+    - part: "Zadania problemowe"
+      chapters:
+      - problem01.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/aiwd-book
   repo-actions: [issue]
