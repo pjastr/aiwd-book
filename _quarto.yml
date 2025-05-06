@@ -49,6 +49,8 @@ book:
       - matplotlib-podwykresy.qmd
       - matplotlib-zapis.qmd 
       - matplotlib-wykrespunktowy.qmd
+      - matplotlib-wykreskolowy.qmd
+      - matplotlib-wykresslupkowy.qmd
       - matplotlib-regresja.qmd
       - matplotlib-kolory.qmd
       - matplotlib-opcjewykresu.qmd
@@ -57,6 +59,7 @@ book:
     - part: "Zadania problemowe"
       chapters:
       - problem01.qmd
+      - problem02.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/aiwd-book
   repo-actions: [issue]

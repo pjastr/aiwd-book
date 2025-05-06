@@ -555,32 +555,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykreskolowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykresslupkowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./matplotlib-regresja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-kolory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-opcjewykresu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-innewykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
   </div>
 </li>
       </ul>
@@ -597,7 +609,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
   </div>
 </li>
       </ul>
@@ -649,7 +667,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="uzupełnianie-braków" class="level2" data-number="23.1">
 <h2 data-number="23.1" class="anchored" data-anchor-id="uzupełnianie-braków"><span class="header-section-number">23.1</span> Uzupełnianie braków</h2>
-<div id="c9e09ef1" class="cell" data-execution_count="1">
+<div id="16b8f448" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">3</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">4</span>], index<span class="op">=</span>[<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>])</span>
@@ -682,7 +700,7 @@ dtype: float64</code></pre>
 </section>
 <section id="obsługa-brakujących-danych" class="level2" data-number="23.2">
 <h2 data-number="23.2" class="anchored" data-anchor-id="obsługa-brakujących-danych"><span class="header-section-number">23.2</span> Obsługa brakujących danych</h2>
-<div id="bd0f72b1" class="cell" data-execution_count="2">
+<div id="62b51998" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -708,7 +726,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <hr>
-<div id="1253ea86" class="cell" data-execution_count="3">
+<div id="aed85291" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> nan <span class="im">as</span> NA</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -754,7 +772,7 @@ dtype: object</code></pre>
 </section>
 <section id="usuwanie-duplikatów" class="level2" data-number="23.3">
 <h2 data-number="23.3" class="anchored" data-anchor-id="usuwanie-duplikatów"><span class="header-section-number">23.3</span> Usuwanie duplikatów</h2>
-<div id="8073e3a0" class="cell" data-execution_count="4">
+<div id="f082cd7b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'k1'</span>: [<span class="st">'one'</span>, <span class="st">'two'</span>] <span class="op">*</span> <span class="dv">3</span> <span class="op">+</span> [<span class="st">'two'</span>],</span>
@@ -791,7 +809,7 @@ dtype: bool
 </section>
 <section id="zastępowanie-wartościami" class="level2" data-number="23.4">
 <h2 data-number="23.4" class="anchored" data-anchor-id="zastępowanie-wartościami"><span class="header-section-number">23.4</span> Zastępowanie wartościami</h2>
-<div id="51210b6d" class="cell" data-execution_count="5">
+<div id="a045b0f1" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -842,7 +860,7 @@ dtype: float64</code></pre>
 </section>
 <section id="dyskretyzacja-i-podział-na-koszyki" class="level2" data-number="23.5">
 <h2 data-number="23.5" class="anchored" data-anchor-id="dyskretyzacja-i-podział-na-koszyki"><span class="header-section-number">23.5</span> Dyskretyzacja i podział na koszyki</h2>
-<div id="9113d6bb" class="cell" data-execution_count="6">
+<div id="289dba41" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">27</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">37</span>, <span class="dv">31</span>, <span class="dv">61</span>, <span class="dv">45</span>, <span class="dv">41</span>, <span class="dv">32</span>]</span>
@@ -866,7 +884,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <hr>
-<div id="1914d62a" class="cell" data-execution_count="7">
+<div id="6cd363f3" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">27</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">37</span>, <span class="dv">31</span>, <span class="dv">61</span>, <span class="dv">45</span>, <span class="dv">41</span>, <span class="dv">32</span>]</span>
@@ -886,20 +904,20 @@ Categories (4, object): ['Youth' &lt; 'YoungAdult' &lt; 'MiddleAged' &lt; 'Senio
 </div>
 </div>
 <hr>
-<div id="91ae2264" class="cell" data-execution_count="8">
+<div id="e8a05b37" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.rand(<span class="dv">20</span>)</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.cut(data, <span class="dv">4</span>, precision<span class="op">=</span><span class="dv">2</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[(0.51, 0.73], (0.73, 0.96], (0.28, 0.51], (0.73, 0.96], (0.28, 0.51], ..., (0.51, 0.73], (0.73, 0.96], (0.73, 0.96], (0.73, 0.96], (0.51, 0.73]]
+<pre><code>[(0.7, 0.93], (0.48, 0.7], (0.7, 0.93], (0.029, 0.25], (0.25, 0.48], ..., (0.029, 0.25], (0.25, 0.48], (0.48, 0.7], (0.029, 0.25], (0.48, 0.7]]
 Length: 20
-Categories (4, interval[float64, right]): [(0.046, 0.28] &lt; (0.28, 0.51] &lt; (0.51, 0.73] &lt; (0.73, 0.96]]</code></pre>
+Categories (4, interval[float64, right]): [(0.029, 0.25] &lt; (0.25, 0.48] &lt; (0.48, 0.7] &lt; (0.7, 0.93]]</code></pre>
 </div>
 </div>
 <hr>
-<div id="4c4fa14f" class="cell" data-execution_count="9">
+<div id="3b28eeda" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -908,20 +926,20 @@ Categories (4, interval[float64, right]): [(0.046, 0.28] &lt; (0.28, 0.51] &lt; 
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cats)</span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Series(cats).value_counts())</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[(-0.669, 0.00746], (0.00746, 0.664], (0.664, 4.106], (-3.09, -0.669], (0.664, 4.106], ..., (-0.669, 0.00746], (-3.09, -0.669], (0.00746, 0.664], (-0.669, 0.00746], (-0.669, 0.00746]]
+<pre><code>[(0.618, 3.595], (-3.903, -0.706], (0.618, 3.595], (-0.706, -0.053], (-0.706, -0.053], ..., (-3.903, -0.706], (0.618, 3.595], (0.618, 3.595], (0.618, 3.595], (-0.053, 0.618]]
 Length: 1000
-Categories (4, interval[float64, right]): [(-3.09, -0.669] &lt; (-0.669, 0.00746] &lt; (0.00746, 0.664] &lt; (0.664, 4.106]]
-(-3.09, -0.669]      250
-(-0.669, 0.00746]    250
-(0.00746, 0.664]     250
-(0.664, 4.106]       250
+Categories (4, interval[float64, right]): [(-3.903, -0.706] &lt; (-0.706, -0.053] &lt; (-0.053, 0.618] &lt; (0.618, 3.595]]
+(-3.903, -0.706]    250
+(-0.706, -0.053]    250
+(-0.053, 0.618]     250
+(0.618, 3.595]      250
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
 <section id="wykrywanie-i-filtrowanie-elementów-odstających" class="level2" data-number="23.6">
 <h2 data-number="23.6" class="anchored" data-anchor-id="wykrywanie-i-filtrowanie-elementów-odstających"><span class="header-section-number">23.6</span> Wykrywanie i filtrowanie elementów odstających</h2>
-<div id="ea6560fe" class="cell" data-execution_count="10">
+<div id="998d14c5" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -935,34 +953,37 @@ Name: count, dtype: int64</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 0            1            2            3
 count  1000.000000  1000.000000  1000.000000  1000.000000
-mean     -0.000407    -0.003532    -0.018296     0.011917
-std       1.028000     1.048702     0.998915     0.972310
-min      -4.476786    -3.718684    -2.950361    -3.021852
-25%      -0.695307    -0.686295    -0.717852    -0.628137
-50%       0.009999    -0.025378     0.005948     0.010447
-75%       0.693041     0.743351     0.645430     0.664267
-max       3.047476     3.124593     3.126755     3.375975
+mean     -0.022889     0.043837     0.030703    -0.003313
+std       0.970871     0.998302     0.955709     0.977881
+min      -3.103136    -3.013865    -3.266847    -3.748419
+25%      -0.640609    -0.645255    -0.634988    -0.657073
+50%       0.015043     0.068453     0.009598     0.037301
+75%       0.611355     0.770675     0.708546     0.662539
+max       3.371154     2.895112     2.638909     3.462413
 ---
-350    3.126755
+12    -3.124833
+151   -3.266847
 Name: 2, dtype: float64
 ---
             0         1         2         3
-176  1.184412  3.124593 -0.763128  0.028710
-222 -0.049537 -0.004647 -1.723262  3.375975
-306 -1.002537 -0.347864  1.461766 -3.021852
-350 -0.408669  0.948148  3.126755  1.382750
-389 -3.636915  0.771762  1.898955  1.560208
-601  3.047476 -0.178623 -0.902199  0.509692
-707 -1.399788 -0.805905  1.414358  3.374444
-750 -1.855415 -3.718684 -0.747146 -1.649135
-864 -1.589628  3.008773 -0.997038 -1.491111
-915 -4.476786 -0.215462  0.829270  0.303592</code></pre>
+12  -1.008339 -0.402058 -3.124833  0.412508
+151  0.516210  1.063156 -3.266847  2.359945
+176  0.512000 -3.013865 -0.487403 -1.205277
+189  0.171398 -0.199994 -1.253391  3.336205
+332 -3.103136  0.799860  0.207747  0.213248
+337 -3.037959 -0.179713 -0.088071  0.852824
+452  0.605307 -0.017796  0.676150  3.462413
+544 -0.556684  0.034074  0.188981 -3.748419
+565  3.102916  0.916831  0.806207  0.533369
+601  3.371154  0.722602  1.062826  0.265326
+634  3.054557 -0.426652 -0.847478 -0.998025
+969 -3.097582  0.625828  0.501679 -0.136581</code></pre>
 </div>
 </div>
 </section>
 <section id="zmiana-typu-w-kolumnie" class="level2" data-number="23.7">
 <h2 data-number="23.7" class="anchored" data-anchor-id="zmiana-typu-w-kolumnie"><span class="header-section-number">23.7</span> Zmiana typu w kolumnie</h2>
-<div id="56e65568" class="cell" data-execution_count="11">
+<div id="b796d954" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1006,7 +1027,7 @@ Ramka danych po zmianie typów:
 5  6  6.0  z</code></pre>
 </div>
 </div>
-<div id="6c5ff813" class="cell" data-execution_count="12">
+<div id="87b7298a" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1053,7 +1074,7 @@ Ramka danych po zmianie typów:
 </section>
 <section id="zmiana-znaku-kategoriach" class="level2" data-number="23.8">
 <h2 data-number="23.8" class="anchored" data-anchor-id="zmiana-znaku-kategoriach"><span class="header-section-number">23.8</span> Zmiana znaku kategoriach</h2>
-<div id="6c9e3c27" class="cell" data-execution_count="13">
+<div id="9306cbb8" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie ramki danych</span></span>
@@ -1122,7 +1143,7 @@ Ramka danych po modyfikacji:
 <li><code>indicator</code>: dodaj kolumnę do wynikowej ramki danych, która pokazuje źródło każdego wiersza.</li>
 <li><code>validate</code>: sprawdź, czy określone zasady łączenia są spełnione.</li>
 </ul>
-<div id="e5e4e655" class="cell" data-execution_count="14">
+<div id="4ab9bf13" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -1158,7 +1179,7 @@ K1  C1  D1
 </div>
 </div>
 <p><img src="merge.png" class="img-fluid"></p>
-<div id="e7683d52" class="cell" data-execution_count="15">
+<div id="29baa9ef" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -1253,7 +1274,7 @@ Right join
 <li><code>lsuffix</code> i <code>rsuffix</code>: sufiksy do dodania do kolumn, które się powtarzają. Domyślnie jest to puste.</li>
 <li><code>sort</code>: czy sortować dane według klucza.</li>
 </ul>
-<div id="14fefb74" class="cell" data-execution_count="16">
+<div id="ff109a33" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -1312,7 +1333,7 @@ K2  A2  B2   C2   D2</code></pre>
 <li><code>sort</code>: czy sortować niekonkatenacyjną oś (np. indeksy, jeśli axis=0), niezależnie od danych.</li>
 <li><code>copy</code>: czy zawsze kopiować dane, nawet jeśli nie są potrzebne.</li>
 </ul>
-<div id="37bf82f7" class="cell" data-execution_count="17">
+<div id="1b477609" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -1350,7 +1371,7 @@ K2  A2  B2   C2   D2</code></pre>
 </div>
 </div>
 <p><img src="concat1.png" class="img-fluid"></p>
-<div id="88c4d7d6" class="cell" data-execution_count="18">
+<div id="aeb8d090" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -1410,7 +1431,7 @@ df2 0  NaN  NaN   C0   D0
 <li><code>columns</code>: nazwa kolumny, z której unikalne wartości mają stać się kolumnami w nowej ramce danych.</li>
 <li><code>values</code>: nazwa kolumny lub lista nazw kolumn, które mają stać się wartościami dla nowych kolumn w nowej ramce danych.</li>
 </ul>
-<div id="83443148" class="cell" data-execution_count="19">
+<div id="8f8ea0cc" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
@@ -1451,7 +1472,7 @@ two  4  5  6</code></pre>
 <li><strong>j</strong>: Nazwa nowej kolumny, w której będą przechowywane różne poziomy zmiennych (w naszym przypadku rok).</li>
 <li><strong>sep</strong>: Opcjonalny separator (domyślnie <code>""</code>).</li>
 </ul>
-<div id="3ac50fab" class="cell" data-execution_count="20">
+<div id="149109a2" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane</span></span>
@@ -1498,7 +1519,7 @@ two  4  5  6</code></pre>
 <li><code>value_name</code>: nazwa nowej kolumny, która będzie zawierała wartości kolumn przekształconych na pary klucz-wartość. Domyślnie to ‘value’.</li>
 <li><code>col_level</code>: jeżeli kolumny są wielopoziomowe, to jest poziom, który będzie użyty do przekształcania kolumn na pary klucz-wartość.</li>
 </ul>
-<div id="27c14936" class="cell" data-execution_count="21">
+<div id="9d5a460b" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>

@@ -1,0 +1,91 @@
+# Problem #2
+
+Pliki są dostępne tutaj <https://github.com/pjastr/aiwd-book/tree/main/dataset>
+
+Cel: wykres liniowy
+
+Cel dodatkowy: użycie funkcji `pivot`
+
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import io
+
+
+
+# Wczytaj dane do DataFrame
+df = pd.read_csv('dataset/economic_data.csv')
+
+# Wyświetl pierwsze kilka wierszy oryginalnego DataFrame
+print("Oryginalny DataFrame:")
+print(df.head())
+
+# Użyj pivot do przekształcenia danych
+# Dla każdego wskaźnika tworzymy osobny pivot, aby otrzymać dane w formie odpowiedniej do wykresów
+
+# Przekształcenie danych za pomocą pivot dla każdego wskaźnika
+gdp_growth_pivot = df[df['Indicator'] == 'GDP Growth'].pivot(index='Year', columns='Country', values='Value')
+inflation_pivot = df[df['Indicator'] == 'Inflation'].pivot(index='Year', columns='Country', values='Value')
+unemployment_pivot = df[df['Indicator'] == 'Unemployment'].pivot(index='Year', columns='Country', values='Value')
+
+# Wyświetl przekształcone DataFrames
+print("\nDataFrame GDP Growth po transformacji pivot:")
+print(gdp_growth_pivot)
+
+print("\nDataFrame Inflation po transformacji pivot:")
+print(inflation_pivot)
+
+print("\nDataFrame Unemployment po transformacji pivot:")
+print(unemployment_pivot)
+
+# Ustawienie stylu dla lepszej estetyki
+sns.set_style("whitegrid")
+plt.figure(figsize=(18, 12))
+
+# Lista kolorów dla lepszego rozróżnienia krajów
+colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
+
+# Wykres wzrostu PKB
+plt.subplot(3, 1, 1)
+for i, country in enumerate(gdp_growth_pivot.columns):
+    plt.plot(gdp_growth_pivot.index, gdp_growth_pivot[country], marker='o', 
+             linewidth=2.5, label=country, color=colors[i])
+    
+
+plt.title('Wzrost PKB (%) według krajów (2018-2023)', fontsize=16, fontweight='bold')
+plt.ylabel('Wzrost PKB (%)', fontsize=14)
+plt.grid(True, alpha=0.3)
+plt.legend(loc='upper left', fontsize=12)
+plt.axhline(y=0, color='black', linestyle='-', alpha=0.2)  # Linia na poziomie 0%
+
+# Wykres inflacji
+plt.subplot(3, 1, 2)
+for i, country in enumerate(inflation_pivot.columns):
+    plt.plot(inflation_pivot.index, inflation_pivot[country], marker='s', 
+             linewidth=2.5, label=country, color=colors[i])
+    
+
+plt.title('Stopa inflacji (%) według krajów (2018-2023)', fontsize=16, fontweight='bold')
+plt.ylabel('Stopa inflacji (%)', fontsize=14)
+plt.grid(True, alpha=0.3)
+plt.legend(loc='upper left', fontsize=12)
+
+# Wykres bezrobocia
+plt.subplot(3, 1, 3)
+for i, country in enumerate(unemployment_pivot.columns):
+    plt.plot(unemployment_pivot.index, unemployment_pivot[country], marker='^', 
+             linewidth=2.5, label=country, color=colors[i])
+  
+
+plt.title('Stopa bezrobocia (%) według krajów (2018-2023)', fontsize=16, fontweight='bold')
+plt.xlabel('Rok', fontsize=14)
+plt.ylabel('Stopa bezrobocia (%)', fontsize=14)
+plt.grid(True, alpha=0.3)
+plt.legend(loc='upper left', fontsize=12)
+
+plt.tight_layout(pad=3.0)
+plt.savefig('wskazniki_ekonomiczne.png', dpi=300, bbox_inches='tight')
+plt.show()
+```

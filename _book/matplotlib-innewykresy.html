@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>35&nbsp; Matplotlib - inne wykresy – Analiza i wizualizacja danych</title>
+<title>37&nbsp; Matplotlib - inne wykresy – Analiza i wizualizacja danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -308,7 +308,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib-start.html">Matplotlib</a></li><li class="breadcrumb-item"><a href="./matplotlib-innewykresy.html"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib-start.html">Matplotlib</a></li><li class="breadcrumb-item"><a href="./matplotlib-innewykresy.html"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -584,32 +584,44 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykreskolowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykresslupkowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./matplotlib-regresja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-kolory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-opcjewykresu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-innewykresy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
   </div>
 </li>
       </ul>
@@ -626,7 +638,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
   </div>
 </li>
       </ul>
@@ -641,16 +659,16 @@ window.Quarto = {
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#wykres-kołowy" id="toc-wykres-kołowy" class="nav-link active" data-scroll-target="#wykres-kołowy"><span class="header-section-number">35.1</span> Wykres kołowy</a></li>
-  <li><a href="#wykres-dwuosiowy" id="toc-wykres-dwuosiowy" class="nav-link" data-scroll-target="#wykres-dwuosiowy"><span class="header-section-number">35.2</span> Wykres dwuosiowy</a></li>
-  <li><a href="#wykres-słupkowy" id="toc-wykres-słupkowy" class="nav-link" data-scroll-target="#wykres-słupkowy"><span class="header-section-number">35.3</span> Wykres słupkowy</a></li>
-  <li><a href="#wykres-pudełkowy" id="toc-wykres-pudełkowy" class="nav-link" data-scroll-target="#wykres-pudełkowy"><span class="header-section-number">35.4</span> Wykres pudełkowy</a></li>
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">35.5</span> Histogram</a></li>
-  <li><a href="#wykres-pierścieniowy" id="toc-wykres-pierścieniowy" class="nav-link" data-scroll-target="#wykres-pierścieniowy"><span class="header-section-number">35.6</span> Wykres pierścieniowy</a></li>
-  <li><a href="#wykresy-w-przestrzeni" id="toc-wykresy-w-przestrzeni" class="nav-link" data-scroll-target="#wykresy-w-przestrzeni"><span class="header-section-number">35.7</span> Wykresy w przestrzeni</a>
+  <li><a href="#wykres-kołowy" id="toc-wykres-kołowy" class="nav-link active" data-scroll-target="#wykres-kołowy"><span class="header-section-number">37.1</span> Wykres kołowy</a></li>
+  <li><a href="#wykres-dwuosiowy" id="toc-wykres-dwuosiowy" class="nav-link" data-scroll-target="#wykres-dwuosiowy"><span class="header-section-number">37.2</span> Wykres dwuosiowy</a></li>
+  <li><a href="#wykres-słupkowy" id="toc-wykres-słupkowy" class="nav-link" data-scroll-target="#wykres-słupkowy"><span class="header-section-number">37.3</span> Wykres słupkowy</a></li>
+  <li><a href="#wykres-pudełkowy" id="toc-wykres-pudełkowy" class="nav-link" data-scroll-target="#wykres-pudełkowy"><span class="header-section-number">37.4</span> Wykres pudełkowy</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">37.5</span> Histogram</a></li>
+  <li><a href="#wykres-pierścieniowy" id="toc-wykres-pierścieniowy" class="nav-link" data-scroll-target="#wykres-pierścieniowy"><span class="header-section-number">37.6</span> Wykres pierścieniowy</a></li>
+  <li><a href="#wykresy-w-przestrzeni" id="toc-wykresy-w-przestrzeni" class="nav-link" data-scroll-target="#wykresy-w-przestrzeni"><span class="header-section-number">37.7</span> Wykresy w przestrzeni</a>
   <ul class="collapse">
-  <li><a href="#helisa" id="toc-helisa" class="nav-link" data-scroll-target="#helisa"><span class="header-section-number">35.7.1</span> Helisa</a></li>
-  <li><a href="#torus" id="toc-torus" class="nav-link" data-scroll-target="#torus"><span class="header-section-number">35.7.2</span> Torus</a></li>
+  <li><a href="#helisa" id="toc-helisa" class="nav-link" data-scroll-target="#helisa"><span class="header-section-number">37.7.1</span> Helisa</a></li>
+  <li><a href="#torus" id="toc-torus" class="nav-link" data-scroll-target="#torus"><span class="header-section-number">37.7.2</span> Torus</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
@@ -659,9 +677,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib-start.html">Matplotlib</a></li><li class="breadcrumb-item"><a href="./matplotlib-innewykresy.html"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matplotlib-start.html">Matplotlib</a></li><li class="breadcrumb-item"><a href="./matplotlib-innewykresy.html"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></h1>
+<h1 class="title"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></h1>
 </div>
 
 
@@ -678,8 +696,8 @@ window.Quarto = {
 </header>
 
 
-<section id="wykres-kołowy" class="level2" data-number="35.1">
-<h2 data-number="35.1" class="anchored" data-anchor-id="wykres-kołowy"><span class="header-section-number">35.1</span> Wykres kołowy</h2>
+<section id="wykres-kołowy" class="level2" data-number="37.1">
+<h2 data-number="37.1" class="anchored" data-anchor-id="wykres-kołowy"><span class="header-section-number">37.1</span> Wykres kołowy</h2>
 <p>Wykres kołowy (pie chart) jest stosowany, gdy chcemy przedstawić proporcje różnych kategorii lub segmentów w stosunku do całości. Jest szczególnie użyteczny, gdy mamy niewielką liczbę kategorii (zazwyczaj nie więcej niż 5-7) oraz gdy dane są jakościowe (kategoryczne). Wykres kołowy pozwala na wizualne zrozumienie udziałów procentowych poszczególnych kategorii w ramach całego zbioru danych.</p>
 <p>Przykłady danych, dla których stosuje się wykres kołowy:</p>
 <ol type="1">
@@ -702,7 +720,7 @@ window.Quarto = {
 <li><code>counterclock</code> - wartość logiczna (True/False), która określa, czy segmenty mają być rysowane zgodnie z ruchem wskazówek zegara. Domyślnie ustawione na <code>True</code>.</li>
 </ul>
 <p><img src="m7.png" class="img-fluid"></p>
-<div id="67d138e7" class="cell" data-execution_count="1">
+<div id="80f5f0b1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dane</span></span>
@@ -729,7 +747,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="14c52e4f" class="cell" data-execution_count="2">
+<div id="5a11405c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pie chart, where the slices will be ordered and plotted counter-clockwise:</span></span>
@@ -751,7 +769,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="2121e1f2" class="cell" data-execution_count="3">
+<div id="58975423" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pie chart, where the slices will be ordered and plotted counter-clockwise:</span></span>
@@ -772,7 +790,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="ea81da9f" class="cell" data-execution_count="4">
+<div id="c217d740" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -804,15 +822,15 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="wykres-dwuosiowy" class="level2" data-number="35.2">
-<h2 data-number="35.2" class="anchored" data-anchor-id="wykres-dwuosiowy"><span class="header-section-number">35.2</span> Wykres dwuosiowy</h2>
+<section id="wykres-dwuosiowy" class="level2" data-number="37.2">
+<h2 data-number="37.2" class="anchored" data-anchor-id="wykres-dwuosiowy"><span class="header-section-number">37.2</span> Wykres dwuosiowy</h2>
 <p>Funkcja <code>twinx</code> w bibliotece Matplotlib pozwala na utworzenie drugiej osi Y, która będzie współdzielić oś X z pierwszą osią Y. Dzięki temu, można w prosty sposób przedstawić dwie serie danych, które są mierzne w różnych jednostkach, ale mają wspólną zmienną niezależną.</p>
 <p>Składnia funkcji to <code>twinx(ax=None, **kwargs)</code>, gdzie:</p>
 <ul>
 <li><code>ax</code> - obiekt Axes, który ma być użyty do tworzenia nowej osi Y. Domyślnie ustawione na <code>None</code>, co oznacza, że będzie tworzona nowa osie Y.</li>
 <li><code>**kwargs</code> - dodatkowe argumenty dotyczące formatowania nowej osi Y.</li>
 </ul>
-<div id="c987b614" class="cell" data-execution_count="5">
+<div id="62a17f16" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -833,7 +851,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="44de49e4" class="cell" data-execution_count="6">
+<div id="b771d9a3" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -863,8 +881,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="wykres-słupkowy" class="level2" data-number="35.3">
-<h2 data-number="35.3" class="anchored" data-anchor-id="wykres-słupkowy"><span class="header-section-number">35.3</span> Wykres słupkowy</h2>
+<section id="wykres-słupkowy" class="level2" data-number="37.3">
+<h2 data-number="37.3" class="anchored" data-anchor-id="wykres-słupkowy"><span class="header-section-number">37.3</span> Wykres słupkowy</h2>
 <p>Wykres słupkowy jest stosowany do przedstawiania danych kategorialnych lub dyskretnych. Jest to powszechnie używany rodzaj wykresu, który pomaga wizualnie porównać wartości lub ilości dla różnych kategorii. Oto kilka typów danych, dla których wykres słupkowy może być stosowany:</p>
 <ol type="1">
 <li>Częstości: Wykres słupkowy jest używany do przedstawiania liczby wystąpień różnych kategorii, takich jak wyniki ankiety, preferencje konsumentów lub różne grupy ludności.</li>
@@ -884,7 +902,7 @@ window.Quarto = {
 <li><code>data</code> - obiekt DataFrame, który zawiera dane do wykresu.</li>
 <li><code>**kwargs</code> - dodatkowe argumenty dotyczące formatowania wykresu, takie jak kolor, przezroczystość, etykiety osi, tytuł i legendę.</li>
 </ul>
-<div id="b86577fb" class="cell" data-execution_count="7">
+<div id="c3af73d9" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dane</span></span>
@@ -909,7 +927,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="a83dff64" class="cell" data-execution_count="8">
+<div id="6d0765b6" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -932,7 +950,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="5f6552cd" class="cell" data-execution_count="9">
+<div id="b6373414" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -950,7 +968,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="ef07378c" class="cell" data-execution_count="10">
+<div id="f36cb124" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -974,7 +992,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="c2fd121c" class="cell" data-execution_count="11">
+<div id="73fbc6d4" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1014,7 +1032,7 @@ window.Quarto = {
 <li><code>data</code> - obiekt DataFrame, który zawiera dane do wykresu.</li>
 <li><code>**kwargs</code> - dodatkowe argumenty dotyczące formatowania wykresu, takie jak kolor, przezroczystość, etykiety osi, tytuł i legenda.</li>
 </ul>
-<div id="6fbe5b55" class="cell" data-execution_count="12">
+<div id="27a76f87" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dane</span></span>
@@ -1039,7 +1057,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="44dd6982" class="cell" data-execution_count="13">
+<div id="c5ac02f6" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1057,7 +1075,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="ee0e2b67" class="cell" data-execution_count="14">
+<div id="303ca225" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1081,7 +1099,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="078df319" class="cell" data-execution_count="15">
+<div id="36873cba" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1109,7 +1127,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="b35fa38e" class="cell" data-execution_count="16">
+<div id="9ac2625f" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1143,7 +1161,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="9e321b8c" class="cell" data-execution_count="17">
+<div id="25899892" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1184,8 +1202,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="wykres-pudełkowy" class="level2" data-number="35.4">
-<h2 data-number="35.4" class="anchored" data-anchor-id="wykres-pudełkowy"><span class="header-section-number">35.4</span> Wykres pudełkowy</h2>
+<section id="wykres-pudełkowy" class="level2" data-number="37.4">
+<h2 data-number="37.4" class="anchored" data-anchor-id="wykres-pudełkowy"><span class="header-section-number">37.4</span> Wykres pudełkowy</h2>
 <p>Wykres pudełkowy (inaczej box plot) jest stosowany do przedstawiania informacji o rozkładzie danych liczbowych oraz do identyfikacji wartości odstających. Jest szczególnie przydatny w przypadku analizy danych ciągłych, które mają różne wartości i rozkłady. Oto kilka typów danych, dla których wykres pudełkowy może być stosowany:</p>
 <ol type="1">
 <li><p>Porównanie grup: Wykres pudełkowy jest używany do porównywania rozkładu danych między różnymi grupami. Na przykład, można go użyć do porównania wyników testów uczniów z różnych szkół, wynagrodzeń w różnych sektorach czy wartości sprzedaży różnych produktów.</p></li>
@@ -1195,7 +1213,7 @@ window.Quarto = {
 </ol>
 <p>Warto zauważyć, że wykres pudełkowy jest szczególnie przydatny, gdy chcemy zrozumieć rozkład danych, ale nie pokazuje on konkretnej liczby obserwacji ani wartości indywidualnych punktów danych. W takich przypadkach inne rodzaje wykresów, takie jak wykres punktowy, mogą być bardziej odpowiednie.</p>
 <p>Wykres pudełkowy pokazuje pięć statystyk opisowych danych: minimum, pierwszy kwartyl (Q1), medianę, trzeci kwartyl (Q3) i maksimum.</p>
-<div id="c3ca8a35" class="cell" data-execution_count="18">
+<div id="476be71a" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1224,7 +1242,7 @@ window.Quarto = {
 </div>
 </div>
 <p><img src="m10.png" class="img-fluid"></p>
-<div id="42b706ce" class="cell" data-execution_count="19">
+<div id="e28919f9" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1246,8 +1264,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="histogram" class="level2" data-number="35.5">
-<h2 data-number="35.5" class="anchored" data-anchor-id="histogram"><span class="header-section-number">35.5</span> Histogram</h2>
+<section id="histogram" class="level2" data-number="37.5">
+<h2 data-number="37.5" class="anchored" data-anchor-id="histogram"><span class="header-section-number">37.5</span> Histogram</h2>
 <p>Wykres histogramu jest stosowany do przedstawiania rozkładu danych liczbowych, zarówno ciągłych, jak i dyskretnych. Histogram pokazuje częstość występowania danych w określonych przedziałach (binach), co pozwala na analizę dystrybucji i identyfikację wzorców. Oto kilka typów danych, dla których histogram może być stosowany:</p>
 <ol type="1">
 <li><p>Analiza rozkładu: Histogram może być używany do analizy rozkładu danych, takich jak oceny, ceny, wartości akcji, wzrost ludności czy dane meteorologiczne. Pozwala to zrozumieć, jak dane są rozłożone, czy są skoncentrowane wokół pewnych wartości, czy mają długi ogon (tj. czy występują wartości odstające).</p></li>
@@ -1256,7 +1274,7 @@ window.Quarto = {
 <li><p>Szacowanie parametrów: Histogram może pomóc w szacowaniu parametrów rozkładu, takich jak średnia, mediana czy wariancja, co może być użyteczne w analizie statystycznej.</p></li>
 </ol>
 <p>Warto zauważyć, że histogram jest odpowiedni dla danych liczbowych, ale nie jest przeznaczony do przedstawiania danych kategorialnych. W takich przypadkach inne rodzaje wykresów, takie jak wykres słupkowy, mogą być bardziej odpowiednie.</p>
-<div id="c11ff2db" class="cell" data-execution_count="20">
+<div id="8cd7a073" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>,</span>
@@ -1272,7 +1290,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="1b334d69" class="cell" data-execution_count="21">
+<div id="838c8c45" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1298,7 +1316,7 @@ Categories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt
 </div>
 </div>
 </div>
-<div id="2025b025" class="cell" data-execution_count="22">
+<div id="a896298f" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">27</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">37</span>, <span class="dv">31</span>, <span class="dv">61</span>, <span class="dv">45</span>, <span class="dv">41</span>, <span class="dv">32</span>]</span>
@@ -1313,7 +1331,7 @@ Categories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt
 </div>
 </div>
 </div>
-<div id="7d6b5da7" class="cell" data-execution_count="23">
+<div id="914abfcf" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>,</span>
@@ -1330,7 +1348,7 @@ Categories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt
 </div>
 </div>
 </div>
-<div id="0ac2b5a5" class="cell" data-execution_count="24">
+<div id="de71d96e" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>,</span>
@@ -1347,7 +1365,7 @@ Categories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt
 </div>
 </div>
 </div>
-<div id="e8a8fafa" class="cell" data-execution_count="25">
+<div id="6c7d532a" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>,</span>
@@ -1365,9 +1383,9 @@ Categories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt
 </div>
 </div>
 </section>
-<section id="wykres-pierścieniowy" class="level2" data-number="35.6">
-<h2 data-number="35.6" class="anchored" data-anchor-id="wykres-pierścieniowy"><span class="header-section-number">35.6</span> Wykres pierścieniowy</h2>
-<div id="255a17aa" class="cell" data-execution_count="26">
+<section id="wykres-pierścieniowy" class="level2" data-number="37.6">
+<h2 data-number="37.6" class="anchored" data-anchor-id="wykres-pierścieniowy"><span class="header-section-number">37.6</span> Wykres pierścieniowy</h2>
+<div id="c45ebee9" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1390,16 +1408,16 @@ Categories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt
 </div>
 </div>
 </section>
-<section id="wykresy-w-przestrzeni" class="level2" data-number="35.7">
-<h2 data-number="35.7" class="anchored" data-anchor-id="wykresy-w-przestrzeni"><span class="header-section-number">35.7</span> Wykresy w przestrzeni</h2>
-<section id="helisa" class="level3" data-number="35.7.1">
-<h3 data-number="35.7.1" class="anchored" data-anchor-id="helisa"><span class="header-section-number">35.7.1</span> Helisa</h3>
+<section id="wykresy-w-przestrzeni" class="level2" data-number="37.7">
+<h2 data-number="37.7" class="anchored" data-anchor-id="wykresy-w-przestrzeni"><span class="header-section-number">37.7</span> Wykresy w przestrzeni</h2>
+<section id="helisa" class="level3" data-number="37.7.1">
+<h3 data-number="37.7.1" class="anchored" data-anchor-id="helisa"><span class="header-section-number">37.7.1</span> Helisa</h3>
 <p><span class="math display">\[\begin{cases}
 x=a\cos (t) \\
 y=a\sin(t) \\
 z=at
 \end{cases}\]</span></p>
-<div id="76512988" class="cell" data-execution_count="27">
+<div id="0e5479d9" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1421,10 +1439,10 @@ z=at
 </div>
 </div>
 </section>
-<section id="torus" class="level3" data-number="35.7.2">
-<h3 data-number="35.7.2" class="anchored" data-anchor-id="torus"><span class="header-section-number">35.7.2</span> Torus</h3>
+<section id="torus" class="level3" data-number="37.7.2">
+<h3 data-number="37.7.2" class="anchored" data-anchor-id="torus"><span class="header-section-number">37.7.2</span> Torus</h3>
 <p><span class="math display">\[p(\alpha,\ \beta)=\Big((R+r\cos \alpha)\cos \beta,\ (R+r\cos \alpha)\sin \beta,\ r\sin \alpha\Big)\]</span></p>
-<div id="8750cc8b" class="cell" data-execution_count="28">
+<div id="9686c1a9" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1869,12 +1887,12 @@ z=at
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./matplotlib-dodatki2.html" class="pagination-link" aria-label="Matplotlib - dodatki cz.2.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./problem01.html" class="pagination-link" aria-label="Problem #1">
-        <span class="nav-page-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Problem #1</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Problem #1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

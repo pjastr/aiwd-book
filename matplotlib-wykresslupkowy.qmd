@@ -1,0 +1,390 @@
+# Matplotlib - wykres słupkowy
+
+Wykres słupkowy jest stosowany do przedstawiania danych kategorialnych lub dyskretnych. Jest to powszechnie używany rodzaj wykresu, który pomaga wizualnie porównać wartości lub ilości dla różnych kategorii. Oto kilka typów danych, dla których wykres słupkowy może być stosowany:
+
+1. Częstości: Wykres słupkowy jest używany do przedstawiania liczby wystąpień różnych kategorii, takich jak wyniki ankiety, preferencje konsumentów lub różne grupy ludności.
+2. Proporcje: Można go stosować do przedstawiania udziału procentowego poszczególnych kategorii w całości, np. udział rynkowy różnych firm, procentowe wyniki testów czy procentowy rozkład ludności według wieku.
+3. Wartości liczbowe: Wykres słupkowy może przedstawiać wartości liczbowe związane z różnymi kategoriami, np. sprzedaż produktów, przychody z różnych źródeł czy średnią temperaturę w różnych miastach.
+4. Danych szeregów czasowych: Wykres słupkowy może być również używany do przedstawiania danych szeregów czasowych w przypadku, gdy zmiany występują w regularnych odstępach czasu, np. roczna sprzedaż, miesięczne opady czy tygodniowe przychody.
+
+Warto zauważyć, że wykresy słupkowe są odpowiednie, gdy mamy do czynienia z niewielką liczbą kategorii, ponieważ zbyt wiele słupków na wykresie może sprawić, że stanie się on trudny do interpretacji. W takich przypadkach warto rozważyć inne typy wykresów, takie jak wykres kołowy lub stosunkowy.
+
+Funkcja `bar` w bibliotece Matplotlib służy do tworzenia wykresów słupkowych (bar chart). Wykresy słupkowe są często stosowane, gdy chcemy porównać wartości różnych kategorii. 
+
+Składnia funkcji to `plt.bar(x, height, width=0.8, bottom=None, align='center', data=None, **kwargs)`, gdzie:
+
+- `x` - pozycje słupków na osi X. Może to być sekwencja wartości numerycznych lub lista etykiet, które będą umieszczone na osi X.
+- `height` - wysokość słupków.
+- `width` - szerokość słupków.
+- `bottom` - położenie dolnej krawędzi słupków. Domyślnie ustawione na `None`, co oznacza, że słupki zaczynają się od zera.
+- `align` - sposób wyśrodkowania słupków wzdłuż osi X. Domyślnie ustawione na 'center'.
+- `data` - obiekt DataFrame, który zawiera dane do wykresu.
+- `**kwargs` - dodatkowe argumenty dotyczące formatowania wykresu, takie jak kolor, przezroczystość, etykiety osi, tytuł i legendę.
+
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt  #<1>
+
+kategorie = ['Kategoria 1', 'Kategoria 2', 'Kategoria 3']  #<2>
+wartosci = [10, 20, 15]  #<3>
+
+plt.bar(kategorie, wartosci, color='green', alpha=0.5)  #<4>
+
+plt.title('Wykres słupkowy')  #<5>
+plt.xlabel('Kategorie')  #<6>
+plt.ylabel('Wartości')  #<7>
+
+plt.show()  #<8>
+```
+
+1. `import matplotlib.pyplot as plt`: importuje bibliotekę matplotlib.pyplot jako `plt`, która jest potrzebna do tworzenia wykresów.
+2. `kategorie = ['Kategoria 1', 'Kategoria 2', 'Kategoria 3']`: tworzy listę `kategorie` zawierającą nazwy trzech kategorii, które będą użyte na osi X wykresu słupkowego.
+3. `wartosci = [10, 20, 15]`: tworzy listę `wartosci` zawierającą wartości liczbowe odpowiadające każdej kategorii - te wartości określają wysokość poszczególnych słupków.
+4. `plt.bar(kategorie, wartosci, color='green', alpha=0.5)`: tworzy wykres słupkowy, gdzie:
+   - pierwszym argumentem są kategorie (oś X)
+   - drugim argumentem są wartości (wysokość słupków)
+   - parametr `color='green'` ustawia kolor słupków na zielony
+   - parametr `alpha=0.5` ustawia przezroczystość słupków na 50%
+5. `plt.title('Wykres słupkowy')`: nadaje tytuł wykresu "Wykres słupkowy".
+6. `plt.xlabel('Kategorie')`: dodaje etykietę osi X z tekstem "Kategorie".
+7. `plt.ylabel('Wartości')`: dodaje etykietę osi Y z tekstem "Wartości".
+8. `plt.show()`: wyświetla przygotowany wykres.
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+kategorie = ['Kategoria 1', 'Kategoria 2', 'Kategoria 3']
+wartosci = [10, 20, 15]
+fig, ax = plt.subplots()
+ax.bar(kategorie, wartosci, color='green', alpha=0.5)
+ax.set_title('Wykres słupkowy')
+ax.set_xlabel('Kategorie')
+ax.set_ylabel('Wartości')
+plt.show()
+```
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+dane_sprzedazy = {
+    'produkt': ['Smartfon', 'Tablet', 'Laptop', 'Słuchawki', 'Smartwatch'],
+    'sprzedane_sztuki': [156, 89, 234, 312, 178],
+    'kategoria': ['telefony', 'tablety', 'komputery', 'akcesoria', 'zegarek']
+}
+
+df = pd.DataFrame(dane_sprzedazy)
+
+y_pos = np.arange(len(df))
+
+kolory = {'telefony': 'blue', 'tablety': 'red', 'komputery': 'green', 
+          'akcesoria': 'purple', 'zegarek': 'orange'}
+
+colors_list = [kolory[kat] for kat in df['kategoria']]
+
+plt.bar(y_pos, df['sprzedane_sztuki'], color=colors_list, alpha=0.8)
+plt.xticks(y_pos, df['produkt'], rotation=45, ha='right')
+plt.xlabel('Produkty')
+plt.ylabel('Liczba sprzedanych sztuk')
+plt.title('Sprzedaż produktów elektronicznych w ostatnim miesiącu')
+plt.grid(axis='y', alpha=0.3)
+plt.tight_layout()
+plt.show()
+
+```
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+dane_sprzedazy = {
+    'produkt': ['Smartfon', 'Tablet', 'Laptop', 'Słuchawki', 'Smartwatch'],
+    'sprzedane_sztuki': [156, 89, 234, 312, 178],
+    'kategoria': ['telefony', 'tablety', 'komputery', 'akcesoria', 'zegarek']
+}
+df = pd.DataFrame(dane_sprzedazy)
+y_pos = np.arange(len(df))
+kolory = {'telefony': 'blue', 'tablety': 'red', 'komputery': 'green', 
+          'akcesoria': 'purple', 'zegarek': 'orange'}
+colors_list = [kolory[kat] for kat in df['kategoria']]
+fig, ax = plt.subplots()
+ax.bar(y_pos, df['sprzedane_sztuki'], color=colors_list, alpha=0.8)
+ax.set_xticks(y_pos)
+ax.set_xticklabels(df['produkt'], rotation=45, ha='right')
+ax.set_xlabel('Produkty')
+ax.set_ylabel('Liczba sprzedanych sztuk')
+ax.set_title('Sprzedaż produktów elektronicznych w ostatnim miesiącu')
+ax.grid(axis='y', alpha=0.3)
+fig.tight_layout()
+plt.show()
+```
+
+
+```{python}
+#| echo: true
+import numpy as np  #<1>
+import matplotlib.pyplot as plt  #<2>
+import pandas as pd  #<3>
+
+df = pd.DataFrame({  #<4>
+    'Kwartał': ['Q1', 'Q2', 'Q3', 'Q4'],
+    'Telefony': [30, 25, 50, 20],
+    'Laptopy': [40, 23, 51, 17],
+    'Tablety': [35, 22, 45, 19]
+})
+
+telefony = df['Telefony']  #<5>
+laptopy = df['Laptopy']  #<6>
+tablety = df['Tablety']  #<7>
+kwartaly = df['Kwartał']  #<8>
+X = np.arange(len(kwartaly))  #<9>
+plt.bar(X - 0.25, telefony, color='dodgerblue', width=0.25, label='Telefony')  #<10>
+plt.bar(X, laptopy, color='mediumseagreen', width=0.25, label='Laptopy')  #<11>
+plt.bar(X + 0.25, tablety, color='tomato', width=0.25, label='Tablety')  #<12>
+plt.xticks(X, kwartaly)  #<13>
+plt.legend()  #<14>
+plt.title('Sprzedaż produktów elektronicznych w poszczególnych kwartałach', fontsize=14)  #<15>
+plt.ylabel('Liczba sprzedanych sztuk')  #<16>
+plt.xlabel('Kwartał')  #<17>
+plt.grid(axis='y', alpha=0.3)  #<18>
+plt.tight_layout()  #<19>
+plt.show()  #<20>
+```
+
+1. `import numpy as np`: importuje bibliotekę NumPy do operacji numerycznych i przypisuje jej alias `np`.
+2. `import matplotlib.pyplot as plt`: importuje moduł pyplot z biblioteki Matplotlib do tworzenia wykresów i przypisuje mu alias `plt`.
+3. `import pandas as pd`: importuje bibliotekę Pandas do pracy z danymi i przypisuje jej alias `pd`.
+4. `df = pd.DataFrame({...})`: tworzy DataFrame z danymi o sprzedaży produktów elektronicznych w poszczególnych kwartałach.
+5. `telefony = df['Telefony']`: wyodrębnia kolumnę 'Telefony' z DataFrame i przypisuje ją do zmiennej `telefony`.
+6. `laptopy = df['Laptopy']`: wyodrębnia kolumnę 'Laptopy' z DataFrame i przypisuje ją do zmiennej `laptopy`.
+7. `tablety = df['Tablety']`: wyodrębnia kolumnę 'Tablety' z DataFrame i przypisuje ją do zmiennej `tablety`.
+8. `kwartaly = df['Kwartał']`: wyodrębnia kolumnę 'Kwartał' z DataFrame i przypisuje ją do zmiennej `kwartaly`.
+9. `X = np.arange(len(kwartaly))`: tworzy tablicę indeksów od 0 do długości listy kwartałów (0, 1, 2, 3), która posłuży do pozycjonowania słupków.
+10. `plt.bar(X - 0.25, telefony, color='dodgerblue', width=0.25, label='Telefony')`: rysuje słupki dla telefonów z przesunięciem w lewo (-0.25), kolorem niebieskim i szerokością 0.25.
+11. `plt.bar(X, laptopy, color='mediumseagreen', width=0.25, label='Laptopy')`: rysuje słupki dla laptopów w środku (bez przesunięcia), kolorem zielonym i szerokością 0.25.
+12. `plt.bar(X + 0.25, tablety, color='tomato', width=0.25, label='Tablety')`: rysuje słupki dla tabletów z przesunięciem w prawo (+0.25), kolorem czerwonym i szerokością 0.25.
+13. `plt.xticks(X, kwartaly)`: ustawia etykiety osi X na nazwy kwartałów (Q1, Q2, Q3, Q4) w pozycjach określonych przez tablicę X.
+14. `plt.legend()`: dodaje legendę do wykresu, która pokazuje kolory i nazwy poszczególnych kategorii produktów.
+15. `plt.title('Sprzedaż produktów elektronicznych w poszczególnych kwartałach', fontsize=14)`: ustawia tytuł wykresu z rozmiarem czcionki 14.
+16. `plt.ylabel('Liczba sprzedanych sztuk')`: dodaje etykietę osi Y opisującą, co reprezentują wartości na osi pionowej.
+17. `plt.xlabel('Kwartał')`: dodaje etykietę osi X opisującą, co reprezentują wartości na osi poziomej.
+18. `plt.grid(axis='y', alpha=0.3)`: dodaje poziome linie siatki (tylko na osi Y) z przezroczystością 0.3.
+19. `plt.tight_layout()`: automatycznie dostosowuje marginesy wykresu, aby wszystkie elementy były dobrze widoczne i nie zachodziły na siebie.
+20. `plt.show()`: wyświetla wykres 
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+df = pd.DataFrame({
+    'Kwartał': ['Q1', 'Q2', 'Q3', 'Q4'],
+    'Telefony': [30, 25, 50, 20],
+    'Laptopy': [40, 23, 51, 17],
+    'Tablety': [35, 22, 45, 19]
+})
+telefony = df['Telefony']
+laptopy = df['Laptopy']
+tablety = df['Tablety']
+kwartaly = df['Kwartał']
+X = np.arange(len(kwartaly))
+fig, ax = plt.subplots()
+ax.bar(X - 0.25, telefony, color='dodgerblue', width=0.25, label='Telefony')
+ax.bar(X, laptopy, color='mediumseagreen', width=0.25, label='Laptopy')
+ax.bar(X + 0.25, tablety, color='tomato', width=0.25, label='Tablety')
+ax.set_xticks(X)
+ax.set_xticklabels(kwartaly)
+ax.legend()
+ax.set_title('Sprzedaż produktów elektronicznych w poszczególnych kwartałach', fontsize=14)
+ax.set_ylabel('Liczba sprzedanych sztuk')
+ax.set_xlabel('Kwartał')
+ax.grid(axis='y', alpha=0.3)
+fig.tight_layout()
+plt.show()
+```
+
+
+```{python}
+#| echo: true
+import numpy as np  #<1>
+import matplotlib.pyplot as plt  #<2>
+
+N = 5  #<3>
+
+boys = (20, 35, 30, 35, 27)  #<4>
+girls = (25, 32, 34, 20, 25)  #<5>
+ind = np.arange(N)  #<6>
+width = 0.35  #<7>
+
+plt.bar(ind, boys, width, label="boys")  #<8>
+plt.bar(ind, girls, width, bottom=boys, label="girls")  #<9>
+
+plt.ylabel('Contribution')  #<10>
+plt.title('Contribution by the teams')  #<11>
+plt.xticks(ind, ('T1', 'T2', 'T3', 'T4', 'T5'))  #<12>
+plt.yticks(np.arange(0, 81, 10))  #<13>
+plt.legend()  #<14>
+plt.show()  #<15>
+```
+
+1. `import numpy as np`: importuje bibliotekę NumPy do operacji numerycznych i przypisuje jej alias `np`.
+2. `import matplotlib.pyplot as plt`: importuje moduł pyplot z biblioteki Matplotlib do tworzenia wykresów i przypisuje mu alias `plt`.
+3. `N = 5`: definiuje stałą N równą 5, która reprezentuje liczbę zespołów/grup danych.
+4. `boys = (20, 35, 30, 35, 27)`: tworzy krotkę zawierającą wartości wkładu chłopców dla każdego z 5 zespołów.
+5. `girls = (25, 32, 34, 20, 25)`: tworzy krotkę zawierającą wartości wkładu dziewcząt dla każdego z 5 zespołów.
+6. `ind = np.arange(N)`: tworzy tablicę indeksów [0, 1, 2, 3, 4], która określa pozycje słupków na osi X.
+7. `width = 0.35`: ustawia szerokość słupków na 0.35 jednostki.
+8. `plt.bar(ind, boys, width, label="boys")`: rysuje słupki dla chłopców na pozycjach określonych przez `ind`, z wysokościami z `boys`, szerokością `width` i etykietą "boys".
+9. `plt.bar(ind, girls, width, bottom=boys, label="girls")`: rysuje słupki dla dziewcząt na tych samych pozycjach, ale używając parametru `bottom=boys`, który sprawia, że słupki dziewcząt są umieszczone ponad słupkami chłopców, tworząc wykres słupkowy skumulowany.
+10. `plt.ylabel('Contribution')`: dodaje etykietę osi Y opisującą, że wartości reprezentują wkład.
+11. `plt.title('Contribution by the teams')`: nadaje tytuł wykresu "Contribution by the teams".
+12. `plt.xticks(ind, ('T1', 'T2', 'T3', 'T4', 'T5'))`: ustawia etykiety osi X na nazwy zespołów (T1, T2, T3, T4, T5) w pozycjach określonych przez tablicę `ind`.
+13. `plt.yticks(np.arange(0, 81, 10))`: ustawia znaczniki na osi Y co 10 jednostek, od 0 do 80.
+14. `plt.legend()`: dodaje legendę do wykresu, która pokazuje kolory i etykiety dla chłopców i dziewcząt.
+15. `plt.show()`: wyświetla wykres 
+
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+N = 5
+boys = (20, 35, 30, 35, 27)
+girls = (25, 32, 34, 20, 25)
+ind = np.arange(N)
+width = 0.35
+fig, ax = plt.subplots()
+ax.bar(ind, boys, width, label="boys")
+ax.bar(ind, girls, width, bottom=boys, label="girls")
+ax.set_ylabel('Contribution')
+ax.set_title('Contribution by the teams')
+ax.set_xticks(ind)
+ax.set_xticklabels(('T1', 'T2', 'T3', 'T4', 'T5'))
+ax.set_yticks(np.arange(0, 81, 10))
+ax.legend()
+plt.show()
+```
+
+![](m9.png)
+
+Funkcja `barh` służy do tworzenia wykresów słupkowych horyzontalnych (horizontal bar chart). Wykresy słupkowe horyzontalne są często stosowane, gdy chcemy porównać wartości różnych kategorii, a etykiety na osi X są długie lub są bardzo liczne. 
+
+Składnia funkcji to `plt.barh(y, width, height=0.8, left=None, align='center', data=None, **kwargs)`, gdzie:
+
+- `y` - pozycje słupków na osi Y. Może to być sekwencja wartości numerycznych lub lista etykiet, które będą umieszczone na osi Y.
+- `width` - szerokość słupków.
+- `height` - wysokość słupków.
+- `left` - położenie lewej krawędzi słupków. Domyślnie ustawione na `None`, co oznacza, że słupki zaczynają się od zera.
+- `align` - sposób wyśrodkowania słupków wzdłuż osi Y. Domyślnie ustawione na 'center'.
+- `data` - obiekt DataFrame, który zawiera dane do wykresu.
+- `**kwargs` - dodatkowe argumenty dotyczące formatowania wykresu, takie jak kolor, przezroczystość, etykiety osi, tytuł i legenda.
+
+```{python}
+#| echo: true
+import matplotlib.pyplot as plt
+
+# Dane
+kategorie = ['Kategoria 1', 'Kategoria 2', 'Kategoria 3']
+wartosci = [10, 20, 15]
+
+# Tworzenie wykresu słupkowego horyzontalnego
+plt.barh(kategorie, wartosci, color='green', alpha=0.5)
+
+# Dodanie tytułu i etykiet osi
+plt.title('Wykres słupkowy horyzontalny')
+plt.xlabel('Wartości')
+plt.ylabel('Kategorie')
+
+# Wyświetlenie wykresu
+plt.show()
+
+```
+
+
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+dane_sprzedazy = {
+    'produkt': ['Smartfon', 'Tablet', 'Laptop', 'Słuchawki', 'Smartwatch'],
+    'sprzedane_sztuki': [156, 89, 234, 312, 178],
+    'kategoria': ['telefony', 'tablety', 'komputery', 'akcesoria', 'zegarek']
+}
+df = pd.DataFrame(dane_sprzedazy)
+y_pos = np.arange(len(df))
+kolory = {'telefony': 'blue', 'tablety': 'red', 'komputery': 'green', 
+          'akcesoria': 'purple', 'zegarek': 'orange'}
+colors_list = [kolory[kat] for kat in df['kategoria']]
+plt.barh(y_pos, df['sprzedane_sztuki'], color=colors_list, alpha=0.8)
+plt.yticks(y_pos, df['produkt'])
+plt.ylabel('Produkty')
+plt.xlabel('Liczba sprzedanych sztuk')
+plt.title('Sprzedaż produktów elektronicznych w ostatnim miesiącu')
+plt.grid(axis='x', alpha=0.3)
+plt.tight_layout()
+plt.show()
+
+```
+
+```{python}
+#| echo: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.DataFrame({
+    'Kwartał': ['Q1', 'Q2', 'Q3', 'Q4'],
+    'Telefony': [30, 25, 50, 20],
+    'Laptopy': [40, 23, 51, 17],
+    'Tablety': [35, 22, 45, 19]
+})
+
+telefony = df['Telefony']
+laptopy = df['Laptopy']
+tablety = df['Tablety']
+kwartaly = df['Kwartał']
+Y = np.arange(len(kwartaly))
+plt.barh(Y, telefony, color='dodgerblue', height=0.25, label='Telefony')
+plt.barh(Y + 0.25, laptopy, color='mediumseagreen', height=0.25, label='Laptopy')
+plt.barh(Y + 0.50, tablety, color='tomato', height=0.25, label='Tablety')
+plt.yticks(Y + 0.25, kwartaly)
+plt.legend()
+plt.title('Sprzedaż produktów elektronicznych w poszczególnych kwartałach', fontsize=14)
+plt.xlabel('Liczba sprzedanych sztuk')
+plt.ylabel('Kwartał')
+plt.grid(axis='x', alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+#| echo: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+N = 5
+
+boys = (20, 35, 30, 35, 27)
+girls = (25, 32, 34, 20, 25)
+ind = np.arange(N)
+height = 0.35
+
+plt.barh(ind, boys, height, label="boys")
+plt.barh(ind, girls, height, left=boys, label="girls")
+
+plt.xlabel('Contribution')
+plt.title('Contribution by the teams')
+plt.yticks(ind, ('T1', 'T2', 'T3', 'T4', 'T5'))
+plt.xticks(np.arange(0, 81, 10))
+plt.legend()
+plt.show()
+
+```
