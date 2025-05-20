@@ -60,6 +60,7 @@ book:
       chapters:
       - problem01.qmd
       - problem02.qmd
+      - problem03.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/aiwd-book
   repo-actions: [issue]
