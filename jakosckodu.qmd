@@ -1,0 +1,230 @@
+# Jakość kodu
+
+## Flake8
+
+Flake8 to popularne narzędzie do analizy statycznej kodu Python, które łączy w sobie kilka narzędzi: PyFlakes (wykrywanie błędów logicznych), pycodestyle (sprawdzanie zgodności z PEP 8) oraz McCabe (mierzenie złożoności cyklomatycznej).
+
+Dokumentacja <https://flake8.pycqa.org/en/latest/>
+
+Instalacja flake8 z terminala
+
+```
+pip install flake8
+```
+
+Sprawdzenie pojedynczego pliku:
+```
+flake8 plik.py
+```
+
+Sprawdzenie całego katalogu:
+```
+flake8 moj_projekt/
+```
+
+Z określonymi regułami:
+```
+flake8 --select E111,E121 --max-line-length=120 plik.py
+```
+
+Typowe błędy wykrywane przez flake8
+
+- E101: Wcięcia zawierają mieszankę spacji i tabulatorów
+- E111: Wcięcia nie są wielokrotnością 4 spacji
+- E501: Linia za długa (przekracza domyślne 79 znaków)
+- F401: Zaimportowany moduł, ale nieużywany
+- F841: Zmienna zdefiniowana, ale nieużywana
+
+<https://flake8.pycqa.org/en/latest/user/error-codes.html>
+
+<https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes>
+
+Konfiguracja
+
+Można skonfigurować flake8 tworząc plik setup.cfg lub .flake8 w głównym katalogu projektu:
+
+```txt
+[flake8]
+max-line-length = 100
+exclude = .git,__pycache__,build,dist, .venv
+ignore = E203,W503
+```
+
+## pandas-vet
+
+pandas-vet to bardzo przydatny plugin do flake8, który działa jak "cyfrowy mentor" dla osób pracujących z biblioteką pandas w Pythonie.
+
+```
+pip install pandas-vet
+```
+
+## pylint
+
+Pylint to zaawansowane narzędzie do analizy statycznej kodu Python, które pomaga wykrywać błędy, egzekwować standardy kodowania i szukać potencjalnych problemów. Ocenia kod w skali od 0 do 10, gdzie 10 oznacza kod idealny.
+
+Dokumentacja <https://docs.pylint.org/>
+
+Instalacja pylint z terminala
+
+```
+pip install pylint
+```
+
+
+Sprawdzenie pojedynczego pliku:
+```
+pylint plik.py
+```
+
+Sprawdzenie całego pakietu:
+```
+pylint moj_pakiet
+```
+
+Generowanie raportu:
+```
+pylint --reports=y plik.py
+```
+
+Filtrowanie według kategorii:
+```
+pylint --disable=C,R plik.py
+```
+
+Typowe komunikaty pylint
+
+- C: Konwencje (style kodowania)
+- R: Refaktoring (sugestie ulepszeń)
+- W: Ostrzeżenia (potencjalne problemy)
+- E: Błędy (definite problems)
+- F: Błędy krytyczne (uniemożliwiające dalszą analizę)
+
+Przykłady:
+
+- C0111: Brak docstringa
+- W0611: Nieużywany import
+- E1101: Odwołanie do nieistniejącego atrybutu
+- R0903: Zbyt mało metod publicznych
+
+Lista błędów <https://pylint.readthedocs.io/en/stable/user_guide/messages/messages_overview.html>
+
+Konfiguracja
+
+Możesz skonfigurować pylint tworząc plik .pylintrc w katalogu projektu:
+
+```txt
+[MESSAGES CONTROL]
+disable=C0111,W0611
+
+[FORMAT]
+max-line-length=100
+```
+
+Ew w pliku `setup.cfg`
+
+```txt
+[pylint]
+max-line-length = 100
+disable = C0111,W0611,R0903
+ignore = migrations, .venv
+
+[pylint.FORMAT]
+max-line-length = 100
+
+[pylint.MESSAGES CONTROL]
+disable = C0111,W0611
+
+[pylint.SIMILARITIES]
+min-similarity-lines = 7
+ignore-comments = yes
+ignore-docstrings = yes
+```
+
+## Black
+
+Black to automatyczny formater kodu dla języka Python. Jego głównym zadaniem jest formatowanie kodu Python według określonych zasad, co eliminuje dyskusje na temat stylu w zespołach programistycznych. Black jest nazywany "bezkompromisowym formatem kodu" ponieważ oferuje bardzo niewiele opcji konfiguracyjnych, wymuszając spójny styl.
+
+Instalacja modułu Black
+
+```
+pip install black
+```
+
+Formatowanie pojedynczego pliku:
+
+```
+black nazwa_pliku.py
+```
+
+Formatowanie wszystkich plików w katalogu:
+
+```
+black katalog/
+```
+
+Sprawdzenie, które pliki zostałyby zmodyfikowane bez faktycznego ich formatowania:
+
+```
+black --check nazwa_pliku.py
+black --diff nazwa_pliku.py
+```
+
+
+Kod przed formatowaniem:
+
+```python
+def funkcja_testowa( argument1,argument2,    argument3):
+    return      argument1+argument2+argument3
+
+lista = [1,2,3,4,
+5,6,7]
+
+słownik = {"klucz1":    "wartość1",
+"klucz2":"wartość2"}
+```
+
+Kod po zastosowaniu Black:
+
+```python
+def funkcja_testowa(argument1, argument2, argument3):
+    return argument1 + argument2 + argument3
+
+
+lista = [1, 2, 3, 4, 5, 6, 7]
+
+słownik = {"klucz1": "wartość1", "klucz2": "wartość2"}
+```
+
+Mimo że Black ma niewiele opcji konfiguracyjnych, możesz ustawić podstawowe parametry w pliku pyproject.toml:
+
+```toml
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+```
+
+
+Można dodać ustawienia w `setup.cfg` jednak twórcy modułu tego nie zalecają.
+
+```txt
+[tool:black]
+line-length = 100
+target-version = py312
+include = \.pyi?$
+exclude = /(\.eggs|\.git|\.hg|\.mypy_cache|\.tox|\.venv|_build|buck-out|build|dist)/
+```

@@ -235,7 +235,7 @@
     "href": "lista_tablica.html",
     "title": "4  Lista a tablica",
     "section": "",
-    "text": "import numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n\n--- 0.0016791820526123047 seconds ---\n--- 0.03325343132019043 seconds ---",
+    "text": "import numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n\n--- 0.0015714168548583984 seconds ---\n--- 0.04589509963989258 seconds ---",
     "crumbs": [
       "NumPy",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lista a tablica</span>"
@@ -994,7 +994,7 @@
     "href": "pandas-danetekstowe.html#operacje-wektorowe-na-tekstach",
     "title": "22  Pandas - dane tekstowe",
     "section": "22.2 Operacje wektorowe na tekstach",
-    "text": "22.2 Operacje wektorowe na tekstach\nOto tabela w języku Markdown wyjaśniająca funkcje z pandas.Series.str i ich zastosowanie:\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nlen()\nZwraca długość każdego ciągu znaków w serii.\n\n\nlower()\nKonwertuje wszystkie znaki na małe litery.\n\n\ntranslate()\nZastępuje znaki według podanej mapy translacji.\n\n\nislower()\nSprawdza, czy wszystkie znaki w ciągu są małymi literami.\n\n\nljust()\nJustuje tekst w lewo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nupper()\nKonwertuje wszystkie znaki na wielkie litery.\n\n\nstartswith()\nSprawdza, czy ciąg znaków zaczyna się od podanego prefiksu.\n\n\nisupper()\nSprawdza, czy wszystkie znaki w ciągu są wielkimi literami.\n\n\nrjust()\nJustuje tekst w prawo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nfind()\nZwraca indeks pierwszego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nendswith()\nSprawdza, czy ciąg znaków kończy się podanym sufiksem.\n\n\nisnumeric()\nSprawdza, czy ciąg zawiera tylko znaki numeryczne.\n\n\ncenter()\nCentruje tekst, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nrfind()\nZwraca indeks ostatniego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nisalnum()\nSprawdza, czy ciąg zawiera tylko litery i cyfry.\n\n\nisdecimal()\nSprawdza, czy ciąg zawiera tylko znaki dziesiętne.\n\n\nzfill()\nWypełnia ciąg zerami z lewej strony, aby osiągnąć określoną długość.\n\n\nindex()\nZwraca indeks pierwszego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisalpha()\nSprawdza, czy ciąg zawiera tylko litery.\n\n\nsplit()\nDzieli ciąg na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z obu stron ciągu.\n\n\nrindex()\nZwraca indeks ostatniego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisdigit()\nSprawdza, czy ciąg zawiera tylko cyfry.\n\n\nrsplit()\nDzieli ciąg od prawej strony na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nrstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z prawej strony ciągu.\n\n\ncapitalize()\nZmienia pierwszą literę na wielką, a resztę na małe.\n\n\nisspace()\nSprawdza, czy ciąg zawiera tylko białe znaki.\n\n\npartition()\nDzieli ciąg na trzy części: przed separator, separator i po separatorze.\n\n\nlstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z lewej strony ciągu.\n\n\nswapcase()\nZmienia wielkość liter na przeciwną (małe na wielkie i odwrotnie).\n\n\nistitle()\nSprawdza, czy ciąg jest sformatowany jako tytuł (pierwsze litery wyrazów są wielkie).\n\n\nrpartition()\nDzieli ciąg na trzy części od prawej strony: przed separator, separator i po separatorze.\n\n\n\nZwykle operacje wektorowe są szybsze:\n\nimport time\nimport pandas as pd\n\n# Tworzenie przykładowej ramki danych z 2000000 wierszami\ndata = {'Text': ['Pandas is awesome'] * 2000000}\ndata2 = pd.DataFrame(data)\n\n\n# Funkcja, która konwertuje tekst na małe litery (przykładowa operacja)\ndef to_lower(text):\n    return text.lower()\n\n\n# 1. Operacja wektorowa\nstart_vectorized = time.time()\ndata2['Vectorized'] = data2['Text'].str.lower()\nend_vectorized = time.time()\n\n# 2. Operacja z list comprehension\nstart_comprehension = time.time()\ndata2['Comprehension'] = [to_lower(text) for text in data2['Text']]\nend_comprehension = time.time()\n\n# Czasy wykonania\nvectorized_time = end_vectorized - start_vectorized\ncomprehension_time = end_comprehension - start_comprehension\n\n# Wynik\nprint(vectorized_time, comprehension_time)\n\n0.15755558013916016 0.31794309616088867",
+    "text": "22.2 Operacje wektorowe na tekstach\nOto tabela w języku Markdown wyjaśniająca funkcje z pandas.Series.str i ich zastosowanie:\n\n\n\n\n\n\n\nFunkcja\nOpis\n\n\n\n\nlen()\nZwraca długość każdego ciągu znaków w serii.\n\n\nlower()\nKonwertuje wszystkie znaki na małe litery.\n\n\ntranslate()\nZastępuje znaki według podanej mapy translacji.\n\n\nislower()\nSprawdza, czy wszystkie znaki w ciągu są małymi literami.\n\n\nljust()\nJustuje tekst w lewo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nupper()\nKonwertuje wszystkie znaki na wielkie litery.\n\n\nstartswith()\nSprawdza, czy ciąg znaków zaczyna się od podanego prefiksu.\n\n\nisupper()\nSprawdza, czy wszystkie znaki w ciągu są wielkimi literami.\n\n\nrjust()\nJustuje tekst w prawo, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nfind()\nZwraca indeks pierwszego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nendswith()\nSprawdza, czy ciąg znaków kończy się podanym sufiksem.\n\n\nisnumeric()\nSprawdza, czy ciąg zawiera tylko znaki numeryczne.\n\n\ncenter()\nCentruje tekst, wypełniając go określonym znakiem do zadanej szerokości.\n\n\nrfind()\nZwraca indeks ostatniego wystąpienia podciągu; zwraca -1, jeśli podciąg nie istnieje.\n\n\nisalnum()\nSprawdza, czy ciąg zawiera tylko litery i cyfry.\n\n\nisdecimal()\nSprawdza, czy ciąg zawiera tylko znaki dziesiętne.\n\n\nzfill()\nWypełnia ciąg zerami z lewej strony, aby osiągnąć określoną długość.\n\n\nindex()\nZwraca indeks pierwszego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisalpha()\nSprawdza, czy ciąg zawiera tylko litery.\n\n\nsplit()\nDzieli ciąg na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z obu stron ciągu.\n\n\nrindex()\nZwraca indeks ostatniego wystąpienia podciągu; zgłasza wyjątek, jeśli podciąg nie istnieje.\n\n\nisdigit()\nSprawdza, czy ciąg zawiera tylko cyfry.\n\n\nrsplit()\nDzieli ciąg od prawej strony na listę podciągów na podstawie separatora (domyślnie spacja).\n\n\nrstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z prawej strony ciągu.\n\n\ncapitalize()\nZmienia pierwszą literę na wielką, a resztę na małe.\n\n\nisspace()\nSprawdza, czy ciąg zawiera tylko białe znaki.\n\n\npartition()\nDzieli ciąg na trzy części: przed separator, separator i po separatorze.\n\n\nlstrip()\nUsuwa białe znaki (lub inne wskazane znaki) z lewej strony ciągu.\n\n\nswapcase()\nZmienia wielkość liter na przeciwną (małe na wielkie i odwrotnie).\n\n\nistitle()\nSprawdza, czy ciąg jest sformatowany jako tytuł (pierwsze litery wyrazów są wielkie).\n\n\nrpartition()\nDzieli ciąg na trzy części od prawej strony: przed separator, separator i po separatorze.\n\n\n\nZwykle operacje wektorowe są szybsze:\n\nimport time\nimport pandas as pd\n\n# Tworzenie przykładowej ramki danych z 2000000 wierszami\ndata = {'Text': ['Pandas is awesome'] * 2000000}\ndata2 = pd.DataFrame(data)\n\n\n# Funkcja, która konwertuje tekst na małe litery (przykładowa operacja)\ndef to_lower(text):\n    return text.lower()\n\n\n# 1. Operacja wektorowa\nstart_vectorized = time.time()\ndata2['Vectorized'] = data2['Text'].str.lower()\nend_vectorized = time.time()\n\n# 2. Operacja z list comprehension\nstart_comprehension = time.time()\ndata2['Comprehension'] = [to_lower(text) for text in data2['Text']]\nend_comprehension = time.time()\n\n# Czasy wykonania\nvectorized_time = end_vectorized - start_vectorized\ncomprehension_time = end_comprehension - start_comprehension\n\n# Wynik\nprint(vectorized_time, comprehension_time)\n\n0.1921234130859375 0.35346198081970215",
     "crumbs": [
       "Pandas",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Pandas - dane tekstowe</span>"
@@ -1049,7 +1049,7 @@
     "href": "pandas-inne.html#dyskretyzacja-i-podział-na-koszyki",
     "title": "23  Pandas - inne",
     "section": "23.5 Dyskretyzacja i podział na koszyki",
-    "text": "23.5 Dyskretyzacja i podział na koszyki\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats = pd.cut(ages, bins)\nprint(cats)\nprint(cats.codes)\nprint(cats.categories)\nprint(pd.Series(cats).value_counts())\n\n[(18, 25], (18, 25], (18, 25], (25, 35], (18, 25], ..., (25, 35], (60, 100], (35, 60], (35, 60], (25, 35]]\nLength: 12\nCategories (4, interval[int64, right]): [(18, 25] &lt; (25, 35] &lt; (35, 60] &lt; (60, 100]]\n[0 0 0 1 0 0 2 1 3 2 2 1]\nIntervalIndex([(18, 25], (25, 35], (35, 60], (60, 100]], dtype='interval[int64, right]')\n(18, 25]     5\n(25, 35]     3\n(35, 60]     3\n(60, 100]    1\nName: count, dtype: int64\n\n\n\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats2 = pd.cut(ages, [18, 26, 36, 61, 100], right=False)\nprint(cats2)\ngroup_names = ['Youth', 'YoungAdult',\n               'MiddleAged', 'Senior']\nprint(pd.cut(ages, bins, labels=group_names))\n\n[[18, 26), [18, 26), [18, 26), [26, 36), [18, 26), ..., [26, 36), [61, 100), [36, 61), [36, 61), [26, 36)]\nLength: 12\nCategories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt; [61, 100)]\n['Youth', 'Youth', 'Youth', 'YoungAdult', 'Youth', ..., 'YoungAdult', 'Senior', 'MiddleAged', 'MiddleAged', 'YoungAdult']\nLength: 12\nCategories (4, object): ['Youth' &lt; 'YoungAdult' &lt; 'MiddleAged' &lt; 'Senior']\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.rand(20)\nprint(pd.cut(data, 4, precision=2))\n\n[(0.53, 0.76], (0.76, 0.99], (0.53, 0.76], (0.31, 0.53], (0.53, 0.76], ..., (0.078, 0.31], (0.53, 0.76], (0.76, 0.99], (0.53, 0.76], (0.078, 0.31]]\nLength: 20\nCategories (4, interval[float64, right]): [(0.078, 0.31] &lt; (0.31, 0.53] &lt; (0.53, 0.76] &lt; (0.76, 0.99]]\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.randn(1000)\ncats = pd.qcut(data, 4)\nprint(cats)\nprint(pd.Series(cats).value_counts())\n\n[(-0.708, -0.00871], (-0.00871, 0.659], (-3.3729999999999998, -0.708], (0.659, 3.667], (0.659, 3.667], ..., (-3.3729999999999998, -0.708], (-3.3729999999999998, -0.708], (-0.00871, 0.659], (-3.3729999999999998, -0.708], (-0.708, -0.00871]]\nLength: 1000\nCategories (4, interval[float64, right]): [(-3.3729999999999998, -0.708] &lt; (-0.708, -0.00871] &lt; (-0.00871, 0.659] &lt; (0.659, 3.667]]\n(-3.3729999999999998, -0.708]    250\n(-0.708, -0.00871]               250\n(-0.00871, 0.659]                250\n(0.659, 3.667]                   250\nName: count, dtype: int64",
+    "text": "23.5 Dyskretyzacja i podział na koszyki\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats = pd.cut(ages, bins)\nprint(cats)\nprint(cats.codes)\nprint(cats.categories)\nprint(pd.Series(cats).value_counts())\n\n[(18, 25], (18, 25], (18, 25], (25, 35], (18, 25], ..., (25, 35], (60, 100], (35, 60], (35, 60], (25, 35]]\nLength: 12\nCategories (4, interval[int64, right]): [(18, 25] &lt; (25, 35] &lt; (35, 60] &lt; (60, 100]]\n[0 0 0 1 0 0 2 1 3 2 2 1]\nIntervalIndex([(18, 25], (25, 35], (35, 60], (60, 100]], dtype='interval[int64, right]')\n(18, 25]     5\n(25, 35]     3\n(35, 60]     3\n(60, 100]    1\nName: count, dtype: int64\n\n\n\n\nimport pandas as pd\n\nages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]\nbins = [18, 25, 35, 60, 100]\ncats2 = pd.cut(ages, [18, 26, 36, 61, 100], right=False)\nprint(cats2)\ngroup_names = ['Youth', 'YoungAdult',\n               'MiddleAged', 'Senior']\nprint(pd.cut(ages, bins, labels=group_names))\n\n[[18, 26), [18, 26), [18, 26), [26, 36), [18, 26), ..., [26, 36), [61, 100), [36, 61), [36, 61), [26, 36)]\nLength: 12\nCategories (4, interval[int64, left]): [[18, 26) &lt; [26, 36) &lt; [36, 61) &lt; [61, 100)]\n['Youth', 'Youth', 'Youth', 'YoungAdult', 'Youth', ..., 'YoungAdult', 'Senior', 'MiddleAged', 'MiddleAged', 'YoungAdult']\nLength: 12\nCategories (4, object): ['Youth' &lt; 'YoungAdult' &lt; 'MiddleAged' &lt; 'Senior']\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.rand(20)\nprint(pd.cut(data, 4, precision=2))\n\n[(0.75, 1.0], (0.5, 0.75], (0.5, 0.75], (0.75, 1.0], (0.0046, 0.25], ..., (0.0046, 0.25], (0.0046, 0.25], (0.25, 0.5], (0.5, 0.75], (0.25, 0.5]]\nLength: 20\nCategories (4, interval[float64, right]): [(0.0046, 0.25] &lt; (0.25, 0.5] &lt; (0.5, 0.75] &lt; (0.75, 1.0]]\n\n\n\n\nimport pandas as pd\nimport numpy as np\n\ndata = np.random.randn(1000)\ncats = pd.qcut(data, 4)\nprint(cats)\nprint(pd.Series(cats).value_counts())\n\n[(-0.69, -0.00498], (-0.69, -0.00498], (0.715, 3.033], (-0.00498, 0.715], (0.715, 3.033], ..., (-0.00498, 0.715], (-0.69, -0.00498], (-0.00498, 0.715], (-0.69, -0.00498], (-0.69, -0.00498]]\nLength: 1000\nCategories (4, interval[float64, right]): [(-3.682, -0.69] &lt; (-0.69, -0.00498] &lt; (-0.00498, 0.715] &lt; (0.715, 3.033]]\n(-3.682, -0.69]      250\n(-0.69, -0.00498]    250\n(-0.00498, 0.715]    250\n(0.715, 3.033]       250\nName: count, dtype: int64",
     "crumbs": [
       "Pandas",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
@@ -1060,7 +1060,7 @@
     "href": "pandas-inne.html#wykrywanie-i-filtrowanie-elementów-odstających",
     "title": "23  Pandas - inne",
     "section": "23.6 Wykrywanie i filtrowanie elementów odstających",
-    "text": "23.6 Wykrywanie i filtrowanie elementów odstających\n\nimport pandas as pd\nimport numpy as np\n\ndata = pd.DataFrame(np.random.randn(1000, 4))\nprint(data.describe())\nprint(\"---\")\ncol = data[2]\nprint(col[np.abs(col) &gt; 3])\nprint(\"---\")\nprint(data[(np.abs(data) &gt; 3).any(axis=1)])\n\n                 0            1            2            3\ncount  1000.000000  1000.000000  1000.000000  1000.000000\nmean      0.018438     0.007969     0.009082     0.041648\nstd       1.010569     0.972651     0.985580     1.000524\nmin      -3.106174    -2.748319    -3.006756    -2.849250\n25%      -0.673927    -0.637050    -0.669546    -0.630076\n50%       0.017005     0.020753     0.059141     0.023428\n75%       0.725437     0.666597     0.653139     0.682284\nmax       3.902054     2.965732     3.462253     3.132747\n---\n490   -3.006756\n737    3.462253\nName: 2, dtype: float64\n---\n            0         1         2         3\n8    1.100620  0.871984  0.407618  3.132747\n238  3.902054 -0.618461 -0.844009  0.283258\n490  1.641247  0.035400 -3.006756 -0.715793\n716 -3.106174 -0.341964  1.097115  0.548330\n726  1.192522 -1.202804  0.077363  3.032621\n737  1.522970  1.023129  3.462253 -0.546911\n740 -3.019818  0.506821  1.491183 -0.007199\n788  3.052834 -1.621064  0.433033  1.540816",
+    "text": "23.6 Wykrywanie i filtrowanie elementów odstających\n\nimport pandas as pd\nimport numpy as np\n\ndata = pd.DataFrame(np.random.randn(1000, 4))\nprint(data.describe())\nprint(\"---\")\ncol = data[2]\nprint(col[np.abs(col) &gt; 3])\nprint(\"---\")\nprint(data[(np.abs(data) &gt; 3).any(axis=1)])\n\n                 0            1            2            3\ncount  1000.000000  1000.000000  1000.000000  1000.000000\nmean      0.007057    -0.014413    -0.067119     0.007196\nstd       1.029707     1.020697     0.975724     0.986903\nmin      -3.430934    -3.353300    -3.435586    -3.343139\n25%      -0.684426    -0.679075    -0.716454    -0.630840\n50%       0.048941    -0.009613    -0.046157    -0.002464\n75%       0.645919     0.689177     0.583604     0.697886\nmax       3.177559     3.061090     3.076131     2.986448\n---\n247   -3.042060\n286   -3.067671\n374    3.076131\n619   -3.288270\n843   -3.435586\nName: 2, dtype: float64\n---\n            0         1         2         3\n17   1.069158 -0.569055  1.487312 -3.343139\n86  -0.894758 -3.031049 -2.553623 -0.639318\n160 -0.225696 -3.353300  1.387665 -0.424343\n247  1.313543  0.441404 -3.042060 -0.494960\n286  1.650735 -0.935051 -3.067671 -0.296175\n360  0.915887 -3.107121 -0.469814  0.405874\n368 -3.430934 -1.199758 -2.651401 -2.216317\n374 -0.956402 -0.389772  3.076131  0.290645\n485  3.177559 -0.584594 -1.810613  1.308891\n619 -3.224927  0.839776 -3.288270  0.389140\n763 -3.075970  1.710382 -0.635795 -2.013371\n843  0.684215  2.335192 -3.435586  2.116474\n971 -1.007680  3.061090  0.155475  0.961738",
     "crumbs": [
       "Pandas",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Pandas - inne</span>"
@@ -1441,36 +1441,476 @@
     ]
   },
   {
+    "objectID": "matplotlib-mapaciepla.html",
+    "href": "matplotlib-mapaciepla.html",
+    "title": "38  Matplotlib - mapa ciepła",
+    "section": "",
+    "text": "Mapa ciepła (ang. heatmap) to dwuwymiarowa wizualizacja, w której wartości liczbowe są reprezentowane za pomocą kolorów. Intensywność koloru odpowiada natężeniu (wartości) w konkretnym punkcie siatki.\nGłówne zastosowania map ciepła\n\nMacierze korelacji\n\nPozwalają szybko zidentyfikować silne i słabe powiązania między zmiennymi w zbiorze danych.\n\nUłatwiają wstępną selekcję cech np. w modelowaniu predykcyjnym.\n\nAnaliza czasowo-przestrzenna\n\nWizualizacja natężenia zdarzeń (np. sprzedaży, ruchu sieciowego) na osi czasu versus kategorie lub strefy.\n\nPomaga wykrywać wzorce sezonowe, dobowe lub tygodniowe.\n\nMapy geograficzne\n\nPrezentacja gęstości zdarzeń lub wartości (np. zachorowań, wypadków) na obszarach geograficznych.\n\nUmożliwiają szybkie wyłonienie „gorących punktów” (ang. hotspots).\n\nAnaliza zachowań użytkownika\n\nŚledzenie kliknięć, ruchu myszki lub przewijania na stronach WWW/aplikacjach.\n\nOptymalizacja układu elementów interfejsu pod kątem użyteczności.\n\nMonitorowanie zasobów i wydajności\n\nWizualizacja obciążenia serwerów, zużycia pamięci czy obrotów produkcji w czasie rzeczywistym.\n\nPomaga wyłapać anomalie lub przeciążenia.\n\nWykrywanie anomalii i odchyleń\n\nIdentyfikacja nietypowych odczytów np. w danych medycznych, finansowych czy sieciowych.\n\nSzybkie wskazanie obszarów wymagających dalszej analizy.\n\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = {\n    'Dzień': ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek'] * 3,\n    'Pora dnia': ['Rano']*5 + ['Popołudnie']*5 + ['Wieczór']*5,\n    'Liczba klientów': [50, 60, 55, 65, 80,    # Rano\n                        120, 130, 125, 140, 160,  # Popołudnie\n                        90, 100, 95, 110, 120]    # Wieczór\n}\n\ndf = pd.DataFrame(data)\n\n\nheatmap_data = df.pivot(index='Dzień', columns='Pora dnia', values='Liczba klientów')\n\nplt.imshow(heatmap_data,\n           cmap='YlOrRd',      # paleta od żółtego (nisko) do czerwonego (wysoko)\n           aspect='auto')      # automatyczne dopasowanie proporcji\n\ncbar = plt.colorbar()\ncbar.set_label('Liczba klientów', rotation=270, labelpad=15)\n\nplt.xticks(ticks=range(len(heatmap_data.columns)),\n           labels=heatmap_data.columns,\n           rotation=45,\n           ha='right')\nplt.yticks(ticks=range(len(heatmap_data.index)),\n           labels=heatmap_data.index)\n\nplt.xlabel('Pora dnia')\nplt.ylabel('Dzień tygodnia')\nplt.title('Średnia liczba klientów w sklepie')\n\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = {\n    'Dzień': ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek'] * 3,\n    'Pora dnia': ['Rano']*5 + ['Popołudnie']*5 + ['Wieczór']*5,\n    'Liczba klientów': [50, 60, 55, 65, 80,    # Rano\n                        120, 130, 125, 140, 160,  # Popołudnie\n                        90, 100, 95, 110, 120]    # Wieczór\n}\n\ndf = pd.DataFrame(data)\n\nheatmap_data = df.pivot(index='Dzień', columns='Pora dnia', values='Liczba klientów')\n\nfig, ax = plt.subplots()\n\nim = ax.imshow(\n    heatmap_data,\n    cmap='YlOrRd',      # paleta od żółtego (nisko) do czerwonego (wysoko)\n    aspect='auto'       # automatyczne dopasowanie proporcji\n)\n\ncbar = fig.colorbar(im, ax=ax)\ncbar.set_label('Liczba klientów', rotation=270, labelpad=15)\n\nax.set_xticks(range(len(heatmap_data.columns)))\nax.set_xticklabels(heatmap_data.columns, rotation=45, ha='right')\nax.set_yticks(range(len(heatmap_data.index)))\nax.set_yticklabels(heatmap_data.index)\n\nax.set_xlabel('Pora dnia')\nax.set_ylabel('Dzień tygodnia')\nax.set_title('Średnia liczba klientów w sklepie')\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Dane przykładowe\ndata = np.array([\n    [23, 45, 12, 34, 56],\n    [33, 54, 22, 43, 66],\n    [12, 34, 15, 28, 39],\n    [44, 55, 31, 47, 62]\n])\n\n# Etykiety osi\ndays = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek']\nhours = ['9–11', '11–13', '13–15', '15–17', '17–19']\n\n# Tworzenie mapy ciepła\nplt.figure(figsize=(8, 6))\ncax = plt.imshow(data, cmap='Greens')\n\n# Etykiety osi\nplt.xticks(ticks=np.arange(len(hours)), labels=hours, rotation=45, ha='right')\nplt.yticks(ticks=np.arange(len(days)), labels=days)\n\n# Dodanie wartości liczbowych\nfor i in range(data.shape[0]):\n    for j in range(data.shape[1]):\n        plt.text(j, i, str(data[i, j]), ha='center', va='center', color='black')\n\n# Pasek kolorów\nplt.colorbar(cax, orientation='vertical', label='Liczba klientów')\n\n# Tytuł i układ\nplt.title('Liczba klientów w sklepie wg dnia i godziny')\nplt.tight_layout()\n\n# Wyświetlenie wykresu\nplt.show()\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ndata = np.array([\n    [23, 45, 12, 34, 56],\n    [33, 54, 22, 43, 66],\n    [12, 34, 15, 28, 39],\n    [44, 55, 31, 47, 62]\n])\n\ndays = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek']\nhours = ['9–11', '11–13', '13–15', '15–17', '17–19']\n\nfig, ax = plt.subplots(figsize=(8, 6))\ncax = ax.imshow(data, cmap='Greens')\n\nax.set_xticks(np.arange(len(hours)))\nax.set_xticklabels(hours, rotation=45, ha='right')\nax.set_yticks(np.arange(len(days)))\nax.set_yticklabels(days)\n\nfor i in range(data.shape[0]):\n    for j in range(data.shape[1]):\n        ax.text(j, i, str(data[i, j]), ha='center', va='center', color='black')\n\nfig.colorbar(cax, ax=ax, orientation='vertical', label='Liczba klientów')\n\nax.set_title('Liczba klientów w sklepie wg dnia i godziny')\nfig.tight_layout()\n\nplt.show()",
+    "crumbs": [
+      "Matplotlib",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Matplotlib - mapa ciepła</span>"
+    ]
+  },
+  {
+    "objectID": "matplotlib-wykreswarstwowy.html",
+    "href": "matplotlib-wykreswarstwowy.html",
+    "title": "39  Matplotlib - wykres warstwowy",
+    "section": "",
+    "text": "39.1 Główne zastosowania wykresów warstwowych\nWykres warstwowy to rodzaj wizualizacji, w której kolejne serie danych są przedstawione jako nakładające się obszary/warstwy. Wysokość każdej warstwy odpowiada wartości danej kategorii, a suma wysokości wszystkich warstw pokazuje wartość łączną.\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = {\n    'Miesiąc': ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj'],\n    'Sprzedaż': [1000, 1200, 900, 1100, 1300],\n    'Usługi': [200, 250, 230, 260, 300],\n    'Reklama': [150, 180, 170, 160, 190]\n}\n\ndf = pd.DataFrame(data)\n\nx = df['Miesiąc']\ny1 = df['Sprzedaż']\ny2 = df['Usługi']\ny3 = df['Reklama']\n\nplt.figure(figsize=(10,6))\nplt.stackplot(x, y1, y2, y3, labels=['Sprzedaż', 'Usługi', 'Reklama'])\nplt.legend(loc='upper left')\nplt.title('Przychody firmy w podziale na źródła')\nplt.xlabel('Miesiąc')\nplt.ylabel('Kwota (PLN)')\nplt.xticks(rotation=45)\nplt.tight_layout()\nplt.show()\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = {\n    'Miesiąc': ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj'],\n    'Sprzedaż': [1000, 1200, 900, 1100, 1300],\n    'Usługi': [200, 250, 230, 260, 300],\n    'Reklama': [150, 180, 170, 160, 190]\n}\n\ndf = pd.DataFrame(data)\n\nx = df['Miesiąc']\ny1 = df['Sprzedaż']\ny2 = df['Usługi']\ny3 = df['Reklama']\n\nfig, ax = plt.subplots(figsize=(10,6))\nax.stackplot(x, y1, y2, y3, labels=['Sprzedaż', 'Usługi', 'Reklama'])\nax.legend(loc='upper left')\nax.set_title('Przychody firmy w podziale na źródła')\nax.set_xlabel('Miesiąc')\nax.set_ylabel('Kwota (PLN)')\nplt.xticks(rotation=45)\nfig.tight_layout()\nplt.show()\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = {\n    'Dzień': ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek'],\n    'Mobilne': [1500, 1800, 1600, 1700, 2000],\n    'Desktop': [1200, 1100, 1300, 1250, 1400],\n    'Tablet': [300, 350, 320, 310, 360]\n}\n\ndf = pd.DataFrame(data)\n\nx = df['Dzień']\ny1 = df['Mobilne']\ny2 = df['Desktop']\ny3 = df['Tablet']\n\nplt.figure(figsize=(10,6))\nplt.stackplot(\n    x, y1, y2, y3,\n    labels=['Mobilne', 'Desktop', 'Tablet'],\n    colors=['SteelBlue', 'MediumSeaGreen', 'IndianRed'],\n    alpha=0.8\n)\nplt.title('Ruch na stronie według urządzeń w ciągu tygodnia')\nplt.xlabel('Dzień tygodnia')\nplt.ylabel('Liczba odwiedzin')\nplt.legend(loc='upper left')\nplt.grid(axis='y', linestyle='--', alpha=0.7)\nplt.xticks(rotation=45)\nplt.tight_layout()\nplt.show()",
+    "crumbs": [
+      "Matplotlib",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Matplotlib - wykres warstwowy</span>"
+    ]
+  },
+  {
+    "objectID": "matplotlib-wykreswarstwowy.html#główne-zastosowania-wykresów-warstwowych",
+    "href": "matplotlib-wykreswarstwowy.html#główne-zastosowania-wykresów-warstwowych",
+    "title": "39  Matplotlib - wykres warstwowy",
+    "section": "",
+    "text": "Analiza składu całkowitego w czasie\n\nPozwala zobaczyć, jak poszczególne komponenty (np. źródła przychodów, wydatki, segmenty rynku) przyczyniają się do wartości całkowitej w kolejnych momentach.\n\nPrzydatne przy monitoringu udziałów procentowych i zmian w proporcjach.\n\nPorównanie trendów wielowymiarowych\n\nUmożliwia jednoczesne śledzenie wielu serii czasowych („warstw”) w jednej przestrzeni, co ułatwia wykrycie wzajemnych korelacji i momentów przełomowych.\n\nIdealne do prezentacji wielokanałowych danych (np. ruch na stronie z różnych źródeł).\n\nPrezentacja udziałów rynkowych lub segmentów\n\nPokazuje, jak udziały poszczególnych produktów, regionów czy grup klientów zmieniają się w czasie.\n\nUłatwia identyfikację „rosnących” i „malejących” segmentów.\n\nBudżetowanie i rozliczenia\n\nWizualizuje strukturę kosztów lub przychodów według kategorii na przestrzeni cyklu budżetowego.\n\nPomaga w szybkim wychwyceniu nadmiernych wydatków lub źródeł wzrostu przychodów.\n\nMonitorowanie zasobów i obciążeń\n\nŚledzenie wykorzystania zasobów (np. personelu, maszyn) pod kątem różnych projektów lub działów.\n\nUmożliwia planowanie i równoważenie obciążenia.\n\nPorównanie scenariuszy lub wariantów\n\nNakładanie prognozowanych danych obok historycznych ułatwia porównanie „spodziewanego” vs. „rzeczywistego” przebiegu wskaźników.\n\nWspiera decyzje strategiczne przez zobrazowanie odchyleń.",
+    "crumbs": [
+      "Matplotlib",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Matplotlib - wykres warstwowy</span>"
+    ]
+  },
+  {
+    "objectID": "seaborn-podstawy.html",
+    "href": "seaborn-podstawy.html",
+    "title": "40  Seaborn - podstawy",
+    "section": "",
+    "text": "40.1 Ładowanie wbudowanych danych\nhttps://seaborn.pydata.org/\nBiblioteka Seaborn, będąca nakładką na Matplotlib, ułatwia tworzenie “pięknych i czytelnych” wykresów statystycznych w języku Python.\nFunkcja sns.load_dataset() pozwala na ładowanie wbudowanych zestawów danych w bibliotece Seaborn. Wszystkie wbudowane zestawy danych są przechowywane jako ramki danych Pandas.\nimport seaborn as sns\n\niris_data = sns.load_dataset('iris')\nprint(iris_data.head())\n\n   sepal_length  sepal_width  petal_length  petal_width species\n0           5.1          3.5           1.4          0.2  setosa\n1           4.9          3.0           1.4          0.2  setosa\n2           4.7          3.2           1.3          0.2  setosa\n3           4.6          3.1           1.5          0.2  setosa\n4           5.0          3.6           1.4          0.2  setosa\nimport seaborn as sns\n\ntitanic_data = sns.load_dataset('titanic')\nprint(titanic_data.head())\n\n   survived  pclass     sex   age  sibsp  parch     fare embarked  class  \\\n0         0       3    male  22.0      1      0   7.2500        S  Third   \n1         1       1  female  38.0      1      0  71.2833        C  First   \n2         1       3  female  26.0      0      0   7.9250        S  Third   \n3         1       1  female  35.0      1      0  53.1000        S  First   \n4         0       3    male  35.0      0      0   8.0500        S  Third   \n\n     who  adult_male deck  embark_town alive  alone  \n0    man        True  NaN  Southampton    no  False  \n1  woman       False    C    Cherbourg   yes  False  \n2  woman       False  NaN  Southampton   yes   True  \n3  woman       False    C  Southampton   yes  False  \n4    man        True  NaN  Southampton    no   True\nimport seaborn as sns\n\ntips_data = sns.load_dataset('tips')\nprint(tips_data.head())\n\n   total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3\n3       23.68  3.31    Male     No  Sun  Dinner     2\n4       24.59  3.61  Female     No  Sun  Dinner     4",
+    "crumbs": [
+      "Seaborn",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Seaborn - podstawy</span>"
+    ]
+  },
+  {
+    "objectID": "seaborn-podstawy.html#ładowanie-wbudowanych-danych",
+    "href": "seaborn-podstawy.html#ładowanie-wbudowanych-danych",
+    "title": "40  Seaborn - podstawy",
+    "section": "",
+    "text": "Ładowanie zestawu danych “iris”:\n\n\n\nŁadowanie zestawu danych “titanic”:\n\n\n\nŁadowanie zestawu danych “tips”:",
+    "crumbs": [
+      "Seaborn",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Seaborn - podstawy</span>"
+    ]
+  },
+  {
+    "objectID": "seaborn-podstawy.html#wykres-punktowy",
+    "href": "seaborn-podstawy.html#wykres-punktowy",
+    "title": "40  Seaborn - podstawy",
+    "section": "40.2 Wykres punktowy",
+    "text": "40.2 Wykres punktowy\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Ładowanie danych\niris_data = sns.load_dataset('iris')\n\n# Tworzenie wykresu punktowego\nsns.scatterplot(x='sepal_length', y='sepal_width', data=iris_data)\n\n# Dodanie tytułu i etykiet osi\nplt.title('Wykres punktowy długości i szerokości kielicha (sepal)')\nplt.xlabel('Długość kielicha (cm)')\nplt.ylabel('Szerokość kielicha (cm)')\n\n# Wyświetlenie wykresu\nplt.show()\n\n\n\n\n\n\n\n\nFunkcja sns.scatterplot() oferuje dodatkowe parametry, które pozwalają na modyfikację wykresu. Przykłady obejmują:\n\nParametr hue: pozwala na dodanie kolorowania punktów na podstawie wartości zmiennej kategorialnej.\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Ładowanie danych\niris_data = sns.load_dataset('iris')\n\n# Tworzenie wykresu punktowego z parametrem 'hue'\nsns.scatterplot(x='sepal_length', y='sepal_width', hue='species', data=iris_data)\n\n# Dodanie tytułu i etykiet osi\nplt.title('Wykres punktowy długości i szerokości kielicha (sepal) z parametrem hue')\nplt.xlabel('Długość kielicha (cm)')\nplt.ylabel('Szerokość kielicha (cm)')\n\n# Wyświetlenie wykresu\nplt.show()\n\n\n\n\n\n\n\n\n\nParametr size: pozwala na zmianę wielkości punktów na podstawie wartości zmiennej numerycznej.\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Ładowanie danych\niris_data = sns.load_dataset('iris')\n\n# Tworzenie wykresu punktowego z parametrem 'size'\nsns.scatterplot(x='sepal_length', y='sepal_width', size='petal_length', data=iris_data)\n\n# Dodanie tytułu i etykiet osi\nplt.title('Wykres punktowy długości i szerokości kielicha (sepal) z parametrem size')\nplt.xlabel('Długość kielicha (cm)')\nplt.ylabel('Szerokość ielicha (cm)')\n\n# Wyświetlenie wykresu\nplt.show()\n\n\n\n\n\n\n\n\n\nParametr style: pozwala na zmianę stylu punktów na podstawie wartości zmiennej kategorialnej.\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Ładowanie danych\niris_data = sns.load_dataset('iris')\n\n# Tworzenie wykresu punktowego z parametrem 'size'\nsns.scatterplot(x='sepal_length', y='sepal_width', size='petal_length', data=iris_data)\n\n# Dodanie tytułu i etykiet osi\nplt.title('Wykres punktowy długości i szerokości kielicha (sepal) z parametrem size')\nplt.xlabel('Długość kielicha (cm)')\nplt.ylabel('Szerokość kielicha (cm)')\n\n# Wyświetlenie wykresu\nplt.show()",
+    "crumbs": [
+      "Seaborn",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Seaborn - podstawy</span>"
+    ]
+  },
+  {
+    "objectID": "seaborn-podstawy.html#wykres-liniowy",
+    "href": "seaborn-podstawy.html#wykres-liniowy",
+    "title": "40  Seaborn - podstawy",
+    "section": "40.3 Wykres liniowy",
+    "text": "40.3 Wykres liniowy\nFunkcja sns.lineplot() w bibliotece Seaborn służy do tworzenia wykresów liniowych, które pozwalają na wizualizację związku między dwiema zmiennymi, zwłaszcza w przypadku danych czasowych. Wykres liniowy jest użyteczny do prezentacji trendów i zmian w danych na przestrzeni czasu lub innej zmiennej ciągłej.\nOto przykład użycia funkcji sns.lineplot():\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Przykładowe dane\ndata = {\n    'year': [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],\n    'value': [100, 110, 105, 120, 130, 140, 150, 170, 180, 200]\n}\n\n# Ładowanie danych jako ramki danych Pandas\nimport pandas as pd\ndf = pd.DataFrame(data)\n\n# Tworzenie wykresu liniowego\nsns.lineplot(x='year', y='value', data=df)\n\n# Dodanie tytułu i etykiet osi\nplt.title('Przykład wykresu liniowego')\nplt.xlabel('Rok')\nplt.ylabel('Wartość')\n\n# Wyświetlenie wykresu\nplt.show()\n\n\n\n\n\n\n\n\nW powyższym przykładzie tworzymy wykres liniowy na podstawie ramki danych df. Parametry x i y określają zmienne, które mają być przedstawione na osiach wykresu. Parametr data wskazuje źródło danych, w tym przypadku ramkę danych Pandas.\nFunkcja sns.lineplot() oferuje dodatkowe parametry, które pozwalają na modyfikację wykresu. Przykłady obejmują:\n\nParametr hue: pozwala na dodanie kolorowania linii na podstawie wartości zmiennej kategorialnej.\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# Przykładowe dane\ndata = {\n    'year': [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019] * 2,\n    'value': [100, 110, 105, 120, 130, 140, 150, 170, 180, 200] +\n             [200, 180, 170, 160, 150, 140, 130, 120, 110, 100],\n    'category': ['A'] * 10 + ['B'] * 10\n}\n\n# Ładowanie danych jako ramki danych Pandas\ndf = pd.DataFrame(data)\n\n# Tworzenie wykresu liniowego z parametrem 'hue'\nsns.lineplot(x='year', y='value', hue='category', data=df)\n\n# Dodanie tytułu i etykiet osi\nplt.title('Przykład wykresu liniowego z parametrem hue')\nplt.xlabel('Rok')\nplt.ylabel('Wartość')\n\n# Wyświetlenie wykresu\nplt.show()\n\n\n\n\n\n\n\n\n\nParametr style: pozwala na zmianę stylu linii na podstawie wartości zmiennej kategorialnej.\n\nsns.lineplot(x='year', y='value', style='category', data=df)\n\nParametr markers: pozwala na dodanie znaczników do punktów danych.\n\nsns.lineplot(x='year', y='value', markers=True, data=df)\n\nParametr ci: pozwala na dodanie przedziału ufności (confidence interval) dla wykresu, który może być użyteczny w przypadku wielokrotnych pomiarów dla tych samych wartości na osi X.\n\nsns.lineplot(x='year', y='value', ci=95, data=df)",
+    "crumbs": [
+      "Seaborn",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Seaborn - podstawy</span>"
+    ]
+  },
+  {
+    "objectID": "seaborn-podstawy.html#wykres-kołowy",
+    "href": "seaborn-podstawy.html#wykres-kołowy",
+    "title": "40  Seaborn - podstawy",
+    "section": "40.4 Wykres kołowy",
+    "text": "40.4 Wykres kołowy\nNie jest bezpośrednio wspierany.",
+    "crumbs": [
+      "Seaborn",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Seaborn - podstawy</span>"
+    ]
+  },
+  {
+    "objectID": "seaborn-podstawy.html#wykres-słupkowy",
+    "href": "seaborn-podstawy.html#wykres-słupkowy",
+    "title": "40  Seaborn - podstawy",
+    "section": "40.5 Wykres słupkowy",
+    "text": "40.5 Wykres słupkowy\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Przykładowa ramka danych\ndata = {'Kategoria': ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D'],\n        'Wartość': [10, 15, 8, 12, 11, 14, 9, 13],\n        'Grupa': ['X', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Y']}\ndf = pd.DataFrame(data)\n\nPodstawowy wykres słupkowy:\n\nsns.barplot(x='Kategoria', y='Wartość', data=df)\nplt.title('Podstawowy wykres słupkowy')\nplt.show()\n\n\n\n\n\n\n\n\n\nPrzykład z estimator:\n\n\nsns.barplot(x='Kategoria', y='Wartość', data=df, estimator=max)\nplt.title(\"Wykres słupkowy z 'estimator=max'\")\nplt.show()\n\n\n\n\n\n\n\n\nW tym przykładzie estimator=max powoduje, że wysokość słupków będzie maksymalną wartością dla każdej kategorii.\n\nPrzykład z errorbar:\n\n\nsns.barplot(x='Kategoria', y='Wartość', data=df, errorbar=None)\nplt.title(\"Wykres słupkowy z 'errorbar=None'\")\nplt.show()\n\n\n\n\n\n\n\n\nTutaj errorbar=None powoduje, że nie będą wyświetlane przedziały ufności na wykresie.\n\nPrzykład z palette:\n\n\nsns.barplot(x='Kategoria', y='Wartość', data=df, palette='Greens', hue='Kategoria')\nplt.title(\"Wykres słupkowy z 'palette=Greens'\")\nplt.show()\n\n\n\n\n\n\n\n\nArgument palette='Greens' ustawia paletę kolorów na odcienie zielonego.\n\nPrzykład z hue:\n\n\nsns.barplot(x='Kategoria', y='Wartość', hue='Grupa', data=df)\nplt.title(\"Wykres słupkowy z 'hue=Grupa'\")\nplt.show()\n\n\n\n\n\n\n\n\nW tym przykładzie argument hue='Grupa' dzieli słupki dla każdej kategorii według wartości z kolumny ‘Grupa’.\n\nPrzykład z orient:\n\n\nsns.barplot(x='Wartość', y='Kategoria', data=df, orient='h')\nplt.title(\"Wykres słupkowy z 'orient=h'\")\nplt.show()\n\n\n\n\n\n\n\n\nTutaj orient='h' zmienia orientację wykresu na poziomą.\n\nPrzykład z order:\n\n\nsns.barplot(x='Kategoria', y='Wartość', data=df, order=['B', 'D', 'A', 'C'])\nplt.title(\"Wykres słupkowy z 'order=['B', 'D', 'A', 'C']'\")\nplt.show()\n\n\n\n\n\n\n\n\nArgument order=['B', 'D', 'A', 'C'] określa kolejność kategorii na osi x.",
+    "crumbs": [
+      "Seaborn",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Seaborn - podstawy</span>"
+    ]
+  },
+  {
+    "objectID": "seaborn-podstawy.html#style",
+    "href": "seaborn-podstawy.html#style",
+    "title": "40  Seaborn - podstawy",
+    "section": "40.6 Style",
+    "text": "40.6 Style\nBiblioteka Seaborn pozwala na dostosowywanie estetyki wykresów za pomocą palet kolorów i styli, co pozwala na uzyskanie atrakcyjnych i czytelnych wizualizacji danych. Oto kilka przykładów, jak możemy dostosować estetykę wykresów w Seaborn:\n\nPalety kolorów:\n\nPalety kolorów pozwalają na zmianę kolorystyki wykresów. Seaborn oferuje kilka wbudowanych palet kolorów, które można łatwo zastosować do wykresów.\nPrzykład użycia palety kolorów ‘coolwarm’ w wykresie punktowym:\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\niris_data = sns.load_dataset('iris')\n\n# Ustawienie palety kolorów 'coolwarm'\nsns.set_palette('coolwarm')\n\nsns.scatterplot(x='sepal_length', y='sepal_width', hue='species', data=iris_data)\n\nplt.show()\n\n\n\n\n\n\n\n\nAby zresetować paletę kolorów do domyślnej, użyj sns.set_palette('deep').\n\nStyle wykresów:\n\nSeaborn pozwala na zmianę stylu wykresów, co może wpłynąć na ogólny wygląd i czytelność wizualizacji. Biblioteka oferuje kilka wbudowanych styli.\nPrzykład użycia stylu ‘whitegrid’ w wykresie punktowym:\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\niris_data = sns.load_dataset('iris')\n\n# Ustawienie stylu 'whitegrid'\nsns.set_style('whitegrid')\n\nsns.scatterplot(x='sepal_length', y='sepal_width', hue='species', data=iris_data)\n\nplt.show()\n\n\n\n\n\n\n\n\nInne dostępne style to: ‘darkgrid’, ‘white’, ‘ticks’ i ‘dark’. Aby zresetować styl do domyślnego, użyj sns.set_style('darkgrid').\n\nSkalowanie elementów graficznych:\n\nSeaborn pozwala na skalowanie elementów graficznych, co może być przydatne w przypadku różnych rozdzielczości ekranów lub potrzeby zmiany rozmiaru wykresów.\nPrzykład użycia kontekstu ‘poster’ w wykresie punktowym:\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\niris_data = sns.load_dataset('iris')\n\n# Ustawienie kontekstu 'poster'\nsns.set_context('poster')\n\nsns.scatterplot(x='sepal_length', y='sepal_width', hue='species', data=iris_data)\n\nplt.show()\n\n\n\n\n\n\n\n\nInne dostępne konteksty to: ‘paper’, ‘notebook’ i ‘talk’. Aby zresetować kontekst do domyślnego, użyj sns.set_context('notebook').\nKombinując te metody, można tworzyć różnorodne, atrakcyjne i czytelne wizualizacje danych.",
+    "crumbs": [
+      "Seaborn",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Seaborn - podstawy</span>"
+    ]
+  },
+  {
+    "objectID": "jakosckodu.html",
+    "href": "jakosckodu.html",
+    "title": "41  Jakość kodu",
+    "section": "",
+    "text": "41.1 Flake8\nFlake8 to popularne narzędzie do analizy statycznej kodu Python, które łączy w sobie kilka narzędzi: PyFlakes (wykrywanie błędów logicznych), pycodestyle (sprawdzanie zgodności z PEP 8) oraz McCabe (mierzenie złożoności cyklomatycznej).\nDokumentacja https://flake8.pycqa.org/en/latest/\nInstalacja flake8 z terminala\nSprawdzenie pojedynczego pliku:\nSprawdzenie całego katalogu:\nZ określonymi regułami:\nTypowe błędy wykrywane przez flake8\nhttps://flake8.pycqa.org/en/latest/user/error-codes.html\nhttps://pycodestyle.pycqa.org/en/latest/intro.html#error-codes\nKonfiguracja\nMożna skonfigurować flake8 tworząc plik setup.cfg lub .flake8 w głównym katalogu projektu:",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Jakość kodu</span>"
+    ]
+  },
+  {
+    "objectID": "jakosckodu.html#flake8",
+    "href": "jakosckodu.html#flake8",
+    "title": "41  Jakość kodu",
+    "section": "",
+    "text": "pip install flake8\n\nflake8 plik.py\n\nflake8 moj_projekt/\n\nflake8 --select E111,E121 --max-line-length=120 plik.py\n\n\nE101: Wcięcia zawierają mieszankę spacji i tabulatorów\nE111: Wcięcia nie są wielokrotnością 4 spacji\nE501: Linia za długa (przekracza domyślne 79 znaków)\nF401: Zaimportowany moduł, ale nieużywany\nF841: Zmienna zdefiniowana, ale nieużywana\n\n\n\n\n\n[flake8]\nmax-line-length = 100\nexclude = .git,__pycache__,build,dist, .venv\nignore = E203,W503",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Jakość kodu</span>"
+    ]
+  },
+  {
+    "objectID": "jakosckodu.html#pandas-vet",
+    "href": "jakosckodu.html#pandas-vet",
+    "title": "41  Jakość kodu",
+    "section": "41.2 pandas-vet",
+    "text": "41.2 pandas-vet\npandas-vet to bardzo przydatny plugin do flake8, który działa jak “cyfrowy mentor” dla osób pracujących z biblioteką pandas w Pythonie.\npip install pandas-vet",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Jakość kodu</span>"
+    ]
+  },
+  {
+    "objectID": "jakosckodu.html#pylint",
+    "href": "jakosckodu.html#pylint",
+    "title": "41  Jakość kodu",
+    "section": "41.3 pylint",
+    "text": "41.3 pylint\nPylint to zaawansowane narzędzie do analizy statycznej kodu Python, które pomaga wykrywać błędy, egzekwować standardy kodowania i szukać potencjalnych problemów. Ocenia kod w skali od 0 do 10, gdzie 10 oznacza kod idealny.\nDokumentacja https://docs.pylint.org/\nInstalacja pylint z terminala\npip install pylint\nSprawdzenie pojedynczego pliku:\npylint plik.py\nSprawdzenie całego pakietu:\npylint moj_pakiet\nGenerowanie raportu:\npylint --reports=y plik.py\nFiltrowanie według kategorii:\npylint --disable=C,R plik.py\nTypowe komunikaty pylint\n\nC: Konwencje (style kodowania)\nR: Refaktoring (sugestie ulepszeń)\nW: Ostrzeżenia (potencjalne problemy)\nE: Błędy (definite problems)\nF: Błędy krytyczne (uniemożliwiające dalszą analizę)\n\nPrzykłady:\n\nC0111: Brak docstringa\nW0611: Nieużywany import\nE1101: Odwołanie do nieistniejącego atrybutu\nR0903: Zbyt mało metod publicznych\n\nLista błędów https://pylint.readthedocs.io/en/stable/user_guide/messages/messages_overview.html\nKonfiguracja\nMożesz skonfigurować pylint tworząc plik .pylintrc w katalogu projektu:\n[MESSAGES CONTROL]\ndisable=C0111,W0611\n\n[FORMAT]\nmax-line-length=100\nEw w pliku setup.cfg\n[pylint]\nmax-line-length = 100\ndisable = C0111,W0611,R0903\nignore = migrations, .venv\n\n[pylint.FORMAT]\nmax-line-length = 100\n\n[pylint.MESSAGES CONTROL]\ndisable = C0111,W0611\n\n[pylint.SIMILARITIES]\nmin-similarity-lines = 7\nignore-comments = yes\nignore-docstrings = yes",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Jakość kodu</span>"
+    ]
+  },
+  {
+    "objectID": "jakosckodu.html#black",
+    "href": "jakosckodu.html#black",
+    "title": "41  Jakość kodu",
+    "section": "41.4 Black",
+    "text": "41.4 Black\nBlack to automatyczny formater kodu dla języka Python. Jego głównym zadaniem jest formatowanie kodu Python według określonych zasad, co eliminuje dyskusje na temat stylu w zespołach programistycznych. Black jest nazywany “bezkompromisowym formatem kodu” ponieważ oferuje bardzo niewiele opcji konfiguracyjnych, wymuszając spójny styl.\nInstalacja modułu Black\npip install black\nFormatowanie pojedynczego pliku:\nblack nazwa_pliku.py\nFormatowanie wszystkich plików w katalogu:\nblack katalog/\nSprawdzenie, które pliki zostałyby zmodyfikowane bez faktycznego ich formatowania:\nblack --check nazwa_pliku.py\nblack --diff nazwa_pliku.py\nKod przed formatowaniem:\ndef funkcja_testowa( argument1,argument2,    argument3):\n    return      argument1+argument2+argument3\n\nlista = [1,2,3,4,\n5,6,7]\n\nsłownik = {\"klucz1\":    \"wartość1\",\n\"klucz2\":\"wartość2\"}\nKod po zastosowaniu Black:\ndef funkcja_testowa(argument1, argument2, argument3):\n    return argument1 + argument2 + argument3\n\n\nlista = [1, 2, 3, 4, 5, 6, 7]\n\nsłownik = {\"klucz1\": \"wartość1\", \"klucz2\": \"wartość2\"}\nMimo że Black ma niewiele opcji konfiguracyjnych, możesz ustawić podstawowe parametry w pliku pyproject.toml:\n[tool.black]\nline-length = 88\ntarget-version = ['py312']\ninclude = '\\.pyi?$'\nexclude = '''\n/(\n    \\.eggs\n  | \\.git\n  | \\.hg\n  | \\.mypy_cache\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n)/\n'''\nMożna dodać ustawienia w setup.cfg jednak twórcy modułu tego nie zalecają.\n[tool:black]\nline-length = 100\ntarget-version = py312\ninclude = \\.pyi?$\nexclude = /(\\.eggs|\\.git|\\.hg|\\.mypy_cache|\\.tox|\\.venv|_build|buck-out|build|dist)/",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Jakość kodu</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html",
+    "href": "markdown.html",
+    "title": "42  Markdown",
+    "section": "",
+    "text": "42.1 Czym się różni GFM od standardowego Markdown?\nGitHub Flavored Markdown (GFM) to rozszerzona wersja standardowego Markdown, stworzona przez GitHub, która dodaje kilka użytecznych funkcji do podstawowej składni. Zacznijmy od zrozumienia podstaw i systematycznie przejdźmy przez wszystkie elementy.\nGFM zachowuje wszystkie podstawowe funkcje Markdown, ale dodaje kilka kluczowych ulepszeń, które czynią go bardziej praktycznym w użyciu, szczególnie w kontekście programistycznym. Te dodatki powstały z rzeczywistych potrzeb użytkowników GitHub.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#podstawowe-elementy-formatowania",
+    "href": "markdown.html#podstawowe-elementy-formatowania",
+    "title": "42  Markdown",
+    "section": "42.2 Podstawowe elementy formatowania",
+    "text": "42.2 Podstawowe elementy formatowania\nNagłówki tworzymy używając symboli kratki. Liczba kratek określa poziom nagłówka:\n# Nagłówek poziomu 1\n## Nagłówek poziomu 2\n### Nagłówek poziomu 3\nFormatowanie tekstu działa intuicyjnie. Pojedyncze gwiazdki lub podkreślniki tworzą kursywę (*tekst* daje tekst), podczas gdy podwójne tworzą pogrubienie (**tekst** daje tekst). W GFM możemy także używać przekreślenia przez podwójną tyldę (~~tekst~~ daje tekst).",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#listy-i-ich-zaawansowane-możliwości",
+    "href": "markdown.html#listy-i-ich-zaawansowane-możliwości",
+    "title": "42  Markdown",
+    "section": "42.3 Listy i ich zaawansowane możliwości",
+    "text": "42.3 Listy i ich zaawansowane możliwości\nGFM obsługuje zarówno listy numerowane jak i punktowane. Co ciekawe, w listach punktowanych możemy używać różnych symboli:\n- Element listy (myślnik)\n* Element listy (gwiazdka)\n+ Element listy (plus)\nSzczególnie użyteczną funkcją GFM są listy zadań (task lists), które pozwalają tworzyć interaktywne checkboxy:\n- [x] Zadanie wykonane\n- [ ] Zadanie do zrobienia\n- [ ] Kolejne zadanie",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#bloki-kodu---potęga-gfm",
+    "href": "markdown.html#bloki-kodu---potęga-gfm",
+    "title": "42  Markdown",
+    "section": "42.4 Bloki kodu - potęga GFM",
+    "text": "42.4 Bloki kodu - potęga GFM\nJedną z najważniejszych innowacji GFM są ulepszone bloki kodu. Oprócz standardowych bloków z trzema grawisami, GFM dodaje podświetlanie składni:\n```javascript\nfunction powitanie(imie) {\n    console.log(`Cześć, ${imie}!`);\n}\n```\nSystem automatycznie rozpoznaje język i odpowiednio koloruje składnię. Obsługuje dziesiątki języków programowania, od JavaScript przez Python po SQL.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#tabele---wizualna-organizacja-danych",
+    "href": "markdown.html#tabele---wizualna-organizacja-danych",
+    "title": "42  Markdown",
+    "section": "42.5 Tabele - wizualna organizacja danych",
+    "text": "42.5 Tabele - wizualna organizacja danych\nGFM wprowadza składnię tabel, której brakuje w standardowym Markdown:\n| Kolumna 1 | Kolumna 2 | Kolumna 3 |\n|-----------|-----------|-----------|\n| Wartość A | Wartość B | Wartość C |\n| Wartość D | Wartość E | Wartość F |\nMożemy również kontrolować wyrównanie tekstu w kolumnach używając dwukropków:\n| Lewo      | Środek    | Prawo     |\n|:----------|:---------:|----------:|\n| tekst     | tekst     | tekst     |",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#automatyczne-linkowanie",
+    "href": "markdown.html#automatyczne-linkowanie",
+    "title": "42  Markdown",
+    "section": "42.6 Automatyczne linkowanie",
+    "text": "42.6 Automatyczne linkowanie\nGFM automatycznie przekształca URL-e w klikalny link. Gdy napiszesz https://github.com, zostanie to automatycznie zamienione na działający link. To znacznie upraszcza dodawanie odnośników w szybkich notatkach.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#emoji-i-ich-praktyczne-zastosowanie",
+    "href": "markdown.html#emoji-i-ich-praktyczne-zastosowanie",
+    "title": "42  Markdown",
+    "section": "42.7 Emoji i ich praktyczne zastosowanie",
+    "text": "42.7 Emoji i ich praktyczne zastosowanie\nGFM obsługuje emoji przez specjalną składnię z dwukropkami: :smile: staje się 😄, a :rocket: zamienia się w 🚀. To może wydawać się trywialne, ale emoji pomagają uczynić dokumentację bardziej przystępną i wizualnie atrakcyjną.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#cytaty-i-ich-zagnieżdżanie",
+    "href": "markdown.html#cytaty-i-ich-zagnieżdżanie",
+    "title": "42  Markdown",
+    "section": "42.8 Cytaty i ich zagnieżdżanie",
+    "text": "42.8 Cytaty i ich zagnieżdżanie\nCytaty tworzymy za pomocą znaku &gt; na początku linii:\n&gt; To jest cytat.\n&gt; Może być wielolinijkowy.\n\n&gt; Możemy także tworzyć\n&gt;&gt; cytaty zagnieżdżone\n&gt;&gt;&gt; na różnych poziomach",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#linki-referencyjne-dla-czytelności",
+    "href": "markdown.html#linki-referencyjne-dla-czytelności",
+    "title": "42  Markdown",
+    "section": "42.9 Linki referencyjne dla czytelności",
+    "text": "42.9 Linki referencyjne dla czytelności\nGdy dokument zawiera wiele linków, możemy używać składni referencyjnej, która znacznie poprawia czytelność kodu źródłowego:\nPrzejdź do [GitHub][1] lub sprawdź [dokumentację][docs].\n\n[1]: https://github.com\n[docs]: https://docs.github.com",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#specjalne-funkcje-github",
+    "href": "markdown.html#specjalne-funkcje-github",
+    "title": "42  Markdown",
+    "section": "42.10 Specjalne funkcje GitHub",
+    "text": "42.10 Specjalne funkcje GitHub\nW kontekście GitHub, GFM oferuje dodatkowe możliwości. Możemy linkować do konkretnych commitów używając SHA (sha: a5c3785), odwoływać się do issues (#123) czy wspominać użytkowników (@username).\nWięcej info: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html",
+    "href": "latex.html",
+    "title": "43  LaTeX",
+    "section": "",
+    "text": "43.1 Wprowadzenie do składni\nLaTeX w Markdown pozwala na eleganckie przedstawienie wzorów matematycznych i statystycznych. Kluczową różnicą, którą musisz zrozumieć na początku, są dwa sposoby włączania wzorów: inline (w linii tekstu) i block (jako osobny blok).",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#podstawowa-składnia---inline-vs-block",
+    "href": "latex.html#podstawowa-składnia---inline-vs-block",
+    "title": "43  LaTeX",
+    "section": "43.2 Podstawowa składnia - inline vs block",
+    "text": "43.2 Podstawowa składnia - inline vs block\n\n43.2.1 Równania inline (w linii tekstu)\nWzory w linii tekstu otaczamy pojedynczymi znakami dolara:\nKod: $\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i$\nRezultat: Średnia arytmetyczna to \\(\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i\\) w tej linii tekstu.\n\n\n43.2.2 Równania blokowe (wycentrowane)\nWzory jako osobne bloki otaczamy podwójnymi dolarami:\nKod:\n$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i$$\nRezultat: \\[\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i\\]",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#podstawowe-symbole-matematyczne",
+    "href": "latex.html#podstawowe-symbole-matematyczne",
+    "title": "43  LaTeX",
+    "section": "43.3 Podstawowe symbole matematyczne",
+    "text": "43.3 Podstawowe symbole matematyczne\nZacznijmy od fundamentów - podstawowych operatorów i symboli, które będziesz używać najczęściej.\n\n43.3.1 Operatory arytmetyczne\n\n\n\nKod\nRezultat\nOpis\n\n\n\n\n$a + b$\n\\(a + b\\)\nDodawanie\n\n\n$a - b$\n\\(a - b\\)\nOdejmowanie\n\n\n$a \\times b$\n\\(a \\times b\\)\nMnożenie (krzyżyk)\n\n\n$a \\cdot b$\n\\(a \\cdot b\\)\nMnożenie (kropka)\n\n\n$a \\div b$\n\\(a \\div b\\)\nDzielenie\n\n\n$\\frac{a}{b}$\n\\(\\frac{a}{b}\\)\nUłamek\n\n\n\n\n\n43.3.2 Symbole specjalne w analizie danych\n\n\n\nKod\nRezultat\nZastosowanie\n\n\n\n\n$\\infty$\n\\(\\infty\\)\nNieskończoność w granicach\n\n\n$\\pm$\n\\(\\pm\\)\nPrzedziały ufności\n\n\n$\\neq$\n\\(\\neq\\)\nHipotezy alternatywne\n\n\n$\\leq$\n\\(\\leq\\)\nNierówności w testach\n\n\n$\\geq$\n\\(\\geq\\)\nWarunki brzegowe\n\n\n$\\propto$\n\\(\\propto\\)\nProporcjonalność\n\n\n$\\approx$\n\\(\\approx\\)\nPrzybliżenia",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#potęgi-indeksy-i-pierwiastki---podstawy-notacji",
+    "href": "latex.html#potęgi-indeksy-i-pierwiastki---podstawy-notacji",
+    "title": "43  LaTeX",
+    "section": "43.4 Potęgi, indeksy i pierwiastki - podstawy notacji",
+    "text": "43.4 Potęgi, indeksy i pierwiastki - podstawy notacji\n\n43.4.1 Potęgi i indeksy\nPotęgi zapisujemy używając ^, a indeksy dolne _. To fundamentalna składnia w statystyce:\nPojedyncze znaki: - Kod: $x^2$ → Rezultat: \\(x^2\\) - Kod: $x_1$ → Rezultat: \\(x_1\\)\nWieloznakowe wyrażenia (zawsze w nawiasach klamrowych): - Kod: $x^{n+1}$ → Rezultat: \\(x^{n+1}\\) - Kod: $x_{i,j}$ → Rezultat: \\(x_{i,j}\\)\nKombinowane: - Kod: $\\sigma^2_x$ → Rezultat: \\(\\sigma^2_x\\) (wariancja zmiennej x)\n\n\n43.4.2 Pierwiastki\nKod: $\\sqrt{x}$ → Rezultat: \\(\\sqrt{x}\\)\nKod: $\\sqrt[n]{x}$ → Rezultat: \\(\\sqrt[n]{x}\\)\nKod: $\\sqrt{x^2 + y^2}$ → Rezultat: \\(\\sqrt{x^2 + y^2}\\) (odległość euklidesowa)",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#frakcje-i-ułamki---serce-wzorów-statystycznych",
+    "href": "latex.html#frakcje-i-ułamki---serce-wzorów-statystycznych",
+    "title": "43  LaTeX",
+    "section": "43.5 Frakcje i ułamki - serce wzorów statystycznych",
+    "text": "43.5 Frakcje i ułamki - serce wzorów statystycznych\n\n43.5.1 Podstawowa składnia frakcji\nUżywamy polecenia \\frac{licznik}{mianownik}:\nKod:\n$$\\frac{a}{b}, \\quad \\frac{x+1}{x-1}, \\quad \\frac{\\partial f}{\\partial x}$$\nRezultat: \\[\\frac{a}{b}, \\quad \\frac{x+1}{x-1}, \\quad \\frac{\\partial f}{\\partial x}\\]\nZwróć uwagę na \\quad - to polecenie dodaje odstęp między wyrażeniami.\n\n\n43.5.2 Frakcje zagnieżdżone\nKod:\n$$\\frac{1}{1 + \\frac{1}{1 + \\frac{1}{1 + \\cdots}}}$$\nRezultat: \\[\\frac{1}{1 + \\frac{1}{1 + \\frac{1}{1 + \\cdots}}}\\]",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#sumy-iloczyny-i-całki---notacja-agregatów",
+    "href": "latex.html#sumy-iloczyny-i-całki---notacja-agregatów",
+    "title": "43  LaTeX",
+    "section": "43.6 Sumy, iloczyny i całki - notacja agregatów",
+    "text": "43.6 Sumy, iloczyny i całki - notacja agregatów\nTe konstrukcje są kluczowe w analizie danych, więc przyjrzyjmy się im szczegółowo.\n\n43.6.1 Sumy\nPodstawowa suma inline:\nKod: $\\sum_{i=1}^{n} x_i$ → Rezultat: \\(\\sum_{i=1}^{n} x_i\\)\nSuma w bloku z pełną notacją:\nKod:\n$$\\sum_{i=1}^{n} x_i = x_1 + x_2 + \\cdots + x_n$$\nRezultat: \\[\\sum_{i=1}^{n} x_i = x_1 + x_2 + \\cdots + x_n\\]\n\n\n43.6.2 Iloczyny\nKod:\n$$\\prod_{i=1}^{n} x_i = x_1 \\times x_2 \\times \\cdots \\times x_n$$\nRezultat: \\[\\prod_{i=1}^{n} x_i = x_1 \\times x_2 \\times \\cdots \\times x_n\\]\n\n\n43.6.3 Całki (w analizie ciągłej)\nCałka nieoznaczona:\nKod: $\\int f(x) dx$ → Rezultat: \\(\\int f(x) dx\\)\nCałka oznaczona:\nKod: $\\int_a^b f(x) dx$ → Rezultat: \\(\\int_a^b f(x) dx\\)\nCałka podwójna:\nKod: $\\iint_D f(x,y) \\, dx \\, dy$ → Rezultat: \\(\\iint_D f(x,y) \\, dx \\, dy\\)\nZwróć uwagę na \\, - to małe odstępy przed dx i dy.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#granice---podstawa-analizy-matematycznej",
+    "href": "latex.html#granice---podstawa-analizy-matematycznej",
+    "title": "43  LaTeX",
+    "section": "43.7 Granice - podstawa analizy matematycznej",
+    "text": "43.7 Granice - podstawa analizy matematycznej\nKod:\n$$\\lim_{n \\to \\infty} \\frac{1}{n} = 0$$\nRezultat: \\[\\lim_{n \\to \\infty} \\frac{1}{n} = 0\\]\nKod:\n$$\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$$\nRezultat: \\[\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1\\]",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#macierze-i-wektory---algebra-liniowa-w-praktyce",
+    "href": "latex.html#macierze-i-wektory---algebra-liniowa-w-praktyce",
+    "title": "43  LaTeX",
+    "section": "43.8 Macierze i wektory - algebra liniowa w praktyce",
+    "text": "43.8 Macierze i wektory - algebra liniowa w praktyce\n\n43.8.1 Wektory kolumnowe\nKod:\n$$\\vec{v} = \\begin{pmatrix} v_1 \\\\ v_2 \\\\ v_3 \\end{pmatrix}$$\nRezultat: \\[\\vec{v} = \\begin{pmatrix} v_1 \\\\ v_2 \\\\ v_3 \\end{pmatrix}\\]\n\n\n43.8.2 Macierze podstawowe\nMacierz 2×2:\nKod:\n$$A = \\begin{pmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}\n\\end{pmatrix}$$\nRezultat: \\[A = \\begin{pmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}\n\\end{pmatrix}\\]\nMacierz identycznościowa:\nKod:\n$$I = \\begin{pmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{pmatrix}$$\nRezultat: \\[I = \\begin{pmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{pmatrix}\\]",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#praktyczne-przykłady-z-analizy-danych",
+    "href": "latex.html#praktyczne-przykłady-z-analizy-danych",
+    "title": "43  LaTeX",
+    "section": "43.9 Praktyczne przykłady z analizy danych",
+    "text": "43.9 Praktyczne przykłady z analizy danych\nTeraz przejdźmy do rzeczywistych wzorów, które używasz w codziennej pracy z danymi.\n\n43.9.1 Statystyka opisowa\nŚrednia arytmetyczna:\nKod:\n$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i$$\nRezultat: \\[\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i\\]\nWariancja populacyjna:\nKod:\n$$\\sigma^2 = \\frac{1}{n}\\sum_{i=1}^{n} (x_i - \\bar{x})^2$$\nRezultat: \\[\\sigma^2 = \\frac{1}{n}\\sum_{i=1}^{n} (x_i - \\bar{x})^2\\]\nOdchylenie standardowe:\nKod:\n$$\\sigma = \\sqrt{\\frac{1}{n}\\sum_{i=1}^{n} (x_i - \\bar{x})^2}$$\nRezultat: \\[\\sigma = \\sqrt{\\frac{1}{n}\\sum_{i=1}^{n} (x_i - \\bar{x})^2}\\]\nWspółczynnik korelacji Pearsona:\nKod:\n$$r = \\frac{\\sum_{i=1}^{n}(x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^{n}(x_i - \\bar{x})^2 \\sum_{i=1}^{n}(y_i - \\bar{y})^2}}$$\nRezultat: \\[r = \\frac{\\sum_{i=1}^{n}(x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^{n}(x_i - \\bar{x})^2 \\sum_{i=1}^{n}(y_i - \\bar{y})^2}}\\]\n\n\n43.9.2 Prawdopodobieństwo i rozkłady\nPrawo prawdopodobieństwa całkowitego:\nKod:\n$$P(A) = \\sum_{i=1}^{n} P(A|B_i)P(B_i)$$\nRezultat: \\[P(A) = \\sum_{i=1}^{n} P(A|B_i)P(B_i)\\]\nWzór Bayesa:\nKod:\n$$P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$$\nRezultat: \\[P(A|B) = \\frac{P(B|A)P(A)}{P(B)}\\]\nRozkład normalny (funkcja gęstości):\nKod:\n$$f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2}$$\nRezultat: \\[f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2}\\]\n\n\n43.9.3 Regresja liniowa\nModel regresji prostej:\nKod:\n$$y = \\beta_0 + \\beta_1 x + \\epsilon$$\nRezultat: \\[y = \\beta_0 + \\beta_1 x + \\epsilon\\]\nEstymator najmniejszych kwadratów dla \\(\\beta_1\\):\nKod:\n$$\\hat{\\beta_1} = \\frac{\\sum_{i=1}^{n}(x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^{n}(x_i - \\bar{x})^2}$$\nRezultat: \\[\\hat{\\beta_1} = \\frac{\\sum_{i=1}^{n}(x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^{n}(x_i - \\bar{x})^2}\\]\nWspółczynnik determinacji R²:\nKod:\n$$R^2 = 1 - \\frac{SS_{res}}{SS_{tot}} = 1 - \\frac{\\sum_i (y_i - \\hat{y_i})^2}{\\sum_i (y_i - \\bar{y})^2}$$\nRezultat: \\[R^2 = 1 - \\frac{SS_{res}}{SS_{tot}} = 1 - \\frac{\\sum_i (y_i - \\hat{y_i})^2}{\\sum_i (y_i - \\bar{y})^2}\\]\n\n\n43.9.4 Analiza szeregów czasowych\nFunkcja autokorelacji:\nKod:\n$$\\rho_k = \\frac{\\sum_{t=k+1}^{n}(y_t - \\bar{y})(y_{t-k} - \\bar{y})}{\\sum_{t=1}^{n}(y_t - \\bar{y})^2}$$\nRezultat: \\[\\rho_k = \\frac{\\sum_{t=k+1}^{n}(y_t - \\bar{y})(y_{t-k} - \\bar{y})}{\\sum_{t=1}^{n}(y_t - \\bar{y})^2}\\]\nModel ARIMA(p,d,q):\nKod:\n$$\\phi(B)(1-B)^d X_t = \\theta(B)\\epsilon_t$$\nRezultat: \\[\\phi(B)(1-B)^d X_t = \\theta(B)\\epsilon_t\\]\ngdzie B to operator przesunięcia wstecz.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#uczenie-maszynowe---wzory-optymalizacji",
+    "href": "latex.html#uczenie-maszynowe---wzory-optymalizacji",
+    "title": "43  LaTeX",
+    "section": "43.10 Uczenie maszynowe - wzory optymalizacji",
+    "text": "43.10 Uczenie maszynowe - wzory optymalizacji\n\n43.10.1 Funkcje kosztu\nBłąd średniokwadratowy (MSE):\nKod:\n$$MSE = \\frac{1}{n}\\sum_{i=1}^{n}(y_i - \\hat{y_i})^2$$\nRezultat: \\[MSE = \\frac{1}{n}\\sum_{i=1}^{n}(y_i - \\hat{y_i})^2\\]\nCross-entropy loss:\nKod:\n$$H(p,q) = -\\sum_{i=1}^{n} p_i \\log q_i$$\nRezultat: \\[H(p,q) = -\\sum_{i=1}^{n} p_i \\log q_i\\]\n\n\n43.10.2 Funkcje aktywacji\nSigmoid:\nKod:\n$$\\sigma(x) = \\frac{1}{1 + e^{-x}}$$\nRezultat: \\[\\sigma(x) = \\frac{1}{1 + e^{-x}}\\]\nReLU:\nKod:\n$$\\text{ReLU}(x) = \\max(0, x)$$\nRezultat: \\[\\text{ReLU}(x) = \\max(0, x)\\]\nSoftmax:\nKod:\n$$\\text{softmax}(x_i) = \\frac{e^{x_i}}{\\sum_{j=1}^{n} e^{x_j}}$$\nRezultat: \\[\\text{softmax}(x_i) = \\frac{e^{x_i}}{\\sum_{j=1}^{n} e^{x_j}}\\]\n\n\n43.10.3 Optymalizacja\nGradient descent:\nKod:\n$$\\theta_{t+1} = \\theta_t - \\alpha \\nabla_\\theta J(\\theta)$$\nRezultat: \\[\\theta_{t+1} = \\theta_t - \\alpha \\nabla_\\theta J(\\theta)\\]\ngdzie \\(\\alpha\\) to learning rate, a \\(J(\\theta)\\) to funkcja kosztu.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#transformacje-danych-w-wizualizacji",
+    "href": "latex.html#transformacje-danych-w-wizualizacji",
+    "title": "43  LaTeX",
+    "section": "43.11 Transformacje danych w wizualizacji",
+    "text": "43.11 Transformacje danych w wizualizacji\n\n43.11.1 Standaryzacja i normalizacja\nStandaryzacja (z-score):\nKod: $z = \\frac{x - \\mu}{\\sigma}$\nRezultat: \\(z = \\frac{x - \\mu}{\\sigma}\\)\nNormalizacja min-max:\nKod:\n$$x_{norm} = \\frac{x - x_{min}}{x_{max} - x_{min}}$$\nRezultat: \\[x_{norm} = \\frac{x - x_{min}}{x_{max} - x_{min}}\\]\n\n\n43.11.2 Metryki podobieństwa\nOdległość euklidesowa:\nKod:\n$$d(p,q) = \\sqrt{\\sum_{i=1}^{n}(p_i - q_i)^2}$$\nRezultat: \\[d(p,q) = \\sqrt{\\sum_{i=1}^{n}(p_i - q_i)^2}\\]\nOdległość Manhattan:\nKod:\n$$d(p,q) = \\sum_{i=1}^{n}|p_i - q_i|$$\nRezultat: \\[d(p,q) = \\sum_{i=1}^{n}|p_i - q_i|\\]\nPodobieństwo kosinusowe:\nKod:\n$$\\cos(\\theta) = \\frac{A \\cdot B}{||A|| \\cdot ||B||} = \\frac{\\sum_{i=1}^{n} A_i B_i}{\\sqrt{\\sum_{i=1}^{n} A_i^2} \\sqrt{\\sum_{i=1}^{n} B_i^2}}$$\nRezultat: \\[\\cos(\\theta) = \\frac{A \\cdot B}{||A|| \\cdot ||B||} = \\frac{\\sum_{i=1}^{n} A_i B_i}{\\sqrt{\\sum_{i=1}^{n} A_i^2} \\sqrt{\\sum_{i=1}^{n} B_i^2}}\\]",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#zaawansowane-techniki-formatowania",
+    "href": "latex.html#zaawansowane-techniki-formatowania",
+    "title": "43  LaTeX",
+    "section": "43.12 Zaawansowane techniki formatowania",
+    "text": "43.12 Zaawansowane techniki formatowania\n\n43.12.1 Kontrola odstępów\nAby wzory były czytelne, kontroluj odstępy za pomocą tych poleceń:\n\n\n\nKod\nRezultat\nOpis\n\n\n\n\n$a \\, b$\n\\(a \\, b\\)\nMały odstęp\n\n\n$a \\: b$\n\\(a \\: b\\)\nŚredni odstęp\n\n\n$a \\; b$\n\\(a \\; b\\)\nWiększy odstęp\n\n\n$a \\quad b$\n\\(a \\quad b\\)\nDuży odstęp\n\n\n$a \\qquad b$\n\\(a \\qquad b\\)\nBardzo duży odstęp\n\n\n\n\n\n43.12.2 Wyrównywanie równań\nDla układów równań używamy środowiska align:\nKod:\n\\begin{align}\nx + y &= 5 \\\\\n2x - y &= 1\n\\end{align}\nRezultat: \\[\\begin{align}\nx + y &= 5 \\\\\n2x - y &= 1\n\\end{align}\\]\nZnak & określa punkt wyrównania, a \\\\ kończy linię.\n\n\n43.12.3 Tekst w równaniach\nUżywamy \\text{} dla zwykłego tekstu w równaniach:\nKod:\n$$P(\\text{sukces}) = \\frac{\\text{liczba sukcesów}}{\\text{liczba prób}}$$\nRezultat: \\[P(\\text{sukces}) = \\frac{\\text{liczba sukcesów}}{\\text{liczba prób}}\\]\n\n\n43.12.4 Przypadki i definicje po kawałkach\nKod:\n$$f(x) = \\begin{cases}\nx^2 & \\text{gdy } x \\geq 0 \\\\\n-x^2 & \\text{gdy } x &lt; 0\n\\end{cases}$$\nRezultat: \\[f(x) = \\begin{cases}\nx^2 & \\text{gdy } x \\geq 0 \\\\\n-x^2 & \\text{gdy } x &lt; 0\n\\end{cases}\\]",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#często-używane-greckie-litery-w-analizie-danych",
+    "href": "latex.html#często-używane-greckie-litery-w-analizie-danych",
+    "title": "43  LaTeX",
+    "section": "43.13 Często używane greckie litery w analizie danych",
+    "text": "43.13 Często używane greckie litery w analizie danych\nGreckie litery są powszechnie używane w statystyce i uczeniu maszynowym:\n\n\n\nKod\nMała\nDuża\nZastosowanie\n\n\n\n\n\\alpha\n\\(\\alpha\\)\nA\nLearning rate, poziom istotności\n\n\n\\beta\n\\(\\beta\\)\nB\nWspółczynniki regresji\n\n\n\\gamma\n\\(\\gamma\\)\n\\(\\Gamma\\)\nFunkcja gamma\n\n\n\\delta\n\\(\\delta\\)\n\\(\\Delta\\)\nRóżnice, gradienty\n\n\n\\epsilon\n\\(\\epsilon\\)\nE\nBłędy, tolerancja\n\n\n\\theta\n\\(\\theta\\)\n\\(\\Theta\\)\nParametry modelu\n\n\n\\lambda\n\\(\\lambda\\)\n\\(\\Lambda\\)\nRegularyzacja, eigenvalues\n\n\n\\mu\n\\(\\mu\\)\nM\nŚrednia populacyjna\n\n\n\\sigma\n\\(\\sigma\\)\n\\(\\Sigma\\)\nOdchylenie standardowe, sumy\n\n\n\\rho\n\\(\\rho\\)\nP\nKorelacja\n\n\n\\phi\n\\(\\phi\\)\n\\(\\Phi\\)\nFunkcja standardowego rozkładu normalnego",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#praktyczne-wskazówki-dla-analityków-danych",
+    "href": "latex.html#praktyczne-wskazówki-dla-analityków-danych",
+    "title": "43  LaTeX",
+    "section": "43.14 Praktyczne wskazówki dla analityków danych",
+    "text": "43.14 Praktyczne wskazówki dla analityków danych\nGdy tworzysz dokumentację analityczną, pamiętaj o kilku kluczowych zasadach, które sprawią, że Twoje wzory będą nie tylko poprawne, ale także profesjonalnie wyglądające i czytelne.\nPierwszą zasadą jest konsekwentność w używaniu notacji. Jeśli raz zdecydujesz się używać \\(\\bar{x}\\) dla średniej, trzymaj się tego przez cały dokument. Nie mieszaj z \\(\\mu\\) bez wyjaśnienia różnicy. Podobnie z oznaczeniami indeksów - jeśli używasz \\(i\\) dla obserwacji, nie zmieniaj nagle na \\(j\\) bez powodu.\nDrugą kluczową sprawą jest kontekst. Zawsze wyjaśnij, co oznaczają Twoje symbole. Po pierwszym użyciu wzoru dodaj definicję typu “gdzie \\(n\\) to liczba obserwacji, a \\(x_i\\) to \\(i\\)-ta obserwacja”. Czytelnik doceni jasność, nawet jeśli wydaje mu się to oczywiste.\nTrzecią zasadą jest umiejętne łączenie wzorów z kodem. W Jupyter Notebook czy R Markdown często pokazujesz wzór teoretyczny, a potem jego implementację. Dbaj o spójność nazw zmiennych między wzorem a kodem - jeśli w wzorze masz \\(\\sigma^2\\), to w kodzie użyj sigma_squared lub variance, nie var2 czy s.\nCzwartą praktyczną wskazówką jest używanie numerowania wzorów dla referencji. W dłuższych dokumentach oznaczaj ważne wzory numerami, żeby móc się do nich później odwoływać.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#rozwiązywanie-typowych-problemów",
+    "href": "latex.html#rozwiązywanie-typowych-problemów",
+    "title": "43  LaTeX",
+    "section": "43.15 Rozwiązywanie typowych problemów",
+    "text": "43.15 Rozwiązywanie typowych problemów\nPodczas pracy z LaTeX w Markdown możesz napotkać kilka typowych problemów. Najczęstszym błędem jest zapominanie o nawiasach klamrowych w indeksach i potęgach. Pamiętaj: pojedyncze znaki nie wymagają nawiasów ($x^2$), ale wyrażenia już tak ($x^{n+1}$).\nKolejnym częstym problemem są spacje w nazwach funkcji. LaTeX nie rozpoznaje sin jako funkcji - musisz użyć \\sin. To samo dotyczy \\log, \\exp, \\max, \\min itp.\nTrzecim problemem jest mieszanie stylów inline i blokowych. Jeśli wzór jest skomplikowany, lepiej użyj bloku ($$), nawet jeśli jest krótki. Czytelność jest najważniejsza.",
+    "crumbs": [
+      "Co dalej?",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>LaTeX</span>"
+    ]
+  },
+  {
     "objectID": "problem01.html",
     "href": "problem01.html",
-    "title": "38  Problem #1",
+    "title": "44  Problem #1",
     "section": "",
     "text": "Pliki są dostępne tutaj https://github.com/pjastr/aiwd-book/tree/main/dataset\nCel: wykres liniowy\nCel dodatkowy: różnice miedzy danymi szerokimi a długimi\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport matplotlib as mpl\n\n# Wczytanie danych\ndane = pd.read_csv('dataset/sprzedaz.csv')\n\n\n# Dostosowanie kolorów dla lepszej czytelności\ncolors = ['steelblue', 'crimson', 'forestgreen']\nmarkers = ['o', 's', '^']\n\n# Utworzenie wykresu dla każdego regionu\nfor i, region in enumerate(dane['Region']):\n    wartosci = dane.loc[dane['Region'] == region, ['Styczeń', 'Luty', 'Marzec', 'Kwiecień']].values.flatten()\n    miesiace = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień']\n\n    plt.plot(miesiace, wartosci, marker=markers[i], linestyle='-', linewidth=2.5,\n             color=colors[i], label=region, markersize=8)\n\n# Dostosowanie wykresu\nplt.title('Sprzedaż w poszczególnych regionach w pierwszym kwartale', fontsize=16, pad=20)\nplt.xlabel('Miesiąc', fontsize=12)\nplt.ylabel('Wartość sprzedaży', fontsize=12)\nplt.grid(True, linestyle='--', alpha=0.7)\n\n# Poprawienie legendy\nplt.legend(title='Region', fontsize=10, title_fontsize=12)\n\n\n# Dostosowanie zakresu osi Y dla lepszej prezentacji\nplt.ylim(min(dane[['Styczeń', 'Luty', 'Marzec', 'Kwiecień']].values.flatten()) - 20,\n         max(dane[['Styczeń', 'Luty', 'Marzec', 'Kwiecień']].values.flatten()) + 30)\n\n# Poprawienie układu\nplt.tight_layout()\n\n# Wyświetlenie wykresu\nplt.show()\n\n\n\n\n\n\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\ndf = pd.read_csv('dataset/sprzedaz.csv')\ndf_long = df.melt(\n    id_vars='Region',\n    var_name='Miesiąc',\n    value_name='Sprzedaż'\n)\nprint(df_long)\nsns.lineplot(\n    data=df_long,\n    x='Miesiąc',\n    y='Sprzedaż',\n    hue='Region'\n)\nplt.show()\n\n      Region   Miesiąc  Sprzedaż\n0     Północ   Styczeń       200\n1   Południe   Styczeń       180\n2     Zachód   Styczeń       150\n3     Północ      Luty       220\n4   Południe      Luty       170\n5     Zachód      Luty       160\n6     Północ    Marzec       210\n7   Południe    Marzec       175\n8     Zachód    Marzec       155\n9     Północ  Kwiecień       230\n10  Południe  Kwiecień       190\n11    Zachód  Kwiecień       165",
     "crumbs": [
       "Zadania problemowe",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Problem #1</span>"
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Problem #1</span>"
     ]
   },
   {
     "objectID": "problem02.html",
     "href": "problem02.html",
-    "title": "39  Problem #2",
+    "title": "45  Problem #2",
     "section": "",
     "text": "Pliki są dostępne tutaj https://github.com/pjastr/aiwd-book/tree/main/dataset\nCel: wykres liniowy\nCel dodatkowy: użycie funkcji pivot\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport io\n\n\n\n# Wczytaj dane do DataFrame\ndf = pd.read_csv('dataset/economic_data.csv')\n\n# Wyświetl pierwsze kilka wierszy oryginalnego DataFrame\nprint(\"Oryginalny DataFrame:\")\nprint(df.head())\n\n# Użyj pivot do przekształcenia danych\n# Dla każdego wskaźnika tworzymy osobny pivot, aby otrzymać dane w formie odpowiedniej do wykresów\n\n# Przekształcenie danych za pomocą pivot dla każdego wskaźnika\ngdp_growth_pivot = df[df['Indicator'] == 'GDP Growth'].pivot(index='Year', columns='Country', values='Value')\ninflation_pivot = df[df['Indicator'] == 'Inflation'].pivot(index='Year', columns='Country', values='Value')\nunemployment_pivot = df[df['Indicator'] == 'Unemployment'].pivot(index='Year', columns='Country', values='Value')\n\n# Wyświetl przekształcone DataFrames\nprint(\"\\nDataFrame GDP Growth po transformacji pivot:\")\nprint(gdp_growth_pivot)\n\nprint(\"\\nDataFrame Inflation po transformacji pivot:\")\nprint(inflation_pivot)\n\nprint(\"\\nDataFrame Unemployment po transformacji pivot:\")\nprint(unemployment_pivot)\n\n# Ustawienie stylu dla lepszej estetyki\nsns.set_style(\"whitegrid\")\nplt.figure(figsize=(18, 12))\n\n# Lista kolorów dla lepszego rozróżnienia krajów\ncolors = ['#1f77b4', '#ff7f0e', '#2ca02c']\n\n# Wykres wzrostu PKB\nplt.subplot(3, 1, 1)\nfor i, country in enumerate(gdp_growth_pivot.columns):\n    plt.plot(gdp_growth_pivot.index, gdp_growth_pivot[country], marker='o', \n             linewidth=2.5, label=country, color=colors[i])\n    \n\nplt.title('Wzrost PKB (%) według krajów (2018-2023)', fontsize=16, fontweight='bold')\nplt.ylabel('Wzrost PKB (%)', fontsize=14)\nplt.grid(True, alpha=0.3)\nplt.legend(loc='upper left', fontsize=12)\nplt.axhline(y=0, color='black', linestyle='-', alpha=0.2)  # Linia na poziomie 0%\n\n# Wykres inflacji\nplt.subplot(3, 1, 2)\nfor i, country in enumerate(inflation_pivot.columns):\n    plt.plot(inflation_pivot.index, inflation_pivot[country], marker='s', \n             linewidth=2.5, label=country, color=colors[i])\n    \n\nplt.title('Stopa inflacji (%) według krajów (2018-2023)', fontsize=16, fontweight='bold')\nplt.ylabel('Stopa inflacji (%)', fontsize=14)\nplt.grid(True, alpha=0.3)\nplt.legend(loc='upper left', fontsize=12)\n\n# Wykres bezrobocia\nplt.subplot(3, 1, 3)\nfor i, country in enumerate(unemployment_pivot.columns):\n    plt.plot(unemployment_pivot.index, unemployment_pivot[country], marker='^', \n             linewidth=2.5, label=country, color=colors[i])\n  \n\nplt.title('Stopa bezrobocia (%) według krajów (2018-2023)', fontsize=16, fontweight='bold')\nplt.xlabel('Rok', fontsize=14)\nplt.ylabel('Stopa bezrobocia (%)', fontsize=14)\nplt.grid(True, alpha=0.3)\nplt.legend(loc='upper left', fontsize=12)\n\nplt.tight_layout(pad=3.0)\nplt.savefig('wskazniki_ekonomiczne.png', dpi=300, bbox_inches='tight')\nplt.show()\n\nOryginalny DataFrame:\n   Year  Country     Indicator  Value\n0  2018      USA    GDP Growth    2.9\n1  2018      USA     Inflation    2.4\n2  2018      USA  Unemployment    3.9\n3  2018  Germany    GDP Growth    1.1\n4  2018  Germany     Inflation    1.9\n\nDataFrame GDP Growth po transformacji pivot:\nCountry  Germany  Japan  USA\nYear                        \n2018         1.1    0.6  2.9\n2019         0.6    0.3  2.3\n2020        -4.6   -4.5 -3.4\n2021         2.9    1.6  5.7\n2022         1.8    1.0  2.1\n2023         0.3    1.9  2.5\n\nDataFrame Inflation po transformacji pivot:\nCountry  Germany  Japan  USA\nYear                        \n2018         1.9    1.0  2.4\n2019         1.4    0.5  1.8\n2020         0.5    0.0  1.2\n2021         3.1    0.3  4.7\n2022         6.9    2.5  8.0\n2023         5.9    3.1  4.1\n\nDataFrame Unemployment po transformacji pivot:\nCountry  Germany  Japan  USA\nYear                        \n2018         3.4    2.4  3.9\n2019         3.2    2.4  3.7\n2020         4.2    2.8  8.1\n2021         3.6    2.8  5.4\n2022         3.0    2.6  3.6\n2023         3.1    2.5  3.7",
     "crumbs": [
       "Zadania problemowe",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Problem #2</span>"
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Problem #2</span>"
     ]
   },
   {
     "objectID": "problem03.html",
     "href": "problem03.html",
-    "title": "40  Problem #3",
+    "title": "46  Problem #3",
     "section": "",
     "text": "Pliki są dostępne tutaj https://github.com/pjastr/aiwd-book/tree/main/dataset\nCel: piramida wieku\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Wczytanie danych\ndf = pd.read_csv('dataset/wiek.csv')\n\n# Przygotowanie wartości\nmale = -df['Mężczyźni']\nfemale = df['Kobiety']\nage_groups = df['Grupa wiekowa']\n\n# Rysowanie wykresu przy użyciu\nplt.figure(figsize=(8, 6))\nplt.barh(age_groups, male, label='Mężczyźni')\nplt.barh(age_groups, female, label='Kobiety')\nplt.xlabel('Liczba osób')\nplt.ylabel('Grupa wiekowa')\nplt.title('Piramida wieku populacji')\n\n# Definicja ticków co 2000, od -8000 do +8000, i wyświetlenie ich jako wartości bezwzględnych\nticks = np.arange(-8000, 8001, 2000)\nlabels = np.abs(ticks)\nplt.xticks(ticks, labels)\n\nplt.legend()\nplt.grid(axis='x', linestyle='--', alpha=0.5)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Wczytanie danych\ndf = pd.read_csv('dataset/wiek.csv')\n\n# Przygotowanie wartości\nmale = -df['Mężczyźni']\nfemale = df['Kobiety']\nage_groups = df['Grupa wiekowa']\n\n\nfig, ax = plt.subplots(figsize=(8, 6))\n\nax.barh(age_groups, male, label='Mężczyźni')\nax.barh(age_groups, female, label='Kobiety')\n\nax.set_xlabel('Liczba osób')\nax.set_ylabel('Grupa wiekowa')\nax.set_title('Piramida wieku populacji')\n\n# Definicja ticków co 2000, od -8000 do +8000, i wyświetlenie ich jako wartości bezwzględnych\nticks = np.arange(-8000, 8001, 2000)\nlabels = np.abs(ticks)\nax.set_xticks(ticks)\nax.set_xticklabels(labels)\n\nax.legend()\nax.grid(axis='x', linestyle='--', alpha=0.5)\n\nfig.tight_layout()\nplt.show()",
     "crumbs": [
       "Zadania problemowe",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Problem #3</span>"
+      "<span class='chapter-number'>46</span>  <span class='chapter-title'>Problem #3</span>"
     ]
   }
 ]

@@ -56,6 +56,16 @@ book:
       - matplotlib-opcjewykresu.qmd
       - matplotlib-dodatki2.qmd
       - matplotlib-innewykresy.qmd
+      - matplotlib-mapaciepla.qmd
+      - matplotlib-wykreswarstwowy.qmd
+    - part: "Seaborn"
+      chapters:
+      - seaborn-podstawy.qmd
+    - part: "Co dalej?"
+      chapters:
+      - jakosckodu.qmd
+      - markdown.qmd
+      - latex.qmd
     - part: "Zadania problemowe"
       chapters:
       - problem01.qmd
@@ -76,6 +86,7 @@ format:
     lang: pl
     header-includes: |
       \titlehead{\includegraphics[width=6in]{aiwd.jpg}}
+    keep-tex: true
 
 
 

@@ -1,0 +1,109 @@
+# Markdown
+
+GitHub Flavored Markdown (GFM) to rozszerzona wersja standardowego Markdown, stworzona przez GitHub, która dodaje kilka użytecznych funkcji do podstawowej składni. Zacznijmy od zrozumienia podstaw i systematycznie przejdźmy przez wszystkie elementy.
+
+## Czym się różni GFM od standardowego Markdown?
+
+GFM zachowuje wszystkie podstawowe funkcje Markdown, ale dodaje kilka kluczowych ulepszeń, które czynią go bardziej praktycznym w użyciu, szczególnie w kontekście programistycznym. Te dodatki powstały z rzeczywistych potrzeb użytkowników GitHub.
+
+## Podstawowe elementy formatowania
+
+**Nagłówki** tworzymy używając symboli kratki. Liczba kratek określa poziom nagłówka:
+
+```markdown
+# Nagłówek poziomu 1
+## Nagłówek poziomu 2
+### Nagłówek poziomu 3
+```
+
+**Formatowanie tekstu** działa intuicyjnie. Pojedyncze gwiazdki lub podkreślniki tworzą kursywę (`*tekst*` daje *tekst*), podczas gdy podwójne tworzą pogrubienie (`**tekst**` daje **tekst**). W GFM możemy także używać przekreślenia przez podwójną tyldę (`~~tekst~~` daje ~~tekst~~).
+
+## Listy i ich zaawansowane możliwości
+
+GFM obsługuje zarówno listy numerowane jak i punktowane. Co ciekawe, w listach punktowanych możemy używać różnych symboli:
+
+```markdown
+- Element listy (myślnik)
+* Element listy (gwiazdka)
++ Element listy (plus)
+```
+
+Szczególnie użyteczną funkcją GFM są **listy zadań** (task lists), które pozwalają tworzyć interaktywne checkboxy:
+
+```markdown
+- [x] Zadanie wykonane
+- [ ] Zadanie do zrobienia
+- [ ] Kolejne zadanie
+```
+
+## Bloki kodu - potęga GFM
+
+Jedną z najważniejszych innowacji GFM są ulepszone bloki kodu. Oprócz standardowych bloków z trzema grawisami, GFM dodaje **podświetlanie składni**:
+
+````markdown
+```javascript
+function powitanie(imie) {
+    console.log(`Cześć, ${imie}!`);
+}
+```
+````
+
+System automatycznie rozpoznaje język i odpowiednio koloruje składnię. Obsługuje dziesiątki języków programowania, od JavaScript przez Python po SQL.
+
+## Tabele - wizualna organizacja danych
+
+GFM wprowadza składnię tabel, której brakuje w standardowym Markdown:
+
+```markdown
+| Kolumna 1 | Kolumna 2 | Kolumna 3 |
+|-----------|-----------|-----------|
+| Wartość A | Wartość B | Wartość C |
+| Wartość D | Wartość E | Wartość F |
+```
+
+Możemy również kontrolować wyrównanie tekstu w kolumnach używając dwukropków:
+
+```markdown
+| Lewo      | Środek    | Prawo     |
+|:----------|:---------:|----------:|
+| tekst     | tekst     | tekst     |
+```
+
+## Automatyczne linkowanie
+
+GFM automatycznie przekształca URL-e w klikalny link. Gdy napiszesz `https://github.com`, zostanie to automatycznie zamienione na działający link. To znacznie upraszcza dodawanie odnośników w szybkich notatkach.
+
+## Emoji i ich praktyczne zastosowanie
+
+GFM obsługuje emoji przez specjalną składnię z dwukropkami: `:smile:` staje się 😄, a `:rocket:` zamienia się w 🚀. To może wydawać się trywialne, ale emoji pomagają uczynić dokumentację bardziej przystępną i wizualnie atrakcyjną.
+
+## Cytaty i ich zagnieżdżanie
+
+Cytaty tworzymy za pomocą znaku `>` na początku linii:
+
+```markdown
+> To jest cytat.
+> Może być wielolinijkowy.
+
+> Możemy także tworzyć
+>> cytaty zagnieżdżone
+>>> na różnych poziomach
+```
+
+## Linki referencyjne dla czytelności
+
+Gdy dokument zawiera wiele linków, możemy używać składni referencyjnej, która znacznie poprawia czytelność kodu źródłowego:
+
+```markdown
+Przejdź do [GitHub][1] lub sprawdź [dokumentację][docs].
+
+[1]: https://github.com
+[docs]: https://docs.github.com
+```
+
+## Specjalne funkcje GitHub
+
+W kontekście GitHub, GFM oferuje dodatkowe możliwości. Możemy linkować do konkretnych commitów używając SHA (`sha: a5c3785`), odwoływać się do issues (`#123`) czy wspominać użytkowników (`@username`).
+
+
+Więcej info: <https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax>

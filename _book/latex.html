@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>43&nbsp; LaTeX – Analiza i wizualizacja danych</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./problem01.html" rel="next">
+<link href="./markdown.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2b3e328b71be8d25427581baeb23079b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ad70530d0d041e0409e14c309de1970f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Brak wyników",
+    "search-matching-documents-text": "dopasowane dokumenty",
+    "search-copy-link-title": "Kopiuj link do wyszukiwania",
+    "search-hide-matches-text": "Ukryj dodatkowe dopasowania",
+    "search-more-match-text": "więcej dopasowań w tym dokumencie",
+    "search-more-matches-text": "więcej dopasowań w tym dokumencie",
+    "search-clear-button-title": "Wyczyść",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Anuluj",
+    "search-submit-button-title": "Zatwierdź",
+    "search-label": "Szukaj"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./latex.html"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Analiza i wizualizacja danych</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/pjastr/aiwd-book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Analiza-i-wizualizacja-danych.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Przełącz tryb ciemny"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Szukaj"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wprowadzenie</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Analiza i wizualizacja danych</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./trocheteorii.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Trochę teorii…</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">NumPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lista_tablica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-typydanych.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-tworzenietablic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-indeksowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-modyfikacje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-broadcasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-ufunc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-warunki.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy-inne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Eksploracja danych</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./eksploracja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pandas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas-start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas-indeksowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas-ladowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas-sortowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas-szeregiczasowe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas-danetekstowe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas-inne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Analia struktury danych</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analizastruktury.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Matplotlib</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykresliniowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-dodatki1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-podwykresy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-zapis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykrespunktowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykreskolowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykresslupkowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-regresja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-kolory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-opcjewykresu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-dodatki2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-innewykresy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-mapaciepla.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matplotlib-wykreswarstwowy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Seaborn</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./seaborn-podstawy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Co dalej?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./jakosckodu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./latex.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Zadania problemowe</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Spis treści</h2>
+   
+  <ul>
+  <li><a href="#wprowadzenie-do-składni" id="toc-wprowadzenie-do-składni" class="nav-link active" data-scroll-target="#wprowadzenie-do-składni"><span class="header-section-number">43.1</span> Wprowadzenie do składni</a></li>
+  <li><a href="#podstawowa-składnia---inline-vs-block" id="toc-podstawowa-składnia---inline-vs-block" class="nav-link" data-scroll-target="#podstawowa-składnia---inline-vs-block"><span class="header-section-number">43.2</span> Podstawowa składnia - inline vs block</a>
+  <ul class="collapse">
+  <li><a href="#równania-inline-w-linii-tekstu" id="toc-równania-inline-w-linii-tekstu" class="nav-link" data-scroll-target="#równania-inline-w-linii-tekstu"><span class="header-section-number">43.2.1</span> Równania inline (w linii tekstu)</a></li>
+  <li><a href="#równania-blokowe-wycentrowane" id="toc-równania-blokowe-wycentrowane" class="nav-link" data-scroll-target="#równania-blokowe-wycentrowane"><span class="header-section-number">43.2.2</span> Równania blokowe (wycentrowane)</a></li>
+  </ul></li>
+  <li><a href="#podstawowe-symbole-matematyczne" id="toc-podstawowe-symbole-matematyczne" class="nav-link" data-scroll-target="#podstawowe-symbole-matematyczne"><span class="header-section-number">43.3</span> Podstawowe symbole matematyczne</a>
+  <ul class="collapse">
+  <li><a href="#operatory-arytmetyczne" id="toc-operatory-arytmetyczne" class="nav-link" data-scroll-target="#operatory-arytmetyczne"><span class="header-section-number">43.3.1</span> Operatory arytmetyczne</a></li>
+  <li><a href="#symbole-specjalne-w-analizie-danych" id="toc-symbole-specjalne-w-analizie-danych" class="nav-link" data-scroll-target="#symbole-specjalne-w-analizie-danych"><span class="header-section-number">43.3.2</span> Symbole specjalne w analizie danych</a></li>
+  </ul></li>
+  <li><a href="#potęgi-indeksy-i-pierwiastki---podstawy-notacji" id="toc-potęgi-indeksy-i-pierwiastki---podstawy-notacji" class="nav-link" data-scroll-target="#potęgi-indeksy-i-pierwiastki---podstawy-notacji"><span class="header-section-number">43.4</span> Potęgi, indeksy i pierwiastki - podstawy notacji</a>
+  <ul class="collapse">
+  <li><a href="#potęgi-i-indeksy" id="toc-potęgi-i-indeksy" class="nav-link" data-scroll-target="#potęgi-i-indeksy"><span class="header-section-number">43.4.1</span> Potęgi i indeksy</a></li>
+  <li><a href="#pierwiastki" id="toc-pierwiastki" class="nav-link" data-scroll-target="#pierwiastki"><span class="header-section-number">43.4.2</span> Pierwiastki</a></li>
+  </ul></li>
+  <li><a href="#frakcje-i-ułamki---serce-wzorów-statystycznych" id="toc-frakcje-i-ułamki---serce-wzorów-statystycznych" class="nav-link" data-scroll-target="#frakcje-i-ułamki---serce-wzorów-statystycznych"><span class="header-section-number">43.5</span> Frakcje i ułamki - serce wzorów statystycznych</a>
+  <ul class="collapse">
+  <li><a href="#podstawowa-składnia-frakcji" id="toc-podstawowa-składnia-frakcji" class="nav-link" data-scroll-target="#podstawowa-składnia-frakcji"><span class="header-section-number">43.5.1</span> Podstawowa składnia frakcji</a></li>
+  <li><a href="#frakcje-zagnieżdżone" id="toc-frakcje-zagnieżdżone" class="nav-link" data-scroll-target="#frakcje-zagnieżdżone"><span class="header-section-number">43.5.2</span> Frakcje zagnieżdżone</a></li>
+  </ul></li>
+  <li><a href="#sumy-iloczyny-i-całki---notacja-agregatów" id="toc-sumy-iloczyny-i-całki---notacja-agregatów" class="nav-link" data-scroll-target="#sumy-iloczyny-i-całki---notacja-agregatów"><span class="header-section-number">43.6</span> Sumy, iloczyny i całki - notacja agregatów</a>
+  <ul class="collapse">
+  <li><a href="#sumy" id="toc-sumy" class="nav-link" data-scroll-target="#sumy"><span class="header-section-number">43.6.1</span> Sumy</a></li>
+  <li><a href="#iloczyny" id="toc-iloczyny" class="nav-link" data-scroll-target="#iloczyny"><span class="header-section-number">43.6.2</span> Iloczyny</a></li>
+  <li><a href="#całki-w-analizie-ciągłej" id="toc-całki-w-analizie-ciągłej" class="nav-link" data-scroll-target="#całki-w-analizie-ciągłej"><span class="header-section-number">43.6.3</span> Całki (w analizie ciągłej)</a></li>
+  </ul></li>
+  <li><a href="#granice---podstawa-analizy-matematycznej" id="toc-granice---podstawa-analizy-matematycznej" class="nav-link" data-scroll-target="#granice---podstawa-analizy-matematycznej"><span class="header-section-number">43.7</span> Granice - podstawa analizy matematycznej</a></li>
+  <li><a href="#macierze-i-wektory---algebra-liniowa-w-praktyce" id="toc-macierze-i-wektory---algebra-liniowa-w-praktyce" class="nav-link" data-scroll-target="#macierze-i-wektory---algebra-liniowa-w-praktyce"><span class="header-section-number">43.8</span> Macierze i wektory - algebra liniowa w praktyce</a>
+  <ul class="collapse">
+  <li><a href="#wektory-kolumnowe" id="toc-wektory-kolumnowe" class="nav-link" data-scroll-target="#wektory-kolumnowe"><span class="header-section-number">43.8.1</span> Wektory kolumnowe</a></li>
+  <li><a href="#macierze-podstawowe" id="toc-macierze-podstawowe" class="nav-link" data-scroll-target="#macierze-podstawowe"><span class="header-section-number">43.8.2</span> Macierze podstawowe</a></li>
+  </ul></li>
+  <li><a href="#praktyczne-przykłady-z-analizy-danych" id="toc-praktyczne-przykłady-z-analizy-danych" class="nav-link" data-scroll-target="#praktyczne-przykłady-z-analizy-danych"><span class="header-section-number">43.9</span> Praktyczne przykłady z analizy danych</a>
+  <ul class="collapse">
+  <li><a href="#statystyka-opisowa" id="toc-statystyka-opisowa" class="nav-link" data-scroll-target="#statystyka-opisowa"><span class="header-section-number">43.9.1</span> Statystyka opisowa</a></li>
+  <li><a href="#prawdopodobieństwo-i-rozkłady" id="toc-prawdopodobieństwo-i-rozkłady" class="nav-link" data-scroll-target="#prawdopodobieństwo-i-rozkłady"><span class="header-section-number">43.9.2</span> Prawdopodobieństwo i rozkłady</a></li>
+  <li><a href="#regresja-liniowa" id="toc-regresja-liniowa" class="nav-link" data-scroll-target="#regresja-liniowa"><span class="header-section-number">43.9.3</span> Regresja liniowa</a></li>
+  <li><a href="#analiza-szeregów-czasowych" id="toc-analiza-szeregów-czasowych" class="nav-link" data-scroll-target="#analiza-szeregów-czasowych"><span class="header-section-number">43.9.4</span> Analiza szeregów czasowych</a></li>
+  </ul></li>
+  <li><a href="#uczenie-maszynowe---wzory-optymalizacji" id="toc-uczenie-maszynowe---wzory-optymalizacji" class="nav-link" data-scroll-target="#uczenie-maszynowe---wzory-optymalizacji"><span class="header-section-number">43.10</span> Uczenie maszynowe - wzory optymalizacji</a>
+  <ul class="collapse">
+  <li><a href="#funkcje-kosztu" id="toc-funkcje-kosztu" class="nav-link" data-scroll-target="#funkcje-kosztu"><span class="header-section-number">43.10.1</span> Funkcje kosztu</a></li>
+  <li><a href="#funkcje-aktywacji" id="toc-funkcje-aktywacji" class="nav-link" data-scroll-target="#funkcje-aktywacji"><span class="header-section-number">43.10.2</span> Funkcje aktywacji</a></li>
+  <li><a href="#optymalizacja" id="toc-optymalizacja" class="nav-link" data-scroll-target="#optymalizacja"><span class="header-section-number">43.10.3</span> Optymalizacja</a></li>
+  </ul></li>
+  <li><a href="#transformacje-danych-w-wizualizacji" id="toc-transformacje-danych-w-wizualizacji" class="nav-link" data-scroll-target="#transformacje-danych-w-wizualizacji"><span class="header-section-number">43.11</span> Transformacje danych w wizualizacji</a>
+  <ul class="collapse">
+  <li><a href="#standaryzacja-i-normalizacja" id="toc-standaryzacja-i-normalizacja" class="nav-link" data-scroll-target="#standaryzacja-i-normalizacja"><span class="header-section-number">43.11.1</span> Standaryzacja i normalizacja</a></li>
+  <li><a href="#metryki-podobieństwa" id="toc-metryki-podobieństwa" class="nav-link" data-scroll-target="#metryki-podobieństwa"><span class="header-section-number">43.11.2</span> Metryki podobieństwa</a></li>
+  </ul></li>
+  <li><a href="#zaawansowane-techniki-formatowania" id="toc-zaawansowane-techniki-formatowania" class="nav-link" data-scroll-target="#zaawansowane-techniki-formatowania"><span class="header-section-number">43.12</span> Zaawansowane techniki formatowania</a>
+  <ul class="collapse">
+  <li><a href="#kontrola-odstępów" id="toc-kontrola-odstępów" class="nav-link" data-scroll-target="#kontrola-odstępów"><span class="header-section-number">43.12.1</span> Kontrola odstępów</a></li>
+  <li><a href="#wyrównywanie-równań" id="toc-wyrównywanie-równań" class="nav-link" data-scroll-target="#wyrównywanie-równań"><span class="header-section-number">43.12.2</span> Wyrównywanie równań</a></li>
+  <li><a href="#tekst-w-równaniach" id="toc-tekst-w-równaniach" class="nav-link" data-scroll-target="#tekst-w-równaniach"><span class="header-section-number">43.12.3</span> Tekst w równaniach</a></li>
+  <li><a href="#przypadki-i-definicje-po-kawałkach" id="toc-przypadki-i-definicje-po-kawałkach" class="nav-link" data-scroll-target="#przypadki-i-definicje-po-kawałkach"><span class="header-section-number">43.12.4</span> Przypadki i definicje po kawałkach</a></li>
+  </ul></li>
+  <li><a href="#często-używane-greckie-litery-w-analizie-danych" id="toc-często-używane-greckie-litery-w-analizie-danych" class="nav-link" data-scroll-target="#często-używane-greckie-litery-w-analizie-danych"><span class="header-section-number">43.13</span> Często używane greckie litery w analizie danych</a></li>
+  <li><a href="#praktyczne-wskazówki-dla-analityków-danych" id="toc-praktyczne-wskazówki-dla-analityków-danych" class="nav-link" data-scroll-target="#praktyczne-wskazówki-dla-analityków-danych"><span class="header-section-number">43.14</span> Praktyczne wskazówki dla analityków danych</a></li>
+  <li><a href="#rozwiązywanie-typowych-problemów" id="toc-rozwiązywanie-typowych-problemów" class="nav-link" data-scroll-target="#rozwiązywanie-typowych-problemów"><span class="header-section-number">43.15</span> Rozwiązywanie typowych problemów</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./latex.html"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="wprowadzenie-do-składni" class="level2" data-number="43.1">
+<h2 data-number="43.1" class="anchored" data-anchor-id="wprowadzenie-do-składni"><span class="header-section-number">43.1</span> Wprowadzenie do składni</h2>
+<p>LaTeX w Markdown pozwala na eleganckie przedstawienie wzorów matematycznych i statystycznych. Kluczową różnicą, którą musisz zrozumieć na początku, są dwa sposoby włączania wzorów: <strong>inline</strong> (w linii tekstu) i <strong>block</strong> (jako osobny blok).</p>
+</section>
+<section id="podstawowa-składnia---inline-vs-block" class="level2" data-number="43.2">
+<h2 data-number="43.2" class="anchored" data-anchor-id="podstawowa-składnia---inline-vs-block"><span class="header-section-number">43.2</span> Podstawowa składnia - inline vs block</h2>
+<section id="równania-inline-w-linii-tekstu" class="level3" data-number="43.2.1">
+<h3 data-number="43.2.1" class="anchored" data-anchor-id="równania-inline-w-linii-tekstu"><span class="header-section-number">43.2.1</span> Równania inline (w linii tekstu)</h3>
+<p>Wzory w linii tekstu otaczamy <strong>pojedynczymi</strong> znakami dolara:</p>
+<p><strong>Kod:</strong> <code>$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$</code></p>
+<p><strong>Rezultat:</strong> Średnia arytmetyczna to <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i\)</span> w tej linii tekstu.</p>
+</section>
+<section id="równania-blokowe-wycentrowane" class="level3" data-number="43.2.2">
+<h3 data-number="43.2.2" class="anchored" data-anchor-id="równania-blokowe-wycentrowane"><span class="header-section-number">43.2.2</span> Równania blokowe (wycentrowane)</h3>
+<p>Wzory jako osobne bloki otaczamy <strong>podwójnymi</strong> dolarami:</p>
+<p><strong>Kod:</strong></p>
+<pre><code>$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i\]</span></p>
+</section>
+</section>
+<section id="podstawowe-symbole-matematyczne" class="level2" data-number="43.3">
+<h2 data-number="43.3" class="anchored" data-anchor-id="podstawowe-symbole-matematyczne"><span class="header-section-number">43.3</span> Podstawowe symbole matematyczne</h2>
+<p>Zacznijmy od fundamentów - podstawowych operatorów i symboli, które będziesz używać najczęściej.</p>
+<section id="operatory-arytmetyczne" class="level3" data-number="43.3.1">
+<h3 data-number="43.3.1" class="anchored" data-anchor-id="operatory-arytmetyczne"><span class="header-section-number">43.3.1</span> Operatory arytmetyczne</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Kod</th>
+<th>Rezultat</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$a + b$</code></td>
+<td><span class="math inline">\(a + b\)</span></td>
+<td>Dodawanie</td>
+</tr>
+<tr class="even">
+<td><code>$a - b$</code></td>
+<td><span class="math inline">\(a - b\)</span></td>
+<td>Odejmowanie</td>
+</tr>
+<tr class="odd">
+<td><code>$a \times b$</code></td>
+<td><span class="math inline">\(a \times b\)</span></td>
+<td>Mnożenie (krzyżyk)</td>
+</tr>
+<tr class="even">
+<td><code>$a \cdot b$</code></td>
+<td><span class="math inline">\(a \cdot b\)</span></td>
+<td>Mnożenie (kropka)</td>
+</tr>
+<tr class="odd">
+<td><code>$a \div b$</code></td>
+<td><span class="math inline">\(a \div b\)</span></td>
+<td>Dzielenie</td>
+</tr>
+<tr class="even">
+<td><code>$\frac{a}{b}$</code></td>
+<td><span class="math inline">\(\frac{a}{b}\)</span></td>
+<td>Ułamek</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="symbole-specjalne-w-analizie-danych" class="level3" data-number="43.3.2">
+<h3 data-number="43.3.2" class="anchored" data-anchor-id="symbole-specjalne-w-analizie-danych"><span class="header-section-number">43.3.2</span> Symbole specjalne w analizie danych</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Kod</th>
+<th>Rezultat</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\infty$</code></td>
+<td><span class="math inline">\(\infty\)</span></td>
+<td>Nieskończoność w granicach</td>
+</tr>
+<tr class="even">
+<td><code>$\pm$</code></td>
+<td><span class="math inline">\(\pm\)</span></td>
+<td>Przedziały ufności</td>
+</tr>
+<tr class="odd">
+<td><code>$\neq$</code></td>
+<td><span class="math inline">\(\neq\)</span></td>
+<td>Hipotezy alternatywne</td>
+</tr>
+<tr class="even">
+<td><code>$\leq$</code></td>
+<td><span class="math inline">\(\leq\)</span></td>
+<td>Nierówności w testach</td>
+</tr>
+<tr class="odd">
+<td><code>$\geq$</code></td>
+<td><span class="math inline">\(\geq\)</span></td>
+<td>Warunki brzegowe</td>
+</tr>
+<tr class="even">
+<td><code>$\propto$</code></td>
+<td><span class="math inline">\(\propto\)</span></td>
+<td>Proporcjonalność</td>
+</tr>
+<tr class="odd">
+<td><code>$\approx$</code></td>
+<td><span class="math inline">\(\approx\)</span></td>
+<td>Przybliżenia</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="potęgi-indeksy-i-pierwiastki---podstawy-notacji" class="level2" data-number="43.4">
+<h2 data-number="43.4" class="anchored" data-anchor-id="potęgi-indeksy-i-pierwiastki---podstawy-notacji"><span class="header-section-number">43.4</span> Potęgi, indeksy i pierwiastki - podstawy notacji</h2>
+<section id="potęgi-i-indeksy" class="level3" data-number="43.4.1">
+<h3 data-number="43.4.1" class="anchored" data-anchor-id="potęgi-i-indeksy"><span class="header-section-number">43.4.1</span> Potęgi i indeksy</h3>
+<p>Potęgi zapisujemy używając <code>^</code>, a indeksy dolne <code>_</code>. To fundamentalna składnia w statystyce:</p>
+<p><strong>Pojedyncze znaki:</strong> - Kod: <code>$x^2$</code> → Rezultat: <span class="math inline">\(x^2\)</span> - Kod: <code>$x_1$</code> → Rezultat: <span class="math inline">\(x_1\)</span></p>
+<p><strong>Wieloznakowe wyrażenia (zawsze w nawiasach klamrowych):</strong> - Kod: <code>$x^{n+1}$</code> → Rezultat: <span class="math inline">\(x^{n+1}\)</span> - Kod: <code>$x_{i,j}$</code> → Rezultat: <span class="math inline">\(x_{i,j}\)</span></p>
+<p><strong>Kombinowane:</strong> - Kod: <code>$\sigma^2_x$</code> → Rezultat: <span class="math inline">\(\sigma^2_x\)</span> (wariancja zmiennej x)</p>
+</section>
+<section id="pierwiastki" class="level3" data-number="43.4.2">
+<h3 data-number="43.4.2" class="anchored" data-anchor-id="pierwiastki"><span class="header-section-number">43.4.2</span> Pierwiastki</h3>
+<p><strong>Kod:</strong> <code>$\sqrt{x}$</code> → <strong>Rezultat:</strong> <span class="math inline">\(\sqrt{x}\)</span></p>
+<p><strong>Kod:</strong> <code>$\sqrt[n]{x}$</code> → <strong>Rezultat:</strong> <span class="math inline">\(\sqrt[n]{x}\)</span></p>
+<p><strong>Kod:</strong> <code>$\sqrt{x^2 + y^2}$</code> → <strong>Rezultat:</strong> <span class="math inline">\(\sqrt{x^2 + y^2}\)</span> (odległość euklidesowa)</p>
+</section>
+</section>
+<section id="frakcje-i-ułamki---serce-wzorów-statystycznych" class="level2" data-number="43.5">
+<h2 data-number="43.5" class="anchored" data-anchor-id="frakcje-i-ułamki---serce-wzorów-statystycznych"><span class="header-section-number">43.5</span> Frakcje i ułamki - serce wzorów statystycznych</h2>
+<section id="podstawowa-składnia-frakcji" class="level3" data-number="43.5.1">
+<h3 data-number="43.5.1" class="anchored" data-anchor-id="podstawowa-składnia-frakcji"><span class="header-section-number">43.5.1</span> Podstawowa składnia frakcji</h3>
+<p>Używamy polecenia <code>\frac{licznik}{mianownik}</code>:</p>
+<p><strong>Kod:</strong></p>
+<pre><code>$$\frac{a}{b}, \quad \frac{x+1}{x-1}, \quad \frac{\partial f}{\partial x}$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[\frac{a}{b}, \quad \frac{x+1}{x-1}, \quad \frac{\partial f}{\partial x}\]</span></p>
+<p>Zwróć uwagę na <code>\quad</code> - to polecenie dodaje odstęp między wyrażeniami.</p>
+</section>
+<section id="frakcje-zagnieżdżone" class="level3" data-number="43.5.2">
+<h3 data-number="43.5.2" class="anchored" data-anchor-id="frakcje-zagnieżdżone"><span class="header-section-number">43.5.2</span> Frakcje zagnieżdżone</h3>
+<p><strong>Kod:</strong></p>
+<pre><code>$$\frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \cdots}}}$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[\frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \cdots}}}\]</span></p>
+</section>
+</section>
+<section id="sumy-iloczyny-i-całki---notacja-agregatów" class="level2" data-number="43.6">
+<h2 data-number="43.6" class="anchored" data-anchor-id="sumy-iloczyny-i-całki---notacja-agregatów"><span class="header-section-number">43.6</span> Sumy, iloczyny i całki - notacja agregatów</h2>
+<p>Te konstrukcje są kluczowe w analizie danych, więc przyjrzyjmy się im szczegółowo.</p>
+<section id="sumy" class="level3" data-number="43.6.1">
+<h3 data-number="43.6.1" class="anchored" data-anchor-id="sumy"><span class="header-section-number">43.6.1</span> Sumy</h3>
+<p><strong>Podstawowa suma inline:</strong></p>
+<p>Kod: <code>$\sum_{i=1}^{n} x_i$</code> → Rezultat: <span class="math inline">\(\sum_{i=1}^{n} x_i\)</span></p>
+<p><strong>Suma w bloku z pełną notacją:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n$$</code></pre>
+<p>Rezultat: <span class="math display">\[\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n\]</span></p>
+</section>
+<section id="iloczyny" class="level3" data-number="43.6.2">
+<h3 data-number="43.6.2" class="anchored" data-anchor-id="iloczyny"><span class="header-section-number">43.6.2</span> Iloczyny</h3>
+<p><strong>Kod:</strong></p>
+<pre><code>$$\prod_{i=1}^{n} x_i = x_1 \times x_2 \times \cdots \times x_n$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[\prod_{i=1}^{n} x_i = x_1 \times x_2 \times \cdots \times x_n\]</span></p>
+</section>
+<section id="całki-w-analizie-ciągłej" class="level3" data-number="43.6.3">
+<h3 data-number="43.6.3" class="anchored" data-anchor-id="całki-w-analizie-ciągłej"><span class="header-section-number">43.6.3</span> Całki (w analizie ciągłej)</h3>
+<p><strong>Całka nieoznaczona:</strong></p>
+<p>Kod: <code>$\int f(x) dx$</code> → Rezultat: <span class="math inline">\(\int f(x) dx\)</span></p>
+<p><strong>Całka oznaczona:</strong></p>
+<p>Kod: <code>$\int_a^b f(x) dx$</code> → Rezultat: <span class="math inline">\(\int_a^b f(x) dx\)</span></p>
+<p><strong>Całka podwójna:</strong></p>
+<p>Kod: <code>$\iint_D f(x,y) \, dx \, dy$</code> → Rezultat: <span class="math inline">\(\iint_D f(x,y) \, dx \, dy\)</span></p>
+<p>Zwróć uwagę na <code>\,</code> - to małe odstępy przed dx i dy.</p>
+</section>
+</section>
+<section id="granice---podstawa-analizy-matematycznej" class="level2" data-number="43.7">
+<h2 data-number="43.7" class="anchored" data-anchor-id="granice---podstawa-analizy-matematycznej"><span class="header-section-number">43.7</span> Granice - podstawa analizy matematycznej</h2>
+<p><strong>Kod:</strong></p>
+<pre><code>$$\lim_{n \to \infty} \frac{1}{n} = 0$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[\lim_{n \to \infty} \frac{1}{n} = 0\]</span></p>
+<p><strong>Kod:</strong></p>
+<pre><code>$$\lim_{x \to 0} \frac{\sin x}{x} = 1$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[\lim_{x \to 0} \frac{\sin x}{x} = 1\]</span></p>
+</section>
+<section id="macierze-i-wektory---algebra-liniowa-w-praktyce" class="level2" data-number="43.8">
+<h2 data-number="43.8" class="anchored" data-anchor-id="macierze-i-wektory---algebra-liniowa-w-praktyce"><span class="header-section-number">43.8</span> Macierze i wektory - algebra liniowa w praktyce</h2>
+<section id="wektory-kolumnowe" class="level3" data-number="43.8.1">
+<h3 data-number="43.8.1" class="anchored" data-anchor-id="wektory-kolumnowe"><span class="header-section-number">43.8.1</span> Wektory kolumnowe</h3>
+<p><strong>Kod:</strong></p>
+<pre><code>$$\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}\]</span></p>
+</section>
+<section id="macierze-podstawowe" class="level3" data-number="43.8.2">
+<h3 data-number="43.8.2" class="anchored" data-anchor-id="macierze-podstawowe"><span class="header-section-number">43.8.2</span> Macierze podstawowe</h3>
+<p><strong>Macierz 2×2:</strong></p>
+<p>Kod:</p>
+<pre><code>$$A = \begin{pmatrix}
+a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22}
+\end{pmatrix}$$</code></pre>
+<p>Rezultat: <span class="math display">\[A = \begin{pmatrix}
+a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22}
+\end{pmatrix}\]</span></p>
+<p><strong>Macierz identycznościowa:</strong></p>
+<p>Kod:</p>
+<pre><code>$$I = \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}$$</code></pre>
+<p>Rezultat: <span class="math display">\[I = \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}\]</span></p>
+</section>
+</section>
+<section id="praktyczne-przykłady-z-analizy-danych" class="level2" data-number="43.9">
+<h2 data-number="43.9" class="anchored" data-anchor-id="praktyczne-przykłady-z-analizy-danych"><span class="header-section-number">43.9</span> Praktyczne przykłady z analizy danych</h2>
+<p>Teraz przejdźmy do rzeczywistych wzorów, które używasz w codziennej pracy z danymi.</p>
+<section id="statystyka-opisowa" class="level3" data-number="43.9.1">
+<h3 data-number="43.9.1" class="anchored" data-anchor-id="statystyka-opisowa"><span class="header-section-number">43.9.1</span> Statystyka opisowa</h3>
+<p><strong>Średnia arytmetyczna:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$$</code></pre>
+<p>Rezultat: <span class="math display">\[\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i\]</span></p>
+<p><strong>Wariancja populacyjna:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\sigma^2 = \frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2$$</code></pre>
+<p>Rezultat: <span class="math display">\[\sigma^2 = \frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2\]</span></p>
+<p><strong>Odchylenie standardowe:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2}$$</code></pre>
+<p>Rezultat: <span class="math display">\[\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2}\]</span></p>
+<p><strong>Współczynnik korelacji Pearsona:</strong></p>
+<p>Kod:</p>
+<pre><code>$$r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}$$</code></pre>
+<p>Rezultat: <span class="math display">\[r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}\]</span></p>
+</section>
+<section id="prawdopodobieństwo-i-rozkłady" class="level3" data-number="43.9.2">
+<h3 data-number="43.9.2" class="anchored" data-anchor-id="prawdopodobieństwo-i-rozkłady"><span class="header-section-number">43.9.2</span> Prawdopodobieństwo i rozkłady</h3>
+<p><strong>Prawo prawdopodobieństwa całkowitego:</strong></p>
+<p>Kod:</p>
+<pre><code>$$P(A) = \sum_{i=1}^{n} P(A|B_i)P(B_i)$$</code></pre>
+<p>Rezultat: <span class="math display">\[P(A) = \sum_{i=1}^{n} P(A|B_i)P(B_i)\]</span></p>
+<p><strong>Wzór Bayesa:</strong></p>
+<p>Kod:</p>
+<pre><code>$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$</code></pre>
+<p>Rezultat: <span class="math display">\[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]</span></p>
+<p><strong>Rozkład normalny (funkcja gęstości):</strong></p>
+<p>Kod:</p>
+<pre><code>$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$</code></pre>
+<p>Rezultat: <span class="math display">\[f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}\]</span></p>
+</section>
+<section id="regresja-liniowa" class="level3" data-number="43.9.3">
+<h3 data-number="43.9.3" class="anchored" data-anchor-id="regresja-liniowa"><span class="header-section-number">43.9.3</span> Regresja liniowa</h3>
+<p><strong>Model regresji prostej:</strong></p>
+<p>Kod:</p>
+<pre><code>$$y = \beta_0 + \beta_1 x + \epsilon$$</code></pre>
+<p>Rezultat: <span class="math display">\[y = \beta_0 + \beta_1 x + \epsilon\]</span></p>
+<p><strong>Estymator najmniejszych kwadratów dla <span class="math inline">\(\beta_1\)</span>:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\hat{\beta_1} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}$$</code></pre>
+<p>Rezultat: <span class="math display">\[\hat{\beta_1} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}\]</span></p>
+<p><strong>Współczynnik determinacji R²:</strong></p>
+<p>Kod:</p>
+<pre><code>$$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum_i (y_i - \hat{y_i})^2}{\sum_i (y_i - \bar{y})^2}$$</code></pre>
+<p>Rezultat: <span class="math display">\[R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum_i (y_i - \hat{y_i})^2}{\sum_i (y_i - \bar{y})^2}\]</span></p>
+</section>
+<section id="analiza-szeregów-czasowych" class="level3" data-number="43.9.4">
+<h3 data-number="43.9.4" class="anchored" data-anchor-id="analiza-szeregów-czasowych"><span class="header-section-number">43.9.4</span> Analiza szeregów czasowych</h3>
+<p><strong>Funkcja autokorelacji:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\rho_k = \frac{\sum_{t=k+1}^{n}(y_t - \bar{y})(y_{t-k} - \bar{y})}{\sum_{t=1}^{n}(y_t - \bar{y})^2}$$</code></pre>
+<p>Rezultat: <span class="math display">\[\rho_k = \frac{\sum_{t=k+1}^{n}(y_t - \bar{y})(y_{t-k} - \bar{y})}{\sum_{t=1}^{n}(y_t - \bar{y})^2}\]</span></p>
+<p><strong>Model ARIMA(p,d,q):</strong></p>
+<p>Kod:</p>
+<pre><code>$$\phi(B)(1-B)^d X_t = \theta(B)\epsilon_t$$</code></pre>
+<p>Rezultat: <span class="math display">\[\phi(B)(1-B)^d X_t = \theta(B)\epsilon_t\]</span></p>
+<p>gdzie B to operator przesunięcia wstecz.</p>
+</section>
+</section>
+<section id="uczenie-maszynowe---wzory-optymalizacji" class="level2" data-number="43.10">
+<h2 data-number="43.10" class="anchored" data-anchor-id="uczenie-maszynowe---wzory-optymalizacji"><span class="header-section-number">43.10</span> Uczenie maszynowe - wzory optymalizacji</h2>
+<section id="funkcje-kosztu" class="level3" data-number="43.10.1">
+<h3 data-number="43.10.1" class="anchored" data-anchor-id="funkcje-kosztu"><span class="header-section-number">43.10.1</span> Funkcje kosztu</h3>
+<p><strong>Błąd średniokwadratowy (MSE):</strong></p>
+<p>Kod:</p>
+<pre><code>$$MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2$$</code></pre>
+<p>Rezultat: <span class="math display">\[MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2\]</span></p>
+<p><strong>Cross-entropy loss:</strong></p>
+<p>Kod:</p>
+<pre><code>$$H(p,q) = -\sum_{i=1}^{n} p_i \log q_i$$</code></pre>
+<p>Rezultat: <span class="math display">\[H(p,q) = -\sum_{i=1}^{n} p_i \log q_i\]</span></p>
+</section>
+<section id="funkcje-aktywacji" class="level3" data-number="43.10.2">
+<h3 data-number="43.10.2" class="anchored" data-anchor-id="funkcje-aktywacji"><span class="header-section-number">43.10.2</span> Funkcje aktywacji</h3>
+<p><strong>Sigmoid:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\sigma(x) = \frac{1}{1 + e^{-x}}$$</code></pre>
+<p>Rezultat: <span class="math display">\[\sigma(x) = \frac{1}{1 + e^{-x}}\]</span></p>
+<p><strong>ReLU:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\text{ReLU}(x) = \max(0, x)$$</code></pre>
+<p>Rezultat: <span class="math display">\[\text{ReLU}(x) = \max(0, x)\]</span></p>
+<p><strong>Softmax:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}$$</code></pre>
+<p>Rezultat: <span class="math display">\[\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}\]</span></p>
+</section>
+<section id="optymalizacja" class="level3" data-number="43.10.3">
+<h3 data-number="43.10.3" class="anchored" data-anchor-id="optymalizacja"><span class="header-section-number">43.10.3</span> Optymalizacja</h3>
+<p><strong>Gradient descent:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\theta_{t+1} = \theta_t - \alpha \nabla_\theta J(\theta)$$</code></pre>
+<p>Rezultat: <span class="math display">\[\theta_{t+1} = \theta_t - \alpha \nabla_\theta J(\theta)\]</span></p>
+<p>gdzie <span class="math inline">\(\alpha\)</span> to learning rate, a <span class="math inline">\(J(\theta)\)</span> to funkcja kosztu.</p>
+</section>
+</section>
+<section id="transformacje-danych-w-wizualizacji" class="level2" data-number="43.11">
+<h2 data-number="43.11" class="anchored" data-anchor-id="transformacje-danych-w-wizualizacji"><span class="header-section-number">43.11</span> Transformacje danych w wizualizacji</h2>
+<section id="standaryzacja-i-normalizacja" class="level3" data-number="43.11.1">
+<h3 data-number="43.11.1" class="anchored" data-anchor-id="standaryzacja-i-normalizacja"><span class="header-section-number">43.11.1</span> Standaryzacja i normalizacja</h3>
+<p><strong>Standaryzacja (z-score):</strong></p>
+<p>Kod: <code>$z = \frac{x - \mu}{\sigma}$</code></p>
+<p>Rezultat: <span class="math inline">\(z = \frac{x - \mu}{\sigma}\)</span></p>
+<p><strong>Normalizacja min-max:</strong></p>
+<p>Kod:</p>
+<pre><code>$$x_{norm} = \frac{x - x_{min}}{x_{max} - x_{min}}$$</code></pre>
+<p>Rezultat: <span class="math display">\[x_{norm} = \frac{x - x_{min}}{x_{max} - x_{min}}\]</span></p>
+</section>
+<section id="metryki-podobieństwa" class="level3" data-number="43.11.2">
+<h3 data-number="43.11.2" class="anchored" data-anchor-id="metryki-podobieństwa"><span class="header-section-number">43.11.2</span> Metryki podobieństwa</h3>
+<p><strong>Odległość euklidesowa:</strong></p>
+<p>Kod:</p>
+<pre><code>$$d(p,q) = \sqrt{\sum_{i=1}^{n}(p_i - q_i)^2}$$</code></pre>
+<p>Rezultat: <span class="math display">\[d(p,q) = \sqrt{\sum_{i=1}^{n}(p_i - q_i)^2}\]</span></p>
+<p><strong>Odległość Manhattan:</strong></p>
+<p>Kod:</p>
+<pre><code>$$d(p,q) = \sum_{i=1}^{n}|p_i - q_i|$$</code></pre>
+<p>Rezultat: <span class="math display">\[d(p,q) = \sum_{i=1}^{n}|p_i - q_i|\]</span></p>
+<p><strong>Podobieństwo kosinusowe:</strong></p>
+<p>Kod:</p>
+<pre><code>$$\cos(\theta) = \frac{A \cdot B}{||A|| \cdot ||B||} = \frac{\sum_{i=1}^{n} A_i B_i}{\sqrt{\sum_{i=1}^{n} A_i^2} \sqrt{\sum_{i=1}^{n} B_i^2}}$$</code></pre>
+<p>Rezultat: <span class="math display">\[\cos(\theta) = \frac{A \cdot B}{||A|| \cdot ||B||} = \frac{\sum_{i=1}^{n} A_i B_i}{\sqrt{\sum_{i=1}^{n} A_i^2} \sqrt{\sum_{i=1}^{n} B_i^2}}\]</span></p>
+</section>
+</section>
+<section id="zaawansowane-techniki-formatowania" class="level2" data-number="43.12">
+<h2 data-number="43.12" class="anchored" data-anchor-id="zaawansowane-techniki-formatowania"><span class="header-section-number">43.12</span> Zaawansowane techniki formatowania</h2>
+<section id="kontrola-odstępów" class="level3" data-number="43.12.1">
+<h3 data-number="43.12.1" class="anchored" data-anchor-id="kontrola-odstępów"><span class="header-section-number">43.12.1</span> Kontrola odstępów</h3>
+<p>Aby wzory były czytelne, kontroluj odstępy za pomocą tych poleceń:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Kod</th>
+<th>Rezultat</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$a \, b$</code></td>
+<td><span class="math inline">\(a \, b\)</span></td>
+<td>Mały odstęp</td>
+</tr>
+<tr class="even">
+<td><code>$a \: b$</code></td>
+<td><span class="math inline">\(a \: b\)</span></td>
+<td>Średni odstęp</td>
+</tr>
+<tr class="odd">
+<td><code>$a \; b$</code></td>
+<td><span class="math inline">\(a \; b\)</span></td>
+<td>Większy odstęp</td>
+</tr>
+<tr class="even">
+<td><code>$a \quad b$</code></td>
+<td><span class="math inline">\(a \quad b\)</span></td>
+<td>Duży odstęp</td>
+</tr>
+<tr class="odd">
+<td><code>$a \qquad b$</code></td>
+<td><span class="math inline">\(a \qquad b\)</span></td>
+<td>Bardzo duży odstęp</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wyrównywanie-równań" class="level3" data-number="43.12.2">
+<h3 data-number="43.12.2" class="anchored" data-anchor-id="wyrównywanie-równań"><span class="header-section-number">43.12.2</span> Wyrównywanie równań</h3>
+<p>Dla układów równań używamy środowiska <code>align</code>:</p>
+<p><strong>Kod:</strong></p>
+<pre><code>\begin{align}
+x + y &amp;= 5 \\
+2x - y &amp;= 1
+\end{align}</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[\begin{align}
+x + y &amp;= 5 \\
+2x - y &amp;= 1
+\end{align}\]</span></p>
+<p>Znak <code>&amp;</code> określa punkt wyrównania, a <code>\\</code> kończy linię.</p>
+</section>
+<section id="tekst-w-równaniach" class="level3" data-number="43.12.3">
+<h3 data-number="43.12.3" class="anchored" data-anchor-id="tekst-w-równaniach"><span class="header-section-number">43.12.3</span> Tekst w równaniach</h3>
+<p>Używamy <code>\text{}</code> dla zwykłego tekstu w równaniach:</p>
+<p><strong>Kod:</strong></p>
+<pre><code>$$P(\text{sukces}) = \frac{\text{liczba sukcesów}}{\text{liczba prób}}$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[P(\text{sukces}) = \frac{\text{liczba sukcesów}}{\text{liczba prób}}\]</span></p>
+</section>
+<section id="przypadki-i-definicje-po-kawałkach" class="level3" data-number="43.12.4">
+<h3 data-number="43.12.4" class="anchored" data-anchor-id="przypadki-i-definicje-po-kawałkach"><span class="header-section-number">43.12.4</span> Przypadki i definicje po kawałkach</h3>
+<p><strong>Kod:</strong></p>
+<pre><code>$$f(x) = \begin{cases}
+x^2 &amp; \text{gdy } x \geq 0 \\
+-x^2 &amp; \text{gdy } x &lt; 0
+\end{cases}$$</code></pre>
+<p><strong>Rezultat:</strong> <span class="math display">\[f(x) = \begin{cases}
+x^2 &amp; \text{gdy } x \geq 0 \\
+-x^2 &amp; \text{gdy } x &lt; 0
+\end{cases}\]</span></p>
+</section>
+</section>
+<section id="często-używane-greckie-litery-w-analizie-danych" class="level2" data-number="43.13">
+<h2 data-number="43.13" class="anchored" data-anchor-id="często-używane-greckie-litery-w-analizie-danych"><span class="header-section-number">43.13</span> Często używane greckie litery w analizie danych</h2>
+<p>Greckie litery są powszechnie używane w statystyce i uczeniu maszynowym:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Kod</th>
+<th>Mała</th>
+<th>Duża</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\alpha</code></td>
+<td><span class="math inline">\(\alpha\)</span></td>
+<td>A</td>
+<td>Learning rate, poziom istotności</td>
+</tr>
+<tr class="even">
+<td><code>\beta</code></td>
+<td><span class="math inline">\(\beta\)</span></td>
+<td>B</td>
+<td>Współczynniki regresji</td>
+</tr>
+<tr class="odd">
+<td><code>\gamma</code></td>
+<td><span class="math inline">\(\gamma\)</span></td>
+<td><span class="math inline">\(\Gamma\)</span></td>
+<td>Funkcja gamma</td>
+</tr>
+<tr class="even">
+<td><code>\delta</code></td>
+<td><span class="math inline">\(\delta\)</span></td>
+<td><span class="math inline">\(\Delta\)</span></td>
+<td>Różnice, gradienty</td>
+</tr>
+<tr class="odd">
+<td><code>\epsilon</code></td>
+<td><span class="math inline">\(\epsilon\)</span></td>
+<td>E</td>
+<td>Błędy, tolerancja</td>
+</tr>
+<tr class="even">
+<td><code>\theta</code></td>
+<td><span class="math inline">\(\theta\)</span></td>
+<td><span class="math inline">\(\Theta\)</span></td>
+<td>Parametry modelu</td>
+</tr>
+<tr class="odd">
+<td><code>\lambda</code></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(\Lambda\)</span></td>
+<td>Regularyzacja, eigenvalues</td>
+</tr>
+<tr class="even">
+<td><code>\mu</code></td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td>M</td>
+<td>Średnia populacyjna</td>
+</tr>
+<tr class="odd">
+<td><code>\sigma</code></td>
+<td><span class="math inline">\(\sigma\)</span></td>
+<td><span class="math inline">\(\Sigma\)</span></td>
+<td>Odchylenie standardowe, sumy</td>
+</tr>
+<tr class="even">
+<td><code>\rho</code></td>
+<td><span class="math inline">\(\rho\)</span></td>
+<td>P</td>
+<td>Korelacja</td>
+</tr>
+<tr class="odd">
+<td><code>\phi</code></td>
+<td><span class="math inline">\(\phi\)</span></td>
+<td><span class="math inline">\(\Phi\)</span></td>
+<td>Funkcja standardowego rozkładu normalnego</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="praktyczne-wskazówki-dla-analityków-danych" class="level2" data-number="43.14">
+<h2 data-number="43.14" class="anchored" data-anchor-id="praktyczne-wskazówki-dla-analityków-danych"><span class="header-section-number">43.14</span> Praktyczne wskazówki dla analityków danych</h2>
+<p>Gdy tworzysz dokumentację analityczną, pamiętaj o kilku kluczowych zasadach, które sprawią, że Twoje wzory będą nie tylko poprawne, ale także profesjonalnie wyglądające i czytelne.</p>
+<p>Pierwszą zasadą jest konsekwentność w używaniu notacji. Jeśli raz zdecydujesz się używać <span class="math inline">\(\bar{x}\)</span> dla średniej, trzymaj się tego przez cały dokument. Nie mieszaj z <span class="math inline">\(\mu\)</span> bez wyjaśnienia różnicy. Podobnie z oznaczeniami indeksów - jeśli używasz <span class="math inline">\(i\)</span> dla obserwacji, nie zmieniaj nagle na <span class="math inline">\(j\)</span> bez powodu.</p>
+<p>Drugą kluczową sprawą jest kontekst. Zawsze wyjaśnij, co oznaczają Twoje symbole. Po pierwszym użyciu wzoru dodaj definicję typu “gdzie <span class="math inline">\(n\)</span> to liczba obserwacji, a <span class="math inline">\(x_i\)</span> to <span class="math inline">\(i\)</span>-ta obserwacja”. Czytelnik doceni jasność, nawet jeśli wydaje mu się to oczywiste.</p>
+<p>Trzecią zasadą jest umiejętne łączenie wzorów z kodem. W Jupyter Notebook czy R Markdown często pokazujesz wzór teoretyczny, a potem jego implementację. Dbaj o spójność nazw zmiennych między wzorem a kodem - jeśli w wzorze masz <span class="math inline">\(\sigma^2\)</span>, to w kodzie użyj <code>sigma_squared</code> lub <code>variance</code>, nie <code>var2</code> czy <code>s</code>.</p>
+<p>Czwartą praktyczną wskazówką jest używanie numerowania wzorów dla referencji. W dłuższych dokumentach oznaczaj ważne wzory numerami, żeby móc się do nich później odwoływać.</p>
+</section>
+<section id="rozwiązywanie-typowych-problemów" class="level2" data-number="43.15">
+<h2 data-number="43.15" class="anchored" data-anchor-id="rozwiązywanie-typowych-problemów"><span class="header-section-number">43.15</span> Rozwiązywanie typowych problemów</h2>
+<p>Podczas pracy z LaTeX w Markdown możesz napotkać kilka typowych problemów. Najczęstszym błędem jest zapominanie o nawiasach klamrowych w indeksach i potęgach. Pamiętaj: pojedyncze znaki nie wymagają nawiasów (<code>$x^2$</code>), ale wyrażenia już tak (<code>$x^{n+1}$</code>).</p>
+<p>Kolejnym częstym problemem są spacje w nazwach funkcji. LaTeX nie rozpoznaje <code>sin</code> jako funkcji - musisz użyć <code>\sin</code>. To samo dotyczy <code>\log</code>, <code>\exp</code>, <code>\max</code>, <code>\min</code> itp.</p>
+<p>Trzecim problemem jest mieszanie stylów inline i blokowych. Jeśli wzór jest skomplikowany, lepiej użyj bloku (<code>$$</code>), nawet jeśli jest krótki. Czytelność jest najważniejsza.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Skopiowano!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Skopiowano!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./markdown.html" class="pagination-link" aria-label="Markdown">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./problem01.html" class="pagination-link" aria-label="Problem #1">
+        <span class="nav-page-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Problem #1</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></div></div></footer></body></html>

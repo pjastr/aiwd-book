@@ -1,0 +1,559 @@
+# LaTeX
+
+
+## Wprowadzenie do składni
+
+LaTeX w Markdown pozwala na eleganckie przedstawienie wzorów matematycznych i statystycznych. Kluczową różnicą, którą musisz zrozumieć na początku, są dwa sposoby włączania wzorów: **inline** (w linii tekstu) i **block** (jako osobny blok).
+
+## Podstawowa składnia - inline vs block
+
+### Równania inline (w linii tekstu)
+Wzory w linii tekstu otaczamy **pojedynczymi** znakami dolara:
+
+**Kod:** `$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$`
+
+**Rezultat:** Średnia arytmetyczna to $\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$ w tej linii tekstu.
+
+### Równania blokowe (wycentrowane)
+Wzory jako osobne bloki otaczamy **podwójnymi** dolarami:
+
+**Kod:** 
+```
+$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$$
+```
+
+**Rezultat:**
+$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$$
+
+## Podstawowe symbole matematyczne
+
+Zacznijmy od fundamentów - podstawowych operatorów i symboli, które będziesz używać najczęściej.
+
+### Operatory arytmetyczne
+
+| Kod | Rezultat | Opis |
+|-----|----------|------|
+| `$a + b$` | $a + b$ | Dodawanie |
+| `$a - b$` | $a - b$ | Odejmowanie |
+| `$a \times b$` | $a \times b$ | Mnożenie (krzyżyk) |
+| `$a \cdot b$` | $a \cdot b$ | Mnożenie (kropka) |
+| `$a \div b$` | $a \div b$ | Dzielenie |
+| `$\frac{a}{b}$` | $\frac{a}{b}$ | Ułamek |
+
+### Symbole specjalne w analizie danych
+
+| Kod | Rezultat | Zastosowanie |
+|-----|----------|--------------|
+| `$\infty$` | $\infty$ | Nieskończoność w granicach |
+| `$\pm$` | $\pm$ | Przedziały ufności |
+| `$\neq$` | $\neq$ | Hipotezy alternatywne |
+| `$\leq$` | $\leq$ | Nierówności w testach |
+| `$\geq$` | $\geq$ | Warunki brzegowe |
+| `$\propto$` | $\propto$ | Proporcjonalność |
+| `$\approx$` | $\approx$ | Przybliżenia |
+
+## Potęgi, indeksy i pierwiastki - podstawy notacji
+
+### Potęgi i indeksy
+Potęgi zapisujemy używając `^`, a indeksy dolne `_`. To fundamentalna składnia w statystyce:
+
+**Pojedyncze znaki:**
+- Kod: `$x^2$` → Rezultat: $x^2$
+- Kod: `$x_1$` → Rezultat: $x_1$
+
+**Wieloznakowe wyrażenia (zawsze w nawiasach klamrowych):**
+- Kod: `$x^{n+1}$` → Rezultat: $x^{n+1}$
+- Kod: `$x_{i,j}$` → Rezultat: $x_{i,j}$
+
+**Kombinowane:**
+- Kod: `$\sigma^2_x$` → Rezultat: $\sigma^2_x$ (wariancja zmiennej x)
+
+### Pierwiastki
+**Kod:** `$\sqrt{x}$` → **Rezultat:** $\sqrt{x}$
+
+**Kod:** `$\sqrt[n]{x}$` → **Rezultat:** $\sqrt[n]{x}$
+
+**Kod:** `$\sqrt{x^2 + y^2}$` → **Rezultat:** $\sqrt{x^2 + y^2}$ (odległość euklidesowa)
+
+## Frakcje i ułamki - serce wzorów statystycznych
+
+### Podstawowa składnia frakcji
+Używamy polecenia `\frac{licznik}{mianownik}`:
+
+**Kod:** 
+```
+$$\frac{a}{b}, \quad \frac{x+1}{x-1}, \quad \frac{\partial f}{\partial x}$$
+```
+
+**Rezultat:**
+$$\frac{a}{b}, \quad \frac{x+1}{x-1}, \quad \frac{\partial f}{\partial x}$$
+
+Zwróć uwagę na `\quad` - to polecenie dodaje odstęp między wyrażeniami.
+
+### Frakcje zagnieżdżone
+**Kod:**
+```
+$$\frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \cdots}}}$$
+```
+
+**Rezultat:**
+$$\frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \cdots}}}$$
+
+## Sumy, iloczyny i całki - notacja agregatów
+
+Te konstrukcje są kluczowe w analizie danych, więc przyjrzyjmy się im szczegółowo.
+
+### Sumy
+**Podstawowa suma inline:**
+
+Kod: `$\sum_{i=1}^{n} x_i$` → Rezultat: $\sum_{i=1}^{n} x_i$
+
+**Suma w bloku z pełną notacją:**
+
+Kod:
+```
+$$\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n$$
+```
+
+Rezultat:
+$$\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n$$
+
+### Iloczyny
+**Kod:**
+```
+$$\prod_{i=1}^{n} x_i = x_1 \times x_2 \times \cdots \times x_n$$
+```
+
+**Rezultat:**
+$$\prod_{i=1}^{n} x_i = x_1 \times x_2 \times \cdots \times x_n$$
+
+### Całki (w analizie ciągłej)
+**Całka nieoznaczona:**
+
+Kod: `$\int f(x) dx$` → Rezultat: $\int f(x) dx$
+
+**Całka oznaczona:**
+
+Kod: `$\int_a^b f(x) dx$` → Rezultat: $\int_a^b f(x) dx$
+
+**Całka podwójna:**
+
+Kod: `$\iint_D f(x,y) \, dx \, dy$` → Rezultat: $\iint_D f(x,y) \, dx \, dy$
+
+Zwróć uwagę na `\,` - to małe odstępy przed dx i dy.
+
+## Granice - podstawa analizy matematycznej
+
+**Kod:**
+```
+$$\lim_{n \to \infty} \frac{1}{n} = 0$$
+```
+
+**Rezultat:**
+$$\lim_{n \to \infty} \frac{1}{n} = 0$$
+
+**Kod:**
+```
+$$\lim_{x \to 0} \frac{\sin x}{x} = 1$$
+```
+
+**Rezultat:**
+$$\lim_{x \to 0} \frac{\sin x}{x} = 1$$
+
+## Macierze i wektory - algebra liniowa w praktyce
+
+### Wektory kolumnowe
+**Kod:**
+```
+$$\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}$$
+```
+
+**Rezultat:**
+$$\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}$$
+
+### Macierze podstawowe
+**Macierz 2×2:**
+
+Kod:
+```
+$$A = \begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{pmatrix}$$
+```
+
+Rezultat:
+$$A = \begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{pmatrix}$$
+
+**Macierz identycznościowa:**
+
+Kod:
+```
+$$I = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$$
+```
+
+Rezultat:
+$$I = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$$
+
+## Praktyczne przykłady z analizy danych
+
+Teraz przejdźmy do rzeczywistych wzorów, które używasz w codziennej pracy z danymi.
+
+### Statystyka opisowa
+
+**Średnia arytmetyczna:**
+
+Kod:
+```
+$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$$
+```
+
+Rezultat:
+$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$$
+
+**Wariancja populacyjna:**
+
+Kod:
+```
+$$\sigma^2 = \frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2$$
+```
+
+Rezultat:
+$$\sigma^2 = \frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2$$
+
+**Odchylenie standardowe:**
+
+Kod:
+```
+$$\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2}$$
+```
+
+Rezultat:
+$$\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2}$$
+
+**Współczynnik korelacji Pearsona:**
+
+Kod:
+```
+$$r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}$$
+```
+
+Rezultat:
+$$r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}$$
+
+### Prawdopodobieństwo i rozkłady
+
+**Prawo prawdopodobieństwa całkowitego:**
+
+Kod:
+```
+$$P(A) = \sum_{i=1}^{n} P(A|B_i)P(B_i)$$
+```
+
+Rezultat:
+$$P(A) = \sum_{i=1}^{n} P(A|B_i)P(B_i)$$
+
+**Wzór Bayesa:**
+
+Kod:
+```
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+```
+
+Rezultat:
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+**Rozkład normalny (funkcja gęstości):**
+
+Kod:
+```
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+```
+
+Rezultat:
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+
+### Regresja liniowa
+
+**Model regresji prostej:**
+
+Kod:
+```
+$$y = \beta_0 + \beta_1 x + \epsilon$$
+```
+
+Rezultat:
+$$y = \beta_0 + \beta_1 x + \epsilon$$
+
+**Estymator najmniejszych kwadratów dla $\beta_1$:**
+
+Kod:
+```
+$$\hat{\beta_1} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}$$
+```
+
+Rezultat:
+$$\hat{\beta_1} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}$$
+
+**Współczynnik determinacji R²:**
+
+Kod:
+```
+$$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum_i (y_i - \hat{y_i})^2}{\sum_i (y_i - \bar{y})^2}$$
+```
+
+Rezultat:
+$$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum_i (y_i - \hat{y_i})^2}{\sum_i (y_i - \bar{y})^2}$$
+
+### Analiza szeregów czasowych
+
+**Funkcja autokorelacji:**
+
+Kod:
+```
+$$\rho_k = \frac{\sum_{t=k+1}^{n}(y_t - \bar{y})(y_{t-k} - \bar{y})}{\sum_{t=1}^{n}(y_t - \bar{y})^2}$$
+```
+
+Rezultat:
+$$\rho_k = \frac{\sum_{t=k+1}^{n}(y_t - \bar{y})(y_{t-k} - \bar{y})}{\sum_{t=1}^{n}(y_t - \bar{y})^2}$$
+
+**Model ARIMA(p,d,q):**
+
+Kod:
+```
+$$\phi(B)(1-B)^d X_t = \theta(B)\epsilon_t$$
+```
+
+Rezultat:
+$$\phi(B)(1-B)^d X_t = \theta(B)\epsilon_t$$
+
+gdzie B to operator przesunięcia wstecz.
+
+## Uczenie maszynowe - wzory optymalizacji
+
+### Funkcje kosztu
+
+**Błąd średniokwadratowy (MSE):**
+
+Kod:
+```
+$$MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2$$
+```
+
+Rezultat:
+$$MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2$$
+
+**Cross-entropy loss:**
+
+Kod:
+```
+$$H(p,q) = -\sum_{i=1}^{n} p_i \log q_i$$
+```
+
+Rezultat:
+$$H(p,q) = -\sum_{i=1}^{n} p_i \log q_i$$
+
+### Funkcje aktywacji
+
+**Sigmoid:**
+
+Kod:
+```
+$$\sigma(x) = \frac{1}{1 + e^{-x}}$$
+```
+
+Rezultat:
+$$\sigma(x) = \frac{1}{1 + e^{-x}}$$
+
+**ReLU:**
+
+Kod:
+```
+$$\text{ReLU}(x) = \max(0, x)$$
+```
+
+Rezultat:
+$$\text{ReLU}(x) = \max(0, x)$$
+
+**Softmax:**
+
+Kod:
+```
+$$\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}$$
+```
+
+Rezultat:
+$$\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}$$
+
+### Optymalizacja
+
+**Gradient descent:**
+
+Kod:
+```
+$$\theta_{t+1} = \theta_t - \alpha \nabla_\theta J(\theta)$$
+```
+
+Rezultat:
+$$\theta_{t+1} = \theta_t - \alpha \nabla_\theta J(\theta)$$
+
+gdzie $\alpha$ to learning rate, a $J(\theta)$ to funkcja kosztu.
+
+## Transformacje danych w wizualizacji
+
+### Standaryzacja i normalizacja
+
+**Standaryzacja (z-score):**
+
+Kod: `$z = \frac{x - \mu}{\sigma}$`
+
+Rezultat: $z = \frac{x - \mu}{\sigma}$
+
+**Normalizacja min-max:**
+
+Kod:
+```
+$$x_{norm} = \frac{x - x_{min}}{x_{max} - x_{min}}$$
+```
+
+Rezultat:
+$$x_{norm} = \frac{x - x_{min}}{x_{max} - x_{min}}$$
+
+### Metryki podobieństwa
+
+**Odległość euklidesowa:**
+
+Kod:
+```
+$$d(p,q) = \sqrt{\sum_{i=1}^{n}(p_i - q_i)^2}$$
+```
+
+Rezultat:
+$$d(p,q) = \sqrt{\sum_{i=1}^{n}(p_i - q_i)^2}$$
+
+**Odległość Manhattan:**
+
+Kod:
+```
+$$d(p,q) = \sum_{i=1}^{n}|p_i - q_i|$$
+```
+
+Rezultat:
+$$d(p,q) = \sum_{i=1}^{n}|p_i - q_i|$$
+
+**Podobieństwo kosinusowe:**
+
+Kod:
+```
+$$\cos(\theta) = \frac{A \cdot B}{||A|| \cdot ||B||} = \frac{\sum_{i=1}^{n} A_i B_i}{\sqrt{\sum_{i=1}^{n} A_i^2} \sqrt{\sum_{i=1}^{n} B_i^2}}$$
+```
+
+Rezultat:
+$$\cos(\theta) = \frac{A \cdot B}{||A|| \cdot ||B||} = \frac{\sum_{i=1}^{n} A_i B_i}{\sqrt{\sum_{i=1}^{n} A_i^2} \sqrt{\sum_{i=1}^{n} B_i^2}}$$
+
+## Zaawansowane techniki formatowania
+
+### Kontrola odstępów
+Aby wzory były czytelne, kontroluj odstępy za pomocą tych poleceń:
+
+| Kod | Rezultat | Opis |
+|-----|----------|------|
+| `$a \, b$` | $a \, b$ | Mały odstęp |
+| `$a \: b$` | $a \: b$ | Średni odstęp |
+| `$a \; b$` | $a \; b$ | Większy odstęp |
+| `$a \quad b$` | $a \quad b$ | Duży odstęp |
+| `$a \qquad b$` | $a \qquad b$ | Bardzo duży odstęp |
+
+### Wyrównywanie równań
+Dla układów równań używamy środowiska `align`:
+
+**Kod:**
+```
+\begin{align}
+x + y &= 5 \\
+2x - y &= 1
+\end{align}
+```
+
+**Rezultat:**
+\begin{align}
+x + y &= 5 \\
+2x - y &= 1
+\end{align}
+
+Znak `&` określa punkt wyrównania, a `\\` kończy linię.
+
+### Tekst w równaniach
+Używamy `\text{}` dla zwykłego tekstu w równaniach:
+
+**Kod:**
+```
+$$P(\text{sukces}) = \frac{\text{liczba sukcesów}}{\text{liczba prób}}$$
+```
+
+**Rezultat:**
+$$P(\text{sukces}) = \frac{\text{liczba sukcesów}}{\text{liczba prób}}$$
+
+### Przypadki i definicje po kawałkach
+**Kod:**
+```
+$$f(x) = \begin{cases}
+x^2 & \text{gdy } x \geq 0 \\
+-x^2 & \text{gdy } x < 0
+\end{cases}$$
+```
+
+**Rezultat:**
+$$f(x) = \begin{cases}
+x^2 & \text{gdy } x \geq 0 \\
+-x^2 & \text{gdy } x < 0
+\end{cases}$$
+
+## Często używane greckie litery w analizie danych
+
+Greckie litery są powszechnie używane w statystyce i uczeniu maszynowym:
+
+| Kod | Mała | Duża | Zastosowanie |
+|-----|------|------|--------------|
+| `\alpha` | $\alpha$ | A | Learning rate, poziom istotności |
+| `\beta` | $\beta$ | B | Współczynniki regresji |
+| `\gamma` | $\gamma$ | $\Gamma$ | Funkcja gamma |
+| `\delta` | $\delta$ | $\Delta$ | Różnice, gradienty |
+| `\epsilon` | $\epsilon$ | E | Błędy, tolerancja |
+| `\theta` | $\theta$ | $\Theta$ | Parametry modelu |
+| `\lambda` | $\lambda$ | $\Lambda$ | Regularyzacja, eigenvalues |
+| `\mu` | $\mu$ | M | Średnia populacyjna |
+| `\sigma` | $\sigma$ | $\Sigma$ | Odchylenie standardowe, sumy |
+| `\rho` | $\rho$ | P | Korelacja |
+| `\phi` | $\phi$ | $\Phi$ | Funkcja standardowego rozkładu normalnego |
+
+## Praktyczne wskazówki dla analityków danych
+
+Gdy tworzysz dokumentację analityczną, pamiętaj o kilku kluczowych zasadach, które sprawią, że Twoje wzory będą nie tylko poprawne, ale także profesjonalnie wyglądające i czytelne.
+
+Pierwszą zasadą jest konsekwentność w używaniu notacji. Jeśli raz zdecydujesz się używać $\bar{x}$ dla średniej, trzymaj się tego przez cały dokument. Nie mieszaj z $\mu$ bez wyjaśnienia różnicy. Podobnie z oznaczeniami indeksów - jeśli używasz $i$ dla obserwacji, nie zmieniaj nagle na $j$ bez powodu.
+
+Drugą kluczową sprawą jest kontekst. Zawsze wyjaśnij, co oznaczają Twoje symbole. Po pierwszym użyciu wzoru dodaj definicję typu "gdzie $n$ to liczba obserwacji, a $x_i$ to $i$-ta obserwacja". Czytelnik doceni jasność, nawet jeśli wydaje mu się to oczywiste.
+
+Trzecią zasadą jest umiejętne łączenie wzorów z kodem. W Jupyter Notebook czy R Markdown często pokazujesz wzór teoretyczny, a potem jego implementację. Dbaj o spójność nazw zmiennych między wzorem a kodem - jeśli w wzorze masz $\sigma^2$, to w kodzie użyj `sigma_squared` lub `variance`, nie `var2` czy `s`.
+
+Czwartą praktyczną wskazówką jest używanie numerowania wzorów dla referencji. W dłuższych dokumentach oznaczaj ważne wzory numerami, żeby móc się do nich później odwoływać.
+
+## Rozwiązywanie typowych problemów
+
+Podczas pracy z LaTeX w Markdown możesz napotkać kilka typowych problemów. Najczęstszym błędem jest zapominanie o nawiasach klamrowych w indeksach i potęgach. Pamiętaj: pojedyncze znaki nie wymagają nawiasów (`$x^2$`), ale wyrażenia już tak (`$x^{n+1}$`).
+
+Kolejnym częstym problemem są spacje w nazwach funkcji. LaTeX nie rozpoznaje `sin` jako funkcji - musisz użyć `\sin`. To samo dotyczy `\log`, `\exp`, `\max`, `\min` itp.
+
+Trzecim problemem jest mieszanie stylów inline i blokowych. Jeśli wzór jest skomplikowany, lepiej użyj bloku (`$$`), nawet jeśli jest krótki. Czytelność jest najważniejsza.

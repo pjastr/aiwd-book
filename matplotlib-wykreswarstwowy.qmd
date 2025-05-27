@@ -1,0 +1,127 @@
+# Matplotlib - wykres warstwowy
+
+Wykres warstwowy to rodzaj wizualizacji, w której kolejne serie danych są przedstawione jako nakładające się obszary/warstwy. Wysokość każdej warstwy odpowiada wartości danej kategorii, a suma wysokości wszystkich warstw pokazuje wartość łączną.
+
+## Główne zastosowania wykresów warstwowych
+
+1. **Analiza składu całkowitego w czasie**  
+   - Pozwala zobaczyć, jak poszczególne komponenty (np. źródła przychodów, wydatki, segmenty rynku) przyczyniają się do wartości całkowitej w kolejnych momentach.  
+   - Przydatne przy monitoringu udziałów procentowych i zmian w proporcjach.
+
+2. **Porównanie trendów wielowymiarowych**  
+   - Umożliwia jednoczesne śledzenie wielu serii czasowych („warstw”) w jednej przestrzeni, co ułatwia wykrycie wzajemnych korelacji i momentów przełomowych.  
+   - Idealne do prezentacji wielokanałowych danych (np. ruch na stronie z różnych źródeł).
+
+3. **Prezentacja udziałów rynkowych lub segmentów**  
+   - Pokazuje, jak udziały poszczególnych produktów, regionów czy grup klientów zmieniają się w czasie.  
+   - Ułatwia identyfikację „rosnących” i „malejących” segmentów.
+
+4. **Budżetowanie i rozliczenia**  
+   - Wizualizuje strukturę kosztów lub przychodów według kategorii na przestrzeni cyklu budżetowego.  
+   - Pomaga w szybkim wychwyceniu nadmiernych wydatków lub źródeł wzrostu przychodów.
+
+5. **Monitorowanie zasobów i obciążeń**  
+   - Śledzenie wykorzystania zasobów (np. personelu, maszyn) pod kątem różnych projektów lub działów.  
+   - Umożliwia planowanie i równoważenie obciążenia.
+
+6. **Porównanie scenariuszy lub wariantów**  
+   - Nakładanie prognozowanych danych obok historycznych ułatwia porównanie „spodziewanego” vs. „rzeczywistego” przebiegu wskaźników.  
+   - Wspiera decyzje strategiczne przez zobrazowanie odchyleń.
+   
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Miesiąc': ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj'],
+    'Sprzedaż': [1000, 1200, 900, 1100, 1300],
+    'Usługi': [200, 250, 230, 260, 300],
+    'Reklama': [150, 180, 170, 160, 190]
+}
+
+df = pd.DataFrame(data)
+
+x = df['Miesiąc']
+y1 = df['Sprzedaż']
+y2 = df['Usługi']
+y3 = df['Reklama']
+
+plt.figure(figsize=(10,6))
+plt.stackplot(x, y1, y2, y3, labels=['Sprzedaż', 'Usługi', 'Reklama'])
+plt.legend(loc='upper left')
+plt.title('Przychody firmy w podziale na źródła')
+plt.xlabel('Miesiąc')
+plt.ylabel('Kwota (PLN)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+```
+
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Miesiąc': ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj'],
+    'Sprzedaż': [1000, 1200, 900, 1100, 1300],
+    'Usługi': [200, 250, 230, 260, 300],
+    'Reklama': [150, 180, 170, 160, 190]
+}
+
+df = pd.DataFrame(data)
+
+x = df['Miesiąc']
+y1 = df['Sprzedaż']
+y2 = df['Usługi']
+y3 = df['Reklama']
+
+fig, ax = plt.subplots(figsize=(10,6))
+ax.stackplot(x, y1, y2, y3, labels=['Sprzedaż', 'Usługi', 'Reklama'])
+ax.legend(loc='upper left')
+ax.set_title('Przychody firmy w podziale na źródła')
+ax.set_xlabel('Miesiąc')
+ax.set_ylabel('Kwota (PLN)')
+plt.xticks(rotation=45)
+fig.tight_layout()
+plt.show()
+```
+
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Dzień': ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek'],
+    'Mobilne': [1500, 1800, 1600, 1700, 2000],
+    'Desktop': [1200, 1100, 1300, 1250, 1400],
+    'Tablet': [300, 350, 320, 310, 360]
+}
+
+df = pd.DataFrame(data)
+
+x = df['Dzień']
+y1 = df['Mobilne']
+y2 = df['Desktop']
+y3 = df['Tablet']
+
+plt.figure(figsize=(10,6))
+plt.stackplot(
+    x, y1, y2, y3,
+    labels=['Mobilne', 'Desktop', 'Tablet'],
+    colors=['SteelBlue', 'MediumSeaGreen', 'IndianRed'],
+    alpha=0.8
+)
+plt.title('Ruch na stronie według urządzeń w ciągu tygodnia')
+plt.xlabel('Dzień tygodnia')
+plt.ylabel('Liczba odwiedzin')
+plt.legend(loc='upper left')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+```
