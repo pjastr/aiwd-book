@@ -66,11 +66,15 @@ book:
       - jakosckodu.qmd
       - markdown.qmd
       - latex.qmd
+      - notatnik.qmd
+      - procesy.qmd
     - part: "Zadania problemowe"
       chapters:
       - problem01.qmd
       - problem02.qmd
       - problem03.qmd
+      - problem04.qmd
+      - problem05.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/aiwd-book
   repo-actions: [issue]

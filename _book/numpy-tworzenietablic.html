@@ -686,6 +686,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notatnik.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./procesy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -700,19 +712,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
   </div>
 </li>
       </ul>
@@ -749,7 +773,7 @@ window.Quarto = {
 
 
 <p><code>np.array</code> - argumenty rzutowany na tablicę (coś po czym można iterować) - warto sprawdzić rozmiar/kształt</p>
-<div id="4b64396c" class="cell" data-execution_count="1">
+<div id="d3cb3aed" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -776,7 +800,7 @@ size: 1</code></pre>
 </div>
 </div>
 <p><code>np.zeros</code> - tworzy tablicę wypełnioną zerami</p>
-<div id="584e9455" class="cell" data-execution_count="2">
+<div id="e39ad29c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> np.zeros(<span class="dv">4</span>)</span>
@@ -805,7 +829,7 @@ size: 1</code></pre>
 </div>
 </div>
 <p><code>np.ones</code> - tworzy tablicę wypełnioną jedynkami (to nie odpowiednik macierzy jednostkowej!)</p>
-<div id="10ae4870" class="cell" data-execution_count="3">
+<div id="48760142" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> np.ones(<span class="dv">4</span>)</span>
@@ -834,7 +858,7 @@ size: 1</code></pre>
 </div>
 </div>
 <p><code>np.diag</code> - tworzy tablicę odpowiadającą macierzy diagonalnej</p>
-<div id="7a3099c5" class="cell" data-execution_count="4">
+<div id="0a3c95cf" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tab0"</span>)</span>
@@ -879,7 +903,7 @@ tab5
 <p><code>np.arange</code> - tablica wypełniona równomiernymi wartościami</p>
 <p>Składnia: <code>numpy.arange([start, ]stop, [step, ]dtype=None)</code></p>
 <p>Zasada działania jest podobna jak w funkcji <code>range</code>, ale dopuszczamy liczby “z ułamkiem”.</p>
-<div id="fe8dc8d6" class="cell" data-execution_count="5">
+<div id="29a1210f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">3</span>)</span>
@@ -907,7 +931,7 @@ tab5
 </div>
 </div>
 <p><code>np.linspace</code> - tablica wypełniona równomiernymi wartościami wg skali liniowej</p>
-<div id="659e5625" class="cell" data-execution_count="6">
+<div id="d90f6001" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.linspace(<span class="fl">2.0</span>, <span class="fl">3.0</span>, num<span class="op">=</span><span class="dv">5</span>)</span>
@@ -928,7 +952,7 @@ tab5
 <p><img src="o1.png" class="img-fluid"></p>
 <p><code>np.logspace</code> - tablica wypełniona wartościami wg skali logarytmicznej</p>
 <p>Składnia: <code>numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None, axis=0)</code></p>
-<div id="a7a11353" class="cell" data-execution_count="7">
+<div id="1f7cfc6b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.logspace(<span class="fl">2.0</span>, <span class="fl">3.0</span>, num<span class="op">=</span><span class="dv">4</span>)</span>
@@ -945,7 +969,7 @@ tab5
 </div>
 <p><img src="o2.png" class="img-fluid"></p>
 <p><code>np.empty</code> - pusta (niezaincjowana) tablica - konkretne wartości nie są “gwarantowane”</p>
-<div id="dd56fc39" class="cell" data-execution_count="8">
+<div id="4799de42" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.empty(<span class="dv">3</span>)</span>
@@ -959,7 +983,7 @@ tab5
 </div>
 <p><code>np.identity</code> - tablica przypominająca macierz jednostkową</p>
 <p><code>np.eye</code> - tablica z jedynkami na przekątnej (pozostałe zera)</p>
-<div id="6258aee9" class="cell" data-execution_count="9">
+<div id="6b903669" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a"</span>)</span>

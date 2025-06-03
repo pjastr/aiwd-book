@@ -1,0 +1,64 @@
+# Procesy w analizie danych
+
+## Wprowadzenie
+
+Analiza danych to złożony proces, który wymaga systematycznego podejścia do przekształcania surowych danych w użyteczną wiedzę. W celu standaryzacji i usprawnienia tego procesu, specjaliści opracowali kilka metodologii, które służą jako mapy drogowe dla projektów analitycznych. Każda z tych metodologii ma swoje unikalne cechy, ale wszystkie dzielą wspólny cel: zapewnienie strukturalnego podejścia do odkrywania wzorców i generowania wartościowych wniosków z danych.
+
+## Proces KDD (Knowledge Discovery from Data)
+
+Knowledge Discovery from Data to jedna z pierwszych formalnych metodologii analizy danych, która została opracowana w latach 90. XX wieku. KDD koncentruje się na całościowym procesie odkrywania wiedzy, traktując data mining jako jeden z etapów w szerszym kontekście.
+
+### Etapy procesu KDD
+
+Proces KDD składa się z pięciu głównych etapów, które tworzą logiczną sekwencję działań prowadzących od surowych danych do użytecznej wiedzy:
+
+- Selekcja danych: określenie celu analizy i identyfikacja odpowiednich źródeł danych. Na tym etapie podejmujemy decyzje o tym, które dane są istotne dla naszego problemu badawczego i jakie ograniczenia mogą wpłynąć na analizę.
+
+- Preprocessing: wstępne przetwarzanie danych obejmujące czyszczenie, usuwanie duplikatów, radzenie sobie z brakującymi wartościami oraz przekształcanie danych do formatu odpowiedniego dla dalszej analizy. Ten etap często zajmuje najwięcej czasu w całym procesie.
+
+- Transformacja danych: przeprowadzanie bardziej zaawansowanych przekształceń, takich jak normalizacja, standaryzacja, agregacja czy tworzenie nowych zmiennych. Celem jest przygotowanie danych w formie optymalnej dla algorytmów data mining.
+
+- Data mining: stosowanie algorytmów uczenia maszynowego lub statystycznych metod analizy w celu odkrycia wzorców, reguł lub modeli w danych. To tutaj następuje właściwe "wydobycie" informacji z danych.
+
+- Interpretacja i ewaluacja: ocena jakości odkrytych wzorców, sprawdzenie ich przydatności biznesowej i prezentacja wyników w zrozumiałej formie dla użytkowników końcowych.
+
+
+## Proces SEMMA
+
+SEMMA to metodologia opracowana przez firmę SAS, której nazwa stanowi akronim angielskich słów: Sample, Explore, Modify, Model, Assess. Proces ten został zaprojektowany z myślą o praktycznych zastosowaniach biznesowych i charakteryzuje się dużą elastycznością.
+
+### Etapy procesu SEMMA
+
+Proces SEMMA składa się z pięciu głównych faz, które mogą być realizowane w sposób iteracyjny, co oznacza, że możemy wracać do wcześniejszych etapów w miarę zdobywania nowych informacji:
+
+- Sample (Próbkowanie): wybór reprezentatywnego podzbioru danych do analizy. Kluczowe jest zapewnienie, że próbka będzie wystarczająco duża i reprezentatywna, aby wyniki analizy były wiarygodne i możliwe do uogólnienia.
+
+- Explore (Eksploracja): eksploracyjna analiza danych, gdzie badamy strukturę danych, identyfikujemy wzorce, anomalie i zależności między zmiennymi. Używamy technik wizualizacji i statystyk opisowych, aby lepiej zrozumieć nasze dane.
+
+- Modify (Modyfikacja): modyfikacja i przygotowanie danych do modelowania. Tworzymy nowe zmienne, przekształcamy istniejące i wybieramy najważniejsze cechy dla naszego modelu. Ten etap często wymaga iteracyjnego podejścia.
+
+- Model (Modelowanie): budowanie modeli predykcyjnych lub opisowych. Testujemy różne algorytmy i techniki, aby znaleźć najlepsze rozwiązanie dla naszego problemu. Często budujemy kilka modeli i porównujemy ich wydajność.
+
+- Assess (Ocena): ocena i walidacja modeli. Sprawdzamy ich dokładność, niezawodność i przydatność biznesową. Używamy różnych metryk i technik walidacji, aby upewnić się, że model będzie działał dobrze na nowych danych.
+
+
+## Proces CRISP-DM
+
+Cross-Industry Standard Process for Data Mining to najbardziej popularna i szeroko stosowana metodologia analizy danych. Została opracowana przez konsorcjum firm i instytutów badawczych jako standard branżowy, niezależny od konkretnych narzędzi czy technologii.
+
+### Etapy procesu CRISP-DM
+
+CRISP-DM składa się z sześciu głównych faz, które tworzą cykl życia projektu analizy danych. Proces ten jest iteracyjny i elastyczny, co oznacza, że możemy wracać do wcześniejszych faz w miarę potrzeb:
+
+- Business Understanding: koncentracja na zrozumieniu celów biznesowych i wymagań projektu. Definiujemy problem biznesowy, który chcemy rozwiązać, oraz określamy kryteria sukcesu. Ta faza jest fundamentalna dla całego projektu, ponieważ ustala kierunek dalszych działań.
+
+- Data Understanding: zbieranie i wstępna eksploracja danych. Identyfikujemy dostępne źródła danych, oceniamy ich jakość i kompletność oraz przeprowadzamy wstępną analizę, aby lepiej zrozumieć strukturę i charakterystykę danych.
+
+- Data Preparation: przygotowanie danych do analizy, które jest najczęściej najbardziej czasochłonną częścią procesu. Obejmuje to czyszczenie danych, integrację z różnych źródeł, transformację i selekcję odpowiednich zmiennych.
+
+- Modeling: zastosowanie technik modelowania do przygotowanych danych. Wybieramy odpowiednie algorytmy, konfigurujemy ich parametry i budujemy modele. Często testujemy kilka różnych podejść, aby znaleźć najlepsze rozwiązanie.
+
+- Evaluation: ocena jakości modeli z perspektywy biznesowej. Sprawdzamy, czy model rzeczywiście rozwiązuje pierwotny problem biznesowy oraz czy spełnia ustalone kryteria sukcesu. Ta faza może prowadzić do powrotu do wcześniejszych etapów, jeśli wyniki nie są zadowalające.
+
+- Deployment: wdrożenie modelu w środowisku produkcyjnym. Planujemy sposób monitorowania modelu, jego utrzymania i ewentualnej aktualizacji. Ta faza jest kluczowa dla praktycznego wykorzystania wyników analizy.
+

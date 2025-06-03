@@ -1,0 +1,69 @@
+# Problem #5
+
+Pliki są dostępne tutaj <https://github.com/pjastr/aiwd-book/tree/main/dataset>
+
+Cel: szeregi czasowe.
+
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('dataset/sprzedaz2.csv', sep=';')
+df['Data'] = pd.to_datetime(df['Data'], format='%d-%m-%Y')
+df = df.sort_values('Data')
+
+plt.figure(figsize=(10, 6))
+plt.barh(
+    df['Data'].dt.strftime('%d-%m-%Y'),
+    df['Liczba sprzedanych sztuk'],
+    color='skyblue',
+    edgecolor='gray'
+)
+
+plt.xlabel('Liczba sprzedanych sztuk', fontsize=12)
+plt.ylabel('Data', fontsize=12)
+plt.title('Sprzedaż produktów w wybrane dni', fontsize=14, pad=15)
+
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+plt.grid(axis='x', linestyle='--', alpha=0.5)
+
+plt.tight_layout()
+plt.show()
+
+
+```
+
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+
+df = pd.read_csv('dataset/sprzedaz2.csv', sep=';')
+df['Data'] = pd.to_datetime(df['Data'], format='%d-%m-%Y')
+
+plt.figure(figsize=(10, 6))
+plt.barh(
+    df['Data'],
+    df['Liczba sprzedanych sztuk'],
+    color='skyblue',
+    edgecolor='gray'
+)
+plt.xlabel('Liczba sprzedanych sztuk', fontsize=12)
+plt.ylabel('Data', fontsize=12)
+plt.title('Sprzedaż produktów w wybrane dni', fontsize=14, pad=15)
+
+ax = plt.gca()
+ax.yaxis_date()
+ax.yaxis.set_major_locator(mdates.AutoDateLocator())
+ax.yaxis.set_major_formatter(mdates.DateFormatter('%d-%m-%Y'))
+plt.xticks(fontsize=10)
+
+plt.grid(axis='x', linestyle='--', alpha=0.5)
+
+plt.tight_layout()
+plt.show()
+
+```

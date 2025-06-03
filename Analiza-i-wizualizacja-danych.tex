@@ -227,7 +227,7 @@
 
 \title{Analiza i wizualizacja danych}
 \author{Piotr Jastrzębski}
-\date{2025-05-28}
+\date{2025-06-04}
 \begin{document}
 \maketitle
 
@@ -1223,8 +1223,8 @@ Run - zielona strzałka u góry.
 \end{Shaded}
 
 \begin{verbatim}
---- 0.0026733875274658203 seconds ---
---- 0.04863548278808594 seconds ---
+--- 0.0017848014831542969 seconds ---
+--- 0.03504204750061035 seconds ---
 \end{verbatim}
 
 \chapter{\texorpdfstring{Atrybuty tablic
@@ -5299,7 +5299,7 @@ Zwykle operacje wektorowe są szybsze:
 \end{Shaded}
 
 \begin{verbatim}
-0.1590259075164795 0.31359052658081055
+0.1601097583770752 0.31416893005371094
 \end{verbatim}
 
 \chapter{Pandas - inne}\label{pandas---inne}
@@ -5584,9 +5584,9 @@ Categories (4, object): ['Youth' < 'YoungAdult' < 'MiddleAged' < 'Senior']
 \end{Shaded}
 
 \begin{verbatim}
-[(0.5, 0.75], (0.0051, 0.25], (0.5, 0.75], (0.0051, 0.25], (0.75, 1.0], ..., (0.75, 1.0], (0.0051, 0.25], (0.75, 1.0], (0.75, 1.0], (0.25, 0.5]]
+[(0.0067, 0.23], (0.23, 0.46], (0.0067, 0.23], (0.69, 0.91], (0.23, 0.46], ..., (0.69, 0.91], (0.69, 0.91], (0.0067, 0.23], (0.69, 0.91], (0.23, 0.46]]
 Length: 20
-Categories (4, interval[float64, right]): [(0.0051, 0.25] < (0.25, 0.5] < (0.5, 0.75] < (0.75, 1.0]]
+Categories (4, interval[float64, right]): [(0.0067, 0.23] < (0.23, 0.46] < (0.46, 0.69] < (0.69, 0.91]]
 \end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -5604,13 +5604,13 @@ Categories (4, interval[float64, right]): [(0.0051, 0.25] < (0.25, 0.5] < (0.5, 
 \end{Shaded}
 
 \begin{verbatim}
-[(-3.5589999999999997, -0.77], (-0.0796, 0.623], (-0.77, -0.0796], (-0.0796, 0.623], (-0.77, -0.0796], ..., (-0.0796, 0.623], (-3.5589999999999997, -0.77], (0.623, 3.438], (-3.5589999999999997, -0.77], (-3.5589999999999997, -0.77]]
+[(-3.461, -0.668], (0.645, 3.223], (0.0572, 0.645], (-0.668, 0.0572], (-3.461, -0.668], ..., (-3.461, -0.668], (-0.668, 0.0572], (0.645, 3.223], (-0.668, 0.0572], (0.645, 3.223]]
 Length: 1000
-Categories (4, interval[float64, right]): [(-3.5589999999999997, -0.77] < (-0.77, -0.0796] < (-0.0796, 0.623] < (0.623, 3.438]]
-(-3.5589999999999997, -0.77]    250
-(-0.77, -0.0796]                250
-(-0.0796, 0.623]                250
-(0.623, 3.438]                  250
+Categories (4, interval[float64, right]): [(-3.461, -0.668] < (-0.668, 0.0572] < (0.0572, 0.645] < (0.645, 3.223]]
+(-3.461, -0.668]    250
+(-0.668, 0.0572]    250
+(0.0572, 0.645]     250
+(0.645, 3.223]      250
 Name: count, dtype: int64
 \end{verbatim}
 
@@ -5635,31 +5635,34 @@ odstających}\label{wykrywanie-i-filtrowanie-elementuxf3w-odstajux105cych}
 \begin{verbatim}
                  0            1            2            3
 count  1000.000000  1000.000000  1000.000000  1000.000000
-mean      0.001131     0.019652    -0.001500    -0.008560
-std       1.000301     0.988272     0.976708     1.006734
-min      -2.727822    -3.526321    -2.810809    -3.321581
-25%      -0.662386    -0.685708    -0.651410    -0.669290
-50%       0.013264     0.018336    -0.026335    -0.034171
-75%       0.653722     0.684284     0.602664     0.651091
-max       3.507407     2.995610     3.418401     3.136890
+mean     -0.004400    -0.019564    -0.046036     0.026372
+std       1.004421     1.005820     0.974513     1.035495
+min      -3.262707    -2.995729    -3.217590    -3.217875
+25%      -0.642428    -0.715467    -0.713862    -0.693629
+50%      -0.033701    -0.000906    -0.059704     0.047065
+75%       0.643228     0.684133     0.618592     0.720866
+max       3.273411     2.916578     3.324598     3.063337
 ---
-228    3.418401
-286    3.242392
-930    3.348505
+75     3.324598
+591   -3.217590
+611   -3.207665
 Name: 2, dtype: float64
 ---
             0         1         2         3
-214 -0.662059 -0.551375 -1.059495  3.032015
-228 -0.566036 -0.039620  3.418401 -0.171344
-239  3.095025  0.807048  0.496922  0.321027
-286 -0.264036  1.237226  3.242392  1.399004
-521  3.087204  0.023624 -1.446512 -0.483584
-532  1.221511 -1.374022  0.574814 -3.321581
-713  0.611298 -3.526321 -0.715254 -0.309384
-749  3.507407  0.904293  1.441280 -1.685718
-782 -1.742953  2.161940 -1.317917  3.136890
-930  0.101730  0.870368  3.348505  1.956153
-997  3.039716 -0.177668 -1.586365  0.486713
+28  -0.088833 -0.503107  0.057880 -3.020674
+62   3.143228  1.662252  0.144335 -1.449680
+75   1.283282  1.326140  3.324598  1.168343
+363 -1.604148  2.152233 -0.355075 -3.058534
+366 -0.299043 -2.699259 -0.231658 -3.217875
+509 -3.084428 -0.109235 -0.635709 -2.825169
+514 -3.262707 -1.107029  0.816387 -0.804256
+591 -0.571711  0.092800 -3.217590  2.083280
+610  3.247024  0.355076  1.420504  1.671392
+611  0.340249  0.428371 -3.207665  0.194434
+834  3.273411  0.722863 -0.030006  2.188619
+925  0.502238 -2.991065 -0.649700  3.063337
+951 -1.683799 -1.030595 -0.505454  3.043160
+964  3.176995 -0.549771  0.115128  0.548519
 \end{verbatim}
 
 \section{Zmiana typu w kolumnie}\label{zmiana-typu-w-kolumnie}
@@ -12747,6 +12750,292 @@ Trzecim problemem jest mieszanie stylów inline i blokowych. Jeśli wzór
 jest skomplikowany, lepiej użyj bloku (\texttt{\$\$}), nawet jeśli jest
 krótki. Czytelność jest najważniejsza.
 
+\chapter{Notatniki}\label{notatniki}
+
+\chapter{Notatki w Pythonie - Ekosystem
+Jupyter}\label{notatki-w-pythonie---ekosystem-jupyter}
+
+\section{Wprowadzenie do
+notebooków}\label{wprowadzenie-do-notebookuxf3w}
+
+Notatniki (notebooks) w Pythonie to interaktywne dokumenty, które łączą
+kod, wyniki jego wykonania, tekst opisowy i wizualizacje w jednym
+miejscu. Stanowią one fundamentalne narzędzie w analizie danych,
+prototypowaniu algorytmów i dokumentowaniu procesów badawczych. Głównym
+ekosystemem obsługującym notatniki jest Jupyter, który oferuje kilka
+różnych implementacji dostosowanych do różnych potrzeb użytkowników.
+
+\section{Projekt Jupyter - fundament
+ekosystemu}\label{projekt-jupyter---fundament-ekosystemu}
+
+Projekt Jupyter powstał w 2014 roku jako rozwinięcie wcześniejszego
+projektu IPython. Nazwa ``Jupyter'' pochodzi od trzech głównych języków
+programowania: Julia, Python i R, choć obecnie obsługuje ponad 40
+różnych języków programowania.
+
+Architektura Jupyter opiera się na protokole komunikacyjnym między
+interfejsem użytkownika (frontend) a kernelem (backend), który wykonuje
+kod. Kernel to proces odpowiedzialny za interpretację i wykonywanie kodu
+w określonym języku programowania. Dzięki tej architekturze możliwe jest
+tworzenie różnych interfejsów użytkownika przy zachowaniu tej samej
+funkcjonalności wykonawczej.
+
+Projekt Jupyter wprowadzil format .ipynb (IPython Notebook), który
+przechowuje strukturę notatnika w formacie JSON. Każdy notatnik składa
+się z komórek, które mogą zawierać kod, tekst w formacie Markdown, lub
+surowe dane. Ta struktura pozwala na tworzenie dokumentów, które są
+jednocześnie wykonywalne i czytelne dla człowieka.
+
+\section{Jupyter Lab - nowoczesne środowisko
+rozwojowe}\label{jupyter-lab---nowoczesne-ux15brodowisko-rozwojowe}
+
+Jupyter Lab reprezentuje najnowszą generację interfejsów w ekosystemie
+Jupyter. Został zaprojektowany jako następca klasycznego Jupyter
+Notebook i oferuje znacznie bardziej zaawansowane możliwości.
+
+Główną cechą Jupyter Lab jest jego modularna architektura oparta na
+extensjach. Interfejs przypomina nowoczesne IDE (Integrated Development
+Environment) z możliwością otwierania wielu kart, dzielenia ekranu i
+zarządzania różnymi typami plików w jednym oknie. Użytkownicy mogą
+jednocześnie pracować z notatnikami, plikami tekstowymi, terminalem i
+przeglądarką plików.
+
+Jupyter Lab wprowadza także ulepszone możliwości debugowania, lepszą
+integrację z systemami kontroli wersji jak Git, oraz bardziej
+zaawansowane narzędzia do wizualizacji danych. System extensji pozwala
+na dostosowanie środowiska do specyficznych potrzeb poprzez instalowanie
+dodatkowych wtyczek.
+
+Środowisko to szczególnie dobrze sprawdza się w przypadku większych
+projektów, gdzie konieczne jest zarządzanie wieloma plikami i zasobami
+jednocześnie. Jupyter Lab oferuje również lepszą wydajność przy pracy z
+dużymi notatnikami zawierającymi wiele komórek z kodem i wizualizacjami.
+
+\section{Klasyczny Jupyter Notebook - prostota i
+funkcjonalność}\label{klasyczny-jupyter-notebook---prostota-i-funkcjonalnoux15bux107}
+
+Klasyczny Jupyter Notebook to pierwsza i najbardziej rozpowszechniona
+implementacja interfejsu dla notatników Jupyter. Charakteryzuje się
+prostym, liniowym układem, gdzie użytkownik pracuje z jednym notatnikiem
+w czasie, przeglądając go od góry do dołu.
+
+Interfejs klasycznego notebooka jest intuicyjny i łatwy w nauce, co
+czyni go idealnym wyborem dla osób rozpoczynających pracę z notatnikami.
+Każdy notatnik otwiera się w osobnej karcie przeglądarki, a nawigacja
+odbywa się głównie za pomocą klawiatury z wykorzystaniem skrótów
+klawiaturowych.
+
+Klasyczny Jupyter Notebook oferuje wszystkie podstawowe funkcjonalności
+potrzebne do efektywnej pracy: wykonywanie kodu komórka po komórce,
+tworzenie wizualizacji, formatowanie tekstu w Markdown, oraz
+eksportowanie notatników do różnych formatów takich jak HTML, PDF czy
+Python script.
+
+Mimo że Jupyter Lab oferuje więcej możliwości, klasyczny Notebook
+pozostaje popularny ze względu na swoją stabilność, mniejsze zużycie
+zasobów systemowych i prostotę obsługi. Wiele organizacji i kursów
+edukacyjnych nadal preferuje ten interfejs ze względu na jego
+przewidywalność i łatwość wdrożenia.
+
+\section{JupyterLite - Jupyter w
+przeglądarce}\label{jupyterlite---jupyter-w-przeglux105darce}
+
+JupyterLite to rewolucyjna implementacja Jupyter, która działa w całości
+w przeglądarce internetowej bez konieczności instalowania jakiegokolwiek
+oprogramowania na lokalnym komputerze. Wykorzystuje technologie
+WebAssembly (WASM) do uruchamiania interpretera Pythona bezpośrednio w
+przeglądarce.
+
+Ta implementacja otwiera nowe możliwości w zakresie edukacji i szybkiego
+prototypowania. Instruktorzy mogą udostępniać interaktywne materiały
+edukacyjne poprzez zwykły link, a studenci mogą natychmiast rozpocząć
+pracę bez skomplikowanego procesu instalacji środowiska
+programistycznego.
+
+JupyterLite obsługuje większość standardowych bibliotek Pythona,
+włączając NumPy, Pandas, Matplotlib czy Scikit-learn. Dane są
+przetwarzane lokalnie w przeglądarce, co oznacza, że nie ma konieczności
+przesyłania kodu lub danych na zewnętrzne serwery, co zwiększa
+prywatność i bezpieczeństwo.
+
+Ograniczenia JupyterLite wynikają głównie z architektury przeglądarek
+internetowych. Niektóre biblioteki wymagające dostępu do zasobów
+systemowych mogą nie działać, a wydajność może być niższa w przypadku
+bardzo zasobochłonnych obliczeń. Niemniej jednak, dla większości
+zastosowań edukacyjnych i prototypowych JupyterLite stanowi doskonałe
+rozwiązanie.
+
+\section{Google Colab - chmurowa moc
+obliczeniowa}\label{google-colab---chmurowa-moc-obliczeniowa}
+
+Google Colaboratory, powszechnie znane jako Colab, to usługa chmurowa
+oferowana przez Google, która umożliwia uruchamianie notatników Jupyter
+bez konieczności lokalnej instalacji. Colab integruje się z ekosystemem
+Google, umożliwiając łatwe zapisywanie notatników w Google Drive i
+współdzielenie ich z innymi użytkownikami.
+
+Największą zaletą Colab jest dostęp do darmowych zasobów obliczeniowych,
+włączając procesory graficzne (GPU) i jednostki przetwarzania
+tensorowego (TPU). To czyni Colab szczególnie atrakcyjnym dla projektów
+związanych z uczeniem maszynowym i głębokim, gdzie potrzebna jest
+znaczna moc obliczeniowa.
+
+Środowisko Colab jest wstępnie skonfigurowane z najpopularniejszymi
+bibliotekami do analizy danych i uczenia maszynowego, takimi jak
+TensorFlow, PyTorch, scikit-learn czy pandas. Użytkownicy mogą
+natychmiast rozpocząć pracę bez konieczności instalowania i
+konfigurowania środowiska programistycznego.
+
+Colab oferuje również zaawansowane funkcje współpracy, umożliwiając
+wielu użytkownikom jednoczesną pracę nad tym samym notatnikiem, podobnie
+jak w Google Docs. Komentarze i sugestie mogą być dodawane bezpośrednio
+do komórek, co ułatwia proces recenzji kodu i współpracy zespołowej.
+
+Ograniczenia Colab dotyczą głównie czasu sesji (który jest limitowany
+dla użytkowników darmowych), ograniczeń w dostępie do lokalnego systemu
+plików, oraz konieczności posiadania połączenia internetowego. Dla
+użytkowników wymagających większej mocy obliczeniowej lub dłuższych
+sesji dostępne są płatne plany Colab Pro.
+
+\chapter{Procesy w analizie danych}\label{procesy-w-analizie-danych}
+
+\section{Wprowadzenie}\label{wprowadzenie-1}
+
+Analiza danych to złożony proces, który wymaga systematycznego podejścia
+do przekształcania surowych danych w użyteczną wiedzę. W celu
+standaryzacji i usprawnienia tego procesu, specjaliści opracowali kilka
+metodologii, które służą jako mapy drogowe dla projektów analitycznych.
+Każda z tych metodologii ma swoje unikalne cechy, ale wszystkie dzielą
+wspólny cel: zapewnienie strukturalnego podejścia do odkrywania wzorców
+i generowania wartościowych wniosków z danych.
+
+\section{Proces KDD (Knowledge Discovery from
+Data)}\label{proces-kdd-knowledge-discovery-from-data}
+
+Knowledge Discovery from Data to jedna z pierwszych formalnych
+metodologii analizy danych, która została opracowana w latach 90. XX
+wieku. KDD koncentruje się na całościowym procesie odkrywania wiedzy,
+traktując data mining jako jeden z etapów w szerszym kontekście.
+
+\subsection{Etapy procesu KDD}\label{etapy-procesu-kdd}
+
+Proces KDD składa się z pięciu głównych etapów, które tworzą logiczną
+sekwencję działań prowadzących od surowych danych do użytecznej wiedzy:
+
+\begin{itemize}
+\item
+  Selekcja danych: określenie celu analizy i identyfikacja odpowiednich
+  źródeł danych. Na tym etapie podejmujemy decyzje o tym, które dane są
+  istotne dla naszego problemu badawczego i jakie ograniczenia mogą
+  wpłynąć na analizę.
+\item
+  Preprocessing: wstępne przetwarzanie danych obejmujące czyszczenie,
+  usuwanie duplikatów, radzenie sobie z brakującymi wartościami oraz
+  przekształcanie danych do formatu odpowiedniego dla dalszej analizy.
+  Ten etap często zajmuje najwięcej czasu w całym procesie.
+\item
+  Transformacja danych: przeprowadzanie bardziej zaawansowanych
+  przekształceń, takich jak normalizacja, standaryzacja, agregacja czy
+  tworzenie nowych zmiennych. Celem jest przygotowanie danych w formie
+  optymalnej dla algorytmów data mining.
+\item
+  Data mining: stosowanie algorytmów uczenia maszynowego lub
+  statystycznych metod analizy w celu odkrycia wzorców, reguł lub modeli
+  w danych. To tutaj następuje właściwe ``wydobycie'' informacji z
+  danych.
+\item
+  Interpretacja i ewaluacja: ocena jakości odkrytych wzorców,
+  sprawdzenie ich przydatności biznesowej i prezentacja wyników w
+  zrozumiałej formie dla użytkowników końcowych.
+\end{itemize}
+
+\section{Proces SEMMA}\label{proces-semma}
+
+SEMMA to metodologia opracowana przez firmę SAS, której nazwa stanowi
+akronim angielskich słów: Sample, Explore, Modify, Model, Assess. Proces
+ten został zaprojektowany z myślą o praktycznych zastosowaniach
+biznesowych i charakteryzuje się dużą elastycznością.
+
+\subsection{Etapy procesu SEMMA}\label{etapy-procesu-semma}
+
+Proces SEMMA składa się z pięciu głównych faz, które mogą być
+realizowane w sposób iteracyjny, co oznacza, że możemy wracać do
+wcześniejszych etapów w miarę zdobywania nowych informacji:
+
+\begin{itemize}
+\item
+  Sample (Próbkowanie): wybór reprezentatywnego podzbioru danych do
+  analizy. Kluczowe jest zapewnienie, że próbka będzie wystarczająco
+  duża i reprezentatywna, aby wyniki analizy były wiarygodne i możliwe
+  do uogólnienia.
+\item
+  Explore (Eksploracja): eksploracyjna analiza danych, gdzie badamy
+  strukturę danych, identyfikujemy wzorce, anomalie i zależności między
+  zmiennymi. Używamy technik wizualizacji i statystyk opisowych, aby
+  lepiej zrozumieć nasze dane.
+\item
+  Modify (Modyfikacja): modyfikacja i przygotowanie danych do
+  modelowania. Tworzymy nowe zmienne, przekształcamy istniejące i
+  wybieramy najważniejsze cechy dla naszego modelu. Ten etap często
+  wymaga iteracyjnego podejścia.
+\item
+  Model (Modelowanie): budowanie modeli predykcyjnych lub opisowych.
+  Testujemy różne algorytmy i techniki, aby znaleźć najlepsze
+  rozwiązanie dla naszego problemu. Często budujemy kilka modeli i
+  porównujemy ich wydajność.
+\item
+  Assess (Ocena): ocena i walidacja modeli. Sprawdzamy ich dokładność,
+  niezawodność i przydatność biznesową. Używamy różnych metryk i technik
+  walidacji, aby upewnić się, że model będzie działał dobrze na nowych
+  danych.
+\end{itemize}
+
+\section{Proces CRISP-DM}\label{proces-crisp-dm}
+
+Cross-Industry Standard Process for Data Mining to najbardziej popularna
+i szeroko stosowana metodologia analizy danych. Została opracowana przez
+konsorcjum firm i instytutów badawczych jako standard branżowy,
+niezależny od konkretnych narzędzi czy technologii.
+
+\subsection{Etapy procesu CRISP-DM}\label{etapy-procesu-crisp-dm}
+
+CRISP-DM składa się z sześciu głównych faz, które tworzą cykl życia
+projektu analizy danych. Proces ten jest iteracyjny i elastyczny, co
+oznacza, że możemy wracać do wcześniejszych faz w miarę potrzeb:
+
+\begin{itemize}
+\item
+  Business Understanding: koncentracja na zrozumieniu celów biznesowych
+  i wymagań projektu. Definiujemy problem biznesowy, który chcemy
+  rozwiązać, oraz określamy kryteria sukcesu. Ta faza jest fundamentalna
+  dla całego projektu, ponieważ ustala kierunek dalszych działań.
+\item
+  Data Understanding: zbieranie i wstępna eksploracja danych.
+  Identyfikujemy dostępne źródła danych, oceniamy ich jakość i
+  kompletność oraz przeprowadzamy wstępną analizę, aby lepiej zrozumieć
+  strukturę i charakterystykę danych.
+\item
+  Data Preparation: przygotowanie danych do analizy, które jest
+  najczęściej najbardziej czasochłonną częścią procesu. Obejmuje to
+  czyszczenie danych, integrację z różnych źródeł, transformację i
+  selekcję odpowiednich zmiennych.
+\item
+  Modeling: zastosowanie technik modelowania do przygotowanych danych.
+  Wybieramy odpowiednie algorytmy, konfigurujemy ich parametry i
+  budujemy modele. Często testujemy kilka różnych podejść, aby znaleźć
+  najlepsze rozwiązanie.
+\item
+  Evaluation: ocena jakości modeli z perspektywy biznesowej. Sprawdzamy,
+  czy model rzeczywiście rozwiązuje pierwotny problem biznesowy oraz czy
+  spełnia ustalone kryteria sukcesu. Ta faza może prowadzić do powrotu
+  do wcześniejszych etapów, jeśli wyniki nie są zadowalające.
+\item
+  Deployment: wdrożenie modelu w środowisku produkcyjnym. Planujemy
+  sposób monitorowania modelu, jego utrzymania i ewentualnej
+  aktualizacji. Ta faza jest kluczowa dla praktycznego wykorzystania
+  wyników analizy.
+\end{itemize}
+
 \part{Zadania problemowe}
 
 \chapter{Problem \#1}\label{problem-1}
@@ -13063,6 +13352,146 @@ Cel: piramida wieku
 \end{Shaded}
 
 \pandocbounded{\includegraphics[keepaspectratio]{problem03_files/figure-pdf/cell-3-output-1.png}}
+
+\chapter{Problem \#4}\label{problem-4}
+
+Pliki są dostępne tutaj
+\url{https://github.com/pjastr/aiwd-book/tree/main/dataset}
+
+Cel: szeregi czasowe.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ matplotlib.dates }\ImportTok{as}\NormalTok{ mdates}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"dataset/kawa.csv"}\NormalTok{, parse\_dates}\OperatorTok{=}\NormalTok{[}\StringTok{"Data"}\NormalTok{], dayfirst}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+
+\NormalTok{x }\OperatorTok{=}\NormalTok{ df[}\StringTok{"Data"}\NormalTok{]}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ df[}\StringTok{"Liczba sprzedanych kaw"}\NormalTok{]}
+
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{plt.plot(x, y, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}{-}\textquotesingle{}}\NormalTok{, linewidth}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+
+\NormalTok{plt.title(}\StringTok{"Liczba sprzedanych kaw w dniach 1–7 czerwca 2025"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{14}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{"Data"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{"Liczba sprzedanych kaw"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+
+\NormalTok{plt.grid(}\VariableTok{True}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}{-}{-}\textquotesingle{}}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.7}\NormalTok{)}
+
+\CommentTok{\# zapisanie daty na podziałce X w fromacie dd.mm.yyyy}
+\NormalTok{plt.gca().xaxis.set\_major\_formatter(mdates.DateFormatter(}\StringTok{\textquotesingle{}}\SpecialCharTok{\%d}\StringTok{.\%m.\%Y\textquotesingle{}}\NormalTok{))}
+\NormalTok{plt.gca().xaxis.set\_major\_locator(mdates.DayLocator())}
+\NormalTok{plt.gcf().autofmt\_xdate()}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{problem04_files/figure-pdf/cell-2-output-1.png}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ matplotlib.dates }\ImportTok{as}\NormalTok{ mdates}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"dataset/kawa.csv"}\NormalTok{, parse\_dates}\OperatorTok{=}\NormalTok{[}\StringTok{"Data"}\NormalTok{], dayfirst}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+
+\NormalTok{x }\OperatorTok{=}\NormalTok{ df[}\StringTok{"Data"}\NormalTok{]}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ df[}\StringTok{"Liczba sprzedanych kaw"}\NormalTok{]}
+
+\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{ax.plot(x, y, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}{-}\textquotesingle{}}\NormalTok{, linewidth}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{ax.set\_title(}\StringTok{"Liczba sprzedanych kaw w dniach 1–7 czerwca 2025"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{14}\NormalTok{)}
+\NormalTok{ax.set\_xlabel(}\StringTok{"Data"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{ax.set\_ylabel(}\StringTok{"Liczba sprzedanych kaw"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{ax.grid(}\VariableTok{True}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}{-}{-}\textquotesingle{}}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.7}\NormalTok{)}
+\NormalTok{ax.xaxis.set\_major\_locator(mdates.DayLocator())}
+\NormalTok{ax.xaxis.set\_major\_formatter(mdates.DateFormatter(}\StringTok{\textquotesingle{}}\SpecialCharTok{\%d}\StringTok{.\%m.\%Y\textquotesingle{}}\NormalTok{))}
+\NormalTok{fig.autofmt\_xdate()}
+\NormalTok{fig.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{problem04_files/figure-pdf/cell-3-output-1.png}}
+
+\chapter{Problem \#5}\label{problem-5}
+
+Pliki są dostępne tutaj
+\url{https://github.com/pjastr/aiwd-book/tree/main/dataset}
+
+Cel: szeregi czasowe.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}dataset/sprzedaz2.csv\textquotesingle{}}\NormalTok{, sep}\OperatorTok{=}\StringTok{\textquotesingle{};\textquotesingle{}}\NormalTok{)}
+\NormalTok{df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ pd.to\_datetime(df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{], }\BuiltInTok{format}\OperatorTok{=}\StringTok{\textquotesingle{}}\SpecialCharTok{\%d}\StringTok{{-}\%m{-}\%Y\textquotesingle{}}\NormalTok{)}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ df.sort\_values(}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{plt.barh(}
+\NormalTok{    df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{].dt.strftime(}\StringTok{\textquotesingle{}}\SpecialCharTok{\%d}\StringTok{{-}\%m{-}\%Y\textquotesingle{}}\NormalTok{),}
+\NormalTok{    df[}\StringTok{\textquotesingle{}Liczba sprzedanych sztuk\textquotesingle{}}\NormalTok{],}
+\NormalTok{    color}\OperatorTok{=}\StringTok{\textquotesingle{}skyblue\textquotesingle{}}\NormalTok{,}
+\NormalTok{    edgecolor}\OperatorTok{=}\StringTok{\textquotesingle{}gray\textquotesingle{}}
+\NormalTok{)}
+
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Liczba sprzedanych sztuk\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Sprzedaż produktów w wybrane dni\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{14}\NormalTok{, pad}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
+
+\NormalTok{plt.xticks(fontsize}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+\NormalTok{plt.yticks(fontsize}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+\NormalTok{plt.grid(axis}\OperatorTok{=}\StringTok{\textquotesingle{}x\textquotesingle{}}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}{-}{-}\textquotesingle{}}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.5}\NormalTok{)}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{problem05_files/figure-pdf/cell-2-output-1.png}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ matplotlib.dates }\ImportTok{as}\NormalTok{ mdates}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}dataset/sprzedaz2.csv\textquotesingle{}}\NormalTok{, sep}\OperatorTok{=}\StringTok{\textquotesingle{};\textquotesingle{}}\NormalTok{)}
+\NormalTok{df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ pd.to\_datetime(df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{], }\BuiltInTok{format}\OperatorTok{=}\StringTok{\textquotesingle{}}\SpecialCharTok{\%d}\StringTok{{-}\%m{-}\%Y\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{plt.barh(}
+\NormalTok{    df[}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{],}
+\NormalTok{    df[}\StringTok{\textquotesingle{}Liczba sprzedanych sztuk\textquotesingle{}}\NormalTok{],}
+\NormalTok{    color}\OperatorTok{=}\StringTok{\textquotesingle{}skyblue\textquotesingle{}}\NormalTok{,}
+\NormalTok{    edgecolor}\OperatorTok{=}\StringTok{\textquotesingle{}gray\textquotesingle{}}
+\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Liczba sprzedanych sztuk\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{12}\NormalTok{)}
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}Sprzedaż produktów w wybrane dni\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{14}\NormalTok{, pad}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
+
+\NormalTok{ax }\OperatorTok{=}\NormalTok{ plt.gca()}
+\NormalTok{ax.yaxis\_date()}
+\NormalTok{ax.yaxis.set\_major\_locator(mdates.AutoDateLocator())}
+\NormalTok{ax.yaxis.set\_major\_formatter(mdates.DateFormatter(}\StringTok{\textquotesingle{}}\SpecialCharTok{\%d}\StringTok{{-}\%m{-}\%Y\textquotesingle{}}\NormalTok{))}
+\NormalTok{plt.xticks(fontsize}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+
+\NormalTok{plt.grid(axis}\OperatorTok{=}\StringTok{\textquotesingle{}x\textquotesingle{}}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}{-}{-}\textquotesingle{}}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.5}\NormalTok{)}
+
+\NormalTok{plt.tight\_layout()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{problem05_files/figure-pdf/cell-3-output-1.png}}
 
 
 

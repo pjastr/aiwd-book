@@ -1,0 +1,58 @@
+# Notatniki
+
+
+# Notatki w Pythonie - Ekosystem Jupyter
+
+## Wprowadzenie do notebooków
+
+Notatniki (notebooks) w Pythonie to interaktywne dokumenty, które łączą kod, wyniki jego wykonania, tekst opisowy i wizualizacje w jednym miejscu. Stanowią one fundamentalne narzędzie w analizie danych, prototypowaniu algorytmów i dokumentowaniu procesów badawczych. Głównym ekosystemem obsługującym notatniki jest Jupyter, który oferuje kilka różnych implementacji dostosowanych do różnych potrzeb użytkowników.
+
+## Projekt Jupyter - fundament ekosystemu
+
+Projekt Jupyter powstał w 2014 roku jako rozwinięcie wcześniejszego projektu IPython. Nazwa "Jupyter" pochodzi od trzech głównych języków programowania: Julia, Python i R, choć obecnie obsługuje ponad 40 różnych języków programowania.
+
+Architektura Jupyter opiera się na protokole komunikacyjnym między interfejsem użytkownika (frontend) a kernelem (backend), który wykonuje kod. Kernel to proces odpowiedzialny za interpretację i wykonywanie kodu w określonym języku programowania. Dzięki tej architekturze możliwe jest tworzenie różnych interfejsów użytkownika przy zachowaniu tej samej funkcjonalności wykonawczej.
+
+Projekt Jupyter wprowadzil format .ipynb (IPython Notebook), który przechowuje strukturę notatnika w formacie JSON. Każdy notatnik składa się z komórek, które mogą zawierać kod, tekst w formacie Markdown, lub surowe dane. Ta struktura pozwala na tworzenie dokumentów, które są jednocześnie wykonywalne i czytelne dla człowieka.
+
+## Jupyter Lab - nowoczesne środowisko rozwojowe
+
+Jupyter Lab reprezentuje najnowszą generację interfejsów w ekosystemie Jupyter. Został zaprojektowany jako następca klasycznego Jupyter Notebook i oferuje znacznie bardziej zaawansowane możliwości.
+
+Główną cechą Jupyter Lab jest jego modularna architektura oparta na extensjach. Interfejs przypomina nowoczesne IDE (Integrated Development Environment) z możliwością otwierania wielu kart, dzielenia ekranu i zarządzania różnymi typami plików w jednym oknie. Użytkownicy mogą jednocześnie pracować z notatnikami, plikami tekstowymi, terminalem i przeglądarką plików.
+
+Jupyter Lab wprowadza także ulepszone możliwości debugowania, lepszą integrację z systemami kontroli wersji jak Git, oraz bardziej zaawansowane narzędzia do wizualizacji danych. System extensji pozwala na dostosowanie środowiska do specyficznych potrzeb poprzez instalowanie dodatkowych wtyczek.
+
+Środowisko to szczególnie dobrze sprawdza się w przypadku większych projektów, gdzie konieczne jest zarządzanie wieloma plikami i zasobami jednocześnie. Jupyter Lab oferuje również lepszą wydajność przy pracy z dużymi notatnikami zawierającymi wiele komórek z kodem i wizualizacjami.
+
+## Klasyczny Jupyter Notebook - prostota i funkcjonalność
+
+Klasyczny Jupyter Notebook to pierwsza i najbardziej rozpowszechniona implementacja interfejsu dla notatników Jupyter. Charakteryzuje się prostym, liniowym układem, gdzie użytkownik pracuje z jednym notatnikiem w czasie, przeglądając go od góry do dołu.
+
+Interfejs klasycznego notebooka jest intuicyjny i łatwy w nauce, co czyni go idealnym wyborem dla osób rozpoczynających pracę z notatnikami. Każdy notatnik otwiera się w osobnej karcie przeglądarki, a nawigacja odbywa się głównie za pomocą klawiatury z wykorzystaniem skrótów klawiaturowych.
+
+Klasyczny Jupyter Notebook oferuje wszystkie podstawowe funkcjonalności potrzebne do efektywnej pracy: wykonywanie kodu komórka po komórce, tworzenie wizualizacji, formatowanie tekstu w Markdown, oraz eksportowanie notatników do różnych formatów takich jak HTML, PDF czy Python script.
+
+Mimo że Jupyter Lab oferuje więcej możliwości, klasyczny Notebook pozostaje popularny ze względu na swoją stabilność, mniejsze zużycie zasobów systemowych i prostotę obsługi. Wiele organizacji i kursów edukacyjnych nadal preferuje ten interfejs ze względu na jego przewidywalność i łatwość wdrożenia.
+
+## JupyterLite - Jupyter w przeglądarce
+
+JupyterLite to rewolucyjna implementacja Jupyter, która działa w całości w przeglądarce internetowej bez konieczności instalowania jakiegokolwiek oprogramowania na lokalnym komputerze. Wykorzystuje technologie WebAssembly (WASM) do uruchamiania interpretera Pythona bezpośrednio w przeglądarce.
+
+Ta implementacja otwiera nowe możliwości w zakresie edukacji i szybkiego prototypowania. Instruktorzy mogą udostępniać interaktywne materiały edukacyjne poprzez zwykły link, a studenci mogą natychmiast rozpocząć pracę bez skomplikowanego procesu instalacji środowiska programistycznego.
+
+JupyterLite obsługuje większość standardowych bibliotek Pythona, włączając NumPy, Pandas, Matplotlib czy Scikit-learn. Dane są przetwarzane lokalnie w przeglądarce, co oznacza, że nie ma konieczności przesyłania kodu lub danych na zewnętrzne serwery, co zwiększa prywatność i bezpieczeństwo.
+
+Ograniczenia JupyterLite wynikają głównie z architektury przeglądarek internetowych. Niektóre biblioteki wymagające dostępu do zasobów systemowych mogą nie działać, a wydajność może być niższa w przypadku bardzo zasobochłonnych obliczeń. Niemniej jednak, dla większości zastosowań edukacyjnych i prototypowych JupyterLite stanowi doskonałe rozwiązanie.
+
+## Google Colab - chmurowa moc obliczeniowa
+
+Google Colaboratory, powszechnie znane jako Colab, to usługa chmurowa oferowana przez Google, która umożliwia uruchamianie notatników Jupyter bez konieczności lokalnej instalacji. Colab integruje się z ekosystemem Google, umożliwiając łatwe zapisywanie notatników w Google Drive i współdzielenie ich z innymi użytkownikami.
+
+Największą zaletą Colab jest dostęp do darmowych zasobów obliczeniowych, włączając procesory graficzne (GPU) i jednostki przetwarzania tensorowego (TPU). To czyni Colab szczególnie atrakcyjnym dla projektów związanych z uczeniem maszynowym i głębokim, gdzie potrzebna jest znaczna moc obliczeniowa.
+
+Środowisko Colab jest wstępnie skonfigurowane z najpopularniejszymi bibliotekami do analizy danych i uczenia maszynowego, takimi jak TensorFlow, PyTorch, scikit-learn czy pandas. Użytkownicy mogą natychmiast rozpocząć pracę bez konieczności instalowania i konfigurowania środowiska programistycznego.
+
+Colab oferuje również zaawansowane funkcje współpracy, umożliwiając wielu użytkownikom jednoczesną pracę nad tym samym notatnikiem, podobnie jak w Google Docs. Komentarze i sugestie mogą być dodawane bezpośrednio do komórek, co ułatwia proces recenzji kodu i współpracy zespołowej.
+
+Ograniczenia Colab dotyczą głównie czasu sesji (który jest limitowany dla użytkowników darmowych), ograniczeń w dostępie do lokalnego systemu plików, oraz konieczności posiadania połączenia internetowego. Dla użytkowników wymagających większej mocy obliczeniowej lub dłuższych sesji dostępne są płatne plany Colab Pro.
