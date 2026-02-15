@@ -227,7 +227,7 @@
 
 \title{Analiza i wizualizacja danych}
 \author{Piotr Jastrzębski}
-\date{2025-06-04}
+\date{2026-02-15}
 \begin{document}
 \maketitle
 
@@ -1223,8 +1223,8 @@ Run - zielona strzałka u góry.
 \end{Shaded}
 
 \begin{verbatim}
---- 0.0017848014831542969 seconds ---
---- 0.03504204750061035 seconds ---
+--- 0.002283811569213867 seconds ---
+--- 0.04365873336791992 seconds ---
 \end{verbatim}
 
 \chapter{\texorpdfstring{Atrybuty tablic
@@ -4275,7 +4275,7 @@ values
 [ 3 -5  7  4]
 <class 'numpy.ndarray'>
 RangeIndex(start=0, stop=4, step=1)
-<class 'pandas.core.indexes.range.RangeIndex'>
+<class 'pandas.RangeIndex'>
 \end{verbatim}
 
 \begin{Shaded}
@@ -4416,18 +4416,18 @@ Shape: (3, 3)
 --
 Index: RangeIndex(start=0, stop=3, step=1)
 --
-columns: Index(['Country', 'Population', 'Capital'], dtype='object')
+columns: Index(['Country', 'Population', 'Capital'], dtype='str')
 --
-<class 'pandas.core.frame.DataFrame'>
+<class 'pandas.DataFrame'>
 RangeIndex: 3 entries, 0 to 2
 Data columns (total 3 columns):
- #   Column      Non-Null Count  Dtype 
----  ------      --------------  ----- 
- 0   Country     3 non-null      object
- 1   Population  3 non-null      int64 
- 2   Capital     3 non-null      object
-dtypes: int64(1), object(2)
-memory usage: 204.0+ bytes
+ #   Column      Non-Null Count  Dtype
+---  ------      --------------  -----
+ 0   Country     3 non-null      str  
+ 1   Population  3 non-null      int64
+ 2   Capital     3 non-null      str  
+dtypes: int64(1), str(2)
+memory usage: 204.0 bytes
 --
 Country       3
 Population    3
@@ -4541,7 +4541,7 @@ Name: 2, dtype: object
 0     Brussels
 1    New Delhi
 2    BrasÃ­lia
-Name: Capital, dtype: object
+Name: Capital, dtype: str
 --
 New Delhi
 \end{verbatim}
@@ -5299,7 +5299,7 @@ Zwykle operacje wektorowe są szybsze:
 \end{Shaded}
 
 \begin{verbatim}
-0.1601097583770752 0.31416893005371094
+0.13415980339050293 0.4541299343109131
 \end{verbatim}
 
 \chapter{Pandas - inne}\label{pandas---inne}
@@ -5360,7 +5360,7 @@ danych}\label{obsux142uga-brakujux105cych-danych}
 1    artichoke
 2          NaN
 3      avocado
-dtype: object
+dtype: str
 0    False
 1    False
 2     True
@@ -5369,7 +5369,7 @@ dtype: bool
 0     aardvark
 1    artichoke
 3      avocado
-dtype: object
+dtype: str
 \end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -5568,7 +5568,7 @@ Length: 12
 Categories (4, interval[int64, left]): [[18, 26) < [26, 36) < [36, 61) < [61, 100)]
 ['Youth', 'Youth', 'Youth', 'YoungAdult', 'Youth', ..., 'YoungAdult', 'Senior', 'MiddleAged', 'MiddleAged', 'YoungAdult']
 Length: 12
-Categories (4, object): ['Youth' < 'YoungAdult' < 'MiddleAged' < 'Senior']
+Categories (4, str): ['Youth' < 'YoungAdult' < 'MiddleAged' < 'Senior']
 \end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -5584,9 +5584,9 @@ Categories (4, object): ['Youth' < 'YoungAdult' < 'MiddleAged' < 'Senior']
 \end{Shaded}
 
 \begin{verbatim}
-[(0.0067, 0.23], (0.23, 0.46], (0.0067, 0.23], (0.69, 0.91], (0.23, 0.46], ..., (0.69, 0.91], (0.69, 0.91], (0.0067, 0.23], (0.69, 0.91], (0.23, 0.46]]
+[(0.27, 0.51], (0.74, 0.98], (0.74, 0.98], (0.27, 0.51], (0.27, 0.51], ..., (0.74, 0.98], (0.037, 0.27], (0.51, 0.74], (0.74, 0.98], (0.74, 0.98]]
 Length: 20
-Categories (4, interval[float64, right]): [(0.0067, 0.23] < (0.23, 0.46] < (0.46, 0.69] < (0.69, 0.91]]
+Categories (4, interval[float64, right]): [(0.037, 0.27] < (0.27, 0.51] < (0.51, 0.74] < (0.74, 0.98]]
 \end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -5604,13 +5604,13 @@ Categories (4, interval[float64, right]): [(0.0067, 0.23] < (0.23, 0.46] < (0.46
 \end{Shaded}
 
 \begin{verbatim}
-[(-3.461, -0.668], (0.645, 3.223], (0.0572, 0.645], (-0.668, 0.0572], (-3.461, -0.668], ..., (-3.461, -0.668], (-0.668, 0.0572], (0.645, 3.223], (-0.668, 0.0572], (0.645, 3.223]]
+[(0.666, 3.048], (-0.676, -0.00498], (-0.676, -0.00498], (-3.4659999999999997, -0.676], (-3.4659999999999997, -0.676], ..., (-3.4659999999999997, -0.676], (0.666, 3.048], (-0.676, -0.00498], (-0.676, -0.00498], (-0.00498, 0.666]]
 Length: 1000
-Categories (4, interval[float64, right]): [(-3.461, -0.668] < (-0.668, 0.0572] < (0.0572, 0.645] < (0.645, 3.223]]
-(-3.461, -0.668]    250
-(-0.668, 0.0572]    250
-(0.0572, 0.645]     250
-(0.645, 3.223]      250
+Categories (4, interval[float64, right]): [(-3.4659999999999997, -0.676] < (-0.676, -0.00498] < (-0.00498, 0.666] < (0.666, 3.048]]
+(-3.4659999999999997, -0.676]    250
+(-0.676, -0.00498]               250
+(-0.00498, 0.666]                250
+(0.666, 3.048]                   250
 Name: count, dtype: int64
 \end{verbatim}
 
@@ -5635,34 +5635,28 @@ odstających}\label{wykrywanie-i-filtrowanie-elementuxf3w-odstajux105cych}
 \begin{verbatim}
                  0            1            2            3
 count  1000.000000  1000.000000  1000.000000  1000.000000
-mean     -0.004400    -0.019564    -0.046036     0.026372
-std       1.004421     1.005820     0.974513     1.035495
-min      -3.262707    -2.995729    -3.217590    -3.217875
-25%      -0.642428    -0.715467    -0.713862    -0.693629
-50%      -0.033701    -0.000906    -0.059704     0.047065
-75%       0.643228     0.684133     0.618592     0.720866
-max       3.273411     2.916578     3.324598     3.063337
+mean      0.010550    -0.065585     0.012313     0.015893
+std       0.953629     0.996855     1.014534     0.988054
+min      -3.659496    -3.935051    -3.377363    -3.035084
+25%      -0.629754    -0.713511    -0.582580    -0.670969
+50%      -0.008086    -0.037256     0.025797     0.012612
+75%       0.678236     0.611056     0.691895     0.678211
+max       2.605303     2.905724     3.564667     2.998053
 ---
-75     3.324598
-591   -3.217590
-611   -3.207665
+495   -3.377363
+539    3.236565
+643    3.564667
 Name: 2, dtype: float64
 ---
             0         1         2         3
-28  -0.088833 -0.503107  0.057880 -3.020674
-62   3.143228  1.662252  0.144335 -1.449680
-75   1.283282  1.326140  3.324598  1.168343
-363 -1.604148  2.152233 -0.355075 -3.058534
-366 -0.299043 -2.699259 -0.231658 -3.217875
-509 -3.084428 -0.109235 -0.635709 -2.825169
-514 -3.262707 -1.107029  0.816387 -0.804256
-591 -0.571711  0.092800 -3.217590  2.083280
-610  3.247024  0.355076  1.420504  1.671392
-611  0.340249  0.428371 -3.207665  0.194434
-834  3.273411  0.722863 -0.030006  2.188619
-925  0.502238 -2.991065 -0.649700  3.063337
-951 -1.683799 -1.030595 -0.505454  3.043160
-964  3.176995 -0.549771  0.115128  0.548519
+52  -0.719920 -3.140201  0.975988  0.101336
+359  1.826778 -3.935051 -1.775199  0.292589
+433 -0.916775  0.708818  1.220494 -3.035084
+495  0.441487 -0.627127 -3.377363 -0.049082
+539 -1.112942 -0.598207  3.236565 -0.693495
+643 -0.611328 -1.532343  3.564667 -0.485439
+645 -3.659496  0.921748  1.489663 -0.447950
+838 -0.252966 -0.199917 -0.770880 -3.010470
 \end{verbatim}
 
 \section{Zmiana typu w kolumnie}\label{zmiana-typu-w-kolumnie}
@@ -7208,7 +7202,7 @@ będzie wykres słupkowy lub punktowy.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-2-output-1.pdf}}
 
 \phantomsection\label{annotated-cell-155}%
 \begin{Shaded}
@@ -7261,7 +7255,7 @@ etykiety (label) dla poszczególnych linii.
 \texttt{plt.show()}: wyświetla wykres.
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-3-output-1.pdf}}
 
 Wersja obiektowa:
 
@@ -7286,7 +7280,7 @@ Wersja obiektowa:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-4-output-1.pdf}}
 
 Wersja z datami:
 
@@ -7317,7 +7311,7 @@ Wersja z datami:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-5-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7357,7 +7351,7 @@ Wersja z datami:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-6-output-1.pdf}}
 
 \chapter{Matplotlib - dodatki cz.1}\label{matplotlib---dodatki-cz.1}
 
@@ -7382,7 +7376,7 @@ Wersja z datami:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7414,7 +7408,7 @@ Wersja z datami:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-3-output-1.pdf}}
 
 \section{Style, kolory linii}\label{style-kolory-linii}
 
@@ -7460,7 +7454,7 @@ rysuje zielony wykres z wartościami z tablicy \texttt{x} i wartościami
 \texttt{y}. Linia jest przerywana (\texttt{linestyle="-\/-"}).
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-4-output-1.pdf}}
 
 \pandocbounded{\includegraphics[keepaspectratio]{m3.png}}
 
@@ -7489,7 +7483,7 @@ rysuje zielony wykres z wartościami z tablicy \texttt{x} i wartościami
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-5-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7513,7 +7507,7 @@ rysuje zielony wykres z wartościami z tablicy \texttt{x} i wartościami
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-6-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7538,7 +7532,7 @@ rysuje zielony wykres z wartościami z tablicy \texttt{x} i wartościami
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-7-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki1_files/figure-pdf/cell-7-output-1.pdf}}
 
 \chapter{Matplotlib - podwykresy}\label{matplotlib---podwykresy}
 
@@ -7602,7 +7596,7 @@ Składnia funkcji to
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-podwykresy_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-podwykresy_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7623,7 +7617,7 @@ Składnia funkcji to
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-podwykresy_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-podwykresy_files/figure-pdf/cell-3-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7644,7 +7638,7 @@ Składnia funkcji to
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-podwykresy_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-podwykresy_files/figure-pdf/cell-4-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7713,7 +7707,7 @@ Składnia funkcji to
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-podwykresy_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-podwykresy_files/figure-pdf/cell-5-output-1.pdf}}
 
 \chapter{Matplotlib - zapis}\label{matplotlib---zapis}
 
@@ -7768,7 +7762,7 @@ Składnia funkcji to
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-zapis_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-zapis_files/figure-pdf/cell-2-output-1.pdf}}
 
 \pandocbounded{\includegraphics[keepaspectratio]{m6.png}}
 
@@ -7837,7 +7831,7 @@ grubość wynosi 3.
 zaczynając od 0.5 do 4.5.
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7851,7 +7845,7 @@ zaczynając od 0.5 do 4.5.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-3-output-1.pdf}}
 
 \phantomsection\label{annotated-cell-172}%
 \begin{Shaded}
@@ -7879,7 +7873,7 @@ X (\texttt{square\_meters}) i cenami domów na osi Y
 kółka (\texttt{marker=\textquotesingle{}o\textquotesingle{}}).
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-4-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7896,7 +7890,7 @@ kółka (\texttt{marker=\textquotesingle{}o\textquotesingle{}}).
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-5-output-1.pdf}}
 
 \phantomsection\label{annotated-cell-174}%
 \begin{Shaded}
@@ -7932,7 +7926,7 @@ który może być pojedynczą wartością lub listą/tablicą wartości o
 długości takiej samej jak współrzędne \texttt{x} i \texttt{y}.
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-6-output-1.pdf}}
 
 \phantomsection\label{annotated-cell-175}%
 \begin{Shaded}
@@ -8024,7 +8018,7 @@ przezroczystością 0.3, co poprawia czytelność danych.
 \texttt{plt.show()}: wyświetla przygotowany wykres.
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-7-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-7-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8059,7 +8053,7 @@ przezroczystością 0.3, co poprawia czytelność danych.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-8-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-8-output-1.pdf}}
 
 \url{https://matplotlib.org/stable/api/markers_api.html}
 
@@ -8165,7 +8159,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8184,7 +8178,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-3-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8203,7 +8197,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-4-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8220,7 +8214,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-5-output-1.pdf}}
 
 \phantomsection\label{annotated-cell-181}%
 \begin{Shaded}
@@ -8282,7 +8276,7 @@ okrągły, a nie eliptyczny.
 \texttt{plt.show()}: wyświetla stworzony wykres w oknie graficznym.
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-6-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8303,7 +8297,7 @@ okrągły, a nie eliptyczny.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-7-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-7-output-1.pdf}}
 
 Zamiana na mapę kolorów:
 
@@ -8327,7 +8321,7 @@ Zamiana na mapę kolorów:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-8-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-8-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8350,7 +8344,7 @@ Zamiana na mapę kolorów:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-9-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-9-output-1.pdf}}
 
 \section{Wykres pierścieniowy}\label{wykres-pierux15bcieniowy}
 
@@ -8408,7 +8402,7 @@ aktualnych osi wykresu, tworząc efekt ``donut chart''.
 \texttt{plt.show()}: wyświetla wykres.
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-10-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-10-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8429,7 +8423,7 @@ aktualnych osi wykresu, tworząc efekt ``donut chart''.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-11-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-11-output-1.pdf}}
 
 \chapter{Matplotlib - wykres
 słupkowy}\label{matplotlib---wykres-sux142upkowy}
@@ -8547,7 +8541,7 @@ dodaje etykietę osi Y z tekstem ``Wartości''.
 \texttt{plt.show()}: wyświetla przygotowany wykres.
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8564,7 +8558,7 @@ dodaje etykietę osi Y z tekstem ``Wartości''.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-3-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8598,7 +8592,7 @@ dodaje etykietę osi Y z tekstem ``Wartości''.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-4-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8628,7 +8622,7 @@ dodaje etykietę osi Y z tekstem ``Wartości''.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-5-output-1.pdf}}
 
 \phantomsection\label{annotated-cell-191}%
 \begin{Shaded}
@@ -8737,7 +8731,7 @@ siebie.
 \texttt{plt.show()}: wyświetla wykres
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-6-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8771,7 +8765,7 @@ siebie.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-7-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-7-output-1.pdf}}
 
 \phantomsection\label{annotated-cell-193}%
 \begin{Shaded}
@@ -8851,7 +8845,7 @@ i etykiety dla chłopców i dziewcząt.
 \texttt{plt.show()}: wyświetla wykres
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-8-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-8-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8875,7 +8869,7 @@ i etykiety dla chłopców i dziewcząt.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-9-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-9-output-1.pdf}}
 
 \pandocbounded{\includegraphics[keepaspectratio]{m9.png}}
 
@@ -8932,7 +8926,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-10-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-10-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8960,7 +8954,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-11-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-11-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8994,7 +8988,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-12-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-12-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9020,7 +9014,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-13-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-13-output-1.pdf}}
 
 \chapter{Matplotlib - regresja}\label{matplotlib---regresja}
 
@@ -9256,7 +9250,7 @@ Przewidywany błąd dopasowania: 1.3322676295501878e-15
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-regresja_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-regresja_files/figure-pdf/cell-3-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9292,7 +9286,7 @@ Przewidywany błąd dopasowania: 1.3322676295501878e-15
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-regresja_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-regresja_files/figure-pdf/cell-4-output-1.pdf}}
 
 \chapter{Matplotlib - kolory}\label{matplotlib---kolory}
 
@@ -9345,7 +9339,7 @@ punktowego. Pasek kolorów wskazuje, które kolory odpowiadają wartościom
 numerycznym na mapie kolorów.
 \end{description}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-kolory_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-kolory_files/figure-pdf/cell-2-output-1.pdf}}
 
 Mapy kolorów
 
@@ -9395,7 +9389,7 @@ Lista wbudowanych map kolorów:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-kolory_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-kolory_files/figure-pdf/cell-3-output-1.pdf}}
 
 \chapter{Matplotlib - opcje wykresu}\label{matplotlib---opcje-wykresu}
 
@@ -9459,7 +9453,7 @@ figurze w celu uniknięcia nakładania się (\texttt{True} lub
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9472,7 +9466,7 @@ figurze w celu uniknięcia nakładania się (\texttt{True} lub
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-3-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9485,7 +9479,7 @@ figurze w celu uniknięcia nakładania się (\texttt{True} lub
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-4-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9498,7 +9492,7 @@ figurze w celu uniknięcia nakładania się (\texttt{True} lub
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-5-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9512,7 +9506,7 @@ figurze w celu uniknięcia nakładania się (\texttt{True} lub
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-6-output-1.pdf}}
 
 \section{Style}\label{style}
 
@@ -9540,7 +9534,7 @@ parametrów.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-7-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-opcjewykresu_files/figure-pdf/cell-7-output-1.pdf}}
 
 Lista styli:
 
@@ -9608,7 +9602,7 @@ wartość na osi X, niezależnie od wartości na osi Y. Składnia funkcji to
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-2-output-1.pdf}}
 
 W powyższym przykładzie, \texttt{axhline} rysuje czerwoną linię
 horyzontalną przechodzącą przez wartość 2 na osi Y, natomiast
@@ -9634,7 +9628,7 @@ przez wartość 3 na osi X.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-3-output-1.pdf}}
 
 \section{Adnotacje (tekst) na
 wykresie}\label{adnotacje-tekst-na-wykresie}
@@ -9686,7 +9680,7 @@ Składnia funkcji to
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-4-output-1.pdf}}
 
 Jeśli chcesz dodać adnotację tylko z tekstem, składnia funkcji to
 \texttt{annotate(text,\ xy,\ **kwargs)}, gdzie:
@@ -9723,7 +9717,7 @@ Jeśli chcesz dodać adnotację tylko z tekstem, składnia funkcji to
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-5-output-1.pdf}}
 
 \section{Etykiety osi}\label{etykiety-osi}
 
@@ -9761,7 +9755,7 @@ Składnia funkcji to \texttt{xlabel(label,\ **kwargs)} lub
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-6-output-1.pdf}}
 
 Funkcja \texttt{annotate} pozwala na użycie składni LaTeX w tekście
 adnotacji, co jest szczególnie przydatne, gdy chcemy dodać na wykresie
@@ -9792,7 +9786,7 @@ umieścić tekst w znacznikach dolara (\texttt{\$}).
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-7-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-7-output-1.pdf}}
 
 \section{Etykiety podziałki osi}\label{etykiety-podziaux142ki-osi}
 
@@ -9844,7 +9838,7 @@ formatowania.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-8-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-8-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9861,7 +9855,7 @@ formatowania.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-9-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-9-output-1.pdf}}
 
 \section{Siatka}\label{siatka}
 
@@ -9917,7 +9911,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-10-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-10-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9943,7 +9937,7 @@ gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-11-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-dodatki2_files/figure-pdf/cell-11-output-1.pdf}}
 
 \chapter{Matplotlib - inne wykresy}\label{matplotlib---inne-wykresy}
 
@@ -9984,7 +9978,7 @@ Składnia funkcji to \texttt{twinx(ax=None,\ **kwargs)}, gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10011,7 +10005,7 @@ Składnia funkcji to \texttt{twinx(ax=None,\ **kwargs)}, gdzie:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-3-output-1.pdf}}
 
 \section{Wykres pudełkowy}\label{wykres-pudeux142kowy}
 
@@ -10081,7 +10075,7 @@ pierwszy kwartyl (Q1), medianę, trzeci kwartyl (Q3) i maksimum.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-4-output-1.pdf}}
 
 \pandocbounded{\includegraphics[keepaspectratio]{m10.png}}
 
@@ -10102,7 +10096,7 @@ pierwszy kwartyl (Q1), medianę, trzeci kwartyl (Q3) i maksimum.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-5-output-1.pdf}}
 
 \textbf{\texttt{patch\_artist=True,\ \ \ \ \#\ kolorowe\ pudełka}} --
 włącza użycie obiektów typu „Patch'' do rysowania samych pudełek, dzięki
@@ -10198,7 +10192,7 @@ pudełko z końcami zakresu danych (bez uwzględniania odstających).
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-6-output-1.pdf}}
 
 \section{Histogram}\label{histogram}
 
@@ -10249,7 +10243,7 @@ bardziej odpowiednie.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-7-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-7-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10274,7 +10268,7 @@ Length: 12
 Categories (4, interval[int64, left]): [[18, 26) < [26, 36) < [36, 61) < [61, 100)]
 \end{verbatim}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-8-output-2.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-8-output-2.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10287,7 +10281,7 @@ Categories (4, interval[int64, left]): [[18, 26) < [26, 36) < [36, 61) < [61, 10
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-9-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-9-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10302,7 +10296,7 @@ Categories (4, interval[int64, left]): [[18, 26) < [26, 36) < [36, 61) < [61, 10
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-10-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-10-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10317,7 +10311,7 @@ Categories (4, interval[int64, left]): [[18, 26) < [26, 36) < [36, 61) < [61, 10
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-11-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-11-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10332,7 +10326,7 @@ Categories (4, interval[int64, left]): [[18, 26) < [26, 36) < [36, 61) < [61, 10
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-12-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-12-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10368,7 +10362,7 @@ Categories (4, interval[int64, left]): [[18, 26) < [26, 36) < [36, 61) < [61, 10
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-13-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-13-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10404,7 +10398,7 @@ Categories (4, interval[int64, left]): [[18, 26) < [26, 36) < [36, 61) < [61, 10
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-14-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-14-output-1.pdf}}
 
 \section{Wykresy w przestrzeni}\label{wykresy-w-przestrzeni}
 
@@ -10433,7 +10427,7 @@ z=at
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-15-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-15-output-1.pdf}}
 
 \subsection{Torus}\label{torus}
 
@@ -10459,7 +10453,7 @@ z=at
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-16-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-innewykresy_files/figure-pdf/cell-16-output-1.pdf}}
 
 \chapter{Matplotlib - mapa ciepła}\label{matplotlib---mapa-ciepux142a}
 
@@ -10582,7 +10576,7 @@ koloru odpowiada natężeniu (wartości) w konkretnym punkcie siatki.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-mapaciepla_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-mapaciepla_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10626,7 +10620,7 @@ koloru odpowiada natężeniu (wartości) w konkretnym punkcie siatki.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-mapaciepla_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-mapaciepla_files/figure-pdf/cell-3-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10670,7 +10664,7 @@ koloru odpowiada natężeniu (wartości) w konkretnym punkcie siatki.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-mapaciepla_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-mapaciepla_files/figure-pdf/cell-4-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10708,7 +10702,7 @@ koloru odpowiada natężeniu (wartości) w konkretnym punkcie siatki.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-mapaciepla_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-mapaciepla_files/figure-pdf/cell-5-output-1.pdf}}
 
 \chapter{Matplotlib - wykres
 warstwowy}\label{matplotlib---wykres-warstwowy}
@@ -10829,7 +10823,7 @@ warstwowych}\label{gux142uxf3wne-zastosowania-wykresuxf3w-warstwowych}
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreswarstwowy_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreswarstwowy_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10862,7 +10856,7 @@ warstwowych}\label{gux142uxf3wne-zastosowania-wykresuxf3w-warstwowych}
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreswarstwowy_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreswarstwowy_files/figure-pdf/cell-3-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10901,7 +10895,7 @@ warstwowych}\label{gux142uxf3wne-zastosowania-wykresuxf3w-warstwowych}
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreswarstwowy_files/figure-pdf/cell-4-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreswarstwowy_files/figure-pdf/cell-4-output-1.pdf}}
 
 \part{Seaborn}
 
@@ -11093,7 +11087,7 @@ są przechowywane jako ramki danych Pandas.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-5-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-5-output-1.pdf}}
 
 Funkcja \texttt{sns.scatterplot()} oferuje dodatkowe parametry, które
 pozwalają na modyfikację wykresu. Przykłady obejmują:
@@ -11127,7 +11121,7 @@ pozwalają na modyfikację wykresu. Przykłady obejmują:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-6-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-6-output-1.pdf}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -11159,7 +11153,7 @@ pozwalają na modyfikację wykresu. Przykłady obejmują:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-7-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-7-output-1.pdf}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -11191,7 +11185,7 @@ pozwalają na modyfikację wykresu. Przykłady obejmują:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-8-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-8-output-1.pdf}}
 
 \section{Wykres liniowy}\label{wykres-liniowy}
 
@@ -11231,7 +11225,7 @@ Oto przykład użycia funkcji \texttt{sns.lineplot()}:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-9-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-9-output-1.pdf}}
 
 W powyższym przykładzie tworzymy wykres liniowy na podstawie ramki
 danych \texttt{df}. Parametry \texttt{x} i \texttt{y} określają zmienne,
@@ -11279,7 +11273,7 @@ pozwalają na modyfikację wykresu. Przykłady obejmują:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-10-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-10-output-1.pdf}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -11357,7 +11351,7 @@ Podstawowy wykres słupkowy:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-12-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-12-output-1.pdf}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -11374,7 +11368,7 @@ Podstawowy wykres słupkowy:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-13-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-13-output-1.pdf}}
 
 W tym przykładzie \texttt{estimator=max} powoduje, że wysokość słupków
 będzie maksymalną wartością dla każdej kategorii.
@@ -11395,7 +11389,7 @@ będzie maksymalną wartością dla każdej kategorii.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-14-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-14-output-1.pdf}}
 
 Tutaj \texttt{errorbar=None} powoduje, że nie będą wyświetlane
 przedziały ufności na wykresie.
@@ -11416,7 +11410,7 @@ przedziały ufności na wykresie.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-15-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-15-output-1.pdf}}
 
 Argument \texttt{palette=\textquotesingle{}Greens\textquotesingle{}}
 ustawia paletę kolorów na odcienie zielonego.
@@ -11437,7 +11431,7 @@ ustawia paletę kolorów na odcienie zielonego.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-16-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-16-output-1.pdf}}
 
 W tym przykładzie argument
 \texttt{hue=\textquotesingle{}Grupa\textquotesingle{}} dzieli słupki dla
@@ -11459,7 +11453,7 @@ każdej kategorii według wartości z kolumny `Grupa'.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-17-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-17-output-1.pdf}}
 
 Tutaj \texttt{orient=\textquotesingle{}h\textquotesingle{}} zmienia
 orientację wykresu na poziomą.
@@ -11480,7 +11474,7 @@ orientację wykresu na poziomą.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-18-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-18-output-1.pdf}}
 
 Argument
 \texttt{order={[}\textquotesingle{}B\textquotesingle{},\ \textquotesingle{}D\textquotesingle{},\ \textquotesingle{}A\textquotesingle{},\ \textquotesingle{}C\textquotesingle{}{]}}
@@ -11522,7 +11516,7 @@ Przykład użycia palety kolorów `coolwarm' w wykresie punktowym:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-19-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-19-output-1.pdf}}
 
 Aby zresetować paletę kolorów do domyślnej, użyj
 \texttt{sns.set\_palette(\textquotesingle{}deep\textquotesingle{})}.
@@ -11557,7 +11551,7 @@ Przykład użycia stylu `whitegrid' w wykresie punktowym:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-20-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-20-output-1.pdf}}
 
 Inne dostępne style to: `darkgrid', `white', `ticks' i `dark'. Aby
 zresetować styl do domyślnego, użyj
@@ -11593,7 +11587,7 @@ Przykład użycia kontekstu `poster' w wykresie punktowym:
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-21-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{seaborn-podstawy_files/figure-pdf/cell-21-output-1.pdf}}
 
 Inne dostępne konteksty to: `paper', `notebook' i `talk'. Aby zresetować
 kontekst do domyślnego, użyj
@@ -13091,7 +13085,7 @@ Cel dodatkowy: różnice miedzy danymi szerokimi a długimi
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem01_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem01_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -13132,7 +13126,7 @@ Cel dodatkowy: różnice miedzy danymi szerokimi a długimi
 11    Zachód  Kwiecień       165
 \end{verbatim}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem01_files/figure-pdf/cell-3-output-2.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem01_files/figure-pdf/cell-3-output-2.pdf}}
 
 \chapter{Problem \#2}\label{problem-2}
 
@@ -13268,7 +13262,7 @@ Year
 2023         3.1    2.5  3.7
 \end{verbatim}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem02_files/figure-pdf/cell-2-output-2.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem02_files/figure-pdf/cell-2-output-2.pdf}}
 
 \chapter{Problem \#3}\label{problem-3}
 
@@ -13311,7 +13305,7 @@ Cel: piramida wieku
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem03_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem03_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -13351,7 +13345,7 @@ Cel: piramida wieku
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem03_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem03_files/figure-pdf/cell-3-output-1.pdf}}
 
 \chapter{Problem \#4}\label{problem-4}
 
@@ -13390,7 +13384,7 @@ Cel: szeregi czasowe.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem04_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem04_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -13417,7 +13411,7 @@ Cel: szeregi czasowe.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem04_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem04_files/figure-pdf/cell-3-output-1.pdf}}
 
 \chapter{Problem \#5}\label{problem-5}
 
@@ -13456,7 +13450,7 @@ Cel: szeregi czasowe.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem05_files/figure-pdf/cell-2-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem05_files/figure-pdf/cell-2-output-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -13491,7 +13485,7 @@ Cel: szeregi czasowe.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{problem05_files/figure-pdf/cell-3-output-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{problem05_files/figure-pdf/cell-3-output-1.pdf}}
 
 
 
