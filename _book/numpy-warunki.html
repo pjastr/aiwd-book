@@ -774,7 +774,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-nonzero" class="level2" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="funkcja-nonzero"><span class="header-section-number">14.1</span> Funkcja <code>nonzero()</code></h2>
 <p>Zwraca indeksy elementów niezerowych w tablicy. Wynik jest zwracany jako krotka tablic, po jednej dla każdego wymiaru tablicy.</p>
-<div id="307a4c73" class="cell" data-execution_count="1">
+<div id="6b823967" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>], [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">0</span>]])</span>
@@ -806,7 +806,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-where" class="level2" data-number="14.2">
 <h2 data-number="14.2" class="anchored" data-anchor-id="funkcja-where"><span class="header-section-number">14.2</span> Funkcja <code>where()</code></h2>
 <p>Zwraca elementy wybrane z <code>x</code> lub <code>y</code> w zależności od warunku. Jest to warunkowy selektor elementów.</p>
-<div id="5171b946" class="cell" data-execution_count="2">
+<div id="3e55be2c" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Zastąp wartości niedodatnie przez 0</span></span>
@@ -833,7 +833,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="indices" class="level3" data-number="14.3.1">
 <h3 data-number="14.3.1" class="anchored" data-anchor-id="indices"><span class="header-section-number">14.3.1</span> <code>indices()</code></h3>
 <p>Tworzy tablicę reprezentującą indeksy siatki.</p>
-<div id="c032c217" class="cell" data-execution_count="3">
+<div id="140f8ea6" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie siatki indeksów 3x4</span></span>
@@ -862,7 +862,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ix_" class="level3" data-number="14.3.2">
 <h3 data-number="14.3.2" class="anchored" data-anchor-id="ix_"><span class="header-section-number">14.3.2</span> <code>ix_()</code></h3>
 <p>Konstruuje otwartą siatkę z wielu sekwencji, co jest przydatne do indeksowania wielowymiarowego.</p>
-<div id="458fc221" class="cell" data-execution_count="4">
+<div id="4701fee0" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
@@ -900,7 +900,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ogrid-i-operacje-na-siatkach" class="level2" data-number="14.4">
 <h2 data-number="14.4" class="anchored" data-anchor-id="ogrid-i-operacje-na-siatkach"><span class="header-section-number">14.4</span> <code>ogrid</code> i operacje na siatkach</h2>
 <p><code>ogrid</code> pozwala na tworzenie otwartych siatek, co jest pamięciowo wydajniejsze niż pełne siatki.</p>
-<div id="cc8ae112" class="cell" data-execution_count="5">
+<div id="8688bd17" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Siatka punktów w zakresie od -2 do 2 z krokiem 0.1</span></span>
@@ -915,7 +915,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcje-ravel_multi_index-i-unravel_index" class="level2" data-number="14.5">
 <h2 data-number="14.5" class="anchored" data-anchor-id="funkcje-ravel_multi_index-i-unravel_index"><span class="header-section-number">14.5</span> Funkcje <code>ravel_multi_index()</code> i <code>unravel_index()</code></h2>
 <p>Te funkcje konwertują między indeksami wielowymiarowymi a płaskimi.</p>
-<div id="880d3301" class="cell" data-execution_count="6">
+<div id="acc1b7c3" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Konwersja indeksów wielowymiarowych na płaskie</span></span>
@@ -938,7 +938,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="indeksy-diagonalne" class="level2" data-number="14.6">
 <h2 data-number="14.6" class="anchored" data-anchor-id="indeksy-diagonalne"><span class="header-section-number">14.6</span> Indeksy diagonalne</h2>
 <p>NumPy oferuje wiele funkcji do pracy z diagonalami macierzy.</p>
-<div id="8212c85f" class="cell" data-execution_count="7">
+<div id="4c644341" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Uzyskanie indeksów głównej przekątnej</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">4</span></span>
@@ -971,7 +971,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-take" class="level2" data-number="14.7">
 <h2 data-number="14.7" class="anchored" data-anchor-id="funkcja-take"><span class="header-section-number">14.7</span> 3.1 Funkcja <code>take()</code></h2>
 <p>Pobiera elementy z tablicy wzdłuż określonej osi na podstawie indeksów.</p>
-<div id="1d4b0f79" class="cell" data-execution_count="8">
+<div id="a902e87e" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
@@ -994,7 +994,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>##Funkcja <code>take_along_axis()</code></p>
 <p>Pobiera wartości z tablicy poprzez dopasowanie 1D indeksu i fragmentów danych. Jest bezpieczna dla duplikatów indeksów.</p>
-<div id="a6440850" class="cell" data-execution_count="9">
+<div id="52714d05" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([[<span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">20</span>], [<span class="dv">60</span>, <span class="dv">40</span>, <span class="dv">50</span>]])</span>
@@ -1012,7 +1012,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-choose" class="level2" data-number="14.8">
 <h2 data-number="14.8" class="anchored" data-anchor-id="funkcja-choose"><span class="header-section-number">14.8</span> Funkcja <code>choose()</code></h2>
 <p>Konstruuje tablicę wybierając elementy z listy tablic.</p>
-<div id="442b275a" class="cell" data-execution_count="10">
+<div id="81b294c0" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>opcje <span class="op">=</span> [np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]),</span>
@@ -1029,7 +1029,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-compress" class="level2" data-number="14.9">
 <h2 data-number="14.9" class="anchored" data-anchor-id="funkcja-compress"><span class="header-section-number">14.9</span> Funkcja <code>compress()</code></h2>
 <p>Zwraca wybrane elementy tablicy wzdłuż określonej osi.</p>
-<div id="fdc155c9" class="cell" data-execution_count="11">
+<div id="4962f739" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>maska <span class="op">=</span> np.array([<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>])</span>
@@ -1046,7 +1046,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcje-diag-i-diagonal" class="level2" data-number="14.10">
 <h2 data-number="14.10" class="anchored" data-anchor-id="funkcje-diag-i-diagonal"><span class="header-section-number">14.10</span> Funkcje <code>diag()</code> i <code>diagonal()</code></h2>
 <p>Funkcje do pracy z przekątnymi.</p>
-<div id="00bf1b54" class="cell" data-execution_count="12">
+<div id="20318942" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie tablicy diagonalnej</span></span>
@@ -1078,7 +1078,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-select" class="level2" data-number="14.11">
 <h2 data-number="14.11" class="anchored" data-anchor-id="funkcja-select"><span class="header-section-number">14.11</span> Funkcja <code>select()</code></h2>
 <p>Zwraca tablicę zbudowaną z elementów z listy opcji, w zależności od warunków.</p>
-<div id="b9255bd6" class="cell" data-execution_count="13">
+<div id="6b383551" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
@@ -1099,7 +1099,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-place" class="level2" data-number="14.12">
 <h2 data-number="14.12" class="anchored" data-anchor-id="funkcja-place"><span class="header-section-number">14.12</span> Funkcja <code>place()</code></h2>
 <p>Zmienia elementy tablicy na podstawie maski i podanych wartości.</p>
-<div id="08635d71" class="cell" data-execution_count="14">
+<div id="9aaabed8" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">5</span>)</span>
@@ -1114,7 +1114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-put" class="level2" data-number="14.13">
 <h2 data-number="14.13" class="anchored" data-anchor-id="funkcja-put"><span class="header-section-number">14.13</span> Funkcja <code>put()</code></h2>
 <p>Zastępuje określone elementy tablicy podanymi wartościami.</p>
-<div id="d3bb641c" class="cell" data-execution_count="15">
+<div id="ec7e4c1b" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">5</span>)</span>
@@ -1129,7 +1129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-put_along_axis" class="level2" data-number="14.14">
 <h2 data-number="14.14" class="anchored" data-anchor-id="funkcja-put_along_axis"><span class="header-section-number">14.14</span> Funkcja <code>put_along_axis()</code></h2>
 <p>Umieszcza wartości w tablicy docelowej, dopasowując 1D indeks i fragmenty danych wzdłuż określonej osi.</p>
-<div id="ba6954d8" class="cell" data-execution_count="16">
+<div id="d9e1f92c" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([[<span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">20</span>], [<span class="dv">60</span>, <span class="dv">40</span>, <span class="dv">50</span>]])</span>
@@ -1148,7 +1148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-putmask" class="level2" data-number="14.15">
 <h2 data-number="14.15" class="anchored" data-anchor-id="funkcja-putmask"><span class="header-section-number">14.15</span> Funkcja <code>putmask()</code></h2>
 <p>Zmienia elementy tablicy na podstawie warunku i podanych wartości.</p>
-<div id="57c8566b" class="cell" data-execution_count="17">
+<div id="25474539" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">5</span>)</span>
@@ -1163,7 +1163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="funkcja-fill_diagonal" class="level2" data-number="14.16">
 <h2 data-number="14.16" class="anchored" data-anchor-id="funkcja-fill_diagonal"><span class="header-section-number">14.16</span> Funkcja <code>fill_diagonal()</code></h2>
 <p>Wypełnia główną przekątną tablicy podaną wartością.</p>
-<div id="8ea347b9" class="cell" data-execution_count="18">
+<div id="82878382" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.zeros((<span class="dv">4</span>, <span class="dv">4</span>))</span>
