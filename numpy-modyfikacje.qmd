@@ -42,12 +42,14 @@ print(f)
 import numpy as np
 
 print("g")
-g = [[1, 3, 4]]
+g = np.array([[1, 3, 4]])
 print(g)
 print("h")
 h = np.squeeze(g)
 print(h)
 print("i")
+a = np.array([[3, 4, 5], [-3, 4, 8], [3, 2, 9]])
+print(a)
 i = a.T
 print(i)
 print("j")
@@ -60,17 +62,17 @@ print(j)
 #| echo: true
 import numpy as np
 
-print("h")
-h = [3, -4, 5, -2]
-print(h)
+print("n")
+n = [3, -4, 5, -2]
+print(n)
 print("k")
-k = np.hstack((h, h, h))
+k = np.hstack((n, n, n))
 print(k)
 print("l")
-l = np.vstack((h, h, h))
+l = np.vstack((n, n, n))
 print(l)
 print("m")
-m = np.dstack((h, h, h))
+m = np.dstack((n, n, n))
 print(m)
 
 ```

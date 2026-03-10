@@ -227,7 +227,7 @@
 
 \title{Analiza i wizualizacja danych}
 \author{Piotr Jastrzębski}
-\date{2026-03-04}
+\date{2026-03-10}
 \begin{document}
 \maketitle
 
@@ -1223,8 +1223,8 @@ Run - zielona strzałka u góry.
 \end{Shaded}
 
 \begin{verbatim}
---- 0.002085447311401367 seconds ---
---- 0.03952288627624512 seconds ---
+--- 0.002163410186767578 seconds ---
+--- 0.03775906562805176 seconds ---
 \end{verbatim}
 
 \chapter{\texorpdfstring{Atrybuty tablic
@@ -1775,13 +1775,13 @@ Dostęp do elementów od indeksu 4 do końca.
 Dostęp do elementów od indeksu 4 do końca bez ostatniego.
 \item[\circled{3}]
 Dostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do
-10 (z czówrką, ale bez dziesiątki) z krokiem równym 2
+10 (z czwórką, ale bez dziesiątki) z krokiem równym 2
 \item[\circled{4}]
 Dostęp do elementów od tyłu do początku.
 \item[\circled{5}]
 Dostęp do elementów o indeksach parzystych od początku.
 \item[\circled{6}]
-Dostęp do elementów o indeksach ``nieparzystych ujemnych'' od początku.
+Dostęp do elementów o indeksach ``nieparzystych ujemnych''..
 \end{description}
 
 \begin{verbatim}
@@ -1853,7 +1853,7 @@ Dostęp do elementów o indeksach ``nieparzystych ujemnych'' od początku.
 (1, 2)
 \end{verbatim}
 
-**Uwaga - takie ``krojenie'' to tzw ``widok''.
+\textbf{Uwaga - takie ``krojenie'' to tzw ``widok''.}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1913,7 +1913,7 @@ Naprawa:
 [[-11   8]]
 \end{verbatim}
 
-Indeksowanie logiczne (fancy indexing, maski boolowskie)
+Indeksowanie fancy (tablicą indeksów) (fancy indexing)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1931,6 +1931,8 @@ Indeksowanie logiczne (fancy indexing, maski boolowskie)
 [ 5  4 11]
 [ 5  4 11]
 \end{verbatim}
+
+Indeksowanie logiczne (maski boolowskie)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2120,12 +2122,14 @@ f
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
 
 \BuiltInTok{print}\NormalTok{(}\StringTok{"g"}\NormalTok{)}
-\NormalTok{g }\OperatorTok{=}\NormalTok{ [[}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{]]}
+\NormalTok{g }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{]])}
 \BuiltInTok{print}\NormalTok{(g)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"h"}\NormalTok{)}
 \NormalTok{h }\OperatorTok{=}\NormalTok{ np.squeeze(g)}
 \BuiltInTok{print}\NormalTok{(h)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"i"}\NormalTok{)}
+\NormalTok{a }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{], [}\OperatorTok{{-}}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{8}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{9}\NormalTok{]])}
+\BuiltInTok{print}\NormalTok{(a)}
 \NormalTok{i }\OperatorTok{=}\NormalTok{ a.T}
 \BuiltInTok{print}\NormalTok{(i)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"j"}\NormalTok{)}
@@ -2136,10 +2140,13 @@ f
 
 \begin{verbatim}
 g
-[[1, 3, 4]]
+[[1 3 4]]
 h
 [1 3 4]
 i
+[[ 3  4  5]
+ [-3  4  8]
+ [ 3  2  9]]
 [[ 3 -3  3]
  [ 4  4  2]
  [ 5  8  9]]
@@ -2153,23 +2160,23 @@ j
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
 
-\BuiltInTok{print}\NormalTok{(}\StringTok{"h"}\NormalTok{)}
-\NormalTok{h }\OperatorTok{=}\NormalTok{ [}\DecValTok{3}\NormalTok{, }\OperatorTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{]}
-\BuiltInTok{print}\NormalTok{(h)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"n"}\NormalTok{)}
+\NormalTok{n }\OperatorTok{=}\NormalTok{ [}\DecValTok{3}\NormalTok{, }\OperatorTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{]}
+\BuiltInTok{print}\NormalTok{(n)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"k"}\NormalTok{)}
-\NormalTok{k }\OperatorTok{=}\NormalTok{ np.hstack((h, h, h))}
+\NormalTok{k }\OperatorTok{=}\NormalTok{ np.hstack((n, n, n))}
 \BuiltInTok{print}\NormalTok{(k)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"l"}\NormalTok{)}
-\NormalTok{l }\OperatorTok{=}\NormalTok{ np.vstack((h, h, h))}
+\NormalTok{l }\OperatorTok{=}\NormalTok{ np.vstack((n, n, n))}
 \BuiltInTok{print}\NormalTok{(l)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"m"}\NormalTok{)}
-\NormalTok{m }\OperatorTok{=}\NormalTok{ np.dstack((h, h, h))}
+\NormalTok{m }\OperatorTok{=}\NormalTok{ np.dstack((n, n, n))}
 \BuiltInTok{print}\NormalTok{(m)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-h
+n
 [3, -4, 5, -2]
 k
 [ 3 -4  5 -2  3 -4  5 -2  3 -4  5 -2]
@@ -2470,64 +2477,8 @@ Wariant 3 - ``kolumna'' i ``wiersz''
 
 \pandocbounded{\includegraphics[keepaspectratio]{o5.png}}
 
-\textbf{Ćwiczenia:} (\texttt{ex6.py})
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Rozważ jednowymiarową tablicę\\
-  \[A = \begin{bmatrix}1 & 2 & 3\end{bmatrix}\]\\
-  oraz skalar \(k = 10\).\\
-  Wykonaj dodawanie, odejmowanie, mnożenie i dzielenie każdego elementu
-  tablicy \(A\) przez \(k\) z wykorzystaniem broadcastingu.
-\item
-  Dla dwóch tablic jednowymiarowych\\
-  \[B_1 = \begin{bmatrix}1 & 2 & 3\end{bmatrix}, \quad B_2 = \begin{bmatrix}4 & 5 & 6\end{bmatrix},\]\\
-  wykonaj działanie \(B_1 + B_2\), \(B_1 - B_2\), \(B_1 * B_2\) oraz
-  \(B_1 / B_2\) używając broadcastingu.
-\item
-  Mając dwie tablice dwuwymiarowe:\\
-  \[C_1 = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}, \quad C_2 = \begin{bmatrix}10 & 20 \\ 30 & 40\end{bmatrix},\]\\
-  dodaj je i odejmij od siebie, sprawdzając czy broadcasting zajdzie
-  automatycznie.
-\item
-  Rozważ tablicę dwuwymiarową\\
-  \[D = \begin{bmatrix}1 & 2 & 3 \\ 4 & 5 & 6\end{bmatrix}\]\\
-  oraz wektor\\
-  \[v = \begin{bmatrix}10 & 100 & 1000\end{bmatrix}.\]\\
-  Wykonaj mnożenie i dzielenie elementowe tablicy \(D\) przez \(v\) z
-  wykorzystaniem broadcastingu.
-\item
-  Dla tablicy\\
-  \[E = \begin{bmatrix}2 & 4 & 6 \\ 8 & 10 & 12\end{bmatrix}\]\\
-  podnieś każdy element do kwadratu, a następnie podziel przez wektor\\
-  \[w = \begin{bmatrix}2 & 2 & 2\end{bmatrix}\]\\
-  korzystając z broadcastingu.
-\item
-  Mając tablicę dwuwymiarową\\
-  \[F = \begin{bmatrix}1 & 2 \\ 3 & 4 \\ 5 & 6\end{bmatrix},\]\\
-  oraz skalar \(s = 2\), wykonaj \(F * s\), a następnie \(F^{s}\)
-  (podnieś każdy element do potęgi \(s\)) z zastosowaniem broadcastingu.
-\item
-  Rozważ tablicę\\
-  \[G = \begin{bmatrix}10 & 20 & 30\end{bmatrix}\]\\
-  oraz kolumnową tablicę dwuwymiarową\\
-  \[h = \begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix}.\] Dodaj do \(h\)
-  tablicę \(G\) i zaobserwuj wynik broadcastingu.
-\item
-  Mając dwie tablice dwuwymiarowe o różnych wymiarach:\\
-  \[H_1 = \begin{bmatrix}1 & 2 & 3\end{bmatrix}, \quad H_2 = \begin{bmatrix}10 \\ 20 \\ 30\end{bmatrix},\]\\
-  spróbuj je dodać i pomnożyć przez siebie, korzystając z broadcastingu.
-\item
-  Rozważ tablicę dwuwymiarową\\
-  \[J = \begin{bmatrix}1 & 2 & 3 \\ 4 & 5 & 6\end{bmatrix}\]\\
-  oraz skalar \(m = 5\).\\
-  Wykonaj kombinację działań: najpierw pomnóż \(J\) przez \(m\),
-  następnie odejmij \(m\), a na końcu podziel wynik przez \(m\) --
-  wszystko z wykorzystaniem broadcastingu.
-\end{enumerate}
-
-\chapter{Funkcje uniwersalne (ufunc)}\label{funkcje-uniwersalne-ufunc}
+\chapter{Funkcje uniwersalne (ufunc) i inne
+matematyczne}\label{funkcje-uniwersalne-ufunc-i-inne-matematyczne}
 
 Funkcje uniwersalne (tzw. \emph{ufunc}) to jedne z najważniejszych
 narzędzi w NumPy. Są to funkcje działające element-po-elemencie na
@@ -2681,19 +2632,25 @@ Przykład:
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
 
-\NormalTok{B }\OperatorTok{=}\NormalTok{ np.array([}\FloatTok{1.7}\NormalTok{, }\OperatorTok{{-}}\FloatTok{2.5}\NormalTok{, }\FloatTok{3.5}\NormalTok{, }\OperatorTok{{-}}\FloatTok{4.1}\NormalTok{])}
+\NormalTok{B }\OperatorTok{=}\NormalTok{ np.array([}\FloatTok{1.7}\NormalTok{, }\OperatorTok{{-}}\FloatTok{2.5}\NormalTok{, }\FloatTok{3.5}\NormalTok{, }\FloatTok{4.52}\NormalTok{, }\OperatorTok{{-}}\FloatTok{4.1}\NormalTok{])}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"B:"}\NormalTok{, B)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"floor(B):"}\NormalTok{, np.floor(B))}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"ceil(B):"}\NormalTok{, np.ceil(B))}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"abs(B):"}\NormalTok{, np.}\BuiltInTok{abs}\NormalTok{(B))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"round(B):"}\NormalTok{, np.}\BuiltInTok{round}\NormalTok{(B))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"rint(B):"}\NormalTok{, np.rint(B))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"round(B,1):"}\NormalTok{, np.}\BuiltInTok{round}\NormalTok{(B,}\DecValTok{1}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-B: [ 1.7 -2.5  3.5 -4.1]
-floor(B): [ 1. -3.  3. -5.]
-ceil(B): [ 2. -2.  4. -4.]
-abs(B): [1.7 2.5 3.5 4.1]
+B: [ 1.7  -2.5   3.5   4.52 -4.1 ]
+floor(B): [ 1. -3.  3.  4. -5.]
+ceil(B): [ 2. -2.  4.  5. -4.]
+abs(B): [1.7  2.5  3.5  4.52 4.1 ]
+round(B): [ 2. -2.  4.  5. -4.]
+rint(B): [ 2. -2.  4.  5. -4.]
+round(B,1): [ 1.7 -2.5  3.5  4.5 -4.1]
 \end{verbatim}
 
 \section{Funkcje statystyczne i
@@ -2739,62 +2696,6 @@ maximum elementów C1 i C2: [ 2  4  9 20]
 sqrt(C1): [1. 2. 3. 4.]
 square(C2): [  4   4  25 400]
 \end{verbatim}
-
-\textbf{Ćwiczenia:} (\texttt{ex7.py})
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Mając tablicę\\
-  \[A = \begin{bmatrix}1 & 4 & 9 & 16\end{bmatrix},\]\\
-  zastosuj funkcję uniwersalną, aby obliczyć pierwiastek kwadratowy
-  każdego elementu.
-\item
-  Rozważ jednowymiarową tablicę\\
-  \[B = \begin{bmatrix}-1 & -2 & 3 & -4\end{bmatrix},\]\\
-  zastosuj funkcję uniwersalną, aby otrzymać wartości bezwzględne
-  wszystkich elementów.
-\item
-  Dla tablicy\\
-  \[C = \begin{bmatrix}0 & \pi/2 & \pi & 3\pi/2\end{bmatrix},\]\\
-  oblicz wartość funkcji trygonometrycznej dla każdego elementu.
-\item
-  Mając tablicę\\
-  \[D = \begin{bmatrix}1 & e & e^2 \end{bmatrix},\]\\
-  zastosuj funkcję uniwersalną, aby obliczyć logarytm naturalny każdego
-  elementu.
-\item
-  Dla tablicy dwuwymiarowej\\
-  \[E = \begin{bmatrix}2 & 4 \\ 10 & 20 \end{bmatrix},\]\\
-  podziel każdy element przez skalar, a następnie podnieś uzyskane
-  wartości do kwadratu.
-\item
-  Rozważ tablicę\\
-  \[F = \begin{bmatrix}1 & 2 & 3\end{bmatrix},\]\\
-  podnieś każdy element do trzeciej potęgi, a następnie zastosuj funkcję
-  uniwersalną, aby obliczyć eksponentę z otrzymanych wartości.
-\item
-  Mając tablicę\\
-  \[G = \begin{bmatrix}-\pi & -\pi/2 & 0 & \pi/2 & \pi\end{bmatrix},\]\\
-  zastosuj odpowiednią funkcję uniwersalną, aby uzyskać cosinus każdego
-  elementu.
-\item
-  Dla tablicy\\
-  \[H = \begin{bmatrix}10 & 100 & 1000\end{bmatrix},\]\\
-  zastosuj funkcję uniwersalną, aby obliczyć logarytm dziesiętny każdego
-  elementu.
-\item
-  Mając tablicę\\
-  \[I = \begin{bmatrix}2 & 8 & 18 & 32\end{bmatrix},\]\\
-  przekształć ją, stosując funkcję uniwersalną, tak aby każdy element
-  był pierwiastkiem kwadratowym z wartości początkowej, a następnie
-  pomnóż wyniki przez 2.
-\item
-  Rozważ tablicę\\
-  \[J = \begin{bmatrix}-1 & -4 & -9 & -16\end{bmatrix},\]\\
-  oblicz pierwiastek kwadratowy wartości bezwzględnych elementów tej
-  tablicy, wykorzystując po kolei dwie różne funkcje uniwersalne.
-\end{enumerate}
 
 \chapter{Operacje na stringach}\label{operacje-na-stringach}
 
@@ -5299,7 +5200,7 @@ Zwykle operacje wektorowe są szybsze:
 \end{Shaded}
 
 \begin{verbatim}
-0.15588641166687012 0.4942905902862549
+0.1329340934753418 0.45162034034729004
 \end{verbatim}
 
 \chapter{Pandas - inne}\label{pandas---inne}
@@ -5584,9 +5485,9 @@ Categories (4, str): ['Youth' < 'YoungAdult' < 'MiddleAged' < 'Senior']
 \end{Shaded}
 
 \begin{verbatim}
-[(0.73, 0.97], (0.0035, 0.25], (0.25, 0.49], (0.73, 0.97], (0.0035, 0.25], ..., (0.49, 0.73], (0.25, 0.49], (0.0035, 0.25], (0.73, 0.97], (0.73, 0.97]]
+[(0.26, 0.51], (0.51, 0.75], (0.51, 0.75], (0.75, 1.0], (0.75, 1.0], ..., (0.26, 0.51], (0.75, 1.0], (0.51, 0.75], (0.018, 0.26], (0.26, 0.51]]
 Length: 20
-Categories (4, interval[float64, right]): [(0.0035, 0.25] < (0.25, 0.49] < (0.49, 0.73] < (0.73, 0.97]]
+Categories (4, interval[float64, right]): [(0.018, 0.26] < (0.26, 0.51] < (0.51, 0.75] < (0.75, 1.0]]
 \end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -5604,13 +5505,13 @@ Categories (4, interval[float64, right]): [(0.0035, 0.25] < (0.25, 0.49] < (0.49
 \end{Shaded}
 
 \begin{verbatim}
-[(0.673, 3.268], (0.673, 3.268], (0.0145, 0.673], (0.673, 3.268], (-3.717, -0.656], ..., (0.673, 3.268], (0.0145, 0.673], (-3.717, -0.656], (-3.717, -0.656], (0.673, 3.268]]
+[(-0.0255, 0.696], (-0.0255, 0.696], (-0.0255, 0.696], (0.696, 2.864], (-0.755, -0.0255], ..., (0.696, 2.864], (0.696, 2.864], (0.696, 2.864], (-0.0255, 0.696], (-3.245, -0.755]]
 Length: 1000
-Categories (4, interval[float64, right]): [(-3.717, -0.656] < (-0.656, 0.0145] < (0.0145, 0.673] < (0.673, 3.268]]
-(-3.717, -0.656]    250
-(-0.656, 0.0145]    250
-(0.0145, 0.673]     250
-(0.673, 3.268]      250
+Categories (4, interval[float64, right]): [(-3.245, -0.755] < (-0.755, -0.0255] < (-0.0255, 0.696] < (0.696, 2.864]]
+(-3.245, -0.755]     250
+(-0.755, -0.0255]    250
+(-0.0255, 0.696]     250
+(0.696, 2.864]       250
 Name: count, dtype: int64
 \end{verbatim}
 
@@ -5635,43 +5536,36 @@ odstających}\label{wykrywanie-i-filtrowanie-elementuxf3w-odstajux105cych}
 \begin{verbatim}
                  0            1            2            3
 count  1000.000000  1000.000000  1000.000000  1000.000000
-mean      0.003555    -0.014862    -0.021243    -0.075882
-std       1.025853     1.008612     1.039622     0.978552
-min      -3.651819    -3.573382    -3.615555    -3.414737
-25%      -0.664370    -0.693885    -0.772289    -0.714354
-50%      -0.021650    -0.026435     0.015876    -0.091542
-75%       0.693094     0.658803     0.741010     0.575664
-max       3.467887     3.644980     3.023329     2.841801
+mean     -0.015597     0.001533    -0.007501     0.012613
+std       1.016115     1.020528     1.014123     0.983878
+min      -3.693310    -3.696025    -3.301377    -3.551557
+25%      -0.663233    -0.670259    -0.683974    -0.642560
+50%      -0.013601     0.002404    -0.035292     0.036039
+75%       0.629777     0.668428     0.754803     0.656147
+max       3.507131     3.112472     3.038698     3.067770
 ---
-82     3.012481
-268   -3.615555
-634   -3.039236
-708   -3.385370
-783    3.023329
-871   -3.099411
+43    -3.301377
+592    3.004239
+966   -3.040270
+988    3.038698
 Name: 2, dtype: float64
 ---
             0         1         2         3
-13  -3.651819  0.005077 -1.694475 -0.173916
-17   1.170727 -3.573382 -1.945473  0.227567
-82   0.257652 -0.246293  3.012481 -1.657778
-103 -0.685758  0.108690 -0.722049 -3.123257
-155  3.467887 -0.873391 -1.438970 -0.472087
-268 -1.002695 -1.915814 -3.615555  0.023344
-323 -0.403417  1.582184  1.442076 -3.414737
-373 -2.223335  3.299204  0.908803 -1.182278
-410 -0.967942  3.220125  1.210056 -0.090166
-500 -1.844051  3.039345 -2.041138  2.841801
-522  0.035634 -0.284736 -0.226603 -3.335071
-541 -3.292159  1.338888 -1.107508  0.425332
-634 -0.087821 -0.121705 -3.039236 -1.496839
-708 -0.547837 -0.807246 -3.385370 -2.548862
-717 -0.966724  3.644980  0.643429 -0.465922
-762 -0.409372  3.632696  0.352488  0.103781
-783 -1.606630  0.394238  3.023329 -0.139546
-871  0.457602  1.426346 -3.099411 -0.158123
-895  3.202780 -0.431210  0.075518 -0.232582
-968  3.331535 -0.811453  0.398623 -0.281601
+43  -1.411399  0.248251 -3.301377  0.240974
+45   1.467250 -3.411538  0.001321  0.972187
+56   0.077935  1.072791 -0.357470 -3.551557
+116 -3.004430 -0.923045 -0.744251 -1.186709
+137 -0.473571  1.340357  0.722790 -3.007251
+176 -3.352097  0.071359  1.363304  1.504339
+282 -3.693310  0.895951 -1.475904 -2.165088
+428  0.072962  3.112472  0.516730 -0.631377
+592 -2.053406  0.802608  3.004239 -1.950189
+633  2.074358 -3.696025  0.340180 -1.224874
+694  3.507131 -0.977136  0.206373 -0.296794
+842  0.430020 -3.436111  1.063110  0.217511
+893  1.678793  0.728509  1.114767  3.067770
+966 -1.599019 -0.282267 -3.040270  0.417864
+988  0.106591 -0.672210  3.038698 -0.340959
 \end{verbatim}
 
 \section{Zmiana typu w kolumnie}\label{zmiana-typu-w-kolumnie}

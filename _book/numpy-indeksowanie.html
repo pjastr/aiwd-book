@@ -428,7 +428,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-ufunc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -775,7 +775,7 @@ window.Quarto = {
 </header>
 
 
-<div id="cdabe91c" class="cell" data-execution_count="1">
+<div id="50bc2ed0" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-1-3"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="op">-</span><span class="dv">23</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">16</span>, <span class="dv">1</span>])</span>
@@ -822,7 +822,7 @@ window.Quarto = {
 6: [ 2  5 -2  4 -7]</code></pre>
 </div>
 </div>
-<div id="ee992ab5" class="cell" data-execution_count="2">
+<div id="bd8f1fa6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1:"</span>, a[<span class="dv">4</span>:])</span>
@@ -843,7 +843,7 @@ window.Quarto = {
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="3">Dostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do 10 (z czówrką, ale bez dziesiątki) z krokiem równym 2</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="3">Dostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do 10 (z czwórką, ale bez dziesiątki) z krokiem równym 2</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
@@ -855,7 +855,7 @@ window.Quarto = {
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="8" data-code-annotation="6">Dostęp do elementów o indeksach “nieparzystych ujemnych” od początku.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="8" data-code-annotation="6">Dostęp do elementów o indeksach “nieparzystych ujemnych”..</span>
 </dd>
 </dl>
 </div>
@@ -868,7 +868,7 @@ window.Quarto = {
 6: [  1  -7 -23   9  -7  -2   2]</code></pre>
 </div>
 </div>
-<div id="f42057aa" class="cell" data-execution_count="3">
+<div id="ba1e55bb" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], [<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">8</span>], [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">9</span>]])</span>
@@ -891,7 +891,7 @@ window.Quarto = {
 (3,)</code></pre>
 </div>
 </div>
-<div id="6bbd4409" class="cell" data-execution_count="4">
+<div id="a2ba736f" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], [<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">8</span>], [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">9</span>]])</span>
@@ -920,8 +920,8 @@ window.Quarto = {
 (1, 2)</code></pre>
 </div>
 </div>
-<p>**Uwaga - takie “krojenie” to tzw “widok”.</p>
-<div id="d848d6a6" class="cell" data-execution_count="5">
+<p><strong>Uwaga - takie “krojenie” to tzw “widok”.</strong></p>
+<div id="faf4e50f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], [<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">8</span>], [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">9</span>]])</span>
@@ -946,7 +946,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Naprawa:</p>
-<div id="a38165a6" class="cell" data-execution_count="6">
+<div id="418c4f67" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], [<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">8</span>], [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">9</span>]])</span>
@@ -970,8 +970,8 @@ window.Quarto = {
 [[-11   8]]</code></pre>
 </div>
 </div>
-<p>Indeksowanie logiczne (fancy indexing, maski boolowskie)</p>
-<div id="47283c79" class="cell" data-execution_count="7">
+<p>Indeksowanie fancy (tablicą indeksów) (fancy indexing)</p>
+<div id="3c9ac04a" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="op">-</span><span class="dv">23</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">1</span>])</span>
@@ -984,7 +984,8 @@ window.Quarto = {
 [ 5  4 11]</code></pre>
 </div>
 </div>
-<div id="0320946d" class="cell" data-execution_count="8">
+<p>Indeksowanie logiczne (maski boolowskie)</p>
+<div id="91800c67" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="op">-</span><span class="dv">23</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">1</span>])</span>
@@ -1010,7 +1011,7 @@ window.Quarto = {
 [ -2  -7 -23  -4  -7]</code></pre>
 </div>
 </div>
-<div id="af74ca4a" class="cell" data-execution_count="9">
+<div id="0af9d720" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="op">-</span><span class="dv">23</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">1</span>])</span>

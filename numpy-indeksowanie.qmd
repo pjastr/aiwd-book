@@ -34,10 +34,10 @@ print("6:", a[::-2]) # <6>
 ```
 1. Dostęp do elementów od indeksu 4 do końca.
 2. Dostęp do elementów od indeksu 4 do końca bez ostatniego.
-3. Dostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do 10 (z czówrką, ale bez dziesiątki) z krokiem równym 2
+3. Dostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do 10 (z czwórką, ale bez dziesiątki) z krokiem równym 2
 4. Dostęp do elementów od tyłu do początku.
 5. Dostęp do elementów o indeksach parzystych od początku.
-6. Dostęp do elementów o indeksach "nieparzystych ujemnych" od początku.
+6. Dostęp do elementów o indeksach "nieparzystych ujemnych"..
 
 
 ```{python}
@@ -76,7 +76,7 @@ print(np.shape(h))
 
 ```
 
-**Uwaga - takie "krojenie" to tzw "widok".
+**Uwaga - takie "krojenie" to tzw "widok".**
 
 ```{python}
 #| echo: true
@@ -112,7 +112,7 @@ print(b)
 
 ```
 
-Indeksowanie logiczne (fancy indexing, maski boolowskie)
+Indeksowanie fancy (tablicą indeksów) (fancy indexing)
 
 ```{python}
 #| echo: true
@@ -125,6 +125,8 @@ c = a[[1, 3, 7]]
 print(c)
 
 ```
+
+Indeksowanie logiczne (maski boolowskie)
 
 ```{python}
 #| echo: true
