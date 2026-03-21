@@ -11,27 +11,6 @@ Zastosowania:
 * ...
 
 
-## Instalacja pakietu NumPy - opcja łatwiejsza "do przeklikania"
-
-* Tworzy projekt w PyCharm z venv - wersja 3.12.
-
-![](q1.png)
-
-* Za pomocą zakładki po lewej stronie na dole wyszukujemy pakiet i wybieramy instalację
-
-![](q2.png)
-
-## Instalacja pakietu NumPy - opcja terminala
-
-Komenda dla terminala:
-
-```bash
-python -m pip install numpy
-```
-
-```bash
-python -m pip install numpy==2.2.0
-```
 
 ## Import biblioteki NumPy
 
@@ -84,34 +63,3 @@ print(type(g))
 6. Ustalenie innego typu - większego.
 7. Skorzystanie z podtypu macierzowego.
 8. Zachowanie typu macierzowego.
-
-## Uruchamianie - tryb "Run" (wykonawczy)
-
-Run - zielona strzałka u góry.
-
-![](q3.png)
-
-## Uruchamianie - tryb "Run in Python Console" (interaktywno-wykonawczy)
-
-![](q4.png)
-
-**Ćwiczenie (`ex1.py`):**
-
-1. Stwórz proste tablice:
-
-* $\begin{bmatrix}
-1 & 2 & 7\\
-6 & -3 & -3
-\end{bmatrix}$
-
-* $\begin{bmatrix}
-6 & 8 & 9 & -3
-\end{bmatrix}$
-
-* $\begin{bmatrix}
-4 \\ 3 \\-3 \\-7
-\end{bmatrix}$
-
-* $\begin{bmatrix}
-bb & cc & ww & 44
-\end{bmatrix}$

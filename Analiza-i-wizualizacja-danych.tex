@@ -227,7 +227,7 @@
 
 \title{Analiza i wizualizacja danych}
 \author{Piotr Jastrzębski}
-\date{2026-03-10}
+\date{2026-03-21}
 \begin{document}
 \maketitle
 
@@ -1028,43 +1028,6 @@ Zastosowania:
   \ldots{}
 \end{itemize}
 
-\section{Instalacja pakietu NumPy - opcja łatwiejsza ``do
-przeklikania''}\label{instalacja-pakietu-numpy---opcja-ux142atwiejsza-do-przeklikania}
-
-\begin{itemize}
-\tightlist
-\item
-  Tworzy projekt w PyCharm z venv - wersja 3.12.
-\end{itemize}
-
-\pandocbounded{\includegraphics[keepaspectratio]{q1.png}}
-
-\begin{itemize}
-\tightlist
-\item
-  Za pomocą zakładki po lewej stronie na dole wyszukujemy pakiet i
-  wybieramy instalację
-\end{itemize}
-
-\pandocbounded{\includegraphics[keepaspectratio]{q2.png}}
-
-\section{Instalacja pakietu NumPy - opcja
-terminala}\label{instalacja-pakietu-numpy---opcja-terminala}
-
-Komenda dla terminala:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{python} \AttributeTok{{-}m}\NormalTok{ pip install numpy}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{python} \AttributeTok{{-}m}\NormalTok{ pip install numpy==2.2.0}
-\end{Highlighting}
-\end{Shaded}
-
 \section{Import biblioteki NumPy}\label{import-biblioteki-numpy}
 
 \begin{Shaded}
@@ -1102,7 +1065,7 @@ Podstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana
   like - tworzenie na podstawie tablic referencyjnej
 \end{itemize}
 
-\phantomsection\label{annotated-cell-5}%
+\phantomsection\label{annotated-cell-3}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -1162,47 +1125,6 @@ g: [[1 2]
 <class 'numpy.matrix'>
 \end{verbatim}
 
-\section{Uruchamianie - tryb ``Run''
-(wykonawczy)}\label{uruchamianie---tryb-run-wykonawczy}
-
-Run - zielona strzałka u góry.
-
-\pandocbounded{\includegraphics[keepaspectratio]{q3.png}}
-
-\section{Uruchamianie - tryb ``Run in Python Console''
-(interaktywno-wykonawczy)}\label{uruchamianie---tryb-run-in-python-console-interaktywno-wykonawczy}
-
-\pandocbounded{\includegraphics[keepaspectratio]{q4.png}}
-
-\textbf{Ćwiczenie (\texttt{ex1.py}):}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Stwórz proste tablice:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  \(\begin{bmatrix}
-  1 & 2 & 7\\
-  6 & -3 & -3
-  \end{bmatrix}\)
-\item
-  \(\begin{bmatrix}
-  6 & 8 & 9 & -3
-  \end{bmatrix}\)
-\item
-  \(\begin{bmatrix}
-  4 \\ 3 \\-3 \\-7
-  \end{bmatrix}\)
-\item
-  \(\begin{bmatrix}
-  bb & cc & ww & 44
-  \end{bmatrix}\)
-\end{itemize}
-
 \chapter{Lista a tablica}\label{lista-a-tablica}
 
 \begin{Shaded}
@@ -1223,8 +1145,8 @@ Run - zielona strzałka u góry.
 \end{Shaded}
 
 \begin{verbatim}
---- 0.002163410186767578 seconds ---
---- 0.03775906562805176 seconds ---
+--- 0.0021321773529052734 seconds ---
+--- 0.04065704345703125 seconds ---
 \end{verbatim}
 
 \chapter{\texorpdfstring{Atrybuty tablic
@@ -1712,7 +1634,7 @@ d
 
 \chapter{Indeksowanie, ``krojenie''}\label{indeksowanie-krojenie}
 
-\phantomsection\label{annotated-cell-20}%
+\phantomsection\label{annotated-cell-18}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -1753,7 +1675,7 @@ Dostęp od początku do elementu o indeksie 4.
 6: [ 2  5 -2  4 -7]
 \end{verbatim}
 
-\phantomsection\label{annotated-cell-21}%
+\phantomsection\label{annotated-cell-19}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -5200,7 +5122,7 @@ Zwykle operacje wektorowe są szybsze:
 \end{Shaded}
 
 \begin{verbatim}
-0.1329340934753418 0.45162034034729004
+0.12645578384399414 0.4184837341308594
 \end{verbatim}
 
 \chapter{Pandas - inne}\label{pandas---inne}
@@ -5485,9 +5407,9 @@ Categories (4, str): ['Youth' < 'YoungAdult' < 'MiddleAged' < 'Senior']
 \end{Shaded}
 
 \begin{verbatim}
-[(0.26, 0.51], (0.51, 0.75], (0.51, 0.75], (0.75, 1.0], (0.75, 1.0], ..., (0.26, 0.51], (0.75, 1.0], (0.51, 0.75], (0.018, 0.26], (0.26, 0.51]]
+[(0.25, 0.49], (0.25, 0.49], (0.73, 0.97], (0.015, 0.25], (0.015, 0.25], ..., (0.015, 0.25], (0.49, 0.73], (0.25, 0.49], (0.73, 0.97], (0.25, 0.49]]
 Length: 20
-Categories (4, interval[float64, right]): [(0.018, 0.26] < (0.26, 0.51] < (0.51, 0.75] < (0.75, 1.0]]
+Categories (4, interval[float64, right]): [(0.015, 0.25] < (0.25, 0.49] < (0.49, 0.73] < (0.73, 0.97]]
 \end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -5505,13 +5427,13 @@ Categories (4, interval[float64, right]): [(0.018, 0.26] < (0.26, 0.51] < (0.51,
 \end{Shaded}
 
 \begin{verbatim}
-[(-0.0255, 0.696], (-0.0255, 0.696], (-0.0255, 0.696], (0.696, 2.864], (-0.755, -0.0255], ..., (0.696, 2.864], (0.696, 2.864], (0.696, 2.864], (-0.0255, 0.696], (-3.245, -0.755]]
+[(-0.629, 0.0366], (0.721, 3.339], (0.0366, 0.721], (0.0366, 0.721], (-0.629, 0.0366], ..., (0.0366, 0.721], (-0.629, 0.0366], (0.0366, 0.721], (0.0366, 0.721], (0.0366, 0.721]]
 Length: 1000
-Categories (4, interval[float64, right]): [(-3.245, -0.755] < (-0.755, -0.0255] < (-0.0255, 0.696] < (0.696, 2.864]]
-(-3.245, -0.755]     250
-(-0.755, -0.0255]    250
-(-0.0255, 0.696]     250
-(0.696, 2.864]       250
+Categories (4, interval[float64, right]): [(-2.8209999999999997, -0.629] < (-0.629, 0.0366] < (0.0366, 0.721] < (0.721, 3.339]]
+(-2.8209999999999997, -0.629]    250
+(-0.629, 0.0366]                 250
+(0.0366, 0.721]                  250
+(0.721, 3.339]                   250
 Name: count, dtype: int64
 \end{verbatim}
 
@@ -5536,36 +5458,30 @@ odstających}\label{wykrywanie-i-filtrowanie-elementuxf3w-odstajux105cych}
 \begin{verbatim}
                  0            1            2            3
 count  1000.000000  1000.000000  1000.000000  1000.000000
-mean     -0.015597     0.001533    -0.007501     0.012613
-std       1.016115     1.020528     1.014123     0.983878
-min      -3.693310    -3.696025    -3.301377    -3.551557
-25%      -0.663233    -0.670259    -0.683974    -0.642560
-50%      -0.013601     0.002404    -0.035292     0.036039
-75%       0.629777     0.668428     0.754803     0.656147
-max       3.507131     3.112472     3.038698     3.067770
+mean      0.028703     0.021895     0.010127     0.028517
+std       1.004908     0.950930     0.981091     1.034854
+min      -3.318216    -3.035852    -2.763895    -3.250600
+25%      -0.635966    -0.639642    -0.712410    -0.659771
+50%      -0.040377     0.019488     0.020001     0.045159
+75%       0.700966     0.648612     0.709641     0.726173
+max       3.462385     2.750800     3.371033     3.349604
 ---
-43    -3.301377
-592    3.004239
-966   -3.040270
-988    3.038698
+194    3.014831
+482    3.371033
 Name: 2, dtype: float64
 ---
             0         1         2         3
-43  -1.411399  0.248251 -3.301377  0.240974
-45   1.467250 -3.411538  0.001321  0.972187
-56   0.077935  1.072791 -0.357470 -3.551557
-116 -3.004430 -0.923045 -0.744251 -1.186709
-137 -0.473571  1.340357  0.722790 -3.007251
-176 -3.352097  0.071359  1.363304  1.504339
-282 -3.693310  0.895951 -1.475904 -2.165088
-428  0.072962  3.112472  0.516730 -0.631377
-592 -2.053406  0.802608  3.004239 -1.950189
-633  2.074358 -3.696025  0.340180 -1.224874
-694  3.507131 -0.977136  0.206373 -0.296794
-842  0.430020 -3.436111  1.063110  0.217511
-893  1.678793  0.728509  1.114767  3.067770
-966 -1.599019 -0.282267 -3.040270  0.417864
-988  0.106591 -0.672210  3.038698 -0.340959
+94  -3.250207 -1.847502  0.907021  2.710492
+119 -0.164476  1.169355  1.823708  3.349604
+194  0.408031 -0.791613  3.014831 -0.777549
+287  0.133536 -3.035852  0.270153  0.599083
+482 -0.281649 -0.624206  3.371033 -1.252256
+522 -0.977740  1.223995  0.829913 -3.057457
+597  0.429733 -0.198112 -0.804686  3.086241
+613  3.462385  0.434544 -0.832198 -1.018889
+721  0.611510 -3.005805 -0.022591  0.330815
+759 -0.318316 -0.192041  0.845967 -3.250600
+762 -3.318216 -0.881147  0.078325  1.455875
 \end{verbatim}
 
 \section{Zmiana typu w kolumnie}\label{zmiana-typu-w-kolumnie}
@@ -7113,7 +7029,7 @@ będzie wykres słupkowy lub punktowy.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-2-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-155}%
+\phantomsection\label{annotated-cell-153}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7321,7 +7237,7 @@ Wersja z datami:
 
 \section{Style, kolory linii}\label{style-kolory-linii}
 
-\phantomsection\label{annotated-cell-161}%
+\phantomsection\label{annotated-cell-159}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -7711,7 +7627,7 @@ Wykresy punktowe są szczególnie przydatne, gdy mamy do czynienia z
 danymi o różnym charakterze (ciągłe lub dyskretne) oraz gdy chcemy
 zbadać korelację, grupy, wzorce lub wartości odstające.
 
-\phantomsection\label{annotated-cell-170}%
+\phantomsection\label{annotated-cell-168}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7756,7 +7672,7 @@ zaczynając od 0.5 do 4.5.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-3-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-172}%
+\phantomsection\label{annotated-cell-170}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7801,7 +7717,7 @@ kółka (\texttt{marker=\textquotesingle{}o\textquotesingle{}}).
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-174}%
+\phantomsection\label{annotated-cell-172}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{from}\NormalTok{ matplotlib }\ImportTok{import}\NormalTok{ pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7837,7 +7753,7 @@ długości takiej samej jak współrzędne \texttt{x} i \texttt{y}.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-6-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-175}%
+\phantomsection\label{annotated-cell-173}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
@@ -8125,7 +8041,7 @@ gdzie:
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-181}%
+\phantomsection\label{annotated-cell-179}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8257,7 +8173,7 @@ Zamiana na mapę kolorów:
 
 \section{Wykres pierścieniowy}\label{wykres-pierux15bcieniowy}
 
-\phantomsection\label{annotated-cell-185}%
+\phantomsection\label{annotated-cell-183}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -8402,7 +8318,7 @@ gdzie:
   legendę.
 \end{itemize}
 
-\phantomsection\label{annotated-cell-187}%
+\phantomsection\label{annotated-cell-185}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8533,7 +8449,7 @@ dodaje etykietę osi Y z tekstem ``Wartości''.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-191}%
+\phantomsection\label{annotated-cell-189}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8676,7 +8592,7 @@ siebie.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-7-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-193}%
+\phantomsection\label{annotated-cell-191}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -9213,7 +9129,7 @@ Przewidywany błąd dopasowania: 1.3322676295501878e-15
 
 \pandocbounded{\includegraphics[keepaspectratio]{k3.png}}
 
-\phantomsection\label{annotated-cell-202}%
+\phantomsection\label{annotated-cell-200}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
