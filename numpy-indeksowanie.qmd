@@ -16,7 +16,7 @@ print("6:", a[:5]) # <6>
 
 1. Dostęp do elementu o indeksie 5.
 2. Dostęp do elementu drugiego od tyłu.
-3. Dostęp do elementów o indeksach od 3 do 5 (włącznie) - zasada przedziałów lewostronnnie domkniętnych, prawostronnie otwartych.
+3. Dostęp do elementów o indeksach od 3 do 5 (włącznie) - zasada przedziałów lewostronnie domkniętych, prawostronnie otwartych.
 4. Dostęp do wszystkich elementów.
 5. Dostęp do wszystkich elementów z wyłączeniem ostatniego.
 6. Dostęp od początku do elementu o indeksie 4.
@@ -34,10 +34,10 @@ print("6:", a[::-2]) # <6>
 ```
 1. Dostęp do elementów od indeksu 4 do końca.
 2. Dostęp do elementów od indeksu 4 do końca bez ostatniego.
-3. Dostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do 10 (z czwórką, ale bez dziesiątki) z krokiem równym 2
+3. Dostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do 10 (z czwórką, ale bez dziesiątki) z krokiem równym 2.
 4. Dostęp do elementów od tyłu do początku.
 5. Dostęp do elementów o indeksach parzystych od początku.
-6. Dostęp do elementów o indeksach "nieparzystych ujemnych"..
+6. Dostęp do co drugiego elementu, licząc od końca (odwrócona kolejność).
 
 
 ```{python}
@@ -76,7 +76,7 @@ print(np.shape(h))
 
 ```
 
-**Uwaga - takie "krojenie" to tzw "widok".**
+**Uwaga - "krojenie" tworzy tzw. widok (view), a nie kopię. Zmiany w widoku wpływają na oryginalną tablicę i odwrotnie.**
 
 ```{python}
 #| echo: true
@@ -94,7 +94,7 @@ print(b)
 
 ```
 
-Naprawa:
+Rozwiązanie - użycie metody `.copy()`:
   
 ```{python}
 #| echo: true
@@ -146,6 +146,9 @@ print(f)
 g = a[~(a > 0)]
 print(g)
 ```
+
+**Uwaga - indeksowanie fancy i logiczne zwraca kopię, a nie widok (w przeciwieństwie do "krojenia").**
+
 
 ```{python}
 #| echo: true

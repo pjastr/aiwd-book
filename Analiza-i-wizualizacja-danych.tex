@@ -1027,8 +1027,8 @@ Information, Second Edition, Graphics Press, USA, 1991, p.~57 -- 69.
 \tightlist
 \item
   W pierwszym kroku tworzymy nowy projekt w wybranej lokalizacji.
-  Wybieramy venv oraz jedną z wersji Pythona np. 3.13. Na koniec guzik
-  Create.
+  Wybieramy venv oraz jedną z wersji Pythona np. 3.13. Na koniec
+  przycisk Create.
 \end{enumerate}
 
 \pandocbounded{\includegraphics[keepaspectratio]{konf1.png}}
@@ -1050,7 +1050,7 @@ Information, Second Edition, Graphics Press, USA, 1991, p.~57 -- 69.
 \setcounter{enumi}{2}
 \tightlist
 \item
-  Otwieramy termin w pycharm i wpisujemy komendę:
+  Otwieramy terminal w pycharm i wpisujemy komendę:
   \texttt{pip\ install\ -r\ requirements.txt}
 \end{enumerate}
 
@@ -1071,11 +1071,9 @@ Zastosowania:
 \item
   zaawansowane obliczenia matematyczne (numeryczne)
 \item
-  całkowania
+  całkowanie numeryczne
 \item
   rozwiązywanie równań
-\item
-  \ldots{}
 \end{itemize}
 
 \section{Import biblioteki NumPy}\label{import-biblioteki-numpy}
@@ -1086,24 +1084,26 @@ Zastosowania:
 \end{Highlighting}
 \end{Shaded}
 
-Podstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana
-\texttt{ndarray}. Każdy element na tablicy traktowany jest jako typ
-\texttt{dtype}.
+Podstawowym obiektem w bibliotece NumPy jest N-wymiarowa tablica zwana
+\texttt{ndarray}. Podstawowym obiektem w bibliotece NumPy jest
+N-wymiarowa tablica zwana \texttt{ndarray}. Każdy element tablicy
+traktowany jest jako typ \texttt{dtype}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{numpy.array(}\BuiltInTok{object}\NormalTok{, dtype}\OperatorTok{=}\VariableTok{None}\NormalTok{, }\OperatorTok{*}\NormalTok{, copy}\OperatorTok{=}\VariableTok{True}\NormalTok{, order}\OperatorTok{=}\StringTok{\textquotesingle{}K\textquotesingle{}}\NormalTok{, subok}\OperatorTok{=}\VariableTok{False}\NormalTok{, ndmin}\OperatorTok{=}\DecValTok{0}\NormalTok{, like}\OperatorTok{=}\VariableTok{None}\NormalTok{)}
+\NormalTok{np.array(}\BuiltInTok{object}\NormalTok{, dtype}\OperatorTok{=}\VariableTok{None}\NormalTok{, }\OperatorTok{*}\NormalTok{, copy}\OperatorTok{=}\VariableTok{True}\NormalTok{, order}\OperatorTok{=}\StringTok{\textquotesingle{}K\textquotesingle{}}\NormalTok{, subok}\OperatorTok{=}\VariableTok{False}\NormalTok{, ndmin}\OperatorTok{=}\DecValTok{0}\NormalTok{, like}\OperatorTok{=}\VariableTok{None}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{itemize}
 \tightlist
 \item
-  object - to co ma być wrzucone do tablicy
+  object - obiekt (lub sekwencja), który ma zostać przekształcony w
+  tablicę
 \item
   dtype - typ
 \item
-  copy - czy obiekty mają być skopiowane, domyślne \texttt{True}
+  copy - czy obiekty mają być skopiowane, domyślnie \texttt{True}
 \item
   order - sposób układania: C (rzędy), F (kolumny), A, K
 \item
@@ -1112,7 +1112,7 @@ Podstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana
 \item
   ndmin - minimalny rozmiar (wymiar) tablicy
 \item
-  like - tworzenie na podstawie tablic referencyjnej
+  like - tworzenie na podstawie tablicy referencyjnej
 \end{itemize}
 
 \protect\phantomsection\label{annotated-cell-3}%
@@ -1142,7 +1142,7 @@ Podstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana
 \begin{description}
 \tightlist
 \item[\circled{1}]
-Standardowe domyślne.
+Tworzenie tablicy z domyślnymi ustawieniami.
 \item[\circled{2}]
 Sprawdzenie typu.
 \item[\circled{3}]
@@ -1151,9 +1151,10 @@ typu ``największego''.
 \item[\circled{4}]
 Tu otrzymamy tablicę 2x2.
 \item[\circled{5}]
-W tej linijce otrzymana będzie tablica 2x1.
+W tej linijce otrzymamy tablicę o wymiarach 1x3 (kształt
+\texttt{(1,\ 3)}).
 \item[\circled{6}]
-Ustalenie innego typu - większego.
+Wymuszenie typu \texttt{complex} - typu o szerszym zakresie.
 \item[\circled{7}]
 Skorzystanie z podtypu macierzowego.
 \item[\circled{8}]
@@ -1220,8 +1221,9 @@ Opis
 wymiarów \\
 \texttt{size} & liczba elementów w tablicy (łączna) \\
 \texttt{ndim} & liczba wymiarów tablicy \\
-\texttt{nbytes} & liczba bajtów jaką tablica zajmuje w pamięci \\
-\texttt{dtype} & typ danych \\
+\texttt{nbytes} & liczba bajtów, jaką tablica zajmuje w pamięci \\
+\texttt{dtype} & typ danych przechowywanych w tablicy (np.
+\texttt{int64}, \texttt{float64}) \\
 \end{longtable}
 }
 
@@ -1271,7 +1273,8 @@ nbytes: 32
 dtype: int64
 \end{verbatim}
 
-NumPy nie wspiera postrzępionych tablic! Poniższy kod wygeneruje błąd:
+NumPy nie wspiera postrzepionych tablic (ang. \emph{ragged arrays}).
+Ponizszy kod wygeneruje blad:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1665,7 +1668,7 @@ Dostęp do elementu o indeksie 5.
 Dostęp do elementu drugiego od tyłu.
 \item[\circled{3}]
 Dostęp do elementów o indeksach od 3 do 5 (włącznie) - zasada
-przedziałów lewostronnnie domkniętnych, prawostronnie otwartych.
+przedziałów lewostronnie domkniętych, prawostronnie otwartych.
 \item[\circled{4}]
 Dostęp do wszystkich elementów.
 \item[\circled{5}]
@@ -1705,13 +1708,13 @@ Dostęp do elementów od indeksu 4 do końca.
 Dostęp do elementów od indeksu 4 do końca bez ostatniego.
 \item[\circled{3}]
 Dostęp do elementów o indeksach stanowiących ciąg arytmetyczny od 4 do
-10 (z czwórką, ale bez dziesiątki) z krokiem równym 2
+10 (z czwórką, ale bez dziesiątki) z krokiem równym 2.
 \item[\circled{4}]
 Dostęp do elementów od tyłu do początku.
 \item[\circled{5}]
 Dostęp do elementów o indeksach parzystych od początku.
 \item[\circled{6}]
-Dostęp do elementów o indeksach ``nieparzystych ujemnych''..
+Dostęp do co drugiego elementu, licząc od końca (odwrócona kolejność).
 \end{description}
 
 \begin{verbatim}
@@ -1783,7 +1786,8 @@ Dostęp do elementów o indeksach ``nieparzystych ujemnych''..
 (1, 2)
 \end{verbatim}
 
-\textbf{Uwaga - takie ``krojenie'' to tzw ``widok''.}
+\textbf{Uwaga - ``krojenie'' tworzy tzw. widok (view), a nie kopię.
+Zmiany w widoku wpływają na oryginalną tablicę i odwrotnie.}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1813,7 +1817,7 @@ Dostęp do elementów o indeksach ``nieparzystych ujemnych''..
 [[-11   8]]
 \end{verbatim}
 
-Naprawa:
+Rozwiązanie - użycie metody \texttt{.copy()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1894,6 +1898,9 @@ Indeksowanie logiczne (maski boolowskie)
 [ -2  -7 -23  -4  -7]
 \end{verbatim}
 
+\textbf{Uwaga - indeksowanie fancy i logiczne zwraca kopię, a nie widok
+(w przeciwieństwie do ``krojenia'').}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -1956,10 +1963,10 @@ c
 \NormalTok{a }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{], [}\OperatorTok{{-}}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{8}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{9}\NormalTok{]])}
 \BuiltInTok{print}\NormalTok{(a)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"d"}\NormalTok{)}
-\NormalTok{d }\OperatorTok{=}\NormalTok{ a.flatten()}
+\NormalTok{d }\OperatorTok{=}\NormalTok{ a.flatten()   }\CommentTok{\# always returns a copy}
 \BuiltInTok{print}\NormalTok{(d)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"e"}\NormalTok{)}
-\NormalTok{e }\OperatorTok{=}\NormalTok{ a.ravel()}
+\NormalTok{e }\OperatorTok{=}\NormalTok{ a.ravel()     }\CommentTok{\# returns a view (shared memory with original)}
 \BuiltInTok{print}\NormalTok{(e)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"f"}\NormalTok{)}
 \NormalTok{f }\OperatorTok{=}\NormalTok{ np.ravel(a)}
@@ -2024,7 +2031,7 @@ j
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
 
 \BuiltInTok{print}\NormalTok{(}\StringTok{"n"}\NormalTok{)}
-\NormalTok{n }\OperatorTok{=}\NormalTok{ [}\DecValTok{3}\NormalTok{, }\OperatorTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{]}
+\NormalTok{n }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{3}\NormalTok{, }\OperatorTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{])}
 \BuiltInTok{print}\NormalTok{(n)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"k"}\NormalTok{)}
 \NormalTok{k }\OperatorTok{=}\NormalTok{ np.hstack((n, n, n))}
@@ -2040,7 +2047,7 @@ j
 
 \begin{verbatim}
 n
-[3, -4, 5, -2]
+[ 3 -4  5 -2]
 k
 [ 3 -4  5 -2  3 -4  5 -2  3 -4  5 -2]
 l
@@ -2061,10 +2068,10 @@ m
 \NormalTok{a }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{]])}
 \NormalTok{b }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{]])}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"r1"}\NormalTok{)}
-\NormalTok{r1 }\OperatorTok{=}\NormalTok{ np.concatenate((a, b))}
+\NormalTok{r1 }\OperatorTok{=}\NormalTok{ np.concatenate((a, b))          }\CommentTok{\# axis=0 is the default}
 \BuiltInTok{print}\NormalTok{(r1)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"r2"}\NormalTok{)}
-\NormalTok{r2 }\OperatorTok{=}\NormalTok{ np.concatenate((a, b), axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\NormalTok{r2 }\OperatorTok{=}\NormalTok{ np.concatenate((a, b), axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)  }\CommentTok{\# same as above (explicit)}
 \BuiltInTok{print}\NormalTok{(r2)}
 \BuiltInTok{print}\NormalTok{(}\StringTok{"r3"}\NormalTok{)}
 \NormalTok{r3 }\OperatorTok{=}\NormalTok{ np.concatenate((a, b.T), axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}

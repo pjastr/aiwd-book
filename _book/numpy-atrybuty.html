@@ -778,16 +778,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td><code>nbytes</code></td>
-<td>liczba bajtów jaką tablica zajmuje w pamięci</td>
+<td>liczba bajtów, jaką tablica zajmuje w pamięci</td>
 </tr>
 <tr class="odd">
 <td><code>dtype</code></td>
-<td>typ danych</td>
+<td>typ danych przechowywanych w tablicy (np. <code>int64</code>, <code>float64</code>)</td>
 </tr>
 </tbody>
 </table>
 <p><a href="https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes" class="uri">https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes</a></p>
-<div id="3ed93533" class="cell" data-execution_count="1">
+<div id="027dca78" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tab1 <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">1</span>])</span>
@@ -806,7 +806,7 @@ nbytes: 40
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="22afd547" class="cell" data-execution_count="2">
+<div id="3538aa8b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tab2 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>]])</span>
@@ -825,7 +825,7 @@ nbytes: 32
 dtype: int64</code></pre>
 </div>
 </div>
-<p>NumPy nie wspiera postrzępionych tablic! Poniższy kod wygeneruje błąd:</p>
+<p>NumPy nie wspiera postrzepionych tablic (ang. <em>ragged arrays</em>). Ponizszy kod wygeneruje blad:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tab3 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">5</span>], [<span class="dv">3</span>]])</span></code></pre></div><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></div>

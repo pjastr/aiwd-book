@@ -4,11 +4,10 @@ NumPy jest biblioteką Pythona służącą do obliczeń naukowych.
 
 Zastosowania:
   
-  * algebra liniowa
-* zaawansowane obliczenia matematyczne (numeryczne) 
-* całkowania
+* algebra liniowa
+* zaawansowane obliczenia matematyczne (numeryczne)
+* całkowanie numeryczne
 * rozwiązywanie równań
-* ...
 
 
 
@@ -18,19 +17,22 @@ Zastosowania:
 import numpy as np
 ```
 
-Podstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana `ndarray`. Każdy element na tablicy traktowany jest jako typ `dtype`.
+Podstawowym obiektem w bibliotece NumPy jest N-wymiarowa tablica zwana `ndarray`. Podstawowym obiektem w bibliotece NumPy jest N-wymiarowa tablica zwana `ndarray`. Każdy element tablicy traktowany jest jako typ `dtype`.
+
 
 ```python
-numpy.array(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0, like=None)
+np.array(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0, like=None)
 ```
 
-* object - to co ma być wrzucone do tablicy
+* object - obiekt (lub sekwencja), który ma zostać przekształcony w tablicę
 * dtype - typ
-* copy - czy obiekty mają być skopiowane, domyślne `True`
+* copy - czy obiekty mają być skopiowane, domyślnie `True`
 * order - sposób układania: C (rzędy),  F (kolumny), A, K
 * subok - realizowane przez podklasy (jeśli `True`), domyślnie `False`
 * ndmin - minimalny rozmiar (wymiar) tablicy
-* like - tworzenie na podstawie tablic referencyjnej
+* like - tworzenie na podstawie tablicy referencyjnej
+
+
 
 ```{python}
 #| echo: true
@@ -55,11 +57,11 @@ print(type(g))
 
 ```
 
-1. Standardowe domyślne.
+1. Tworzenie tablicy z domyślnymi ustawieniami.
 2. Sprawdzenie typu.
 3. Jeden z elementów jest innego typu. Tu następuje zatem rozszerzenie do typu "największego".
 4. Tu otrzymamy tablicę 2x2.
-5. W tej linijce otrzymana będzie tablica 2x1.
-6. Ustalenie innego typu - większego.
+5. W tej linijce otrzymamy tablicę o wymiarach 1x3 (kształt `(1, 3)`).
+6. Wymuszenie typu `complex` - typu o szerszym zakresie.
 7. Skorzystanie z podtypu macierzowego.
 8. Zachowanie typu macierzowego.

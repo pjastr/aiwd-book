@@ -1,6 +1,6 @@
 # Konfiguracja
 
-1. W pierwszym kroku tworzymy nowy projekt w wybranej lokalizacji. Wybieramy venv oraz jedną z wersji Pythona np. 3.13. Na koniec guzik Create.
+1. W pierwszym kroku tworzymy nowy projekt w wybranej lokalizacji. Wybieramy venv oraz jedną z wersji Pythona np. 3.13. Na koniec przycisk Create.
 
 ![](konf1.png)
 
@@ -8,7 +8,7 @@
 
 ![](konf2.png)
 
-3. Otwieramy termin w pycharm i wpisujemy komendę: `pip install -r requirements.txt`
+3. Otwieramy terminal w pycharm i wpisujemy komendę: `pip install -r requirements.txt`
 
 
 ![](konf3.png)
