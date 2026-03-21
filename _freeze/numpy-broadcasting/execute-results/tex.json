@@ -1,0 +1,11 @@
+{
+  "hash": "b9bcc3e4388742e6c62d0c1cd87062e7",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "## Broadcasting\n\nRozważane warianty są przykładowe.\n\nWariant 1 - skalar-tablica - wykonanie operacji na każdym elemencie tablicy\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n\na = np.array([[1, 2], [5, 6], [9, 10]])\nb = a + 4\nprint(b)\nc = 2 ** a\nprint(c)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[[ 5  6]\n [ 9 10]\n [13 14]]\n[[   2    4]\n [  32   64]\n [ 512 1024]]\n```\n:::\n:::\n\n\n![](o3.png)\n\nWariant 2 - dwie tablice - \"gdy jedna z tablic może być rozszerzona\" (oba wymiary są równe lub jeden z nich jest równy 1)\n\n::: {.content-visible when-format=\"html\"}\n\n<https://numpy.org/doc/stable/user/basics.broadcasting.html>\n\n:::\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nimport numpy as np\n\na = np.array([[1, 2], [5, 6]])\nb = np.array([9, 2])\nr1 = a + b\nprint(r1)\nr2 = a / b\nprint(r2)\nc = np.array([[4], [-2]])\nr3 = a + c\nprint(r3)\nr4 = c / a\nprint(r4)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[[10  4]\n [14  8]]\n[[0.11111111 1.        ]\n [0.55555556 3.        ]]\n[[5 6]\n [3 4]]\n[[ 4.          2.        ]\n [-0.4        -0.33333333]]\n```\n:::\n:::\n\n\n![](a4.png)\n\nWariant 3 - \"kolumna\" i \"wiersz\"\n\n::: {.cell execution_count=3}\n``` {.python .cell-code}\nimport numpy as np\n\na = np.array([[5, 2, -3]]).T\nb = np.array([3, -2, 1, 2, 4])\nprint(a+b)\nprint(b+a)\nprint(a*b)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[[ 8  3  6  7  9]\n [ 5  0  3  4  6]\n [ 0 -5 -2 -1  1]]\n[[ 8  3  6  7  9]\n [ 5  0  3  4  6]\n [ 0 -5 -2 -1  1]]\n[[ 15 -10   5  10  20]\n [  6  -4   2   4   8]\n [ -9   6  -3  -6 -12]]\n```\n:::\n:::\n\n\n![](o5.png)\n\n",
+    "supporting": [
+      "numpy-broadcasting_files\\figure-pdf"
+    ],
+    "filters": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "hash": "affe34b7b871e99f7dcdce0bcbbecfc3",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Problem #3\n\nPliki są dostępne tutaj <https://github.com/pjastr/aiwd-book/tree/main/dataset>\n\nCel: piramida wieku\n\n::: {#3e126c39 .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Wczytanie danych\ndf = pd.read_csv('dataset/wiek.csv')\n\n# Przygotowanie wartości\nmale = -df['Mężczyźni']\nfemale = df['Kobiety']\nage_groups = df['Grupa wiekowa']\n\n# Rysowanie wykresu przy użyciu\nplt.figure(figsize=(8, 6))\nplt.barh(age_groups, male, label='Mężczyźni')\nplt.barh(age_groups, female, label='Kobiety')\nplt.xlabel('Liczba osób')\nplt.ylabel('Grupa wiekowa')\nplt.title('Piramida wieku populacji')\n\n# Definicja ticków co 2000, od -8000 do +8000, i wyświetlenie ich jako wartości bezwzględnych\nticks = np.arange(-8000, 8001, 2000)\nlabels = np.abs(ticks)\nplt.xticks(ticks, labels)\n\nplt.legend()\nplt.grid(axis='x', linestyle='--', alpha=0.5)\nplt.tight_layout()\nplt.show()\n\n```\n\n::: {.cell-output .cell-output-display}\n![](problem03_files/figure-html/cell-2-output-1.png){width=758 height=566}\n:::\n:::\n\n\n::: {#05b25d7f .cell execution_count=2}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Wczytanie danych\ndf = pd.read_csv('dataset/wiek.csv')\n\n# Przygotowanie wartości\nmale = -df['Mężczyźni']\nfemale = df['Kobiety']\nage_groups = df['Grupa wiekowa']\n\n\nfig, ax = plt.subplots(figsize=(8, 6))\n\nax.barh(age_groups, male, label='Mężczyźni')\nax.barh(age_groups, female, label='Kobiety')\n\nax.set_xlabel('Liczba osób')\nax.set_ylabel('Grupa wiekowa')\nax.set_title('Piramida wieku populacji')\n\n# Definicja ticków co 2000, od -8000 do +8000, i wyświetlenie ich jako wartości bezwzględnych\nticks = np.arange(-8000, 8001, 2000)\nlabels = np.abs(ticks)\nax.set_xticks(ticks)\nax.set_xticklabels(labels)\n\nax.legend()\nax.grid(axis='x', linestyle='--', alpha=0.5)\n\nfig.tight_layout()\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](problem03_files/figure-html/cell-3-output-1.png){width=758 height=566}\n:::\n:::\n\n\n",
+    "supporting": [
+      "problem03_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

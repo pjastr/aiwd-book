@@ -80,6 +80,8 @@ book:
   repo-url: https://github.com/pjastr/aiwd-book
   repo-actions: [issue]
 
+execute:
+  freeze: auto
 
 format:
   html:

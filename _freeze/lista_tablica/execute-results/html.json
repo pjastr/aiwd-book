@@ -1,0 +1,12 @@
+{
+  "hash": "4ff44b8a47a754fd2a6574c53cdcfda6",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Lista a tablica\n\n::: {#38f732e2 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport time\n\nstart_time = time.time()\nmy_arr = np.arange(1000000)\nmy_list = list(range(1000000))\nstart_time = time.time()\nmy_arr2 = my_arr * 2\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\nstart_time = time.time()\nmy_list2 = [x * 2 for x in my_list]\nprint(\"--- %s seconds ---\" % (time.time() - start_time))\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n--- 0.0019750595092773438 seconds ---\n--- 0.03771805763244629 seconds ---\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "lista_tablica_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

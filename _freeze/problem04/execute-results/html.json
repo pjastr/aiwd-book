@@ -1,0 +1,12 @@
+{
+  "hash": "dfc3a388326b68d579a423ab963fbc9b",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Problem #4\n\nPliki są dostępne tutaj <https://github.com/pjastr/aiwd-book/tree/main/dataset>\n\nCel: szeregi czasowe.\n\n::: {#62ec66a2 .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\n\ndf = pd.read_csv(\"dataset/kawa.csv\", parse_dates=[\"Data\"], dayfirst=False)\n\nx = df[\"Data\"]\ny = df[\"Liczba sprzedanych kaw\"]\n\nplt.figure(figsize=(10, 6))\nplt.plot(x, y, marker='o', linestyle='-', linewidth=2)\n\nplt.title(\"Liczba sprzedanych kaw w dniach 1–7 czerwca 2025\", fontsize=14)\nplt.xlabel(\"Data\", fontsize=12)\nplt.ylabel(\"Liczba sprzedanych kaw\", fontsize=12)\n\nplt.grid(True, linestyle='--', alpha=0.7)\n\n# zapisanie daty na podziałce X w fromacie dd.mm.yyyy\nplt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%Y'))\nplt.gca().xaxis.set_major_locator(mdates.DayLocator())\nplt.gcf().autofmt_xdate()\n\nplt.tight_layout()\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](problem04_files/figure-html/cell-2-output-1.png){width=951 height=566}\n:::\n:::\n\n\n::: {#e77978b0 .cell execution_count=2}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\n\ndf = pd.read_csv(\"dataset/kawa.csv\", parse_dates=[\"Data\"], dayfirst=False)\n\nx = df[\"Data\"]\ny = df[\"Liczba sprzedanych kaw\"]\n\nfig, ax = plt.subplots(figsize=(10, 6))\nax.plot(x, y, marker='o', linestyle='-', linewidth=2)\nax.set_title(\"Liczba sprzedanych kaw w dniach 1–7 czerwca 2025\", fontsize=14)\nax.set_xlabel(\"Data\", fontsize=12)\nax.set_ylabel(\"Liczba sprzedanych kaw\", fontsize=12)\nax.grid(True, linestyle='--', alpha=0.7)\nax.xaxis.set_major_locator(mdates.DayLocator())\nax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%Y'))\nfig.autofmt_xdate()\nfig.tight_layout()\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](problem04_files/figure-html/cell-3-output-1.png){width=951 height=566}\n:::\n:::\n\n\n",
+    "supporting": [
+      "problem04_files\\figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
