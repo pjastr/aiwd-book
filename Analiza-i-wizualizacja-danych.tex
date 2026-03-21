@@ -2531,8 +2531,8 @@ znaków.
 \href{https://numpy.org/doc/stable/reference/routines.strings.html}{String
 operations}, jednak w tym materiale skupimy się na tym, jak można je
 wykorzystywać, zakładając interfejs z modułu \texttt{numpy.strings}.
-Jest to analogiczne do korzystania z \texttt{numpy.char}. Jest no nowsze
-podejście.
+Jest to analogiczne do korzystania z \texttt{numpy.char}, ale jest to
+nowsze podejście.
 
 \section{Tworzenie tablic z napisami}\label{tworzenie-tablic-z-napisami}
 
@@ -2588,8 +2588,8 @@ tablicach stringów:
 
 \subsection{\texorpdfstring{\texttt{numpy.strings.capitalize}}{numpy.strings.capitalize}}\label{numpy.strings.capitalize}
 
-Funkcja \texttt{capitalize} zamienia pierwszą literę wyrazu na wielką, a
-pozostałe na małe.
+Funkcja \texttt{capitalize} zamienia pierwszą literę całego ciągu znaków
+na wielką, a pozostałe na małe.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2606,9 +2606,8 @@ pozostałe na małe.
 
 \subsection{\texorpdfstring{\texttt{numpy.strings.title}}{numpy.strings.title}}\label{numpy.strings.title}
 
-Funkcja \texttt{title} sprawia, że każda część składowa tekstu (np.
-oddzielona spacją) zostaje zamieniona tak, by zaczynała się od wielkiej
-litery.
+Funkcja \texttt{title} zamienia pierwszą literę każdego wyrazu na
+wielką, a pozostałe litery danego wyrazu na małe.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2630,8 +2629,9 @@ tekstów}\label{ux142ux105czenie-i-rozdzielanie-tekstuxf3w}
 
 \subsection{\texorpdfstring{\texttt{numpy.strings.add}}{numpy.strings.add}}\label{numpy.strings.add}
 
-Funkcja \texttt{add} łączy elementy tablic tekstowych, działając
-podobnie jak operator \texttt{+} na stringach, ale wektorowo.
+Funkcja \texttt{add} łączy elementy tablic tekstowych parami, działając
+jak operator \texttt{+} na stringach, ale wektorowo. Łączenie odbywa się
+bez żadnego separatora.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2640,18 +2640,22 @@ podobnie jak operator \texttt{+} na stringach, ale wektorowo.
 \NormalTok{arr\_a }\OperatorTok{=}\NormalTok{ np.array([}\StringTok{"Hello"}\NormalTok{, }\StringTok{"Data"}\NormalTok{])}
 \NormalTok{arr\_b }\OperatorTok{=}\NormalTok{ np.array([}\StringTok{"World"}\NormalTok{, }\StringTok{"Science"}\NormalTok{])}
 
+\CommentTok{\# bez separatora}
 \BuiltInTok{print}\NormalTok{(np.strings.add(arr\_a, arr\_b))}
+\CommentTok{\# ze spacją {-}{-} trzeba ją dodać ręcznie}
+\BuiltInTok{print}\NormalTok{(np.strings.add(np.strings.add(arr\_a, np.array([}\StringTok{" "}\NormalTok{, }\StringTok{" "}\NormalTok{])), arr\_b))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ['HelloWorld' 'DataScience']
+['Hello World' 'Data Science']
 \end{verbatim}
 
-\subsection{\texorpdfstring{\texttt{numpy.strings.join}}{numpy.strings.join}}\label{numpy.strings.join}
+\subsection{\texorpdfstring{\texttt{numpy.char.join}}{numpy.char.join}}\label{numpy.char.join}
 
-Funkcja \texttt{join} pozwala na łączenie elementów tablicy przy użyciu
-wskazanego separatora.
+Funkcja \texttt{join} wstawia wskazany separator między poszczególne
+znaki wewnątrz każdego elementu tablicy.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2671,7 +2675,7 @@ Uwaga: \texttt{join} wektoryzuje operację, traktując każdy element
 tablicy jako sekwencję znaków do połączenia separatorem.
 \end{quote}
 
-\subsection{\texorpdfstring{\texttt{numpy.strings.split}}{numpy.strings.split}}\label{numpy.strings.split}
+\subsection{\texorpdfstring{\texttt{numpy.char.split}}{numpy.char.split}}\label{numpy.char.split}
 
 Pozwala na rozdzielanie stringów według podanego separatora. Zwraca
 tablicę zawierającą listy podłańcuchów.
@@ -2711,13 +2715,17 @@ podciągów}\label{wyszukiwanie-i-zamiana-podciux105guxf3w}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
 
-\NormalTok{arr5 }\OperatorTok{=}\NormalTok{ np.array([}\StringTok{"python"}\NormalTok{, }\StringTok{"data"}\NormalTok{, }\StringTok{"numpy"}\NormalTok{])}
+\NormalTok{arr5 }\OperatorTok{=}\NormalTok{ np.array([}\StringTok{"banana"}\NormalTok{, }\StringTok{"data"}\NormalTok{, }\StringTok{"abracadabra"}\NormalTok{])}
+\CommentTok{\# find {-}{-} pierwsze wystąpienie}
 \BuiltInTok{print}\NormalTok{(np.strings.find(arr5, }\StringTok{"a"}\NormalTok{))}
+\CommentTok{\# rfind {-}{-} ostatnie wystąpienie}
+\BuiltInTok{print}\NormalTok{(np.strings.rfind(arr5, }\StringTok{"a"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-[-1  1 -1]
+[1 1 0]
+[ 5  3 10]
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{numpy.strings.replace}}{numpy.strings.replace}}\label{numpy.strings.replace}
@@ -2762,12 +2770,19 @@ znaków}\label{usuwanie-zbux119dnych-znakuxf3w}
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
 
 \NormalTok{arr7 }\OperatorTok{=}\NormalTok{ np.array([}\StringTok{"   python   "}\NormalTok{, }\StringTok{"  numpy  "}\NormalTok{])}
+\CommentTok{\# strip {-}{-} usuwa z obu stron}
 \BuiltInTok{print}\NormalTok{(np.strings.strip(arr7))}
+\CommentTok{\# lstrip {-}{-} usuwa tylko z lewej}
+\BuiltInTok{print}\NormalTok{(np.strings.lstrip(arr7))}
+\CommentTok{\# rstrip {-}{-} usuwa tylko z prawej}
+\BuiltInTok{print}\NormalTok{(np.strings.rstrip(arr7))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ['python' 'numpy']
+['python   ' 'numpy  ']
+['   python' '  numpy']
 \end{verbatim}
 
 Możemy również podać niestandardowe znaki do usunięcia:
@@ -2785,7 +2800,7 @@ Możemy również podać niestandardowe znaki do usunięcia:
 ['data' 'science']
 \end{verbatim}
 
-\chapter{Alegbra liniowa}\label{alegbra-liniowa}
+\chapter{Algebra liniowa}\label{algebra-liniowa}
 
 \section{Iloczyn skalarny (dot
 product)}\label{iloczyn-skalarny-dot-product}
@@ -2950,7 +2965,7 @@ A * v = [1.41421356 1.41421356]
 \section{Rozkład wartości osobliwych
 (SVD)}\label{rozkux142ad-wartoux15bci-osobliwych-svd}
 
-Rozkład SVD jest potężnym narzędziem w analizie danych:
+Rozkład SVD jest jedną z kluczowych metod stosowanych w analizie danych:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2990,19 +3005,23 @@ Rekonstruowana macierz A:
 
 \section{Norma macierzy/wektora}\label{norma-macierzywektora}
 
-NumPy oferuje różne rodzaje norm:
+NumPy oferuje różne rodzaje norm wektorowych i macierzowych:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
-\CommentTok{\# Różne normy}
+
 \NormalTok{v }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{])}
-\BuiltInTok{print}\NormalTok{(}\StringTok{"Norma L1:"}\NormalTok{, np.linalg.norm(v, }\DecValTok{1}\NormalTok{))  }\CommentTok{\# Norma L1: 7.0}
-\BuiltInTok{print}\NormalTok{(}\StringTok{"Norma L2 (Euklidesowa):"}\NormalTok{, np.linalg.norm(v))  }\CommentTok{\# Norma L2: 5.0}
-\BuiltInTok{print}\NormalTok{(}\StringTok{"Norma maksimum:"}\NormalTok{, np.linalg.norm(v, np.inf))  }\CommentTok{\# Norma maksimum: 4.0}
+\CommentTok{\# L1 (suma wartości bezwzględnych): |3| + |4| = 7}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Norma L1:"}\NormalTok{, np.linalg.norm(v, }\DecValTok{1}\NormalTok{))}
+\CommentTok{\# L2 / euklidesowa (pierwiastek z sumy kwadratów): sqrt(9+16) = 5}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Norma L2 (Euklidesowa):"}\NormalTok{, np.linalg.norm(v))}
+\CommentTok{\# Norma maksimum (największa wartość bezwzględna): max(3,4) = 4}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Norma maksimum:"}\NormalTok{, np.linalg.norm(v, np.inf))}
 
 \NormalTok{A }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{]])}
-\BuiltInTok{print}\NormalTok{(}\StringTok{"Norma macierzowa Frobeniusa:"}\NormalTok{, np.linalg.norm(A, }\StringTok{\textquotesingle{}fro\textquotesingle{}}\NormalTok{))  }\CommentTok{\# Norma Frobeniusa: 5.477...}
+\CommentTok{\# Frobeniusa (jak L2, ale dla macierzy): sqrt(1+4+9+16) ≈ 5.477}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Norma Frobeniusa:"}\NormalTok{, np.linalg.norm(A, }\StringTok{\textquotesingle{}fro\textquotesingle{}}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3010,7 +3029,7 @@ NumPy oferuje różne rodzaje norm:
 Norma L1: 7.0
 Norma L2 (Euklidesowa): 5.0
 Norma maksimum: 4.0
-Norma macierzowa Frobeniusa: 5.477225575051661
+Norma Frobeniusa: 5.477225575051661
 \end{verbatim}
 
 \section{Macierz odwrotna}\label{macierz-odwrotna}
@@ -3055,17 +3074,23 @@ Funkcja \texttt{inner} oblicza iloczyn wewnętrzny dwóch tablic:
 \NormalTok{result }\OperatorTok{=}\NormalTok{ np.inner(a, b)}
 \BuiltInTok{print}\NormalTok{(result)  }\CommentTok{\# 1*4 + 2*5 + 3*6 = 32}
 
-\CommentTok{\# Dla tablic 2D}
+\CommentTok{\# Dla tablic 2D: inner(A, B) oblicza A @ B.T (nie A @ B!)}
 \NormalTok{A }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{]])}
 \NormalTok{B }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{], [}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{]])}
 \NormalTok{result }\OperatorTok{=}\NormalTok{ np.inner(A, B)}
 \BuiltInTok{print}\NormalTok{(result)}
-\CommentTok{\# Jest to równoważne wykonaniu iloczynu skalarnego wzdłuż ostatniego wymiaru}
+\CommentTok{\# [[1*5+2*6, 1*7+2*8],   = [[17, 23],}
+\CommentTok{\#  [3*5+4*6, 3*7+4*8]]      [39, 53]]}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Porównanie z A @ B.T:"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(A }\OperatorTok{@}\NormalTok{ B.T)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 32
+[[17 23]
+ [39 53]]
+Porównanie z A @ B.T:
 [[17 23]
  [39 53]]
 \end{verbatim}
@@ -3099,36 +3124,39 @@ Funkcja \texttt{outer} oblicza iloczyn zewnętrzny dwóch wektorów:
 \section{\texorpdfstring{Funkcja \texttt{numpy.matmul} - mnożenie
 macierzowe}{Funkcja numpy.matmul - mnożenie macierzowe}}\label{funkcja-numpy.matmul---mnoux17cenie-macierzowe}
 
-Funkcja \texttt{matmul} jest podobna do \texttt{dot}, ale ma nieco inne
-zachowanie dla tablic o wymiarach większych niż 2:
+Funkcja \texttt{matmul} (i równoważny operator \texttt{@}) jest
+rekomendowanym sposobem mnożenia macierzy. Dla tablic 2D działa
+identycznie jak \texttt{dot}. Różnice pojawiają się dla tablic 3D+
+(matmul traktuje je jako stosy macierzy) oraz dla skalarów (matmul nie
+akceptuje skalarów, dot tak).
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
-\CommentTok{\# Porównanie dot i matmul}
+
+\CommentTok{\# Dla 2D {-}{-} identyczne wyniki}
 \NormalTok{a }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{]])}
 \NormalTok{b }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{], [}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{]])}
 
-\NormalTok{dot\_result }\OperatorTok{=}\NormalTok{ np.dot(a, b)}
-\NormalTok{matmul\_result }\OperatorTok{=}\NormalTok{ np.matmul(a, b)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"dot:"}\NormalTok{, np.dot(a, b)[}\DecValTok{0}\NormalTok{])}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"matmul:"}\NormalTok{, np.matmul(a, b)[}\DecValTok{0}\NormalTok{])}
 
-\BuiltInTok{print}\NormalTok{(}\StringTok{"Wynik dot:"}\NormalTok{)}
-\BuiltInTok{print}\NormalTok{(dot\_result)}
-\BuiltInTok{print}\NormalTok{(}\StringTok{"Wynik matmul:"}\NormalTok{)}
-\BuiltInTok{print}\NormalTok{(matmul\_result)}
-\CommentTok{\# Dla 2D są identyczne}
+\CommentTok{\# Różnica: matmul nie akceptuje skalarów}
+\ControlFlowTok{try}\NormalTok{:}
+\NormalTok{    np.matmul(a, }\DecValTok{3}\NormalTok{)}
+\ControlFlowTok{except} \PreprocessorTok{ValueError} \ImportTok{as}\NormalTok{ e:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"matmul ze skalarem:"}\NormalTok{, e)}
 
-\CommentTok{\# Ale dla tablic 3D i wyższych mogą się różnić}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"dot ze skalarem:"}\NormalTok{, np.dot(a, }\DecValTok{3}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-Wynik dot:
-[[19 22]
- [43 50]]
-Wynik matmul:
-[[19 22]
- [43 50]]
+dot: [19 22]
+matmul: [19 22]
+matmul ze skalarem: matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
+dot ze skalarem: [[ 3  6]
+ [ 9 12]]
 \end{verbatim}
 
 \chapter{Filtrowanie zaawansowane}\label{filtrowanie-zaawansowane}
@@ -3152,8 +3180,8 @@ krotka tablic, po jednej dla każdego wymiaru tablicy.
 \BuiltInTok{print}\NormalTok{(wartosci)  }\CommentTok{\# [3 4 5 6]}
 
 \CommentTok{\# Alternatywnie można użyć:}
-\NormalTok{indeksy\_i\_wartosci }\OperatorTok{=}\NormalTok{ np.argwhere(arr }\OperatorTok{!=} \DecValTok{0}\NormalTok{)}
-\BuiltInTok{print}\NormalTok{(indeksy\_i\_wartosci)  }
+\NormalTok{indeksy\_pozycje }\OperatorTok{=}\NormalTok{ np.argwhere(arr }\OperatorTok{!=} \DecValTok{0}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(indeksy\_pozycje)}
 \CommentTok{\# [[0 0]}
 \CommentTok{\#  [1 1]}
 \CommentTok{\#  [2 0]}
@@ -3176,18 +3204,19 @@ krotka tablic, po jednej dla każdego wymiaru tablicy.
 \texttt{where()}}{Funkcja where()}}\label{funkcja-where}
 
 Zwraca elementy wybrane z \texttt{x} lub \texttt{y} w zależności od
-warunku. Jest to warunkowy selektor elementów.
+warunku. Działa jak warunkowy wybór elementów (odpowiednik wyrażenia
+trójargumentowego).
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
 
-\CommentTok{\# Zastąp wartości niedodatnie przez 0}
+\CommentTok{\# Zastąp wartości niedodatnie przez 0 (zero realnie bez zmian)}
 \NormalTok{arr }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{1}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\OperatorTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{])}
 \NormalTok{wynik }\OperatorTok{=}\NormalTok{ np.where(arr }\OperatorTok{\textgreater{}} \DecValTok{0}\NormalTok{, arr, }\DecValTok{0}\NormalTok{)}
 \BuiltInTok{print}\NormalTok{(wynik)  }\CommentTok{\# [1 0 3 0 5]}
 
-\CommentTok{\# Zastosowanie w tablicy 2D}
+\CommentTok{\# W tablicy 2D {-}{-} zastąp wartości ujemne przez {-}1}
 \NormalTok{arr\_2d }\OperatorTok{=}\NormalTok{ np.array([[}\DecValTok{1}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{], [}\OperatorTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\OperatorTok{{-}}\DecValTok{6}\NormalTok{]])}
 \NormalTok{wynik\_2d }\OperatorTok{=}\NormalTok{ np.where(arr\_2d }\OperatorTok{\textless{}} \DecValTok{0}\NormalTok{, }\OperatorTok{{-}}\DecValTok{1}\NormalTok{, arr\_2d)}
 \BuiltInTok{print}\NormalTok{(wynik\_2d)}
@@ -3253,7 +3282,7 @@ indeksowania wielowymiarowego.
 \NormalTok{y }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{])}
 \NormalTok{indeksy }\OperatorTok{=}\NormalTok{ np.ix\_(x, y)}
 
-\CommentTok{\# Tworzy indeksy dla wszystkich kombinacji (0,3), (0,4), ..., (2,6)}
+\CommentTok{\# Tworzy otwartą siatkę indeksów do broadcastowania}
 \BuiltInTok{print}\NormalTok{(indeksy[}\DecValTok{0}\NormalTok{].shape, indeksy[}\DecValTok{1}\NormalTok{].shape)  }\CommentTok{\# (3, 1) (1, 4)}
 
 \CommentTok{\# Użycie do wybierania podtablicy}
@@ -3295,7 +3324,7 @@ wydajniejsze niż pełne siatki.
 
 \CommentTok{\# Siatka punktów w zakresie od {-}2 do 2 z krokiem 0.1}
 \NormalTok{x, y }\OperatorTok{=}\NormalTok{ np.ogrid[}\OperatorTok{{-}}\DecValTok{2}\NormalTok{:}\DecValTok{2}\NormalTok{:}\FloatTok{0.1}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{:}\DecValTok{2}\NormalTok{:}\FloatTok{0.1}\NormalTok{]}
-\NormalTok{maska }\OperatorTok{=}\NormalTok{ x}\OperatorTok{**}\DecValTok{2} \OperatorTok{+}\NormalTok{ y}\OperatorTok{**}\DecValTok{2} \OperatorTok{\textless{}=} \DecValTok{1}  \CommentTok{\# Okrąg o promieniu 1}
+\NormalTok{maska }\OperatorTok{=}\NormalTok{ x}\OperatorTok{**}\DecValTok{2} \OperatorTok{+}\NormalTok{ y}\OperatorTok{**}\DecValTok{2} \OperatorTok{\textless{}=} \DecValTok{1}  \CommentTok{\# Koło o promieniu 1}
 \BuiltInTok{print}\NormalTok{(maska.shape)  }\CommentTok{\# (40, 40)}
 \end{Highlighting}
 \end{Shaded}
@@ -3369,8 +3398,8 @@ NumPy oferuje wiele funkcji do pracy z diagonalami macierzy.
 (array([0, 1, 2]), array([0, 1, 2]))
 \end{verbatim}
 
-\section{\texorpdfstring{3.1 Funkcja
-\texttt{take()}}{3.1 Funkcja take()}}\label{funkcja-take}
+\section{\texorpdfstring{Funkcja
+\texttt{take()}}{Funkcja take()}}\label{funkcja-take}
 
 Pobiera elementy z tablicy wzdłuż określonej osi na podstawie indeksów.
 
@@ -3399,10 +3428,12 @@ Pobiera elementy z tablicy wzdłuż określonej osi na podstawie indeksów.
  [7 8 9]]
 \end{verbatim}
 
-\#\#Funkcja \texttt{take\_along\_axis()}
+\section{\texorpdfstring{Funkcja
+\texttt{take\_along\_axis()}}{Funkcja take\_along\_axis()}}\label{funkcja-take_along_axis}
 
-Pobiera wartości z tablicy poprzez dopasowanie 1D indeksu i fragmentów
-danych. Jest bezpieczna dla duplikatów indeksów.
+Pobiera wartości z tablicy wzdłuż wskazanej osi, korzystając z tablicy
+indeksów o zgodnym kształcie. Przydatna np. do stosowania wyników
+\texttt{argsort()} lub \texttt{argmin()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3573,8 +3604,8 @@ Zastępuje określone elementy tablicy podanymi wartościami.
 \section{\texorpdfstring{Funkcja
 \texttt{put\_along\_axis()}}{Funkcja put\_along\_axis()}}\label{funkcja-put_along_axis}
 
-Umieszcza wartości w tablicy docelowej, dopasowując 1D indeks i
-fragmenty danych wzdłuż określonej osi.
+Wstawia wartości do tablicy docelowej wzdłuż wskazanej osi, korzystając
+z tablicy indeksów o zgodnym kształcie.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3586,7 +3617,7 @@ fragmenty danych wzdłuż określonej osi.
 \NormalTok{np.put\_along\_axis(arr, indeksy, }\DecValTok{99}\NormalTok{, axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \BuiltInTok{print}\NormalTok{(arr)}
 \CommentTok{\# [[99 30 20]}
-\CommentTok{\#  [60 40 99]]}
+\CommentTok{\#  [60 99 50]]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3598,7 +3629,10 @@ fragmenty danych wzdłuż określonej osi.
 \section{\texorpdfstring{Funkcja
 \texttt{putmask()}}{Funkcja putmask()}}\label{funkcja-putmask}
 
-Zmienia elementy tablicy na podstawie warunku i podanych wartości.
+Zmienia elementy tablicy na podstawie maski. W odróżnieniu od
+\texttt{place()}, wartości są przypisywane pozycyjnie (z cyklicznym
+rozszerzeniem do rozmiaru tablicy), a nie sekwencyjnie do elementów
+spełniających maskę.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3606,8 +3640,8 @@ Zmienia elementy tablicy na podstawie warunku i podanych wartości.
 
 \NormalTok{arr }\OperatorTok{=}\NormalTok{ np.arange(}\DecValTok{5}\NormalTok{)}
 \NormalTok{maska }\OperatorTok{=}\NormalTok{ np.array([}\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{])}
-\NormalTok{np.putmask(arr, maska, [}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{, }\OperatorTok{{-}}\DecValTok{3}\NormalTok{])  }\CommentTok{\# Cyklicznie używa wartości}
-\BuiltInTok{print}\NormalTok{(arr)  }\CommentTok{\# [{-}1  1 {-}2  3 {-}3]}
+\NormalTok{np.putmask(arr, maska, [}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\OperatorTok{{-}}\DecValTok{2}\NormalTok{, }\OperatorTok{{-}}\DecValTok{3}\NormalTok{])  }\CommentTok{\# Wartości przypisywane pozycyjnie (cyklicznie)}
+\BuiltInTok{print}\NormalTok{(arr)  }\CommentTok{\# [{-}1  1 {-}3  3 {-}2]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3634,7 +3668,7 @@ Wypełnia główną przekątną tablicy podaną wartością.
 
 \NormalTok{arr\_rect }\OperatorTok{=}\NormalTok{ np.zeros((}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{))}
 \NormalTok{np.fill\_diagonal(arr\_rect, }\DecValTok{9}\NormalTok{)}
-\BuiltInTok{print}\NormalTok{(arr\_rect[}\DecValTok{0}\NormalTok{])  }\CommentTok{\# Wypełnia przekątną w każdym "plasterku" 3D tablicy}
+\BuiltInTok{print}\NormalTok{(arr\_rect[}\DecValTok{0}\NormalTok{])  }\CommentTok{\# Tylko element [0][0] ustawiony na 9 (super{-}przekątna i,i,i)}
 \end{Highlighting}
 \end{Shaded}
 

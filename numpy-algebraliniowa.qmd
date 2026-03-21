@@ -1,4 +1,4 @@
-# Alegbra liniowa
+# Algebra liniowa
 
 
 
@@ -112,7 +112,7 @@ for i in range(len(eigenvalues)):
 
 ## Rozkład wartości osobliwych (SVD)
 
-Rozkład SVD jest potężnym narzędziem w analizie danych:
+Rozkład SVD jest jedną z kluczowych metod stosowanych w analizie danych:
 
 ```{python}
 #| echo: true
@@ -136,19 +136,22 @@ print(A_reconstructed)
 
 ## Norma macierzy/wektora
 
-NumPy oferuje różne rodzaje norm:
-
+NumPy oferuje różne rodzaje norm wektorowych i macierzowych:
 ```{python}
 #| echo: true
 import numpy as np
-# Różne normy
+
 v = np.array([3, 4])
-print("Norma L1:", np.linalg.norm(v, 1))  # Norma L1: 7.0
-print("Norma L2 (Euklidesowa):", np.linalg.norm(v))  # Norma L2: 5.0
-print("Norma maksimum:", np.linalg.norm(v, np.inf))  # Norma maksimum: 4.0
+# L1 (suma wartości bezwzględnych): |3| + |4| = 7
+print("Norma L1:", np.linalg.norm(v, 1))
+# L2 / euklidesowa (pierwiastek z sumy kwadratów): sqrt(9+16) = 5
+print("Norma L2 (Euklidesowa):", np.linalg.norm(v))
+# Norma maksimum (największa wartość bezwzględna): max(3,4) = 4
+print("Norma maksimum:", np.linalg.norm(v, np.inf))
 
 A = np.array([[1, 2], [3, 4]])
-print("Norma macierzowa Frobeniusa:", np.linalg.norm(A, 'fro'))  # Norma Frobeniusa: 5.477...
+# Frobeniusa (jak L2, ale dla macierzy): sqrt(1+4+9+16) ≈ 5.477
+print("Norma Frobeniusa:", np.linalg.norm(A, 'fro'))
 ```
 
 ## Macierz odwrotna
@@ -183,12 +186,15 @@ b = np.array([4, 5, 6])
 result = np.inner(a, b)
 print(result)  # 1*4 + 2*5 + 3*6 = 32
 
-# Dla tablic 2D
+# Dla tablic 2D: inner(A, B) oblicza A @ B.T (nie A @ B!)
 A = np.array([[1, 2], [3, 4]])
 B = np.array([[5, 6], [7, 8]])
 result = np.inner(A, B)
 print(result)
-# Jest to równoważne wykonaniu iloczynu skalarnego wzdłuż ostatniego wymiaru
+# [[1*5+2*6, 1*7+2*8],   = [[17, 23],
+#  [3*5+4*6, 3*7+4*8]]      [39, 53]]
+print("Porównanie z A @ B.T:")
+print(A @ B.T)
 ```
 
 ## Funkcja `numpy.outer` - iloczyn zewnętrzny
@@ -211,23 +217,24 @@ print(result)
 
 ## Funkcja `numpy.matmul` - mnożenie macierzowe
 
-Funkcja `matmul` jest podobna do `dot`, ale ma nieco inne zachowanie dla tablic o wymiarach większych niż 2:
+Funkcja `matmul` (i równoważny operator `@`) jest rekomendowanym sposobem mnożenia macierzy. Dla tablic 2D działa identycznie jak `dot`. Różnice pojawiają się dla tablic 3D+ (matmul traktuje je jako stosy macierzy) oraz dla skalarów (matmul nie akceptuje skalarów, dot tak).
 
 ```{python}
 #| echo: true
 import numpy as np
-# Porównanie dot i matmul
+
+# Dla 2D -- identyczne wyniki
 a = np.array([[1, 2], [3, 4]])
 b = np.array([[5, 6], [7, 8]])
 
-dot_result = np.dot(a, b)
-matmul_result = np.matmul(a, b)
+print("dot:", np.dot(a, b)[0])
+print("matmul:", np.matmul(a, b)[0])
 
-print("Wynik dot:")
-print(dot_result)
-print("Wynik matmul:")
-print(matmul_result)
-# Dla 2D są identyczne
+# Różnica: matmul nie akceptuje skalarów
+try:
+    np.matmul(a, 3)
+except ValueError as e:
+    print("matmul ze skalarem:", e)
 
-# Ale dla tablic 3D i wyższych mogą się różnić
+print("dot ze skalarem:", np.dot(a, 3))
 ```

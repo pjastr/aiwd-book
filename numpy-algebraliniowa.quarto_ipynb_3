@@ -1,0 +1,555 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "eb11ce08",
+   "metadata": {},
+   "source": [
+    "# Algebra liniowa\n",
+    "\n",
+    "\n",
+    "\n",
+    "## Iloczyn skalarny (dot product)\n",
+    "\n",
+    "Dla dwóch wektorów, `dot` oblicza ich iloczyn skalarny."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "d0e39c7e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "32\n",
+      "32\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "# Iloczyn skalarny dwóch wektorów\n",
+    "a = np.array([1, 2, 3])\n",
+    "b = np.array([4, 5, 6])\n",
+    "result = np.dot(a, b)  # 1*4 + 2*5 + 3*6\n",
+    "print(result)  # Wynik: 32\n",
+    "\n",
+    "# Alternatywny zapis za pomocą operatora @\n",
+    "result = a @ b\n",
+    "print(result)  # Wynik: 32"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6347c69c",
+   "metadata": {},
+   "source": [
+    "## Mnożenie macierzowe\n",
+    "\n",
+    "Dla macierzy (tablic dwuwymiarowych), `dot` wykonuje standardowe mnożenie macierzowe."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "f8c661b9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[19 22]\n",
+      " [43 50]]\n",
+      "[[19 22]\n",
+      " [43 50]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Mnożenie macierzowe\n",
+    "A = np.array([[1, 2], [3, 4]])\n",
+    "B = np.array([[5, 6], [7, 8]])\n",
+    "C = np.dot(A, B)\n",
+    "print(C)\n",
+    "# Wynik:\n",
+    "# [[19 22]\n",
+    "#  [43 50]]\n",
+    "\n",
+    "# To samo za pomocą operatora @\n",
+    "C = A @ B\n",
+    "print(C)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "431833a2",
+   "metadata": {},
+   "source": [
+    "## Mnożenie macierz-wektor\n",
+    "\n",
+    "Możemy również mnożyć macierz przez wektor:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "e646cbf3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[17 39]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Mnożenie macierz-wektor\n",
+    "A = np.array([[1, 2], [3, 4]])\n",
+    "v = np.array([5, 6])\n",
+    "result = np.dot(A, v)\n",
+    "print(result)  # Wynik: [17 39]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3166dc5c",
+   "metadata": {},
+   "source": [
+    "## Rozwiązywanie układów równań liniowych\n",
+    "\n",
+    "Funkcja `numpy.linalg.solve` rozwiązuje układy równań liniowych postaci Ax = b:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "360c14e0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2. 3.]\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "array([9., 8.])"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Rozwiązywanie układu równań liniowych\n",
+    "A = np.array([[3, 1], [1, 2]])\n",
+    "b = np.array([9, 8])\n",
+    "x = np.linalg.solve(A, b)\n",
+    "print(x)  # Wynik: [2. 3.]\n",
+    "\n",
+    "# Sprawdzenie rozwiązania\n",
+    "np.dot(A, x)  # Powinno być równe b"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6c541ab2",
+   "metadata": {},
+   "source": [
+    "## Wyznacznik macierzy\n",
+    "\n",
+    "Funkcja `numpy.linalg.det` oblicza wyznacznik macierzy:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "84ebb567",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-2.0000000000000004\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Obliczanie wyznacznika\n",
+    "A = np.array([[1, 2], [3, 4]])\n",
+    "det_A = np.linalg.det(A)\n",
+    "print(det_A)  # Wynik: -2.0"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5f5effdb",
+   "metadata": {},
+   "source": [
+    "## Wartości i wektory własne\n",
+    "\n",
+    "Funkcja `numpy.linalg.eig` oblicza wartości i wektory własne macierzy:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "4857b7b0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Wartości własne: [3. 2.]\n",
+      "Wektory własne:\n",
+      "[[0.89442719 0.70710678]\n",
+      " [0.4472136  0.70710678]]\n",
+      "λ_0 = 3.0\n",
+      "A * v = [2.68328157 1.34164079]\n",
+      "λ * v = [2.68328157 1.34164079]\n",
+      "λ_1 = 2.0\n",
+      "A * v = [1.41421356 1.41421356]\n",
+      "λ * v = [1.41421356 1.41421356]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Obliczanie wartości i wektorów własnych\n",
+    "A = np.array([[4, -2], [1, 1]])\n",
+    "eigenvalues, eigenvectors = np.linalg.eig(A)\n",
+    "print(\"Wartości własne:\", eigenvalues)\n",
+    "print(\"Wektory własne:\")\n",
+    "print(eigenvectors)\n",
+    "\n",
+    "# Sprawdzenie: A * v = lambda * v\n",
+    "for i in range(len(eigenvalues)):\n",
+    "    lambda_i = eigenvalues[i]\n",
+    "    v_i = eigenvectors[:, i]\n",
+    "    print(f\"λ_{i} = {lambda_i}\")\n",
+    "    print(\"A * v =\", np.dot(A, v_i))\n",
+    "    print(\"λ * v =\", lambda_i * v_i)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e46818f6",
+   "metadata": {},
+   "source": [
+    "## Rozkład wartości osobliwych (SVD)\n",
+    "\n",
+    "Rozkład SVD jest potężnym narzędziem w analizie danych:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "7a62caf1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Macierz U:\n",
+      "[[-0.2298477   0.88346102  0.40824829]\n",
+      " [-0.52474482  0.24078249 -0.81649658]\n",
+      " [-0.81964194 -0.40189603  0.40824829]]\n",
+      "Wartości osobliwe: [9.52551809 0.51430058]\n",
+      "Macierz V^H:\n",
+      "[[-0.61962948 -0.78489445]\n",
+      " [-0.78489445  0.61962948]]\n",
+      "Rekonstruowana macierz A:\n",
+      "[[1. 2.]\n",
+      " [3. 4.]\n",
+      " [5. 6.]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Rozkład SVD\n",
+    "A = np.array([[1, 2], [3, 4], [5, 6]])\n",
+    "U, s, Vh = np.linalg.svd(A)\n",
+    "print(\"Macierz U:\")\n",
+    "print(U)\n",
+    "print(\"Wartości osobliwe:\", s)\n",
+    "print(\"Macierz V^H:\")\n",
+    "print(Vh)\n",
+    "\n",
+    "# Rekonstrukcja macierzy A\n",
+    "S = np.zeros((A.shape[0], A.shape[1]))\n",
+    "S[:len(s), :len(s)] = np.diag(s)\n",
+    "A_reconstructed = U @ S @ Vh\n",
+    "print(\"Rekonstruowana macierz A:\")\n",
+    "print(A_reconstructed)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b491f798",
+   "metadata": {},
+   "source": [
+    "## Norma macierzy/wektora\n",
+    "\n",
+    "NumPy oferuje różne rodzaje norm:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "bf386978",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Norma L1: 7.0\n",
+      "Norma L2 (Euklidesowa): 5.0\n",
+      "Norma maksimum: 4.0\n",
+      "Norma macierzowa Frobeniusa: 5.477225575051661\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Różne normy\n",
+    "v = np.array([3, 4])\n",
+    "print(\"Norma L1:\", np.linalg.norm(v, 1))  # Norma L1: 7.0\n",
+    "print(\"Norma L2 (Euklidesowa):\", np.linalg.norm(v))  # Norma L2: 5.0\n",
+    "print(\"Norma maksimum:\", np.linalg.norm(v, np.inf))  # Norma maksimum: 4.0\n",
+    "\n",
+    "A = np.array([[1, 2], [3, 4]])\n",
+    "print(\"Norma macierzowa Frobeniusa:\", np.linalg.norm(A, 'fro'))  # Norma Frobeniusa: 5.477..."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2b499b49",
+   "metadata": {},
+   "source": [
+    "## Macierz odwrotna\n",
+    "\n",
+    "Funkcja `numpy.linalg.inv` oblicza macierz odwrotną:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "baa0bda7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Macierz odwrotna:\n",
+      "[[-2.   1. ]\n",
+      " [ 1.5 -0.5]]\n",
+      "A * A^(-1):\n",
+      "[[1.0000000e+00 0.0000000e+00]\n",
+      " [8.8817842e-16 1.0000000e+00]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Macierz odwrotna\n",
+    "A = np.array([[1, 2], [3, 4]])\n",
+    "A_inv = np.linalg.inv(A)\n",
+    "print(\"Macierz odwrotna:\")\n",
+    "print(A_inv)\n",
+    "\n",
+    "# Sprawdzenie: A * A^(-1) = I\n",
+    "print(\"A * A^(-1):\")\n",
+    "print(np.dot(A, A_inv))  # Powinno być bliskie macierzy jednostkowej"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9df5d552",
+   "metadata": {},
+   "source": [
+    "## Funkcja `numpy.inner` - iloczyn wewnętrzny\n",
+    "\n",
+    "Funkcja `inner` oblicza iloczyn wewnętrzny dwóch tablic:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "d7f43c47",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "32\n",
+      "[[17 23]\n",
+      " [39 53]]\n",
+      "Porównanie z A @ B.T:\n",
+      "[[17 23]\n",
+      " [39 53]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Iloczyn wewnętrzny\n",
+    "a = np.array([1, 2, 3])\n",
+    "b = np.array([4, 5, 6])\n",
+    "result = np.inner(a, b)\n",
+    "print(result)  # 1*4 + 2*5 + 3*6 = 32\n",
+    "\n",
+    "# Dla tablic 2D: inner(A, B) oblicza A @ B.T (nie A @ B!)\n",
+    "A = np.array([[1, 2], [3, 4]])\n",
+    "B = np.array([[5, 6], [7, 8]])\n",
+    "result = np.inner(A, B)\n",
+    "print(result)\n",
+    "# [[1*5+2*6, 1*7+2*8],   = [[17, 23],\n",
+    "#  [3*5+4*6, 3*7+4*8]]      [39, 53]]\n",
+    "print(\"Porównanie z A @ B.T:\")\n",
+    "print(A @ B.T)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "98c4dd44",
+   "metadata": {},
+   "source": [
+    "## Funkcja `numpy.outer` - iloczyn zewnętrzny\n",
+    "\n",
+    "Funkcja `outer` oblicza iloczyn zewnętrzny dwóch wektorów:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "106e5855",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 4  5  6]\n",
+      " [ 8 10 12]\n",
+      " [12 15 18]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "# Iloczyn zewnętrzny\n",
+    "a = np.array([1, 2, 3])\n",
+    "b = np.array([4, 5, 6])\n",
+    "result = np.outer(a, b)\n",
+    "print(result)\n",
+    "# Wynik:\n",
+    "# [[ 4  5  6]\n",
+    "#  [ 8 10 12]\n",
+    "#  [12 15 18]]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "04aae97e",
+   "metadata": {},
+   "source": [
+    "## Funkcja `numpy.matmul` - mnożenie macierzowe\n",
+    "\n",
+    "Funkcja `matmul` (i równoważny operator `@`) jest rekomendowanym sposobem mnożenia macierzy. Dla tablic 2D działa identycznie jak `dot`. Różnice pojawiają się dla tablic 3D+ (matmul traktuje je jako stosy macierzy) oraz dla skalarów (matmul nie akceptuje skalarów, dot tak)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "a300e619",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "dot: [19 22]\n",
+      "matmul: [19 22]\n",
+      "matmul ze skalarem: matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)\n",
+      "dot ze skalarem: [[ 3  6]\n",
+      " [ 9 12]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "# Dla 2D -- identyczne wyniki\n",
+    "a = np.array([[1, 2], [3, 4]])\n",
+    "b = np.array([[5, 6], [7, 8]])\n",
+    "\n",
+    "print(\"dot:\", np.dot(a, b)[0])\n",
+    "print(\"matmul:\", np.matmul(a, b)[0])\n",
+    "\n",
+    "# Różnica: matmul nie akceptuje skalarów\n",
+    "try:\n",
+    "    np.matmul(a, 3)\n",
+    "except ValueError as e:\n",
+    "    print(\"matmul ze skalarem:\", e)\n",
+    "\n",
+    "print(\"dot ze skalarem:\", np.dot(a, 3))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3",
+   "path": "C:\\Users\\Piotrek\\Documents\\aiwd-book\\env\\share\\jupyter\\kernels\\python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

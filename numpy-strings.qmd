@@ -3,7 +3,7 @@
 W `NumPy` poza dobrze znanymi tablicami liczbowymi, istnieje również zestaw funkcji pozwalających na wektorowe operacje na ciągach znaków. 
 
 
-**Ważne:** Poniższe funkcje są zazwyczaj dostępne w module `numpy.char`. W dokumentacji znajdują się one w sekcji [String operations](https://numpy.org/doc/stable/reference/routines.strings.html), jednak w tym materiale skupimy się na tym, jak można je wykorzystywać, zakładając interfejs z modułu `numpy.strings`. Jest to analogiczne do korzystania z `numpy.char`. Jest no nowsze podejście.
+**Ważne:** Poniższe funkcje są zazwyczaj dostępne w module `numpy.char`. W dokumentacji znajdują się one w sekcji [String operations](https://numpy.org/doc/stable/reference/routines.strings.html), jednak w tym materiale skupimy się na tym, jak można je wykorzystywać, zakładając interfejs z modułu `numpy.strings`. Jest to analogiczne do korzystania z `numpy.char`, ale jest to nowsze podejście.
 
 
 ## Tworzenie tablic z napisami
@@ -42,7 +42,7 @@ print(np.strings.lower(arr))
 
 ### `numpy.strings.capitalize`
 
-Funkcja `capitalize` zamienia pierwszą literę wyrazu na wielką, a pozostałe na małe.
+Funkcja `capitalize` zamienia pierwszą literę całego ciągu znaków na wielką, a pozostałe na małe.
 
 ```{python}
 #| echo: true
@@ -55,7 +55,8 @@ print(np.strings.capitalize(arr))
 
 ### `numpy.strings.title`
 
-Funkcja `title` sprawia, że każda część składowa tekstu (np. oddzielona spacją) zostaje zamieniona tak, by zaczynała się od wielkiej litery.
+Funkcja `title` zamienia pierwszą literę każdego wyrazu na wielką, a pozostałe litery danego wyrazu na małe.
+
 
 ```{python}
 #| echo: true
@@ -71,7 +72,8 @@ print(np.strings.title(arr2))
 
 ### `numpy.strings.add`
 
-Funkcja `add` łączy elementy tablic tekstowych, działając podobnie jak operator `+` na stringach, ale wektorowo.
+Funkcja `add` łączy elementy tablic tekstowych parami, działając jak operator `+` na stringach, ale wektorowo. Łączenie odbywa się bez żadnego separatora.
+
 
 ```{python}
 #| echo: true
@@ -80,12 +82,16 @@ import numpy as np
 arr_a = np.array(["Hello", "Data"])
 arr_b = np.array(["World", "Science"])
 
+# bez separatora
 print(np.strings.add(arr_a, arr_b))
+# ze spacją -- trzeba ją dodać ręcznie
+print(np.strings.add(np.strings.add(arr_a, np.array([" ", " "])), arr_b))
 ```
 
-### `numpy.strings.join`
+### `numpy.char.join`
 
-Funkcja `join` pozwala na łączenie elementów tablicy przy użyciu wskazanego separatora.
+Funkcja `join` wstawia wskazany separator między poszczególne znaki wewnątrz każdego elementu tablicy.
+
 
 ```{python}
 #| echo: true
@@ -98,7 +104,7 @@ print(np.char.join("-", arr3))
 
 > Uwaga: `join` wektoryzuje operację, traktując każdy element tablicy jako sekwencję znaków do połączenia separatorem.
 
-### `numpy.strings.split`
+### `numpy.char.split`
 
 Pozwala na rozdzielanie stringów według podanego separatora. Zwraca tablicę zawierającą listy podłańcuchów.
 
@@ -123,8 +129,11 @@ print(np.char.split(arr4, sep="-"))
 #| echo: true
 import numpy as np
 
-arr5 = np.array(["python", "data", "numpy"])
+arr5 = np.array(["banana", "data", "abracadabra"])
+# find -- pierwsze wystąpienie
 print(np.strings.find(arr5, "a"))
+# rfind -- ostatnie wystąpienie
+print(np.strings.rfind(arr5, "a"))
 ```
 
 ### `numpy.strings.replace`
@@ -155,8 +164,12 @@ print(np.strings.replace(arr6, "py", "PY"))
 import numpy as np
 
 arr7 = np.array(["   python   ", "  numpy  "])
+# strip -- usuwa z obu stron
 print(np.strings.strip(arr7))
-
+# lstrip -- usuwa tylko z lewej
+print(np.strings.lstrip(arr7))
+# rstrip -- usuwa tylko z prawej
+print(np.strings.rstrip(arr7))
 ```
 
 Możemy również podać niestandardowe znaki do usunięcia:

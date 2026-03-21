@@ -1,0 +1,413 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "00b2bef4",
+   "metadata": {},
+   "source": [
+    "# Operacje na stringach\n",
+    "\n",
+    "W `NumPy` poza dobrze znanymi tablicami liczbowymi, istnieje również zestaw funkcji pozwalających na wektorowe operacje na ciągach znaków. \n",
+    "\n",
+    "\n",
+    "**Ważne:** Poniższe funkcje są zazwyczaj dostępne w module `numpy.char`. W dokumentacji znajdują się one w sekcji [String operations](https://numpy.org/doc/stable/reference/routines.strings.html), jednak w tym materiale skupimy się na tym, jak można je wykorzystywać, zakładając interfejs z modułu `numpy.strings`. Jest to analogiczne do korzystania z `numpy.char`, ale jest to nowsze podejście.\n",
+    "\n",
+    "\n",
+    "## Tworzenie tablic z napisami\n",
+    "\n",
+    "NumPy pozwala na przechowywanie tekstu w tablicach, np. tak:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ec6f472f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['python' 'NumPy' 'data' 'Science']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\n",
+    "print(arr)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4f836ca9",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Podstawowe funkcje do modyfikacji tekstu\n",
+    "\n",
+    "Poniżej przedstawiono popularne funkcje do modyfikacji tekstu na tablicach stringów:\n",
+    "\n",
+    "### `numpy.strings.upper` i `numpy.strings.lower`\n",
+    "\n",
+    "- `upper`: Zamiana wszystkich liter na wielkie.\n",
+    "- `lower`: Zamiana wszystkich liter na małe."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "4318f870",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['PYTHON' 'NUMPY' 'DATA' 'SCIENCE']\n",
+      "['python' 'numpy' 'data' 'science']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\n",
+    "\n",
+    "print(np.strings.upper(arr))\n",
+    "print(np.strings.lower(arr))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "eb67dcb9",
+   "metadata": {},
+   "source": [
+    "### `numpy.strings.capitalize`\n",
+    "\n",
+    "Funkcja `capitalize` zamienia pierwszą literę wyrazu na wielką, a pozostałe na małe."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "282c791e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Python' 'Numpy' 'Data' 'Science']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr = np.array([\"python\", \"NumPy\", \"data\", \"Science\"])\n",
+    "print(np.strings.capitalize(arr))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "170caa9c",
+   "metadata": {},
+   "source": [
+    "### `numpy.strings.title`\n",
+    "\n",
+    "Funkcja `title` sprawia, że każda część składowa tekstu (np. oddzielona spacją) zostaje zamieniona tak, by zaczynała się od wielkiej litery."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "11ffbbce",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Python Data Science' 'Machine Learning' 'Deep Learning']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr2 = np.array([\"python data science\", \"machine learning\", \"deep learning\"])\n",
+    "print(np.strings.title(arr2))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "581b3e45",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Łączenie i rozdzielanie tekstów\n",
+    "\n",
+    "### `numpy.strings.add`\n",
+    "\n",
+    "Funkcja `add` łączy elementy tablic tekstowych, działając podobnie jak operator `+` na stringach, ale wektorowo."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "467505a3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['HelloWorld' 'DataScience']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr_a = np.array([\"Hello\", \"Data\"])\n",
+    "arr_b = np.array([\"World\", \"Science\"])\n",
+    "\n",
+    "print(np.strings.add(arr_a, arr_b))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "eecae61a",
+   "metadata": {},
+   "source": [
+    "### `numpy.strings.join`\n",
+    "\n",
+    "Funkcja `join` pozwala na łączenie elementów tablicy przy użyciu wskazanego separatora."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "2e371d22",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['p-y-t-h-o-n' 'n-u-m-p-y' 's-t-r-i-n-g']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr3 = np.array([\"python\", \"numpy\", \"string\"])\n",
+    "print(np.char.join(\"-\", arr3))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "956a3760",
+   "metadata": {},
+   "source": [
+    "> Uwaga: `join` wektoryzuje operację, traktując każdy element tablicy jako sekwencję znaków do połączenia separatorem.\n",
+    "\n",
+    "### `numpy.strings.split`\n",
+    "\n",
+    "Pozwala na rozdzielanie stringów według podanego separatora. Zwraca tablicę zawierającą listy podłańcuchów."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "70347f78",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[list(['python', 'data', 'science']) list(['machine', 'learning'])]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr4 = np.array([\"python-data-science\", \"machine-learning\"])\n",
+    "print(np.char.split(arr4, sep=\"-\"))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "74b16fe4",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Wyszukiwanie i zamiana podciągów\n",
+    "\n",
+    "### `numpy.strings.find` i `numpy.strings.rfind`\n",
+    "\n",
+    "- `find`: Zwraca indeks pierwszego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono).\n",
+    "- `rfind`: Zwraca indeks ostatniego wystąpienia podłańcucha (lub -1, jeśli nie znaleziono)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "62953e6c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[-1  1 -1]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr5 = np.array([\"python\", \"data\", \"numpy\"])\n",
+    "print(np.strings.find(arr5, \"a\"))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "50480d0a",
+   "metadata": {},
+   "source": [
+    "### `numpy.strings.replace`\n",
+    "\n",
+    "`replace` zamienia wszystkie wystąpienia podłańcucha na nowy ciąg znaków."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "2fdd13d3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['PYthon' 'PYdata' 'PYPY']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr6 = np.array([\"python\", \"pydata\", \"pypy\"])\n",
+    "print(np.strings.replace(arr6, \"py\", \"PY\"))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e9a09e2",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Usuwanie zbędnych znaków\n",
+    "\n",
+    "### `numpy.strings.strip`, `numpy.strings.lstrip` i `numpy.strings.rstrip`\n",
+    "\n",
+    "- `strip`: Usuwa wskazane znaki z początku i końca.\n",
+    "- `lstrip`: Usuwa wskazane znaki z lewej strony (początku).\n",
+    "- `rstrip`: Usuwa wskazane znaki z prawej strony (końca)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "f8f310c3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['python' 'numpy']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr7 = np.array([\"   python   \", \"  numpy  \"])\n",
+    "print(np.strings.strip(arr7))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e3a34f7c",
+   "metadata": {},
+   "source": [
+    "Możemy również podać niestandardowe znaki do usunięcia:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "5b98f34a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['data' 'science']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "import numpy as np\n",
+    "\n",
+    "arr8 = np.array([\"###data###\", \"***science***\"])\n",
+    "print(np.strings.strip(arr8, \"#*\"))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3",
+   "path": "C:\\Users\\Piotrek\\Documents\\aiwd-book\\env\\share\\jupyter\\kernels\\python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
