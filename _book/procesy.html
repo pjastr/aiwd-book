@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>45&nbsp; Procesy w analizie danych – Analiza i wizualizacja danych</title>
+<title>46&nbsp; Procesy w analizie danych – Analiza i wizualizacja danych</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./notatnik.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-14cbc709409b9607cfe384ca3dce8273.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-bce977a10065f1546ac742a2ca57dec9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -249,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./procesy.html"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./procesy.html"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -262,9 +264,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Analiza i wizualizacja danych</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -302,6 +302,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Trochę teorii…</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./konfiguracja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Konfiguracja</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -316,79 +322,79 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lista_tablica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-typydanych.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-tworzenietablic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-indeksowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-modyfikacje.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-broadcasting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-ufunc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-warunki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-inne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -405,7 +411,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eksploracja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -422,43 +428,43 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-indeksowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-ladowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-sortowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-szeregiczasowe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-danetekstowe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-inne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -475,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analizastruktury.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
   </div>
 </li>
       </ul>
@@ -492,91 +498,91 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresliniowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-podwykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-zapis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykrespunktowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreskolowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresslupkowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-regresja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-kolory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-opcjewykresu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-innewykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-mapaciepla.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreswarstwowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
   </div>
 </li>
       </ul>
@@ -593,7 +599,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./seaborn-podstawy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
   </div>
 </li>
       </ul>
@@ -610,31 +616,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./jakosckodu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notatnik.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./procesy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -651,31 +657,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
   </div>
 </li>
       </ul>
@@ -690,18 +696,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#wprowadzenie" id="toc-wprowadzenie" class="nav-link active" data-scroll-target="#wprowadzenie"><span class="header-section-number">45.1</span> Wprowadzenie</a></li>
-  <li><a href="#proces-kdd-knowledge-discovery-from-data" id="toc-proces-kdd-knowledge-discovery-from-data" class="nav-link" data-scroll-target="#proces-kdd-knowledge-discovery-from-data"><span class="header-section-number">45.2</span> Proces KDD (Knowledge Discovery from Data)</a>
+  <li><a href="#wprowadzenie" id="toc-wprowadzenie" class="nav-link active" data-scroll-target="#wprowadzenie"><span class="header-section-number">46.1</span> Wprowadzenie</a></li>
+  <li><a href="#proces-kdd-knowledge-discovery-from-data" id="toc-proces-kdd-knowledge-discovery-from-data" class="nav-link" data-scroll-target="#proces-kdd-knowledge-discovery-from-data"><span class="header-section-number">46.2</span> Proces KDD (Knowledge Discovery from Data)</a>
   <ul class="collapse">
-  <li><a href="#etapy-procesu-kdd" id="toc-etapy-procesu-kdd" class="nav-link" data-scroll-target="#etapy-procesu-kdd"><span class="header-section-number">45.2.1</span> Etapy procesu KDD</a></li>
+  <li><a href="#etapy-procesu-kdd" id="toc-etapy-procesu-kdd" class="nav-link" data-scroll-target="#etapy-procesu-kdd"><span class="header-section-number">46.2.1</span> Etapy procesu KDD</a></li>
   </ul></li>
-  <li><a href="#proces-semma" id="toc-proces-semma" class="nav-link" data-scroll-target="#proces-semma"><span class="header-section-number">45.3</span> Proces SEMMA</a>
+  <li><a href="#proces-semma" id="toc-proces-semma" class="nav-link" data-scroll-target="#proces-semma"><span class="header-section-number">46.3</span> Proces SEMMA</a>
   <ul class="collapse">
-  <li><a href="#etapy-procesu-semma" id="toc-etapy-procesu-semma" class="nav-link" data-scroll-target="#etapy-procesu-semma"><span class="header-section-number">45.3.1</span> Etapy procesu SEMMA</a></li>
+  <li><a href="#etapy-procesu-semma" id="toc-etapy-procesu-semma" class="nav-link" data-scroll-target="#etapy-procesu-semma"><span class="header-section-number">46.3.1</span> Etapy procesu SEMMA</a></li>
   </ul></li>
-  <li><a href="#proces-crisp-dm" id="toc-proces-crisp-dm" class="nav-link" data-scroll-target="#proces-crisp-dm"><span class="header-section-number">45.4</span> Proces CRISP-DM</a>
+  <li><a href="#proces-crisp-dm" id="toc-proces-crisp-dm" class="nav-link" data-scroll-target="#proces-crisp-dm"><span class="header-section-number">46.4</span> Proces CRISP-DM</a>
   <ul class="collapse">
-  <li><a href="#etapy-procesu-crisp-dm" id="toc-etapy-procesu-crisp-dm" class="nav-link" data-scroll-target="#etapy-procesu-crisp-dm"><span class="header-section-number">45.4.1</span> Etapy procesu CRISP-DM</a></li>
+  <li><a href="#etapy-procesu-crisp-dm" id="toc-etapy-procesu-crisp-dm" class="nav-link" data-scroll-target="#etapy-procesu-crisp-dm"><span class="header-section-number">46.4.1</span> Etapy procesu CRISP-DM</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
@@ -710,9 +716,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./procesy.html"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./procesy.html"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></h1>
+<h1 class="title"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></h1>
 </div>
 
 
@@ -729,15 +735,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="wprowadzenie" class="level2" data-number="45.1">
-<h2 data-number="45.1" class="anchored" data-anchor-id="wprowadzenie"><span class="header-section-number">45.1</span> Wprowadzenie</h2>
+<section id="wprowadzenie" class="level2" data-number="46.1">
+<h2 data-number="46.1" class="anchored" data-anchor-id="wprowadzenie"><span class="header-section-number">46.1</span> Wprowadzenie</h2>
 <p>Analiza danych to złożony proces, który wymaga systematycznego podejścia do przekształcania surowych danych w użyteczną wiedzę. W celu standaryzacji i usprawnienia tego procesu, specjaliści opracowali kilka metodologii, które służą jako mapy drogowe dla projektów analitycznych. Każda z tych metodologii ma swoje unikalne cechy, ale wszystkie dzielą wspólny cel: zapewnienie strukturalnego podejścia do odkrywania wzorców i generowania wartościowych wniosków z danych.</p>
 </section>
-<section id="proces-kdd-knowledge-discovery-from-data" class="level2" data-number="45.2">
-<h2 data-number="45.2" class="anchored" data-anchor-id="proces-kdd-knowledge-discovery-from-data"><span class="header-section-number">45.2</span> Proces KDD (Knowledge Discovery from Data)</h2>
+<section id="proces-kdd-knowledge-discovery-from-data" class="level2" data-number="46.2">
+<h2 data-number="46.2" class="anchored" data-anchor-id="proces-kdd-knowledge-discovery-from-data"><span class="header-section-number">46.2</span> Proces KDD (Knowledge Discovery from Data)</h2>
 <p>Knowledge Discovery from Data to jedna z pierwszych formalnych metodologii analizy danych, która została opracowana w latach 90. XX wieku. KDD koncentruje się na całościowym procesie odkrywania wiedzy, traktując data mining jako jeden z etapów w szerszym kontekście.</p>
-<section id="etapy-procesu-kdd" class="level3" data-number="45.2.1">
-<h3 data-number="45.2.1" class="anchored" data-anchor-id="etapy-procesu-kdd"><span class="header-section-number">45.2.1</span> Etapy procesu KDD</h3>
+<section id="etapy-procesu-kdd" class="level3" data-number="46.2.1">
+<h3 data-number="46.2.1" class="anchored" data-anchor-id="etapy-procesu-kdd"><span class="header-section-number">46.2.1</span> Etapy procesu KDD</h3>
 <p>Proces KDD składa się z pięciu głównych etapów, które tworzą logiczną sekwencję działań prowadzących od surowych danych do użytecznej wiedzy:</p>
 <ul>
 <li><p>Selekcja danych: określenie celu analizy i identyfikacja odpowiednich źródeł danych. Na tym etapie podejmujemy decyzje o tym, które dane są istotne dla naszego problemu badawczego i jakie ograniczenia mogą wpłynąć na analizę.</p></li>
@@ -748,11 +754,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="proces-semma" class="level2" data-number="45.3">
-<h2 data-number="45.3" class="anchored" data-anchor-id="proces-semma"><span class="header-section-number">45.3</span> Proces SEMMA</h2>
+<section id="proces-semma" class="level2" data-number="46.3">
+<h2 data-number="46.3" class="anchored" data-anchor-id="proces-semma"><span class="header-section-number">46.3</span> Proces SEMMA</h2>
 <p>SEMMA to metodologia opracowana przez firmę SAS, której nazwa stanowi akronim angielskich słów: Sample, Explore, Modify, Model, Assess. Proces ten został zaprojektowany z myślą o praktycznych zastosowaniach biznesowych i charakteryzuje się dużą elastycznością.</p>
-<section id="etapy-procesu-semma" class="level3" data-number="45.3.1">
-<h3 data-number="45.3.1" class="anchored" data-anchor-id="etapy-procesu-semma"><span class="header-section-number">45.3.1</span> Etapy procesu SEMMA</h3>
+<section id="etapy-procesu-semma" class="level3" data-number="46.3.1">
+<h3 data-number="46.3.1" class="anchored" data-anchor-id="etapy-procesu-semma"><span class="header-section-number">46.3.1</span> Etapy procesu SEMMA</h3>
 <p>Proces SEMMA składa się z pięciu głównych faz, które mogą być realizowane w sposób iteracyjny, co oznacza, że możemy wracać do wcześniejszych etapów w miarę zdobywania nowych informacji:</p>
 <ul>
 <li><p>Sample (Próbkowanie): wybór reprezentatywnego podzbioru danych do analizy. Kluczowe jest zapewnienie, że próbka będzie wystarczająco duża i reprezentatywna, aby wyniki analizy były wiarygodne i możliwe do uogólnienia.</p></li>
@@ -763,11 +769,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="proces-crisp-dm" class="level2" data-number="45.4">
-<h2 data-number="45.4" class="anchored" data-anchor-id="proces-crisp-dm"><span class="header-section-number">45.4</span> Proces CRISP-DM</h2>
+<section id="proces-crisp-dm" class="level2" data-number="46.4">
+<h2 data-number="46.4" class="anchored" data-anchor-id="proces-crisp-dm"><span class="header-section-number">46.4</span> Proces CRISP-DM</h2>
 <p>Cross-Industry Standard Process for Data Mining to najbardziej popularna i szeroko stosowana metodologia analizy danych. Została opracowana przez konsorcjum firm i instytutów badawczych jako standard branżowy, niezależny od konkretnych narzędzi czy technologii.</p>
-<section id="etapy-procesu-crisp-dm" class="level3" data-number="45.4.1">
-<h3 data-number="45.4.1" class="anchored" data-anchor-id="etapy-procesu-crisp-dm"><span class="header-section-number">45.4.1</span> Etapy procesu CRISP-DM</h3>
+<section id="etapy-procesu-crisp-dm" class="level3" data-number="46.4.1">
+<h3 data-number="46.4.1" class="anchored" data-anchor-id="etapy-procesu-crisp-dm"><span class="header-section-number">46.4.1</span> Etapy procesu CRISP-DM</h3>
 <p>CRISP-DM składa się z sześciu głównych faz, które tworzą cykl życia projektu analizy danych. Proces ten jest iteracyjny i elastyczny, co oznacza, że możemy wracać do wcześniejszych faz w miarę potrzeb:</p>
 <ul>
 <li><p>Business Understanding: koncentracja na zrozumieniu celów biznesowych i wymagań projektu. Definiujemy problem biznesowy, który chcemy rozwiązać, oraz określamy kryteria sukcesu. Ta faza jest fundamentalna dla całego projektu, ponieważ ustala kierunek dalszych działań.</p></li>
@@ -1199,12 +1205,12 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./notatnik.html" class="pagination-link" aria-label="Notatniki">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./problem01.html" class="pagination-link" aria-label="Problem #1">
-        <span class="nav-page-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Problem #1</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

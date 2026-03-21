@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>44&nbsp; Notatniki – Analiza i wizualizacja danych</title>
+<title>45&nbsp; Notatniki – Analiza i wizualizacja danych</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./latex.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-14cbc709409b9607cfe384ca3dce8273.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-bce977a10065f1546ac742a2ca57dec9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -249,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./notatnik.html"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./notatnik.html"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -262,9 +264,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Analiza i wizualizacja danych</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -302,6 +302,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Trochę teorii…</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./konfiguracja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Konfiguracja</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -316,79 +322,79 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lista_tablica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-typydanych.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-tworzenietablic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-indeksowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-modyfikacje.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-broadcasting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-ufunc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-warunki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-inne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -405,7 +411,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eksploracja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -422,43 +428,43 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-indeksowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-ladowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-sortowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-szeregiczasowe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-danetekstowe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-inne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -475,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analizastruktury.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
   </div>
 </li>
       </ul>
@@ -492,91 +498,91 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresliniowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-podwykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-zapis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykrespunktowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreskolowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresslupkowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-regresja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-kolory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-opcjewykresu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-innewykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-mapaciepla.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreswarstwowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
   </div>
 </li>
       </ul>
@@ -593,7 +599,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./seaborn-podstawy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
   </div>
 </li>
       </ul>
@@ -610,31 +616,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./jakosckodu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notatnik.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./procesy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -651,31 +657,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
   </div>
 </li>
       </ul>
@@ -690,14 +696,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#notatki-w-pythonie---ekosystem-jupyter" id="toc-notatki-w-pythonie---ekosystem-jupyter" class="nav-link active" data-scroll-target="#notatki-w-pythonie---ekosystem-jupyter"><span class="header-section-number">45</span> Notatki w Pythonie - Ekosystem Jupyter</a>
+  <li><a href="#notatki-w-pythonie---ekosystem-jupyter" id="toc-notatki-w-pythonie---ekosystem-jupyter" class="nav-link active" data-scroll-target="#notatki-w-pythonie---ekosystem-jupyter"><span class="header-section-number">46</span> Notatki w Pythonie - Ekosystem Jupyter</a>
   <ul class="collapse">
-  <li><a href="#wprowadzenie-do-notebooków" id="toc-wprowadzenie-do-notebooków" class="nav-link" data-scroll-target="#wprowadzenie-do-notebooków"><span class="header-section-number">45.1</span> Wprowadzenie do notebooków</a></li>
-  <li><a href="#projekt-jupyter---fundament-ekosystemu" id="toc-projekt-jupyter---fundament-ekosystemu" class="nav-link" data-scroll-target="#projekt-jupyter---fundament-ekosystemu"><span class="header-section-number">45.2</span> Projekt Jupyter - fundament ekosystemu</a></li>
-  <li><a href="#jupyter-lab---nowoczesne-środowisko-rozwojowe" id="toc-jupyter-lab---nowoczesne-środowisko-rozwojowe" class="nav-link" data-scroll-target="#jupyter-lab---nowoczesne-środowisko-rozwojowe"><span class="header-section-number">45.3</span> Jupyter Lab - nowoczesne środowisko rozwojowe</a></li>
-  <li><a href="#klasyczny-jupyter-notebook---prostota-i-funkcjonalność" id="toc-klasyczny-jupyter-notebook---prostota-i-funkcjonalność" class="nav-link" data-scroll-target="#klasyczny-jupyter-notebook---prostota-i-funkcjonalność"><span class="header-section-number">45.4</span> Klasyczny Jupyter Notebook - prostota i funkcjonalność</a></li>
-  <li><a href="#jupyterlite---jupyter-w-przeglądarce" id="toc-jupyterlite---jupyter-w-przeglądarce" class="nav-link" data-scroll-target="#jupyterlite---jupyter-w-przeglądarce"><span class="header-section-number">45.5</span> JupyterLite - Jupyter w przeglądarce</a></li>
-  <li><a href="#google-colab---chmurowa-moc-obliczeniowa" id="toc-google-colab---chmurowa-moc-obliczeniowa" class="nav-link" data-scroll-target="#google-colab---chmurowa-moc-obliczeniowa"><span class="header-section-number">45.6</span> Google Colab - chmurowa moc obliczeniowa</a></li>
+  <li><a href="#wprowadzenie-do-notebooków" id="toc-wprowadzenie-do-notebooków" class="nav-link" data-scroll-target="#wprowadzenie-do-notebooków"><span class="header-section-number">46.1</span> Wprowadzenie do notebooków</a></li>
+  <li><a href="#projekt-jupyter---fundament-ekosystemu" id="toc-projekt-jupyter---fundament-ekosystemu" class="nav-link" data-scroll-target="#projekt-jupyter---fundament-ekosystemu"><span class="header-section-number">46.2</span> Projekt Jupyter - fundament ekosystemu</a></li>
+  <li><a href="#jupyter-lab---nowoczesne-środowisko-rozwojowe" id="toc-jupyter-lab---nowoczesne-środowisko-rozwojowe" class="nav-link" data-scroll-target="#jupyter-lab---nowoczesne-środowisko-rozwojowe"><span class="header-section-number">46.3</span> Jupyter Lab - nowoczesne środowisko rozwojowe</a></li>
+  <li><a href="#klasyczny-jupyter-notebook---prostota-i-funkcjonalność" id="toc-klasyczny-jupyter-notebook---prostota-i-funkcjonalność" class="nav-link" data-scroll-target="#klasyczny-jupyter-notebook---prostota-i-funkcjonalność"><span class="header-section-number">46.4</span> Klasyczny Jupyter Notebook - prostota i funkcjonalność</a></li>
+  <li><a href="#jupyterlite---jupyter-w-przeglądarce" id="toc-jupyterlite---jupyter-w-przeglądarce" class="nav-link" data-scroll-target="#jupyterlite---jupyter-w-przeglądarce"><span class="header-section-number">46.5</span> JupyterLite - Jupyter w przeglądarce</a></li>
+  <li><a href="#google-colab---chmurowa-moc-obliczeniowa" id="toc-google-colab---chmurowa-moc-obliczeniowa" class="nav-link" data-scroll-target="#google-colab---chmurowa-moc-obliczeniowa"><span class="header-section-number">46.6</span> Google Colab - chmurowa moc obliczeniowa</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
@@ -706,9 +712,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./notatnik.html"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./notatnik.html"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></h1>
+<h1 class="title"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></h1>
 </div>
 
 
@@ -725,41 +731,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="notatki-w-pythonie---ekosystem-jupyter" class="level1" data-number="45">
-<h1 data-number="45"><span class="header-section-number">45</span> Notatki w Pythonie - Ekosystem Jupyter</h1>
-<section id="wprowadzenie-do-notebooków" class="level2" data-number="45.1">
-<h2 data-number="45.1" class="anchored" data-anchor-id="wprowadzenie-do-notebooków"><span class="header-section-number">45.1</span> Wprowadzenie do notebooków</h2>
+<section id="notatki-w-pythonie---ekosystem-jupyter" class="level1" data-number="46">
+<h1 data-number="46"><span class="header-section-number">46</span> Notatki w Pythonie - Ekosystem Jupyter</h1>
+<section id="wprowadzenie-do-notebooków" class="level2" data-number="46.1">
+<h2 data-number="46.1" class="anchored" data-anchor-id="wprowadzenie-do-notebooków"><span class="header-section-number">46.1</span> Wprowadzenie do notebooków</h2>
 <p>Notatniki (notebooks) w Pythonie to interaktywne dokumenty, które łączą kod, wyniki jego wykonania, tekst opisowy i wizualizacje w jednym miejscu. Stanowią one fundamentalne narzędzie w analizie danych, prototypowaniu algorytmów i dokumentowaniu procesów badawczych. Głównym ekosystemem obsługującym notatniki jest Jupyter, który oferuje kilka różnych implementacji dostosowanych do różnych potrzeb użytkowników.</p>
 </section>
-<section id="projekt-jupyter---fundament-ekosystemu" class="level2" data-number="45.2">
-<h2 data-number="45.2" class="anchored" data-anchor-id="projekt-jupyter---fundament-ekosystemu"><span class="header-section-number">45.2</span> Projekt Jupyter - fundament ekosystemu</h2>
+<section id="projekt-jupyter---fundament-ekosystemu" class="level2" data-number="46.2">
+<h2 data-number="46.2" class="anchored" data-anchor-id="projekt-jupyter---fundament-ekosystemu"><span class="header-section-number">46.2</span> Projekt Jupyter - fundament ekosystemu</h2>
 <p>Projekt Jupyter powstał w 2014 roku jako rozwinięcie wcześniejszego projektu IPython. Nazwa “Jupyter” pochodzi od trzech głównych języków programowania: Julia, Python i R, choć obecnie obsługuje ponad 40 różnych języków programowania.</p>
 <p>Architektura Jupyter opiera się na protokole komunikacyjnym między interfejsem użytkownika (frontend) a kernelem (backend), który wykonuje kod. Kernel to proces odpowiedzialny za interpretację i wykonywanie kodu w określonym języku programowania. Dzięki tej architekturze możliwe jest tworzenie różnych interfejsów użytkownika przy zachowaniu tej samej funkcjonalności wykonawczej.</p>
 <p>Projekt Jupyter wprowadzil format .ipynb (IPython Notebook), który przechowuje strukturę notatnika w formacie JSON. Każdy notatnik składa się z komórek, które mogą zawierać kod, tekst w formacie Markdown, lub surowe dane. Ta struktura pozwala na tworzenie dokumentów, które są jednocześnie wykonywalne i czytelne dla człowieka.</p>
 </section>
-<section id="jupyter-lab---nowoczesne-środowisko-rozwojowe" class="level2" data-number="45.3">
-<h2 data-number="45.3" class="anchored" data-anchor-id="jupyter-lab---nowoczesne-środowisko-rozwojowe"><span class="header-section-number">45.3</span> Jupyter Lab - nowoczesne środowisko rozwojowe</h2>
+<section id="jupyter-lab---nowoczesne-środowisko-rozwojowe" class="level2" data-number="46.3">
+<h2 data-number="46.3" class="anchored" data-anchor-id="jupyter-lab---nowoczesne-środowisko-rozwojowe"><span class="header-section-number">46.3</span> Jupyter Lab - nowoczesne środowisko rozwojowe</h2>
 <p>Jupyter Lab reprezentuje najnowszą generację interfejsów w ekosystemie Jupyter. Został zaprojektowany jako następca klasycznego Jupyter Notebook i oferuje znacznie bardziej zaawansowane możliwości.</p>
 <p>Główną cechą Jupyter Lab jest jego modularna architektura oparta na extensjach. Interfejs przypomina nowoczesne IDE (Integrated Development Environment) z możliwością otwierania wielu kart, dzielenia ekranu i zarządzania różnymi typami plików w jednym oknie. Użytkownicy mogą jednocześnie pracować z notatnikami, plikami tekstowymi, terminalem i przeglądarką plików.</p>
 <p>Jupyter Lab wprowadza także ulepszone możliwości debugowania, lepszą integrację z systemami kontroli wersji jak Git, oraz bardziej zaawansowane narzędzia do wizualizacji danych. System extensji pozwala na dostosowanie środowiska do specyficznych potrzeb poprzez instalowanie dodatkowych wtyczek.</p>
 <p>Środowisko to szczególnie dobrze sprawdza się w przypadku większych projektów, gdzie konieczne jest zarządzanie wieloma plikami i zasobami jednocześnie. Jupyter Lab oferuje również lepszą wydajność przy pracy z dużymi notatnikami zawierającymi wiele komórek z kodem i wizualizacjami.</p>
 </section>
-<section id="klasyczny-jupyter-notebook---prostota-i-funkcjonalność" class="level2" data-number="45.4">
-<h2 data-number="45.4" class="anchored" data-anchor-id="klasyczny-jupyter-notebook---prostota-i-funkcjonalność"><span class="header-section-number">45.4</span> Klasyczny Jupyter Notebook - prostota i funkcjonalność</h2>
+<section id="klasyczny-jupyter-notebook---prostota-i-funkcjonalność" class="level2" data-number="46.4">
+<h2 data-number="46.4" class="anchored" data-anchor-id="klasyczny-jupyter-notebook---prostota-i-funkcjonalność"><span class="header-section-number">46.4</span> Klasyczny Jupyter Notebook - prostota i funkcjonalność</h2>
 <p>Klasyczny Jupyter Notebook to pierwsza i najbardziej rozpowszechniona implementacja interfejsu dla notatników Jupyter. Charakteryzuje się prostym, liniowym układem, gdzie użytkownik pracuje z jednym notatnikiem w czasie, przeglądając go od góry do dołu.</p>
 <p>Interfejs klasycznego notebooka jest intuicyjny i łatwy w nauce, co czyni go idealnym wyborem dla osób rozpoczynających pracę z notatnikami. Każdy notatnik otwiera się w osobnej karcie przeglądarki, a nawigacja odbywa się głównie za pomocą klawiatury z wykorzystaniem skrótów klawiaturowych.</p>
 <p>Klasyczny Jupyter Notebook oferuje wszystkie podstawowe funkcjonalności potrzebne do efektywnej pracy: wykonywanie kodu komórka po komórce, tworzenie wizualizacji, formatowanie tekstu w Markdown, oraz eksportowanie notatników do różnych formatów takich jak HTML, PDF czy Python script.</p>
 <p>Mimo że Jupyter Lab oferuje więcej możliwości, klasyczny Notebook pozostaje popularny ze względu na swoją stabilność, mniejsze zużycie zasobów systemowych i prostotę obsługi. Wiele organizacji i kursów edukacyjnych nadal preferuje ten interfejs ze względu na jego przewidywalność i łatwość wdrożenia.</p>
 </section>
-<section id="jupyterlite---jupyter-w-przeglądarce" class="level2" data-number="45.5">
-<h2 data-number="45.5" class="anchored" data-anchor-id="jupyterlite---jupyter-w-przeglądarce"><span class="header-section-number">45.5</span> JupyterLite - Jupyter w przeglądarce</h2>
+<section id="jupyterlite---jupyter-w-przeglądarce" class="level2" data-number="46.5">
+<h2 data-number="46.5" class="anchored" data-anchor-id="jupyterlite---jupyter-w-przeglądarce"><span class="header-section-number">46.5</span> JupyterLite - Jupyter w przeglądarce</h2>
 <p>JupyterLite to rewolucyjna implementacja Jupyter, która działa w całości w przeglądarce internetowej bez konieczności instalowania jakiegokolwiek oprogramowania na lokalnym komputerze. Wykorzystuje technologie WebAssembly (WASM) do uruchamiania interpretera Pythona bezpośrednio w przeglądarce.</p>
 <p>Ta implementacja otwiera nowe możliwości w zakresie edukacji i szybkiego prototypowania. Instruktorzy mogą udostępniać interaktywne materiały edukacyjne poprzez zwykły link, a studenci mogą natychmiast rozpocząć pracę bez skomplikowanego procesu instalacji środowiska programistycznego.</p>
 <p>JupyterLite obsługuje większość standardowych bibliotek Pythona, włączając NumPy, Pandas, Matplotlib czy Scikit-learn. Dane są przetwarzane lokalnie w przeglądarce, co oznacza, że nie ma konieczności przesyłania kodu lub danych na zewnętrzne serwery, co zwiększa prywatność i bezpieczeństwo.</p>
 <p>Ograniczenia JupyterLite wynikają głównie z architektury przeglądarek internetowych. Niektóre biblioteki wymagające dostępu do zasobów systemowych mogą nie działać, a wydajność może być niższa w przypadku bardzo zasobochłonnych obliczeń. Niemniej jednak, dla większości zastosowań edukacyjnych i prototypowych JupyterLite stanowi doskonałe rozwiązanie.</p>
 </section>
-<section id="google-colab---chmurowa-moc-obliczeniowa" class="level2" data-number="45.6">
-<h2 data-number="45.6" class="anchored" data-anchor-id="google-colab---chmurowa-moc-obliczeniowa"><span class="header-section-number">45.6</span> Google Colab - chmurowa moc obliczeniowa</h2>
+<section id="google-colab---chmurowa-moc-obliczeniowa" class="level2" data-number="46.6">
+<h2 data-number="46.6" class="anchored" data-anchor-id="google-colab---chmurowa-moc-obliczeniowa"><span class="header-section-number">46.6</span> Google Colab - chmurowa moc obliczeniowa</h2>
 <p>Google Colaboratory, powszechnie znane jako Colab, to usługa chmurowa oferowana przez Google, która umożliwia uruchamianie notatników Jupyter bez konieczności lokalnej instalacji. Colab integruje się z ekosystemem Google, umożliwiając łatwe zapisywanie notatników w Google Drive i współdzielenie ich z innymi użytkownikami.</p>
 <p>Największą zaletą Colab jest dostęp do darmowych zasobów obliczeniowych, włączając procesory graficzne (GPU) i jednostki przetwarzania tensorowego (TPU). To czyni Colab szczególnie atrakcyjnym dla projektów związanych z uczeniem maszynowym i głębokim, gdzie potrzebna jest znaczna moc obliczeniowa.</p>
 <p>Środowisko Colab jest wstępnie skonfigurowane z najpopularniejszymi bibliotekami do analizy danych i uczenia maszynowego, takimi jak TensorFlow, PyTorch, scikit-learn czy pandas. Użytkownicy mogą natychmiast rozpocząć pracę bez konieczności instalowania i konfigurowania środowiska programistycznego.</p>
@@ -1187,12 +1193,12 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./latex.html" class="pagination-link" aria-label="LaTeX">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">LaTeX</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./procesy.html" class="pagination-link" aria-label="Procesy w analizie danych">
-        <span class="nav-page-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>42&nbsp; Markdown – Analiza i wizualizacja danych</title>
+<title>43&nbsp; Markdown – Analiza i wizualizacja danych</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -69,19 +72,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./jakosckodu.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-14cbc709409b9607cfe384ca3dce8273.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-bce977a10065f1546ac742a2ca57dec9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -284,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./markdown.html"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./markdown.html"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Markdown</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -297,9 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Analiza i wizualizacja danych</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -337,6 +337,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Trochę teorii…</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./konfiguracja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Konfiguracja</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -351,79 +357,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lista_tablica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-typydanych.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-tworzenietablic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-indeksowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-modyfikacje.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-broadcasting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-ufunc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-warunki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-inne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -440,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eksploracja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -457,43 +463,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-indeksowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-ladowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-sortowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-szeregiczasowe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-danetekstowe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-inne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -510,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analizastruktury.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
   </div>
 </li>
       </ul>
@@ -527,91 +533,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresliniowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-podwykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-zapis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykrespunktowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreskolowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresslupkowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-regresja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-kolory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-opcjewykresu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-innewykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-mapaciepla.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreswarstwowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
   </div>
 </li>
       </ul>
@@ -628,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./seaborn-podstawy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
   </div>
 </li>
       </ul>
@@ -645,31 +651,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./jakosckodu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notatnik.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./procesy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -686,31 +692,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
   </div>
 </li>
       </ul>
@@ -725,16 +731,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#czym-się-różni-gfm-od-standardowego-markdown" id="toc-czym-się-różni-gfm-od-standardowego-markdown" class="nav-link active" data-scroll-target="#czym-się-różni-gfm-od-standardowego-markdown"><span class="header-section-number">42.1</span> Czym się różni GFM od standardowego Markdown?</a></li>
-  <li><a href="#podstawowe-elementy-formatowania" id="toc-podstawowe-elementy-formatowania" class="nav-link" data-scroll-target="#podstawowe-elementy-formatowania"><span class="header-section-number">42.2</span> Podstawowe elementy formatowania</a></li>
-  <li><a href="#listy-i-ich-zaawansowane-możliwości" id="toc-listy-i-ich-zaawansowane-możliwości" class="nav-link" data-scroll-target="#listy-i-ich-zaawansowane-możliwości"><span class="header-section-number">42.3</span> Listy i ich zaawansowane możliwości</a></li>
-  <li><a href="#bloki-kodu---potęga-gfm" id="toc-bloki-kodu---potęga-gfm" class="nav-link" data-scroll-target="#bloki-kodu---potęga-gfm"><span class="header-section-number">42.4</span> Bloki kodu - potęga GFM</a></li>
-  <li><a href="#tabele---wizualna-organizacja-danych" id="toc-tabele---wizualna-organizacja-danych" class="nav-link" data-scroll-target="#tabele---wizualna-organizacja-danych"><span class="header-section-number">42.5</span> Tabele - wizualna organizacja danych</a></li>
-  <li><a href="#automatyczne-linkowanie" id="toc-automatyczne-linkowanie" class="nav-link" data-scroll-target="#automatyczne-linkowanie"><span class="header-section-number">42.6</span> Automatyczne linkowanie</a></li>
-  <li><a href="#emoji-i-ich-praktyczne-zastosowanie" id="toc-emoji-i-ich-praktyczne-zastosowanie" class="nav-link" data-scroll-target="#emoji-i-ich-praktyczne-zastosowanie"><span class="header-section-number">42.7</span> Emoji i ich praktyczne zastosowanie</a></li>
-  <li><a href="#cytaty-i-ich-zagnieżdżanie" id="toc-cytaty-i-ich-zagnieżdżanie" class="nav-link" data-scroll-target="#cytaty-i-ich-zagnieżdżanie"><span class="header-section-number">42.8</span> Cytaty i ich zagnieżdżanie</a></li>
-  <li><a href="#linki-referencyjne-dla-czytelności" id="toc-linki-referencyjne-dla-czytelności" class="nav-link" data-scroll-target="#linki-referencyjne-dla-czytelności"><span class="header-section-number">42.9</span> Linki referencyjne dla czytelności</a></li>
-  <li><a href="#specjalne-funkcje-github" id="toc-specjalne-funkcje-github" class="nav-link" data-scroll-target="#specjalne-funkcje-github"><span class="header-section-number">42.10</span> Specjalne funkcje GitHub</a></li>
+  <li><a href="#czym-się-różni-gfm-od-standardowego-markdown" id="toc-czym-się-różni-gfm-od-standardowego-markdown" class="nav-link active" data-scroll-target="#czym-się-różni-gfm-od-standardowego-markdown"><span class="header-section-number">43.1</span> Czym się różni GFM od standardowego Markdown?</a></li>
+  <li><a href="#podstawowe-elementy-formatowania" id="toc-podstawowe-elementy-formatowania" class="nav-link" data-scroll-target="#podstawowe-elementy-formatowania"><span class="header-section-number">43.2</span> Podstawowe elementy formatowania</a></li>
+  <li><a href="#listy-i-ich-zaawansowane-możliwości" id="toc-listy-i-ich-zaawansowane-możliwości" class="nav-link" data-scroll-target="#listy-i-ich-zaawansowane-możliwości"><span class="header-section-number">43.3</span> Listy i ich zaawansowane możliwości</a></li>
+  <li><a href="#bloki-kodu---potęga-gfm" id="toc-bloki-kodu---potęga-gfm" class="nav-link" data-scroll-target="#bloki-kodu---potęga-gfm"><span class="header-section-number">43.4</span> Bloki kodu - potęga GFM</a></li>
+  <li><a href="#tabele---wizualna-organizacja-danych" id="toc-tabele---wizualna-organizacja-danych" class="nav-link" data-scroll-target="#tabele---wizualna-organizacja-danych"><span class="header-section-number">43.5</span> Tabele - wizualna organizacja danych</a></li>
+  <li><a href="#automatyczne-linkowanie" id="toc-automatyczne-linkowanie" class="nav-link" data-scroll-target="#automatyczne-linkowanie"><span class="header-section-number">43.6</span> Automatyczne linkowanie</a></li>
+  <li><a href="#emoji-i-ich-praktyczne-zastosowanie" id="toc-emoji-i-ich-praktyczne-zastosowanie" class="nav-link" data-scroll-target="#emoji-i-ich-praktyczne-zastosowanie"><span class="header-section-number">43.7</span> Emoji i ich praktyczne zastosowanie</a></li>
+  <li><a href="#cytaty-i-ich-zagnieżdżanie" id="toc-cytaty-i-ich-zagnieżdżanie" class="nav-link" data-scroll-target="#cytaty-i-ich-zagnieżdżanie"><span class="header-section-number">43.8</span> Cytaty i ich zagnieżdżanie</a></li>
+  <li><a href="#linki-referencyjne-dla-czytelności" id="toc-linki-referencyjne-dla-czytelności" class="nav-link" data-scroll-target="#linki-referencyjne-dla-czytelności"><span class="header-section-number">43.9</span> Linki referencyjne dla czytelności</a></li>
+  <li><a href="#specjalne-funkcje-github" id="toc-specjalne-funkcje-github" class="nav-link" data-scroll-target="#specjalne-funkcje-github"><span class="header-section-number">43.10</span> Specjalne funkcje GitHub</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
@@ -742,9 +748,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./markdown.html"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jakosckodu.html">Co dalej?</a></li><li class="breadcrumb-item"><a href="./markdown.html"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Markdown</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></h1>
+<h1 class="title"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Markdown</span></h1>
 </div>
 
 
@@ -762,20 +768,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>GitHub Flavored Markdown (GFM) to rozszerzona wersja standardowego Markdown, stworzona przez GitHub, która dodaje kilka użytecznych funkcji do podstawowej składni. Zacznijmy od zrozumienia podstaw i systematycznie przejdźmy przez wszystkie elementy.</p>
-<section id="czym-się-różni-gfm-od-standardowego-markdown" class="level2" data-number="42.1">
-<h2 data-number="42.1" class="anchored" data-anchor-id="czym-się-różni-gfm-od-standardowego-markdown"><span class="header-section-number">42.1</span> Czym się różni GFM od standardowego Markdown?</h2>
+<section id="czym-się-różni-gfm-od-standardowego-markdown" class="level2" data-number="43.1">
+<h2 data-number="43.1" class="anchored" data-anchor-id="czym-się-różni-gfm-od-standardowego-markdown"><span class="header-section-number">43.1</span> Czym się różni GFM od standardowego Markdown?</h2>
 <p>GFM zachowuje wszystkie podstawowe funkcje Markdown, ale dodaje kilka kluczowych ulepszeń, które czynią go bardziej praktycznym w użyciu, szczególnie w kontekście programistycznym. Te dodatki powstały z rzeczywistych potrzeb użytkowników GitHub.</p>
 </section>
-<section id="podstawowe-elementy-formatowania" class="level2" data-number="42.2">
-<h2 data-number="42.2" class="anchored" data-anchor-id="podstawowe-elementy-formatowania"><span class="header-section-number">42.2</span> Podstawowe elementy formatowania</h2>
+<section id="podstawowe-elementy-formatowania" class="level2" data-number="43.2">
+<h2 data-number="43.2" class="anchored" data-anchor-id="podstawowe-elementy-formatowania"><span class="header-section-number">43.2</span> Podstawowe elementy formatowania</h2>
 <p><strong>Nagłówki</strong> tworzymy używając symboli kratki. Liczba kratek określa poziom nagłówka:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Nagłówek poziomu 1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nagłówek poziomu 2</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Nagłówek poziomu 3</span></span></code></pre></div><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Formatowanie tekstu</strong> działa intuicyjnie. Pojedyncze gwiazdki lub podkreślniki tworzą kursywę (<code>*tekst*</code> daje <em>tekst</em>), podczas gdy podwójne tworzą pogrubienie (<code>**tekst**</code> daje <strong>tekst</strong>). W GFM możemy także używać przekreślenia przez podwójną tyldę (<code>~~tekst~~</code> daje <del>tekst</del>).</p>
 </section>
-<section id="listy-i-ich-zaawansowane-możliwości" class="level2" data-number="42.3">
-<h2 data-number="42.3" class="anchored" data-anchor-id="listy-i-ich-zaawansowane-możliwości"><span class="header-section-number">42.3</span> Listy i ich zaawansowane możliwości</h2>
+<section id="listy-i-ich-zaawansowane-możliwości" class="level2" data-number="43.3">
+<h2 data-number="43.3" class="anchored" data-anchor-id="listy-i-ich-zaawansowane-możliwości"><span class="header-section-number">43.3</span> Listy i ich zaawansowane możliwości</h2>
 <p>GFM obsługuje zarówno listy numerowane jak i punktowane. Co ciekawe, w listach punktowanych możemy używać różnych symboli:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Element listy (myślnik)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Element listy (gwiazdka)</span>
@@ -785,8 +791,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Zadanie do zrobienia</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Kolejne zadanie</span></code></pre></div><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="bloki-kodu---potęga-gfm" class="level2" data-number="42.4">
-<h2 data-number="42.4" class="anchored" data-anchor-id="bloki-kodu---potęga-gfm"><span class="header-section-number">42.4</span> Bloki kodu - potęga GFM</h2>
+<section id="bloki-kodu---potęga-gfm" class="level2" data-number="43.4">
+<h2 data-number="43.4" class="anchored" data-anchor-id="bloki-kodu---potęga-gfm"><span class="header-section-number">43.4</span> Bloki kodu - potęga GFM</h2>
 <p>Jedną z najważniejszych innowacji GFM są ulepszone bloki kodu. Oprócz standardowych bloków z trzema grawisami, GFM dodaje <strong>podświetlanie składni</strong>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```javascript</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>function <span class="fu">powitanie</span><span class="op">(</span>imie<span class="op">)</span> <span class="op">{</span></span>
@@ -795,8 +801,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></div>
 <p>System automatycznie rozpoznaje język i odpowiednio koloruje składnię. Obsługuje dziesiątki języków programowania, od JavaScript przez Python po SQL.</p>
 </section>
-<section id="tabele---wizualna-organizacja-danych" class="level2" data-number="42.5">
-<h2 data-number="42.5" class="anchored" data-anchor-id="tabele---wizualna-organizacja-danych"><span class="header-section-number">42.5</span> Tabele - wizualna organizacja danych</h2>
+<section id="tabele---wizualna-organizacja-danych" class="level2" data-number="43.5">
+<h2 data-number="43.5" class="anchored" data-anchor-id="tabele---wizualna-organizacja-danych"><span class="header-section-number">43.5</span> Tabele - wizualna organizacja danych</h2>
 <p>GFM wprowadza składnię tabel, której brakuje w standardowym Markdown:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Kolumna 1 <span class="pp">|</span> Kolumna 2 <span class="pp">|</span> Kolumna 3 <span class="pp">|</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------|-----------|-----------|</span></span>
@@ -807,16 +813,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|:----------|:---------:|----------:|</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> tekst     <span class="pp">|</span> tekst     <span class="pp">|</span> tekst     <span class="pp">|</span></span></code></pre></div><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="automatyczne-linkowanie" class="level2" data-number="42.6">
-<h2 data-number="42.6" class="anchored" data-anchor-id="automatyczne-linkowanie"><span class="header-section-number">42.6</span> Automatyczne linkowanie</h2>
+<section id="automatyczne-linkowanie" class="level2" data-number="43.6">
+<h2 data-number="43.6" class="anchored" data-anchor-id="automatyczne-linkowanie"><span class="header-section-number">43.6</span> Automatyczne linkowanie</h2>
 <p>GFM automatycznie przekształca URL-e w klikalny link. Gdy napiszesz <code>https://github.com</code>, zostanie to automatycznie zamienione na działający link. To znacznie upraszcza dodawanie odnośników w szybkich notatkach.</p>
 </section>
-<section id="emoji-i-ich-praktyczne-zastosowanie" class="level2" data-number="42.7">
-<h2 data-number="42.7" class="anchored" data-anchor-id="emoji-i-ich-praktyczne-zastosowanie"><span class="header-section-number">42.7</span> Emoji i ich praktyczne zastosowanie</h2>
+<section id="emoji-i-ich-praktyczne-zastosowanie" class="level2" data-number="43.7">
+<h2 data-number="43.7" class="anchored" data-anchor-id="emoji-i-ich-praktyczne-zastosowanie"><span class="header-section-number">43.7</span> Emoji i ich praktyczne zastosowanie</h2>
 <p>GFM obsługuje emoji przez specjalną składnię z dwukropkami: <code>:smile:</code> staje się 😄, a <code>:rocket:</code> zamienia się w 🚀. To może wydawać się trywialne, ale emoji pomagają uczynić dokumentację bardziej przystępną i wizualnie atrakcyjną.</p>
 </section>
-<section id="cytaty-i-ich-zagnieżdżanie" class="level2" data-number="42.8">
-<h2 data-number="42.8" class="anchored" data-anchor-id="cytaty-i-ich-zagnieżdżanie"><span class="header-section-number">42.8</span> Cytaty i ich zagnieżdżanie</h2>
+<section id="cytaty-i-ich-zagnieżdżanie" class="level2" data-number="43.8">
+<h2 data-number="43.8" class="anchored" data-anchor-id="cytaty-i-ich-zagnieżdżanie"><span class="header-section-number">43.8</span> Cytaty i ich zagnieżdżanie</h2>
 <p>Cytaty tworzymy za pomocą znaku <code>&gt;</code> na początku linii:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; To jest cytat.</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Może być wielolinijkowy.</span></span>
@@ -825,16 +831,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;&gt; cytaty zagnieżdżone</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;&gt;&gt; na różnych poziomach</span></span></code></pre></div><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="linki-referencyjne-dla-czytelności" class="level2" data-number="42.9">
-<h2 data-number="42.9" class="anchored" data-anchor-id="linki-referencyjne-dla-czytelności"><span class="header-section-number">42.9</span> Linki referencyjne dla czytelności</h2>
+<section id="linki-referencyjne-dla-czytelności" class="level2" data-number="43.9">
+<h2 data-number="43.9" class="anchored" data-anchor-id="linki-referencyjne-dla-czytelności"><span class="header-section-number">43.9</span> Linki referencyjne dla czytelności</h2>
 <p>Gdy dokument zawiera wiele linków, możemy używać składni referencyjnej, która znacznie poprawia czytelność kodu źródłowego:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Przejdź do <span class="co">[</span><span class="ot">GitHub</span><span class="co">][1]</span> lub sprawdź <span class="co">[</span><span class="ot">dokumentację</span><span class="co">][docs]</span>.</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[1]: https://github.com</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ot">[docs]: https://docs.github.com</span></span></code></pre></div><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="specjalne-funkcje-github" class="level2" data-number="42.10">
-<h2 data-number="42.10" class="anchored" data-anchor-id="specjalne-funkcje-github"><span class="header-section-number">42.10</span> Specjalne funkcje GitHub</h2>
+<section id="specjalne-funkcje-github" class="level2" data-number="43.10">
+<h2 data-number="43.10" class="anchored" data-anchor-id="specjalne-funkcje-github"><span class="header-section-number">43.10</span> Specjalne funkcje GitHub</h2>
 <p>W kontekście GitHub, GFM oferuje dodatkowe możliwości. Możemy linkować do konkretnych commitów używając SHA (<code>sha: a5c3785</code>), odwoływać się do issues (<code>#123</code>) czy wspominać użytkowników (<code>@username</code>).</p>
 <p>Więcej info: <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax" class="uri">https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax</a></p>
 
@@ -1258,12 +1264,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./jakosckodu.html" class="pagination-link" aria-label="Jakość kodu">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./latex.html" class="pagination-link" aria-label="LaTeX">
-        <span class="nav-page-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">LaTeX</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

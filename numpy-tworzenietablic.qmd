@@ -182,25 +182,3 @@ d = np.eye(4, k=-1)
 print(d)
 
 ```
-
-**Ćwiczenia:** (`ex3.py`)
-
-1. Utwórz jednowymiarową tablicę zawierającą liczby całkowite od 1 do 5 i przypisz ją do zmiennej `A`. Wynikowa tablica powinna mieć postać:  $$\begin{bmatrix}1 & 2 & 3 & 4 & 5\end{bmatrix} $$
-
-2. Utwórz dwuwymiarową tablicę zawierającą elementy:  $$\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} $$  
-   i przypisz ją do zmiennej `B`.
-
-3. Utwórz tablicę zawierającą liczby od 0 do 9 (włącznie). Przypisz ją do zmiennej `C`.  
-   Oczekiwana postać:  $$\begin{bmatrix}0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\end{bmatrix} $$
-
-4. Utwórz tablicę zawierającą liczby od 10 do 30 z krokiem 5. Przypisz do `D`.  
-   Oczekiwana postać:  $$\begin{bmatrix}10 & 15 & 20 & 25 & 30\end{bmatrix} $$
-
-5. Utwórz tablicę 5 wartości równomiernie rozłożonych pomiędzy 0 a 1. Przypisz do `E`.  
-   Przykładowa postać:  $$\begin{bmatrix}0. & 0.25 & 0.5 & 0.75 & 1.\end{bmatrix} $$
-
-6. Utwórz dwuwymiarową tablicę o wymiarach 2x3 wypełnioną zerami. Przypisz do `F`.  
-   Oczekiwana postać:  $$\begin{bmatrix}0 & 0 & 0 \\ 0 & 0 & 0\end{bmatrix} $$
-
-7. Korzystając z `np.eye` utwórz macierz jednostkową 4x4. Przypisz do `J`.  
-    Oczekiwana postać:  $$\begin{bmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} $$

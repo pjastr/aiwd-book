@@ -108,6 +108,7 @@
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -142,13 +143,13 @@
 
 
 \ifLuaTeX
-\usepackage[bidi=basic]{babel}
+\usepackage[bidi=basic,shorthands=off]{babel}
 \else
-\usepackage[bidi=default]{babel}
+\usepackage[bidi=default,shorthands=off]{babel}
 \fi
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
 
 
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -233,7 +234,6 @@
 
 \renewcommand*\contentsname{Spis treści}
 {
-\hypersetup{linkcolor=}
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
@@ -578,6 +578,7 @@ wymagane np. liczba etatów w firmie (z uwzględnieniem części etatów).
   przykład:
 \end{itemize}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
 Religia & Kod \\
@@ -589,6 +590,7 @@ Chrześcijaństwo & 1 \\
 Islam & 2 \\
 Buddyzm & 3 \\
 \end{longtable}
+}
 
 \textbf{Skala porządkowa}
 
@@ -603,6 +605,7 @@ Buddyzm & 3 \\
   przykłady:
 \end{itemize}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
 Wykształcenie & Kod \\
@@ -614,7 +617,9 @@ Podstawowe & 1 \\
 Średnie & 2 \\
 Wyższe & 3 \\
 \end{longtable}
+}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
 Dochód & Kod \\
@@ -626,6 +631,7 @@ Niski & 1 \\
 Średni & 2 \\
 Wysoki & 3 \\
 \end{longtable}
+}
 
 \textbf{Skala przedziałowa (interwałowa)}
 
@@ -642,6 +648,7 @@ Wysoki & 3 \\
   przykład:
 \end{itemize}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 Miasto & Temperatura w \(^{\circ}C\) & Temperatura w \(^{\circ}F\) \\
@@ -654,6 +661,7 @@ Olsztyn & 10 & 50 \\
 Gdańsk & 5 & 41 \\
 Szczecin & 20 & 68 \\
 \end{longtable}
+}
 
 \textbf{Skala ilorazowa (stosunkowa)}
 
@@ -672,6 +680,7 @@ Szczecin & 20 & 68 \\
   przykład:
 \end{itemize}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
 Produkt & Cena w zł \\
@@ -683,6 +692,7 @@ Chleb & 3 \\
 Masło & 8 \\
 Gruszki & 5 \\
 \end{longtable}
+}
 
 \section{Rodzaje badań
 statystycznych}\label{rodzaje-badaux144-statystycznych}
@@ -893,6 +903,7 @@ Koncepcja czyszczenia danych (ang. tidy data):
 
 Idealne dane są zaprezentowane w tabeli:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
 Imię & Wiek & Wzrost & Kolor oczu \\
@@ -904,6 +915,7 @@ Adam & 26 & 167 & Brązowe \\
 Sylwia & 34 & 164 & Piwne \\
 Tomasz & 42 & 183 & Niebieskie \\
 \end{longtable}
+}
 
 Na co powinniśmy zwrócić uwagę?
 
@@ -921,6 +933,7 @@ Na co powinniśmy zwrócić uwagę?
 \subsection{Przykłady nieuporządkowanych
 danych}\label{przykux142ady-nieuporzux105dkowanych-danych}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llllll@{}}
 \toprule\noalign{}
 Imię & Wiek & Wzrost & Brązowe & Niebieskie & Piwne \\
@@ -932,6 +945,7 @@ Adam & 26 & 167 & 1 & 0 & 0 \\
 Sylwia & 34 & 164 & 0 & 0 & 1 \\
 Tomasz & 42 & 183 & 0 & 1 & 0 \\
 \end{longtable}
+}
 
 \textbf{Nagłowki kolumn muszą odpowiadać cechom, a nie wartościom
 zmiennych.}
@@ -1006,6 +1020,42 @@ Information, Second Edition, Graphics Press, USA, 1991, p.~57 -- 69.
   dostęp online 20.03.2023.
 \end{itemize}
 
+\chapter{Konfiguracja}\label{konfiguracja}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  W pierwszym kroku tworzymy nowy projekt w wybranej lokalizacji.
+  Wybieramy venv oraz jedną z wersji Pythona np. 3.13. Na koniec guzik
+  Create.
+\end{enumerate}
+
+\pandocbounded{\includegraphics[keepaspectratio]{konf1.png}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Dodajemy plik z wymaganiami
+  https://piojas.pl/wp-content/uploads/2026/02/requirements.txt do
+  projektu do głównego katalogu. Nazwa pliku jest istotna.
+\end{enumerate}
+
+\pandocbounded{\includegraphics[keepaspectratio]{konf2.png}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Otwieramy termin w pycharm i wpisujemy komendę:
+  \texttt{pip\ install\ -r\ requirements.txt}
+\end{enumerate}
+
+\pandocbounded{\includegraphics[keepaspectratio]{konf3.png}}
+
 \part{NumPy}
 
 \chapter{NumPy - start}\label{numpy---start}
@@ -1065,7 +1115,7 @@ Podstawowym bytem w bibliotece NumPy jest N-wymiarowa tablica zwana
   like - tworzenie na podstawie tablic referencyjnej
 \end{itemize}
 
-\phantomsection\label{annotated-cell-3}%
+\protect\phantomsection\label{annotated-cell-3}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -1145,13 +1195,14 @@ g: [[1 2]
 \end{Shaded}
 
 \begin{verbatim}
---- 0.0021321773529052734 seconds ---
---- 0.04065704345703125 seconds ---
+--- 0.0019271373748779297 seconds ---
+--- 0.03591465950012207 seconds ---
 \end{verbatim}
 
 \chapter{\texorpdfstring{Atrybuty tablic
 \texttt{ndarray}}{Atrybuty tablic ndarray}}\label{atrybuty-tablic-ndarray}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
@@ -1172,6 +1223,7 @@ wymiarów \\
 \texttt{nbytes} & liczba bajtów jaką tablica zajmuje w pamięci \\
 \texttt{dtype} & typ danych \\
 \end{longtable}
+}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1229,15 +1281,9 @@ NumPy nie wspiera postrzępionych tablic! Poniższy kod wygeneruje błąd:
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Ćwiczenia:} (\texttt{ex2.py})\\
-Utwórz tablice numpy: \[
-A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}
-\] \[B = \begin{bmatrix} 7 & 8 \\ 9 & 10 \\ 11 & 12 \end{bmatrix}\]
-\[C = \begin{bmatrix} 1.1 & 2.2 & 3.3 \\ 4.4 & 5.5 & 6.6 \end{bmatrix}\]
-i sprawdź ich parametry.
-
 \chapter{Typy danych}\label{typy-danych}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
@@ -1256,6 +1302,7 @@ Typy zmiennoprzecinkowe zespolone & \texttt{complex},
 \texttt{complex64}, \texttt{complex128}, \texttt{complex256} \\
 Napis & \texttt{str} \\
 \end{longtable}
+}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1593,48 +1640,9 @@ d
  [0. 0. 1. 0.]]
 \end{verbatim}
 
-\textbf{Ćwiczenia:} (\texttt{ex3.py})
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Utwórz jednowymiarową tablicę zawierającą liczby całkowite od 1 do 5 i
-  przypisz ją do zmiennej \texttt{A}. Wynikowa tablica powinna mieć
-  postać: \[\begin{bmatrix}1 & 2 & 3 & 4 & 5\end{bmatrix} \]
-\item
-  Utwórz dwuwymiarową tablicę zawierającą elementy:
-  \[\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} \]\\
-  i przypisz ją do zmiennej \texttt{B}.
-\item
-  Utwórz tablicę zawierającą liczby od 0 do 9 (włącznie). Przypisz ją do
-  zmiennej \texttt{C}.\\
-  Oczekiwana postać:
-  \[\begin{bmatrix}0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\end{bmatrix} \]
-\item
-  Utwórz tablicę zawierającą liczby od 10 do 30 z krokiem 5. Przypisz do
-  \texttt{D}.\\
-  Oczekiwana postać:
-  \[\begin{bmatrix}10 & 15 & 20 & 25 & 30\end{bmatrix} \]
-\item
-  Utwórz tablicę 5 wartości równomiernie rozłożonych pomiędzy 0 a 1.
-  Przypisz do \texttt{E}.\\
-  Przykładowa postać:
-  \[\begin{bmatrix}0. & 0.25 & 0.5 & 0.75 & 1.\end{bmatrix} \]
-\item
-  Utwórz dwuwymiarową tablicę o wymiarach 2x3 wypełnioną zerami.
-  Przypisz do \texttt{F}.\\
-  Oczekiwana postać:
-  \[\begin{bmatrix}0 & 0 & 0 \\ 0 & 0 & 0\end{bmatrix} \]
-\item
-  Korzystając z \texttt{np.eye} utwórz macierz jednostkową 4x4. Przypisz
-  do \texttt{J}.\\
-  Oczekiwana postać:
-  \[\begin{bmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} \]
-\end{enumerate}
-
 \chapter{Indeksowanie, ``krojenie''}\label{indeksowanie-krojenie}
 
-\phantomsection\label{annotated-cell-18}%
+\protect\phantomsection\label{annotated-cell-18}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -1675,7 +1683,7 @@ Dostęp od początku do elementu o indeksie 4.
 6: [ 2  5 -2  4 -7]
 \end{verbatim}
 
-\phantomsection\label{annotated-cell-19}%
+\protect\phantomsection\label{annotated-cell-19}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -1909,73 +1917,6 @@ Indeksowanie logiczne (maski boolowskie)
 [  2  20  -2   4  -7   8   9  11 -23  -4  -7   8   1]
 [-5  5  4  8  9 11  8  1]
 \end{verbatim}
-
-\textbf{Ćwiczenia:} (\texttt{ex4.py})
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Rozważ jednowymiarową tablicę\\
-  \[A = \begin{bmatrix}10 & 20 & 30 & 40 & 50\end{bmatrix}.\]\\
-  Napisz polecenie , które zwróci trzeci element tablicy. Następnie
-  spróbuj pobrać przedział od drugiego do czwartego elementu włącznie.
-\item
-  Dla tej samej tablicy\\
-  \[A = \begin{bmatrix}10 & 20 & 30 & 40 & 50\end{bmatrix},\]\\
-  użyj ``fancy indexing'', aby wybrać elementy o indeksach
-  \texttt{{[}0,\ 2,\ 4{]}}. Spróbuj także wykorzystać negatywne indeksy,
-  aby wybrać ostatni i przedostatni element w jednej operacji.
-\item
-  Rozważ dwuwymiarową tablicę\\
-  \[B = \begin{bmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{bmatrix}.\]\\
-  Napisz polecenie, które zwróci drugi wiersz (jako tablicę
-  jednowymiarową). Następnie pobierz cały pierwszy wiersz oraz dwie
-  pierwsze kolumny.
-\item
-  Dla tablicy\\
-  \[B = \begin{bmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{bmatrix},\]\\
-  użyj ``fancy indexing'', aby wybrać elementy
-  \((B_{1,1}, B_{0,2}, B_{2,0})\) za pomocą list indeksów w
-  \texttt{numpy}. Otrzymaj wynik w postaci tablicy jednowymiarowej
-  \texttt{{[}5,\ 3,\ 7{]}}.
-\item
-  Rozważ tablicę\\
-  \[C = \begin{bmatrix}10 & 20 & 30 & 40 \\ 50 & 60 & 70 & 80\end{bmatrix}.\]\\
-  Napisz polecenie, które zwróci wszystkie elementy drugiego wiersza
-  oprócz ostatniego. Następnie pobierz co drugi element z pierwszego
-  wiersza.
-\item
-  Dla tablicy\\
-  \[C = \begin{bmatrix}10 & 20 & 30 & 40 \\ 50 & 60 & 70 & 80\end{bmatrix},\]\\
-  użyj ``fancy indexing'', aby pobrać elementy pierwszego wiersza w
-  kolejności \texttt{{[}30,\ 10,\ 40{]}} korzystając z tablicy indeksów
-  np. \texttt{{[}2,\ 0,\ 3{]}}. Następnie zastosuj ``fancy indexing'' do
-  drugiego wiersza, aby uzyskać \texttt{{[}80,\ 50{]}}.
-\item
-  Rozważ jednowymiarową tablicę\\
-  \[D = \begin{bmatrix}5 & 10 & 15 & 20 & 25 & 30\end{bmatrix}.\]\\
-  Za pomocą indeksowania wytnij ostatnie trzy elementy. Następnie
-  pobierz wszystkie elementy o parzystych indeksach.
-\item
-  Dla tablicy\\
-  \[D = \begin{bmatrix}5 & 10 & 15 & 20 & 25 & 30\end{bmatrix},\]\\
-  użyj ``fancy indexing'' za pomocą maski boolowskiej (utwórz maskę
-  wybierającą elementy większe niż 15) i otrzymaj odpowiednio
-  przefiltrowaną tablicę. Następnie zastosuj tę maskę do pobrania
-  konkretnych elementów.
-\item
-  Rozważ tablicę dwuwymiarową\\
-  \[E = \begin{bmatrix}2 & 4 & 6 \\ 8 & 10 & 12 \\ 14 & 16 & 18\end{bmatrix}.\]\\
-  Za pomocą indeksowania wybierz środkowy wiersz i wszystkie kolumny
-  oprócz ostatniej. Następnie wybierz ostatni wiersz i ostatnią kolumnę.
-\item
-  Dla tablicy\\
-  \[E = \begin{bmatrix}2 & 4 & 6 \\ 8 & 10 & 12 \\ 14 & 16 & 18\end{bmatrix},\]\\
-  użyj ``fancy indexing'', aby w jednej operacji pobrać elementy
-  \((E_{0,2}, E_{2,1})\) i ułożyć je w nowej tablicy. Spróbuj także
-  stworzyć maskę boolowską wybierającą elementy większe niż 10 i pobrać
-  wybrane wartości.
-\end{enumerate}
 
 \chapter{Modyfikacja kształtu i
 rozmiaru}\label{modyfikacja-ksztaux142tu-i-rozmiaru}
@@ -2259,53 +2200,6 @@ r2
 [[1 2 3 4]
  [5 6 7 8]]
 \end{verbatim}
-
-\textbf{Ćwiczenia:} (\texttt{ex5.py})
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Rozważ tablicę jednowymiarową\\
-  \[A = \begin{bmatrix}1 & 2 & 3 & 4 & 5 & 6\end{bmatrix}.\]\\
-  Przekształć ją tak, aby uzyskać tablicę dwuwymiarową o kształcie
-  \(2 \times 3\).
-\item
-  Mając tablicę dwuwymiarową\\
-  \[B = \begin{bmatrix}1 & 2 \\ 3 & 4 \\ 5 & 6\end{bmatrix},\]\\
-  uzyskaj jednowymiarowy ``widok'' jej elementów bez zmiany w danych
-  źródłowych.
-\item
-  Rozważ tablicę\\
-  \[D = \begin{bmatrix}1 & 2 & 3 \\ 4 & 5 & 6\end{bmatrix}.\]\\
-  Zmień jej orientację tak, aby wiersze stały się kolumnami, a kolumny
-  wierszami.
-\item
-  Mając dwie tablice\\
-  \[E_1 = \begin{bmatrix}1 & 2 & 3\end{bmatrix}, \quad E_2 = \begin{bmatrix}4 & 5 & 6\end{bmatrix},\]\\
-  połącz je w poziomie, tworząc jedną tablicę.
-\item
-  Dwie tablice\\
-  \[F_1 = \begin{bmatrix}1 & 2 & 3\end{bmatrix}, \quad F_2 = \begin{bmatrix}4 & 5 & 6\end{bmatrix},\]\\
-  połącz w pionie, aby uzyskać tablicę o kształcie \(2 \times 3\).
-\item
-  Dla tablicy\\
-  \[G = \begin{bmatrix}1 & 2 & 3 \\ 4 & 5 & 6\end{bmatrix},\]\\
-  zmień jej rozmiar tak, aby stała się tablicą jednowymiarową o 4
-  elementach. Pozostałe elementy usuń.
-\item
-  Mając tablicę\\
-  \[H = \begin{bmatrix}10 & 20 & 30 \\ 40 & 50 & 60 \\ 70 & 80 & 90\end{bmatrix},\]\\
-  usuń drugą kolumnę, otrzymując tablicę \(3 \times 2\).
-\item
-  Rozważ tablicę\\
-  \[I = \begin{bmatrix}1 & 2 \\ 3 & 4 \\ 5 & 6 \\ 7 & 8\end{bmatrix},\]\\
-  zmień jej kształt tak, aby uzyskać tablicę \(2 \times 4\).
-\item
-  Mając tablicę\\
-  \[J = \begin{bmatrix}1 & 2 & 3 & 4\end{bmatrix},\]\\
-  przekształć ją w tablicę dwuwymiarową \(2 \times 2\), a następnie
-  ``spłaszcz'' ją z powrotem do postaci jednowymiarowej.
-\end{enumerate}
 
 \chapter{Broadcasting}\label{broadcasting}
 
@@ -3964,6 +3858,7 @@ Operacja z broadcast:
 
 \section{Statystyka i agregacja}\label{statystyka-i-agregacja}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2558}}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7442}}@{}}
@@ -3991,6 +3886,7 @@ np.all & Sprawdza czy wszystki elementy są różne od zera. \\
 np.any & Sprawdza czy co najmniej jeden z elementów jest różny od
 zera. \\
 \end{longtable}
+}
 
 \part{Eksploracja danych}
 
@@ -4269,6 +4165,7 @@ dtype: int64
   tabelarycznym:
 \end{enumerate}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
 Index & Value \\
@@ -4282,6 +4179,7 @@ Index & Value \\
 3 & 40 \\
 4 & 50 \\
 \end{longtable}
+}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4294,6 +4192,7 @@ Index & Value \\
   Wyświetl w formacie tabelarycznym:
 \end{enumerate}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
 Month & Temperature \\
@@ -4305,6 +4204,7 @@ Jan & 0 \\
 Feb & 3 \\
 Mar & 5 \\
 \end{longtable}
+}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4315,6 +4215,7 @@ Mar & 5 \\
   \texttt{Price}, \texttt{Quantity}, a następnie wypełnij ją danymi:
 \end{enumerate}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 Product & Price & Quantity \\
@@ -4326,6 +4227,7 @@ Apple & 1.2 & 10 \\
 Banana & 0.5 & 20 \\
 Orange & 0.8 & 15 \\
 \end{longtable}
+}
 
 \chapter{Pandas - indeksowanie}\label{pandas---indeksowanie}
 
@@ -4480,6 +4382,7 @@ wiersze):
   \end{itemize}
 \end{itemize}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1733}}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2133}}
@@ -4516,6 +4419,7 @@ West & Furniture & Online & 70 & 30.0 & 7.5 \\
 North & Clothing & Wholesale & 250 & 40.0 & 9.0 \\
 South & Electronics & Retail & 130 & 75.0 & 22.0 \\
 \end{longtable}
+}
 
 \chapter{Ładowanie danych}\label{ux142adowanie-danych}
 
@@ -4825,6 +4729,7 @@ Konwersja z formatem '%Y/%m/%d':
 2 2025-12-30
 \end{verbatim}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1884}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4928}}
@@ -4856,6 +4761,7 @@ Przykład
 \texttt{\%M} & Minuty & 00, 30, 59 \\
 \texttt{\%S} & Sekundy & 00, 30, 59 \\
 \end{longtable}
+}
 
 Polskie nazwy miesięcy w mianowniku lub skrócie:
 
@@ -5007,6 +4913,7 @@ tekstach}\label{operacje-wektorowe-na-tekstach}
 Oto tabela w języku Markdown wyjaśniająca funkcje z
 \textbf{\texttt{pandas.Series.str}} i ich zastosowanie:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1892}}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.8108}}@{}}
@@ -5084,6 +4991,7 @@ tytuł (pierwsze litery wyrazów są wielkie). \\
 \textbf{\texttt{rpartition()}} & Dzieli ciąg na trzy części od prawej
 strony: przed separator, separator i po separatorze. \\
 \end{longtable}
+}
 
 Zwykle operacje wektorowe są szybsze:
 
@@ -5122,7 +5030,7 @@ Zwykle operacje wektorowe są szybsze:
 \end{Shaded}
 
 \begin{verbatim}
-0.12645578384399414 0.4184837341308594
+0.14785528182983398 0.40792036056518555
 \end{verbatim}
 
 \chapter{Pandas - inne}\label{pandas---inne}
@@ -5407,9 +5315,9 @@ Categories (4, str): ['Youth' < 'YoungAdult' < 'MiddleAged' < 'Senior']
 \end{Shaded}
 
 \begin{verbatim}
-[(0.25, 0.49], (0.25, 0.49], (0.73, 0.97], (0.015, 0.25], (0.015, 0.25], ..., (0.015, 0.25], (0.49, 0.73], (0.25, 0.49], (0.73, 0.97], (0.25, 0.49]]
+[(0.48, 0.72], (0.72, 0.96], (0.24, 0.48], (0.48, 0.72], (0.48, 0.72], ..., (0.72, 0.96], (0.24, 0.48], (0.0015, 0.24], (0.24, 0.48], (0.24, 0.48]]
 Length: 20
-Categories (4, interval[float64, right]): [(0.015, 0.25] < (0.25, 0.49] < (0.49, 0.73] < (0.73, 0.97]]
+Categories (4, interval[float64, right]): [(0.0015, 0.24] < (0.24, 0.48] < (0.48, 0.72] < (0.72, 0.96]]
 \end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -5427,13 +5335,13 @@ Categories (4, interval[float64, right]): [(0.015, 0.25] < (0.25, 0.49] < (0.49,
 \end{Shaded}
 
 \begin{verbatim}
-[(-0.629, 0.0366], (0.721, 3.339], (0.0366, 0.721], (0.0366, 0.721], (-0.629, 0.0366], ..., (0.0366, 0.721], (-0.629, 0.0366], (0.0366, 0.721], (0.0366, 0.721], (0.0366, 0.721]]
+[(0.0758, 0.724], (-3.1, -0.668], (0.0758, 0.724], (-3.1, -0.668], (-0.668, 0.0758], ..., (0.0758, 0.724], (0.0758, 0.724], (-0.668, 0.0758], (-0.668, 0.0758], (-0.668, 0.0758]]
 Length: 1000
-Categories (4, interval[float64, right]): [(-2.8209999999999997, -0.629] < (-0.629, 0.0366] < (0.0366, 0.721] < (0.721, 3.339]]
-(-2.8209999999999997, -0.629]    250
-(-0.629, 0.0366]                 250
-(0.0366, 0.721]                  250
-(0.721, 3.339]                   250
+Categories (4, interval[float64, right]): [(-3.1, -0.668] < (-0.668, 0.0758] < (0.0758, 0.724] < (0.724, 3.209]]
+(-3.1, -0.668]      250
+(-0.668, 0.0758]    250
+(0.0758, 0.724]     250
+(0.724, 3.209]      250
 Name: count, dtype: int64
 \end{verbatim}
 
@@ -5458,30 +5366,32 @@ odstających}\label{wykrywanie-i-filtrowanie-elementuxf3w-odstajux105cych}
 \begin{verbatim}
                  0            1            2            3
 count  1000.000000  1000.000000  1000.000000  1000.000000
-mean      0.028703     0.021895     0.010127     0.028517
-std       1.004908     0.950930     0.981091     1.034854
-min      -3.318216    -3.035852    -2.763895    -3.250600
-25%      -0.635966    -0.639642    -0.712410    -0.659771
-50%      -0.040377     0.019488     0.020001     0.045159
-75%       0.700966     0.648612     0.709641     0.726173
-max       3.462385     2.750800     3.371033     3.349604
+mean     -0.025094    -0.011052     0.002492    -0.010347
+std       0.985708     1.002243     0.980096     1.018596
+min      -3.519691    -3.857291    -3.227553    -4.113187
+25%      -0.672541    -0.675037    -0.649892    -0.716351
+50%      -0.003462    -0.001114    -0.040015    -0.005014
+75%       0.605798     0.664749     0.693845     0.705068
+max       2.961669     3.235576     3.217560     3.019732
 ---
-194    3.014831
-482    3.371033
+256   -3.020866
+417    3.217560
+569    3.003401
+947   -3.227553
 Name: 2, dtype: float64
 ---
             0         1         2         3
-94  -3.250207 -1.847502  0.907021  2.710492
-119 -0.164476  1.169355  1.823708  3.349604
-194  0.408031 -0.791613  3.014831 -0.777549
-287  0.133536 -3.035852  0.270153  0.599083
-482 -0.281649 -0.624206  3.371033 -1.252256
-522 -0.977740  1.223995  0.829913 -3.057457
-597  0.429733 -0.198112 -0.804686  3.086241
-613  3.462385  0.434544 -0.832198 -1.018889
-721  0.611510 -3.005805 -0.022591  0.330815
-759 -0.318316 -0.192041  0.845967 -3.250600
-762 -3.318216 -0.881147  0.078325  1.455875
+94  -0.787977 -3.857291  1.194866 -1.606511
+172 -0.691256  1.041637  0.914678  3.019732
+256 -1.004294  0.159543 -3.020866 -2.581779
+298 -3.519691  1.834075 -2.299777  0.717975
+348  0.001536  3.235576  0.574163  0.105414
+417  0.452357  0.771219  3.217560 -0.677981
+569 -1.166816  0.811175  3.003401 -1.063902
+744  0.964227  3.114472  0.945261 -0.253433
+772  1.334878  0.798028 -0.384847 -4.113187
+867  1.204902 -3.096885 -0.675242 -0.645584
+947 -0.542452  1.487021 -3.227553  0.340613
 \end{verbatim}
 
 \section{Zmiana typu w kolumnie}\label{zmiana-typu-w-kolumnie}
@@ -6810,6 +6720,7 @@ działania:}\label{przyux15bpieszanie-dziaux142ania}
 
 \textbf{Ramka danych:}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
 Produkt & Sprzedaż & Koszt & Marża \\
@@ -6828,6 +6739,7 @@ B & 180 & 105 & 75 \\
 A & 240 & 125 & 115 \\
 C & 290 & 170 & 120 \\
 \end{longtable}
+}
 
 Średnia dla wybranych dwóch kolumn
 
@@ -7029,7 +6941,7 @@ będzie wykres słupkowy lub punktowy.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-2-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-153}%
+\protect\phantomsection\label{annotated-cell-153}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7237,7 +7149,7 @@ Wersja z datami:
 
 \section{Style, kolory linii}\label{style-kolory-linii}
 
-\phantomsection\label{annotated-cell-159}%
+\protect\phantomsection\label{annotated-cell-159}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -7627,7 +7539,7 @@ Wykresy punktowe są szczególnie przydatne, gdy mamy do czynienia z
 danymi o różnym charakterze (ciągłe lub dyskretne) oraz gdy chcemy
 zbadać korelację, grupy, wzorce lub wartości odstające.
 
-\phantomsection\label{annotated-cell-168}%
+\protect\phantomsection\label{annotated-cell-168}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7672,7 +7584,7 @@ zaczynając od 0.5 do 4.5.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-3-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-170}%
+\protect\phantomsection\label{annotated-cell-170}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7717,7 +7629,7 @@ kółka (\texttt{marker=\textquotesingle{}o\textquotesingle{}}).
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-172}%
+\protect\phantomsection\label{annotated-cell-172}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{from}\NormalTok{ matplotlib }\ImportTok{import}\NormalTok{ pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7753,7 +7665,7 @@ długości takiej samej jak współrzędne \texttt{x} i \texttt{y}.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-6-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-173}%
+\protect\phantomsection\label{annotated-cell-173}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
@@ -8041,7 +7953,7 @@ gdzie:
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-179}%
+\protect\phantomsection\label{annotated-cell-179}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8173,7 +8085,7 @@ Zamiana na mapę kolorów:
 
 \section{Wykres pierścieniowy}\label{wykres-pierux15bcieniowy}
 
-\phantomsection\label{annotated-cell-183}%
+\protect\phantomsection\label{annotated-cell-183}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -8318,7 +8230,7 @@ gdzie:
   legendę.
 \end{itemize}
 
-\phantomsection\label{annotated-cell-185}%
+\protect\phantomsection\label{annotated-cell-185}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8449,7 +8361,7 @@ dodaje etykietę osi Y z tekstem ``Wartości''.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-189}%
+\protect\phantomsection\label{annotated-cell-189}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8592,7 +8504,7 @@ siebie.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-7-output-1.pdf}}
 
-\phantomsection\label{annotated-cell-191}%
+\protect\phantomsection\label{annotated-cell-191}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8944,6 +8856,7 @@ Najczęściej stosowane funkcje w analizie regresji:
 
 \textbf{\emph{Wybór metody współzależności wielu zmiennych:}}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4194}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4194}}
@@ -8966,6 +8879,7 @@ Analiza kowariancji & ciągła & jakościowe (symboliczne) i ciągłe \\
 Regresja Poissona & dyskretna & różne typy \\
 Regresja logistyczna & dwuwartościowa & różne typy \\
 \end{longtable}
+}
 
 Zastosowania:
 
@@ -9129,7 +9043,7 @@ Przewidywany błąd dopasowania: 1.3322676295501878e-15
 
 \pandocbounded{\includegraphics[keepaspectratio]{k3.png}}
 
-\phantomsection\label{annotated-cell-200}%
+\protect\phantomsection\label{annotated-cell-200}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -9234,6 +9148,7 @@ oraz \texttt{plt.subplots()} pozwalają dostosować różne aspekty figury.
 
 Argumenty:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1259}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.7037}}
@@ -9265,6 +9180,7 @@ lub \texttt{False}). & \texttt{True} \\
 figurze w celu uniknięcia nakładania się (\texttt{True} lub
 \texttt{False}). & \texttt{False} \\
 \end{longtable}
+}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11919,6 +11835,7 @@ będziesz używać najczęściej.
 
 \subsection{Operatory arytmetyczne}\label{operatory-arytmetyczne}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 Kod & Rezultat & Opis \\
@@ -11936,10 +11853,12 @@ Kod & Rezultat & Opis \\
 \texttt{\$\textbackslash{}frac\{a\}\{b\}\$} & \(\frac{a}{b}\) &
 Ułamek \\
 \end{longtable}
+}
 
 \subsection{Symbole specjalne w analizie
 danych}\label{symbole-specjalne-w-analizie-danych}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 Kod & Rezultat & Zastosowanie \\
@@ -11956,6 +11875,7 @@ granicach \\
 \texttt{\$\textbackslash{}propto\$} & \(\propto\) & Proporcjonalność \\
 \texttt{\$\textbackslash{}approx\$} & \(\approx\) & Przybliżenia \\
 \end{longtable}
+}
 
 \section{Potęgi, indeksy i pierwiastki - podstawy
 notacji}\label{potux119gi-indeksy-i-pierwiastki---podstawy-notacji}
@@ -12420,6 +12340,7 @@ formatowania}\label{zaawansowane-techniki-formatowania}
 
 Aby wzory były czytelne, kontroluj odstępy za pomocą tych poleceń:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 Kod & Rezultat & Opis \\
@@ -12434,6 +12355,7 @@ Kod & Rezultat & Opis \\
 \texttt{\$a\ \textbackslash{}qquad\ b\$} & \(a \qquad b\) & Bardzo duży
 odstęp \\
 \end{longtable}
+}
 
 \subsection{Wyrównywanie równań}\label{wyruxf3wnywanie-ruxf3wnaux144}
 
@@ -12492,6 +12414,7 @@ danych}\label{czux119sto-uux17cywane-greckie-litery-w-analizie-danych}
 
 Greckie litery są powszechnie używane w statystyce i uczeniu maszynowym:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
 Kod & Mała & Duża & Zastosowanie \\
@@ -12520,6 +12443,7 @@ standardowe, sumy \\
 \texttt{\textbackslash{}phi} & \(\phi\) & \(\Phi\) & Funkcja
 standardowego rozkładu normalnego \\
 \end{longtable}
+}
 
 \section{Praktyczne wskazówki dla analityków
 danych}\label{praktyczne-wskazuxf3wki-dla-analitykuxf3w-danych}

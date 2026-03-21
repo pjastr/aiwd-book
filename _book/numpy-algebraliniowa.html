@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Alegbra liniowa – Analiza i wizualizacja danych</title>
+<title>14&nbsp; Alegbra liniowa – Analiza i wizualizacja danych</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -69,19 +72,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./numpy-strings.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-14cbc709409b9607cfe384ca3dce8273.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-bce977a10065f1546ac742a2ca57dec9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -284,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-algebraliniowa.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-algebraliniowa.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -297,9 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Analiza i wizualizacja danych</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -337,6 +337,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Trochę teorii…</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./konfiguracja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Konfiguracja</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -351,79 +357,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">NumPy - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lista_tablica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lista a tablica</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-atrybuty.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Atrybuty tablic <code>ndarray</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-typydanych.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Typy danych</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-tworzenietablic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tworzenie tablic</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-indeksowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Indeksowanie, “krojenie”</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-modyfikacje.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Modyfikacja kształtu i rozmiaru</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-broadcasting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Broadcasting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-ufunc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funkcje uniwersalne (ufunc) i inne matematyczne</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-algebraliniowa.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-warunki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numpy-inne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Numpy - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -440,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eksploracja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Etapy eksploracji danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -457,43 +463,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-indeksowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Pandas - indeksowanie</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-ladowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Ładowanie danych</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-sortowanie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - sortowanie</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-szeregiczasowe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - szeregi czasowe</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-danetekstowe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas-inne.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -510,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analizastruktury.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
   </div>
 </li>
       </ul>
@@ -527,91 +533,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresliniowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-podwykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-zapis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykrespunktowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreskolowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresslupkowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-regresja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-kolory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-opcjewykresu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-innewykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-mapaciepla.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreswarstwowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
   </div>
 </li>
       </ul>
@@ -628,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./seaborn-podstawy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
   </div>
 </li>
       </ul>
@@ -645,31 +651,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./jakosckodu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notatnik.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./procesy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -686,31 +692,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
   </div>
 </li>
       </ul>
@@ -725,18 +731,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#iloczyn-skalarny-dot-product" id="toc-iloczyn-skalarny-dot-product" class="nav-link active" data-scroll-target="#iloczyn-skalarny-dot-product"><span class="header-section-number">13.1</span> Iloczyn skalarny (dot product)</a></li>
-  <li><a href="#mnożenie-macierzowe" id="toc-mnożenie-macierzowe" class="nav-link" data-scroll-target="#mnożenie-macierzowe"><span class="header-section-number">13.2</span> Mnożenie macierzowe</a></li>
-  <li><a href="#mnożenie-macierz-wektor" id="toc-mnożenie-macierz-wektor" class="nav-link" data-scroll-target="#mnożenie-macierz-wektor"><span class="header-section-number">13.3</span> Mnożenie macierz-wektor</a></li>
-  <li><a href="#rozwiązywanie-układów-równań-liniowych" id="toc-rozwiązywanie-układów-równań-liniowych" class="nav-link" data-scroll-target="#rozwiązywanie-układów-równań-liniowych"><span class="header-section-number">13.4</span> Rozwiązywanie układów równań liniowych</a></li>
-  <li><a href="#wyznacznik-macierzy" id="toc-wyznacznik-macierzy" class="nav-link" data-scroll-target="#wyznacznik-macierzy"><span class="header-section-number">13.5</span> Wyznacznik macierzy</a></li>
-  <li><a href="#wartości-i-wektory-własne" id="toc-wartości-i-wektory-własne" class="nav-link" data-scroll-target="#wartości-i-wektory-własne"><span class="header-section-number">13.6</span> Wartości i wektory własne</a></li>
-  <li><a href="#rozkład-wartości-osobliwych-svd" id="toc-rozkład-wartości-osobliwych-svd" class="nav-link" data-scroll-target="#rozkład-wartości-osobliwych-svd"><span class="header-section-number">13.7</span> Rozkład wartości osobliwych (SVD)</a></li>
-  <li><a href="#norma-macierzywektora" id="toc-norma-macierzywektora" class="nav-link" data-scroll-target="#norma-macierzywektora"><span class="header-section-number">13.8</span> Norma macierzy/wektora</a></li>
-  <li><a href="#macierz-odwrotna" id="toc-macierz-odwrotna" class="nav-link" data-scroll-target="#macierz-odwrotna"><span class="header-section-number">13.9</span> Macierz odwrotna</a></li>
-  <li><a href="#funkcja-numpy.inner---iloczyn-wewnętrzny" id="toc-funkcja-numpy.inner---iloczyn-wewnętrzny" class="nav-link" data-scroll-target="#funkcja-numpy.inner---iloczyn-wewnętrzny"><span class="header-section-number">13.10</span> Funkcja <code>numpy.inner</code> - iloczyn wewnętrzny</a></li>
-  <li><a href="#funkcja-numpy.outer---iloczyn-zewnętrzny" id="toc-funkcja-numpy.outer---iloczyn-zewnętrzny" class="nav-link" data-scroll-target="#funkcja-numpy.outer---iloczyn-zewnętrzny"><span class="header-section-number">13.11</span> Funkcja <code>numpy.outer</code> - iloczyn zewnętrzny</a></li>
-  <li><a href="#funkcja-numpy.matmul---mnożenie-macierzowe" id="toc-funkcja-numpy.matmul---mnożenie-macierzowe" class="nav-link" data-scroll-target="#funkcja-numpy.matmul---mnożenie-macierzowe"><span class="header-section-number">13.12</span> Funkcja <code>numpy.matmul</code> - mnożenie macierzowe</a></li>
+  <li><a href="#iloczyn-skalarny-dot-product" id="toc-iloczyn-skalarny-dot-product" class="nav-link active" data-scroll-target="#iloczyn-skalarny-dot-product"><span class="header-section-number">14.1</span> Iloczyn skalarny (dot product)</a></li>
+  <li><a href="#mnożenie-macierzowe" id="toc-mnożenie-macierzowe" class="nav-link" data-scroll-target="#mnożenie-macierzowe"><span class="header-section-number">14.2</span> Mnożenie macierzowe</a></li>
+  <li><a href="#mnożenie-macierz-wektor" id="toc-mnożenie-macierz-wektor" class="nav-link" data-scroll-target="#mnożenie-macierz-wektor"><span class="header-section-number">14.3</span> Mnożenie macierz-wektor</a></li>
+  <li><a href="#rozwiązywanie-układów-równań-liniowych" id="toc-rozwiązywanie-układów-równań-liniowych" class="nav-link" data-scroll-target="#rozwiązywanie-układów-równań-liniowych"><span class="header-section-number">14.4</span> Rozwiązywanie układów równań liniowych</a></li>
+  <li><a href="#wyznacznik-macierzy" id="toc-wyznacznik-macierzy" class="nav-link" data-scroll-target="#wyznacznik-macierzy"><span class="header-section-number">14.5</span> Wyznacznik macierzy</a></li>
+  <li><a href="#wartości-i-wektory-własne" id="toc-wartości-i-wektory-własne" class="nav-link" data-scroll-target="#wartości-i-wektory-własne"><span class="header-section-number">14.6</span> Wartości i wektory własne</a></li>
+  <li><a href="#rozkład-wartości-osobliwych-svd" id="toc-rozkład-wartości-osobliwych-svd" class="nav-link" data-scroll-target="#rozkład-wartości-osobliwych-svd"><span class="header-section-number">14.7</span> Rozkład wartości osobliwych (SVD)</a></li>
+  <li><a href="#norma-macierzywektora" id="toc-norma-macierzywektora" class="nav-link" data-scroll-target="#norma-macierzywektora"><span class="header-section-number">14.8</span> Norma macierzy/wektora</a></li>
+  <li><a href="#macierz-odwrotna" id="toc-macierz-odwrotna" class="nav-link" data-scroll-target="#macierz-odwrotna"><span class="header-section-number">14.9</span> Macierz odwrotna</a></li>
+  <li><a href="#funkcja-numpy.inner---iloczyn-wewnętrzny" id="toc-funkcja-numpy.inner---iloczyn-wewnętrzny" class="nav-link" data-scroll-target="#funkcja-numpy.inner---iloczyn-wewnętrzny"><span class="header-section-number">14.10</span> Funkcja <code>numpy.inner</code> - iloczyn wewnętrzny</a></li>
+  <li><a href="#funkcja-numpy.outer---iloczyn-zewnętrzny" id="toc-funkcja-numpy.outer---iloczyn-zewnętrzny" class="nav-link" data-scroll-target="#funkcja-numpy.outer---iloczyn-zewnętrzny"><span class="header-section-number">14.11</span> Funkcja <code>numpy.outer</code> - iloczyn zewnętrzny</a></li>
+  <li><a href="#funkcja-numpy.matmul---mnożenie-macierzowe" id="toc-funkcja-numpy.matmul---mnożenie-macierzowe" class="nav-link" data-scroll-target="#funkcja-numpy.matmul---mnożenie-macierzowe"><span class="header-section-number">14.12</span> Funkcja <code>numpy.matmul</code> - mnożenie macierzowe</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
@@ -744,9 +750,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-algebraliniowa.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numpy-start.html">NumPy</a></li><li class="breadcrumb-item"><a href="./numpy-algebraliniowa.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Alegbra liniowa</span></h1>
 </div>
 
 
@@ -763,10 +769,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="iloczyn-skalarny-dot-product" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="iloczyn-skalarny-dot-product"><span class="header-section-number">13.1</span> Iloczyn skalarny (dot product)</h2>
+<section id="iloczyn-skalarny-dot-product" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="iloczyn-skalarny-dot-product"><span class="header-section-number">14.1</span> Iloczyn skalarny (dot product)</h2>
 <p>Dla dwóch wektorów, <code>dot</code> oblicza ich iloczyn skalarny.</p>
-<div id="85b9f3b2" class="cell" data-execution_count="1">
+<div id="fb7a5540" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn skalarny dwóch wektorów</span></span>
@@ -784,10 +790,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="mnożenie-macierzowe" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="mnożenie-macierzowe"><span class="header-section-number">13.2</span> Mnożenie macierzowe</h2>
+<section id="mnożenie-macierzowe" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="mnożenie-macierzowe"><span class="header-section-number">14.2</span> Mnożenie macierzowe</h2>
 <p>Dla macierzy (tablic dwuwymiarowych), <code>dot</code> wykonuje standardowe mnożenie macierzowe.</p>
-<div id="75d3e31a" class="cell" data-execution_count="2">
+<div id="f42fed0f" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Mnożenie macierzowe</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -809,10 +815,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="mnożenie-macierz-wektor" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="mnożenie-macierz-wektor"><span class="header-section-number">13.3</span> Mnożenie macierz-wektor</h2>
+<section id="mnożenie-macierz-wektor" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="mnożenie-macierz-wektor"><span class="header-section-number">14.3</span> Mnożenie macierz-wektor</h2>
 <p>Możemy również mnożyć macierz przez wektor:</p>
-<div id="df9b1827" class="cell" data-execution_count="3">
+<div id="b83ea02d" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Mnożenie macierz-wektor</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -824,10 +830,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="rozwiązywanie-układów-równań-liniowych" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="rozwiązywanie-układów-równań-liniowych"><span class="header-section-number">13.4</span> Rozwiązywanie układów równań liniowych</h2>
+<section id="rozwiązywanie-układów-równań-liniowych" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="rozwiązywanie-układów-równań-liniowych"><span class="header-section-number">14.4</span> Rozwiązywanie układów równań liniowych</h2>
 <p>Funkcja <code>numpy.linalg.solve</code> rozwiązuje układy równań liniowych postaci Ax = b:</p>
-<div id="9b8c3510" class="cell" data-execution_count="4">
+<div id="b806bcf8" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozwiązywanie układu równań liniowych</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">2</span>]])</span>
@@ -845,10 +851,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="wyznacznik-macierzy" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="wyznacznik-macierzy"><span class="header-section-number">13.5</span> Wyznacznik macierzy</h2>
+<section id="wyznacznik-macierzy" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="wyznacznik-macierzy"><span class="header-section-number">14.5</span> Wyznacznik macierzy</h2>
 <p>Funkcja <code>numpy.linalg.det</code> oblicza wyznacznik macierzy:</p>
-<div id="668b89cc" class="cell" data-execution_count="5">
+<div id="ecbdfc56" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie wyznacznika</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -859,10 +865,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="wartości-i-wektory-własne" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="wartości-i-wektory-własne"><span class="header-section-number">13.6</span> Wartości i wektory własne</h2>
+<section id="wartości-i-wektory-własne" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="wartości-i-wektory-własne"><span class="header-section-number">14.6</span> Wartości i wektory własne</h2>
 <p>Funkcja <code>numpy.linalg.eig</code> oblicza wartości i wektory własne macierzy:</p>
-<div id="37a4b2fa" class="cell" data-execution_count="6">
+<div id="e187b393" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie wartości i wektorów własnych</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">1</span>]])</span>
@@ -892,10 +898,10 @@ A * v = [1.41421356 1.41421356]
 </div>
 </div>
 </section>
-<section id="rozkład-wartości-osobliwych-svd" class="level2" data-number="13.7">
-<h2 data-number="13.7" class="anchored" data-anchor-id="rozkład-wartości-osobliwych-svd"><span class="header-section-number">13.7</span> Rozkład wartości osobliwych (SVD)</h2>
+<section id="rozkład-wartości-osobliwych-svd" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="rozkład-wartości-osobliwych-svd"><span class="header-section-number">14.7</span> Rozkład wartości osobliwych (SVD)</h2>
 <p>Rozkład SVD jest potężnym narzędziem w analizie danych:</p>
-<div id="9cf3508c" class="cell" data-execution_count="7">
+<div id="5b840065" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozkład SVD</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>]])</span>
@@ -928,10 +934,10 @@ Rekonstruowana macierz A:
 </div>
 </div>
 </section>
-<section id="norma-macierzywektora" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="norma-macierzywektora"><span class="header-section-number">13.8</span> Norma macierzy/wektora</h2>
+<section id="norma-macierzywektora" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="norma-macierzywektora"><span class="header-section-number">14.8</span> Norma macierzy/wektora</h2>
 <p>NumPy oferuje różne rodzaje norm:</p>
-<div id="c3bb48d3" class="cell" data-execution_count="8">
+<div id="fcdc5074" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Różne normy</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -949,10 +955,10 @@ Norma macierzowa Frobeniusa: 5.477225575051661</code></pre>
 </div>
 </div>
 </section>
-<section id="macierz-odwrotna" class="level2" data-number="13.9">
-<h2 data-number="13.9" class="anchored" data-anchor-id="macierz-odwrotna"><span class="header-section-number">13.9</span> Macierz odwrotna</h2>
+<section id="macierz-odwrotna" class="level2" data-number="14.9">
+<h2 data-number="14.9" class="anchored" data-anchor-id="macierz-odwrotna"><span class="header-section-number">14.9</span> Macierz odwrotna</h2>
 <p>Funkcja <code>numpy.linalg.inv</code> oblicza macierz odwrotną:</p>
-<div id="5efd9ad6" class="cell" data-execution_count="9">
+<div id="30f210ac" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Macierz odwrotna</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -973,10 +979,10 @@ A * A^(-1):
 </div>
 </div>
 </section>
-<section id="funkcja-numpy.inner---iloczyn-wewnętrzny" class="level2" data-number="13.10">
-<h2 data-number="13.10" class="anchored" data-anchor-id="funkcja-numpy.inner---iloczyn-wewnętrzny"><span class="header-section-number">13.10</span> Funkcja <code>numpy.inner</code> - iloczyn wewnętrzny</h2>
+<section id="funkcja-numpy.inner---iloczyn-wewnętrzny" class="level2" data-number="14.10">
+<h2 data-number="14.10" class="anchored" data-anchor-id="funkcja-numpy.inner---iloczyn-wewnętrzny"><span class="header-section-number">14.10</span> Funkcja <code>numpy.inner</code> - iloczyn wewnętrzny</h2>
 <p>Funkcja <code>inner</code> oblicza iloczyn wewnętrzny dwóch tablic:</p>
-<div id="3de3ffe9" class="cell" data-execution_count="10">
+<div id="4140763c" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn wewnętrzny</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
@@ -997,10 +1003,10 @@ A * A^(-1):
 </div>
 </div>
 </section>
-<section id="funkcja-numpy.outer---iloczyn-zewnętrzny" class="level2" data-number="13.11">
-<h2 data-number="13.11" class="anchored" data-anchor-id="funkcja-numpy.outer---iloczyn-zewnętrzny"><span class="header-section-number">13.11</span> Funkcja <code>numpy.outer</code> - iloczyn zewnętrzny</h2>
+<section id="funkcja-numpy.outer---iloczyn-zewnętrzny" class="level2" data-number="14.11">
+<h2 data-number="14.11" class="anchored" data-anchor-id="funkcja-numpy.outer---iloczyn-zewnętrzny"><span class="header-section-number">14.11</span> Funkcja <code>numpy.outer</code> - iloczyn zewnętrzny</h2>
 <p>Funkcja <code>outer</code> oblicza iloczyn zewnętrzny dwóch wektorów:</p>
-<div id="8565049f" class="cell" data-execution_count="11">
+<div id="d6395783" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Iloczyn zewnętrzny</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
@@ -1018,10 +1024,10 @@ A * A^(-1):
 </div>
 </div>
 </section>
-<section id="funkcja-numpy.matmul---mnożenie-macierzowe" class="level2" data-number="13.12">
-<h2 data-number="13.12" class="anchored" data-anchor-id="funkcja-numpy.matmul---mnożenie-macierzowe"><span class="header-section-number">13.12</span> Funkcja <code>numpy.matmul</code> - mnożenie macierzowe</h2>
+<section id="funkcja-numpy.matmul---mnożenie-macierzowe" class="level2" data-number="14.12">
+<h2 data-number="14.12" class="anchored" data-anchor-id="funkcja-numpy.matmul---mnożenie-macierzowe"><span class="header-section-number">14.12</span> Funkcja <code>numpy.matmul</code> - mnożenie macierzowe</h2>
 <p>Funkcja <code>matmul</code> jest podobna do <code>dot</code>, ale ma nieco inne zachowanie dla tablic o wymiarach większych niż 2:</p>
-<div id="2b1c5062" class="cell" data-execution_count="12">
+<div id="41322b56" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Porównanie dot i matmul</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
@@ -1467,12 +1473,12 @@ Wynik matmul:
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./numpy-strings.html" class="pagination-link" aria-label="Operacje na stringach">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operacje na stringach</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./numpy-warunki.html" class="pagination-link" aria-label="Filtrowanie zaawansowane">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Filtrowanie zaawansowane</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
