@@ -1,0 +1,20 @@
+{
+  "hash": "d477290ec67280d3eb83efee90e0892f",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Typy danych\n\n::: {.content-visible when-format=\"html\"}\n\n<https://numpy.org/doc/stable/reference/arrays.scalars.html>\n  \n<https://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes-constructing>\n\n:::\n\n|||\n|---|---|\n| Typy całkowitoliczbowe | `int`,`int8`,`int16`,`int32`,`int64` |\n| Typy całkowitoliczbowe (bez znaku) | `uint`,`uint8`,`uint16`,`uint32`,`uint64` |\n| Typ logiczny | `bool` |\n| Typy zmiennoprzecinkowe | `float`, `float16`, `float32`, `float64`, `float128` |\n| Typy zmiennoprzecinkowe zespolone | `complex`, `complex64`, `complex128`, `complex256` |\n| Napis | `str` |\n\n::: {#ef41d92f .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n\ntab = np.array([[2, -3], [4, -8]])\nprint(tab)\ntab2 = np.array([[2, -3], [4, -8]], dtype=int)\nprint(tab2)\ntab3 = np.array([[2, -3], [4, -8]], dtype=float)\nprint(tab3)\ntab4 = np.array([[2, -3], [4, -8]], dtype=complex)\nprint(tab4)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[[ 2 -3]\n [ 4 -8]]\n[[ 2 -3]\n [ 4 -8]]\n[[ 2. -3.]\n [ 4. -8.]]\n[[ 2.+0.j -3.+0.j]\n [ 4.+0.j -8.+0.j]]\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "numpy-typydanych_files\\figure-epub"
+    ],
+    "filters": [],
+    "engineDependencies": {
+      "jupyter": [
+        {
+          "jsWidgets": false,
+          "jupyterWidgets": false,
+          "htmlLibraries": []
+        }
+      ]
+    }
+  }
+}

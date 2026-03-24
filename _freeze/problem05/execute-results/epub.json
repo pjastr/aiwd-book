@@ -1,0 +1,20 @@
+{
+  "hash": "a1b3c9dc07c7115047c959844584a600",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Problem #5\n\nPliki są dostępne tutaj <https://github.com/pjastr/aiwd-book/tree/main/dataset>\n\nCel: szeregi czasowe.\n\n::: {#54c083ee .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndf = pd.read_csv('dataset/sprzedaz2.csv', sep=';')\ndf['Data'] = pd.to_datetime(df['Data'], format='%d-%m-%Y')\ndf = df.sort_values('Data')\n\nplt.figure(figsize=(10, 6))\nplt.barh(\n    df['Data'].dt.strftime('%d-%m-%Y'),\n    df['Liczba sprzedanych sztuk'],\n    color='skyblue',\n    edgecolor='gray'\n)\n\nplt.xlabel('Liczba sprzedanych sztuk', fontsize=12)\nplt.ylabel('Data', fontsize=12)\nplt.title('Sprzedaż produktów w wybrane dni', fontsize=14, pad=15)\n\nplt.xticks(fontsize=10)\nplt.yticks(fontsize=10)\nplt.grid(axis='x', linestyle='--', alpha=0.5)\n\nplt.tight_layout()\nplt.show()\n\n```\n\n::: {.cell-output .cell-output-display}\n![](problem05_files/figure-epub/cell-2-output-1.png){}\n:::\n:::\n\n\n::: {#85174218 .cell execution_count=2}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\n\ndf = pd.read_csv('dataset/sprzedaz2.csv', sep=';')\ndf['Data'] = pd.to_datetime(df['Data'], format='%d-%m-%Y')\n\nplt.figure(figsize=(10, 6))\nplt.barh(\n    df['Data'],\n    df['Liczba sprzedanych sztuk'],\n    color='skyblue',\n    edgecolor='gray'\n)\nplt.xlabel('Liczba sprzedanych sztuk', fontsize=12)\nplt.ylabel('Data', fontsize=12)\nplt.title('Sprzedaż produktów w wybrane dni', fontsize=14, pad=15)\n\nax = plt.gca()\nax.yaxis_date()\nax.yaxis.set_major_locator(mdates.AutoDateLocator())\nax.yaxis.set_major_formatter(mdates.DateFormatter('%d-%m-%Y'))\nplt.xticks(fontsize=10)\n\nplt.grid(axis='x', linestyle='--', alpha=0.5)\n\nplt.tight_layout()\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](problem05_files/figure-epub/cell-3-output-1.png){}\n:::\n:::\n\n\n",
+    "supporting": [
+      "problem05_files\\figure-epub"
+    ],
+    "filters": [],
+    "engineDependencies": {
+      "jupyter": [
+        {
+          "jsWidgets": false,
+          "jupyterWidgets": false,
+          "htmlLibraries": []
+        }
+      ]
+    }
+  }
+}

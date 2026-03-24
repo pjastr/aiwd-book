@@ -1,0 +1,20 @@
+{
+  "hash": "1adf3d8d917f136dcb62dd42bc898c4d",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Matplotlib - kolory\n\n* <https://matplotlib.org/stable/gallery/color/named_colors.html>\n* <https://pl.wikipedia.org/wiki/Lista_kolor%C3%B3w>\n\n![](k1.png)\n\n![](k2.png)\n\n![](k3.png)\n\n::: {#47026201 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.random.rand(50)\ny = np.random.rand(50)\nz = np.random.rand(50)\nplt.scatter(x, y, c=z, cmap='viridis')  # <1>\nplt.colorbar()  # <2>\nplt.xlabel('Oś X')\nplt.ylabel('Oś Y')\nplt.title('Mapa kolorów dla wykresu punktowego')\nplt.show(block=True)\n```\n\n::: {.cell-output .cell-output-display}\n![](matplotlib-kolory_files/figure-epub/cell-2-output-1.png){}\n:::\n:::\n\n\n1. `plt.scatter(x, y, c=z, cmap='viridis')`: ta linia tworzy wykres punktowy (`scatter plot`) z danymi `x`, `y` i `z`. `x` i `y` to dane, które będą wyświetlane na osi X i Y, a `z` to dane, które będą używane do stworzenia mapy kolorów. Argument `cmap='viridis'` określa mapę kolorów, która będzie użyta do przypisania kolorów do wartości numerycznych.\n2. `plt.colorbar()`: ta linia dodaje pasek kolorów do wykresu punktowego. Pasek kolorów wskazuje, które kolory odpowiadają wartościom numerycznym na mapie kolorów.\n\nMapy kolorów\n\nLista wbudowanych map kolorów: <https://matplotlib.org/stable/tutorials/colors/colormaps.html>\n\n![](km1.png)\n\n![](km2.png)\n\n![](km3.png)\n\n![](km4.png)\n\n![](km5.png)\n\n![](km6.png)\n\n![](km7.png)\n\n::: {#33b27290 .cell execution_count=2}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.colors import Normalize\n\n# Przykładowe dane\nx = np.random.rand(50)\ny = np.random.rand(50)\nz = np.random.rand(50) * 100\n\n# Utworzenie mapy kolorów\nnorm = Normalize(vmin=0, vmax=100)\ncmap = plt.cm.viridis\n\n# Tworzenie wykresu punktowego z mapą kolorów\nplt.scatter(x, y, c=z, cmap=cmap, norm=norm)\nplt.colorbar()\n\n# Dodanie etykiet osi\nplt.xlabel('Oś X')\nplt.ylabel('Oś Y')\nplt.title('Mapa kolorów dla wykresu punktowego')\n\n# Wyświetlenie wykresu\nplt.show(block=True)\n\n```\n\n::: {.cell-output .cell-output-display}\n![](matplotlib-kolory_files/figure-epub/cell-3-output-1.png){}\n:::\n:::\n\n\n",
+    "supporting": [
+      "matplotlib-kolory_files\\figure-epub"
+    ],
+    "filters": [],
+    "engineDependencies": {
+      "jupyter": [
+        {
+          "jsWidgets": false,
+          "jupyterWidgets": false,
+          "htmlLibraries": []
+        }
+      ]
+    }
+  }
+}

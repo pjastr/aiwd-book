@@ -1,0 +1,20 @@
+{
+  "hash": "a8763a68945cbb26b205c1fbda72dbbe",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Matplotlib - zapis\n\n1. PNG (Portable Network Graphics) - plik rasterowy, popularny format do zapisywania obrazów w Internecie. \n2. JPEG (Joint Photographic Experts Group) - plik rasterowy, popularny format do zapisywania obrazów fotograficznych. \n3. SVG (Scalable Vector Graphics) - plik wektorowy, dobrze skalujący się i zachowujący jakość na różnych rozdzielczościach. \n4. PDF (Portable Document Format) - format dokumentów wektorowych, popularny w druku i przeglądaniu dokumentów. \n5. EPS (Encapsulated PostScript) - plik wektorowy, często używany w publikacjach naukowych i materiałach drukowanych. \n6. TIFF (Tagged Image File Format) - plik rasterowy, popularny w profesjonalnym druku i grafice. \n7. WebP to nowoczesny format obrazów opracowany przez Google, który oferuje lepszą kompresję oraz niższe straty jakości w porównaniu do popularnych formatów JPEG i PNG, co przyczynia się do szybszego ładowania stron internetowych i oszczędności transferu danych.\n\n::: {#81e41db5 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.arange(0, 10)\ny = x ^ 2\n# Labeling the Axes and Title\nplt.title(\"Graph Drawing\")\nplt.xlabel(\"Time\")\nplt.ylabel(\"Distance\")\n\n# Formatting the line colors\nplt.plot(x, y, 'r')\n\n# Formatting the line type\nplt.plot(x, y, '>')\n\n# save in pdf formats\nplt.savefig('timevsdist.pdf', format='pdf')\n```\n\n::: {.cell-output .cell-output-display}\n![](matplotlib-zapis_files/figure-epub/cell-2-output-1.png){}\n:::\n:::\n\n\n![](m6.png)\n\n",
+    "supporting": [
+      "matplotlib-zapis_files\\figure-epub"
+    ],
+    "filters": [],
+    "engineDependencies": {
+      "jupyter": [
+        {
+          "jsWidgets": false,
+          "jupyterWidgets": false,
+          "htmlLibraries": []
+        }
+      ]
+    }
+  }
+}

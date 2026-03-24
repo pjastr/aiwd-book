@@ -76,7 +76,7 @@ book:
       - problem03.qmd
       - problem04.qmd
       - problem05.qmd
-  downloads: pdf
+  downloads: [pdf, epub]
   repo-url: https://github.com/pjastr/aiwd-book
   repo-actions: [issue]
 
@@ -94,7 +94,10 @@ format:
     header-includes: |
       \titlehead{\includegraphics[width=6in]{aiwd.jpg}}
     keep-tex: true
-
+  epub:
+    lang: pl
+    cover-image: aiwd.jpg
+    toc: true
 
 
 
