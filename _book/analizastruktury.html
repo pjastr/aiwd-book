@@ -854,7 +854,7 @@ window.Quarto = {
 <h3 data-number="25.1.1" class="anchored" data-anchor-id="średnia-arytmetyczna"><span class="header-section-number">25.1.1</span> Średnia arytmetyczna</h3>
 <p><span class="math display">\[\overline{x} = \frac{1}{n} \sum_{i=1}^n x_i\]</span></p>
 <p>Interpretacja średniej arytmetycznej polega na rozumieniu jej jako reprezentacji “środkowego” lub “typowego” poziomu cechy badanej zbiorowości. Średnia daje ogólne wyobrażenie o danych, ale może być myląca w przypadku obecności skrajnych wartości (outlierów), które mogą znacząco wpływać na jej wartość. Przydatna jest w wielu dziedzinach, od ekonomii po nauki społeczne, jako sposób na podsumowanie danych i porównanie różnych grup lub zestawów danych. Warto pamiętać, że średnia nie zawsze jest najlepszym wyborem dla skośnych rozkładów i może nie odzwierciedlać adekwatnie rozkładu danych, zwłaszcza w obecności skrajnych wartości.</p>
-<div id="175954a6" class="cell" data-execution_count="1">
+<div id="0f903a68" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane jako seria Pandas</span></span>
@@ -877,7 +877,7 @@ window.Quarto = {
 <li>dla cechy skokowej jest to wartość cechy występująca najczęściej.</li>
 <li>dla cechy ciągłej to wartość cechy, wokół której oscyluje najwięcej pomiarów (argument, dla którego gęstość prawdopodobieństwa przyjmuje wartość największą)</li>
 </ul>
-<div id="15a9dea5" class="cell" data-execution_count="2">
+<div id="13df6270" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane dla zmiennej skokowej</span></span>
@@ -894,7 +894,7 @@ window.Quarto = {
 <p><strong>Uwagi:</strong></p>
 <ul>
 <li>nie zawsze można ją określić dokładnie.</li>
-<li>wyznaczenie dominanty ma sens kiedy rozkład jest jednomodalny (jednostki mają jeden punkt skupienia), liczenie jej dla rozkładów wielomodalnych jest błędem.</li>
+<li>wyznaczenie dominanty ma sens kiedy rozkład jest jednomodalny (jednostki mają jeden punkt skupienia), w przypadku rozkładów wielomodalnych dominanta traci użyteczność jako miara przeciętna.</li>
 <li>nie jest wrażliwa na skrajne wartości jak średnia arytmetyczna.</li>
 <li>w przypadku rozkładu symetrycznego dominanta równa się średniej</li>
 </ul>
@@ -914,7 +914,7 @@ window.Quarto = {
 </ul>
 <p>Uwaga: częstym błędem jest mylenie wartości cechy z jej pozycją.</p>
 <p><strong>Kod</strong></p>
-<div id="4b90eaa5" class="cell" data-execution_count="3">
+<div id="6af881e9" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane w DataFrame</span></span>
@@ -937,7 +937,7 @@ dtype: float64</code></pre>
 </div>
 <p><strong>Interpretacja mediany:</strong></p>
 <ul>
-<li>przynajmniej połowa jednostek jest mniejsza lub równa medianie.</li>
+<li>przynajmniej połowa jednostek ma wartość cechy mniejszą lub równą medianie.</li>
 <li>mediana jest nieczuła na wartości ekstremalne.</li>
 </ul>
 </section>
@@ -956,7 +956,7 @@ dtype: float64</code></pre>
 <ul>
 <li>symbole: <span class="math inline">\(Q_1, Q_2, Q_3\)</span></li>
 </ul>
-<div id="268adeb5" class="cell" data-execution_count="4">
+<div id="aeac8cf6" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane jako seria Pandas</span></span>
@@ -1002,7 +1002,7 @@ Trzeci kwartyl (Q3): 77.5</code></pre>
 <li>inaczej empiryczny obszar zmienności, amplituda wahań.</li>
 <li>różnica między wartością maksymalną a wartością minimalną.</li>
 </ul>
-<div id="cd0256fe" class="cell" data-execution_count="5">
+<div id="39554dff" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane jako seria Pandas</span></span>
@@ -1029,7 +1029,7 @@ Różnica między maksimum a minimum: 90</code></pre>
 <h3 data-number="25.2.2" class="anchored" data-anchor-id="rozstęp-międzykwartylowy"><span class="header-section-number">25.2.2</span> Rozstęp międzykwartylowy</h3>
 <ul>
 <li>symbol <span class="math inline">\(R_Q=Q_3-Q_1\)</span></li>
-<li>różnica pomiędzy kwartyle trzecim a kwartylem pierwszym.</li>
+<li>różnica pomiędzy kwartylem trzecim a kwartylem pierwszym.</li>
 <li>mierzy zakres 50% środkowych jednostek.</li>
 </ul>
 </section>
@@ -1053,7 +1053,7 @@ Różnica między maksimum a minimum: 90</code></pre>
 <ul>
 <li>wzór: <span class="math inline">\(s=\sqrt{s^2}\)</span></li>
 </ul>
-<div id="a1758013" class="cell" data-execution_count="6">
+<div id="c8667115" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane jako seria Pandas</span></span>
@@ -1074,9 +1074,9 @@ Odchylenie standardowe: 30.276503540974915</code></pre>
 </div>
 <p>W praktyce często zakłada się, że dane mają rozkład normalny. Założenie to nigdy nie jest całkowicie spełnione. Rozkład normalny ma bowiem niezerową gęstość prawdopodobieństwa dla każdej wartości ze zbioru liczb rzeczywistych, a w realnym świecie wartości zmiennych losowych są zawsze ograniczone, na przykład nie istnieją ludzie o ujemnym wzroście. Bardzo często jednak założenie to jest spełnione z wystarczająco dobrym przybliżeniem. Im lepiej jest ono uzasadnione, tym bliższe prawdy mogą być poniższe stwierdzenia:</p>
 <ul>
-<li>68% wartości cechy leży w odległości <span class="math inline">\(\leqslant s\)</span> od wartości oczekiwanej</li>
-<li>95,5% wartości cechy leży w odległości <span class="math inline">\(\leqslant 2s\)</span> od wartości oczekiwanej</li>
-<li>99,7% wartości cechy leży w odległości <span class="math inline">\(\leqslant 3s\)</span> od wartości oczekiwanej.</li>
+<li>68% wartości cechy leży w odległości <span class="math inline">\(\leqslant s\)</span> od średniej</li>
+<li>95% wartości cechy leży w odległości <span class="math inline">\(\leqslant 2s\)</span> od średniej</li>
+<li>99,7% wartości cechy leży w odległości <span class="math inline">\(\leqslant 3s\)</span> od średniej.</li>
 </ul>
 <p><a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule" class="uri">https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule</a></p>
 </section>
@@ -1101,13 +1101,13 @@ Odchylenie standardowe: 30.276503540974915</code></pre>
 </ul>
 <p><strong>Interpretacja kurtozy</strong></p>
 <ul>
-<li><span class="math inline">\(K=3\)</span> - rozkłada ma taką koncentrację jak rozkład normalny</li>
+<li><span class="math inline">\(K=3\)</span> - rozkład ma taką koncentrację jak rozkład normalny</li>
 <li><span class="math inline">\(K&gt;3\)</span> - koncentracja silniejsza</li>
 <li><span class="math inline">\(K&lt;3\)</span> - koncentracja słabsza</li>
 </ul>
 <p>Czasem bada się współczynnik ekcesu <span class="math inline">\(K’=K-3\)</span>.</p>
 <p>Wysoka kurtoza oznacza większą liczbę wartości ekstremalnych (skrajnych), natomiast niska kurtoza wskazuje na rozkład bardziej płaski niż normalny.</p>
-<div id="80c781c7" class="cell" data-execution_count="7">
+<div id="7e910264" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykładowe dane w serii</span></span>
@@ -1238,9 +1238,6 @@ Kurtoza: -1.2000000000000002</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie sumy tylko dla kolumn liczbowych</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>numeric_sum <span class="op">=</span> df.<span class="bu">sum</span>(numeric_only<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numeric_sum)</span></code></pre></div><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Ćwiczenia:</strong> (<code>ex11.py</code> - <code>ex20.py</code>)</p>
-<p>Sprawdź, dla których plików wygodnie jest liczenie odpowiednich charakerystyk.</p>
-<p><a href="https://github.com/pjastr/AIWD-files" class="uri">https://github.com/pjastr/AIWD-files</a></p>
 
 
 </section>

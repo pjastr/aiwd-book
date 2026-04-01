@@ -228,7 +228,7 @@
 
 \title{Analiza i wizualizacja danych}
 \author{Piotr Jastrzębski}
-\date{2026-03-24}
+\date{2026-04-01}
 \begin{document}
 \maketitle
 
@@ -6372,8 +6372,8 @@ Moda dla zmiennej skokowej: [4]
   nie zawsze można ją określić dokładnie.
 \item
   wyznaczenie dominanty ma sens kiedy rozkład jest jednomodalny
-  (jednostki mają jeden punkt skupienia), liczenie jej dla rozkładów
-  wielomodalnych jest błędem.
+  (jednostki mają jeden punkt skupienia), w przypadku rozkładów
+  wielomodalnych dominanta traci użyteczność jako miara przeciętna.
 \item
   nie jest wrażliwa na skrajne wartości jak średnia arytmetyczna.
 \item
@@ -6442,7 +6442,8 @@ dtype: float64
 \begin{itemize}
 \tightlist
 \item
-  przynajmniej połowa jednostek jest mniejsza lub równa medianie.
+  przynajmniej połowa jednostek ma wartość cechy mniejszą lub równą
+  medianie.
 \item
   mediana jest nieczuła na wartości ekstremalne.
 \end{itemize}
@@ -6580,7 +6581,7 @@ międzykwartylowy}\label{rozstux119p-miux119dzykwartylowy}
 \item
   symbol \(R_Q=Q_3-Q_1\)
 \item
-  różnica pomiędzy kwartyle trzecim a kwartylem pierwszym.
+  różnica pomiędzy kwartylem trzecim a kwartylem pierwszym.
 \item
   mierzy zakres 50\% środkowych jednostek.
 \end{itemize}
@@ -6658,14 +6659,11 @@ być poniższe stwierdzenia:
 \begin{itemize}
 \tightlist
 \item
-  68\% wartości cechy leży w odległości \(\leqslant s\) od wartości
-  oczekiwanej
+  68\% wartości cechy leży w odległości \(\leqslant s\) od średniej
 \item
-  95,5\% wartości cechy leży w odległości \(\leqslant 2s\) od wartości
-  oczekiwanej
+  95\% wartości cechy leży w odległości \(\leqslant 2s\) od średniej
 \item
-  99,7\% wartości cechy leży w odległości \(\leqslant 3s\) od wartości
-  oczekiwanej.
+  99,7\% wartości cechy leży w odległości \(\leqslant 3s\) od średniej.
 \end{itemize}
 
 \url{https://en.wikipedia.org/wiki/68\%E2\%80\%9395\%E2\%80\%9399.7_rule}
@@ -6705,7 +6703,7 @@ Współczynnik kurtozy
 \begin{itemize}
 \tightlist
 \item
-  \(K=3\) - rozkłada ma taką koncentrację jak rozkład normalny
+  \(K=3\) - rozkład ma taką koncentrację jak rozkład normalny
 \item
   \(K>3\) - koncentracja silniejsza
 \item
@@ -6842,13 +6840,6 @@ liczbowe, pomijając kategoryczne.
 \BuiltInTok{print}\NormalTok{(numeric\_sum)}
 \end{Highlighting}
 \end{Shaded}
-
-\textbf{Ćwiczenia:} (\texttt{ex11.py} - \texttt{ex20.py})
-
-Sprawdź, dla których plików wygodnie jest liczenie odpowiednich
-charakerystyk.
-
-\url{https://github.com/pjastr/AIWD-files}
 
 \part{Matplotlib}
 
