@@ -38,6 +38,7 @@ book:
       - pandas-sortowanie.qmd
       - pandas-szeregiczasowe.qmd
       - pandas-danetekstowe.qmd
+      - pandas-re.qmd
       - pandas-inne.qmd
     - part: "Analia struktury danych"
       chapters:

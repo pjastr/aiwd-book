@@ -228,7 +228,7 @@
 
 \title{Analiza i wizualizacja danych}
 \author{Piotr Jastrzębski}
-\date{2026-04-01}
+\date{2026-04-15}
 \begin{document}
 \maketitle
 
@@ -5074,6 +5074,522 @@ Zwykle operacje wektorowe są szybsze:
 0.13149404525756836 0.4021432399749756
 \end{verbatim}
 
+\chapter{Pandas - wyrażenia
+regularne}\label{pandas---wyraux17cenia-regularne}
+
+\section{Czym są wyrażenia
+regularne?}\label{czym-sux105-wyraux17cenia-regularne}
+
+Wyrażenia regularne (regex) to wzorce tekstowe służące do wyszukiwania,
+dopasowywania i manipulowania ciągami znaków. W Pythonie obsługuje je
+wbudowany moduł \texttt{re}, a Pandas integruje je bezpośrednio w
+operacjach na kolumnach tekstowych przez akcesor \texttt{.str}.
+
+Przed wyrażeniem regularnym zawsze stosujemy prefiks \texttt{r} (raw
+string), aby backslash \texttt{\textbackslash{}} nie był interpretowany
+jako znak ucieczki Pythona.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ re}
+
+\NormalTok{text }\OperatorTok{=} \StringTok{"Contact us at info@example.com or sales@example.com"}
+\NormalTok{emails }\OperatorTok{=}\NormalTok{ re.findall(}\VerbatimStringTok{r"}\PreprocessorTok{[a{-}zA{-}Z0{-}9.\_\%+{-}]}\OperatorTok{+}\VerbatimStringTok{@}\PreprocessorTok{[a{-}zA{-}Z0{-}9.{-}]}\OperatorTok{+}\CharTok{\textbackslash{}.}\PreprocessorTok{[a{-}zA{-}Z]}\OperatorTok{\{2,\}}\VerbatimStringTok{"}\NormalTok{, text)}
+\BuiltInTok{print}\NormalTok{(emails)}
+\CommentTok{\# [\textquotesingle{}info@example.com\textquotesingle{}, \textquotesingle{}sales@example.com\textquotesingle{}]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+['info@example.com', 'sales@example.com']
+\end{verbatim}
+
+\section{Podstawowa składnia regex}\label{podstawowa-skux142adnia-regex}
+
+Oto najważniejsze elementy składni wyrażeń regularnych:
+
+\textbf{Metaznaki:}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Metaznak & Znaczenie \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{.} & Dowolny znak (oprócz \texttt{\textbackslash{}n}) \\
+\texttt{\^{}} & Początek ciągu \\
+\texttt{\$} & Koniec ciągu \\
+\texttt{*} & 0 lub więcej powtórzeń \\
+\texttt{+} & 1 lub więcej powtórzeń \\
+\texttt{?} & 0 lub 1 powtórzenie \\
+\texttt{\textbackslash{}\textbar{}} & Alternatywa (lub) \\
+\texttt{()} & Grupa przechwytująca \\
+\texttt{{[}{]}} & Zbiór znaków \\
+\texttt{\{\}} & Dokładna liczba powtórzeń \\
+\end{longtable}
+}
+
+\textbf{Klasy znaków:}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Skrót & Znaczenie & Odpowiednik ASCII \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{\textbackslash{}d} & Cyfra & \texttt{{[}0-9{]}} \\
+\texttt{\textbackslash{}D} & Nie-cyfra & \texttt{{[}\^{}0-9{]}} \\
+\texttt{\textbackslash{}w} & Znak „słowny'' &
+\texttt{{[}a-zA-Z0-9\_{]}} \\
+\texttt{\textbackslash{}W} & Nie-słowny &
+\texttt{{[}\^{}a-zA-Z0-9\_{]}} \\
+\texttt{\textbackslash{}s} & Biały znak &
+\texttt{{[}\ \textbackslash{}t\textbackslash{}n\textbackslash{}r\textbackslash{}f\textbackslash{}v{]}} \\
+\texttt{\textbackslash{}S} & Nie-biały znak &
+\texttt{{[}\^{}\ \textbackslash{}t\textbackslash{}n\textbackslash{}r\textbackslash{}f\textbackslash{}v{]}} \\
+\texttt{\textbackslash{}b} & Granica słowa & --- \\
+\end{longtable}
+}
+
+\textbf{Kwantyfikatory:}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Wzorzec & Znaczenie \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{a\{3\}} & Dokładnie 3 wystąpienia \texttt{a} \\
+\texttt{a\{2,5\}} & Od 2 do 5 wystąpień \texttt{a} \\
+\texttt{a\{2,\}} & Co najmniej 2 wystąpienia \texttt{a} \\
+\texttt{a*?} & 0 lub więcej (leniwie) \\
+\texttt{a+?} & 1 lub więcej (leniwie) \\
+\end{longtable}
+}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ re}
+
+\NormalTok{text }\OperatorTok{=} \StringTok{"\textless{}b\textgreater{}bold\textless{}/b\textgreater{} and \textless{}i\textgreater{}italic\textless{}/i\textgreater{}"}
+
+\CommentTok{\# zachłanne — dopasuje jak najwięcej}
+\NormalTok{greedy }\OperatorTok{=}\NormalTok{ re.findall(}\VerbatimStringTok{r"\textless{}}\DecValTok{.}\OperatorTok{+}\VerbatimStringTok{\textgreater{}"}\NormalTok{, text)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Zachłanne:"}\NormalTok{, greedy)}
+
+\CommentTok{\# leniwe — dopasuje jak najmniej}
+\NormalTok{lazy }\OperatorTok{=}\NormalTok{ re.findall(}\VerbatimStringTok{r"\textless{}}\DecValTok{.}\OperatorTok{+?}\VerbatimStringTok{\textgreater{}"}\NormalTok{, text)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Leniwe:"}\NormalTok{, lazy)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Zachłanne: ['<b>bold</b> and <i>italic</i>']
+Leniwe: ['<b>', '</b>', '<i>', '</i>']
+\end{verbatim}
+
+\section{\texorpdfstring{Kluczowe funkcje modułu
+\texttt{re}}{Kluczowe funkcje modułu re}}\label{kluczowe-funkcje-moduux142u-re}
+
+Oto tabela w języku Markdown wyjaśniająca kluczowe funkcje modułu
+\texttt{re}:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Funkcja
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Opis
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{\texttt{re.search()}} & Szuka pierwszego dopasowania w całym
+ciągu. Zwraca obiekt \texttt{Match} lub \texttt{None}. \\
+\textbf{\texttt{re.match()}} & Szuka dopasowania tylko na początku
+ciągu. \\
+\textbf{\texttt{re.findall()}} & Zwraca listę wszystkich dopasowań (jako
+ciągi znaków). \\
+\textbf{\texttt{re.finditer()}} & Jak \texttt{findall}, ale zwraca
+iterator obiektów \texttt{Match}. \\
+\textbf{\texttt{re.sub()}} & Zastępuje dopasowania nowym ciągiem lub
+wynikiem funkcji. \\
+\textbf{\texttt{re.split()}} & Dzieli ciąg wg wzorca (bardziej
+elastyczny niż \texttt{str.split()}). \\
+\textbf{\texttt{re.fullmatch()}} & Sprawdza, czy cały ciąg pasuje do
+wzorca --- idealne do walidacji. \\
+\textbf{\texttt{re.compile()}} & Kompiluje wzorzec do wielokrotnego
+użytku --- przyspiesza działanie. \\
+\end{longtable}
+}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ re}
+
+\NormalTok{text }\OperatorTok{=} \StringTok{"Temperature is 36.6 degrees"}
+\NormalTok{match }\OperatorTok{=}\NormalTok{ re.search(}\VerbatimStringTok{r"}\DecValTok{\textbackslash{}d}\OperatorTok{+}\CharTok{\textbackslash{}.}\DecValTok{\textbackslash{}d}\OperatorTok{+}\VerbatimStringTok{"}\NormalTok{, text)}
+\ControlFlowTok{if}\NormalTok{ match:}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Znaleziono: }\SpecialCharTok{\{}\NormalTok{match}\SpecialCharTok{.}\NormalTok{group()}\SpecialCharTok{\}}\SpecialStringTok{ na pozycji }\SpecialCharTok{\{}\NormalTok{match}\SpecialCharTok{.}\NormalTok{span()}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+
+\NormalTok{log }\OperatorTok{=} \StringTok{"""}
+\StringTok{ERROR 2025{-}03{-}06 10:15:32 Connection timeout}
+\StringTok{INFO  2025{-}03{-}06 10:15:33 Retry attempt}
+\StringTok{ERROR 2025{-}03{-}06 10:15:35 Disk full}
+\StringTok{"""}
+\NormalTok{errors }\OperatorTok{=}\NormalTok{ re.findall(}\VerbatimStringTok{r"ERROR}\DecValTok{\textbackslash{}s}\OperatorTok{+}\DecValTok{\textbackslash{}S}\OperatorTok{+}\DecValTok{\textbackslash{}s}\OperatorTok{+}\DecValTok{\textbackslash{}S}\OperatorTok{+}\DecValTok{\textbackslash{}s}\OperatorTok{+}\KeywordTok{(}\DecValTok{.}\OperatorTok{+}\KeywordTok{)}\VerbatimStringTok{"}\NormalTok{, log)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Błędy:"}\NormalTok{, errors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Znaleziono: 36.6 na pozycji (15, 19)
+Błędy: ['Connection timeout', 'Disk full']
+\end{verbatim}
+
+\section{Grupy i odwołania}\label{grupy-i-odwoux142ania}
+
+Nawiasy okrągłe tworzą grupy --- umożliwiają wyodrębnianie fragmentów
+dopasowania. Grupy mogą być numerowane, nazwane
+(\texttt{(?P\textless{}name\textgreater{}...)}) lub nieprzechwytujące
+(\texttt{(?:...)}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ re}
+
+\CommentTok{\# Grupy numerowane}
+\NormalTok{text }\OperatorTok{=} \StringTok{"2025{-}03{-}06"}
+\NormalTok{match }\OperatorTok{=}\NormalTok{ re.search(}\VerbatimStringTok{r"}\KeywordTok{(}\DecValTok{\textbackslash{}d}\OperatorTok{\{4\}}\KeywordTok{)}\VerbatimStringTok{{-}}\KeywordTok{(}\DecValTok{\textbackslash{}d}\OperatorTok{\{2\}}\KeywordTok{)}\VerbatimStringTok{{-}}\KeywordTok{(}\DecValTok{\textbackslash{}d}\OperatorTok{\{2\}}\KeywordTok{)}\VerbatimStringTok{"}\NormalTok{, text)}
+\ControlFlowTok{if}\NormalTok{ match:}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Rok: }\SpecialCharTok{\{}\NormalTok{match}\SpecialCharTok{.}\NormalTok{group(}\DecValTok{1}\NormalTok{)}\SpecialCharTok{\}}\SpecialStringTok{, Miesiąc: }\SpecialCharTok{\{}\NormalTok{match}\SpecialCharTok{.}\NormalTok{group(}\DecValTok{2}\NormalTok{)}\SpecialCharTok{\}}\SpecialStringTok{, Dzień: }\SpecialCharTok{\{}\NormalTok{match}\SpecialCharTok{.}\NormalTok{group(}\DecValTok{3}\NormalTok{)}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+
+\CommentTok{\# Grupy nazwane}
+\NormalTok{pattern }\OperatorTok{=} \VerbatimStringTok{r"}\KeywordTok{(}\FunctionTok{?P\textless{}year\textgreater{}}\DecValTok{\textbackslash{}d}\OperatorTok{\{4\}}\KeywordTok{)}\VerbatimStringTok{{-}}\KeywordTok{(}\FunctionTok{?P\textless{}month\textgreater{}}\DecValTok{\textbackslash{}d}\OperatorTok{\{2\}}\KeywordTok{)}\VerbatimStringTok{{-}}\KeywordTok{(}\FunctionTok{?P\textless{}day\textgreater{}}\DecValTok{\textbackslash{}d}\OperatorTok{\{2\}}\KeywordTok{)}\VerbatimStringTok{"}
+\NormalTok{match }\OperatorTok{=}\NormalTok{ re.search(pattern, }\StringTok{"Meeting on 2025{-}03{-}06 at noon"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{ match:}
+    \BuiltInTok{print}\NormalTok{(match.groupdict())}
+
+\CommentTok{\# Grupa nieprzechwytująca}
+\NormalTok{result }\OperatorTok{=}\NormalTok{ re.findall(}\VerbatimStringTok{r"}\NormalTok{(?:}\VerbatimStringTok{https}\OperatorTok{?}\ControlFlowTok{|}\VerbatimStringTok{ftp}\NormalTok{)}\VerbatimStringTok{://}\DecValTok{\textbackslash{}S}\OperatorTok{+}\VerbatimStringTok{"}\NormalTok{, }\StringTok{"Visit https://example.com"}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Rok: 2025, Miesiąc: 03, Dzień: 06
+{'year': '2025', 'month': '03', 'day': '06'}
+['https://example.com']
+\end{verbatim}
+
+\section{Flagi}\label{flagi}
+
+Flagi modyfikują zachowanie wyrażeń regularnych:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Flaga & Skrót & Działanie \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{re.IGNORECASE} & \texttt{re.I} & Ignoruje wielkość liter \\
+\texttt{re.MULTILINE} & \texttt{re.M} & \texttt{\^{}}/\texttt{\$}
+dotyczą każdej linii \\
+\texttt{re.DOTALL} & \texttt{re.S} & \texttt{.} dopasowuje też
+\texttt{\textbackslash{}n} \\
+\texttt{re.VERBOSE} & \texttt{re.X} & Pozwala na komentarze we wzorcu \\
+\end{longtable}
+}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ re}
+
+\CommentTok{\# Łączenie flag operatorem |}
+\NormalTok{text }\OperatorTok{=} \StringTok{"First Line}\CharTok{\textbackslash{}n}\StringTok{Second Line}\CharTok{\textbackslash{}n}\StringTok{Third Line"}
+\NormalTok{matches }\OperatorTok{=}\NormalTok{ re.findall(}\VerbatimStringTok{r"}\DecValTok{\^{}\textbackslash{}w}\OperatorTok{+}\VerbatimStringTok{"}\NormalTok{, text, re.MULTILINE }\OperatorTok{|}\NormalTok{ re.IGNORECASE)}
+\BuiltInTok{print}\NormalTok{(matches)}
+
+\CommentTok{\# Flaga VERBOSE — czytelne wzorce z komentarzami}
+\NormalTok{email\_pattern }\OperatorTok{=}\NormalTok{ re.}\BuiltInTok{compile}\NormalTok{(}\VerbatimStringTok{r"""}
+\VerbatimStringTok{    }\DecValTok{\^{}}
+\VerbatimStringTok{    }\PreprocessorTok{[a{-}zA{-}Z0{-}9.\_\%+{-}]}\OperatorTok{+}\VerbatimStringTok{    }\CommentTok{\# nazwa użytkownika}
+\VerbatimStringTok{    @                     }\CommentTok{\# symbol @}
+\VerbatimStringTok{    }\PreprocessorTok{[a{-}zA{-}Z0{-}9.{-}]}\OperatorTok{+}\VerbatimStringTok{       }\CommentTok{\# nazwa domeny}
+\VerbatimStringTok{    }\CharTok{\textbackslash{}.}\VerbatimStringTok{                    }\CommentTok{\# kropka}
+\VerbatimStringTok{    }\PreprocessorTok{[a{-}zA{-}Z]}\OperatorTok{\{2,\}}\VerbatimStringTok{         }\CommentTok{\# rozszerzenie domeny}
+\VerbatimStringTok{    }\DecValTok{$}
+\VerbatimStringTok{"""}\NormalTok{, re.VERBOSE)}
+
+\BuiltInTok{print}\NormalTok{(email\_pattern.fullmatch(}\StringTok{"user@example.com"}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(email\_pattern.fullmatch(}\StringTok{"invalid@@mail"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+['First', 'Second', 'Third']
+<re.Match object; span=(0, 16), match='user@example.com'>
+None
+\end{verbatim}
+
+\section{Wyrażenia regularne w
+Pandas}\label{wyraux17cenia-regularne-w-pandas}
+
+Wiele metod akcesora \texttt{.str} w Pandas obsługuje wyrażenia
+regularne dzięki parametrowi \texttt{regex=True}. Pozwala to na
+wektorowe operacje regex na całych kolumnach.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\NormalTok{data }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}Text\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}  Hello World  \textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Pandas  Library43\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}   Data   Science  \textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+
+\CommentTok{\# Usunięcie znaków specjalnych (regex w str.replace)}
+\NormalTok{data[}\StringTok{\textquotesingle{}Clean\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ data[}\StringTok{\textquotesingle{}Text\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.strip().}\BuiltInTok{str}\NormalTok{.replace(}\VerbatimStringTok{r\textquotesingle{}}\PreprocessorTok{[\^{}}\DecValTok{\textbackslash{}w\textbackslash{}s}\PreprocessorTok{]}\VerbatimStringTok{\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{, regex}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(data)}
+
+\CommentTok{\# Usunięcie liczb}
+\NormalTok{data[}\StringTok{\textquotesingle{}NoDigits\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ data[}\StringTok{\textquotesingle{}Clean\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.replace(}\VerbatimStringTok{r\textquotesingle{}}\DecValTok{\textbackslash{}d}\OperatorTok{+}\VerbatimStringTok{\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{, regex}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                  Text              Clean
+0        Hello World          Hello World
+1    Pandas  Library43  Pandas  Library43
+2     Data   Science       Data   Science
+                  Text              Clean         NoDigits
+0        Hello World          Hello World      Hello World
+1    Pandas  Library43  Pandas  Library43  Pandas  Library
+2     Data   Science       Data   Science   Data   Science
+\end{verbatim}
+
+\section{\texorpdfstring{\texttt{str.contains()} --- filtrowanie z
+regex}{str.contains() --- filtrowanie z regex}}\label{str.contains-filtrowanie-z-regex}
+
+Metoda \texttt{str.contains()} pozwala filtrować wiersze na podstawie
+wzorca regex.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}email\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}jan@gmail.com\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}anna@wp.pl\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}piotr@firma.com\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}kasia@gmail.com\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}bad{-}email@@\textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+
+\CommentTok{\# Filtrowanie emaili z domeny gmail}
+\NormalTok{gmail\_users }\OperatorTok{=}\NormalTok{ df[df[}\StringTok{\textquotesingle{}email\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.contains(}\VerbatimStringTok{r\textquotesingle{}@gmail}\CharTok{\textbackslash{}.}\VerbatimStringTok{com}\DecValTok{$}\VerbatimStringTok{\textquotesingle{}}\NormalTok{, regex}\OperatorTok{=}\VariableTok{True}\NormalTok{)]}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Gmail:}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, gmail\_users)}
+
+\CommentTok{\# Walidacja formatu email}
+\NormalTok{df[}\StringTok{\textquotesingle{}valid\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}email\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.contains(}
+    \VerbatimStringTok{r\textquotesingle{}}\DecValTok{\^{}}\PreprocessorTok{[a{-}zA{-}Z0{-}9.\_\%+{-}]}\OperatorTok{+}\VerbatimStringTok{@}\PreprocessorTok{[a{-}zA{-}Z0{-}9.{-}]}\OperatorTok{+}\CharTok{\textbackslash{}.}\PreprocessorTok{[a{-}zA{-}Z]}\OperatorTok{\{2,\}}\DecValTok{$}\VerbatimStringTok{\textquotesingle{}}\NormalTok{, regex}\OperatorTok{=}\VariableTok{True}
+\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Walidacja:}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Gmail:
+              email
+0    jan@gmail.com
+3  kasia@gmail.com
+
+Walidacja:
+              email  valid
+0    jan@gmail.com   True
+1       anna@wp.pl   True
+2  piotr@firma.com   True
+3  kasia@gmail.com   True
+4      bad-email@@  False
+\end{verbatim}
+
+\section{\texorpdfstring{\texttt{str.extract()} --- wyodrębnianie
+grup}{str.extract() --- wyodrębnianie grup}}\label{str.extract-wyodrux119bnianie-grup}
+
+Metoda \texttt{str.extract()} wyodrębnia grupy przechwytujące z
+wyrażenia regularnego do osobnych kolumn.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}date\_str\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}2025{-}03{-}06\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2024{-}12{-}25\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2023{-}01{-}15\textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+
+\CommentTok{\# Wyodrębnianie roku, miesiąca i dnia do osobnych kolumn}
+\NormalTok{extracted }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}date\_str\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.extract(}\VerbatimStringTok{r\textquotesingle{}}\KeywordTok{(}\FunctionTok{?P\textless{}year\textgreater{}}\DecValTok{\textbackslash{}d}\OperatorTok{\{4\}}\KeywordTok{)}\VerbatimStringTok{{-}}\KeywordTok{(}\FunctionTok{?P\textless{}month\textgreater{}}\DecValTok{\textbackslash{}d}\OperatorTok{\{2\}}\KeywordTok{)}\VerbatimStringTok{{-}}\KeywordTok{(}\FunctionTok{?P\textless{}day\textgreater{}}\DecValTok{\textbackslash{}d}\OperatorTok{\{2\}}\KeywordTok{)}\VerbatimStringTok{\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(extracted)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   year month day
+0  2025    03  06
+1  2024    12  25
+2  2023    01  15
+\end{verbatim}
+
+\section{\texorpdfstring{\texttt{str.extractall()} --- wszystkie
+dopasowania}{str.extractall() --- wszystkie dopasowania}}\label{str.extractall-wszystkie-dopasowania}
+
+Metoda \texttt{str.extractall()} wyodrębnia \textbf{wszystkie}
+wystąpienia wzorca (nie tylko pierwsze).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}text\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Ceny: 19.99 PLN i 5.50 PLN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Koszt: 120.00 PLN\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Brak cen\textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+
+\CommentTok{\# Wyodrębnienie wszystkich kwot}
+\NormalTok{amounts }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}text\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.extractall(}\VerbatimStringTok{r\textquotesingle{}}\KeywordTok{(}\DecValTok{\textbackslash{}d}\OperatorTok{+}\CharTok{\textbackslash{}.}\DecValTok{\textbackslash{}d}\OperatorTok{\{2\}}\KeywordTok{)}\VerbatimStringTok{\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(amounts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              0
+  match        
+0 0       19.99
+  1        5.50
+1 0      120.00
+\end{verbatim}
+
+\section{\texorpdfstring{\texttt{str.replace()} z regex --- zamiana
+wzorców}{str.replace() z regex --- zamiana wzorców}}\label{str.replace-z-regex-zamiana-wzorcuxf3w}
+
+Parametr \texttt{regex=True} w \texttt{str.replace()} umożliwia zamiany
+oparte na wyrażeniach regularnych.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}phone\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}123{-}456{-}789\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}987 654 321\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}(48) 555{-}123{-}456\textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+
+\CommentTok{\# Usunięcie wszystkiego oprócz cyfr}
+\NormalTok{df[}\StringTok{\textquotesingle{}digits\_only\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}phone\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.replace(}\VerbatimStringTok{r\textquotesingle{}}\PreprocessorTok{[\^{}}\DecValTok{\textbackslash{}d}\PreprocessorTok{]}\VerbatimStringTok{\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{, regex}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              phone  digits_only
+0       123-456-789    123456789
+1       987 654 321    987654321
+2  (48) 555-123-456  48555123456
+\end{verbatim}
+
+\section{\texorpdfstring{\texttt{str.findall()} --- lista
+dopasowań}{str.findall() --- lista dopasowań}}\label{str.findall-lista-dopasowaux144}
+
+Metoda \texttt{str.findall()} zwraca listę wszystkich dopasowań w każdym
+wierszu.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}text\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Hashtags: \#python \#pandas \#regex\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}No tags here\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\#data is fun \#science\textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+
+\CommentTok{\# Wyodrębnienie hashtagów}
+\NormalTok{df[}\StringTok{\textquotesingle{}hashtags\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}text\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.findall(}\VerbatimStringTok{r\textquotesingle{}\#}\DecValTok{\textbackslash{}w}\OperatorTok{+}\VerbatimStringTok{\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                               text                    hashtags
+0  Hashtags: #python #pandas #regex  [#python, #pandas, #regex]
+1                      No tags here                          []
+2             #data is fun #science           [#data, #science]
+\end{verbatim}
+
+\section{Polskie znaki w regex}\label{polskie-znaki-w-regex}
+
+Praca z polskimi znakami wymaga jawnego uwzględnienia ich we wzorcach
+lub użycia klas Unicode.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ re}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}text\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Zażółć gęślą jaźń\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Hello World\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Łódź jest piękna\textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+
+\CommentTok{\# Sprawdzenie, które wiersze zawierają polskie znaki}
+\NormalTok{polish\_pattern }\OperatorTok{=} \VerbatimStringTok{r\textquotesingle{}}\PreprocessorTok{[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]}\VerbatimStringTok{\textquotesingle{}}
+\NormalTok{df[}\StringTok{\textquotesingle{}has\_polish\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}text\textquotesingle{}}\NormalTok{].}\BuiltInTok{str}\NormalTok{.contains(polish\_pattern, regex}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                text  has_polish
+0  Zażółć gęślą jaźń        True
+1        Hello World       False
+2   Łódź jest piękna        True
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ re}
+
+\CommentTok{\# Zamiana polskich znaków na łacińskie}
+\KeywordTok{def}\NormalTok{ zamien\_polskie(text):}
+\NormalTok{    mapping }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"ą"}\NormalTok{: }\StringTok{"a"}\NormalTok{, }\StringTok{"ć"}\NormalTok{: }\StringTok{"c"}\NormalTok{, }\StringTok{"ę"}\NormalTok{: }\StringTok{"e"}\NormalTok{, }\StringTok{"ł"}\NormalTok{: }\StringTok{"l"}\NormalTok{, }\StringTok{"ń"}\NormalTok{: }\StringTok{"n"}\NormalTok{,}
+        \StringTok{"ó"}\NormalTok{: }\StringTok{"o"}\NormalTok{, }\StringTok{"ś"}\NormalTok{: }\StringTok{"s"}\NormalTok{, }\StringTok{"ź"}\NormalTok{: }\StringTok{"z"}\NormalTok{, }\StringTok{"ż"}\NormalTok{: }\StringTok{"z"}\NormalTok{,}
+        \StringTok{"Ą"}\NormalTok{: }\StringTok{"A"}\NormalTok{, }\StringTok{"Ć"}\NormalTok{: }\StringTok{"C"}\NormalTok{, }\StringTok{"Ę"}\NormalTok{: }\StringTok{"E"}\NormalTok{, }\StringTok{"Ł"}\NormalTok{: }\StringTok{"L"}\NormalTok{, }\StringTok{"Ń"}\NormalTok{: }\StringTok{"N"}\NormalTok{,}
+        \StringTok{"Ó"}\NormalTok{: }\StringTok{"O"}\NormalTok{, }\StringTok{"Ś"}\NormalTok{: }\StringTok{"S"}\NormalTok{, }\StringTok{"Ź"}\NormalTok{: }\StringTok{"Z"}\NormalTok{, }\StringTok{"Ż"}\NormalTok{: }\StringTok{"Z"}
+\NormalTok{    \}}
+\NormalTok{    pattern }\OperatorTok{=} \VerbatimStringTok{r\textquotesingle{}}\PreprocessorTok{[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]}\VerbatimStringTok{\textquotesingle{}}
+    \ControlFlowTok{return}\NormalTok{ re.sub(pattern, }\KeywordTok{lambda}\NormalTok{ m: mapping.get(m.group(), m.group()), text)}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}text\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Zażółć gęślą jaźń\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Łódź\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}żółć\textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+
+\NormalTok{df[}\StringTok{\textquotesingle{}ascii\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}text\textquotesingle{}}\NormalTok{].}\BuiltInTok{apply}\NormalTok{(zamien\_polskie)}
+\BuiltInTok{print}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                text              ascii
+0  Zażółć gęślą jaźń  Zazolc gesla jazn
+1               Łódź               Lodz
+2               żółć               zolc
+\end{verbatim}
+
 \chapter{Pandas - inne}\label{pandas---inne}
 
 \section{Uzupełnianie braków}\label{uzupeux142nianie-brakuxf3w}
@@ -6976,7 +7492,7 @@ będzie wykres słupkowy lub punktowy.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresliniowy_files/figure-pdf/cell-2-output-1.pdf}}
 
-\protect\phantomsection\label{annotated-cell-153}%
+\protect\phantomsection\label{annotated-cell-166}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7184,7 +7700,7 @@ Wersja z datami:
 
 \section{Style, kolory linii}\label{style-kolory-linii}
 
-\protect\phantomsection\label{annotated-cell-159}%
+\protect\phantomsection\label{annotated-cell-172}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
@@ -7574,7 +8090,7 @@ Wykresy punktowe są szczególnie przydatne, gdy mamy do czynienia z
 danymi o różnym charakterze (ciągłe lub dyskretne) oraz gdy chcemy
 zbadać korelację, grupy, wzorce lub wartości odstające.
 
-\protect\phantomsection\label{annotated-cell-168}%
+\protect\phantomsection\label{annotated-cell-181}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7619,7 +8135,7 @@ zaczynając od 0.5 do 4.5.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-3-output-1.pdf}}
 
-\protect\phantomsection\label{annotated-cell-170}%
+\protect\phantomsection\label{annotated-cell-183}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7664,7 +8180,7 @@ kółka (\texttt{marker=\textquotesingle{}o\textquotesingle{}}).
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\protect\phantomsection\label{annotated-cell-172}%
+\protect\phantomsection\label{annotated-cell-185}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{from}\NormalTok{ matplotlib }\ImportTok{import}\NormalTok{ pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -7700,7 +8216,7 @@ długości takiej samej jak współrzędne \texttt{x} i \texttt{y}.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykrespunktowy_files/figure-pdf/cell-6-output-1.pdf}}
 
-\protect\phantomsection\label{annotated-cell-173}%
+\protect\phantomsection\label{annotated-cell-186}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
@@ -7988,7 +8504,7 @@ gdzie:
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykreskolowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\protect\phantomsection\label{annotated-cell-179}%
+\protect\phantomsection\label{annotated-cell-192}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8120,7 +8636,7 @@ Zamiana na mapę kolorów:
 
 \section{Wykres pierścieniowy}\label{wykres-pierux15bcieniowy}
 
-\protect\phantomsection\label{annotated-cell-183}%
+\protect\phantomsection\label{annotated-cell-196}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
@@ -8265,7 +8781,7 @@ gdzie:
   legendę.
 \end{itemize}
 
-\protect\phantomsection\label{annotated-cell-185}%
+\protect\phantomsection\label{annotated-cell-198}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8396,7 +8912,7 @@ dodaje etykietę osi Y z tekstem ``Wartości''.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-5-output-1.pdf}}
 
-\protect\phantomsection\label{annotated-cell-189}%
+\protect\phantomsection\label{annotated-cell-202}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -8539,7 +9055,7 @@ siebie.
 
 \pandocbounded{\includegraphics[keepaspectratio]{matplotlib-wykresslupkowy_files/figure-pdf/cell-7-output-1.pdf}}
 
-\protect\phantomsection\label{annotated-cell-191}%
+\protect\phantomsection\label{annotated-cell-204}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }\hspace*{\fill}\NormalTok{\circled{1}}
@@ -9078,7 +9594,7 @@ Przewidywany błąd dopasowania: 1.3322676295501878e-15
 
 \pandocbounded{\includegraphics[keepaspectratio]{k3.png}}
 
-\protect\phantomsection\label{annotated-cell-200}%
+\protect\phantomsection\label{annotated-cell-213}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}

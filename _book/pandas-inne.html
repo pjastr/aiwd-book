@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>24&nbsp; Pandas - inne – Analiza i wizualizacja danych</title>
+<title>25&nbsp; Pandas - inne – Analiza i wizualizacja danych</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./analizastruktury.html" rel="next">
-<link href="./pandas-danetekstowe.html" rel="prev">
+<link href="./pandas-re.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pandas-start.html">Pandas</a></li><li class="breadcrumb-item"><a href="./pandas-inne.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - inne</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pandas-start.html">Pandas</a></li><li class="breadcrumb-item"><a href="./pandas-inne.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Pandas - inne</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -514,8 +514,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./pandas-re.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - wyrażenia regularne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./pandas-inne.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Pandas - inne</span></span></a>
   </div>
 </li>
       </ul>
@@ -532,7 +538,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analizastruktury.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span></a>
   </div>
 </li>
       </ul>
@@ -549,91 +555,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - start</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresliniowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - wykres liniowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-podwykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - podwykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-zapis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - zapis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykrespunktowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres punktowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreskolowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - wykres kołowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykresslupkowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - wykres słupkowy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-regresja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - regresja</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-kolory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - kolory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-opcjewykresu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - opcje wykresu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-dodatki2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - dodatki cz.2.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-innewykresy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - inne wykresy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-mapaciepla.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Matplotlib - mapa ciepła</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matplotlib-wykreswarstwowy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Matplotlib - wykres warstwowy</span></span></a>
   </div>
 </li>
       </ul>
@@ -650,7 +656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./seaborn-podstawy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Seaborn - podstawy</span></span></a>
   </div>
 </li>
       </ul>
@@ -667,31 +673,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./jakosckodu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Jakość kodu</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./latex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">LaTeX</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notatnik.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Notatniki</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./procesy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Procesy w analizie danych</span></span></a>
   </div>
 </li>
       </ul>
@@ -708,31 +714,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Problem #4</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./problem05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Problem #5</span></span></a>
   </div>
 </li>
       </ul>
@@ -747,15 +753,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#uzupełnianie-braków" id="toc-uzupełnianie-braków" class="nav-link active" data-scroll-target="#uzupełnianie-braków"><span class="header-section-number">24.1</span> Uzupełnianie braków</a></li>
-  <li><a href="#obsługa-brakujących-danych" id="toc-obsługa-brakujących-danych" class="nav-link" data-scroll-target="#obsługa-brakujących-danych"><span class="header-section-number">24.2</span> Obsługa brakujących danych</a></li>
-  <li><a href="#usuwanie-duplikatów" id="toc-usuwanie-duplikatów" class="nav-link" data-scroll-target="#usuwanie-duplikatów"><span class="header-section-number">24.3</span> Usuwanie duplikatów</a></li>
-  <li><a href="#zastępowanie-wartościami" id="toc-zastępowanie-wartościami" class="nav-link" data-scroll-target="#zastępowanie-wartościami"><span class="header-section-number">24.4</span> Zastępowanie wartościami</a></li>
-  <li><a href="#dyskretyzacja-i-podział-na-koszyki" id="toc-dyskretyzacja-i-podział-na-koszyki" class="nav-link" data-scroll-target="#dyskretyzacja-i-podział-na-koszyki"><span class="header-section-number">24.5</span> Dyskretyzacja i podział na koszyki</a></li>
-  <li><a href="#wykrywanie-i-filtrowanie-elementów-odstających" id="toc-wykrywanie-i-filtrowanie-elementów-odstających" class="nav-link" data-scroll-target="#wykrywanie-i-filtrowanie-elementów-odstających"><span class="header-section-number">24.6</span> Wykrywanie i filtrowanie elementów odstających</a></li>
-  <li><a href="#zmiana-typu-w-kolumnie" id="toc-zmiana-typu-w-kolumnie" class="nav-link" data-scroll-target="#zmiana-typu-w-kolumnie"><span class="header-section-number">24.7</span> Zmiana typu w kolumnie</a></li>
-  <li><a href="#zmiana-znaku-kategoriach" id="toc-zmiana-znaku-kategoriach" class="nav-link" data-scroll-target="#zmiana-znaku-kategoriach"><span class="header-section-number">24.8</span> Zmiana znaku kategoriach</a></li>
-  <li><a href="#operacje-manipulacyjne" id="toc-operacje-manipulacyjne" class="nav-link" data-scroll-target="#operacje-manipulacyjne"><span class="header-section-number">24.9</span> Operacje manipulacyjne</a></li>
+  <li><a href="#uzupełnianie-braków" id="toc-uzupełnianie-braków" class="nav-link active" data-scroll-target="#uzupełnianie-braków"><span class="header-section-number">25.1</span> Uzupełnianie braków</a></li>
+  <li><a href="#obsługa-brakujących-danych" id="toc-obsługa-brakujących-danych" class="nav-link" data-scroll-target="#obsługa-brakujących-danych"><span class="header-section-number">25.2</span> Obsługa brakujących danych</a></li>
+  <li><a href="#usuwanie-duplikatów" id="toc-usuwanie-duplikatów" class="nav-link" data-scroll-target="#usuwanie-duplikatów"><span class="header-section-number">25.3</span> Usuwanie duplikatów</a></li>
+  <li><a href="#zastępowanie-wartościami" id="toc-zastępowanie-wartościami" class="nav-link" data-scroll-target="#zastępowanie-wartościami"><span class="header-section-number">25.4</span> Zastępowanie wartościami</a></li>
+  <li><a href="#dyskretyzacja-i-podział-na-koszyki" id="toc-dyskretyzacja-i-podział-na-koszyki" class="nav-link" data-scroll-target="#dyskretyzacja-i-podział-na-koszyki"><span class="header-section-number">25.5</span> Dyskretyzacja i podział na koszyki</a></li>
+  <li><a href="#wykrywanie-i-filtrowanie-elementów-odstających" id="toc-wykrywanie-i-filtrowanie-elementów-odstających" class="nav-link" data-scroll-target="#wykrywanie-i-filtrowanie-elementów-odstających"><span class="header-section-number">25.6</span> Wykrywanie i filtrowanie elementów odstających</a></li>
+  <li><a href="#zmiana-typu-w-kolumnie" id="toc-zmiana-typu-w-kolumnie" class="nav-link" data-scroll-target="#zmiana-typu-w-kolumnie"><span class="header-section-number">25.7</span> Zmiana typu w kolumnie</a></li>
+  <li><a href="#zmiana-znaku-kategoriach" id="toc-zmiana-znaku-kategoriach" class="nav-link" data-scroll-target="#zmiana-znaku-kategoriach"><span class="header-section-number">25.8</span> Zmiana znaku kategoriach</a></li>
+  <li><a href="#operacje-manipulacyjne" id="toc-operacje-manipulacyjne" class="nav-link" data-scroll-target="#operacje-manipulacyjne"><span class="header-section-number">25.9</span> Operacje manipulacyjne</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pjastr/aiwd-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Zgłoś problem</a></li></ul></div></nav>
     </div>
@@ -763,9 +769,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pandas-start.html">Pandas</a></li><li class="breadcrumb-item"><a href="./pandas-inne.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - inne</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pandas-start.html">Pandas</a></li><li class="breadcrumb-item"><a href="./pandas-inne.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Pandas - inne</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - inne</span></h1>
+<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Pandas - inne</span></h1>
 </div>
 
 
@@ -782,8 +788,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="uzupełnianie-braków" class="level2" data-number="24.1">
-<h2 data-number="24.1" class="anchored" data-anchor-id="uzupełnianie-braków"><span class="header-section-number">24.1</span> Uzupełnianie braków</h2>
+<section id="uzupełnianie-braków" class="level2" data-number="25.1">
+<h2 data-number="25.1" class="anchored" data-anchor-id="uzupełnianie-braków"><span class="header-section-number">25.1</span> Uzupełnianie braków</h2>
 <div id="96f4aeea" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -815,8 +821,8 @@ dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="obsługa-brakujących-danych" class="level2" data-number="24.2">
-<h2 data-number="24.2" class="anchored" data-anchor-id="obsługa-brakujących-danych"><span class="header-section-number">24.2</span> Obsługa brakujących danych</h2>
+<section id="obsługa-brakujących-danych" class="level2" data-number="25.2">
+<h2 data-number="25.2" class="anchored" data-anchor-id="obsługa-brakujących-danych"><span class="header-section-number">25.2</span> Obsługa brakujących danych</h2>
 <div id="51adad0d" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -887,8 +893,8 @@ dtype: str</code></pre>
 </div>
 </div>
 </section>
-<section id="usuwanie-duplikatów" class="level2" data-number="24.3">
-<h2 data-number="24.3" class="anchored" data-anchor-id="usuwanie-duplikatów"><span class="header-section-number">24.3</span> Usuwanie duplikatów</h2>
+<section id="usuwanie-duplikatów" class="level2" data-number="25.3">
+<h2 data-number="25.3" class="anchored" data-anchor-id="usuwanie-duplikatów"><span class="header-section-number">25.3</span> Usuwanie duplikatów</h2>
 <div id="5d837af6" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -924,8 +930,8 @@ dtype: bool
 </div>
 </div>
 </section>
-<section id="zastępowanie-wartościami" class="level2" data-number="24.4">
-<h2 data-number="24.4" class="anchored" data-anchor-id="zastępowanie-wartościami"><span class="header-section-number">24.4</span> Zastępowanie wartościami</h2>
+<section id="zastępowanie-wartościami" class="level2" data-number="25.4">
+<h2 data-number="25.4" class="anchored" data-anchor-id="zastępowanie-wartościami"><span class="header-section-number">25.4</span> Zastępowanie wartościami</h2>
 <div id="415f80a8" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -975,8 +981,8 @@ dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="dyskretyzacja-i-podział-na-koszyki" class="level2" data-number="24.5">
-<h2 data-number="24.5" class="anchored" data-anchor-id="dyskretyzacja-i-podział-na-koszyki"><span class="header-section-number">24.5</span> Dyskretyzacja i podział na koszyki</h2>
+<section id="dyskretyzacja-i-podział-na-koszyki" class="level2" data-number="25.5">
+<h2 data-number="25.5" class="anchored" data-anchor-id="dyskretyzacja-i-podział-na-koszyki"><span class="header-section-number">25.5</span> Dyskretyzacja i podział na koszyki</h2>
 <div id="51113c36" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1054,8 +1060,8 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="wykrywanie-i-filtrowanie-elementów-odstających" class="level2" data-number="24.6">
-<h2 data-number="24.6" class="anchored" data-anchor-id="wykrywanie-i-filtrowanie-elementów-odstających"><span class="header-section-number">24.6</span> Wykrywanie i filtrowanie elementów odstających</h2>
+<section id="wykrywanie-i-filtrowanie-elementów-odstających" class="level2" data-number="25.6">
+<h2 data-number="25.6" class="anchored" data-anchor-id="wykrywanie-i-filtrowanie-elementów-odstających"><span class="header-section-number">25.6</span> Wykrywanie i filtrowanie elementów odstających</h2>
 <div id="6369f046" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1092,8 +1098,8 @@ Series([], Name: 2, dtype: float64)
 </div>
 </div>
 </section>
-<section id="zmiana-typu-w-kolumnie" class="level2" data-number="24.7">
-<h2 data-number="24.7" class="anchored" data-anchor-id="zmiana-typu-w-kolumnie"><span class="header-section-number">24.7</span> Zmiana typu w kolumnie</h2>
+<section id="zmiana-typu-w-kolumnie" class="level2" data-number="25.7">
+<h2 data-number="25.7" class="anchored" data-anchor-id="zmiana-typu-w-kolumnie"><span class="header-section-number">25.7</span> Zmiana typu w kolumnie</h2>
 <div id="df76b310" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1183,8 +1189,8 @@ Ramka danych po zmianie typów:
 </div>
 </div>
 </section>
-<section id="zmiana-znaku-kategoriach" class="level2" data-number="24.8">
-<h2 data-number="24.8" class="anchored" data-anchor-id="zmiana-znaku-kategoriach"><span class="header-section-number">24.8</span> Zmiana znaku kategoriach</h2>
+<section id="zmiana-znaku-kategoriach" class="level2" data-number="25.8">
+<h2 data-number="25.8" class="anchored" data-anchor-id="zmiana-znaku-kategoriach"><span class="header-section-number">25.8</span> Zmiana znaku kategoriach</h2>
 <div id="6c010101" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1230,8 +1236,8 @@ Ramka danych po modyfikacji:
 </div>
 </div>
 </section>
-<section id="operacje-manipulacyjne" class="level2" data-number="24.9">
-<h2 data-number="24.9" class="anchored" data-anchor-id="operacje-manipulacyjne"><span class="header-section-number">24.9</span> Operacje manipulacyjne</h2>
+<section id="operacje-manipulacyjne" class="level2" data-number="25.9">
+<h2 data-number="25.9" class="anchored" data-anchor-id="operacje-manipulacyjne"><span class="header-section-number">25.9</span> Operacje manipulacyjne</h2>
 <p>Ściągawka <a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" class="uri">https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf</a></p>
 <ul>
 <li><code>merge</code></li>
@@ -2078,13 +2084,13 @@ two  4  5  6</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./pandas-danetekstowe.html" class="pagination-link" aria-label="Pandas - dane tekstowe">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Pandas - dane tekstowe</span></span>
+      <a href="./pandas-re.html" class="pagination-link" aria-label="Pandas - wyrażenia regularne">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Pandas - wyrażenia regularne</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./analizastruktury.html" class="pagination-link" aria-label="Analiza struktury">
-        <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Analiza struktury</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

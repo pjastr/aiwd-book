@@ -1,0 +1,321 @@
+# Pandas - wyrażenia regularne
+
+## Czym są wyrażenia regularne?
+
+Wyrażenia regularne (regex) to wzorce tekstowe służące do wyszukiwania, dopasowywania i manipulowania ciągami znaków. W Pythonie obsługuje je wbudowany moduł `re`, a Pandas integruje je bezpośrednio w operacjach na kolumnach tekstowych przez akcesor `.str`.
+
+Przed wyrażeniem regularnym zawsze stosujemy prefiks `r` (raw string), aby backslash `\` nie był interpretowany jako znak ucieczki Pythona.
+
+```{python}
+#| echo: true
+import re
+
+text = "Contact us at info@example.com or sales@example.com"
+emails = re.findall(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", text)
+print(emails)
+# ['info@example.com', 'sales@example.com']
+```
+
+## Podstawowa składnia regex
+
+Oto najważniejsze elementy składni wyrażeń regularnych:
+
+**Metaznaki:**
+
+| Metaznak | Znaczenie |
+|----------|-----------|
+| `.` | Dowolny znak (oprócz `\n`) |
+| `^` | Początek ciągu |
+| `$` | Koniec ciągu |
+| `*` | 0 lub więcej powtórzeń |
+| `+` | 1 lub więcej powtórzeń |
+| `?` | 0 lub 1 powtórzenie |
+| `\|` | Alternatywa (lub) |
+| `()` | Grupa przechwytująca |
+| `[]` | Zbiór znaków |
+| `{}` | Dokładna liczba powtórzeń |
+
+**Klasy znaków:**
+
+| Skrót | Znaczenie | Odpowiednik ASCII |
+|-------|-----------|-------------------|
+| `\d` | Cyfra | `[0-9]` |
+| `\D` | Nie-cyfra | `[^0-9]` |
+| `\w` | Znak „słowny" | `[a-zA-Z0-9_]` |
+| `\W` | Nie-słowny | `[^a-zA-Z0-9_]` |
+| `\s` | Biały znak | `[ \t\n\r\f\v]` |
+| `\S` | Nie-biały znak | `[^ \t\n\r\f\v]` |
+| `\b` | Granica słowa | — |
+
+**Kwantyfikatory:**
+
+| Wzorzec | Znaczenie |
+|---------|-----------|
+| `a{3}` | Dokładnie 3 wystąpienia `a` |
+| `a{2,5}` | Od 2 do 5 wystąpień `a` |
+| `a{2,}` | Co najmniej 2 wystąpienia `a` |
+| `a*?` | 0 lub więcej (leniwie) |
+| `a+?` | 1 lub więcej (leniwie) |
+
+```{python}
+#| echo: true
+import re
+
+text = "<b>bold</b> and <i>italic</i>"
+
+# zachłanne — dopasuje jak najwięcej
+greedy = re.findall(r"<.+>", text)
+print("Zachłanne:", greedy)
+
+# leniwe — dopasuje jak najmniej
+lazy = re.findall(r"<.+?>", text)
+print("Leniwe:", lazy)
+```
+
+## Kluczowe funkcje modułu `re`
+
+Oto tabela w języku Markdown wyjaśniająca kluczowe funkcje modułu `re`:
+
+| Funkcja | Opis |
+|---------|------|
+| **`re.search()`** | Szuka pierwszego dopasowania w całym ciągu. Zwraca obiekt `Match` lub `None`. |
+| **`re.match()`** | Szuka dopasowania tylko na początku ciągu. |
+| **`re.findall()`** | Zwraca listę wszystkich dopasowań (jako ciągi znaków). |
+| **`re.finditer()`** | Jak `findall`, ale zwraca iterator obiektów `Match`. |
+| **`re.sub()`** | Zastępuje dopasowania nowym ciągiem lub wynikiem funkcji. |
+| **`re.split()`** | Dzieli ciąg wg wzorca (bardziej elastyczny niż `str.split()`). |
+| **`re.fullmatch()`** | Sprawdza, czy cały ciąg pasuje do wzorca — idealne do walidacji. |
+| **`re.compile()`** | Kompiluje wzorzec do wielokrotnego użytku — przyspiesza działanie. |
+
+```{python}
+#| echo: true
+import re
+
+text = "Temperature is 36.6 degrees"
+match = re.search(r"\d+\.\d+", text)
+if match:
+    print(f"Znaleziono: {match.group()} na pozycji {match.span()}")
+
+log = """
+ERROR 2025-03-06 10:15:32 Connection timeout
+INFO  2025-03-06 10:15:33 Retry attempt
+ERROR 2025-03-06 10:15:35 Disk full
+"""
+errors = re.findall(r"ERROR\s+\S+\s+\S+\s+(.+)", log)
+print("Błędy:", errors)
+```
+
+## Grupy i odwołania
+
+Nawiasy okrągłe tworzą grupy — umożliwiają wyodrębnianie fragmentów dopasowania. Grupy mogą być numerowane, nazwane (`(?P<name>...)`) lub nieprzechwytujące (`(?:...)`).
+
+```{python}
+#| echo: true
+import re
+
+# Grupy numerowane
+text = "2025-03-06"
+match = re.search(r"(\d{4})-(\d{2})-(\d{2})", text)
+if match:
+    print(f"Rok: {match.group(1)}, Miesiąc: {match.group(2)}, Dzień: {match.group(3)}")
+
+# Grupy nazwane
+pattern = r"(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})"
+match = re.search(pattern, "Meeting on 2025-03-06 at noon")
+if match:
+    print(match.groupdict())
+
+# Grupa nieprzechwytująca
+result = re.findall(r"(?:https?|ftp)://\S+", "Visit https://example.com")
+print(result)
+```
+
+## Flagi
+
+Flagi modyfikują zachowanie wyrażeń regularnych:
+
+| Flaga | Skrót | Działanie |
+|-------|-------|-----------|
+| `re.IGNORECASE` | `re.I` | Ignoruje wielkość liter |
+| `re.MULTILINE` | `re.M` | `^`/`$` dotyczą każdej linii |
+| `re.DOTALL` | `re.S` | `.` dopasowuje też `\n` |
+| `re.VERBOSE` | `re.X` | Pozwala na komentarze we wzorcu |
+
+```{python}
+#| echo: true
+import re
+
+# Łączenie flag operatorem |
+text = "First Line\nSecond Line\nThird Line"
+matches = re.findall(r"^\w+", text, re.MULTILINE | re.IGNORECASE)
+print(matches)
+
+# Flaga VERBOSE — czytelne wzorce z komentarzami
+email_pattern = re.compile(r"""
+    ^
+    [a-zA-Z0-9._%+-]+    # nazwa użytkownika
+    @                     # symbol @
+    [a-zA-Z0-9.-]+       # nazwa domeny
+    \.                    # kropka
+    [a-zA-Z]{2,}         # rozszerzenie domeny
+    $
+""", re.VERBOSE)
+
+print(email_pattern.fullmatch("user@example.com"))
+print(email_pattern.fullmatch("invalid@@mail"))
+```
+
+## Wyrażenia regularne w Pandas
+
+Wiele metod akcesora `.str` w Pandas obsługuje wyrażenia regularne dzięki parametrowi `regex=True`. Pozwala to na wektorowe operacje regex na całych kolumnach.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+data = pd.DataFrame({
+    'Text': ['  Hello World  ', 'Pandas  Library43', '   Data   Science  ']
+})
+
+# Usunięcie znaków specjalnych (regex w str.replace)
+data['Clean'] = data['Text'].str.strip().str.replace(r'[^\w\s]', '', regex=True)
+print(data)
+
+# Usunięcie liczb
+data['NoDigits'] = data['Clean'].str.replace(r'\d+', '', regex=True)
+print(data)
+```
+
+## `str.contains()` — filtrowanie z regex
+
+Metoda `str.contains()` pozwala filtrować wiersze na podstawie wzorca regex.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+df = pd.DataFrame({
+    'email': ['jan@gmail.com', 'anna@wp.pl', 'piotr@firma.com', 'kasia@gmail.com', 'bad-email@@']
+})
+
+# Filtrowanie emaili z domeny gmail
+gmail_users = df[df['email'].str.contains(r'@gmail\.com$', regex=True)]
+print("Gmail:\n", gmail_users)
+
+# Walidacja formatu email
+df['valid'] = df['email'].str.contains(
+    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', regex=True
+)
+print("\nWalidacja:\n", df)
+```
+
+## `str.extract()` — wyodrębnianie grup
+
+Metoda `str.extract()` wyodrębnia grupy przechwytujące z wyrażenia regularnego do osobnych kolumn.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+df = pd.DataFrame({
+    'date_str': ['2025-03-06', '2024-12-25', '2023-01-15']
+})
+
+# Wyodrębnianie roku, miesiąca i dnia do osobnych kolumn
+extracted = df['date_str'].str.extract(r'(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})')
+print(extracted)
+```
+
+## `str.extractall()` — wszystkie dopasowania
+
+Metoda `str.extractall()` wyodrębnia **wszystkie** wystąpienia wzorca (nie tylko pierwsze).
+
+```{python}
+#| echo: true
+import pandas as pd
+
+df = pd.DataFrame({
+    'text': ['Ceny: 19.99 PLN i 5.50 PLN', 'Koszt: 120.00 PLN', 'Brak cen']
+})
+
+# Wyodrębnienie wszystkich kwot
+amounts = df['text'].str.extractall(r'(\d+\.\d{2})')
+print(amounts)
+```
+
+## `str.replace()` z regex — zamiana wzorców
+
+Parametr `regex=True` w `str.replace()` umożliwia zamiany oparte na wyrażeniach regularnych.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+df = pd.DataFrame({
+    'phone': ['123-456-789', '987 654 321', '(48) 555-123-456']
+})
+
+# Usunięcie wszystkiego oprócz cyfr
+df['digits_only'] = df['phone'].str.replace(r'[^\d]', '', regex=True)
+print(df)
+```
+
+## `str.findall()` — lista dopasowań
+
+Metoda `str.findall()` zwraca listę wszystkich dopasowań w każdym wierszu.
+
+```{python}
+#| echo: true
+import pandas as pd
+
+df = pd.DataFrame({
+    'text': ['Hashtags: #python #pandas #regex', 'No tags here', '#data is fun #science']
+})
+
+# Wyodrębnienie hashtagów
+df['hashtags'] = df['text'].str.findall(r'#\w+')
+print(df)
+```
+
+## Polskie znaki w regex
+
+Praca z polskimi znakami wymaga jawnego uwzględnienia ich we wzorcach lub użycia klas Unicode.
+
+```{python}
+#| echo: true
+import pandas as pd
+import re
+
+df = pd.DataFrame({
+    'text': ['Zażółć gęślą jaźń', 'Hello World', 'Łódź jest piękna']
+})
+
+# Sprawdzenie, które wiersze zawierają polskie znaki
+polish_pattern = r'[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]'
+df['has_polish'] = df['text'].str.contains(polish_pattern, regex=True)
+print(df)
+```
+
+```{python}
+#| echo: true
+import pandas as pd
+import re
+
+# Zamiana polskich znaków na łacińskie
+def zamien_polskie(text):
+    mapping = {
+        "ą": "a", "ć": "c", "ę": "e", "ł": "l", "ń": "n",
+        "ó": "o", "ś": "s", "ź": "z", "ż": "z",
+        "Ą": "A", "Ć": "C", "Ę": "E", "Ł": "L", "Ń": "N",
+        "Ó": "O", "Ś": "S", "Ź": "Z", "Ż": "Z"
+    }
+    pattern = r'[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]'
+    return re.sub(pattern, lambda m: mapping.get(m.group(), m.group()), text)
+
+df = pd.DataFrame({
+    'text': ['Zażółć gęślą jaźń', 'Łódź', 'żółć']
+})
+
+df['ascii'] = df['text'].apply(zamien_polskie)
+print(df)
+```
